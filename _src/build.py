@@ -23,7 +23,7 @@ def head(title, desc):
 '''
 
 def bar(current):
-    links = [("/", "All docs", "home"), ("/budget", "City budget", "budget"), ("/flock", "Flock timeline", "flock")]
+    links = [("/", "All docs", "home"), ("/budget", "City budget", "budget"), ("/flock", "Flock timeline", "flock"), ("/flock-cancellations", "How cities dropped Flock", "cancel")]
     cur = ' aria-current="page"'
     nav = "".join(f'<a href="{h}"{cur if k == current else ""}>{t}</a>' for h, t, k in links)
     return f'<header class="site-bar"><a class="brand" href="/">Indy AI Research Docs</a><nav aria-label="Site">{nav}</nav></header>'
@@ -80,6 +80,20 @@ budget = (head("Indianapolis Budget Explorer", "Nine years of Indianapolis and M
           + b.split("</style>", 1)[1] + "\n</body>\n</html>\n")
 (ROOT / "budget" / "index.html").write_text(budget)
 
+# ---------- Flock cancellations page ----------
+# Self-contained page with its own styles, script and footer. Served as-is apart from the
+# shared site bar and NOTICE, which replaces the page's own AI warning so it doesn't show two.
+c = (SRC / "flock-cancellations.html").read_text()
+c = c.replace("<style>", FONTS + '\n<link rel="stylesheet" href="/assets/site.css">\n<style>', 1)
+c = c.replace("padding-block:28px 64px", "padding-block:0 64px", 1)
+# The page's own header{} rule would stack the site bar. Match the page's 1040px column and
+# give the shared chrome the site's font rather than the page's.
+c = c.replace("</style>\n</head>", '.site-bar{flex-direction:row;max-width:1040px}\n.site-bar,.ai-notice{font-family:"Public Sans",system-ui,-apple-system,sans-serif}\n.ai-notice{max-width:1040px}\n</style>\n</head>', 1)
+c = re.sub(r'\s*<div class="ai-warn" role="note">.*?</div>', "", c, count=1)
+c = c.replace('<div class="wrap">', bar("cancel") + NOTICE + '\n<div class="wrap" style="padding-top:28px">', 1)
+(ROOT / "flock-cancellations").mkdir(exist_ok=True)
+(ROOT / "flock-cancellations" / "index.html").write_text(c)
+
 # ---------- Home ----------
 home_css = '''<style>
 .home{max-width:980px;margin:0 auto;padding-top:36px;display:flex;flex-direction:column;gap:36px}
@@ -117,6 +131,12 @@ home_body = f'''<main class="home">
       <h2>Flock and License Plate Reader Timeline</h2>
       <p>Every IMPD license plate reader approval in the public record since 2021, the money involved, the open questions, and template public records requests anyone can send.</p>
       <span class="go">Read the timeline →</span>
+    </a>
+    <a class="card" href="/flock-cancellations">
+      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {UPDATED}</span></div>
+      <h2>How Cities Dropped Flock</h2>
+      <p>Campaigns that ended Flock contracts, how they won, and what they didn't win.</p>
+      <span class="go">See the campaigns →</span>
     </a>
   </section>
   <section>

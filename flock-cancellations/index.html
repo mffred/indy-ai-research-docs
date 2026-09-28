@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>How Cities Dropped Flock</title>
+<meta name="description" content="Research notes on campaigns that ended or paused Flock Safety license plate camera contracts: who organized them, how they won, and what they didn't win.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+:root{
+  --bg:#EEF1F0; --surface:#FFFFFF; --sunk:#E3E8E6; --ink:#15212B; --muted:#56636D; --line:#CBD3D1;
+  --accent:#1D5C86; --accent-soft:#DCE8F1;
+  --gA:#1E6B45; --gA-bg:#DDEFE4; --gB:#1D5C86; --gB-bg:#DCE8F1; --gC:#8A5A0C; --gC-bg:#F5E8CF; --gD:#9B2F2F; --gD-bg:#F4DCDA;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif; --body:"IBM Plex Sans",system-ui,-apple-system,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#10171D; --surface:#172129; --sunk:#1E2A33; --ink:#E4EAEE; --muted:#95A3AD; --line:#2C3A44;
+    --accent:#7FB6DE; --accent-soft:#1E3444;
+    --gA:#7FD1A4; --gA-bg:#17362A; --gB:#8CC0E6; --gB-bg:#1B3345; --gC:#E4B967; --gC-bg:#3A2E17; --gD:#EE9A96; --gD-bg:#3F2224;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#10171D; --surface:#172129; --sunk:#1E2A33; --ink:#E4EAEE; --muted:#95A3AD; --line:#2C3A44;
+  --accent:#7FB6DE; --accent-soft:#1E3444;
+  --gA:#7FD1A4; --gA-bg:#17362A; --gB:#8CC0E6; --gB-bg:#1B3345; --gC:#E4B967; --gC-bg:#3A2E17; --gD:#EE9A96; --gD-bg:#3F2224;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(28px,5vw,40px);font-weight:800;line-height:1.05}
+h2{font-size:22px;font-weight:700}
+h3{font-size:18px;font-weight:700}
+p{margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{max-width:68ch;color:var(--muted)}
+header{display:flex;flex-direction:column;gap:10px}
+.stats{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.stats b{color:var(--ink);font-weight:500}
+.save-note{font-size:13px;color:var(--muted)}
+.save-note.warn{color:var(--gC)}
+
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font:500 13px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.toolbar .sep{width:1px;height:22px;background:var(--line);margin-inline:4px}
+
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 20px;padding:14px 16px;background:var(--sunk);border-radius:8px}
+.legend div{display:flex;gap:10px;align-items:flex-start;font-size:13.5px}
+
+.grade{font:500 12px var(--mono);padding:3px 8px;border-radius:4px;white-space:nowrap;flex-shrink:0}
+.gA{color:var(--gA);background:var(--gA-bg)} .gB{color:var(--gB);background:var(--gB-bg)} .gC{color:var(--gC);background:var(--gC-bg)} .gD{color:var(--gD);background:var(--gD-bg)}
+
+.list{display:flex;flex-direction:column;gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.card-head{display:grid;grid-template-columns:1fr auto;gap:12px 20px;padding:16px 18px;align-items:start}
+.title-row{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:baseline}
+.pri{font:500 12px var(--mono);color:var(--muted)}
+.meta{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:4px}
+.why{margin-top:8px;max-width:70ch}
+.track{display:flex;flex-direction:column;gap:6px;min-width:190px}
+.track label{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+select,textarea{font:inherit;font-size:14px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:6px 8px;width:100%}
+textarea{min-height:64px;resize:vertical}
+.notes-row{padding:0 18px 14px;display:flex;flex-direction:column;gap:6px}
+.notes-row .stamp{font:12px var(--mono);color:var(--muted)}
+.st{font:500 11.5px var(--mono);padding:2px 7px;border-radius:4px;background:var(--sunk);color:var(--muted)}
+.st.s-reached,.st.s-convo{background:var(--accent-soft);color:var(--accent)}
+.st.s-ally{background:var(--gA-bg);color:var(--gA)}
+
+details{border-top:1px solid var(--line)}
+summary{cursor:pointer;padding:10px 18px;font:500 13px var(--body);color:var(--accent);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+ ";font-family:var(--mono)}
+details[open] summary::before{content:"− "}
+.body{padding:4px 18px 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px 28px}
+.sec{display:flex;flex-direction:column;gap:6px}
+.sec.full{grid-column:1/-1}
+.sec h4{margin:0;font:500 11.5px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.sec ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px}
+.sec li{font-size:14px}
+.didnt li::marker{color:var(--gD)}
+.contact{font-family:var(--mono);font-size:13px;user-select:all;background:var(--sunk);padding:1px 5px;border-radius:3px}
+.copy{font:500 11px var(--mono);border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:4px;padding:1px 6px;cursor:pointer;margin-left:4px}
+.grade-note{font-size:13.5px;color:var(--muted)}
+.srcs a{font-size:13.5px}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px 28px}
+.two ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;font-size:14.5px}
+.empty{padding:24px;text-align:center;color:var(--muted)}
+footer{font-size:13px;color:var(--muted)}
+@media (max-width:640px){.card-head{grid-template-columns:1fr}.track{min-width:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<style>
+html{-webkit-text-size-adjust:100%}
+.ai-warn{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:8px;background:var(--gC-bg);color:var(--ink);font-size:14px;border:1px solid var(--line)}
+.ai-warn b{color:var(--gC)}
+.site-bar{flex-direction:row;max-width:1040px}
+.site-bar,.ai-notice{font-family:"Public Sans",system-ui,-apple-system,sans-serif}
+.ai-notice{max-width:1040px}
+</style>
+</head>
+<body>
+<header class="site-bar"><a class="brand" href="/">Indy AI Research Docs</a><nav aria-label="Site"><a href="/">All docs</a><a href="/budget">City budget</a><a href="/flock">Flock timeline</a><a href="/flock-cancellations" aria-current="page">How cities dropped Flock</a></nav></header><aside class="ai-notice" role="note"><span class="tag">AI draft</span><div><b>Preliminary research, generated with AI.</b> This page was drafted with an AI assistant (Claude) from public records and news reports. It may contain mistakes or miss context. Check the linked sources before you rely on, share or cite anything. Last updated September 28, 2026.</div></aside>
+<div class="wrap" style="padding-top:28px">
+  <header>
+    <span class="eyebrow">Indy AI Research Docs · Flock · research as of Sep 26, 2026</span>
+    <h1>How Cities Dropped Flock</h1>
+    <p class="lede">Campaigns that ended or paused Flock license plate camera contracts: who ran them, how they won, and what they still haven't won. Each one has a grade for how well the reporting on it holds up.</p>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <section class="legend" aria-label="Reporting quality scale">
+    <div><span class="grade gA">A</span><span>Several independent outlets plus a primary record (vote, audit, city release). Organizers named, methods described.</span></div>
+    <div><span class="grade gB">B</span><span>Solid news coverage from one or two outlets. Some people named, methods partly described.</span></div>
+    <div><span class="grade gC">C</span><span>One outlet or a short item. The outcome is confirmed but there's little on who organized it or how.</span></div>
+    <div><span class="grade gD">D</span><span>Only a roundup mentions it. Treat it as a lead to research, not a model.</span></div>
+  </section>
+
+  <div class="toolbar" role="group" aria-label="Filters">
+    <button class="chip" data-f="all" aria-pressed="true">All</button>
+    <button class="chip" data-f="IN" aria-pressed="false">Indiana</button>
+    <button class="chip" data-f="national" aria-pressed="false">Other states</button>
+    <button class="chip" data-f="ally" aria-pressed="false">Statewide groups</button>
+  </div>
+
+  <div class="list" id="list"></div>
+
+  <section class="panel">
+    <h2>What worked across these campaigns</h2>
+    <div class="two">
+      <ul>
+        <li><b>Time it to the vote.</b> Every win came at a renewal, a budget appropriation, or a funding request. Austin's coalition tracks renewal dates so they can step in before the vote.</li>
+        <li><b>Records requests produced the turning points.</b> Pflugerville found 459 agencies searching its data, Bloomington pried the contract loose on the eighth request, and Oak Park showed its data went to agencies in abortion-ban states, Indiana included.</li>
+        <li><b>Left and right together.</b> Fort Wayne's campaign was a conservative founder, a Democratic candidate, and AFP-Indiana ads, and the council vote was unanimous. Kosciusko is a Republican county.</li>
+        <li><b>Stay in the room.</b> Weeks of public comment in Fort Wayne, 200+ people in Harrisonburg, a room at capacity in Kosciusko.</li>
+      </ul>
+      <ul>
+        <li><b>Meet councilors one on one.</b> Harrisonburg's council publicly thanked residents who "schooled us" in private meetings.</li>
+        <li><b>Use local data and officials' own words.</b> Oak Park showed 84% of Flock stops were of Black drivers and held the village president to her 2022 promise.</li>
+        <li><b>Check how the contract was signed and paid for.</b> Kosciusko's contract was signed only by the prosecutor, never approved by commissioners, and funded through a donation fund. That made it void.</li>
+        <li><b>Offer an alternative.</b> Oak Park proposed violence interruption, non-police crisis response, and a youth bike program in place of Flock spending.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>What they didn't get</h2>
+    <div class="two">
+      <ul>
+        <li><b>Cameras stayed up.</b> Fort Wayne's cameras were still standing after the vote. Bloomington protesters found a Condor camera still running downtown in July.</li>
+        <li><b>No ban on the next vendor.</b> Harrisonburg is still pushing for an ordinance covering any mass-surveillance company. Fort Wayne's LPR ordinance was withdrawn. Bloomington says it is "evaluating other options."</li>
+      </ul>
+      <ul>
+        <li><b>Loopholes.</b> Austin police still reach plate data through Axon and other agencies' cameras. State police cameras stay up in Texas. The sheriff and IU police still use Flock around Bloomington.</li>
+        <li><b>A pause is not an ending.</b> Columbus and Hamilton County paused pending audits and both leaders said they value the tool. Cleveland let its contract lapse, then renewed two weeks later.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>Grades rate the reporting available on each campaign, not the campaign itself. Contacts are public channels from news coverage or each group's own site. Research compiled September 2026 by Fred Miller III with AI assistance.</footer>
+</div>
+
+<script>
+const C = [
+{
+  id:"eyes-off-indiana", region:"ally", place:"Statewide, Indiana", name:"Eyes Off Indiana",
+  outcome:"Pushing a statewide ALPR law for the 2027 session", date:"Founded 2025", grade:"B",
+  gradeNote:"Covered by the Capital Chronicle, IPM, FPI News and Current, plus the group's own press releases. Clear on its policy asks. Membership beyond Lasbury isn't reported.",
+  why:"The main statewide group. It responded publicly to the IMPD officer misuse case and maps Indiana cameras.",
+  people:["Walker Lasbury: founder and president; DePauw student, Carmel High School 2024","Rep. Pressel: drafting an ALPR bill (audits, yearly Indiana State Police audits, retention limits)"],
+  contacts:[["Website","eyesoffindiana.org"],["X","@eyesoffindiana"],["Petition","eyesoffindiana.org/petition"]],
+  methods:["Crowdsourced statewide camera map with DeFlock: 3,700+ ALPRs, at least 2,930 of them Flock","Statewide petition, 1,800+ signatures by May 2026, densest around Bloomington","Press releases tied to news: IMPD misuse, Bloomington's non-renewal, AG Rokita's privacy comments","Direct talks with legislators about minimum standards"],
+  didnt:["Doesn't push cancellations. Calls itself \"a floor, not a ceiling\" and says it isn't anti-ALPR","Asks for a 7-day retention cap, not a warrant requirement"],
+  data:["Indiana ranks 9th nationally for camera count","Estimates 453 plate scans per camera per day, from Indiana agencies' own transparency portals"],
+  sources:[["Indiana Capital Chronicle","https://indianacapitalchronicle.com/2026/08/24/indiana-lawmakers-looking-at-license-plate-cameras-amid-growing-privacy-worries/"],["IPM: petition","https://www.ipm.org/news/2026-05-19/statewide-petition-to-regulate-automatic-license-plate-readers-reaches-over-1-800-signatures"],["Eyes Off Indiana","https://eyesoffindiana.org/"],["FPI News","https://fpinews.org/policy/2026/09/21/indiana-flock-camera-contract-cancellations/"]]
+},
+{
+  id:"fort-wayne", region:"IN", place:"Fort Wayne, IN", name:"DE-Flock Fort Wayne",
+  outcome:"Council voted 8-0 not to fund the $120,250 renewal (36 cameras)", date:"Aug 25, 2026", grade:"A",
+  gradeNote:"WANE, 21Alive, WBOI, the Journal Gazette and FPI News all covered it across three months. Organizers named and methods well described.",
+  why:"Closest model for Indianapolis. A big Indiana city, a fast grassroots build, and a vote that crossed party lines.",
+  people:["Ashley Grogg: founded the Facebook group in June 2026; describes herself as a conservative primary voter","A Democratic Allen County Commissioner candidate (not named in reporting) ran the email campaign with Grogg","Councilors: Russ Jehl (R, pushed the safeguards option), Rohli Booker (D, waiting on the state), Geoff Paddock (D)","Lt. Gov. Micah Beckwith publicly urged a no vote","AFP-Indiana ran digital ads before the July vote"],
+  contacts:[["Facebook group","DE-Flock Fort Wayne"],["Neighborhood explainer","westcentralneighborhood.org/flock-cameras"]],
+  methods:["Group launched after council delayed the vote. The vote was pushed from May to July to August, giving them months","Bipartisan email campaign to councilors","Threatened primary challenges against anyone voting yes","Filled public comment for weeks and named councilors who walked out","A volunteer drove the city and found about 60 plate readers, against the city's count of 36, including at Lowe's and Meijer"],
+  didnt:["No ban ordinance. Jehl withdrew an LPR ordinance, saying the no vote was enough","The removal date for the cameras was unclear after the vote","The county's 10 cameras and private retailers' cameras remain","Booker is waiting for state legislation before any local ban"],
+  data:["Police said Flock is used in \"90% to 99%\" of crimes they investigate. Expect the same argument from IMPD"],
+  sources:[["WBOI: public comment","https://www.wboi.org/public-safety/2026-08-19/flock-camera-opposition-dominate-public-comment-in-tuesdays-fort-wayne-city-council-meeting"],["21Alive: Grogg after vote","https://www.21alivenews.com/2026/08/26/activist-says-work-isnt-finished-after-fort-wayne-city-council-votes-defund-flock-license-plate-cameras/"],["WANE: vote","https://www.wane.com/top-stories/fort-wayne-city-council-with-unanimous-flock-block/"],["WANE: residents react","https://www.wane.com/news/local-news/satisfied-fort-wayne-residents-on-councils-flock-block/"],["Journal Gazette","https://www.journalgazette.net/local/local-government/citizens-address-flock-safety-cameras-homeless-center-at-fort-wayne-city-council-meeting/article_bba8952e-f3d4-4300-a9cc-3851f28a9d86.html"],["WANE: postponement","https://www.wane.com/news/local-news/fort-wayne-postpones-flock-vote-again-seeks-more-privacy-safeguards/"]]
+},
+{
+  id:"kosciusko", region:"IN", place:"Kosciusko County, IN", name:"Kosciusko County residents",
+  outcome:"Council cut 2027 funding. Prosecutor ended searches the next day. Commissioners voided the contract two years early (30 cameras)", date:"Sep 10–22, 2026", grade:"B",
+  gradeNote:"WPTA, WNDU, InkFreeNews and the Goshen News covered it well, including the county attorney's legal findings. No organizing group or lead organizer is named.",
+  why:"The legal route here is the most useful lesson: they checked who signed the contract and how it was paid for.",
+  people:["County Attorney Ed Ormsby: found the contract legally defective","Prosecutor Brad Voelz: ordered cameras taken down","Commission President Robert Conley: voted yes but said opponents weren't the majority"],
+  contacts:[["Change.org petition","search \"Kosciusko Flock\" on change.org"]],
+  methods:["Change.org petition with 1,000+ signatures, presented at the budget meeting","The room hit capacity and people were turned away. More than three hours of comment","Used the budget. The contract lets the county exit when a year isn't funded, with 30 days' notice","The prosecutor signed the contract alone, with no commissioner approval or county attorney review, so it was voided","The Flock donation fund was dissolved"],
+  didnt:["Commissioners called the opposition a vocal minority","No ordinance on future surveillance purchases"],
+  data:["Ask for Indianapolis: who signed IMPD's Flock contract, did council approve it, and where does the money come from (general fund, grants, donations)?"],
+  sources:[["InkFreeNews: contract voided","https://www.inkfreenews.com/2026/09/23/flock-contract-invalidated-donation-fund-dissolved-by-kosciusko-commissioners/"],["21Alive: council vote","https://www.21alivenews.com/2026/09/11/kosciusko-county-votes-pause-funding-flock-license-plate-readers/"],["WNDU","https://www.wndu.com/2026/09/22/kosciusko-county-terminates-flock-contract-two-years-early/"],["Goshen News via Yahoo","https://www.yahoo.com/news/us/articles/no-flock-cameras-kosciusko-county-035900284.html"]]
+},
+{
+  id:"bloomington", region:"IN", place:"Bloomington, IN", name:"Bloomington organizers",
+  outcome:"Mayor declined to renew. Contract expired Mar 5; announced Apr 15", date:"Apr 2026", grade:"A",
+  gradeNote:"The city's own release, the IDS, WTHR, FOX59, the Bloomingtonian, and a BloomDocs records report with appendices. Groups are named, but no individual lead organizer.",
+  why:"First big Indiana win. Shows what persistent records requests can do, and that non-renewal alone leaves loose ends.",
+  people:["Bloomington DSA and Solid State: organized the July 11 protest","BloomDocs: published the records report","Council VP Sydney Zulich: publicly credited the activists","Mayor Kerry Thomson; Chief Michael Diekhoff","The B Square Bulletin covered the contract story closely"],
+  contacts:[["Records report","bloomdocs.org"],["Council","Sydney Zulich via bloomington.in.gov"]],
+  methods:["Records requests. The city refused the contract four times and sent redacted copies three times. The full copy came on the eighth try, nine months in","Council resolution on Mar 5 demanding oversight and a police report on data access","Protests and heavy turnout; one outlet reports 400+ residents","Council held a special 20-minute public comment on the police report"],
+  didnt:["A Flock Condor camera was still running downtown in July","Trailer and camera agreements were being unwound separately","The sheriff and IU police still use Flock","The city is \"evaluating other options,\" which may mean another vendor"],
+  data:["The police chief reported about $236,830 in program costs to date","Before the change, Bloomington's data was shared with agencies across Indiana"],
+  sources:[["City release","https://bloomington.in.gov/news/2026/04/15/6521"],["Indiana Daily Student","https://www.idsnews.com/article/2026/04/city-of-bloomington-ends-flock-contract-data-sharing-with-indiana-law-enforcement"],["Bloomingtonian: protest","https://bloomingtonian.com/2026/07/12/protesters-call-for-removal-of-flock-surveillance-cameras-in-bloomington/"],["BloomDocs report (PDF)","https://bloomdocs.org/wp-content/uploads/simple-file-list/REPORT-City-of-Bloomington-withheld-Flock-Safety-contracts-for-over-a-year-3-2-26-with-appendices-FINAL.pdf"],["Citizen Portal: council","https://citizenportal.ai/articles/7958592/indiana/monroe-county/bloomington-city/bloomington-chief-says-flock-contracts-ending-residents-press-for-full-disconnection-and-transparency"]]
+},
+{
+  id:"afp-indiana", region:"ally", place:"Statewide, Indiana", name:"Americans for Prosperity–Indiana",
+  outcome:"Ran digital ads before the Fort Wayne vote; celebrated the result", date:"Jun–Aug 2026", grade:"B",
+  gradeNote:"AFP's own press release, plus FPI News noting its Indiana campaign. How much it did beyond ads isn't reported.",
+  why:"A conservative group spending on ads, which made the issue harder to dismiss as partisan.",
+  people:["Tyler Turnwald: Grassroots Engagement Director, AFP-Indiana"],
+  contacts:[["Press office","americansforprosperity.org (Indiana chapter)"]],
+  methods:["Paid digital ads targeting a specific council vote","Statements framing plate readers as tracking law-abiding people"],
+  didnt:["Their frame is privacy and limited government, which overlaps with but differs from civil-rights groups' framing"],
+  data:["Lasbury says both AFP and the ACLU have launched Indiana campaigns. The ACLU of Indiana's campaign details weren't found in this research"],
+  sources:[["AFP-IN release","https://americansforprosperity.org/press-release/afp-in-announces-digital-ads-ahead-of-fort-wayne-vote-on-flock-camera-funding/"],["FPI News","https://fpinews.org/policy/2026/09/21/indiana-flock-camera-contract-cancellations/"]]
+},
+{
+  id:"harrisonburg", region:"national", place:"Harrisonburg, VA", name:"Deflock Harrisonburg",
+  outcome:"Council voted 4-0 to end the contract (31 cameras) and require council approval for any mounted ALPR", date:"Jul 28, 2026", grade:"A",
+  gradeNote:"WHSV, WDBJ, 29News, the Harrisonburg Citizen, the Breeze and NV Daily. Several organizers named, with written goals and tactics.",
+  why:"The best-documented grassroots build: petition, emails, private meetings, and a clear list of demands.",
+  people:["Noah Etka, Giles Eanes, Stan Bottcher: Deflock Harrisonburg organizers","Linda Plitt Donaldson: community organizer","Rob Poggenklass: Executive Director, Justice Forward Foundation","Council member Monica Robinson; City Manager Ande Banks"],
+  contacts:[["Chapter directory","deflocktheusa.com"],["Group","Deflock Harrisonburg / DeFlock Hburg"]],
+  methods:["Petition: nearly 2,000 signatures by April, thousands by June","Thousands of emails to councilors","One-on-one meetings with councilors","Community meetings, a potluck, and door-to-door canvassing","Brought 200+ people to the deciding meeting","Written list of demands, and they tracked which ones were met"],
+  didnt:["No ordinance requiring public comment before any future surveillance contract","No ban on other mass-surveillance vendors. They called the win \"bittersweet\""],
+  data:["They framed it as an issue for the whole community, including JMU students"],
+  sources:[["WDBJ/WHSV: vote","https://www.wdbj7.com/2026/07/29/harrisonburg-city-council-votes-end-contract-with-flock-safety/"],["The Breeze","https://www.breezejmu.org/news/harrisonburg-removes-flock-cameras-following-community-backlash/article_30a305f3-e1df-4e95-a5e1-9b0eddf37487.html"],["Harrisonburg Citizen","https://hburgcitizen.com/2026/07/16/after-overflow-crowd-protests-flock-cameras-city-council-to-take-up-issue-at-july-28-meeting/"],["WHSV: April rally","https://www.whsv.com/2026/04/21/harrisonburg-community-members-rally-against-flock-safety-cameras/"],["NV Daily: removal","https://www.nvdaily.com/nvdaily/harrisonburg-takes-down-flock-cameras/article_511aeadb-cba9-57ea-a456-be888adb4fe4.html"]]
+},
+{
+  id:"austin", region:"national", place:"Austin, TX", name:"No ALPRs Coalition / EFF-Austin",
+  outcome:"Council let the contract lapse, ending the program", date:"Jun 2025", grade:"A",
+  gradeNote:"EFF, KUT (several stories), and the Statesman. The coalition, its members, and staff are named, and the city audit is cited.",
+  why:"The largest coalition model, with an active network of elected officials.",
+  people:["No ALPRs coalition: Texas Civil Rights Project, Local Progress, Austin DSA, Grassroots Leadership, plus residents","Chris Harris: Associate Advocacy Director, Texas Civil Rights Project","Kevin Welch: President, EFF-Austin","Council member Mike Siegel (Local Progress): recruits officials nationally"],
+  contacts:[["Coalition","noalprs.org"],["EFF organizing","organizing@eff.org"],["TX Civil Rights Project","txcivilrights.org"],["Local Progress","localprogress.org"]],
+  methods:["More than 30 groups in one coalition","A city audit days before the vote found 20%+ of searches undocumented, and contract terms allowing retention beyond council limits","Tracks renewal dates to step in before votes","\"Flock Walks\" that visit cameras and explain what each one records","Siegel's office briefed other cities' councilors"],
+  didnt:["Austin police still reach plate data through Axon and other agencies' cameras (KUT, Feb 2026)","Council revisited plate readers after a shooting spree in May 2026","Texas state police cameras still run inside the city"],
+  data:["Flock has spent over $2 million on lobbying since 2025 (OpenSecrets)"],
+  sources:[["KUT: the coalition","https://www.kut.org/crime-justice/2026-09-16/austin-tx-texas-flock-deflock-movement-license-plate-readers"],["EFF: Austin victory","https://www.eff.org/deeplinks/2025/06/victory-austin-organizers-cancel-citys-flock-alpr-contract"],["KUT: the loophole","https://www.kut.org/crime-justice/2026-02-12/austin-tx-apd-flock-cameras-license-plate-readers"]]
+},
+{
+  id:"oak-park", region:"national", place:"Oak Park, IL", name:"Freedom to Thrive Oak Park",
+  outcome:"Village board voted 5-2 to cancel mid-contract (8 cameras since 2022)", date:"Aug 5, 2025", grade:"A",
+  gradeNote:"The group's own research and zine, a trustee's detailed write-up, and Wednesday Journal coverage. Strongest data of any campaign here.",
+  why:"The model for a racial-equity case built on hard local numbers.",
+  people:["Freedom to Thrive Oak Park: organized in 2019; \"lawyers, data scientists, engineers, artists, parents\"","Trustee Derek Eder: voted to cancel and wrote a guide for other officials","Kevin Barnhart, Alicia Chastain: contributed to Eder's post","Arti Walker-Peddakotla: former trustee and group organizer","Village President Vicki Scaman: held to her 2022 promise"],
+  contacts:[["Website","freedomtothriveop.com"],["Eder's guide","derekeder.com/blog/why-i-voted-to-cancel-flock"]],
+  methods:["Years of research. A February 2024 analysis found Black drivers were 84% of Flock stops, against 19% of the population","Records showed data shared with 14 states, including abortion-ban states like Indiana","Police oversight commission found over 99% of alerts led to no police action","Email campaign built on the president's own 2022 quote","Proposed alternatives: violence interruption, non-police crisis response, a youth bike program"],
+  didnt:["The group's Facebook page is archived, so they may be less active. Use the website or reach Eder"],
+  data:["Indiana agencies were among those with access to Oak Park's camera data"],
+  sources:[["Derek Eder","https://derekeder.com/blog/why-i-voted-to-cancel-flock"],["FTT: cancel campaign","https://www.freedomtothriveop.com/cancel-the-flock-contract"],["FTT: data sharing","https://www.freedomtothriveop.com/blog/oak-park-shares-license-plate-data-with-anti-abortion-states"]]
+},
+{
+  id:"pflugerville", region:"national", place:"Pflugerville, TX", name:"Pflugerville records request",
+  outcome:"Council ended the contract after a resident's records request", date:"Aug 2026", grade:"B",
+  gradeNote:"KUT and Texas Scorecard, with the mayor quoted. The resident who filed the request isn't named.",
+  why:"Proof that one records request can decide a vote.",
+  people:["Mayor Doug Weiss","Council member Rudy Metayer (Local Progress)","Mike Siegel (Austin) advised council members"],
+  contacts:[["Via Local Progress","localprogress.org"]],
+  methods:["A resident requested the list of agencies that had accessed the city's data","The city had approved 83 agencies; 459 had run about 1.6 million searches in six months","Flock pitched councilors over lunch, and some of its claims later proved false"],
+  didnt:["The mayor said the vote might not have been unanimous without the records"],
+  data:["Request template: Flock network sharing list, plus audit logs of outside searches"],
+  sources:[["KUT","https://www.kut.org/crime-justice/2026-09-16/austin-tx-texas-flock-deflock-movement-license-plate-readers"],["Texas Scorecard (Manvel, cites Pflugerville)","https://texasscorecard.com/local/manvel-city-council-votes-unanimously-to-end-flock-safety-contract/"]]
+},
+{
+  id:"columbus", region:"national", place:"Columbus, OH", name:"Columbus council (pause)",
+  outcome:"Mayor paused all 65 cameras pending an outside audit; council moving to legislate", date:"Sep 3, 2026", grade:"B",
+  gradeNote:"WOSU, NBC4 and Spectrum. Clear account of the trigger. No community organizers named. It's a pause, not a cancellation.",
+  why:"The closest big-city parallel. It was triggered by officer misuse, as with IMPD's case.",
+  people:["Council President Shannon Hardin: says Flock \"has lost that trust\"","Mayor Andrew Ginther; Chief Elaine Bryant"],
+  contacts:[["Council","Council President's office via columbus.gov"]],
+  methods:["A USA Today search database showed one officer searched a single plate 272 times","Council members said a majority had concerns before the pause"],
+  didnt:["It's only a pause. The mayor says the cameras \"serve an important purpose\"","OSU, ODOT and other agencies' cameras stay on"],
+  data:["Before the pause, Columbus had already cut retention to 7 days and required supervisor approval"],
+  sources:[["WOSU","https://www.wosu.org/politics-government/2026-09-03/city-of-columbus-is-suspending-its-use-of-flock-cameras"],["NBC4","https://www.nbc4i.com/news/local-news/columbus/columbus-mayor-police-chief-to-address-flock-camera-use/"]]
+},
+{
+  id:"manvel", region:"national", place:"Manvel, TX", name:"Manvel (mayor-led)",
+  outcome:"Council voted 6-0 to end the contract; 16 cameras covered within 48 hours", date:"Sep 2026", grade:"B",
+  gradeNote:"Click2Houston and Texas Scorecard. Led by the mayor, not by residents.",
+  why:"A useful tactic: question the Flock rep directly at a public hearing.",
+  people:["Mayor Dan Davis"],
+  contacts:[],
+  methods:["Mayor asked the Flock rep on the record whether city data trains its AI. The rep said it does","Showed 535 outside agencies still had access even after 149 were cut","Raised Flock's Wing (private live feeds) and Nova (data aggregation) products"],
+  didnt:["The sheriff's office argued for the cameras, so county readers likely remain"],
+  data:[],
+  sources:[["Click2Houston","https://www.click2houston.com/news/local/2026/09/09/city-of-manvel-approves-defunding-flock-cameras/"],["Texas Scorecard","https://texasscorecard.com/local/manvel-city-council-votes-unanimously-to-end-flock-safety-contract/"]]
+},
+{
+  id:"vendor-breach", region:"national", place:"Cambridge, MA & Evanston, IL", name:"Vendor breach cases",
+  outcome:"Both terminated after Flock broke the city's trust", date:"Aug–Dec 2025", grade:"B",
+  gradeNote:"The Record, Evanston RoundTable, and the Finding Flock tracker. Mostly about official action, not organizers.",
+  why:"Ammunition. Flock installed or reinstalled cameras against city orders.",
+  people:[],
+  contacts:[],
+  methods:["Cambridge: Flock installed two new cameras after the council ordered cameras off. The city called it a \"material breach\"","Evanston: an Illinois audit found federal access. The city terminated, Flock reinstalled units, and the city sent a cease-and-desist"],
+  didnt:["In Eugene, OR, a camera kept logging about 8,500 plates in a month after the shutoff order"],
+  data:[],
+  sources:[["The Record","https://therecord.media/flock-safety-cameras-remained-active-after-cities-asked-turned-off"],["Evanston RoundTable","https://evanstonroundtable.com/2025/09/24/flock-safety-reinstalls-evanston-cameras/"]]
+},
+{
+  id:"monroe-county", region:"IN", place:"Monroe County, IN", name:"Monroe County commissioners",
+  outcome:"Canceled a year early; paid about $3,000 to remove six cameras", date:"Jul 23, 2026", grade:"C",
+  gradeNote:"One IPM story plus tracker entries. Commissioners cited national reporting. No organizers named.",
+  why:"Shows early exit is cheap. Likely the same Bloomington organizing network.",
+  people:[],
+  contacts:[],
+  methods:["Commissioners cited national misuse reporting"],
+  didnt:["Two of the old sheriff's-office cameras were later cut down. The Monroe County Sheriff's Office situation is unclear"],
+  data:[],
+  sources:[["IPM","https://www.ipm.org/news/2026-07-26/monroe-county-cancels-contract-with-flock-safety"]]
+},
+{
+  id:"nw-indiana", region:"IN", place:"Chesterton; Marshall, Starke & Noble counties, IN", name:"Northern Indiana wave",
+  outcome:"Voted to cancel or not renew", date:"Aug–Sep 2026", grade:"D",
+  gradeNote:"Named only in the FPI News roundup. The NWI Times headline says Chesterton cited \"police abuses, lack of safeguards,\" but the article is paywalled. Research each before reaching out.",
+  why:"More Indiana wins to research. Noble County came before Kosciusko, and residents there cited it.",
+  people:[],
+  contacts:[],
+  methods:["Chesterton Town Council voted unanimously"],
+  didnt:[],
+  data:[],
+  sources:[["FPI News roundup","https://fpinews.org/policy/2026/09/21/indiana-flock-camera-contract-cancellations/"],["NWI Times","https://nwitimes.com/news/local/article_6f682c9a-d8ba-5093-ba8d-185649c2b512.html"]]
+}
+];
+
+
+let filter = "all";
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function list(items, cls){ return items.length ? `<ul class="${cls||""}">${items.map(i=>`<li>${esc(i)}</li>`).join("")}</ul>` : `<p class="grade-note">Not reported.</p>`; }
+function card(c){
+  const contacts = c.contacts.length ? `<ul>${c.contacts.map(([k,v])=>`<li>${esc(k)}: <span class="contact">${esc(v)}</span><button class="copy" data-copy="${esc(v)}">Copy</button></li>`).join("")}</ul>` : `<p class="grade-note">No public contact found.</p>`;
+  return `<article class="card" data-id="${c.id}">
+    <div class="card-head" style="grid-template-columns:1fr">
+      <div>
+        <div class="title-row"><h3>${esc(c.name)}</h3><span class="grade g${c.grade}">Reporting ${c.grade}</span></div>
+        <div class="meta">${esc(c.place)} · ${esc(c.date)}</div>
+        <p class="why"><b>${esc(c.outcome)}.</b> ${esc(c.why)}</p>
+      </div>
+    </div>
+    <details>
+      <summary>People, contacts, methods, and what they didn't win</summary>
+      <div class="body">
+        <div class="sec"><h4>Who was involved</h4>${list(c.people)}</div>
+        <div class="sec"><h4>Public contact channels</h4>${contacts}</div>
+        <div class="sec"><h4>Methods, as reported</h4>${list(c.methods)}</div>
+        <div class="sec"><h4>What they didn't win</h4>${list(c.didnt,"didnt")}</div>
+        ${c.data.length?`<div class="sec"><h4>Data points</h4>${list(c.data)}</div>`:""}
+        <div class="sec"><h4>Reporting quality · ${c.grade}</h4><p class="grade-note">${esc(c.gradeNote)}</p></div>
+        <div class="sec full srcs"><h4>Sources</h4><p>${c.sources.map(([t,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join(" · ")}</p></div>
+      </div>
+    </details>
+  </article>`;
+}
+function render(){
+  const shown = C.filter(c => filter==="all" || c.region===filter);
+  $("#list").innerHTML = shown.map(card).join("");
+  $("#stats").innerHTML = `<span><b>${C.length}</b> campaigns</span><span><b>${C.filter(c=>c.region==="IN").length}</b> in Indiana</span><span><b>${C.filter(c=>c.grade==="A").length}</b> graded A</span>`;
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest(".copy");
+  if (b) { const t=b.dataset.copy; (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1400)}).catch(()=>{const s=b.previousElementSibling;const r=document.createRange();r.selectNodeContents(s);const sel=getSelection();sel.removeAllRanges();sel.addRange(r);}); return; }
+  const f = e.target.closest(".chip");
+  if (f) { filter=f.dataset.f; document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",String(c===f))); render(); }
+});
+render();
+</script>
+</body>
+</html>
