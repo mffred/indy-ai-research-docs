@@ -1,0 +1,33 @@
+# Indy AI Research Docs
+
+Static site. No build step needed to deploy; the HTML files are ready to serve.
+
+```
+index.html          Home page
+budget/index.html   Indianapolis Budget Explorer
+flock/index.html    Flock and License Plate Reader Timeline
+assets/site.css     Shared styles (header, AI notice, footer)
+vercel.json         Clean URLs (/budget, /flock)
+_src/               Sources and the build script (not deployed)
+```
+
+## Deploy to Vercel
+
+**Fastest: from your Mac's Terminal** (needs Node.js):
+
+```
+cd ~/Downloads/indy-ai-docs
+npx vercel@latest --prod
+```
+
+Log in when it asks (GitHub, Google or email), accept the defaults, and name the project `indy-ai-research-docs`. It prints your live URL when it's done. Run the same command again to publish updates.
+
+**Better for a work in progress: through GitHub.** Put this folder in a new GitHub repository, then go to vercel.com/new, import the repo, set Framework Preset to "Other", and deploy. Every push to the repo updates the site automatically.
+
+## Updating a page
+
+- Flock timeline: edit `_src/flock.md`.
+- Budget explorer: edit `_src/budget.html`.
+- Home page, header, AI notice, footer and "last updated" date: edit `_src/build.py`.
+
+Then run `python3 _src/build.py` (needs the Python `markdown` package: `pip3 install markdown`) and redeploy.

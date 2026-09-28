@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Indy AI Research Docs</title>
+<meta name="description" content="Preliminary, AI-assisted research on Indianapolis and Marion County government: budget breakdowns, surveillance contracts and public records.">
+<meta property="og:title" content="Indy AI Research Docs">
+<meta property="og:description" content="Preliminary, AI-assisted research on Indianapolis and Marion County government: budget breakdowns, surveillance contracts and public records.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+.home{max-width:980px;margin:0 auto;padding-top:36px;display:flex;flex-direction:column;gap:36px}
+.home h1{font-size:clamp(38px,7vw,60px);line-height:1}
+.lede{font-size:17px;color:var(--ink-2);max-width:64ch;margin:14px 0 0}
+.docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;text-decoration:none;color:var(--ink)}
+.card:hover{border-color:var(--accent)}
+.card h2{font-size:24px;line-height:1.15}
+.card p{margin:0;color:var(--ink-2);font-size:14.5px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;font-size:12px}
+.pill{border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg);border-radius:999px;padding:2px 9px;font-weight:600}
+.pill.q{border-color:var(--line);color:var(--ink-2);background:transparent;font-weight:500}
+.card .go{margin-top:auto;color:var(--accent);font-weight:600;font-size:14px}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.how h3{font-size:18px;margin-bottom:4px}
+.how p{margin:0;font-size:14px;color:var(--ink-2)}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+</style></head>
+<body>
+<header class="site-bar"><a class="brand" href="/">Indy AI Research Docs</a><nav aria-label="Site"><a href="/" aria-current="page">All docs</a><a href="/budget">City budget</a><a href="/flock">Flock timeline</a></nav></header><aside class="ai-notice" role="note"><span class="tag">AI draft</span><div><b>Preliminary research, generated with AI.</b> This page was drafted with an AI assistant (Claude) from public records and news reports. It may contain mistakes or miss context. Check the linked sources before you rely on, share or cite anything. Last updated September 28, 2026.</div></aside><main class="home">
+  <section>
+    <div class="eyebrow">Indianapolis and Marion County · Work in progress</div>
+    <h1>Indy AI Research Docs</h1>
+    <p class="lede">Preliminary research on how local government spends money and makes decisions, pulled from the city's own budget books, board packets and news coverage. Built with AI to get public information into a form people can actually read. Treat everything here as a first draft.</p>
+  </section>
+  <section class="docs" aria-label="Documents">
+    <a class="card" href="/budget">
+      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated September 28, 2026</span></div>
+      <h2>Indianapolis Budget Explorer</h2>
+      <p>Nine years of city-county spending, revenue by source, and a clickable breakdown of all 35 departments in the $1.898B 2027 proposed budget: where each one's money comes from and what it pays for.</p>
+      <span class="go">Open the explorer →</span>
+    </a>
+    <a class="card" href="/flock">
+      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated September 28, 2026</span></div>
+      <h2>Flock and License Plate Reader Timeline</h2>
+      <p>Every IMPD license plate reader approval in the public record since 2021, the money involved, the open questions, and template public records requests anyone can send.</p>
+      <span class="go">Read the timeline →</span>
+    </a>
+  </section>
+  <section>
+    <h2 style="font-size:26px;margin-bottom:14px">How these are made</h2>
+    <div class="how">
+      <div><h3>Public sources only</h3><p>Budget books, board meeting packets, city web pages and published news. Every page links to what it used.</p></div>
+      <div><h3>Drafted with AI</h3><p>An AI assistant (Claude) pulled the numbers from source PDFs, wrote the summaries and built the pages. Totals were cross-checked against the documents' own summary tables.</p></div>
+      <div><h3>Not verified line by line</h3><p>Descriptions and interpretations can be wrong. Where something is uncertain, the page says so. Check the source before citing anything.</p></div>
+    </div>
+  </section>
+</main><footer class="site-foot">Indy AI Research Docs is a work in progress. Figures come from the linked public documents; summaries and analysis were generated with AI and spot-checked, not independently verified. Nothing here is legal or financial advice. Last updated September 28, 2026.</footer>
+</body>
+</html>

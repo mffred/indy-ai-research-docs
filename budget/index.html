@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Indianapolis Budget Explorer</title>
+<meta name="description" content="Nine years of Indianapolis and Marion County spending and a clickable breakdown of all 35 departments in the 2027 proposed budget.">
+<meta property="og:title" content="Indianapolis Budget Explorer">
+<meta property="og:description" content="Nine years of Indianapolis and Marion County spending and a clickable breakdown of all 35 departments in the 2027 proposed budget.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+
+
+<style>
+:root{
+  --bg:#f5f7f6; --surface:#fcfcfb; --ink:#101614; --ink-2:#4b5552; --muted:#7f8784;
+  --grid:#e1e4e2; --axis:#c3c8c5; --line:rgba(16,22,20,.12);
+  --accent:#1c5cab; --accent-soft:#e3edf9; --up:#006300; --down:#b3261e;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4;
+  --tip-bg:#101614; --tip-ink:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0e1110; --surface:#171b1a; --ink:#f3f5f4; --ink-2:#c1c7c4; --muted:#8b9390;
+    --grid:#262c2a; --axis:#39403d; --line:rgba(255,255,255,.12);
+    --accent:#6da7ec; --accent-soft:#16263a; --up:#0ca30c; --down:#e66767;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181;
+    --tip-bg:#f3f5f4; --tip-ink:#101614;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0e1110; --surface:#171b1a; --ink:#f3f5f4; --ink-2:#c1c7c4; --muted:#8b9390;
+  --grid:#262c2a; --axis:#39403d; --line:rgba(255,255,255,.12);
+  --accent:#6da7ec; --accent-soft:#16263a; --up:#0ca30c; --down:#e66767;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181;
+  --tip-bg:#f3f5f4; --tip-ink:#101614;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.55;padding-inline:16px;padding-block:0 56px}
+.wrap{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;margin:0;text-wrap:balance;letter-spacing:.005em}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.02;font-weight:700}
+h2{font-size:28px;line-height:1.1;font-weight:700}
+h3{font-size:19px;font-weight:600}
+p{margin:0;max-width:68ch}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:17px;color:var(--ink-2)}
+header{display:flex;flex-direction:column;gap:14px}
+.calendar{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.date{display:flex;gap:10px;align-items:baseline;border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:8px 12px;font-size:13.5px}
+.date b{font-family:"Barlow Semi Condensed",sans-serif;font-size:16px;font-weight:700;white-space:nowrap}
+.date.now{border-color:var(--accent);background:var(--accent-soft)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:4px}
+.tile .v{font-family:"Barlow Semi Condensed",sans-serif;font-size:34px;font-weight:700;line-height:1}
+.tile .l{font-size:13px;color:var(--ink-2)}
+@media (max-width:760px){.tiles{grid-template-columns:repeat(2,1fr)}}
+section{display:flex;flex-direction:column;gap:14px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.bar-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{font:inherit;font-size:13px;padding:5px 11px;border:0;background:transparent;color:var(--ink-2);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.seg button:focus-visible,.link-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chart-scroll{overflow-x:auto}
+.chart-scroll svg{display:block;width:100%;min-width:560px;height:auto}
+svg text{font-family:"Public Sans",system-ui,sans-serif;fill:var(--muted);font-size:12px}
+svg .val{fill:var(--ink);font-weight:600}
+svg .yr{fill:var(--ink-2);font-weight:500}
+.note{font-size:13px;color:var(--muted)}
+.link-btn{font:inherit;font-size:13px;color:var(--accent);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;align-self:flex-start}
+.tbl-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
+th,td{padding:7px 10px;text-align:right;border-bottom:1px solid var(--grid);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{font-weight:600;color:var(--ink-2);font-size:12.5px;border-bottom:1px solid var(--axis)}
+tfoot td{font-weight:700;border-top:1px solid var(--axis);border-bottom:0}
+.up{color:var(--up)} .down{color:var(--down)}
+.tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;padding:1px 6px;border-radius:4px;background:var(--accent-soft);color:var(--accent);margin-left:6px;vertical-align:1px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;max-width:72ch}
+.tip{position:fixed;pointer-events:none;background:var(--tip-bg);color:var(--tip-ink);font-size:12.5px;line-height:1.45;padding:8px 10px;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.18);z-index:10;font-variant-numeric:tabular-nums;max-width:260px}
+.tip b{font-weight:700}
+.tip .r{display:flex;justify-content:space-between;gap:14px}
+.tip i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px}
+.sources{font-size:13px;color:var(--ink-2)}
+.sources a{color:var(--accent)}
+.sources ol{padding-left:18px;margin:6px 0 0;display:flex;flex-direction:column;gap:4px}
+@media (prefers-reduced-motion:no-preference){ .chart-scroll rect{transition:opacity .12s} }
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:13px;display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer}
+.chip i{width:9px;height:9px;border-radius:2px;display:inline-block}
+.chip[aria-pressed="true"]{border-color:var(--ink);color:var(--ink);font-weight:600;box-shadow:inset 0 0 0 1px var(--ink)}
+.chip:focus-visible,.dept-btn:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.toolbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center}
+.toolbar label{font-size:13px;color:var(--ink-2);display:flex;gap:8px;align-items:center}
+select{font:inherit;font-size:13px;padding:5px 8px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.dept-list{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:8px;background:var(--surface);overflow:hidden}
+.dept{border-top:1px solid var(--grid)}
+.dept:first-child{border-top:0}
+.dept-btn{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,2fr) 92px 118px 18px;gap:14px;align-items:center;padding:11px 14px;cursor:pointer;font-variant-numeric:tabular-nums}
+.dept-btn:hover{background:var(--accent-soft)}
+.dept-name{display:flex;flex-direction:column;min-width:0}
+.dept-name b{font-weight:600;font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dept-name small{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.track{height:12px;background:var(--grid);border-radius:3px;position:relative;overflow:hidden}
+.track span{position:absolute;left:0;top:0;bottom:0;border-radius:3px}
+.amt{text-align:right;font-weight:600}
+.chg{text-align:right;font-size:13px}
+.caret{color:var(--muted);transition:transform .15s}
+.dept.open .caret{transform:rotate(90deg)}
+.dept.open>.dept-btn{background:var(--accent-soft)}
+@media (max-width:700px){
+  .dept-btn{grid-template-columns:minmax(0,1fr) auto 18px;grid-template-areas:"n a c" "t g c";row-gap:6px}
+  .dept-name{grid-area:n}.track{grid-area:t}.amt{grid-area:a}.chg{grid-area:g}.caret{grid-area:c}
+}
+.detail{padding:4px 16px 22px;display:flex;flex-direction:column;gap:18px;border-top:1px solid var(--grid);background:var(--bg)}
+.detail h4{margin:0 0 6px;font-family:"Barlow Semi Condensed",sans-serif;font-size:17px;font-weight:700}
+.detail .sum{font-size:14.5px;color:var(--ink-2);max-width:78ch;margin-top:14px}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:760px){.dgrid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.mini svg{width:100%;height:auto;display:block}
+.drivers{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px;font-size:14px}
+.stackbar{display:flex;height:22px;border-radius:4px;overflow:hidden;gap:2px;background:var(--surface)}
+.stackbar span{height:100%}
+.klegend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--ink-2)}
+.klegend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:0}
+.detail table{font-size:13px}
+.detail td:first-child{white-space:normal;min-width:170px}
+.muted-row td{color:var(--muted)}
+.pdf-link{font-size:13px;color:var(--accent)}
+.gloss{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.gloss div{font-size:13.5px;color:var(--ink-2)}
+#departments .panel td:last-child{white-space:normal;min-width:220px;text-align:left}
+.cats{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.cats li{display:flex;gap:10px;font-size:13.5px}
+.cats i{flex:none;width:10px;height:10px;border-radius:2px;margin-top:5px}
+.cats .amtc{font-variant-numeric:tabular-nums;color:var(--ink-2)}
+.cats .def{color:var(--ink-2)}
+.cats .dn{display:block;margin-top:3px;color:var(--ink)}
+.cats .dn::before{content:"Here: ";font-weight:600}
+.gloss .note{display:block;margin-bottom:4px}
+.gloss b{display:block;color:var(--ink);font-weight:600;margin-bottom:2px}
+</style>
+</head>
+<body>
+
+
+<header class="site-bar"><a class="brand" href="/">Indy AI Research Docs</a><nav aria-label="Site"><a href="/">All docs</a><a href="/budget" aria-current="page">City budget</a><a href="/flock">Flock timeline</a></nav></header><aside class="ai-notice" role="note"><span class="tag">AI draft</span><div><b>Preliminary research, generated with AI.</b> This page was drafted with an AI assistant (Claude) from public records and news reports. It may contain mistakes or miss context. Check the linked sources before you rely on, share or cite anything. Last updated September 28, 2026.</div></aside><div class="wrap" style="padding-top:28px">
+<header>
+  <div class="eyebrow">Indianapolis–Marion County · Consolidated city-county budget</div>
+  <h1>Where Indy's money goes, 2019 to 2027</h1>
+  <p class="lede">The mayor's proposed 2027 budget is $1.898 billion, about 11% more than 2026. This page lines up nine years of spending and six years of revenue from the city's own budget books, then breaks the 2027 proposal down department by department so you can click into any one of them.</p>
+  <div class="calendar" aria-label="2027 budget calendar">
+    <div class="date"><b>Aug 10</b> Mayor introduced budget</div>
+    <div class="date now"><b>Oct 1</b> Last committee meetings</div>
+    <div class="date now"><b>Oct 5</b> Public hearing, 7 pm, City-County Building</div>
+    <div class="date"><b>Oct 19</b> Council vote (13 of 25 needed)</div>
+    <div class="date"><b>Nov 1</b> Sent to the state</div>
+  </div>
+</header>
+
+<div class="tiles">
+  <div class="tile"><span class="v">$1.898B</span><span class="l">2027 proposed appropriations</span></div>
+  <div class="tile"><span class="v">+$188M</span><span class="l">over 2026 adopted (+11.0%)</span></div>
+  <div class="tile"><span class="v">59%</span><span class="l">public safety plus criminal justice in 2027</span></div>
+  <div class="tile"><span class="v">≈$1,940</span><span class="l">per Marion County resident (2020 Census pop.)</span></div>
+</div>
+
+<section>
+  <h2>Spending by function</h2>
+  <p>The budget books group every agency into five functions. Public safety is IMPD, IFD, the Office of Public Health &amp; Safety and 911. Criminal justice is the Sheriff, courts, prosecutor, public defender, Community Corrections, coroner and forensics. Community development &amp; infrastructure covers DPW, Parks, DMD, Business &amp; Neighborhood Services and Animal Care.</p>
+  <div class="panel">
+    <div class="bar-head">
+      <div class="legend" id="spendLegend"></div>
+      <div class="seg" role="group" aria-label="Units">
+        <button type="button" id="modeDollars" aria-pressed="true">Dollars</button>
+        <button type="button" id="modeShare" aria-pressed="false">Share of total</button>
+      </div>
+    </div>
+    <div class="chart-scroll"><svg id="spendChart" role="img" aria-label="Stacked bar chart of Indianapolis appropriations by function, 2019 to 2027"></svg></div>
+    <p class="note">A = actual spending, AD = adopted, P = proposed. Not adjusted for inflation. 2020–2021 debt includes one-time debt and pension transactions, and 2022–2024 executive/administrative spending is inflated by one-time money run through those accounts, most likely federal pandemic relief (ARPA). Compare those years with care.</p>
+    <button type="button" class="link-btn" id="spendTableBtn" aria-expanded="false">Show as table</button>
+    <div class="tbl-wrap" id="spendTable" hidden></div>
+  </div>
+</section>
+
+<section>
+  <h2>What changes from 2026 to 2027</h2>
+  <p>Almost every function grows. The biggest jump by far is infrastructure, driven by the new state road program: $50M from the state, contingent on a $50M local match that has to grow every year through 2031. That match is the fight behind the wheel tax veto and override.</p>
+  <div class="panel">
+    <div class="chart-scroll"><svg id="deltaChart" role="img" aria-label="Horizontal bars of dollar change by function from 2026 adopted to 2027 proposed"></svg></div>
+    <div class="tbl-wrap" id="deltaTable"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Where the money comes from</h2>
+  <p>Local property and income taxes are more than half of revenue. Intergovernmental money (state gas tax, state road dollars, federal grants) is the swing factor: it spiked in 2022 with pandemic relief, dropped, and is climbing again with the state road match.</p>
+  <div class="panel">
+    <div class="legend" id="revLegend"></div>
+    <div class="chart-scroll"><svg id="revChart" role="img" aria-label="Stacked bar chart of revenue by source, 2022 to 2027"></svg></div>
+    <p class="note">"Everything else" is charges for services, licenses and permits, fines, other taxes such as the wheel tax, investment earnings and other receipts. Investment earnings alone fell from $54M in 2024 to a projected $30M in 2027.</p>
+    <button type="button" class="link-btn" id="revTableBtn" aria-expanded="false">Show as table</button>
+    <div class="tbl-wrap" id="revTable" hidden></div>
+  </div>
+</section>
+
+<section id="departments">
+  <h2>Every department, line by line</h2>
+  <p>All 35 departments and agencies in the 2027 budget book. Click one to see where its money comes from, what it pays for, what changed for 2027, and what the department says it's working on. Numbers are all funds, including grants and pensions, so they're higher than the general-fund figures you sometimes see quoted.</p>
+  <div class="toolbar">
+    <div class="chips" id="fnChips" role="group" aria-label="Filter by function"></div>
+    <label for="sortSel">Sort by
+      <select id="sortSel">
+        <option value="size">2027 budget</option>
+        <option value="dchg">Dollar change</option>
+        <option value="pchg">Percent change</option>
+        <option value="name">Name</option>
+      </select>
+    </label>
+  </div>
+  <div class="dept-list" id="deptList"></div>
+  <p class="note" id="debtNote"></p>
+  <div class="panel">
+    <h3>How to read a department</h3>
+    <p class="note">The city sorts all spending into five categories it calls "characters." Definitions below are from the budget book (page 55), in plain language.</p>
+    <div class="gloss">
+      <div><b>Staff pay &amp; benefits</b><span class="note">Character 1 · Personal Services</span><br>Salaries and wages plus the employer's share of health and life insurance, pensions, unemployment and uniform allowances. For police and fire this includes pension payments.</div>
+      <div><b>Supplies</b><span class="note">Character 2 · Materials and Supplies</span><br>Things that get used up or changed when used: office supplies, operating supplies, and repair and maintenance supplies.</div>
+      <div><b>Contracts, services &amp; other charges</b><span class="note">Character 3 · Other Services and Charges</span><br>Everything bought as a service: professional and consulting contracts, grants to outside groups, phones and transportation, printing and ads, insurance, utilities, contracted repairs, rent, and some debt payments.</div>
+      <div><b>Property &amp; equipment</b><span class="note">Character 4 · Capital</span><br>Buying or building lasting assets: land, roads and other infrastructure, buildings and improvements, vehicles, machinery and equipment.</div>
+      <div><b>Charges between departments</b><span class="note">Character 5 · Internal Charges</span><br>What city departments pay each other for shared services like the Mayor's Action Center, Corporation Counsel (legal) and Fleet Services. A negative number means that department provides the service and bills the others. County agencies don't use this category, and everyone pays for IT (ISA) under contracts and services.</div>
+      <div><b>Consolidated County / County General</b>The main local tax funds, mostly property and income tax.</div>
+      <div><b>Public Safety Income Tax</b>A local income tax dedicated to public safety, used heavily by the Sheriff and courts.</div>
+      <div><b>Cap Asset Lifecycle &amp; Dev</b>A capital fund for long-lived assets. It carries much of the 2027 road match.</div>
+      <div><b>2026 revised</b>The 2026 budget after mid-year council changes. Changes on this page compare 2027 to the 2026 adopted budget, the way the city reports them.</div>
+    </div>
+  </div>
+  <div class="panel">
+    <h3>Other 2027 items reported so far</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Item</th><th>2027 proposal</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td>Roads, bridges and greenways</td><td>$267M</td><td>state road match program begins</td></tr>
+        <tr><td>Stormwater projects</td><td>$39.2M</td><td></td></tr>
+        <tr><td>Housing initiatives</td><td>$72M</td><td>spread across DMD, OPHS and others</td></tr>
+        <tr><td>Low-barrier shelter operations (150 beds)</td><td>$2.7M</td><td>Housing Hub opens summer 2027</td></tr>
+        <tr><td>IMPD North District HQ + DPW facility (bonds)</td><td>$27.5M</td><td>bonds, outside the operating totals</td></tr>
+        <tr><td>Flock license plate cameras</td><td>≈ $1M a year</td><td>up to $6M over 4 years, ~400 cameras, under the contract approved in late 2024. Likely inside IMPD's "Other Services and Charges"; not broken out in the budget book.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">From news coverage of the Aug. 10 presentation and committee hearings, not the budget book.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Reading the numbers</h2>
+  <ul class="plain">
+    <li>Since 2019, public safety spending is up 75% and infrastructure &amp; community development is up 84%, against 54% for the budget overall. Criminal justice is up 41%.</li>
+    <li>2023, 2024 and 2025 all ended with spending above revenue, covered by fund balance. The proposed 2027 budget is balanced on paper with a $43K surplus, and projects $402M in total fund balance at the end of 2027.</li>
+    <li>The 2027 increase leans on intergovernmental money (+$96M) and on property and income tax growth (+$88M combined). Some of the road match relies on a spring 2027 income-tax distribution that won't be certain until next year.</li>
+    <li>IndyGo, Health &amp; Hospital Corporation (Eskenazi), the library and the airport budget separately and are not in these totals.</li>
+  </ul>
+</section>
+
+<footer class="sources">
+  <div class="eyebrow">Sources</div>
+  <ol>
+    <li><a href="https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmt965kw511q707lc532lb3zf">2027 Introduced Budget, City of Indianapolis and Marion County</a> (2024–2025 actuals, 2026 adopted, 2027 proposed)</li>
+    <li><a href="https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmlbepoky0d9d07iqv9rd0eb4">2026 Adopted Budget</a> (2022–2023 actuals, 2026 department totals)</li>
+    <li><a href="https://xmaps.indy.gov/ODP/Download/OFM/Budget/Proposed/2023%20Proposed%20Budget.pdf">2023 Proposed Budget</a> (2019–2021 actuals)</li>
+    <li><a href="https://mirrorindy.org/indianapolis-city-county-budget-explained-2027/">Mirror Indy: budget basics and 2027 calendar</a> · <a href="https://mirrorindy.org/2027-indianapolis-budget-mayor-joe-hogsett-city-county-council-meeting/">first look at the 2027 budget</a></li>
+    <li><a href="https://www.wishtv.com/news/politics/hogsett-proposed-2027-budget/">WISH-TV: $400M for IMPD, DPW and OPHS changes</a> · <a href="https://www.wthr.com/article/news/local/indys-19-billion-budget-promises-more-for-roads-as-drivers-prepare-to-pay-more-indianapolis-mayor-joe-hogsett-indiana/531-388289e7-56dc-4acc-b92e-51f2ba67ff8a">WTHR: roads and the wheel tax</a></li>
+    <li><a href="https://mirrorindy.org/indianapolis-impd-license-plate-readers-gunshot-detection-technology-flock-sensors-contract/">Mirror Indy: IMPD's Flock contract</a></li>
+  </ol>
+</footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<footer class="site-foot">Indy AI Research Docs is a work in progress. Figures come from the linked public documents; summaries and analysis were generated with AI and spot-checked, not independently verified. Nothing here is legal or financial advice. Last updated September 28, 2026.</footer>
+<script>
+const CATS=[
+  {k:'ps',n:'Public safety',c:'--s1'},
+  {k:'cj',n:'Criminal justice',c:'--s2'},
+  {k:'ci',n:'Community dev. & infrastructure',c:'--s3'},
+  {k:'ex',n:'Executive, legislative & admin',c:'--s4'},
+  {k:'db',n:'Debt obligations',c:'--s5'}
+];
+const SPEND=[
+  {y:2019,s:'A', ps:434.8,cj:256.0,ci:287.1,ex:93.7, db:161.8},
+  {y:2020,s:'A', ps:409.1,cj:262.6,ci:295.0,ex:91.1, db:499.5},
+  {y:2021,s:'A', ps:458.2,cj:265.8,ci:320.8,ex:100.1,db:363.9},
+  {y:2022,s:'A', ps:538.9,cj:262.2,ci:322.2,ex:334.9,db:142.9},
+  {y:2023,s:'A', ps:519.5,cj:290.9,ci:420.4,ex:317.1,db:108.6},
+  {y:2024,s:'A', ps:608.3,cj:309.0,ci:398.8,ex:216.9,db:179.1},
+  {y:2025,s:'A', ps:672.9,cj:328.7,ci:433.2,ex:131.4,db:110.3},
+  {y:2026,s:'AD',ps:698.9,cj:346.3,ci:432.2,ex:119.0,db:113.1},
+  {y:2027,s:'P', ps:761.2,cj:360.9,ci:529.6,ex:127.4,db:118.6}
+];
+const RCATS=[
+  {k:'pt',n:'Property tax',c:'--s1'},
+  {k:'it',n:'Income tax',c:'--s2'},
+  {k:'ig',n:'Intergovernmental',c:'--s3'},
+  {k:'ot',n:'Everything else',c:'--s4'}
+];
+const REV=[
+  {y:2022,s:'A', pt:412.4,it:395.3,ig:508.2,tot:1687.1},
+  {y:2023,s:'A', pt:437.3,it:438.0,ig:285.2,tot:1450.9},
+  {y:2024,s:'A', pt:469.6,it:495.9,ig:338.1,tot:1659.7},
+  {y:2025,s:'A', pt:482.8,it:531.0,ig:333.7,tot:1630.1},
+  {y:2026,s:'AD',pt:482.3,it:513.7,ig:443.0,tot:1709.6},
+  {y:2027,s:'P', pt:529.3,it:554.4,ig:538.5,tot:1897.9}
+];
+REV.forEach(r=>r.ot=+(r.tot-r.pt-r.it-r.ig).toFixed(1));
+SPEND.forEach(r=>r.tot=CATS.reduce((a,c)=>a+r[c.k],0));
+
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const fm=v=>'$'+(v>=1000?(v/1000).toFixed(2)+'B':Math.round(v)+'M');
+const fm1=v=>'$'+v.toFixed(1)+'M';
+const NS='http://www.w3.org/2000/svg';
+const el=(t,a,p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p&&p.appendChild(e);return e};
+const tip=document.getElementById('tip');
+function showTip(ev,html){tip.innerHTML=html;tip.hidden=false;moveTip(ev)}
+function moveTip(ev){const w=tip.offsetWidth,h=tip.offsetHeight;let x=ev.clientX+14,y=ev.clientY-h-10;if(x+w>innerWidth-8)x=ev.clientX-w-14;if(y<8)y=ev.clientY+16;tip.style.left=x+'px';tip.style.top=y+'px'}
+function hideTip(){tip.hidden=true}
+
+function legend(id,cats){document.getElementById(id).innerHTML=cats.map(c=>`<span><i style="background:var(${c.c})"></i>${c.n}</span>`).join('')}
+legend('spendLegend',CATS);legend('revLegend',RCATS);
+
+function stacked(svgId,data,cats,share){
+  const svg=document.getElementById(svgId);svg.innerHTML='';
+  const W=760,H=360,L=56,R=12,T=26,B=46;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const max=share?100:Math.ceil(Math.max(...data.map(d=>d.tot))/250)*250;
+  const step=share?25:250;
+  const y=v=>T+(H-T-B)*(1-v/max);
+  for(let v=0;v<=max;v+=step){
+    el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:css(v===0?'--axis':'--grid'),'stroke-width':1},svg);
+    const t=el('text',{x:L-8,y:y(v)+4,'text-anchor':'end'},svg);t.textContent=share?v+'%':(v>=1000?'$'+(v/1000).toFixed(v%1000?2:1)+'B':'$'+v+'M');
+  }
+  const bw=(W-L-R)/data.length, barW=Math.min(54,bw*.62);
+  data.forEach((d,i)=>{
+    const cx=L+bw*i+bw/2; let acc=0;
+    const g=el('g',{},svg);
+    cats.forEach((c,ci)=>{
+      const v=share?d[c.k]/d.tot*100:d[c.k];
+      const y0=y(acc),y1=y(acc+v); acc+=v;
+      const h=Math.max(0,y0-y1-(ci<cats.length-1?2:0));
+      el('rect',{x:cx-barW/2,y:y1+(ci<cats.length-1?0:0),width:barW,height:h,fill:css(c.c),rx:ci===cats.length-1?3:0},g);
+    });
+    const tt=el('text',{x:cx,y:y(share?100:d.tot)-8,'text-anchor':'middle',class:'val'},svg);
+    tt.textContent=share?'':fm(d.tot);
+    const yl=el('text',{x:cx,y:H-B+18,'text-anchor':'middle',class:'yr'},svg);yl.textContent=d.y;
+    const sl=el('text',{x:cx,y:H-B+33,'text-anchor':'middle'},svg);sl.textContent=d.s;
+    const hit=el('rect',{x:L+bw*i,y:T,width:bw,height:H-T-B,fill:'transparent'},svg);
+    const html=`<b>${d.y}</b> · ${({A:'actual',AD:'adopted',P:'proposed'})[d.s]}`+
+      cats.slice().reverse().map(c=>`<div class="r"><span><i style="background:${css(c.c)}"></i>${c.n}</span><span>${fm1(d[c.k])} · ${(d[c.k]/d.tot*100).toFixed(0)}%</span></div>`).join('')+
+      `<div class="r" style="margin-top:3px"><b>Total</b><b>${fm(d.tot)}</b></div>`;
+    hit.addEventListener('pointerenter',e=>{g.style.opacity=1;svg.querySelectorAll('g').forEach(o=>{if(o!==g)o.style.opacity=.45});showTip(e,html)});
+    hit.addEventListener('pointermove',moveTip);
+    hit.addEventListener('pointerleave',()=>{svg.querySelectorAll('g').forEach(o=>o.style.opacity=1);hideTip()});
+  });
+}
+let share=false;
+const draw=()=>{stacked('spendChart',SPEND,CATS,share);stacked('revChart',REV,RCATS,false);delta()};
+document.getElementById('modeDollars').onclick=()=>{share=false;sync()};
+document.getElementById('modeShare').onclick=()=>{share=true;sync()};
+function sync(){document.getElementById('modeDollars').setAttribute('aria-pressed',!share);document.getElementById('modeShare').setAttribute('aria-pressed',share);stacked('spendChart',SPEND,CATS,share)}
+
+function table(data,cats,withTotal){
+  const head=`<thead><tr><th>$ millions</th>${data.map(d=>`<th>${d.y} ${d.s}</th>`).join('')}</tr></thead>`;
+  const body=cats.map(c=>`<tr><td>${c.n}</td>${data.map(d=>`<td>${d[c.k].toFixed(1)}</td>`).join('')}</tr>`).join('');
+  const foot=`<tfoot><tr><td>Total</td>${data.map(d=>`<td>${d.tot.toFixed(1)}</td>`).join('')}</tr></tfoot>`;
+  return `<table>${head}<tbody>${body}</tbody>${foot}</table>`;
+}
+document.getElementById('spendTable').innerHTML=table(SPEND,CATS);
+document.getElementById('revTable').innerHTML=table(REV,RCATS);
+function toggle(btnId,boxId){const b=document.getElementById(btnId),x=document.getElementById(boxId);b.onclick=()=>{x.hidden=!x.hidden;b.setAttribute('aria-expanded',!x.hidden);b.textContent=x.hidden?'Show as table':'Hide table'}}
+toggle('spendTableBtn','spendTable');toggle('revTableBtn','revTable');
+
+function delta(){
+  const a=SPEND[7],b=SPEND[8];
+  const rows=CATS.map(c=>({n:c.n,c:c.c,a:a[c.k],b:b[c.k],d:b[c.k]-a[c.k]})).sort((x,y)=>y.d-x.d);
+  const svg=document.getElementById('deltaChart');svg.innerHTML='';
+  const W=760,rowH=34,T=8,L=230,R=175,H=T+rows.length*rowH+6;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const max=Math.ceil(Math.max(...rows.map(r=>r.d))/20)*20;
+  const x=v=>L+(W-L-R)*v/max;
+  el('line',{x1:L,x2:L,y1:T,y2:H-6,stroke:css('--axis')},svg);
+  rows.forEach((r,i)=>{
+    const cy=T+i*rowH+rowH/2;
+    const lt=el('text',{x:L-10,y:cy+4,'text-anchor':'end',class:'yr'},svg);lt.textContent=r.n;
+    el('rect',{x:L,y:cy-9,width:Math.max(2,x(r.d)-L),height:18,fill:css(r.c),rx:3},svg);
+    const vt=el('text',{x:x(r.d)+8,y:cy+4,class:'val'},svg);vt.textContent=`+${fm1(r.d)} (+${(r.d/r.a*100).toFixed(1)}%)`;
+  });
+  document.getElementById('deltaTable').innerHTML=`<table><thead><tr><th>Function</th><th>2026 adopted</th><th>2027 proposed</th><th>Change</th><th>2027 share</th></tr></thead><tbody>`+
+    rows.map(r=>`<tr><td>${r.n}</td><td>${fm1(r.a)}</td><td>${fm1(r.b)}</td><td class="up">+${fm1(r.d)}</td><td>${(r.b/b.tot*100).toFixed(1)}%</td></tr>`).join('')+
+    `</tbody><tfoot><tr><td>Total</td><td>${fm1(a.tot)}</td><td>${fm1(b.tot)}</td><td class="up">+${fm1(b.tot-a.tot)}</td><td>100%</td></tr></tfoot></table>`;
+}
+
+draw();
+const AGENCIES=[
+{id:"impd",n:"Indianapolis Metropolitan Police Department",short:"IMPD",f:"ps",pg:67,
+s:"City police for Indianapolis and Marion County outside Lawrence, Beech Grove, Speedway and Southport, about 403 square miles. Six patrol districts, investigations, the Real-Time Crime Center, the Mobile Crisis Assistance Team and youth programs like Indy PAL. The budget funds 1,743 officer positions; about 1,383 are filled. Police pensions run through this budget.",
+src:[["IMPD General",270412464,298134886,308172149,310550150,333231828],["State Law Enforcement",752565,1220000,1520000,1520000,1520000],["Federal Law Enforcement",1858068,1788292,2038300,2038300,1980463],["Federal Grants - City",3149702,4315426,9841596,9916596,24445714],["State of Indiana Grants - City",0,0,0,2377000,1740000],["City Cumulative Capital Improv",7921783,9318609,10014307,10889292,10014307],["Police Pension Trust Fund",25884997,27500000,27000000,27000000,27000000]],
+exp:[["Personal Services",256590297,281170789,290867986,293922986,315084781],["Materials and Supplies",2637096,2112950,4108914,4160414,4192250],["Other Services and Charges",30985841,36917662,40022696,41569196,51232559],["Capital",8559709,10850389,11843237,12895222,16669737],["Internal Charges",11206637,11225422,11743519,11743519,12752985]],
+pri:"Focus prevention, intervention and enforcement on the people, places and behaviors driving most violence. Modernize hiring and retention for sworn and professional staff. Expand youth engagement and community outreach. Implement IMPD's five-year strategic plan. Officer wellness and mental health resources. Upgrade and integrate IT systems for data-driven deployment."},
+{id:"ifd",n:"Indianapolis Fire Department",short:"IFD",f:"ps",pg:70,
+s:"Fire suppression, EMS first response, hazmat, rescue, fire prevention and inspection, and investigations for its service area. The budget funds 1,276 firefighters. Fire pensions run through this budget. IFD is ISO Class 1 and internationally accredited.",
+src:[["IFD General",198502429,215123977,226630135,226630135,250463156],["Federal Grants - City",15810988,16933562,22673820,22673820,14609057],["State of Indiana Grants - City",26740,199989,300000,300000,300000],["Fire Cumulative",5246072,6833130,5878324,5878324,5918903],["Cap Asset Lifecycle & Dev",921974,5970327,0,0,0],["Fire Pension Trust Fund",25267571,26127924,27834342,27834342,27676753]],
+exp:[["Personal Services",210934034,229784632,241970568,241970568,254308089],["Materials and Supplies",3096825,3480089,3444525,3444525,3867986],["Other Services and Charges",15242025,17939482,17212125,17212125,17792498],["Capital",10283942,14079453,12835140,12835140,13325719],["Internal Charges",6218949,5905253,7854262,7854262,9673576]],
+pri:"Bring PulsePoint to Indianapolis with the county's fire departments and hospitals, so 911 callers and bystanders are pointed to the nearest AED and can start CPR sooner. The Fire & Life Safety Division ranks the risk of 72 neighborhoods using census and call data and visits the highest-risk ones."},
+{id:"ophs",n:"Office of Public Health and Safety",short:"OPHS",f:"ps",pg:74,
+s:"Non-police public safety work: community violence reduction (Indy Peace peacemakers, Elevation Grants), homelessness and eviction prevention (Streets to Home, winter shelter, eviction diversion), the Clinician-Led Community Response team dispatched through 911, the Assessment and Intervention Center, reentry and food policy. Most of its money goes out as grants and contracts to community organizations.",
+src:[["Consolidated County",23010795,28791675,22504231,22812631,22341774],["Federal Grants - City",770090,2387860,4470559,4470559,4470559],["State of Indiana Grants - City",1485264,0,1000000,1000000,2781237]],
+exp:[["Personal Services",2722797,2906909,3145084,3145084,3032515],["Materials and Supplies",10285,14608,163400,163400,163400],["Other Services and Charges",22454925,28152217,24533929,24842329,26270307],["Capital",745,57650,107000,107000,107000],["Internal Charges",77398,48151,25377,25377,20348]],
+pri:"Revive the dormant High Utilizers of Multiple Systems (HUMS) database to measure program impact. Finish responding to the early-2026 city audit of OPHS procurement and program measurement. Open the Housing Hub, the first publicly built shelter in Indianapolis history, in summer 2027. CLCR now covers all of Marion County (May 2026); a new MOU with 911 aims to route more behavioral health calls to clinicians instead of police."},
+{id:"mesa",n:"Metropolitan Emergency Services Agency",short:"MESA (911)",f:"ps",pg:80,
+s:"The 911 center that answers and dispatches police, fire and EMS calls, Public Safety Communications (radio and dispatch systems), and Emergency Management (outdoor warning sirens, emergency operations center). Dispatch staff unionized, which drives the 2027 pay increase.",
+src:[["911 Emergency Dispatch",5807204,7228383,6746087,6746087,6750264],["Public Safety Communications",19616939,19723443,21385287,21385287,25091660],["Federal Grants - County",1015305,75487,870000,870000,870000],["Cumulative Capital Improvement",833740,1203975,63357,63357,0]],
+exp:[["Personal Services",16322886,17023747,18253275,18253275,21604276],["Materials and Supplies",169024,160011,155627,155627,151831],["Other Services and Charges",10393148,10800852,10565829,10565829,10865817],["Capital",388130,246678,90000,90000,90000]],
+pri:"Meet national 911 answer standards: 90% of calls in 15 seconds, 95% in 20 seconds. Replace 64 outdoor warning sirens over the next few years (bond-funded). Earn CALEA accreditation by end of 2027 and stay CJIS compliant."},
+{id:"sheriff",n:"Marion County Sheriff's Office",short:"Sheriff",f:"cj",pg:84,
+s:"Runs the Adult Detention Center (about 2,400 people in custody daily), serves warrants and court papers, provides court and building security, and monitors about 1,800 registered sex or violent offenders. About $21M a year goes to medical care for people in the jail.",
+src:[["County General",72226005,77354595,75281469,75281469,74717576],["County Federal Law Enforcement",11320,11320,11320,195820,11320],["County State Law Enforcement",20000,20000,20000,20000,20000],["Drug Free Community - County",0,22854,0,25000,0],["County Extradition",0,15000,15000,15000,15000],["Sheriff's Civil Division Fees",100000,200000,200000,200000,260000],["Sheriff's Med Care for Inmates",18723024,19437282,20941328,20941328,20941328],["Sex & Violent Offender Admin",15000,15000,27000,27000,27000],["Sheriff's Continuing Education",12000,12000,0,0,0],["Cnty Public Safety Income Tax",41907810,46276672,49787559,49787559,54816845],["County (Corr) Misdemeanant",588821,598889,602239,602239,256698],["Federal Grants - County",1104439,1129783,1787447,2822447,1878107],["State of Indiana Grants - County",268863,706015,1502116,1502116,1378261],["Cumulative Capital Improvement",63750,552048,554055,554055,554055]],
+exp:[["Personal Services",87322818,95943817,98159347,98159347,101684536],["Materials and Supplies",2361544,2383288,2506446,2536921,2339117],["Other Services and Charges",44824691,46985254,49258185,50295210,50036981],["Capital",531979,1039099,805555,982555,815555]],
+pri:"Expand medication-assisted treatment (MAT) for opioid and alcohol use disorders in the jail, now including extended-release buprenorphine injections. The jail passed its American Correctional Association reaccreditation audit in June 2026."},
+{id:"superior",n:"Marion Superior Court",short:"Superior Court",f:"cj",pg:87,
+s:"The county's main trial court: 36 courtrooms handling more than 157,000 matters in 2025 (civil, criminal, traffic, family), plus adult and juvenile probation, guardians ad litem for children, problem-solving courts and the Legal Resource Center for people without lawyers.",
+src:[["County General",35875638,42730442,41757810,41757810,44165143],["Adult Probation Fees",862453,990908,965000,965000,897755],["Superior Court Equipment",0,0,62500,62500,62500],["Juvenile Probation Fees",0,91779,0,0,0],["Comm & Guardian Ad Litem",0,1117920,1131240,1131240,1282305],["Guardian Ad Litem",7700142,6813226,6799906,6799906,6614771],["Domestic Relations Counseling",0,76081,115015,115015,0],["Alt Dispute Resolution",19700,10753,20000,20000,20000],["Alcohol & Drug Services",388423,495632,282097,282097,456266],["Drug Free Community - County",0,0,0,34000,50000],["Cnty Public Safety Income Tax",18047671,11602278,13128548,13128548,12441523],["Jury Pay",149994,599986,750000,750000,602000],["Drug Treatment Diversion",0,27646,60019,60019,6360],["Home Detention User Fees",158729,159711,176666,176666,178711],["Federal Grants - County",386180,56481,1420645,1420645,1537591],["State of Indiana Grants - County",2642018,2523996,7823075,7823075,6315049],["County Grants",0,273,7000,7000,57000]],
+exp:[["Personal Services",36449776,37337315,42440491,42440491,41121383],["Materials and Supplies",145201,148459,247535,247535,252330],["Other Services and Charges",29447102,29746247,31553495,31587495,33035261],["Capital",188870,65091,258000,258000,278000]],
+pri:"Continue Juvenile Detention Alternatives Initiative strategies, which have sharply reduced the number of youth held in detention. Use pretrial and post-adjudication probation to relieve jail crowding. Expand access to justice for people without lawyers through the Legal Resource Center (45,000+ visits since 2022)."},
+{id:"circuit",n:"Marion County Circuit Court",short:"Circuit Court",f:"cj",pg:90,
+s:"The county's one constitutional court: one elected judge, three magistrates and nine staff. Handles general civil cases and Title IV-D paternity and child support cases, where most litigants represent themselves.",
+src:[["County General",874934,1020467,1307135,1307135,1297166]],
+exp:[["Personal Services",583031,746256,903334,903334,870473],["Materials and Supplies",1954,950,5000,5000,3000],["Other Services and Charges",289949,273261,395802,395802,422693],["Capital",0,0,3000,3000,1000]],
+pri:"Fair, efficient resolution for self-represented litigants, so people leave court with a complete order in hand."},
+{id:"prosecutor",n:"Prosecutor's Office, Criminal Division",short:"Prosecutor",f:"cj",pg:93,
+s:"Prosecutes state criminal cases in Marion County: 18,646 cases filed and 17,047 resolved in 2025, including 475 trials. Also runs victim advocacy (4,500+ victims a year), diversion and deferral programs, and expungement and license reinstatement workshops.",
+src:[["County General",23520938,25221242,25717296,25717296,29315026],["County Federal Law Enforcement",511442,330531,1479080,1479080,1518826],["County State Law Enforcement",947666,1184157,1424829,1424829,1478095],["Diversion Fees",263837,269868,270365,270365,219981],["Drug Free Community - County",18813,4139,60000,60000,0],["Cnty Public Safety Income Tax",2760368,2647974,2645067,2645067,2626842],["Deferral Program Fees",1036251,575237,701493,701493,542996],["Federal Grants - County",1825602,831463,1558888,1558888,1247080],["State of Indiana Grants - County",824142,370988,794223,794223,382840],["County Grants",21907,0,361176,361176,70000]],
+exp:[["Personal Services",27116055,27108144,28110816,28110816,30277940],["Materials and Supplies",126792,87977,512153,512153,439193],["Other Services and Charges",4095690,4135934,5356972,5356972,5727076],["Capital",392429,103544,1032478,1032478,957478]],
+pri:"Accountability for gun and violent crime, including juvenile gun offenses and modified weapons. Keep victims at the center. Prevention through youth programs. Expand expungement and license reinstatement (134 workshops serving 1,700 residents in 2025). Use data to direct resources."},
+{id:"childsupport",n:"Prosecutor's Office, Child Support Division",short:"Child Support",f:"cj",pg:96,
+s:"Establishes paternity and establishes, enforces and modifies child support orders under the federal Title IV-D program, in partnership with the Indiana Child Support Bureau. Much of the cost is reimbursed by the federal government.",
+src:[["County General",5263840,7069129,7072132,7072132,8124185]],
+exp:[["Personal Services",4257199,5793566,5898566,5898566,6943042],["Materials and Supplies",10278,36027,11027,11027,12089],["Other Services and Charges",988364,1191601,1154539,1154539,1159554],["Capital",8000,47935,8000,8000,9500]],
+pri:"Expand the mediation program started in 2025 so parents can resolve child support and family issues without more hearings. Annual family resource day."},
+{id:"pd",n:"Marion County Public Defender Agency",short:"Public Defender",f:"cj",pg:99,
+s:"Lawyers for people who can't afford one: adult criminal cases, juvenile delinquency, parents in child welfare (CHINS) and termination cases, civil commitments and more. Uses a holistic model with social workers, investigators and mitigation specialists.",
+src:[["County General",31228031,35646782,33104334,33104334,38565081],["Supplemental Public Defender",0,60000,125400,125400,125400],["Federal Grants - County",420797,503994,1470527,1470527,777309],["State of Indiana Grants - County",246133,88356,105859,105859,0],["County Grants",6034,0,15000,225000,313339]],
+exp:[["Personal Services",25804411,29341279,27484432,27694432,32378786],["Materials and Supplies",25216,25665,30045,30045,29054],["Other Services and Charges",6042237,6902228,7251643,7251643,7343289],["Capital",29130,29961,55000,55000,30000]],
+pri:"Holistic, client-centered defense: an interdisciplinary team addresses addiction, mental illness, cognitive deficits and housing instability behind a client's case, aiming to reduce incarceration and the fallout of convictions."},
+{id:"mccc",n:"Marion County Community Corrections",short:"Community Corrections",f:"cj",pg:103,
+s:"Alternatives to jail: supervises people awaiting trial and people serving sentences in the community through home detention, electronic monitoring, work release and treatment referrals.",
+src:[["County General",8283802,7820834,9612926,9612926,9231839],["Cnty Public Safety Income Tax",5322104,5841874,5507080,5507080,7080245],["County (Corr) Misdemeanant",74225,50907,77560,77560,338091],["Home Detention User Fees",912527,1206180,1218363,1218362,845817],["Federal Grants - County",74430,58480,83873,83873,80230],["State of Indiana Grants - County",5981314,5998053,5992607,5992607,5737725],["Cumulative Capital Improvement",40718,46342,0,0,0]],
+exp:[["Personal Services",13399506,13753877,14904978,14904978,15482794],["Materials and Supplies",189579,198528,194800,194800,194905],["Other Services and Charges",7014703,6979617,7346629,7346629,7590248],["Capital",85333,90650,46000,46000,46000]],
+pri:"Self-reliance: cost-free programming for clients and a Critical Incident Team to handle internal incidents. Staff completed 12,000+ hours of training in 2025."},
+{id:"forensic",n:"Marion County Forensic Services",short:"Crime Lab",f:"cj",pg:107,
+s:"The crime lab: crime scene documentation, drug identification, firearms, DNA, latent prints and blood alcohol testing. Feeds national databases for ballistics (NIBIN), fingerprints (AFIS) and DNA (CODIS).",
+src:[["County General",8878512,9590599,9930907,9930907,10387879],["Federal Grants - County",1216867,1659775,2578362,2578362,2600571],["Cumulative Capital Improvement",63678,252088,259500,259500,259500]],
+exp:[["Personal Services",6888023,7228184,8036815,8036815,8298123],["Materials and Supplies",836381,1181973,1421074,1721074,1532599],["Other Services and Charges",2007516,2496561,2879617,2579617,2985966],["Capital",427136,595744,431263,431263,431263]],
+pri:"Strengthen analytical capacity, modernize lab workflows and coordinate with public safety partners for faster, accurate results. Improve major-incident readiness."},
+{id:"coroner",n:"Marion County Coroner's Office",short:"Coroner",f:"cj",pg:112,
+s:"Investigates sudden, violent, suspicious and in-custody deaths, determines cause and manner of death, identifies the deceased and notifies families, and tracks death trends like overdoses for public health.",
+src:[["County General",5950647,6068204,6351636,6351636,6614187],["Federal Grants - County",313630,318974,945466,945466,950290],["State of Indiana Grants - County",734888,323654,298213,463713,631030],["County Grants",0,0,0,120000,0],["Cumulative Capital Improvement",115903,0,0,0,0]],
+exp:[["Personal Services",2522519,2911119,3654602,3664602,3824119],["Materials and Supplies",198304,214880,190407,250907,193620],["Other Services and Charges",4247824,3551800,3736707,3948169,4154168],["Capital",146421,33033,13600,17138,23600]],
+pri:"Achieved IACME accreditation in June 2026 and pursuing NAME accreditation into 2027. State grants target child deaths from drowning, gun violence and drug intoxication."},
+{id:"parks",n:"Department of Parks and Recreation",short:"Indy Parks",f:"ci",pg:117,
+s:"218 parks and nearly 50 family and aquatic centers: pools, splash pads, trails, camps, sports, arts and music, community nutrition programs and special events. Big swings in past years are capital projects paid from one-time funds.",
+src:[["Consolidated County",1300000,1300000,1300000,1300000,1300000],["Parks General",32173153,35701774,33690521,34820521,36124516],["Federal Grants - City",2049937,1419976,12749442,12749442,10710475],["City Cumulative Capital Improv",5853429,5847298,5862000,5862000,0],["Cap Asset Lifecycle & Dev",29148929,37915504,0,0,5862000]],
+exp:[["Personal Services",14394456,15028439,16179194,16179194,16323195],["Materials and Supplies",1002403,1151094,1429580,1429580,1269956],["Other Services and Charges",11207242,14981144,14198765,14728765,15214458],["Capital",35429695,42401680,12574063,13174063,12064000],["Internal Charges",8491651,8622195,9220361,9220361,9125381]],
+pri:"Invest in aging park infrastructure; the department calls growing its roughly $5.8M annual capital budget a top priority. Competitive pay to hire and keep park staff against suburbs and peer cities. Facility maintenance budget up 20% in 2027."},
+{id:"dpw",n:"Department of Public Works",short:"DPW",f:"ci",pg:121,
+s:"Roads, bridges, sidewalks, trails and stormwater; potholes, snow removal, street sweeping and storm response; trash, recycling and ToxDrop; the city vehicle fleet; traffic signals and Vision Zero safety work. 2027 is the first year of the $50M state road program with its local match.",
+src:[["Consolidated County",8738747,9568743,4019102,4019102,2623305],["Transportation General",55793492,65886490,70142483,73338484,74625498],["Parks General",739,0,0,0,0],["Solid Waste Collection",52157332,46722757,47697098,47697098,47789989],["Solid Waste Disposal",9725385,9205860,9057883,9057883,9094018],["Storm Water Management",26587350,28627639,30434040,30434040,28978796],["Parking Meter",4025992,4807932,4747000,4747000,5518355],["Federal Grants - City",2970607,5231329,25100000,25100000,34550000],["State of Indiana Grants - City",2963653,28322833,21422129,21422129,23306304],["City Cumulative Capital Improv",527845,557469,560000,560000,560000],["Cap Asset Lifecycle & Dev",87312348,61976672,44231460,52231460,108231059]],
+exp:[["Personal Services",60906900,68497727,71630320,71630321,74451217],["Materials and Supplies",24251669,23047974,23616799,24616799,23966799],["Other Services and Charges",90796951,90136671,89280204,91280204,94968944],["Capital",97820004,101855945,98266520,106462520,169533673],["Internal Charges",-22972034,-22630592,-25382647,-25382647,-27643308]],
+pri:"Vision Zero: a new Quick Build program for fast, low-cost fixes at dangerous intersections (wider rollout in 2027), a Fatal Crash Review Team, and Community Powered Infrastructure, where resident-driven projects nearly doubled year over year. More public tools to track infrastructure conditions and projects."},
+{id:"dmd",n:"Department of Metropolitan Development",short:"DMD",f:"ci",pg:125,
+s:"Planning, zoning and historic preservation, the comprehensive plan, urban design review, and housing and community economic development, including federal HUD housing grants. Most of its budget is federal housing money passed through to partners, which is why it has grown so fast.",
+src:[["Consolidated County",8811114,14542564,9590790,12453465,8810137],["Redevelopment General",6019094,5742073,4008378,4235703,3304079],["Federal Grants - City",27420104,30452232,74280127,74280127,74724056],["State of Indiana Grants - City",2670000,4061201,1686721,1686721,16737323],["Building & Construction Fees",0,0,0,0,1499946],["City Cumulative Capital Improv",698903,700000,744224,744224,0],["Cap Asset Lifecycle & Dev",0,0,0,0,770506]],
+exp:[["Personal Services",5938645,6739974,8354230,8354230,8869628],["Materials and Supplies",8845,16534,31920,31920,106920],["Other Services and Charges",38538170,47607473,79244157,82334157,86747116],["Capital",301362,488982,2157500,2157500,9592500],["Internal Charges",832192,645106,522432,522432,529882]],
+pri:""},
+{id:"bns",n:"Department of Business and Neighborhood Services",short:"BNS",f:"ci",pg:128,
+s:"Building and construction permits and inspections, business and contractor licenses, code and zoning enforcement, unsafe and vacant buildings, high grass and trash abatement, special event permits, and weights and measures. Starting in 2027, part of its budget is paid directly from permit fees, which rose sharply in 2026.",
+src:[["Consolidated County",27945416,22048701,21919629,21919629,11978796],["Building & Construction Fees",0,0,0,0,11335746],["City Cumulative Capital Improv",242541,0,0,0,0],["Cap Asset Lifecycle & Dev",2801220,2959864,0,0,0]],
+exp:[["Personal Services",16685307,13731251,13077565,13077565,14391928],["Materials and Supplies",650397,52056,74746,74746,89903],["Other Services and Charges",11339974,9339724,6830700,6830700,6816064],["Capital",262950,20151,65576,65576,65576],["Internal Charges",2050549,1865383,1871042,1871042,1951070]],
+pri:"A Continuous Vacancy Program (2026) that pushes rehab of long-vacant properties and fines ongoing noncompliance. Repair-order changes give owners more time for hearings and waive penalties if properties are fixed. A High Weeds and Grass Abatement Assistance Program after a 2025 pilot."},
+{id:"acs",n:"Indianapolis Animal Care Services",short:"Animal Care",f:"ci",pg:131,
+s:"The state's largest open-admission shelter: animal control (about 25,000 calls a year), cruelty and bite investigations, adoptions, fosters and rescue transfers. Moved into a new 60,000-square-foot shelter in May 2026. Was part of BNS until 2025.",
+src:[["Consolidated County",0,8479751,7963991,8313991,10106189],["City Cumulative Capital Improv",0,226229,60000,60000,91558]],
+exp:[["Personal Services",0,5182325,5112185,5112185,6307507],["Materials and Supplies",0,605810,426950,476950,655804],["Other Services and Charges",0,2048042,1708584,2008584,2362830],["Capital",0,228635,62500,62500,94058],["Internal Charges",0,641168,713772,713772,777547]],
+pri:"Raise live-release rates through fosters, adoptions and rescue partners. Grow the Indy CARES diversion program in underserved neighborhoods. Better data collection. Spanish-language resources."},
+{id:"coop",n:"Marion County Cooperative Extension Service",short:"Purdue Extension",f:"ci",pg:134,
+s:"Purdue Extension Marion County: urban agriculture and Master Gardeners, nutrition and financial education, ServSafe, free tax prep (VITA) and 4-H. Moves to a regional Purdue model in 2027.",
+src:[["County General",851988,849002,969694,969694,963361]],
+exp:[["Personal Services",252052,245970,302384,302384,324341],["Materials and Supplies",3096,3361,4300,4300,4300],["Other Services and Charges",596840,599672,663009,663009,634720]],
+pri:""},
+{id:"mayor",n:"Office of the Mayor",short:"Mayor's Office",f:"ex",pg:138,
+s:"The mayor's staff: public safety strategy, neighborhood engagement, economic development, the Office of Education Innovation (mayor-sponsored charter schools), constituent services including the Mayor's Action Center and Request Indy, international and Latino affairs, and veterans services. Action Center staff unionized, which drives the 2027 pay increase.",
+src:[["Consolidated County",6302515,6879992,6934510,7654510,7218157],["Federal Grants - City",0,0,0,0,42661],["State of Indiana Grants - City",0,0,0,156809,0]],
+exp:[["Personal Services",3641250,3829562,4160519,4160519,5490705],["Materials and Supplies",4460,7160,5925,15925,5925],["Other Services and Charges",3851909,4574346,4251347,5115156,3556063],["Capital",4950,4313,500,3500,500],["Internal Charges",-1200055,-1535388,-1483781,-1483781,-1792375]],
+pri:""},
+{id:"omwbd",n:"Office of Minority and Women Business Development",short:"OMWBD",f:"ex",pg:140,
+s:"Certifies minority, women, veteran and disability-owned businesses and promotes city contracting opportunities for them.",
+src:[["Consolidated County",1524410,1443174,1282386,1282386,1459374]],
+exp:[["Personal Services",857146,899174,1018322,1018322,1026167],["Materials and Supplies",3381,2931,1890,1890,2800],["Other Services and Charges",627895,476835,240801,240801,409491],["Capital",360,530,0,0,400],["Internal Charges",35629,63704,21373,21373,20517]],
+pri:""},
+{id:"audit",n:"Office of Audit and Performance",short:"Audit & Performance",f:"ex",pg:142,
+s:"Internal auditor for city and county agencies and municipal corporations. Runs performance audits based on an annual risk assessment and manages the annual external audit.",
+src:[["Consolidated County",1675110,1956549,1950759,1950759,2043197]],
+exp:[["Personal Services",662536,846783,962005,962005,1034189],["Materials and Supplies",811,1569,2000,2000,2000],["Other Services and Charges",977453,1092421,969540,969540,989477],["Capital",0,0,2750,2750,2750],["Internal Charges",34310,15776,14464,14464,14781]],
+pri:"Completed a performance audit of OPHS in early 2026 that found gaps in procurement controls and in how program success is measured; it drew significant council and media attention."},
+{id:"oebi",n:"Office of Equity, Belonging and Inclusion",short:"OEBI",f:"ex",pg:145,
+s:"Equity training, equity data reporting, the city's language access program, and community programs such as the B.I.R.T.H. Fund, which gives direct cash payments to 150 mothers over three years.",
+src:[["Consolidated County",558900,871582,921566,921566,911043],["Federal Grants - City",0,0,120000,120000,0]],
+exp:[["Personal Services",369771,538290,596731,596731,622594],["Materials and Supplies",1520,1708,13500,13500,2500],["Other Services and Charges",185483,317683,417335,417335,281949],["Capital",2127,3901,4000,4000,4000],["Internal Charges",0,10000,10000,10000,0]],
+pri:"Language Access Plan, B.I.R.T.H. Fund (evaluated by Regenstrief Institute), Parks staff training series, company culture work."},
+{id:"council",n:"City-County Council",short:"Council",f:"ex",pg:147,
+s:"The 25-member legislative and fiscal body. Adopts ordinances, approves the budget, tax levies and appropriations, and appoints residents to boards and commissions.",
+src:[["Consolidated County",3161442,3688169,3337033,3337033,3423495]],
+exp:[["Personal Services",2456860,2678108,2790277,2790277,2817067],["Materials and Supplies",2754,2341,3000,3000,3000],["Other Services and Charges",684942,998886,538779,538779,598426],["Capital",1412,3710,2500,2500,2500],["Internal Charges",15474,5124,2478,2478,2502]],
+pri:"A balanced, sustainable budget amid state changes. Public safety, residential streets, housing stability and homelessness. The council says it will keep asking for clearer performance measures, service data and explanations of major budget drivers."},
+{id:"occ",n:"Office of Corporation Counsel",short:"Corporation Counsel",f:"ex",pg:149,
+s:"The city and county's lawyers: legal advice and contracts, defending lawsuits, the City Prosecutor (ordinance violations like zoning and building code), and the Office of Equal Opportunity, which investigates discrimination complaints. Most of its cost is billed back to the departments it serves, so its net budget looks small.",
+src:[["Consolidated County",1105715,2593068,1424613,1424613,1463237]],
+exp:[["Personal Services",3426251,3940261,4264877,4264877,4559158],["Materials and Supplies",5344,1920,6900,6900,6900],["Other Services and Charges",2741392,3827881,2598419,2598419,2636995],["Capital",0,384,1100,1100,1100],["Internal Charges",-5067272,-5177378,-5446682,-5446682,-5740917]],
+pri:""},
+{id:"ofm",n:"Office of Finance and Management",short:"Finance & Management",f:"ex",pg:151,
+s:"The Controller's office: budget, financial reporting, grants, human resources, purchasing, real estate, risk management, archives and revenue collection.",
+src:[["Consolidated County",10842672,11006998,10180934,10180934,11349651],["Parking Meter",61863,61863,63000,63000,63000],["Federal Grants - City",613977,1369576,1550000,1550000,1550000],["State of Indiana Grants - City",0,0,50000,50000,100000],["Drug Free Community- City",262500,200000,150000,150000,100000],["City Cumulative Capital Improv",1200000,0,0,0,0],["Cap Asset Lifecycle & Dev",5421890,5223577,500000,5600000,500000]],
+exp:[["Personal Services",6414646,6753771,6475607,6475607,7676501],["Materials and Supplies",17438,24464,20000,20000,20000],["Other Services and Charges",11678874,10770810,5669298,10769298,5643139],["Capital",15372,16893,15000,15000,15000],["Internal Charges",276572,296076,314029,314029,308011]],
+pri:"Standard operating procedures and clearer communication across agencies. Published the city's first Popular Annual Financial Report in June 2026, a plain-language summary of the 217-page annual financial report."},
+{id:"isa",n:"Marion County Information Services Agency",short:"ISA (IT)",f:"ex",pg:155,
+s:"IT for more than 48 city-county agencies and 25 outside local governments: networks, devices, software, cloud phones, cybersecurity and data. Mostly contracted services, paid for by charging the agencies it serves.",
+src:[["Property Reassessment",0,0,0,100000,0],["Enhanced Access",325000,494254,0,0,0],["State of Indiana Grants - County",0,0,0,30000,0],["Information Services Fund",38895408,49954811,45140107,46990107,48741183]],
+exp:[["Personal Services",4277579,4763495,4796273,4796273,5316734],["Materials and Supplies",92192,29482,63000,63000,50000],["Other Services and Charges",34683065,45486232,40080834,41810834,43184449],["Capital",167572,169857,200000,450000,190000]],
+pri:"Modernize employee devices and tools, expand cloud-based phones to 4,000+ users, and support new buildings like the Animal Care shelter and IMPD North District. Handles about 60,000 support tickets a year."},
+{id:"auditor",n:"Marion County Auditor",short:"Auditor",f:"ex",pg:162,
+s:"Elected office that runs payroll and bill payment for the whole enterprise, processes property tax deductions and abatements, investigates homestead fraud, runs tax sale notices, and distributes over $1 billion a year in property tax to local taxing units.",
+src:[["County General",13833868,14528257,14346554,14346554,15107764],["Auditor Ineligible Deduction",437325,504853,655903,655903,662128],["MC Elected Officials Training",0,350,7800,7800,7800],["Endorsement Fee - Plat Book",173894,188643,155509,155509,182096],["Loc Emerg Plan & Right to Know",57778,89424,110000,110000,110000]],
+exp:[["Personal Services",2214017,2453257,2555516,2555516,2814447],["Materials and Supplies",23835,11599,24650,24650,23537],["Other Services and Charges",13162614,13450097,12672599,12672600,13208806],["Capital",23000,23000,23000,23000,23000]],
+pri:"Move more vendors to direct deposit (ACH), a comprehensive homestead deduction review, and a review of W-2 and 1099 processes."},
+{id:"assessor",n:"Marion County Assessor's Office",short:"Assessor",f:"ex",pg:164,
+s:"Sets the assessed value of every property in the county, processes business personal property filings and exemptions, and handles assessment appeals.",
+src:[["County General",3923672,4090627,4756102,4756103,5466826],["Property Reassessment",2132325,2237577,2117874,2117874,2239962],["Endorsement Fee - Plat Book",413256,382379,348741,348741,176025],["County Sales Disclosure",305090,303124,189102,189102,277988]],
+exp:[["Personal Services",5145466,5309907,5484693,5484693,6088295],["Materials and Supplies",9593,11677,27601,27601,27292],["Other Services and Charges",1618218,1689118,1890526,1890526,2036215],["Capital",1065,3005,9000,9000,9000]],
+pri:"Shift business personal property staff to other work under SEA 1, start in-house audits of smaller businesses, and launch a new property assessment (CAMA) system in 2027 with more self-service tools."},
+{id:"treasurer",n:"Marion County Treasurer",short:"Treasurer",f:"ex",pg:166,
+s:"Mails about 405,000 tax bills a year, collects about $1.8B in property tax plus $1B in other revenue, invests an average monthly balance of about $466M, and distributes about $2.7B to 48+ local units of government.",
+src:[["County General",3278090,3607738,3454219,3474219,3777514],["MC Elected Officials Training",15851,22778,25000,25000,20000]],
+exp:[["Personal Services",1895362,1869046,1986610,1986610,2196330],["Materials and Supplies",11317,11315,11319,11319,11725],["Other Services and Charges",1381297,1744303,1475290,1495290,1583459],["Capital",5966,5853,6000,6000,6000]],
+pri:""},
+{id:"clerk",n:"Marion County Clerk",short:"Clerk",f:"ex",pg:168,
+s:"Keeps all court records, processes filings for civil, family and criminal courts (the initial hearing court runs 24/7), collects court fees and fines, handles child support payments, and issues marriage licenses.",
+src:[["County General",6838699,6852496,6897614,6897614,7754406],["MC Elected Officials Training",0,9669,15000,15000,15000],["Clerk's Perpetuation",984542,523372,722762,722762,898767]],
+exp:[["Personal Services",5147327,5541741,5508676,5508676,6489241],["Materials and Supplies",98027,41451,91000,91000,90000],["Other Services and Charges",2565237,1797150,2029700,2029700,2082931],["Capital",12650,5194,6000,6000,6000]],
+pri:""},
+{id:"election",n:"Marion County Election Board",short:"Election Board",f:"ex",pg:170,
+s:"Runs every primary, general and special election for nearly 650,000 registered voters with 14 full-time staff. Costs swing between election and off years; 2025 had no countywide election.",
+src:[["County General",7435711,3808474,6726806,6726806,6809959],["Section 102 HAVA",38500,0,0,0,0],["Federal Grants - County",319650,19044,0,0,0],["Cumulative Capital Improvement",108557,934292,389000,389000,389000]],
+exp:[["Personal Services",2173223,1046109,2451147,2451147,2602358],["Materials and Supplies",30275,47246,42440,42440,42812],["Other Services and Charges",5692454,2734163,4233219,4233219,4164790],["Capital",6466,934292,389000,389000,389000]],
+pri:"Open a new Election Operations Center for equipment storage, preparation and poll worker training."},
+{id:"voter",n:"Marion County Board of Voter Registration",short:"Voter Registration",f:"ex",pg:173,
+s:"Maintains the county's voter rolls and processes registrations under state and federal law.",
+src:[["County General",1253636,1231549,1351591,1351591,1388137]],
+exp:[["Personal Services",901436,879009,941988,941988,984965],["Materials and Supplies",21863,15494,15500,15500,15500],["Other Services and Charges",328934,333524,391703,391703,383272],["Capital",1403,3522,2400,2400,4400]],
+pri:""},
+{id:"recorder",n:"Marion County Recorder's Office",short:"Recorder",f:"ex",pg:175,
+s:"Records and permanently keeps deeds, mortgages, liens and other property records. Runs a free Property Fraud Alert program. Paid for entirely by recording fees, not taxes.",
+src:[["MC Elected Officials Training",130,2523,8000,8000,8000],["ID Security Protection",88000,88000,88000,88000,88000],["County Records Perpetuation",1674886,1699222,1819820,1861820,1938183]],
+exp:[["Personal Services",1087226,1088203,1229790,1229790,1326929],["Materials and Supplies",3678,5951,6061,6061,6061],["Other Services and Charges",669885,664189,677469,719469,698693],["Capital",2227,31401,2500,2500,2500]],
+pri:"Educate one million residents about the office's services and the Property Fraud Alert program. Led Indiana in e-recording at 89%; same-day return of recorded documents since 2026."},
+{id:"surveyor",n:"Marion County Surveyor",short:"Surveyor",f:"ex",pg:177,
+s:"Maintains the land survey corners that every property boundary in the county traces back to, and the county's legal survey records.",
+src:[["County General",74401,686303,610165,610165,620749],["MC Elected Officials Training",28160,30500,38000,38000,38000],["Surveyor's Perpetuation",858793,343903,516446,516446,507367]],
+exp:[["Personal Services",751303,838223,897271,897271,871869],["Materials and Supplies",19435,13117,13190,13190,26060],["Other Services and Charges",186302,208706,242263,242263,257181],["Capital",4316,659,11887,11887,11007]],
+pri:""}
+];
+const DEBT=[
+{n:"Consolidated City Debt Service",v:[140598222,67983015,70482202,71982202,75970561]},
+{n:"County Debt Service",v:[38543509,42365484,42592623,42592623,42671616]},
+{n:"Non-Departmental (one-time)",v:[99703777,2891407,0,0,0]}
+];
+
+// ---------- Department explorer ----------
+const FN={ps:{n:'Public safety',c:'--s1'},cj:{n:'Criminal justice',c:'--s2'},ci:{n:'Community dev. & infrastructure',c:'--s3'},ex:{n:'Executive, legislative & admin',c:'--s4'}};
+const YRS=['2024 A','2025 A','2026 AD','2026 Rev.','2027 P'];
+const SHOW=[0,1,2,4]; // columns shown in tables/charts (skip revised)
+const EXPC={"Personal Services":'--s1',"Other Services and Charges":'--s2',"Capital":'--s3',"Materials and Supplies":'--s5',"Internal Charges":'--s4'};
+const LBL={"Personal Services":"Staff pay & benefits","Materials and Supplies":"Supplies","Other Services and Charges":"Contracts, services & other charges","Capital":"Property & equipment","Internal Charges":"Charges between departments"};
+const CDEF={"Personal Services":"Salaries and wages, plus the employer's share of health and life insurance, pensions, unemployment and uniform allowances.","Materials and Supplies":"Things that get used up: office, operating and repair supplies.","Other Services and Charges":"Services bought from outside: professional contracts, grants to outside groups, phones, printing, insurance, utilities, contracted repairs, rent and some debt payments.","Capital":"Buying or building lasting assets: land, infrastructure, buildings, vehicles, machinery and equipment.","Internal Charges":"Payments to other city departments for shared services like the Mayor's Action Center, legal and Fleet Services. Negative means this department provides the service and bills others."};
+const COUNTY=new Set(["mesa","sheriff","superior","circuit","prosecutor","childsupport","pd","mccc","forensic","coroner","coop","isa","auditor","assessor","treasurer","clerk","election","voter","recorder","surveyor"]);
+const DN={
+ impd:{"Personal Services":"Includes $27.0M from the state-reimbursed pension fund for officers hired before 1977, plus contributions to the current state-run plan (INPRS). Funds 1,743 officer positions, about 360 of them vacant.","Other Services and Charges":"Contracts and services, including technology and camera contracts such as Flock. The budget book doesn't list vendors. This line grows $11.2M in 2027.","Capital":"Vehicles and equipment. The North District headquarters is paid with bonds, outside this total."},
+ ifd:{"Personal Services":"Includes $27.7M from the state-reimbursed pension fund for firefighters hired before 1977. Funds 1,276 firefighter positions."},
+ sheriff:{"Other Services and Charges":"Includes the jail's contracted medical care, paid from a dedicated $20.9M fund."},
+ ophs:{"Other Services and Charges":"Mostly money that goes out to partners: Indy Peace and Elevation Grants (distributed through the Indianapolis Foundation), winter shelter, eviction diversion legal aid, and the clinician crisis team run with Stepping Stones."},
+ dmd:{"Other Services and Charges":"Mostly federal housing and community development grants passed through to housing developers and nonprofits."},
+ dpw:{"Capital":"Road resurfacing, bridges, trails, sidewalks and stormwater projects. The state road match drives the jump to $170M.","Other Services and Charges":"Includes the trash and recycling collection contracts.","Internal Charges":"DPW runs Fleet Services, so it bills other departments for their vehicles."},
+ parks:{"Capital":"Park improvements. The big 2024–2025 amounts came from one-time capital funds."},
+ mayor:{"Internal Charges":"The Mayor's Action Center is billed out to other departments."},
+ occ:{"Internal Charges":"Legal work is billed out to the departments it serves, which is why the net budget is small."},
+ isa:{"Other Services and Charges":"Mostly IT contracts, software licenses and services. City and county agencies pay ISA from their own contracts and services lines."},
+ acs:{"Personal Services":"Up 23% ($1.2M), which is most of the department's 27% increase."}
+};
+const tot=(a,i)=>a.src.reduce((x,r)=>x+r[i+1],0);
+const money=v=>{const s=v<0?'−':'';v=Math.abs(v);return s+'$'+(v>=1e9?(v/1e9).toFixed(2)+'B':v>=1e6?(v/1e6).toFixed(v>=1e8?0:1)+'M':v>=1e3?Math.round(v/1e3)+'K':v)};
+const signed=v=>(v>=0?'+':'−')+money(Math.abs(v)).replace('−','');
+const pct=(a,b)=>b?((a/b-1)*100):null;
+const pctTxt=p=>p===null?'new':(p>=0?'+':'−')+Math.abs(p).toFixed(1)+'%';
+let fnFilter='all', openId=null;
+const chipsEl=document.getElementById('fnChips');
+function renderChips(){
+  const opts=[['all','All departments',null],...Object.entries(FN).map(([k,v])=>[k,v.n,v.c])];
+  chipsEl.innerHTML=opts.map(([k,n,c])=>`<button type="button" class="chip" data-k="${k}" aria-pressed="${fnFilter===k}">${c?`<i style="background:var(${c})"></i>`:''}${n}</button>`).join('');
+  chipsEl.querySelectorAll('button').forEach(b=>b.onclick=()=>{fnFilter=b.dataset.k;renderChips();renderList()});
+}
+function renderList(){
+  const sort=document.getElementById('sortSel').value;
+  let rows=AGENCIES.filter(a=>fnFilter==='all'||a.f===fnFilter).map(a=>({a,t27:tot(a,4),t26:tot(a,2)}));
+  rows.forEach(r=>{r.d=r.t27-r.t26;r.p=pct(r.t27,r.t26)});
+  const cmp={size:(x,y)=>y.t27-x.t27,dchg:(x,y)=>y.d-x.d,pchg:(x,y)=>(y.p??1e9)-(x.p??1e9),name:(x,y)=>x.a.n.localeCompare(y.a.n)}[sort];
+  rows.sort(cmp);
+  const max=Math.max(...AGENCIES.map(a=>tot(a,4)));
+  const list=document.getElementById('deptList');
+  list.innerHTML=rows.map(({a,t27,d,p})=>`<div class="dept${openId===a.id?' open':''}" id="d-${a.id}">
+    <button type="button" class="dept-btn" aria-expanded="${openId===a.id}" data-id="${a.id}">
+      <span class="dept-name"><b>${a.short}</b><small>${a.n}</small></span>
+      <span class="track" aria-hidden="true"><span style="width:${Math.max(.6,t27/max*100)}%;background:var(${FN[a.f].c})"></span></span>
+      <span class="amt">${money(t27)}</span>
+      <span class="chg ${d>=0?'up':'down'}">${signed(d)} · ${pctTxt(p)}</span>
+      <span class="caret" aria-hidden="true">›</span>
+    </button>${openId===a.id?detail(a):''}</div>`).join('');
+  list.querySelectorAll('.dept-btn').forEach(b=>b.onclick=()=>{openId=openId===b.dataset.id?null:b.dataset.id;renderList();if(openId){const el=document.getElementById('d-'+openId);el.scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});try{history.replaceState(null,'','#'+openId)}catch(e){}}});
+  if(openId)drawMini(AGENCIES.find(a=>a.id===openId));
+}
+function tableFor(rows,total,label){
+  const r=rows.filter(x=>SHOW.some(i=>x[i+1]!==0)).slice().sort((x,y)=>y[5]-x[5]);
+  return `<div class="tbl-wrap"><table><thead><tr><th>${label}</th>${SHOW.map(i=>`<th>${YRS[i]}</th>`).join('')}<th>vs 2026</th></tr></thead><tbody>`+
+    r.map(x=>{const d=x[5]-x[3];return `<tr><td>${LBL[x[0]]||x[0]}</td>${SHOW.map(i=>`<td>${money(x[i+1])}</td>`).join('')}<td class="${d>0?'up':d<0?'down':''}">${d===0?'—':signed(d)}</td></tr>`}).join('')+
+    `</tbody><tfoot><tr><td>Total</td>${SHOW.map(i=>`<td>${money(total[i])}</td>`).join('')}<td class="${total[4]-total[2]>=0?'up':'down'}">${signed(total[4]-total[2])}</td></tr></tfoot></table></div>`;
+}
+function drivers(a){
+  const t=tot(a,4),th=Math.max(t*0.01,50000);
+  const pick=(rows)=>rows.map(r=>({n:r[0],a:r[3],b:r[5],d:r[5]-r[3]})).filter(x=>Math.abs(x.d)>=th).sort((x,y)=>Math.abs(y.d)-Math.abs(x.d)).slice(0,3);
+  const s=pick(a.src),e=pick(a.exp);
+  const li=x=>`<li><b>${x.n}</b> ${x.d>=0?'up':'down'} ${money(Math.abs(x.d))}, from ${money(x.a)} to ${money(x.b)}</li>`;
+  if(!s.length&&!e.length)return '<p class="note">No line moved by more than 1% of the budget between 2026 and 2027.</p>';
+  return (s.length?`<p class="note" style="margin:0">Funding</p><ul class="drivers">${s.map(li).join('')}</ul>`:'')+(e.length?`<p class="note" style="margin:6px 0 0">Spending</p><ul class="drivers">${e.map(li).join('')}</ul>`:'');
+}
+function detail(a){
+  const T=[0,1,2,3,4].map(i=>tot(a,i));
+  const expT=[0,1,2,3,4].map(i=>a.exp.reduce((x,r)=>x+r[i+1],0));
+  const pos=a.exp.filter(r=>r[5]>0),posSum=pos.reduce((x,r)=>x+r[5],0);
+  const internal=a.exp.find(r=>r[0]==='Internal Charges'&&r[5]<0);
+  const pers=a.exp.find(r=>r[0]==='Personal Services');
+  const pdf='https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmt965kw511q707lc532lb3zf#page='+a.pg;
+  return `<div class="detail">
+    <p class="sum">${a.s}</p>
+    <div class="dgrid">
+      <div class="card mini"><h4>Total budget by year</h4><svg id="mini-${a.id}" role="img" aria-label="${a.short} budget 2024 to 2027"></svg>
+        <p class="note">2026 revised: ${money(T[3])}. ${pers&&T[4]>0?`Personal services are ${Math.round(pers[5]/posSum*100)}% of 2027 spending.`:''}</p></div>
+      <div class="card"><h4>What changed for 2027</h4>${drivers(a)}</div>
+    </div>
+    <div class="card"><h4>What the money pays for, 2027</h4>
+      <div class="stackbar" role="img" aria-label="2027 spending by category">${pos.map(r=>`<span title="${r[0]}: ${money(r[5])}" style="width:${r[5]/posSum*100}%;background:var(${EXPC[r[0]]})"></span>`).join('')}</div>
+      <div class="klegend">${pos.map(r=>`<span><i style="background:var(${EXPC[r[0]]})"></i>${LBL[r[0]]} ${Math.round(r[5]/posSum*100)}%</span>`).join('')}</div>
+      <ul class="cats">${a.exp.filter(r=>r[5]!==0).sort((x,y)=>y[5]-x[5]).map(r=>`<li><i style="background:var(${EXPC[r[0]]})"></i><div><b>${LBL[r[0]]}</b> <span class="amtc">${money(r[5])}</span><br><span class="def">${CDEF[r[0]]}</span>${DN[a.id]&&DN[a.id][r[0]]?`<span class="dn">${DN[a.id][r[0]]}</span>`:''}</div></li>`).join('')}</ul>
+      ${COUNTY.has(a.id)?'<p class="note">County agency: it has no "charges between departments" line. What it pays for shared services like IT is inside contracts and services.</p>':''}
+      ${tableFor(a.exp,expT,'Category')}
+      ${a.id==='auditor'?'<p class="note">The budget book\'s own 2024–2025 category rows for the Auditor don\'t add up to its printed totals; shown as printed.</p>':''}
+    </div>
+    <div class="card"><h4>Where the money comes from</h4>${tableFor(a.src,T,'Fund')}</div>
+    ${a.pri?`<div class="card"><h4>What the department says it's focused on</h4><p style="font-size:14px;color:var(--ink-2)">${a.pri}</p></div>`:''}
+    <a class="pdf-link" href="${pdf}" target="_blank" rel="noopener">Read ${a.short}'s full section in the budget book, page ${a.pg} ↗</a>
+  </div>`;
+}
+function drawMini(a){
+  const svg=document.getElementById('mini-'+a.id);if(!svg)return;
+  const W=360,H=170,L=8,R=8,T=22,B=34;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const vals=SHOW.map(i=>tot(a,i));const max=Math.max(...vals)*1.05||1;
+  const bw=(W-L-R)/vals.length,bar=Math.min(52,bw*.58);
+  el('line',{x1:L,x2:W-R,y1:H-B,y2:H-B,stroke:css('--axis')},svg);
+  vals.forEach((v,k)=>{const cx=L+bw*k+bw/2,h=(H-T-B)*v/max;
+    el('rect',{x:cx-bar/2,y:H-B-h,width:bar,height:Math.max(h,0),rx:3,fill:css(FN[a.f].c),opacity:k===3?1:.55},svg);
+    const t=el('text',{x:cx,y:H-B-h-6,'text-anchor':'middle',class:'val'},svg);t.textContent=money(v);
+    const y=el('text',{x:cx,y:H-B+16,'text-anchor':'middle',class:'yr'},svg);y.textContent=YRS[SHOW[k]];});
+}
+document.getElementById('sortSel').onchange=renderList;
+const debt27=DEBT.reduce((x,d)=>x+d.v[4],0);
+document.getElementById('debtNote').textContent=`Not listed: debt service, ${money(debt27)} in 2027 (city ${money(DEBT[0].v[4])}, county ${money(DEBT[1].v[4])}). In 2024 there was also $99.7M of one-time "non-departmental" spending. Departments plus debt add up to the $1.898B total.`;
+try{const h=(location.hash||'').slice(1);if(AGENCIES.some(a=>a.id===h))openId=h}catch(e){}
+renderChips();renderList();
+if(openId)setTimeout(()=>document.getElementById('d-'+openId)?.scrollIntoView({block:'start'}),50);
+// clicking a function in the top chart legend filters the department list
+const legendMap={'Public safety':'ps','Criminal justice':'cj','Community dev. & infrastructure':'ci','Executive, legislative & admin':'ex'};
+document.querySelectorAll('#spendLegend span').forEach(s=>{const k=legendMap[s.textContent.trim()];if(!k)return;s.style.cursor='pointer';s.setAttribute('role','button');s.tabIndex=0;s.title='Show these departments';
+  const go=()=>{fnFilter=k;renderChips();renderList();document.getElementById('departments').scrollIntoView({behavior:'smooth'})};s.onclick=go;s.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}}});
+
+const mq=matchMedia('(prefers-color-scheme: dark)');mq.addEventListener&&mq.addEventListener('change',()=>{draw();sync();renderList()});
+new MutationObserver(()=>{draw();sync();renderList()}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+</script>
+
+</body>
+</html>
