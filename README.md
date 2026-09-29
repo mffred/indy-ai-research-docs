@@ -31,3 +31,7 @@ Log in when it asks (GitHub, Google or email), accept the defaults, and name the
 - Home page, header, AI notice, footer and "last updated" date: edit `_src/build.py`.
 
 Then run `python3 _src/build.py` (needs the Python `markdown` package: `pip3 install markdown`) and redeploy.
+
+## Corrections
+
+Every page's AI notice links to a GitHub issue form (`.github/ISSUE_TEMPLATE/correction.yml`) with the page pre-filled. Corrections arrive as issues labeled `correction`, and GitHub emails you about each one.

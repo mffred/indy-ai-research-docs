@@ -1,0 +1,43 @@
+name: Correction
+description: Report an error on an Indy AI Research Docs page, with a source that shows the right answer.
+title: "Correction: "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for checking our work. Corrections are public, so don't include anything private.
+        The most useful ones point to a primary source: a budget book, contract, meeting minutes, vote record or news story.
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: Link to the page with the error.
+      placeholder: https://indy-ai-research-docs.vercel.app/budget
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: What the page says
+      description: Quote or describe the part that's wrong. Include the section or department name if the page is long.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What it should say
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Links to documents that support the correction, with page numbers if it's a long PDF. You can also drag a PDF or screenshot into this box to attach it.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Optional. Context, or how you'd like to be credited if at all.
