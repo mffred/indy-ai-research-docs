@@ -32,7 +32,7 @@ def bar(current):
 
 def theme(page, container, title):
     """Load the Pinstripe theme last, and turn the page's main container into a titled window."""
-    page = page.replace("</head>", '<link rel="stylesheet" href="/assets/pinstripe.css">\n</head>', 1)
+    page = page.replace("</head>", '<link rel="stylesheet" href="/assets/pinstripe.css">\n<script src="/assets/corrections.js" defer></script>\n</head>', 1)
     return page.replace(container, f'{container} data-ps-title="{html.escape(title)}"', 1)
 
 def correction_url(path):
@@ -40,7 +40,12 @@ def correction_url(path):
     return ISSUES + "?" + urllib.parse.urlencode({"template": "correction.yml", "page": SITE + path})
 
 def notice(path):
-    return f'''<aside class="ai-notice" role="note"><span class="tag">AI draft</span><div><b>Preliminary research, generated with AI.</b> This page was drafted with an AI assistant (Claude) from public records and news reports. It may contain mistakes or miss context. Check the linked sources before you rely on, share or cite anything. Found an error? <a href="{html.escape(correction_url(path))}" target="_blank" rel="noopener">Send a correction</a> with a link to your source. Last updated {UPDATED}.</div></aside>'''
+    # Document pages get a correction flag on every section (assets/corrections.js); the home page, an index, links the form directly.
+    if path == "/":
+        fix = f'Found an error? <a href="{html.escape(correction_url(path))}" target="_blank" rel="noopener">Send a correction</a> with a link to your source.'
+    else:
+        fix = "Found an error? Use the flag next to any section to send a correction with a link to your source."
+    return f'''<aside class="ai-notice" role="note"><span class="tag">AI draft</span><div><b>Preliminary research, generated with AI.</b> This page was drafted with an AI assistant (Claude) from public records and news reports. It may contain mistakes or miss context. Check the linked sources before you rely on, share or cite anything. {fix} Last updated {UPDATED}.</div></aside>'''
 
 FOOT = f'''<footer class="site-foot">Indy AI Research Docs is a work in progress. Figures come from the linked public documents; summaries and analysis were generated with AI and spot-checked, not independently verified. Nothing here is legal or financial advice. Last updated {UPDATED}.</footer>'''
 

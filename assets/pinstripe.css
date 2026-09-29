@@ -86,3 +86,16 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible,
   .tile{min-width:0;padding:12px !important}
   .tile .v{font-size:26px !important}
 }
+
+/* Correction flags (assets/corrections.js): a small push button with a red pixel flag, next to each section.
+   Red is Pinstripe's stop signal; the label text holds 5.7:1 on cream, 4.9:1 on the hover tint. */
+.fix{display:inline-flex;align-items:center;gap:6px;height:22px;min-width:22px;padding:0 4px;margin-left:10px;vertical-align:middle;
+  background:var(--ps-cream);border:1px solid var(--ps-navy);border-radius:4px;box-shadow:var(--ps-bevel-raised);
+  font:500 12px/1 var(--ps-sans);letter-spacing:0;color:var(--ps-stop) !important;text-decoration:none;white-space:nowrap}
+.fix svg{width:14px;height:14px;flex:none}
+.fix .pole{fill:var(--ps-navy)} .fix .cloth{fill:var(--ps-stop)}
+.fix:hover{background:#f8e1dc}
+.fix:active{background:var(--ps-peri);box-shadow:inset 1px 1px 0 #45578f}
+.title-row .fix{margin-left:0;align-self:center}
+.fix-row{display:flex;justify-content:flex-end;margin-bottom:-8px}
+.fix-row .fix{margin-left:0;padding:0 8px 0 5px}
