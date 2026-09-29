@@ -29,6 +29,7 @@ Log in when it asks (GitHub, Google or email), accept the defaults, and name the
 - Flock timeline: edit `_src/flock.md`.
 - Budget explorer: edit `_src/budget.html`.
 - Home page, header, AI notice, footer and "last updated" date: edit `_src/build.py`.
+- Look and feel (Pinstripe theme: colors, windows, Young Serif titles, Bitter text): edit `assets/pinstripe.css`. It loads last on every page.
 
 Then run `python3 _src/build.py` (needs the Python `markdown` package: `pip3 install markdown`) and redeploy.
 

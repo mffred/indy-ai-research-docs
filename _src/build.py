@@ -7,7 +7,7 @@ UPDATED = "September 28, 2026"
 SITE = "https://indy-ai-research-docs.vercel.app"
 ISSUES = "https://github.com/mffred/indy-ai-research-docs/issues/new"
 
-FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap">'
+FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">'
 
 def head(title, desc):
     return f'''<!doctype html>
@@ -29,6 +29,11 @@ def bar(current):
     cur = ' aria-current="page"'
     nav = "".join(f'<a href="{h}"{cur if k == current else ""}>{t}</a>' for h, t, k in links)
     return f'<header class="site-bar"><a class="brand" href="/">Indy AI Research Docs</a><nav aria-label="Site">{nav}</nav></header>'
+
+def theme(page, container, title):
+    """Load the Pinstripe theme last, and turn the page's main container into a titled window."""
+    page = page.replace("</head>", '<link rel="stylesheet" href="/assets/pinstripe.css">\n</head>', 1)
+    return page.replace(container, f'{container} data-ps-title="{html.escape(title)}"', 1)
 
 def correction_url(path):
     """GitHub issue form (.github/ISSUE_TEMPLATE/correction.yml) with the page pre-filled."""
@@ -72,7 +77,7 @@ document.querySelectorAll('.doc pre').forEach(function(pre){
 </script>'''
 flock = (head("Indianapolis Flock and License Plate Reader Timeline", "Dated record of IMPD's license plate reader contracts from 2021 to 2026, with sources, open questions and template public records requests.")
          + flock_css + "</head>\n<body>\n" + bar("flock") + notice("/flock") + '<main class="doc">' + body + "</main>" + FOOT + copy_js + "\n</body>\n</html>\n")
-(ROOT / "flock" / "index.html").write_text(flock)
+(ROOT / "flock" / "index.html").write_text(theme(flock, '<main class="doc"', "Flock Timeline"))
 
 # ---------- Budget page ----------
 b = (SRC / "budget.html").read_text()
@@ -85,7 +90,7 @@ b = re.sub(r"(<script>)", FOOT + r"\n\1", b, count=1)
 budget = (head("Indianapolis Budget Explorer", "Nine years of Indianapolis and Marion County spending and a clickable breakdown of all 35 departments in the 2027 proposed budget.")
           + b.split("<style>", 1)[0] + "<style>" + b.split("<style>", 1)[1].split("</style>", 1)[0] + "</style>\n</head>\n<body>\n"
           + b.split("</style>", 1)[1] + "\n</body>\n</html>\n")
-(ROOT / "budget" / "index.html").write_text(budget)
+(ROOT / "budget" / "index.html").write_text(theme(budget, '<div class="wrap"', "City Budget"))
 
 # ---------- Flock cancellations page ----------
 # Self-contained page with its own styles, script and footer. Served as-is apart from the
@@ -93,12 +98,12 @@ budget = (head("Indianapolis Budget Explorer", "Nine years of Indianapolis and M
 c = (SRC / "flock-cancellations.html").read_text()
 c = c.replace("<style>", FONTS + '\n<link rel="stylesheet" href="/assets/site.css">\n<style>', 1)
 c = c.replace("padding-block:28px 64px", "padding-block:0 64px", 1)
-# Match the page's 1040px column and give the shared chrome the site's font rather than the page's.
-c = c.replace("</style>\n</head>", '.site-bar{max-width:1040px}\n.site-bar,.ai-notice{font-family:"Public Sans",system-ui,-apple-system,sans-serif}\n.ai-notice{max-width:1040px}\n</style>\n</head>', 1)
+# Match the page's 1040px column.
+c = c.replace("</style>\n</head>", '.site-bar{max-width:1040px}\n.ai-notice{max-width:1040px}\n</style>\n</head>', 1)
 c = re.sub(r'\s*<div class="ai-warn" role="note">.*?</div>', "", c, count=1)
 c = c.replace('<div class="wrap">', bar("cancel") + notice("/flock-cancellations") + '\n<div class="wrap" style="padding-top:28px">', 1)
 (ROOT / "flock-cancellations").mkdir(exist_ok=True)
-(ROOT / "flock-cancellations" / "index.html").write_text(c)
+(ROOT / "flock-cancellations" / "index.html").write_text(theme(c, '<div class="wrap"', "How Cities Dropped Flock"))
 
 # ---------- Home ----------
 home_css = '''<style>
@@ -156,5 +161,5 @@ home_body = f'''<main class="home">
 </main>'''
 home = (head("Indy AI Research Docs", "Preliminary, AI-assisted research on Indianapolis and Marion County government: budget breakdowns, surveillance contracts and public records.")
         + home_css + "</head>\n<body>\n" + bar("home") + notice("/") + home_body + FOOT + "\n</body>\n</html>\n")
-(ROOT / "index.html").write_text(home)
+(ROOT / "index.html").write_text(theme(home, '<main class="home"', "Indy AI Research Docs"))
 print("built", [p.relative_to(ROOT).as_posix() for p in ROOT.rglob("index.html")])

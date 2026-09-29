@@ -1,0 +1,88 @@
+/* Pinstripe theme: loaded last on every page by _src/build.py, over site.css and each page's own styles.
+   Colors, bevels and shadows come from the Pinstripe design system; titles in Young Serif, text in Bitter.
+   Pinstripe has one light theme, so this pins the pages' own color variables in both color schemes. */
+:root{
+  color-scheme:light !important;
+  --ps-cream:#fdf7e2; --ps-sky:#c3ddef; --ps-green:#0e955f; --ps-peri:#768dc6; --ps-navy:#17244f;
+  --ps-ink-muted:#3d4a75; --ps-focus:#0b7a4e;
+  /* green-ink: the palette green darkened for text, links and filled controls (4.7:1 on sky, 6.2:1 on cream and under cream text).
+     The bright --ps-green stays decorative: card stripes, bullets, never text. */
+  --ps-green-ink:#096a44; --ps-green-soft:#d3eadc; --ps-stop:#c21a1a; --ps-caution:#f2c200;
+  --ps-bevel-raised:inset 1px 1px 0 #fdf7e2, inset -1px -1px 0 #768dc6;
+  --ps-bevel-sunken:inset 1px 1px 0 #768dc6, inset -1px -1px 0 #fdf7e2;
+  --ps-drop-window:2px 2px 0 0 rgba(23,36,79,.45); --ps-drop-menu:2px 2px 0 0 rgba(23,36,79,.6);
+  --ps-title:"Young Serif",Georgia,serif; --ps-sans:"Bitter",Georgia,serif; --ps-mono:"IBM Plex Mono",Menlo,monospace;
+  /* the site's own variables, remapped (both themes: Pinstripe has one) */
+  --bg:var(--ps-peri) !important; --surface:var(--ps-cream) !important; --sunk:var(--ps-sky) !important;
+  --ink:var(--ps-navy) !important; --ink-2:var(--ps-ink-muted) !important; --muted:var(--ps-ink-muted) !important;
+  --line:var(--ps-navy) !important; --grid:var(--ps-peri) !important; --axis:var(--ps-navy) !important;
+  --accent:var(--ps-green-ink) !important; --accent-soft:var(--ps-green-soft) !important;
+  --up:var(--ps-green-ink) !important; --down:var(--ps-stop) !important;
+  --tip-bg:var(--ps-navy) !important; --tip-ink:var(--ps-cream) !important;
+  --warn-bg:var(--ps-cream) !important; --warn-line:var(--ps-navy) !important; --warn-ink:var(--ps-navy) !important;
+  --gA:#1E6B45 !important; --gA-bg:#DDEFE4 !important; --gB:#1D5C86 !important; --gB-bg:#DCE8F1 !important;
+  --gC:#8A5A0C !important; --gC-bg:#F5E8CF !important; --gD:#9B2F2F !important; --gD-bg:#F4DCDA !important;
+  --display:var(--ps-title) !important; --body:var(--ps-sans) !important; --mono:var(--ps-mono) !important;
+}
+body{background:var(--ps-peri) !important;color:var(--ps-navy);font-family:var(--ps-sans) !important;font-size:14px !important;line-height:20px !important}
+h1,h2,h3,h4{font-family:var(--ps-title) !important;font-weight:400 !important;color:var(--ps-navy);letter-spacing:0 !important}
+/* Young Serif has one weight: display figures use it too, labels and chart text use Bitter */
+.tile .v,.date b,.detail h4{font-family:var(--ps-title) !important;font-weight:400 !important}
+svg text{font-family:var(--ps-sans) !important}
+.chip,summary,button,input,select,textarea{font-family:var(--ps-sans) !important}
+::selection{background:var(--ps-sky);color:var(--ps-navy)}
+a{color:var(--ps-green-ink)}
+.eyebrow,.go{color:var(--ps-green-ink) !important}
+li::marker{color:var(--ps-green)}
+a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible,textarea:focus-visible{outline:2px solid var(--ps-focus) !important;outline-offset:1px !important}
+
+/* Menu bar */
+.site-bar{max-width:none !important;margin:0 -16px !important;padding:0 12px !important;min-height:28px;gap:4px 12px !important;
+  background:var(--ps-sky);border-bottom:1px solid var(--ps-navy) !important;box-shadow:var(--ps-bevel-raised)}
+.site-bar .brand{font:400 15px/28px var(--ps-title) !important;color:var(--ps-navy) !important;letter-spacing:0 !important}
+.site-bar nav{gap:0 !important}
+.site-bar nav a{font:500 13px/20px var(--ps-sans);color:var(--ps-navy) !important;padding:2px 10px;margin:2px 0}
+.site-bar nav a[aria-current="page"]{background:var(--ps-green-ink);color:var(--ps-cream) !important;font-weight:500 !important}
+
+/* AI notice as an alert window */
+.ai-notice{margin:20px auto 0 !important;background:var(--ps-sky) !important;border:1px solid var(--ps-navy) !important;border-radius:0 !important;
+  box-shadow:var(--ps-drop-window);color:var(--ps-navy) !important;padding:16px 20px !important;gap:16px !important;align-items:center !important}
+.ai-notice .tag{position:relative;display:block !important;width:30px;height:28px;padding:0 !important;margin:0 !important;border:0 !important;font-size:0 !important;
+  background:var(--ps-navy) !important;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.ai-notice .tag::before{content:"";position:absolute;inset:3px 3px 1px;background:var(--ps-caution);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.ai-notice .tag::after{content:"!";position:absolute;left:0;right:0;top:10px;text-align:center;font:700 15px/15px var(--ps-sans);color:var(--ps-navy)}
+.ai-notice a{color:var(--ps-green-ink) !important}
+
+/* Each page's content sits in a window with a pinstriped title bar */
+[data-ps-title]{position:relative;background:var(--ps-sky) !important;border:1px solid var(--ps-navy);box-shadow:var(--ps-drop-window);
+  margin-top:20px !important;padding:44px 24px 24px !important}
+[data-ps-title]::before{content:"";position:absolute;left:0;right:0;top:0;height:22px;border-bottom:1px solid var(--ps-navy);box-shadow:var(--ps-bevel-raised);
+  background-color:var(--ps-sky);background-image:repeating-linear-gradient(to bottom,var(--ps-cream) 0 1px,var(--ps-peri) 1px 2px,transparent 2px 4px);
+  background-size:100% 12px;background-position:0 5px;background-repeat:repeat-x}
+[data-ps-title]::after{content:attr(data-ps-title);position:absolute;top:3px;left:50%;transform:translateX(-50%);padding:0 10px;background:var(--ps-sky);
+  font:400 12px/16px var(--ps-title);white-space:nowrap;max-width:calc(100% - 40px);overflow:hidden;text-overflow:ellipsis}
+
+/* Square except what you press */
+[data-ps-title] *:not(.chip):not(button){border-radius:0 !important}
+.card,.tile,.panel,.tbl-wrap,pre,.legend,.dept,.detail{border-color:var(--ps-navy) !important}
+.card{background:var(--ps-cream) !important;box-shadow:var(--ps-drop-window);border-top:4px solid var(--ps-green) !important}
+.home .card:hover{border-color:var(--ps-navy) !important;border-top-color:var(--ps-green-ink) !important;background:#fffdf3 !important}
+/* Budget: detail panels and bar tracks used the page ground; text never sits on the desktop */
+.detail,.track{background:var(--ps-sky) !important}
+.legend{background:var(--ps-cream) !important;border:1px solid var(--ps-navy);box-shadow:var(--ps-bevel-sunken)}
+
+/* Push buttons */
+.chip,.copy,.link-btn,button.seg{font-family:var(--ps-sans) !important;color:var(--ps-navy) !important;background:var(--ps-cream) !important;
+  border:1px solid var(--ps-navy) !important;border-radius:4px !important;box-shadow:var(--ps-bevel-raised)}
+.chip[aria-pressed="true"],.chip.on,button.seg[aria-pressed="true"]{background:var(--ps-green-ink) !important;color:var(--ps-cream) !important;border-color:var(--ps-navy) !important;box-shadow:inset 1px 1px 0 #075a39}
+
+/* Footer on a cream chip, since text never sits straight on the desktop */
+.site-foot{background:var(--ps-cream);border:1px solid var(--ps-navy) !important;padding:10px 14px !important;margin-top:20px !important;color:var(--ps-ink-muted) !important;box-shadow:var(--ps-drop-window)}
+
+/* Phones: slimmer window padding; budget stat tiles shrink so Young Serif's wider figures fit two across */
+@media (max-width:600px){
+  [data-ps-title]{padding:40px 14px 16px !important}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  .tile{min-width:0;padding:12px !important}
+  .tile .v{font-size:26px !important}
+}
