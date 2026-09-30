@@ -3,7 +3,8 @@ import pathlib, markdown, re, html, urllib.parse, json, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "_src"
-UPDATED = "September 28, 2026"
+UPDATED = "September 28, 2026"  # default "last updated" date; pages updated since carry their own below
+VOTES_UPDATED = "September 30, 2026"
 SITE = "https://airesearch.myfriendfred.org"
 ISSUES = "https://github.com/mffred/indy-ai-research-docs/issues/new"
 
@@ -39,15 +40,18 @@ def correction_url(path):
     """GitHub issue form (.github/ISSUE_TEMPLATE/correction.yml) with the page pre-filled."""
     return ISSUES + "?" + urllib.parse.urlencode({"template": "correction.yml", "page": SITE + path})
 
-def notice(path):
+def notice(path, updated=UPDATED):
     # Document pages get a correction flag on every section (assets/corrections.js); the home page, an index, links the form directly.
     if path == "/":
         fix = f'Found an error? <a href="{html.escape(correction_url(path))}" target="_blank" rel="noopener">Send a correction</a> with a link to your source.'
     else:
         fix = "Found an error? Use the flag next to any section to send a correction with a link to your source."
-    return f'''<aside class="ai-notice" role="note"><span class="tag">AI draft</span><div><b>Preliminary research, generated with AI.</b> This page was drafted with an AI assistant (Claude) from public records and news reports. It may contain mistakes or miss context. Check the linked sources before you rely on, share or cite anything. {fix} Last updated {UPDATED}.</div></aside>'''
+    return f'''<aside class="ai-notice" role="note"><span class="tag">AI draft</span><div><b>Preliminary research, generated with AI.</b> This page was drafted with an AI assistant (Claude) from public records and news reports. It may contain mistakes or miss context. Check the linked sources before you rely on, share or cite anything. {fix} Last updated {updated}.</div></aside>'''
 
-FOOT = f'''<footer class="site-foot">Indy AI Research Docs is a work in progress. Figures come from the linked public documents; summaries and analysis were generated with AI and spot-checked, not independently verified. Nothing here is legal or financial advice. Last updated {UPDATED}.</footer>'''
+def foot(updated=UPDATED):
+    return f'''<footer class="site-foot">Indy AI Research Docs is a work in progress. Figures come from the linked public documents; summaries and analysis were generated with AI and spot-checked, not independently verified. Nothing here is legal or financial advice. Last updated {updated}.</footer>'''
+
+FOOT = foot()
 
 # ---------- Flock page ----------
 md = (SRC / "flock.md").read_text()
@@ -136,7 +140,7 @@ for v in cv["votes"]:
                  "".join(codes), flags, SRC_IDX[v["source"]], v["page"], v.get("note"), v.get("cityTally")])
     used.add(v["proposals"][0])
 props = {}
-for k in used:
+for k in sorted(used):  # sorted so rebuilds give byte-identical files
     pr = cv["proposals"][k]
     title = re.sub(r"\s+", " ", pr["title"] or "")[:420]
     if title.count('"') % 2: title += '"'  # a description cut at 'Day."' loses its closing quote
@@ -178,6 +182,7 @@ for i, k in enumerate(keys):
     words = {norm_word(w) for w in re.findall(r"[a-z][a-z'-]{2,}", (CD / "proposals" / f"{k}.txt").read_text().lower())}
     for w in words:
         if len(w) >= 3 and w not in STOP: index.setdefault(w, []).append(i)
+index = dict(sorted(index.items()))
 enc = {w: ",".join(b36(x - (ids[j - 1] if j else 0)) for j, x in enumerate(ids)) for w, ids in index.items()}
 (ROOT / "council-votes" / "search-index.json").write_text(json.dumps({"keys": keys, "w": enc}, separators=(",", ":")))
 
@@ -187,7 +192,7 @@ vp = vp.replace("{{CROSSCHECK}}", f"where both the minutes and a readable roll-c
 vp = vp.replace("{{TALLYCHECK}}", f"the city's own proposal database records the final yes-no count for most proposals. It matches the count on this page for {tc['agree']:,} of {tc['compared']:,} final votes ({round(100 * tc['agree'] / tc['compared'])}%). The {tc['compared'] - tc['agree']} that don't match are marked \"Needs review\", with the city's figure shown.")
 vp = vp.replace("{{STATS}}", f"In all: {len(rows):,} recorded votes on {len(props):,} proposals across {len({r[0] for r in rows})} meetings, {sum(1 for r in rows if r[5] & 3):,} of them routine group votes. {sum(1 for r in rows if r[5] & 4)} are marked as needing review.")
 votes_page = (head("How Your Councilor Voted", "Search every recorded Indianapolis City-County Council roll-call vote since 2021 by councilor, topic and year, with a link to the official record for each vote.")
-              + "</head>\n<body>\n" + bar("votes") + notice("/council-votes") + vp + FOOT + "\n</body>\n</html>\n")
+              + "</head>\n<body>\n" + bar("votes") + notice("/council-votes", VOTES_UPDATED) + vp + foot(VOTES_UPDATED) + "\n</body>\n</html>\n")
 (ROOT / "council-votes" / "index.html").write_text(theme(votes_page, '<main class="cv"', "Council Votes"))
 
 # ---------- Home ----------
@@ -235,7 +240,7 @@ home_body = f'''<main class="home">
       <span class="go">See the campaigns →</span>
     </a>
     <a class="card" href="/council-votes">
-      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {UPDATED}</span></div>
+      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {VOTES_UPDATED}</span></div>
       <h2>How Your Councilor Voted</h2>
       <p>Every recorded City-County Council roll-call vote since 2021, searchable by councilor, topic and year, from infrastructure funding to TIFs and rezoning, each linked to the official record.</p>
       <span class="go">Look up a councilor →</span>
