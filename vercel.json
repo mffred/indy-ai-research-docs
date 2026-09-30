@@ -1,6 +1,14 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [ { "type": "host", "value": "indy-ai-research-docs.vercel.app" } ],
+      "destination": "https://airesearch.myfriendfred.org/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     { "source": "/(.*)", "headers": [ { "key": "X-Content-Type-Options", "value": "nosniff" } ] }
   ]
