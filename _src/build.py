@@ -1,5 +1,5 @@
 """Builds the static site from _src into the site root. Run: python3 _src/build.py"""
-import pathlib, markdown, re, html, urllib.parse
+import pathlib, markdown, re, html, urllib.parse, json, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "_src"
@@ -25,7 +25,7 @@ def head(title, desc):
 '''
 
 def bar(current):
-    links = [("/", "All docs", "home"), ("/budget", "City budget", "budget"), ("/flock", "Flock timeline", "flock"), ("/flock-cancellations", "How cities dropped Flock", "cancel")]
+    links = [("/", "All docs", "home"), ("/budget", "City budget", "budget"), ("/flock", "Flock timeline", "flock"), ("/flock-cancellations", "How cities dropped Flock", "cancel"), ("/council-votes", "Council votes", "votes")]
     cur = ' aria-current="page"'
     nav = "".join(f'<a href="{h}"{cur if k == current else ""}>{t}</a>' for h, t, k in links)
     return f'<header class="site-bar"><a class="brand" href="/">Indy AI Research Docs</a><nav aria-label="Site">{nav}</nav></header>'
@@ -110,6 +110,86 @@ c = c.replace('<div class="wrap">', bar("cancel") + notice("/flock-cancellations
 (ROOT / "flock-cancellations").mkdir(exist_ok=True)
 (ROOT / "flock-cancellations" / "index.html").write_text(theme(c, '<div class="wrap"', "How Cities Dropped Flock"))
 
+# ---------- Council votes page ----------
+# Data: _src/council-data/votes.json (from tools/parse_votes.py), compacted into council-votes/data.json,
+# which the page's script loads. One string per vote holds every member's vote (Y/N/A/V/S, "." = not
+# serving), in members.json order.
+CD = SRC / "council-data"
+sys.path.insert(0, str(CD))
+from topics import topics_for, NAMES as TOPIC_NAMES
+cv = json.loads((CD / "votes.json").read_text())
+members = json.loads((CD / "members.json").read_text())["members"]
+key_idx = {k: i for i, m in enumerate(members) for k in m["keys"]}
+CODE = {"Yes": "Y", "No": "N", "Absent": "A", "Not voting": "V", "Abstain": "S"}
+ACTIONS = ["Final passage", "Amendment", "Procedural motion", "Postpone or table", "Return to committee", "Withdraw", "Election", "Strike"]
+SRC_IDX = {"minutes": 0, "roll-call sheet (OCR)": 1, "minutes (sheet unreadable)": 2}
+rows, used = [], set()
+for v in cv["votes"]:
+    if not v["proposals"]: continue  # e.g. electing a Council president: no proposal to file it under
+    codes = ["."] * len(members)
+    for k, how in v["votes"].items():
+        if k in key_idx: codes[key_idx[k]] = CODE[how]
+    flags = (1 if v.get("consent") else 0) | (2 if v.get("group") else 0) | (4 if v["status"] == "needs review" else 0) | (8 if v["status"] == "sources differ" else 0)
+    if v.get("cityTally"):  # the record's names contradict the city's official count: don't show them as fact
+        codes = ["?" if c != "." else "." for c in codes]
+    rows.append([v["date"], v["proposals"][0], ACTIONS.index(v["action"]), {"Passed": "P", "Failed": "F"}.get(v["outcome"], "U"),
+                 "".join(codes), flags, SRC_IDX[v["source"]], v["page"], v.get("note"), v.get("cityTally")])
+    used.add(v["proposals"][0])
+props = {}
+for k in used:
+    pr = cv["proposals"][k]
+    title = re.sub(r"\s+", " ", pr["title"] or "")[:420]
+    if title.count('"') % 2: title += '"'  # a description cut at 'Day."' loses its closing quote
+    props[k] = [title, pr["type"], [TOPIC_NAMES.index(t) for t in topics_for(k, pr["title"], pr["type"])], pr["sponsors"],
+                pr.get("committee"), pr.get("initiator"), pr.get("documentUrl"), 1 if pr.get("titleSource") else 0,
+                1 if (CD / "proposals" / f"{k}.txt").exists() else 0]
+meetings = {m["date"]: {"m": (m["minutes"] or {}).get("url"), "r": (m["rollCall"] or {}).get("url")}
+            for m in json.loads((CD / "sources.json").read_text())["meetings"]}
+(ROOT / "council-votes").mkdir(exist_ok=True)
+# Each proposal's full text (_src/council-data/proposals/, from tools/fetch_proposal_texts.py) is published as
+# its own file so the page loads it only when someone opens it.
+TEXT_DIR = ROOT / "council-votes" / "text"
+TEXT_DIR.mkdir(exist_ok=True)
+for k in used:
+    f = CD / "proposals" / f"{k}.txt"
+    if f.exists():
+        t = re.sub(r"^=== \S+ proposal document, page (\d+) of (\d+)( \([^)]*\))? ===$", r"[Page \1 of \2]", f.read_text(), flags=re.M)
+        # rejoin lines the scan wrapped mid-sentence; short lines (headings, table rows) stay as they are
+        t = re.sub(r"(?m)^(.{55,}[^.:;\n])\n(?=[a-z(\"“$\d])", r"\1 ", t)
+        (TEXT_DIR / f"{k}.txt").write_text(re.sub(r"\n{3,}", "\n\n", t).strip() + "\n")
+(ROOT / "council-votes" / "data.json").write_text(json.dumps(
+    {"members": [{k: m[k] for k in ("name", "district", "former", "note") if k in m} for m in members],
+     "topics": TOPIC_NAMES, "props": props, "meetings": meetings, "votes": rows}, separators=(",", ":")))
+# Full-text search index: word -> proposals whose full text contains it. Common words and bare numbers are
+# left out and a plural "s" is dropped (the page's script normalizes search words the same way). Postings are
+# delta-encoded in base 36 to keep the file small; the page loads it only when someone searches.
+STOP = set("the and for that with this from which such shall have been are was were will its their his her they them than then there these those upon into any all not but may other each said per also under same hereby being".split())
+def norm_word(w):
+    w = w.strip("'-")
+    return w[:-1] if len(w) > 4 and w.endswith("s") and not w.endswith("ss") else w
+def b36(n):
+    d = "0123456789abcdefghijklmnopqrstuvwxyz"; out = ""
+    while True:
+        n, r = divmod(n, 36); out = d[r] + out
+        if not n: return out
+keys = sorted(k for k in used if (CD / "proposals" / f"{k}.txt").exists())
+index = {}
+for i, k in enumerate(keys):
+    words = {norm_word(w) for w in re.findall(r"[a-z][a-z'-]{2,}", (CD / "proposals" / f"{k}.txt").read_text().lower())}
+    for w in words:
+        if len(w) >= 3 and w not in STOP: index.setdefault(w, []).append(i)
+enc = {w: ",".join(b36(x - (ids[j - 1] if j else 0)) for j, x in enumerate(ids)) for w, ids in index.items()}
+(ROOT / "council-votes" / "search-index.json").write_text(json.dumps({"keys": keys, "w": enc}, separators=(",", ":")))
+
+cc, tc = cv["crossCheck"], cv["tallyCheck"]
+vp = (SRC / "council-votes.html").read_text()
+vp = vp.replace("{{CROSSCHECK}}", f"where both the minutes and a readable roll-call sheet cover the same vote, they list every councilor's vote identically {cc['agree']:,} times out of {cc['compared']:,} ({round(100 * cc['agree'] / cc['compared'])}%). Most differences are the minutes still listing a councilor who had left, or naming someone \"not voting\" whom the sheet shows abstaining. Where they differ, this page follows the sheet, which the voting system prints.")
+vp = vp.replace("{{TALLYCHECK}}", f"the city's own proposal database records the final yes-no count for most proposals. It matches the count on this page for {tc['agree']:,} of {tc['compared']:,} final votes ({round(100 * tc['agree'] / tc['compared'])}%). The {tc['compared'] - tc['agree']} that don't match are marked \"Needs review\", with the city's figure shown.")
+vp = vp.replace("{{STATS}}", f"In all: {len(rows):,} recorded votes on {len(props):,} proposals across {len({r[0] for r in rows})} meetings, {sum(1 for r in rows if r[5] & 3):,} of them routine group votes. {sum(1 for r in rows if r[5] & 4)} are marked as needing review.")
+votes_page = (head("How Your Councilor Voted", "Search every recorded Indianapolis City-County Council roll-call vote since 2021 by councilor, topic and year, with a link to the official record for each vote.")
+              + "</head>\n<body>\n" + bar("votes") + notice("/council-votes") + vp + FOOT + "\n</body>\n</html>\n")
+(ROOT / "council-votes" / "index.html").write_text(theme(votes_page, '<main class="cv"', "Council Votes"))
+
 # ---------- Home ----------
 home_css = '''<style>
 .home{max-width:980px;margin:0 auto;padding-top:36px;display:flex;flex-direction:column;gap:36px}
@@ -153,6 +233,12 @@ home_body = f'''<main class="home">
       <h2>How Cities Dropped Flock</h2>
       <p>Campaigns that ended Flock contracts, how they won, and what they didn't win.</p>
       <span class="go">See the campaigns →</span>
+    </a>
+    <a class="card" href="/council-votes">
+      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {UPDATED}</span></div>
+      <h2>How Your Councilor Voted</h2>
+      <p>Every recorded City-County Council roll-call vote since 2021, searchable by councilor, topic and year, from infrastructure funding to TIFs and rezoning, each linked to the official record.</p>
+      <span class="go">Look up a councilor →</span>
     </a>
   </section>
   <section>

@@ -1,0 +1,1262 @@
+=== 333-2025 proposal document, page 1 of 20 ===
+CITY COUNTY COUNCIL PROPOSAL NO. 334, 2025 
+CITY OF INDIANAPOLIS-MARION COUNTY, INDIANA 
+ 
+INTRODUCED:  11/3/2025    
+ 
+REFERRED TO:  Metropolitan and Economic Development Committee 
+ 
+SPONSOR: Councilor Lewis 
+ 
+DIGEST:  amends various sections of the Code to reflect unsafe building and permitting process changes 
+within the Department of Business and Neighborhood Services, in accordance with the state legislature  
+ 
+ 
+SOURCE:   
+Initiated by: Department of Business and Neighborhood Services 
+Drafted by: Department of Business and Neighborhood Services 
+ 
+LEGAL REQUIREMENTS FOR ADOPTION: PROPOSED EFFECTIVE DATE: 
+Subject to approval or veto by Mayor Adoption and approvals 
+ 
+GENERAL COUNSEL APPROVAL:  _________________________________ Date:  October 30, 2025 
+ 
+ 
+CITY-COUNTY GENERAL ORDINANCE NO.     , 2025 
+ 
+A PROPOSAL FOR A GENERAL ORDINANCE to  amend various sections Chapters 536 Buildings and 
+Construction and 537 Vacant Building Standards, of the Revised Code of the Consolidated City and County 
+to reflect fee, penalty, and policy changes regarding enforcement and permitting within the Department of 
+Business and Neighborhood Services 
+ 
+BE IT ORDAINED BY THE CITY-COUNTY COUNCIL OF THE 
+CITY OF INDIANAPOLIS AND OF MARION COUNTY, INDIANA: 
+ 
+SECTION 1.  Chapter 536 Section 111 of the Revised Code of the Consolidated City and County is hereby 
+amended by adding the sections that are underlined and deleting the sections that have been stricken 
+through to read as follows: 
+ 
+Sec. 536-111. Definitions.  
+ 
+Unless otherwise clearly indicated by the context, the terms defined in this section shall have the 
+meanings ascribed to them in this section when used in this chapter and Chapter 875. If a term defined in 
+this section is inconsistent or conflicts with any term defined in a rule promulgated by the fire prevention 
+and building safety commission, then the term, as defined by the fire prevention and building safety 
+commission, will be applied to the rules promulgated by the fire prevention and building safety 
+commission and incorporated by reference under Article VIII of this chapter.   
+ 
+Building equipment  means any machine, device, apparatus or material used as part of permanent 
+heating, ventilation, air conditioning, electrical, plumbing sanitary, emergency detection, emergency 
+communication, or fire or explosion systems.  
+  
+Building standards and procedures  means regulations, standards or requirements relative to either 
+construction or the condition of existing structures or building equipment established by or under federal 
+law, state law or city ordinances. Building standards and procedures shall specifically include rules 
+promulgated by the Fire Prevention and Building Safety Commission, adopted herein by reference, and 
+the substantive and procedural provisions of this chapter.
+
+=== 333-2025 proposal document, page 2 of 20 ===
+Proposal No. 334, 2025 
+Page 2 
+ 
+Class 1 structure means any part of the following, as defined in IC 22-12-1-4:  
+ 
+(1) A building or structure that is intended to be or is occupied or otherwise used in any part by 
+any of the following: 
+  
+a. The public;   
+ 
+b. Three (3) or more tenants; or 
+   
+c. One (1) or more persons who act as the employees of another;   
+ 
+(2) A site improvement affecting access by persons with physical disabilities to a building or 
+structure described in subdivision (1); or   
+ 
+(3) Any class of buildings or structures that the Indiana Fire Prevention and Building Safety 
+Commission determines by rules to affect a building or structure described in subdivision (1 ), 
+except as listed below.   
+ 
+Class 1 structure includes a structure that contains three (3) or more condominium units (as defined 
+in IC 32-1-6-2 IC 32-25-2-9) or other units that:   
+ 
+(1) Are intended to be or are used or leased by the owner of the unit; and   
+ 
+(2) Are not completely separated from each other by an unimproved space.   
+ 
+Class 1 structure does not include a building or structure that:   
+ 
+(1) Is intended to be or is used only for an agricultural purpose on the land where it is located; 
+and   
+ 
+(2) Is not used for retail trade or is a stand used for retail sales of farm produce for eight (8) or 
+less consecutive months in a calendar year.   
+ 
+Class 1 structure does not include a Class 2 structure or a vehicular bridge.   
+ 
+Class 1 structure does not include a structure that is intended to be or is occupied solely to provide 
+periodic maintenance or repair of:  
+ 
+(1) The structure; or  
+ 
+(2) Mechanical or electrical equipment located within and affixed to the structure.    
+ 
+Class 2 structure means any part of the following, as defined in IC 22-12-1-5:  
+  
+(1) A building or structure that is intended to contain or contains only one (1) dwelling unit or two 
+(2) dwelling units unless any part of the building or structure is regularly used as a Class 1 
+structure; or   
+ 
+(2) An outbuilding for a structure described in subdivision (1), such as a garage, barn, or family 
+swimming pool, including an above-ground swimming pool, unless any part of the outbuilding 
+is regularly used as a Class 1 structure.   
+ 
+Class 2 structure does not include a vehicular bridge.   
+ 
+Construction means any of the following:   
+ 
+(1) Fabrication of any part of an industrialized building system or mobile structure for use at 
+another site;
+
+=== 333-2025 proposal document, page 3 of 20 ===
+Proposal No. 334, 2025 
+Page 3 
+ 
+(2) Erection or assembly of any part of a Class 1 or Class 2 structure at the site where it will be 
+used;   
+ 
+(3) Installation of any part of the permanent heating, ventilating, air conditioning, electrical, 
+plumbing, sanitary, emergency detection, emergency communication, or fire or explosion 
+suppression systems for a Class 1 or Class 2 structure at the site where it will be used;    
+ 
+(4) Work undertaken to alter, remodel, rehabilitate, or add to any part of a Class 1 or Class 2 
+structure; or   
+ 
+(5) Work undertaken to relocate any part of a Class 1 or Class 2 structure, except a mobile 
+structure.  
+  
+Cooling system means a system that utilizes a source of energy to accomplish the cooling (not below 
+a constant temperature of sixty (60) degrees Fahrenheit) of more than one (1) partitioned space in a 
+structure or to accomplish the cooling of all or part of a structure by distribution of air through ductwork 
+extending more than twelve (12) inches from the appliance collars, or distribution of liquid or vapor 
+through on-site piping.   
+ 
+Division of construction and business services  or division means the division of construction and 
+business services of the department of business and neighborhood services.   
+ 
+Electrical power distribution system  means a system for the distribution of electrical current both 
+within and on the exterior of a structure, from an electrical power source to receptacles or equipment that 
+uses electricity; provided, however, that class 2 and class 3 circuits (as defined by the Indiana Electrical 
+Code) shall not be considered part of an electrical power distribution system for purposes of this 
+definition.  
+  
+Heating system  means a system that utilizes a source of energy including, but not limited to, 
+electricity, fossil fuels, geothermal, solar and wind, to accomplish the warming of more than one (1) 
+partitioned space in a structure or to accomplish the warming of all or part of a structure by distribution of 
+air through ductwork extending more than twelve (12) inches from the appliance collars, or distribution of 
+liquid or vapor through on -site piping; provided, however, that a structural design that utilizes largely 
+natural means to cause flow of thermal energy from the sun to accomplish warming of all or part of a 
+structure shall not be considered a heating system for purposes of this definition.   
+ 
+Industrialized building system  means any part of a building or other structure that is in whole or in 
+substantial part fabricated in an off -site manufacturing facility for installation or assembly at the building 
+site as part of a Class 1 structure, a Class 2 structure, or another building or structure. However, the term 
+does not include a mobile structure or a system that is capable of inspection at the building site.    
+ 
+License administrator  means the license administrator as assigned by the deputy director of the 
+division of construction and business services.  
+  
+Manufactured home has the meaning set forth in 42 U.S.C. 5402 as it existed on January 1, 1984.    
+ 
+Mobile structure means any part of a fabricated unit that is designed to be:   
+ 
+(1) Towed on its own chassis; and   
+ 
+(2) Connected to utilities for year -round occupancy or use as a Class 1 structure, a Class 2 
+structure, or another structure.   
+ 
+The term includes the following:   
+ 
+(1) Two (2) or more components that can be retracted for towing purposes and subsequently 
+expanded for additional capacity; or   
+ 
+(2) Two (2) or more units that are separately towable but designed to be joined into one (1) 
+integral unit.
+
+=== 333-2025 proposal document, page 4 of 20 ===
+Proposal No. 334, 2025 
+Page 4 
+ 
+ 
+One- or two-family residential structure means a Class 2 structure.  
+  
+Ordinary maintenance and repair  means construction commonly accomplished in or on an existing 
+structure for the purpose of preventing deterioration or performance deficiencies, maintaining 
+appearance, or securing the original level of performance. Preventing deterioration or deficient 
+performance shall include such activities as caulking windows, painting, pointing bricks, oiling machinery 
+and replacing filters. Maintaining appearance shall include such activities as sandblasting masonry and 
+cleaning equipment. Securing the original level of performance shall include such activities as replacing 
+broken glass, patching a roof, disassembling and reassembling a piece of building equipment, welding a 
+broken part and replacing a component of a heating system (but not a furnace) with an identical 
+component. Ordinary maintenance and repair shall not include any construction that alters the prior or 
+initial capacity, performance specifications, type of required energy or functional features of an existing 
+structure or building equipment.   
+ 
+Partnership or corporation means a partnership, corporation, or other business association, including 
+limited liability company, organized and authorized to do business under the laws of Indiana.    
+ 
+Person means an individual human being.   
+ 
+Plumbing fixture means a plumbing system that has a water supply, a drain or one that includes both 
+a water supply and a drain, such as a water closet, lavatory, bathtub, and sink.    
+ 
+Refrigeration equipment means equipment that utilizes a source of energy to accomplish the cooling 
+of a space or materials to a constant temperature below sixty (60) degrees Fahrenheit, typically for such 
+purposes as food storage, mechanical fabrication, or industrial processing; provided, however, that plug -
+in electrical appliances such as freezers or icemakers that do not require more than twelve (12) amperes 
+of current at a nominal one hundred fifteen (115) volts shall not be considered refrigeration equipment for 
+purposes of this definition.   
+ 
+Service equipment means the necessary equipment, usually consisting of a circuit breaker or switch 
+and fuses and their accessories, located near the point of entrance of electrical supply conductors to a 
+structure or an otherwise defined area, intended to constitute the main control and means of cutoff of the 
+electrical supply.   
+ 
+Space cooling equipment means equipment that utilizes a source of energy to accomplish the cooling 
+(not below a constant temperature of sixty (60) degrees Fahrenheit) of an unpartitioned space within a 
+structure in which the equipment is located without the use of duct work for the distribution of air 
+extending more than twelve (12) inches beyond the appliance collars or the use of on -site piping for the 
+distribution of liquid or vapor; provided, however, that plug -in electrical appliances such as window air 
+conditioners that do not require more than twelve (12) amperes of current at a nominal one hundred 
+fifteen (115) volts shall not be considered space cooling equipment for purposes of this definition.    
+ 
+Space heating equipment means equipment that utilizes a source of energy including, but not limited 
+to, electricity, fossil fuels, geothermal, solar and wind, to accomplish the warming of an unpartitioned 
+space within a structure in which the equipment is located without the use of air distribution ductwork that 
+extends more than twelve (12) inches beyond the appliance collars or the use of on -site piping for the 
+distribution of liquid or vapor; provided, however, that the following shall not be considered space heating 
+equipment for purposes of this definition:   
+ 
+(1) Plug-in electrical appliances such as freestanding room heaters that do not require more than 
+twelve (12) amperes of current at a nominal one hundred fifteen (115) volts;  
+  
+(2) Self-contained fireplaces; and   
+ 
+(3) A structural design that utilizes largely natural means to cause flow of thermal energy from 
+the sun to accomplish warming of all or part of a structure.
+
+=== 333-2025 proposal document, page 5 of 20 ===
+Proposal No. 334, 2025 
+Page 5 
+ 
+Structure means that which is built or constructed, such as an edifice or building of any kind, or any 
+piece of work artificially built up or composed of parts formed together in some definite manner, or any 
+part thereof. The word "structure" shall not include improvements such as public roadways or bridges.    
+ 
+Townhouse, for the purposes of subdivision, means a single -family dwelling unit constructed in a 
+group of three (3) or more attached units in which each unit:  
+ 
+1. Extends from foundation to roof;  
+ 
+2. Is not more than three (3) stories in height;  
+ 
+3. Is separated from each adjoining unit by:  
+ 
+a. Two (2) one (1) hour fire-resistance rated walls with exposure from both sides; or  
+ 
+b. A common two (2) hour fire resistance rated wall; and   
+ 
+4. Has open space on at least two (2) sides.   
+ 
+SECTION 2.  Chapter 536 Section 202 of the Revised Code of the Consolidated City and County is hereby 
+amended by adding the sections that are underlined and deleting the sections that have been stricken 
+through to read as follows: 
+ 
+Sec. 536-202. Eligibility to obtain and apply for a building permit.  
+ 
+(a) To obtain a building permit a person, partnership or corporation must meet the requirements of 
+paragraphs (1) through (5) below and must be the person, partnership or corporation that will 
+either actually accomplish, supervise accomplishment or be contractually responsible for 
+accomplishment of the construction allowed by the building permit:   
+ 
+(1) Any person, partnership or corporation that is a listed contractor under Article I of Chapter 
+875 may:  
+ 
+a. Obtain a building permit to accomplish any construction except work for which Articles II, 
+III or IV of Chapter 875 require licensure or IC 25-28.5-1 requires a state license; or 
+ 
+b.  Obtain a master building permit under sections 536-203 or 536-204; 
+ 
+(2) Any person, partnership or corporation licensed under Articles II, III or IV of Chapter 875 may 
+obtain a building permit solely to accomplish construction allowed by the license or type of 
+license held by the person, partnership or corporation;  
+  
+(3) Any person or corporation registered under Article V of Chapter 875 may obtain a building 
+permit solely to accomplish construction for which state licensure as a plumbing contractor is 
+required;   
+ 
+(4) Any person who is either a registered architect or registered engineer licensed to practice in 
+the State of Indiana may obtain a building permit to accomplish any construction for which a 
+design release is required and has been given by the office of the state building 
+commissioner. Such architect or engineer, however, may not obtain a building permit for work 
+relative to which Articles II, III or IV of Chapter 875 require a license; and    
+ 
+(5) Any person, partnership or corporation  individual that owns, is a contract purchaser or is a 
+long-term lessee of an improved or unimproved parcel of land that the person, partnership or 
+corporation intends to utilize for its own purposes (e.g., permanent business location, place of 
+residence, rental property that the owner is obligated to maintain)  may obtain a building 
+permit to accomplish construction on such parcel carried out through direct efforts of:
+
+=== 333-2025 proposal document, page 6 of 20 ===
+Proposal No. 334, 2025 
+Page 6 
+ 
+a. The person; or  
+ 
+b. One (1) or more employees of the individual person, partnership or corporation  (including 
+temporary employees hired to do construction work).; or   
+c. Persons who volunteer to work on the construction and who are not compensated for their 
+services.  
+  
+Such a Such individual person, partnership or corporation  may not obtain a building permit to 
+wreck a structure for which Article IV of Chapter 875 requires licensure. Such individual a 
+person, partnership or corporation  may not obtain a building permit for work relative to which 
+IC 25-28.5-1 requires a state license. The requirements of section 875 -222 and section 875 -
+321 must be met for such a person, partnership or corporation to obtain a  Such individual 
+may not obtain a building permit to accomplish construction relative to which Articles II and III 
+of Chapter 875 require licensure , unless the requirements of section 875 -222 and section 
+875-321 are met.  In addition, any person, partnership or corporation that owns, is a contract 
+purchaser or is a long -term lessee of an improved or unimproved parcel of land that the 
+person, partnership or corporation intends to utilize for its own purposes (e.g., permanent 
+business location, place of residence, rental property that the owner is obligated to maintain) 
+may obtain a building permit to allow construction on such parcel to be carried out by one (1) 
+or more listed contractors as long as a single listed contractor is not responsible for all of the 
+construction to be done on the parcel. Such a person, partnership or corporation may not 
+obtain a permit to demolish or remove a structure for which Article IV of Chapter 875 requires 
+licensure. Such a person, partnership or corporation may not obtain a building permit for work 
+relative to which IC 25 -28.5-1 requires a state license. The requirements of section 875 -222 
+and section 875 -321 must be met for such a person, partnership or corporation to obtain a 
+building permit to accomplish construction relative to which Articles II and III of Chapter 875 
+require licensure.  
+ 
+(b) Application for a building permit may be made by the person entitled to obtain the permit, or by an 
+employee of the person, partnership or corporation entitled to obtain the permit, or by an 
+employee of a company in the business of obtaining permits for persons, partnerships and 
+corporations listed or licensed under provisions of this chapter. The division of construction and 
+business services may require that an employee or agent provide written evidence of authority to 
+apply for the permit. 
+ 
+SECTION 3.  Chapter 536 Section 205 of the Revised Code of the Consolidated City and County is hereby 
+amended by adding the sections that are underlined and deleting the sections that have been stricken 
+through to read as follows: 
+ 
+Sec. 536-205. Building permits obtained by written application. 
+  
+(a) Application for a building permit shall be made to the division of construction and business 
+services. The application shall be made in accordance with this section ., unless each and every 
+requirement of section 536-209 is met and the administrator as assigned by the deputy director of 
+the division decides to issue a building permit on the basis of that section.   
+ 
+(b) The application shall be in writing on  a form prescribed by the division of construction and 
+business services and shall be supported with  required documentation in accordance with 
+guidelines for a complete application as outlined by the division of construction and business 
+services and in accordance with Title III of this Revised Code and with IC 36 -7-2.5 (where 
+applicable).   
+ 
+(1) Two (2) copies of detailed plans and specifications drawn to scale that indicate in a precise 
+manner the nature and location of all work to be accomplished pursuant to the building 
+permit. In lieu thereof, it shall be within the discretion of the administrator as assigned by the 
+deputy director of the division to accept two (2) copies of a written statement indicating the 
+nature and location of the work to be done pursuant to the building permit where such written 
+statement describes the work as precisely as a copy of detailed plans and specifications 
+drawn to scale.
+
+=== 333-2025 proposal document, page 7 of 20 ===
+Proposal No. 334, 2025 
+Page 7 
+ 
+(2) Two (2) copies of a plot plan drawn to scale that reflect the location of the structure in relation 
+to existing property lines and that show streets, curbs and sidewalks and proposed changes 
+or additions to such streets, curbs and sidewalks; provided, however, such plot plan shall not 
+be required in the instance where all of the construction is to occur inside an existing 
+structure.   
+ 
+(3) An improvement location permit, issued by the division, if required by the ordinance providing 
+for the improvement location permit.   
+ 
+(4) Written approval from the Marion County Health and Hospital Corporation for any 
+contemplated private sewage disposal system.   
+ 
+(5) Design release from the office of the state building commissioner, in concurrence with the 
+state fire marshal, if required by Indiana law or any rule of the fire prevention and building 
+safety commission.  
+  
+(6) A drainage permit, issued by the division of division, if required by the ordinance providing for 
+a drainage permit.   
+ 
+(7) A connection permit, issued by the division, if required by the ordinance requiring a permit for 
+connection to a sewer.   
+ 
+(c) In the instance where a building permit is requested for the purpose of allowing the demolition or 
+removal of a structure, such application shall be supported with a written statement from each 
+utility that its service to the premises has been disconnected, and with either a written statement 
+from the record titleholder of such premises authorizing the demolition or removal or a court order 
+or administrative order requiring the demolition or removal of the structure.   
+ 
+(d) In the instance where a building permit is requested for the purpose of allowing the demolition or 
+removal of a structure that is in excess of seventy -five (75) feet in height, such application shall 
+be supported by a certificate of insurance reflecting that the obtainer of the building permit has a 
+public liability and property damage insurance policy naming the licensee and the Consolidated 
+City of Indianapolis as the assured and providing also for the payment of any liability imposed by 
+law on such licensee or the Consolidated City of Indianapolis in the minimum amounts of one 
+million dollars ($1,000,000.00) for any occurrence relative to which there is injury to or death of 
+one (1) or more persons and five hundred thousand dollars ($500,000.00) for any occurrence 
+relative to which there is property damage.   
+ 
+(e) In the instance where a building permit is requested for the purpose of constructing a swimming 
+pool, such application shall include the name of the person responsible for constructing the 
+required fence or safety pool cover.   
+ 
+(f) Except as provided in section 536-701 or 536-702, a building permit shall be issued if: 
+   
+(1) The application and supporting information required by this section have been properly 
+prepared and submitted;   
+ 
+(2) The application and supporting information filed in accordance with this section reflect 
+compliance with building standards and procedures;   
+ 
+(3) The fee has been paid in compliance with Article VI of this chapter;   
+ 
+(4) The person, partnership or corporation obtaining the building permit complies with the 
+requirements of section 536-202; and   
+ 
+(5) The person applying for the building permit complies with the requirements of section 536 -
+202.   
+ 
+(g) By making payment for the building permit, the applicant and obtainer shall be deemed to 
+represent and certify that the information contained in that permit is complete and accurate,
+
+=== 333-2025 proposal document, page 8 of 20 ===
+Proposal No. 334, 2025 
+Page 8 
+ 
+unless the applicant or obtainer shall within ten (10) days provide in writing to the division of 
+construction and business services any additions or corrections to that information.    
+ 
+SECTION 4.  Chapter 536 Section 209 of the Revised Code of the Consolidated City and County is deleted 
+in its entirety: 
+ 
+Sec. 536-209. - Permits obtained by a telephone communication or facsimile machine. 
+(a) The administrator as assigned by the deputy director of the division may, but is not required to, 
+issue a permit on the basis of information received by a telephone call over a specified telephone 
+line in the office of the division of construction and business services (to which may be attached a 
+recording device to make a record of all information supplied) or on the basis of an application 
+submitted by facsimile machine over a specified telephone line in the office of the division.  
+ 
+(b) To receive a permit on the basis of a telephone communication or facsimile, all of the following 
+requirements must be met: 
+ 
+(1) The person, partnership or corporation obtaining the permit and the person applying for the 
+permit are eligible to obtain and apply for a building permit pursuant to section 536-202, and: 
+ 
+a. Have accomplished construction in the consolidated city for a period of the preceding 
+twelve (12) calendar months without a violation of building standards or procedures that 
+caused a revocation of a building permit pursuant to  section 536-704; issuance of and 
+failure to correct violations cited in a stop -work order pursuant to  section 536-705; 
+issuance of an order forbidding occupancy pursuant to section 536-706; initiation of a civil 
+action filed pursuant to  section 536-707; forfeiture of a licensing bond pursuant 
+to section 536-708; or a judicially imposed fine or imprisonment pursuant to  section 536-
+709; and 
+ 
+b. Have over the period of the previous one hundred eighty (180) days made prompt 
+payment of all building permit fees for permits issued under this chapter;  
+ 
+(2) The construction is being accomplished in or on an existing structure;  
+ 
+(3) The construction does not involve the demolition or removal of a structure;  
+ 
+(4) The construction does not require the issuance of a design release by the office of the state 
+building commissioner; 
+ 
+(5) An improvement location permit, issued by the division of construction and business services, 
+is not required; 
+ 
+(6) Approval of the Marion County Health and Hospital Corporation for a private sewage disposal 
+system is not required; 
+ 
+(7) The construction does not require a drainage permit; and 
+ 
+(8) The construction is susceptible to being accurately described without the aid of either a plot 
+plan or detailed plans and specifications. 
+ 
+(c) The following information shall be supplied over the specified telephone line in order to obtain a 
+building permit under this section 536-209: 
+ 
+(1) The name of the person telephoning (applicant); 
+ 
+(2) The name, and listing or license number of the contractor in whose name the requested 
+building permit is being issued (obtainer); 
+ 
+(3) The address of the construction; 
+ 
+(4) A precise description of the construction to be accomplished; and
+
+=== 333-2025 proposal document, page 9 of 20 ===
+Proposal No. 334, 2025 
+Page 9 
+ 
+ 
+(5) The value of the construction. 
+ 
+(d) The obtainer of the building permit shall remit fees for the permit and for obtaining the permit by 
+telephone communication or facsimile machine as provided in  section 131-501 of the Code, along 
+with a written application (as provided for in  section 536-205) to the division of construction and 
+business services within five (5) business days following the date of the permit's issuance by 
+check or money order made payable to the controller of the City of Indianapolis. The permit 
+number shall be clearly marked on the face of the check or money order. Payment shall be made 
+in the office of the division or through the United States Postal Service. If mailed, the postmark on 
+the envelope shall be evidence of compliance with the five -day remittance requirement. If 
+payment is not received within five (5) business days, the permit shall be voidable by order of the 
+administrator. If a permit issued under this section is voided, no further construction shall be 
+accomplished under that permit. 
+ 
+(e) The building permit obtained in accordance with this section shall be in full force and effect at the 
+time a building permit number is furnished by the division of construction and business services 
+over the telephone line to the applicant. Following the issuance of the building permit in 
+accordance with this section, the division shall, as soon as conveniently possible after the 
+payment of the permit fee, mail a copy of the building permit document to the applicant for the 
+building permit. 
+ 
+(f) By making payment for the building permit, the applicant and obtainer shall be deemed to 
+represent and certify that the information contained in that permit is complete and accurate, 
+unless the applicant or obtainer shall within ten (10) days provide in writing to the division of 
+construction and business services any additions or corrections to that information. 
+ 
+SECTION 5.  Chapter 536 Section 210 of the Revised Code of the Consolidated City and County is hereby 
+amended by adding the sections that are underlined and deleting the sections that have been stricken 
+through to read as follows: 
+ 
+Sec. 536-210. Permit and file-marked plans to be available.  
+ 
+Any person, partnership or corporation to which a building permit has been issued shall prominently 
+display such permit or a document bearing the permit number provided by the division of construction and 
+business services that evidences permit issuance , or, in the instance of a permit obtained by telephone 
+communication, a paper bearing the authorization number,  at the job site during construction. If required 
+to submit detailed plans and specifications in order to obtain a building permit such person, partnership or 
+corporation shall have available for inspection at all times a copy of the detailed plans and specifications 
+bearing the file mark of the division  or private provider responsible for plan review in accordance with IC 
+36-7-2.5. Any change in such detailed plans and specifications, except for minor deviations that neither 
+diminish structural quality nor would cause noncompliance with applicable building standards and 
+procedures, shall be filed with and approved by the division prior to the time construction involving the 
+change occurs.   
+ 
+SECTION 6.  Chapter 536 Section 213 of the Revised Code of the Consolidated City and County is hereby 
+amended by adding the sections that are underlined and deleting the sections that have been stricken 
+through to read as follows: 
+ 
+Sec. 536-213. Expiration of building permits by operation of law; extensions.  
+ 
+(a) If construction, other than activity involving the removal of all or part of a structure, has not been 
+commenced within one hundred eighty (180)  three hundred sixty-five (365) days from the date of 
+issuance of the building permit, the permit shall expire by operation of law and shall no longer be 
+of any force or effect; provided, however, the administrator as assigned by the deputy director of 
+the division of construction and business services may, for good cause shown in writing, extend 
+the validity of any such permit for an additional period that is reasonable under the circumstances 
+to allow commencement of the construction. In no event shall the extension exceed a period of 
+sixty (60) days.
+
+=== 333-2025 proposal document, page 10 of 20 ===
+Proposal No. 334, 2025 
+Page 10 
+ 
+(b) If the construction has been commenced but only partially completed, and thereafter substantially 
+no construction occurs on the construction -site over a period of one hundred eighty (180) three 
+hundred sixty-five (365) days, the permit shall expire by operation of law and no longer be of any 
+force or effect; provided, however, the administrator may, for good cause shown in writing, extend 
+the validity of any such permit for an additional period that is reasonable under the circumstances 
+to allow resumption of construction.   
+ 
+(c) If construction involving removal of a structure or part of a structure has not been completed 
+within the following time periods, the building permit shall expire by operation of law and shall no 
+longer be of any force or effect:   
+ 
+(1) Removal of all or part of a Class 2, thirty (30) days after issuance; and   
+ 
+(2) Removal of all or part of a Class 1 structure, sixty (60) days after issuance. Provided, 
+however, the administrator as assigned by the deputy director of the division may, for good 
+cause shown in writing, extend the validity of any such permit for an additional period that is 
+reasonable under the circumstances up to forty -five (45) days in length.  for any schedule 
+requested based on the scope of the project, so long as the extended schedule does not 
+create a public safety concern.  
+ 
+(d) An extension granted under this section shall be granted by the administrator as assigned by the 
+deputy director of the division of construction and business services and shall be  confirmed in 
+writing.   
+ 
+(e) If an issued permit expires without the permit holder contacting the division of construction and 
+business services to request an extension, the city may inspect the site to determine compliance 
+with all standards applicable to the scope of work and the stage of construction.    
+ 
+SECTION 7.  Chapter 536 Section 217 of the Revised Code of the Consolidated City and County is hereby 
+amended by adding the sections that are underlined and deleting the sections that have been stricken 
+through to read as follows: 
+ 
+Sec. 536 -217. Notice of change in permit information; amendment of permits and plans.   
+ 
+(a) After a permit has been issued, the permittee shall give prompt written notice to the administrator 
+as assigned by the deputy director of the division of construction and business services of any 
+addition to or change in the information contained in the permit application.   
+ 
+(b) After a permit has been issued, any material deviation or change in  the information contained in 
+the permit application, the plans and specifications, or the plot plans, or the owner, applicant, site 
+contact, licensed contractor, or design professionals,  shall be considered an amendment subject 
+to approval by the division. Prior to the time construction involving the change occurs, the 
+permittee shall file with the division a written request for amendment, including a detailed 
+statement of the requested change and the submission of any amended plans.    
+ 
+(c) The administrator shall give the permittee written notice that the request for amendment has been 
+approved or denied, and if approved, copies of the amended application or plans shall be 
+attached to the original application or plans. Reinspection fees or other fees that are occasioned 
+by the amendment shall be assessed and paid in the same manner as for original permits or 
+plans.   
+ 
+SECTION 8.  Chapter 536 of the Revised Code of the Consolidated City and County is hereby amended by 
+adding a new Section 218 that has been underlined and shall read as follows:  
+ 
+Sec. 536-218. - Private provider permit.  
+(a) A person, partnership or corporation may elect to obtain a private provider permit to utilize third -
+party private provider plan review and inspection for all construction occurring at, on, or of a Class 
+2 structure in accordance with IC 36 -7-2.5. The private provider permit shall identify all 
+construction to occur at, on, or of the structure and, barring any additional approvals, shall be the
+
+=== 333-2025 proposal document, page 11 of 20 ===
+Proposal No. 334, 2025 
+Page 11 
+ 
+sole permit application required to secure the building permits necessary for the scopes of work 
+permitted on or of the structure.   
+  
+(b) The person, partnership or corporation obtaining the private provider permit shall be responsible 
+for all construction occurring at the structure, including code compliance for all construction for 
+which Articles II, III or IV of Chapter 875 of this Revised Code require licensure or IC 25 -28.5-1 
+requires a state license.   In order to obtain a private provider permit, the person, partnership, or 
+corporation must either be licensed for all the types of construction that will occur at the structure 
+or identify, at the time of application, a licensed contractor and subcontractor for every type of 
+construction that will occur at the structure for which Articles II, or Ill of Chapter 875 of this 
+Revised Code require licensure or IC 25-28.5-1 requires a state license.  
+ 
+SECTION 9.  Chapter 536 Section 301 of the Revised Code of the Consolidated City and County is hereby 
+amended by adding the sections that are underlined and deleting the sections that have been stricken 
+through to read as follows: 
+ 
+Sec. 536-301. - Filing of certificate of completion and compliance. 
+ 
+Within fourteen (14) days after completion of the construction for which a building permit has been 
+issued pursuant to the provisions of this chapter and prior to the occupancy or use of the structure, the 
+obtainer of the building permit (or an employee of the obtainer who is authorized to act for the obtainer) 
+for such construction shall execute and file a certificate of completion and compliance with the division of 
+construction and business services. Such certificate shall be in the following form: form prescribed by the 
+division. 
+CERTIFICATE OF COMPLETION AND COMPLIANCE 
+Address of premises on which construction activity was accomplished:_____  
+ 
+Permit number: _____ 
+ 
+The undersigned person hereby certifies under the penalties for perjury that: 
+1. I obtained the above referenced building permit or am an employee of the obtainer, and  
+2. I am familiar with the construction accomplished pursuant to that building permit, and  
+3. I know such construction has been completed with exceptions here noted _____ _____ , and  
+4. I am familiar with building standards and procedures applicable to such construction, and  
+5. To the best of my knowledge, information and belief such construction has been performed in 
+conformity with all building standards and procedures. 
+ 
+Date: _______ Signature: ___________ Typed or printed name___________  
+ 
+Electrical, heating and cooling or wrecking contractor license number, plumbing contractor registration 
+number, contractor listing number, or registered architect or registered engineer registration number: 
+_____ 
+ 
+If a registered architect or registered engineer has properly executed and delivered or mailed an 
+architect's or engineer's certificate of completion and compliance pursuant to section 536 -303, he or she 
+shall not be required to file the above certificate of completion and compliance.  
+ 
+SECTION 10.  Chapter 536 Section 302 of the Revised Code of the Consolidated City and County is hereby 
+amended by adding the sections that are underlined and deleting the sections that have been stricken 
+through to read as follows: 
+ 
+Sec. 536-302. - Filing of certificate of completion and compliance for work done under a master permit.  
+ 
+Within fourteen (14) days after the completion of construction for which a master building permit has 
+been issued pursuant to the provisions of this chapter and prior to the occupancy or use of the structure, 
+the obtainer of the master permit (or an employee of the obtainer authorized to act for the obtainer) shall 
+execute and file a certificate of completion for work done under a master permit with the division of 
+construction and business services. All licensed or registered subcontractors who worked on the structure 
+shall also execute the certificate. Such certificate shall be in the following form:  form prescribed by the 
+division.
+
+=== 333-2025 proposal document, page 12 of 20 ===
+Proposal No. 334, 2025 
+Page 12 
+ 
+ 
+CERTIFICATE OF COMPLETION AND COMPLIANCE FOR WORK DONE UNDER A MASTER PERMIT  
+Address of premises on which construction was accomplished: _____ 
+Permit Number: _____ 
+The undersigned person(s) hereby certify under the penalties for perjury that:  
+1. I either: 
+(a) Obtained the above referenced building permit (or am an employee of the obtainer); or  
+(b) Am a licensed or registered subcontractor who performed work on the structure; and  
+2. I am familiar with that part of the construction accomplished pursuant to that building permit that 
+is indicated below; and 
+3. I know the construction indicated below has been completed with exceptions noted below; and  
+4. I am familiar with building standards and procedures applicable to such construction; and  
+5. To the best of my knowledge, information and belief, such construction indicated below has been 
+performed in conformity with all building standards and procedures. 
+Structural 
+Listing # 
+Exception to work done 
+Signature 
+Typed or printed name 
+Date 
+ 
+Electrical 
+License # 
+Exception to work done 
+Signature 
+Typed or printed name 
+Date 
+ 
+Heating and Cooling 
+License # 
+Exception to work done 
+Signature 
+Typed or printed name 
+Date 
+ 
+Plumbing 
+Registration # 
+Exception to work done 
+Signature 
+Typed or printed name 
+Date 
+ 
+Wrecking 
+License # 
+Exception to work done 
+Signature 
+Typed or printed name 
+Date 
+ 
+SECTION 11.  Chapter 536 Section 303 of the Revised Code of the Consolidated City and County is hereby 
+amended by adding the sections that are underlined and deleting the sections that have been stricken 
+through to read as follows: 
+ 
+Sec. 536-303. - Filing of architect's or engineer's certificate of completion and compliance.  
+ 
+Within fourteen (14) days after the completion of construction for which a building permit was issued 
+pursuant to this chapter and for which review and monitoring of construction by an architect or engineer is 
+required by the rules of the fire prevention and building safety commission, the architect or engineer who 
+observed the construction accomplished pursuant to the permit shall execute and file an architect's or
+
+=== 333-2025 proposal document, page 13 of 20 ===
+Proposal No. 334, 2025 
+Page 13 
+ 
+engineer's certificate of completion and compliance with the division of construction and business 
+services in the form prescribed by the division. following form:   
+ 
+ARCHITECT'S AND ENGINEER'S CERTIFICATE OF COMPLETION AND COMPLIANCE  
+Address of construction: _____ 
+Permit number: _____ 
+The undersigned architect or engineer hereby states under penalties for perjury that:  
+1. I have made reasonable and periodic observation of the above mentioned construction project 
+to determine whether the work accomplished is in accordance with the plans and specifications 
+for this project as released by the Office of the State Building Commissioner and whether the 
+work accomplished is in compliance with rules promulgated by the Indiana Fire Prevention and 
+Building Safety Commission and provisions of Chapter 536 of the Revised Code of the 
+Consolidated City and County, with the following exceptions hereafter noted: _____  
+2. I am familiar with such building standards and the provisions of Chapter 536 applicable to the 
+work accomplished; and 
+3. To the best of my knowledge, information and belief such work has been accomplished in 
+conformity with such building standards promulgated by the Office of the State Building 
+Commissioner and the provisions of Article III of Chapter 536. 
+Date: _______ 
+Signature: _____ 
+SEAL 
+Typed name: _____ 
+Architect No.: _____ 
+Engineer No.: _____ 
+Indiana Registration No.: _____ 
+Address: _____ 
+Phone number: _____ 
+ 
+SECTION 12.  Chapter 536 of the Revised Code of the Consolidated City and County is hereby amended by 
+adding a new Section 304 that has been underlined and shall read as follows: 
+ 
+Sec. 536 -304 Filing a certificate of completion and compliance for work done under a private provider 
+permit.   
+ 
+Within fourteen (14) days after the completion of construction for which a private provider building 
+permit has been issued pursuant to the provisions of this chapter and prior to the occupancy or use of the 
+structure, the obtainer of the private provider permit or an employee of the obtainer authorized to act for 
+the obtainer, shall execute and file a certificate of completion for work done under the permit with the 
+division of construction and business services. Such certificate shall be in the form prescribed by the 
+division of construction and business services and shall be filed to accompany the private provider’s 
+inspection report when private provider services are utilized in accordance with IC 36 -7-2.5. In instances 
+where a private provider permit may require building inspections performed by city staff or a designee, a 
+certificate of completion is required. 
+ 
+SECTION 13.  Chapter 536 Section 401 of the Revised Code of the Consolidated City and County is hereby 
+amended by adding the sections that are underlined and deleting the sections that have been stricken 
+through to read as follows: 
+ 
+Sec. 536-401. General authority to make investigations and inspections.  
+ 
+The administrator as assigned by the deputy director of the division of construction and business 
+services or his or her authorized representative may at any reasonable time go in, upon, around or about 
+the premises where any structure or building equipment subject to the provisions of this chapter or to the 
+rules of the fire prevention and building safety commission is located (irrespective of whether a building 
+permit has been or is required to be obtained) for the purpose of investigation and inspection of such 
+structure or building equipment. Such investigation and inspection may be made either before or after 
+construction on the project is completed for the purposes of determining whether the structure or building 
+equipment meets building standards and procedures, and ascertaining whether the construction and 
+procedures have been accomplished in a manner consistent with a certificate filed pursuant to sections 
+536-301, 536 -302, 536 -303, 565-304, or 536 -404(b)(3). All construction shall be subject to periodic
+
+=== 333-2025 proposal document, page 14 of 20 ===
+Proposal No. 334, 2025 
+Page 14 
+ 
+inspections, and reasonable efforts to afford an opportunity for investigation and inspection of the 
+structure or building equipment by the division of construction and business services shall be made by 
+persons working on or having control of the construction. However, nothing in this section shall be 
+construed to require the administrator to make inspections and investigations.   
+ 
+SECTION 14.  Chapter 536 Section 402 of the Revised Code of the Consolidated City and County is hereby 
+amended by adding the sections that are underlined and deleting the sections that have been stricken 
+through to read as follows: 
+ 
+Sec. 536-402. Notice of availability for inspection as a condition to the accomplishment of further work.  
+ 
+(a) Whenever a stage of construction is reached that is designated below, the person, partnership or 
+corporation that obtained the permit shall be under a duty to give appropriate notice to the 
+administrator as assigned by the deputy director of the division of construction and business 
+services that the construction is available for inspection.  
+  
+(b) Relative to the construction of, remodeling of or addition to a structure, notice of availability is 
+required, as applicable, for:  
+  
+(1) A "foundation inspection" after poles or piers are set, trenches or basement areas excavated, 
+any required reinforcing steel is in place, but prior to the placing of concrete; and   
+ 
+(2) A "frame and masonry inspection" after the roof, masonry, all framing, firestopping and 
+bracings are in place and all electrical wiring, pipes, chimneys and vents are complete, but 
+prior to the interior covering of walls.   
+ 
+(c) Relative to the installation, modernization or replacement of building equipment (including but not 
+limited to plumbing work for which licensure is required by the Indiana Plumbing Commission, or 
+work on electrical power distribution systems, heating systems, space heating equipment, cooling 
+systems or space cooling equipment), notice of availability for a separate "rough inspection" is 
+required, as applicable, for each of the three (3) crafts after installation, but prior to the covering 
+or concealment thereof and before fixtures are set.   
+ 
+(d) Relative to demolition or removal of a structure, notice of availability for a "fill inspection" is 
+required (in the instance when a basement or subgrade chamber exists) after demolition or 
+removal and prior to placing fill.   
+ 
+(e) The administrator or the administrator 's authorized representative may, relative to any 
+construction, add a reasonable number of other construction stages by communicating the 
+additional stage requirements to the person obtaining the building permit for that construction.   
+ 
+(f) Notice of availability shall be given  either by the scheduling systems utilized by the division for 
+such a purpose.  telephone communication over a specified telephone line in the office of the 
+division of construction and business services (to which may be attached a recording device to 
+make a record of all information supplied), by electronic means, by hand -delivered written notice 
+or by a letter delivered by the United States Postal Service.   
+ 
+(g) If a private provider is being utilized to perform inspection services of a Class 2 structure in 
+accordance with IC 36 -7-2.5, the division of construction and business services does not require 
+notice of availability for inspection. In lieu of compliance with 536 -402 (a), (b) and (c), upon the 
+completion of construction, the private provider permit holder shall submit documentation 
+demonstrating that the applicable inspections were performed in a form prescribed by the division 
+of construction and business services. The documentation shall be submitted to the division of 
+construction and business services as part of the private provider’s complete inspection report in 
+accordance with 536-304 and IC 36-7-2.5. 
+ 
+SECTION 15.  Chapter 536 Section 404 of the Revised Code of the Consolidated City and County is hereby 
+amended by adding the sections that are underlined and deleting the sections that have been stricken 
+through to read as follows:
+
+=== 333-2025 proposal document, page 15 of 20 ===
+Proposal No. 334, 2025 
+Page 15 
+ 
+Sec. 536-404. Connection, provision or use of electrical power.  
+ 
+(a) No person, partnership or corporation shall accomplish or allow the connection, provision or use 
+of electrical power relative to an electrical power distribution system in or on a structure where 
+construction (for which a building permit has been or is required to be obtained pursuant to this 
+chapter) has been accomplished, until after an inspection has been made and a distinctive sticker 
+(signifying the electrical power distribution system may be used) has been attached to each 
+service equipment by the administrator as assigned by the deputy director or the administrator's 
+authorized representative. It shall be unlawful for any person other than the administrator or the 
+administrator's authorized representative to use, complete, apply or alter such sticker.    
+ 
+(b) As an alternative to section 536-404(a), the administrator as assigned by the deputy director of 
+the division of construction and business services may allow the connection, provision or use of 
+electrical power on the basis of certification by a person who is a licensed electrical contractor if 
+all of the following requirements are met:   
+ 
+(1) After the completion of the work and before use of the electrical power distribution system is 
+initiated, the licensed electrical contractor who applied for the building permit shall 
+communicate over a specified telephone line in the office of the division of construction and 
+business services during business hours (to which the division of construction and business 
+services may attach a recording device to make a record of all information supplied) the 
+following information:   
+ 
+a. The name of the person telephoning;   
+ 
+b. The electrical contractor license number of the person telephoning;  
+  
+c. The address of the affected premises;   
+ 
+d. The building permit number under which the construction was accomplished; and   
+ 
+e. The serial number of the electrical craft work certificate of compliance form to be used.    
+ 
+(2) If such information is in order and if the licensed electrical contractor has accomplished 
+construction for a period of the preceding twelve (12) calendar months without violation of 
+building standards or procedures that in the discretion of the administrator are of sufficient 
+seriousness to make the contractor ineligible to use the certificate, the division of construction 
+and business services shall indicate over the specified telephone line authorization to attach 
+a certificate to each service equipment and assign an authorization number to be placed on 
+each certificate by the licensee.   
+ 
+(3) A certificate, in the form prescribed by the division of construction and business services.  
+following form, must then be executed and attached to each service equipment as a 
+precondition to the connection, provision or use of electrical power.   
+  
+ELECTRICAL CRAFT WORK CERTIFICATE OF COMPLIANCE 
+ 
+Address of the craft work:   
+Serial number:   
+Permit number:   
+Authorization number:   
+The undersigned licensee hereby certifies under the penalties for perjury that:    
+ 
+1. I am an electrical contractor licensed in accordance with Chapter 875 of the Revised Code of 
+Indianapolis-Marion County, Indiana;   
+2. I am responsible for the proper completion of the construction which is the subject of the above 
+referenced building permit as applicant for the permit or applicant representing the transferee 
+of the permit; and   
+3. I have either personally accomplished or personally inspected all such construction, or in the 
+alternative, I have caused the construction to be inspected by a responsible and competent
+
+=== 333-2025 proposal document, page 16 of 20 ===
+Proposal No. 334, 2025 
+Page 16 
+ 
+employee who works under my direction and control, who has fully reported to me the 
+condition of the construction; and   
+4. I know that such construction is in condition for immediate connection on the date stated 
+below; and   
+5. I am familiar with building standards and procedures applicable to such construction; and    
+6. I know that such construction has been done in compliance with all building standards and 
+procedures; and   
+7. I acknowledge and understand that if such construction is done in violation of building 
+standards and procedures, that under the provisions of Chapter 875 my electrical contractor's 
+license may be suspended or revoked.   
+ 
+Date certificate attached to service equipment:   
+Signature:   
+Electrical contractor license number:   
+Typed or printed name:   
+ 
+After the signatory attaches a certificate to each service equipment, such person shall cause 
+a duplicate copy of each certificate to be either delivered to the division of construction and 
+business services or postmarked no later than the next business day by the United States 
+Postal Service.   
+ 
+(c) It shall be unlawful for any person, partnership or corporation to accomplish the connection, 
+provision or use of electrical power relative to an electrical power distribution system without first 
+receiving authorization from the division of construction and business services either by 
+telephone communication and attachment of an electrical craft work certificate of completion and 
+compliance or by the distinctive sticker described in section 536-404(a).   
+ 
+(d) Nothing stated in this section shall be construed to deny the right of the division of construction 
+and business services to inspect the electrical power distribution system to which electrical power 
+is connected either before or after such connection is made or before or after the electrical power 
+distribution system is used.   
+ 
+(e) Electrical craft work certificates of completion and compliance may be purchased only by a 
+licensed electrical contractor who is eligible to use such forms from the division of construction 
+and business services, for a fee specified in Article VI of this chapter. Each certificate form shall 
+bear a different serialized number that shall be recorded by the division along with the name and 
+licensure number of the electrical contractor who purchases the form. The certificate may only be 
+signed and attached by the licensed electrical contractor who purchased it from the division. It 
+shall be unlawful to sell or transfer such certificate and unlawful to use, complete, sign or attach 
+such a certificate except as prescribed in this section.   
+ 
+SECTION 16.  Chapter 536 Section 405 of the Revised Code of the Consolidated City and County is hereby 
+amended by adding the sections that are underlined and deleting the sections that have been stricken 
+through to read as follows: 
+ 
+Sec. 536-405. Inspection of Class 2 structures at request of owner.  
+ 
+An owner of a Class 2 structure or a contract purchaser of such a structure who occupies the 
+structure may request the division of construction and business services to inspect  ongoing construction 
+or construction that has been completed within the preceding ninety (90) days on that structure. The 
+request may be made irrespective of whether a building permit was required, or if required, whether a 
+permit was obtained. The division of construction and business services shall accomplish an inspection if 
+reasonably practicable. The person requesting the inspection must be willing to be present during the 
+inspection. No charge shall be made for the inspection.   
+ 
+SECTION 17.  Chapter 536 Section 609 of the Revised Code of the Consolidated City and County is hereby 
+amended by adding the sections that are underlined and deleting the sections that have been stricken 
+through to read as follows:
+
+=== 333-2025 proposal document, page 17 of 20 ===
+Proposal No. 334, 2025 
+Page 17 
+ 
+Sec. 536-609. Administrative fee.  
+ 
+(a) To compensate the department of business and neighborhood services for the administrative 
+expenses incurred by its divisions as listed in this section, a fee provided in section 131 -501 of 
+the Code may be assessed at the discretion of the deputy director in charge of the division of 
+construction and business services (in accordance with a written policy established by the deputy 
+director) against a person, partnership, or corporation relative to construction for which the 
+person, partnership, or corporation has obtained a building permit, and:   
+ 
+(1) Notice was not given that construction was available for inspection within the time period 
+required by section 536-402 and the construction is no longer available for inspection;   
+ 
+(2) Notice was given pursuant to section 536 -402 that construction was available for inspection, 
+and:   
+ 
+a. The construction could not be found because the construction address provided on the 
+permit application was incorrect;   
+ 
+b. The construction was not accessible when the inspector attempted to make the 
+requested inspection at the time agreed upon for the inspection (or if no time was agreed 
+upon, between 8:00 a.m. and 5:00 p.m. Monday through Friday on a day that is not a 
+holiday);  
+  
+c. The construction was not yet sufficiently completed for an inspection to be made; or    
+ 
+d. The construction was covered or otherwise concealed and therefore not available for 
+inspection;   
+ 
+(3) A notice of correction was issued to the person, partnership, or corporation and either no 
+response from the person, partnership, or corporation was made within the time specified for 
+reinspection or the person, partnership; or corporation requested reinspection of corrections 
+and the corrections were not properly completed; or   
+ 
+(4) A certificate required by section 536 -301, 536 -302, 536 -303, 565 -304, or 536 -404 was not 
+filed within the time period required by those sections.   
+ 
+(b) To compensate the department of business and neighborhood services for the administrative 
+expenses incurred by its divisions as listed in this section, a fee provided in section 131 -501 of 
+the Code may be assessed at the discretion of the deputy director in charge of the division of 
+construction and business services of the department of business and neighborhood services (in 
+accordance with a written policy established by the deputy director), as follows:   
+  
+(1) Against a person, partnership, or corporation when an inspection reveals that construction 
+has started or is completed that requires a permit and that a permit was not obtained prior to 
+the time of inspection;   
+ 
+(2) Against a contractor when an inspection reveals that construction has started or is completed 
+that requires notification under section 536 -216 and notification was not obtained and posted 
+prior to the time of inspection;   
+ 
+(3) Against a person, partnership, or corporation relative to construction for which a building 
+permit is not required when an inspection visit to the construction address is needed because 
+the inspector receives information that there exists a substantive violation of the building 
+standards and procedures, resulting in the issuance of a notice of correction;   
+  
+(4) If a certificate required by section 536 -301, 536-302, 536-303, 565-304, or 536-404 was not 
+filed with the division of construction and business services, the permit has expired for a 
+period of more than thirty (30) days, and a request for renewal of the permit provided for in 
+section 536-616 was not requested prior to the issuance of the administrative fee; and
+
+=== 333-2025 proposal document, page 18 of 20 ===
+Proposal No. 334, 2025 
+Page 18 
+ 
+(5) Against a person, partnership, or corporation relative to zoning violations when any 
+subsequent inspection visit to the address is needed because a violation has not been 
+corrected and a notice of violation or citation has been issued.   
+ 
+(c) The chief financial officer in charge of the division of administrative and financial operations of the 
+department of business and neighborhood services, or his or her designee, may, at his or her 
+discretion, waive all or any part of an administrative fee assessed under this section when such 
+fee was assessed in error or when mitigating circumstances indicate the appropriateness of 
+waiving all or part of the reinspection fee.   
+ 
+SECTION 18.  Chapter 536 Section 620 of the Revised Code of the Consolidated City and County is hereby 
+amended by adding the sections that are underlined and deleting the sections that have been stricken 
+through to read as follows: 
+ 
+Sec. 536-620. Fees for plan review.  
+ 
+A non-refundable fee is due upon submission of an application for services rendered in the review of 
+plans, regardless of whether a permit is ultimately issued. The fee shall be determined as provided in 
+section 131-501 of the Code or as provided in IC 36-7-2.5 for private provider permits.  
+ 
+SECTION 19.  Chapter 537 of the Revised Code of the Consolidated City and County is hereby amended by 
+adding new Sections 537 -12, 537-13, 537-14 and 537 -15 that have been underlined and shall read as 
+follows: 
+ 
+Sec. 537-12. Repair order hearings.  
+ 
+1. An order issued under IC 36 -7-9-5(a)(5) (“order to repair” or “repair order) becomes final ninety 
+(90) days from the order issuance date, unless a hearing under IC 36 -7-9-7 is requested before 
+the ninety (90) day period ends.  
+ 
+2. If a hearing under IC 36 -7-9-7 is not requested before the ninety (90) day period ends, and civil 
+penalties are assessed for failure to comply with the repair order pursuant to IC 36 -7-9-7.5, an 
+informal civil penalty dispute hearing before the director of the department of business and 
+neighborhood services, or their designee, to dispute the existence of a violation and/or the 
+amount of civil penalties assessed, can be requested within thirty (30) days of the penalty being 
+assessed.   
+ 
+3. If a hearing under IC 36 -7-9-7 is not requested before the ninety (90) day period ends, civil 
+penalties are assessed for failure to comply with the repair order pursuant to IC 36 -7-9-7.5, and 
+the structure is in compliance with the repair order, an informal civil penalty review hearing before 
+the director of the department of business and neighborhood services, or his or her designee, to 
+dispute the amount of civil penalties assessed, can be requested within four (4) years of the order 
+issuance date.  
+ 
+4. All hearing requests must be submitted in a manner approved by the division. After each informal 
+hearing, the director of the department of business and neighborhood services, or his or her 
+designee, shall determine the existence of a violation and/or the amount of civil penalties 
+assessed and shall notify the recipient of any amounts due to the department. The decision of the 
+director, or his or her designee, shall be final.  
+ 
+Sec. 537-13. Civil penalty dispute hearing eligibility.  
+ 
+The hearing requestor must be the current property owner of record with the Marion County 
+Assessor’s Office; and the civil penalties were either paid, or to be paid, by the requestor.   
+ 
+1. Tax sale buyers are eligible for a civil penalty dispute hearing once ownership of the property has 
+been transferred to the tax sale buyer. The division shall waive civil penalties assessed during the 
+tax sale redemption period upon receipt of written request from the tax sale buyer, when property 
+ownership has been transferred to the tax sale buyer and all other civil penalty review hearing
+
+=== 333-2025 proposal document, page 19 of 20 ===
+Proposal No. 334, 2025 
+Page 19 
+ 
+eligibility requirements are met at the time the request is received, without requiring a civil penalty 
+dispute or review hearing.  
+ 
+2. Contract buyers and other parties with a recorded interest in the property are not eligible for a civil 
+penalty dispute hearing, unless:  
+ 
+a. The current property owner of record with the Marion County Assessor’s Office requests a 
+hearing on the party’s behalf;  
+ 
+b. The current property owner of record with the Marion County Assessor’s Office submits an 
+affidavit provided by the division that authorizes the party to request the hearing; or  
+ 
+c. A copy of an instrument recorded with the Marion County Recorder’s Office, showing the 
+requestor’s recorded interest in the property, is provided to the division.  
+ 
+3. The following civil penalties are not eligible for a civil penalty dispute hearing:   
+ 
+a. Civil penalties that were paid, or are to be paid, by a party other than the requesting party;   
+ 
+b. Civil penalties paid as part of a property transaction, including, but not limited to, civil 
+penalties paid as part of a willing bid for tax sale, surplus sale, Sheriff’s sale, foreclosure, any 
+other auction, or purchase price or closing costs of the property; or  
+ 
+c. Civil penalties for which a civil penalty dispute hearing was already decided.  
+ 
+Sec. 537-14. Civil penalty review hearing eligibility.  
+ 
+The hearing requestor must be the current property owner of record with the Marion County 
+Assessor’s Office; and the civil penalties were either paid, or to be paid, by the requestor. Prior owners 
+and prior interested parties that did not bring the structure into compliance with the repair order, 
+regardless of whether civil penalties were paid prior to the property transfer, are not eligible for a civil 
+penalty review hearing.  
+ 
+1. Tax sale buyers are eligible for a civil penalty review hearing once ownership of the property has 
+been transferred to the tax sale buyer. The division shall waive civil penalties assessed during the 
+tax sale redemption period upon receipt of written request from the tax sale buyer, when property 
+ownership has been transferred to the tax sale buyer and all other civil penalty review hearing 
+eligibility requirements are met at the time the request is received, without requiring a civil penalty 
+dispute or review hearing.   
+ 
+2. Contract buyers and other parties with a recorded interest in the property are not eligible for a civil 
+review dispute hearing, unless:  
+ 
+a. The current property owner of record with the Marin County Assessor’s Office requests a 
+hearing on the party’s behalf;  
+ 
+b. The current property owner of record with the Marion County Assessor’s Office submits 
+an affidavit provided by the division that authorizes the party to request the hearing; or   
+ 
+c. A copy of an instrument recorded with the Marion County Recorder’s Office, showing the 
+requestor’s recorded interest in the property, is provided to the division. 
+ 
+3. The following civil penalties are not eligible for a civil penalty review hearing:  
+  
+a. Civil penalties that were paid, or are to be paid, by a party other than the requesting 
+party; or  
+ 
+b. Civil penalties paid as part of a property transaction, including, but not limited to, civil 
+penalties paid as part of a willing bid for tax sale, surplus sale, Sherriff’s sale, foreclosure, 
+or any other auction, or purchase price or closing costs of the property.
+
+=== 333-2025 proposal document, page 20 of 20 ===
+Proposal No. 334, 2025 
+Page 20 
+ 
+ 
+Sec. 537-15 Repair Order Compliance Waiver. 
+ 
+When compliance has been met during the life of a repair order, and the division has closed the 
+active repair order as compliant, all penalties and liens incurred during that order shall be waived. Only 
+penalties paid by the current property owner during the active order shall be refunded. Prior owners and 
+prior interested parties that did not bring the structure into compliance with the repair order, regardless of 
+whether civil penalties were paid prior to the property transfer, are not eligible. Previously closed and/or 
+expired repair orders are not eligible. This waiver will be granted upon closure of the order and does not 
+require a civil penalty hearing. 
+ 
+SECTION 20. The expressed or implied repeal or amendment by this ordinance of any other ordinance or 
+part of any other ordinance does not affect any rights or liabilities accrued, penalties incurred, or 
+proceedings begun prior to the effective date of this ordinance. Those rights, liabilities, and proceedings 
+are continued, and penalties shall be imposed and enforced under the repealed or amended ordinance as 
+if this ordinance had not been adopted. 
+ 
+SECTION 21. Should any provision (section, paragraph, sentence, clause, or any other portion) of this 
+ordinance be declared by a court of competent jurisdiction to be invalid for any reason, the remaining 
+provision or provisions shall not be affected, if and only if such remaining provisions can, without the 
+invalid provision or provisions, be given the effect intended by the Council in adopting this ordinance. To 
+this end the provisions of this ordinance are severable. 
+ 
+SECTION 22 . This ordinance shall be in effect from and after January 1, 2026, by the Council and 
+compliance with Ind. Code § 36-3-4-14. 
+ 
+The foregoing was passed by the City -County Council this _____ day of __________, 2025, at _____ 
+p.m. 
+ 
+ATTEST: 
+ 
+ _____________________________________  
+ Vop Osili 
+ President, City-County Council 
+____________________________________ 
+Yulonda Winfield 
+Clerk, City-County Council 
+ 
+Presented by me to the Mayor this _____ day of ____________, 2025, at 10:00 a.m. 
+ 
+ _____________________________________ 
+ Yulonda Winfield 
+ Clerk, City-County Council 
+ 
+Approved and signed by me this _____ day of ____________, 2025. 
+ 
+ ____________________________________ 
+ Joseph H. Hogsett, Mayor

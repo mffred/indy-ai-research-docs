@@ -14,6 +14,7 @@
   if (!win || path === "/") return; // the home page is an index, not a document
 
   function formUrl(section) {
+    if (section.length > 120) section = section.slice(0, 117).replace(/\s+\S*$/, "") + "...";
     var q = new URLSearchParams({
       template: "correction.yml",
       title: "Correction: " + section,

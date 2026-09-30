@@ -1,0 +1,677 @@
+=== 289-2021 proposal document, page 1 of 10 (OCR) ===
+CITY-COUNTY GENERAL ORDINANCE NO. 39, 2021
+Proposal No. 289, 2021
+
+PROPOSAL FOR A GENERAL ORDINANCE to amend the Revised Code to incorporate the telecom and- —
+
+video services agency into the information services agency, to consolidate the agencies’ governing boards,
+and to make related changes.
+
+BE IT ORDAINED BY THE CITY-COUNTY COUNCIL OF THE
+CITY OF INDIANAPOLIS AND OF MARION COUNTY, INDIANA:
+
+SECTION 1. Sections 181-702 and 281-201 through 281-233 of the “Revised Code of the Consolidated
+City and County,” regarding the Marion County Information Technology Board and the Information Services
+Agency (ISA), hereby are amended by the deletion of the language that is stricken and the addition of the
+language that is underscored, to read as follows:
+
+Sec. 181-702. Authorization to make public purpose grants.
+
+(a} Any city department ofthe-city or county agency that has a governing body may make a public
+purpose grant upon the adoption of a resolution by the governing body ef the department finding
+that a public purpose grant is necessary and desirable in the public interest and in furtherance of
+@ purpose for which the city department or county agency is otherwise. authorized to expend
+public moneys.
+
+(b) A public purpose grant of the type described in section 181-601(2) may be made only by the
+department of metropolitan development upon the adoption of a resolution by the metropolitan
+development commission.
+
+(c) A public purpose grant may be made upen conditions and terms deemed appropriate by the city
+department or county agency making the grant.
+
+(d) The authority to make a public purpose grant is within the discretion of the appropriate city
+department or county agency and its governing body, and no department shall be compelled to
+make any public purpose grant.
+
+Sec. 281-201. Definitions.
+As used in this article, the following terms shall have the meanings ascribed to them:
+
+(a) Board means the Marion County Information Technology Board.
+
+(b) Chief information officer means the director of the-information services agency and team leader
+of the IT team.
+
+(c) Council means the City-County Council of Indianapolis and Marion County.
+
+(d) ISA means the Information Services Agency of Indianapolis and Marion County.
+
+(e) /T means all aspects of information technology, data processing and related services including
+telecommunications and the provision of governmental access video services channels.
+governmental access streaming video services, and website-driven programming.
+
+(f) | /T team-means the information technology integration and coordinating team.
+
+(g) Subject agencies means any and all agencies, officers, offices, boards, commissions, divisions
+and departments of the city, of the county, units of township government in the county, and any
+court or prosecutor funded by the county.
+
+(h) Telecommunications means all aspects of telephone services, including voice, data and video
+transmission and equipment.
+
+(i) Usermeans any and all subject agencies as defined herein and any and all other entities which
+use the services of ISA.
+
+(i) | Enhanced access activities means activities necessary for the provision of enhanced access
+services in accordance with Chapter 285, Article Hl of this Revised Code.
+
+Sec. 281-211. Board created; members; compensation.
+
+(a) To ensure enterprise-wide connectivity, compatibility and integration of information technology and
+the cost-effective provision of quality information systems and services, including telecommunications,
+
+GENERAL ORDINANCE RECORD 2021
+
+=== 289-2021 proposal document, page 2 of 10 (OCR) ===
+G.O. No. 39, 2021
+Page 2
+
+there is hereby created the county information technology board, which shall consist of the following
+~prsons, who shall be appointed for the following terms: .
+
+(1)
+
+(2)
+(3)
+(4)
+
+(5)
+
+Two (2) city officers appointed by the mayor of the city to serve at the pleasure of the mayor.
+One (1) such person shall be a representative for public safety agencies, and the other shall be
+a representative for public service agencies;
+
+Three (3) of four (4) county constitutional officeholders, limited to the auditor, the clerk, the sheriff
+and the treasurer of the county, to be appointed by and serve at the pleasure of the council;
+One (1) representative appointed by the presiding judges of the county superior court,
+representing the judicial branch of local government;
+
+Two (2) persons, with senior management experience which includes holding or having heid line
+authority over the manager of the data processing area of an organization located in Marion
+County, that utilizes a large data processing installation comparable to the city-county
+installation, and that4s not in the business of selling data processing equipment or services. One
+(1) such person shall be appointed by the council and the other by the mayor. The terms of such
+appointments shall be staggered by the initial appointment of the mayor's appointment to a three-
+year term and the council's appointment to a two-year term; thereafter each to serve for two-
+year terms but at the pleasure of the respective appointing authority; and
+
+The Marion County Assessor.
+
+(b)- The three constitutional officeholders and the assessor may serve by proxy. The officeholder shall
+appoint the proxy in writing annually. Ail other board members shail serve in person and not by proxy.
+
+Board Members shail serve
+
+ithout compensation, except that personal expenses incurred through
+
+service to the board, travel, lodging and fees may be reimbursed to the board member upon
+-authorization of the board.
+
+Sec. 281-212. Powers and duties.
+
+(a) The board shall have the following powers and duties:
+
+(1)
+(2)
+(3)
+
+(4)
+
+(3)
+(48)
+
+(62)
+
+(68)
+
+(79)
+
+To establish and revise information technology guidelines, standards. and benchmark
+
+processes for subject agencies and other users;
+
+To establish and maintain procedures for the technology related planning, approval and
+
+quality review of information technology operations and initiatives;
+
+To assist in the formulation of policy concerning appropriation of funds for governmental
+
+access video services channels, governmental_access streaming video services, and
+
+website driven-programming, including:
+
+{A) The production of materials for use on governmental access video services
+channels, governmental access streaming video services, and website-driven
+programming:
+
+(B) The construction and maintenance of facilities for such production: and
+
+(C) The education of the public in the use of such facilities:
+
+To advise the mayor and the council in the formulation and implementation of policy on
+
+video services communications, on governmental access video services channels and
+
+streaming video services, and website driven programming, as well as other governmental
+educational and public-access issues;
+
+To review, approve and administer major IT contracts;
+
+To define at least-five (5) functional classifications for representation of the various subject
+
+agencies on the iT team;
+
+To review and make recommendations concerning all information budgets, and approve
+
+all operating systems, contracts and expenditures for IT services, equipment purchase,
+
+rent or lease, consultants, management or technical personnel, studies, programs and IT
+materials or supplies for any and all users;
+
+To conduct studies and evaluations of any and all IT needs and current systems operations
+
+of users;
+
+To contract for technical and specialized assistance in administering its duties;
+
+(810)To require annual IT service plans and resources inventories from all users;
+
+(914)
+
+To develop, maintain and communicate IT services policy and administrative procedures
+for users and an IT services master plan for users;
+
+GENERAL ORDINANCE RECORD 2021
+
+=== 289-2021 proposal document, page 3 of 10 (OCR) ===
+(b)
+
+{c)
+
+Sec.
+
+Sec.
+
+(a)
+
+(b)
+
+{c)
+
+()
+
+G.O. No. 39, 2021
+Page 3
+
+(4012) To employ, or retain by personal services contract, a chief information officer, who shall
+
+~~" have such duties as established herein, to serve at the pleasure of the board;
+
+(4418) To promulgate rules and regulations for the efficient administration of its policies and
+procedures for users;
+
+(4214) To develop and oversee adherence to standards for security and confidentiality of all data,
+information and telecommunication systems, including backup/recovery plans;
+
+(4315) The exclusive power to select and contract with telecommunication providers for all city
+and county offices and agencies, whose expenditures for such services are paid from funds
+subject to appropriation by the city-county council;
+
+(4416) To delegate any functions to the chief information officer or the IT team, subject to review
+by the board.
+
+In addition to the powers and duties described in subsection (a), the board shall perform all enhanced
+access activities under Chapter 285, Article lil of this Revised Code.
+
+Should any powers granted by this article conflict. with powers granted under IC 36-8-15-1 et seq. or
+sections 285-611 et seq. of this Code or Chapter 851 or Article | of Chapter 285, the provisions of IC
+36-8-15-1 et seq. or sections 285-611 et seq. of this Code or Chapter 851 or Article | of Chapter 285
+shall control.
+
+281-213. Officers; quorum; meetings.
+
+The officers of the board-shall be a chairperson and a secretary. The chairperson and the secretary
+shall be elected by the board. All contracts, agreements, resolutions and official communications of
+the board shall be in writing and be executed by these officers upon being authorized by motion
+passed by the board by simple majority of its members present.
+
+A quorum of the board for official action in session. shall be five (5) members. Official minutes of
+meetings shall-be kept by the chief information officer.
+
+The board shall meet monthly at such place and time as may be set by the chairperson, and may
+meet at such other times and places as may be needed in special session called by the chairperson
+fora particular purpose. All meetings, whether regular or special, shall be open to the public. No official
+action may be taken by the board except at a public meeting, whether regular or special. Board
+members may confer from time to time in executive session without the necessity of calling a public
+meeting as applicable by law.
+
+281-221. Chief information officer—Qualifications; responsibilities generally.
+The board shall employ or retain by personal services contract a chief information officer.
+
+The chief information officer shall have such qualifications and experience as set by the board. The
+chief information officer shall act as technical advisor and provide staff support for the board in its
+deliberations. The chief information officer shall have the authority and responsibility to act for the
+board in its name on a daily operational basis when the board is not in session, but all such action
+shall be subject to the review of the board.
+
+The chief information officer shall manage and supervise ISA. The chief information officer shall be
+responsible for the planning, organization and management of [SA, within the organization plans and
+
+policies.approved by the board.
+
+The chief information officer shall be a member and team leader of the IT team.
+
+GENERAL ORDINANCE RECORD 2021
+
+=== 289-2021 proposal document, page 4 of 10 (OCR) ===
+Sec. 281-222. Same—Powers and duties.
+
+G.O. No. 39, 2021
+Page 4
+
+The chief information officer shall have the following additional specific duties:
+
+(1) To review IT activities, operations, requests and technical personnel of the users and
+provide recommendations on same to the subject agency or board; to oversee the overall
+management IT activities which are subject to this article;
+
+(2). To manage all enterprise-wide IT contracts and assist in the management of the IT
+centracts of the subject agencies;
+
+(3) To monitor IT budgets for contract administration,
+
+(4) To monitor service level agreements and charges,
+
+(5) To receive and review with comment and recommendations all reports, requests and
+documents for the board;
+
+(6) Te communicate for and on behalf of the board with the users, including subject agencies,
+other governmental units. and the private sector when the board is not in session;
+
+(7) To receive budget proposals-for IT services and operations for agencies of the consolidated
+city, the county, the courts and other users and to assist the board in review and evaluation
+of the budgets prior to their submission to the city-county council;
+
+(8) To review all contracts for IT services, equipment lease, rent or purchase, materials,
+supplies, consultants, technical personnel, studies or programs for users, including
+specifically, ISA, and submit same with comment.and recommendations to the board for
+its action;
+
+(9) To coordinate the preparation of a master plan for IT operations for all users within the
+direction’ given from the board;
+
+(10) To manage the operation of governmental access video services channels, governmental
+access streaming video services, and website driven programming, and to advise city and
+county agencies with respect to video service as generally-defined in 47 USC § 522:
+
+ay To grant funds to entities with services designated for public, education, ‘or governmental
+programming on the governmental access video services channels and streaming
+services, subject to the approval of the information technology board;
+
+(12) To fulfill the functions designated in section 285-107 of the Code: and
+
+(4013) To implement all-administrative rules and regulations promulgated by the board.
+
+Sec. 281-223. Board approvai required for services.
+
+(a) The written approval of the board shall be obtained before any. subject agency shall:
+
+(b)
+
+(1) Acquire by-contract, purchase, lease or rental ef-any data processing services, equipment,
+materials, supplies, programs or software; or
+
+(2) Acquire by contract, purchase, lease or rental
+
+equipment, materials, or supplies relating to telephone or
+
+telecommunications services, or to governmental access video services channels, governmental
+
+access streaming video services, and website driven programming; or
+
+(3) Authorize or contract for studies, technical personnel or consultants regarding data processing
+or telecommunications services (including governmental access video_services_channels.
+governmental access streaming video services, and website driven programming).
+
+No subject agency or officer, employee or agent thereof shall purchase, lease, rent.or contract for the
+use of-any IT services, equipment, materials, supplies, IT studies, programs, technical personnel or
+consultants without first submitting a weitten proposal to the board for its review, recommendations
+and approval. Any such purchase, lease, rental or contract entered into by a subject agency without
+the prior written approval of the board shall be voidable at the option of the board.
+
+GENERAL ORDINANCE RECORD 2021
+
+=== 289-2021 proposal document, page 5 of 10 (OCR) ===
+G.O. No. 39, 2021
+Page 5
+
+Sec. 281-224. Appeal procedure, |
+
+(a) Any subject agency or user which, in the opinion of that agency manager, feels aggrieved at a decision
+of the board concerning that agency's IT systems and services, including telecommunications, may
+file a written request for review of such decision with the chairperson of the board, who shall place
+such request on the agenda of the special meeting of the board for the purpose of appellate review.
+The board shall call a special meeting to hear the appeal, and for the purpose of special meetings for
+appeals, the board shall consist of the regular board members, plus the mayor or the mayor's designee
+and the president of the city-county council or such president's designee. The decision of this board
+shall be final, except as provided in subsection (b) below, and shall be entered of record in the minutes
+of the board. In order to hear the appeal, the board shail have present at least four (4) of its regular
+members plus eifher the mayor (or designee) or the president of the city-county council (or such
+president's designee).
+
+(b) Should an elected official feel that a decision resulting from appeal to this board constitutes a
+derogation of the elected official's powers, duties or responsibilities or otherwise feel aggrieved, the
+matter shall be heard and finally resolved by majority vote at a special meeting of the committee on
+rules and public policy of the city-county council with at least five (5) members present and voting.
+Such meeting shail be held within twenty-one (21) days of written request by the elected official.
+
+Sec. 281-231. Information services agency created.
+
+There is created the information services agency (ISA) which shail be under the policy supervision of
+the county information technology board through the chief information officer.
+
+Sec. 281-232. Reserved.
+
+Editor's note(s)—G.O. 202Editor's note(s)—, 1995, § 1, adopted Nov. 20, 1995, deleted, in effect repealed,
+§ 281-232Editor's note(s)—, which pertained to duties of director with respect to information services
+agency and derived from G.O. 2, 1993, § 4.
+
+Sec. 281-233. Agency function.
+
+ISA.shall provide IT services to those local government-subject agencies and other users designated
+by the board according to the direction given by the board and to the master plan for the county as
+developed by the board in conjunction with the subject agencies, including ISA and other users. ISA, subject
+to the board's direction, shall be the primary provider of services for the city, the county, the courts and all
+other approved users. With approval of the board, ISA may contract with other agencies, including
+nongovernmental entities, for the provision of IT systems and services, including telecommunications and
+governmental access video services channels, governmental access streaming video services, and website
+driven programmin
+
+SECTION 2. Sections 285-101 through 285-110 of the “Revised Code of the Consolidated City and County,”
+regarding franchise fees and formerly regarding the telecom and video services agency and board, hereby
+
+are amended by the deletion of the language that is stricken and the addition of the language that is
+underscored, to read as follows:
+
+GENERAL ORDINANCE RECORD 2021
+
+=== 289-2021 proposal document, page 6 of 10 (OCR) ===
+G.O. No. 39, 20214
+Page 6
+
+ARTICLE |. — FRANCHISE FEES FOR VIDEO SERVICE PROVIDERS IN MARION COUNTY
+
+Sec. 285-107. Provisions regarding holders.
+
+(a)
+
+(b)
+
+Application. This section shall apply to any holder of a certificate ("holder") from the Indiana Utility
+Regulatory Commission that provides video service in the county, as those italicized terms are defined
+in IC 8-1-34.
+
+Franchise fees payments. A holder shall pay to the city franchise fees pursuant to IC 8-1-34-24, which
+are based upon the holder's gross revenue, as defined in iC 8-1-34-5, derived quarterly from its
+operations to provide video services within the county.
+
+(1) The city may conduct periodic audits of the operator's records to determine compliance with this
+provision pursuant to IC 8-1-34-24(c). The city's acceptance of the operator's franchise fee
+payments does not constitute an accord and satisfaction.nor are such payments in lieu of any
+other fees, taxes, or payments owed by the operator.
+
+(2) If the holder and city cannot agree on the amount of gross revenue on which the franchise fee
+should be based, city may petition the Indiana Utility Regulatory Commission according to IC 8-
+4-34-24 (c).
+
+(3) Interest on unpaid fees. The operator shall pay simple interest at the rate of eight (8) percent per
+annum on all franchise fees which remain unpaid after the date they are due until the fees are
+paid.
+
+GENERAL ORDINANCE RECORD 2021
+
+=== 289-2021 proposal document, page 7 of 10 (OCR) ===
+(c}
+
+(d)
+
+(e)
+
+()
+
+(g)
+
+Sec.
+
+(e)
+
+G.O. No. 39, 2021
+Page 7
+
+Reports fo be filed. With each quarterly payment of a franchise fee remitted to the city pursuant to IC
+8-1-34-25(cd), a holder shall include a statement explaining the basis for the calculation of the
+franchise fee to the controller's office, and the controller's office shall provide a copy to the Information
+
+Services Agency telecom-and video-services_agency-upon request.
+
+City inspections; maintenance of records.
+
+(1) The city may review the books and records of the holder to the extent necessary fo ensure the
+holder's compliance with IC 8-1-34-23 in calculating the gross revenue upon which the remitted
+franchise fee is based. The city shall have the right to inspect the holder's video service system
+over the public rights of way during normal business hours.
+
+(2) The city shall bear its own costs of all inspections.
+
+Video services to community public buildings. If a holder is required to provide service to community
+public buildings according to the terms of its local franchise agreement that was in effect on June 30,
+2006, itis required to provide such service upon request Fequests-pursuant to IC 8-1-34-29,
+
+Public, educational, or governmental access channels, facilities and equipment or financial support
+shall be provided according to IC 8-1-34-29Sections 8-1-34-25 through 8-1-34-27.
+
+Interconnection of institutional networks. \f a holder's former franchise agreement requires the
+provision of an institutional network under the terms of the former local franchise agreement that was
+in effect on June 30, 2006, then the holder whose video service system is in place as of the effective
+date of this ordinance shall be entitled to apportion the incremental costs among ail holders that
+provide video service within a unit pursuant to IC 8-1-34-29(d).
+
+285-108. Use of public ways
+
+The holder shall comply with the provisions of this code regarding the use and occupation of public
+rights-of-way of the city including, but not limited to, Article Il of Chapter 645 of the Code, and the
+payment of all generally applicable fees so long as. such fees are not inconsistent with IC 8-1-34,
+federal law and any other applicable law for the provision of such Charges and that such charges are
+not specific to any one operator or utility providing services in the city over or under the public rights-
+of-way.
+
+All poles, cables, towers, lines, and other equipment and fixtures placed by the holder within the public
+ways, whether above, on, or below ground, of the city shall be so located as to cause minimum
+interference with other authorized users of the public ways and adjoining premises.
+
+if the disturbance of any public way is necessary, the holder shall comply with all requirements of the
+city relevant to such disturbance.
+
+if at any time during the period of the franchise the city shall deem it necessary to change the location
+of any pole, cable, tower, line and other equipment or fixture located in any public way, either above,
+on, or below ground, the holder, upon reasonable notice by the city and reasonable time for
+compliance, shall relocate its.poies, cables, towers, lines, and other equipment and fixtures at no cost
+to the city, however the holder may pass through such costs as may be allowed under applicable law.
+
+The holder shall have the authority fo trim trees upon and overhanging the public ways of the city so
+as to prevent the branches of such trees from coming in contact with the cables and the equipment of
+the holder, except that, at the option of the city, such trimming may be done by it or under its
+supervision and direction. Should the city determine to perform such trimming the hoider shall not be
+liable for any reimbursement unless otherwise previously and mutually agreed upon between the
+parties.
+
+In all sections of the city where. the cables, wires or other like facilities of public utilities are placed
+underground, the holder shall place its cables and other equipment underground to the maximum
+extent it can be accomplished using proven technology generally used by the video services industry
+for comparable systems.
+
+GENERAL ORDINANCE RECORD 2021
+
+=== 289-2021 proposal document, page 8 of 10 (OCR) ===
+(9)
+
+(i)
+
+G.O. No. 39, 2021
+Page 8
+
+A holder having a‘state certificate of video franchise authority tc operate a video service system for
+only a portion of the city shall have the right to use the public ways throughout the city as necessary
+or advisable for the efficient construction, operation and maintenance of that system, provided that
+video services may be provided only to subscribers located within the area of the holder's designated
+service area. Use of the public ways outside of the holder's designated service area to construct,
+operate, or maintain the holder's video service system shall not unreasonably interfere with the
+construction, operation and maintenance of a video service system by a hoider who has, or thereafter
+obtains, a state certificate of video franchise authority to serve subscribers in such outside area. The
+city shail have power to promulgate rules and regulations with respect to jointly used public ways as
+considered necessary or desirable.
+
+Notice to occupants of property. Unless in the event of an emergency repair prior to the start of
+construction within any easement other than a public street right-of-way, the holder must give written
+notice to all affected property occupants, if reasonable to do so, informing them that the holder be
+working in the area affecting such property occupants. Such notice shall include a telephone number,
+which may be called by property occupants who encounter any problems or damages as a result of
+such work by the holder. Such notice may be by direct mail, email, local newspaper, door hanger or
+similar method of communication as determined by the operator.
+
+Holder responsibility for damages. The holder shall be responsible for repairs to public or private
+property necessitated by damage caused by or resulting from the holder's or holder's subcontractors’
+construction operation, or maintenance of the system.
+
+Deadlines for repair of public and private property; lawn repair. The repair of public and private
+property damaged during construction, operation, or maintenance of the holder's system shall be
+completed no later than sixty (60) days affer notice to the holder of the damage unless otherwise not
+possible due to inclement weather conditions or for any other reason not within the control of the
+operator. Lawns shall be repaired to the preconstruction condition however if is understood
+preconstruction condition does not mean original condition.
+
+Safety requirements.
+
+(1) The holder shall at all times comply with all safety requirements of the Code.
+
+(2) The holder shall at all times employ reasonable care and -shall install and maintain in use
+commonly accepted methods and devices for preventing failures and accidents which are likely
+to cause damage, injury or nuisance to the public.
+
+(3) All cables and other equipment within the public ways of the city shall at all times be kept and
+maintained in as safe condition and by generally acceptable practices used by the video services
+industry for comparable systems.
+
+(4) Operation of the system shall not cause any interference to television and radio reception,
+telephone communication, or other similar operations within the county.
+
+Sec. 285-109. Powers reserved to other entities.
+
+(a).
+
+(b)
+
+Pursuant to IC 8-1-34-16(a), the Indiana Utility Regulatory Commission is the exclusive franchising
+authority, as defined in 47 USC 522(10), for the provision of video service in Indiana. Pursuant to the
+federal regulation, 47 CFR 76.309, the Indiana Utility Regulatory Commission shall be the sole
+authority to address consumer complaints regarding telecommunications and video services.
+
+Pursuant to IC 8-1-34-16(b), state law preserves for the city the limited power to enforce an ordinance
+
+governing the use of public rights-of-way. In accordance therewith, section 285-108 of the Code shall
+be enforced by the department of public works.
+
+GENERAL ORDINANCE RECORD 2021
+
+=== 289-2021 proposal document, page 9 of 10 (OCR) ===
+G.O. No. 39, 2021
+Page 9
+
+Sec. 285-110. Council oversight.
+
+Whenever the information services agency telecom-and-video-services-agency-or the information
+technology board telecem-and—video-services_board—determines that an issue raised with respect to
+
+telecommunications or video services is beyond the authority of the agency or board or raises questions of
+the-public policy, such issues may be referred fo the council committee on rules and public policy.
+
+SECTION 3. This ordinance shall be in full force and effect upon adoption and compliance with IC 36-3-4-
+14.
+
+The foregoing was passed by the City-County Council this 13! day of September, 2021, at 9:03 p.m.
+
+ATTEST:
+
+ey he } Vop Os
+Pb ough Presid
+SaRita Hughes
+Clerk, City-County Council
+
+Presented by me to the Mayor this 15" day of September, 2021.
+
+SPA
+SaRita Hughes
+Clerk, City-County Council
+
+Approved and signed by me this Q | e day of September, 2021. +f:
+0 sph mae OX
+
+Joseph H. Hogsett, Mayor
+
+STATE OF INDIANA, MARION COUNTY)
+) $s:
+CITY OF INDIANAPOLIS )
+
+|, SaRita Hughes, Clerk of the City-County Council, Indianapolis, Marion County, Indiana, do hereby certify
+the above and foregoing is a full, true, and complete copy of Proposal No. 289, 2021, a Proposal for a
+GENERAL ORDINANCE passed by the City-County Council on the 13" day of September, 2021, by a vote
+of 24 YEAS and 0 NAYS and was retitled General Ordinance No. 39, 2021, which was signed by the Mayor
+on the Al @E day of September, 2021, and now remains on file and on record in my office.
+
+WITNESS my hand and the official seal of the City of Indianapolis, Indiana, this olf ar day of September,
+
+2021.
+
+SaRita Hughes
+
+Clerk, City-County Council
+(SEAL)
+
+GENERAL ORDINANCE RECORD 2021
+
+=== 289-2021 proposal document, page 10 of 10 (OCR) ===
+Indianapolis City - County Council RCS# 280
+2020-2023
+2020-2023
+
+9/13/2021 9:03 PM
+
+Proposal: PROP21- 289 Ordinance: G.O. 39 (PASSED)
+Sponsor: Mascari
+Action: Adopt
+Committee: Admin and Fin
+
+Yea: 24 Nay: 0 Abstain: 0 Not Voting: 0 Excused: 1
+Yea - 24
+Adamson Dilk Jackson Mowery
+Bain Evans-E Jones Oliver
+Barth Evans-J Larrison Osili
+Boots Graves Lewis Potts
+Brown Gray Mascari Ray
+Carlino Hart McCormick Robinson
+Nay -0
+Abstain - 0
+Excused - 1
+Annee
+
+Excused - 0

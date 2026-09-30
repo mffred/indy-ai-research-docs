@@ -2,3 +2,6 @@
 .vercel
 __pycache__/
 .env*
+
+# Source PDFs for _src/council-data (re-downloadable from sources.json)
+_src/council-data/pdf/

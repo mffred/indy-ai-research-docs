@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How Your Councilor Voted</title>
+<meta name="description" content="Search every recorded Indianapolis City-County Council roll-call vote since 2021 by councilor, topic and year, with a link to the official record for each vote.">
+<meta property="og:title" content="How Your Councilor Voted">
+<meta property="og:description" content="Search every recorded Indianapolis City-County Council roll-call vote since 2021 by councilor, topic and year, with a link to the official record for each vote.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/pinstripe.css">
+<script src="/assets/corrections.js" defer></script>
+</head>
+<body>
+<header class="site-bar"><a class="brand" href="/">Indy AI Research Docs</a><nav aria-label="Site"><a href="/">All docs</a><a href="/budget">City budget</a><a href="/flock">Flock timeline</a><a href="/flock-cancellations">How cities dropped Flock</a><a href="/council-votes" aria-current="page">Council votes</a></nav></header><aside class="ai-notice" role="note"><span class="tag">AI draft</span><div><b>Preliminary research, generated with AI.</b> This page was drafted with an AI assistant (Claude) from public records and news reports. It may contain mistakes or miss context. Check the linked sources before you rely on, share or cite anything. Found an error? Use the flag next to any section to send a correction with a link to your source. Last updated September 28, 2026.</div></aside><style>
+.cv{max-width:980px;margin:0 auto;padding-top:28px;display:flex;flex-direction:column;gap:22px}
+.cv h1{font-size:clamp(32px,5.5vw,46px);line-height:1.05}
+.cv .lede{max-width:70ch;margin:10px 0 0;color:var(--ink-2)}
+.cv .eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.cv-controls{display:flex;flex-direction:column;gap:12px;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.cv-row{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end}
+.cv-field{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1 1 180px}
+.cv-field.grow{flex:3 1 260px}
+.cv-field label,.cv-legend{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.cv-field select,.cv-field input{font:inherit;font-size:14px;color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:7px 9px;width:100%;min-width:0}
+.cv-chips{display:flex;flex-wrap:wrap;gap:6px}
+.cv .chip{font:inherit;font-size:13px;padding:4px 10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.cv-hint{font-size:12.5px;color:var(--muted)}
+.cv-fulltext{padding:1px 7px;border:1px solid var(--accent);color:var(--accent);white-space:nowrap}
+.cv-text mark{background:var(--warn-bg,#fff4d6);color:inherit;outline:1px solid var(--line)}
+.cv-toggles{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px}
+.cv-toggles label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.cv-toggles input{accent-color:var(--accent);width:16px;height:16px}
+.cv-summary{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--ink-2)}
+.cv-summary b{color:var(--ink)}
+.cv-who{padding:14px 16px;background:var(--surface);border:1px solid var(--line)}
+.cv-who h2{font-size:24px;margin:0 0 4px}
+.cv-who p{margin:4px 0 0;font-size:14px;color:var(--ink-2)}
+.cv-list{display:flex;flex-direction:column;gap:12px}
+.cv .card{background:var(--surface);border:1px solid var(--line);padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.cv .title-row{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline}
+.cv .card h3{font-size:17px;line-height:1.3;margin:0;flex:1 1 300px;min-width:0;overflow-wrap:anywhere}
+.cv-meta{font-size:13px;color:var(--muted)}
+.cv-tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px}
+.cv-badge{font-weight:700;padding:2px 8px;border:1px solid var(--line);white-space:nowrap}
+.v-Y{background:var(--accent);color:var(--surface);border-color:var(--accent)}
+.v-N{background:var(--down);color:#fff;border-color:var(--down)}
+.v-A,.v-V,.v-S,.v-\?{background:var(--sunk,var(--grid));color:var(--ink)}
+.cv-result{font-weight:600;white-space:nowrap}
+.cv-result.fail{color:var(--down)}
+.cv-label{padding:1px 7px;border:1px dashed var(--line);color:var(--ink-2);white-space:nowrap}
+.cv-topic{padding:1px 7px;background:var(--accent-soft);color:var(--ink)}
+.cv details summary{cursor:pointer;font-size:13px;color:var(--accent);font-weight:600}
+.cv-roll{font-size:13.5px;margin:8px 0 0;display:flex;flex-direction:column;gap:4px}
+.cv-roll b{display:inline-block;min-width:92px}
+.cv-src{font-size:13px;margin-top:6px;color:var(--ink-2)}
+.cv-full{margin-top:10px}
+.cv-full>summary{font-size:13px}
+.cv-text{margin:8px 0 0;max-height:440px;overflow:auto;padding:12px 14px;background:var(--surface);border:1px solid var(--line);box-shadow:inset 1px 1px 0 var(--line);font:13px/1.5 ui-monospace,Menlo,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+.cv-text-note{font-size:12.5px;color:var(--muted);margin-top:6px}
+.cv-more{align-self:center;font:inherit;font-size:14px;padding:8px 18px;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.cv-empty{padding:20px;text-align:center;color:var(--muted);border:1px dashed var(--line)}
+.cv-method h2{font-size:26px;margin:10px 0 8px}
+.cv-method p,.cv-method li{max-width:72ch;font-size:14.5px}
+.cv-method ul{padding-left:20px}
+@media (max-width:600px){.cv-field{flex-basis:100%}.cv .card h3{font-size:16px}}
+</style>
+<main class="cv" data-ps-title="Council Votes">
+  <section>
+    <div class="eyebrow">Indianapolis City-County Council · 2021 to 2026</div>
+    <h1>How Your Councilor Voted</h1>
+    <p class="lede">Every recorded roll-call vote of the full City-County Council since January 2021, pulled from the Council's own minutes and roll-call sheets. Pick a councilor, search for a topic like TIF, rezoning or road funding, and see how they voted. Every vote links to the page of the official record it came from.</p>
+  </section>
+
+  <section class="cv-controls" aria-label="Filters">
+    <div class="cv-row">
+      <div class="cv-field grow"><label for="cv-who">Councilor</label><select id="cv-who"></select></div>
+      <div class="cv-field"><label for="cv-year">Year</label><select id="cv-year"><option value="">All years</option></select></div>
+      <div class="cv-field"><label for="cv-how">Their vote</label><select id="cv-how" disabled>
+        <option value="">Any vote</option><option value="Y">Yes</option><option value="N">No</option><option value="A">Absent</option><option value="VS">Didn't vote or abstained</option><option value="?">Vote unclear in the record</option>
+      </select></div>
+    </div>
+    <div class="cv-row"><div class="cv-field grow"><label for="cv-q">Search titles and full text</label><input id="cv-q" type="search" placeholder="e.g. tax increment, speed limit, 2025-ZON-042, license plate readers" autocomplete="off"><span class="cv-hint" id="cv-hint">Searches each proposal's title and, where the city has posted it, its full text. Put a phrase in "quotes" to match it exactly.</span></div></div>
+    <div><div class="cv-legend" id="cv-topics-label">Topics</div><div class="cv-chips" id="cv-topics" role="group" aria-labelledby="cv-topics-label"></div></div>
+    <div class="cv-toggles">
+      <label><input type="checkbox" id="cv-split"> Split votes only (at least one No)</label>
+      <label><input type="checkbox" id="cv-routine"> Include routine group votes <span id="cv-routine-n"></span></label>
+    </div>
+  </section>
+
+  <section id="cv-who-box" class="cv-who" hidden></section>
+  <div class="cv-summary" id="cv-summary" aria-live="polite">Loading the vote record…</div>
+  <section class="cv-list" id="cv-list" aria-label="Votes"></section>
+  <button type="button" class="cv-more" id="cv-more" hidden>Show more votes</button>
+
+  <section class="cv-method">
+    <h2>How this was made</h2>
+    <p>This page is built from two sets of public records the Council posts on indy.gov: the <a href="https://www.indy.gov/activity/council-meeting-minutes" target="_blank" rel="noopener">meeting minutes</a> and the <a href="https://www.indy.gov/activity/full-council-roll-call-votes" target="_blank" rel="noopener">full-council roll-call votes</a>, for every meeting from January 2021 through September 2026.</p>
+    <ul>
+      <li><b>Who voted how</b> comes from the roll-call sheets where they exist. They're printed by the Council's voting system, one page per vote, but posted as scanned images, so the names were read with OCR and checked against the totals printed on each sheet. Where a sheet couldn't be read cleanly, or the city didn't post one, the vote comes from the minutes instead.</li>
+      <li><b>Titles, sponsors and rezoning details</b> come from the minutes, where each proposal is read into the record, with the meeting agendas and the city's <a href="https://www.indy.gov/workflow/city-county-council-proposals" target="_blank" rel="noopener">Council Proposal Search</a> filling gaps. The proposal search also supplies each proposal's committee, who initiated it and a link to its full text.</li>
+      <li><b>Cross-check against the minutes:</b> where both the minutes and a readable roll-call sheet cover the same vote, they list every councilor's vote identically 648 times out of 739 (88%). Most differences are the minutes still listing a councilor who had left, or naming someone "not voting" whom the sheet shows abstaining. Where they differ, this page follows the sheet, which the voting system prints.</li>
+      <li><b>Cross-check against the city's database:</b> the city's own proposal database records the final yes-no count for most proposals. It matches the count on this page for 1,215 of 1,223 final votes (99%). The 8 that don't match are marked "Needs review", with the city's figure shown.</li>
+      <li><b>Routine group votes.</b> Many proposals, most rezonings and ceremonial resolutions, are approved together in one motion or by unanimous consent. They're hidden by default because a group vote doesn't mean each councilor weighed in on each item. Tick "Include routine group votes" to see them.</li>
+      <li><b>Topics</b> are assigned by matching keywords in each title, not by a person reading every proposal. A proposal can have several topics and some will be wrong; use the flag on any vote to tell us.</li>
+      <li><b>Names</b> follow the records, which use surnames. First names are shown where the records or news coverage confirm them.</li>
+    </ul>
+    <p>In all: 2,121 recorded votes on 1,956 proposals across 75 meetings, 1,144 of them routine group votes. 26 are marked as needing review.</p>
+    <p><b>Known gaps:</b> the city posted roll-call sheets for only 5 of 2022's meetings (the minutes cover the rest); its link to the May 4, 2026 roll call is broken; and minutes for August and September 2026 aren't posted yet, so those two meetings come from the roll-call sheets alone and some titles are missing. Votes taken by voice, with no roll call, aren't included.</p>
+  </section>
+</main>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var ACTION = ["Final passage", "Amendment", "Procedural motion", "Postpone or table", "Return to committee", "Withdraw", "Election", "Strike"];
+  var VOTE = { Y: "Yes", N: "No", A: "Absent", V: "Didn't vote", S: "Abstained", "?": "Vote unclear" };
+  var PAGE = 30, D, shown = PAGE, state = {};
+
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function slug(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+  function fmtDate(d) { var p = d.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }); }
+
+  function readUrl() {
+    var q = new URLSearchParams(location.search);
+    state = { who: q.get("councilor") || "", year: q.get("year") || "", how: q.get("vote") || "", q: q.get("q") || "",
+              topics: (q.get("topics") || "").split(",").filter(Boolean), split: q.get("split") === "1", routine: q.get("routine") === "1" };
+  }
+  function writeUrl() {
+    var q = new URLSearchParams();
+    if (state.who) q.set("councilor", state.who);
+    if (state.year) q.set("year", state.year);
+    if (state.how) q.set("vote", state.how);
+    if (state.q) q.set("q", state.q);
+    if (state.topics.length) q.set("topics", state.topics.join(","));
+    if (state.split) q.set("split", "1");
+    if (state.routine) q.set("routine", "1");
+    var s = q.toString();
+    history.replaceState(null, "", location.pathname + (s ? "?" + s : ""));
+  }
+
+  function memberIndex() {
+    if (!state.who) return -1;
+    for (var i = 0; i < D.members.length; i++) if (slug(D.members[i].name) === state.who) return i;
+    return -1;
+  }
+
+  function setup() {
+    var who = $("cv-who"), cur = D.members.map(function (m, i) { return [m, i]; });
+    var opts = ['<option value="">All councilors (show totals only)</option><optgroup label="Current Council, by district">'];
+    cur.filter(function (x) { return !x[0].former; }).sort(function (a, b) { return a[0].district - b[0].district; })
+      .forEach(function (x) { opts.push('<option value="' + slug(x[0].name) + '">District ' + x[0].district + ": " + esc(x[0].name) + "</option>"); });
+    opts.push('</optgroup><optgroup label="Former councilors">');
+    cur.filter(function (x) { return x[0].former; }).forEach(function (x) { opts.push('<option value="' + slug(x[0].name) + '">' + esc(x[0].name) + "</option>"); });
+    who.innerHTML = opts.join("") + "</optgroup>";
+    var years = {}; D.votes.forEach(function (v) { years[v[0].slice(0, 4)] = 1; });
+    $("cv-year").innerHTML += Object.keys(years).sort().reverse().map(function (y) { return '<option value="' + y + '">' + y + "</option>"; }).join("");
+    $("cv-topics").innerHTML = D.topics.map(function (t, i) { return '<button type="button" class="chip" data-t="' + i + '" aria-pressed="false">' + esc(t) + "</button>"; }).join("");
+    var routine = D.votes.filter(function (v) { return v[5] & 3; }).length;
+    $("cv-routine-n").textContent = "(" + routine.toLocaleString() + ")";
+
+    who.value = state.who; $("cv-year").value = state.year; $("cv-how").value = state.how; $("cv-q").value = state.q;
+    $("cv-split").checked = state.split; $("cv-routine").checked = state.routine;
+    who.addEventListener("change", function () { state.who = who.value; if (!state.who) state.how = ""; update(); });
+    $("cv-year").addEventListener("change", function (e) { state.year = e.target.value; update(); });
+    $("cv-how").addEventListener("change", function (e) { state.how = e.target.value; update(); });
+    var t; $("cv-q").addEventListener("input", function (e) { clearTimeout(t); t = setTimeout(function () { state.q = e.target.value.trim(); update(); }, 180); });
+    $("cv-split").addEventListener("change", function (e) { state.split = e.target.checked; update(); });
+    $("cv-routine").addEventListener("change", function (e) { state.routine = e.target.checked; update(); });
+    $("cv-topics").addEventListener("click", function (e) {
+      var b = e.target.closest(".chip"); if (!b) return;
+      var k = b.dataset.t, i = state.topics.indexOf(k);
+      if (i < 0) state.topics.push(k); else state.topics.splice(i, 1);
+      update();
+    });
+    $("cv-more").addEventListener("click", function () { shown += PAGE; render(); });
+    update();
+  }
+
+  // Full-text index (search-index.json), loaded the first time someone searches
+  var textCache = {};
+  var FT = null, ftLoading = false, ftCache = {}, HINT = "Searches each proposal's title and, where the city has posted it, its full text. Put a phrase in \"quotes\" to match it exactly.";
+  // Exact phrases ("data center"): the word index finds candidates, then each candidate's text is checked.
+  var phraseOk = {}, phraseRun = 0;
+  function phrases() { var m = state.q.match(/"([^"]+)"/g) || []; return m.map(function (x) { return x.slice(1, -1).toLowerCase().replace(/\s+/g, " ").trim(); }).filter(Boolean); }
+  function checkPhrases(cands) {
+    var ps = phrases(), run = ++phraseRun, todo = cands.filter(function (k) { return phraseOk[ps.join("|") + "@" + k] === undefined; });
+    if (!todo.length) return;
+    $("cv-hint").textContent = "Checking " + todo.length + " documents for the exact phrase…";
+    var n = 0;
+    todo.forEach(function (k) {
+      (textCache[k] || (textCache[k] = fetch("/council-votes/text/" + encodeURIComponent(k) + ".txt").then(function (r) { return r.ok ? r.text() : ""; })))
+        .then(function (t) {
+          var flat = t.toLowerCase().replace(/\s+/g, " ");
+          phraseOk[ps.join("|") + "@" + k] = ps.every(function (p) { return flat.indexOf(p) >= 0; });
+        }).catch(function () { phraseOk[ps.join("|") + "@" + k] = false; })
+        .then(function () { if (++n === todo.length && run === phraseRun) { $("cv-hint").textContent = HINT; update(); } });
+    });
+  }
+  var STOP = "the and for that with this from which such shall have been are was were will its their his her they them than then there these those upon into any all not but may other each said per also under same hereby being".split(" ");
+  function normWord(w) { w = w.replace(/^['-]+|['-]+$/g, ""); return w.length > 4 && /s$/.test(w) && !/ss$/.test(w) ? w.slice(0, -1) : w; }
+  function loadIndex() {
+    if (FT || ftLoading) return; ftLoading = true;
+    $("cv-hint").textContent = "Loading the full-text index…";
+    fetch("/council-votes/search-index.json").then(function (r) { return r.json(); }).then(function (d) {
+      FT = d; $("cv-hint").textContent = HINT; update();
+    }).catch(function () { ftLoading = false; $("cv-hint").textContent = "Full-text search couldn't be loaded; searching titles only."; });
+  }
+  function postings(w) {
+    if (!FT) return null;
+    w = normWord(w);
+    if (w.length < 3 || STOP.indexOf(w) >= 0) return "all";
+    if (ftCache[w]) return ftCache[w];
+    var set = {}, enc = FT.w[w];
+    if (enc) { var n = 0; enc.split(",").forEach(function (x) { n += parseInt(x, 36); set[FT.keys[n]] = 1; }); }
+    return (ftCache[w] = set);
+  }
+  var wordSets = [];
+
+  function matches(v, mi, words) {
+    var p = D.props[v[1]] || [], codes = v[4];
+    if (!state.routine && (v[5] & 3)) return false;
+    if (state.year && v[0].slice(0, 4) !== state.year) return false;
+    if (state.split && codes.indexOf("N") < 0) return false;
+    if (mi >= 0) {
+      var c = codes[mi];
+      if (c === "." || c === undefined) return false;
+      if (state.how && state.how.indexOf(c) < 0) return false;
+    }
+    if (state.topics.length) {
+      var tp = p[2] || [];
+      if (!state.topics.some(function (k) { return tp.indexOf(+k) >= 0; })) return false;
+    }
+    v.ft = false;
+    if (words.length) {
+      var hay = ((p[0] || "") + " " + v[1].replace("-", " ") + " " + (p[1] || "") + " " + (p[3] || "") + " " + (p[5] || "")).toLowerCase();
+      for (var i = 0; i < words.length; i++) {
+        if (hay.indexOf(words[i]) >= 0) continue;
+        var s = wordSets[i];
+        if (s === "all") continue;
+        if (s && s[v[1]]) { v.ft = true; continue; }
+        return false;
+      }
+    }
+    return true;
+  }
+
+  var results = [], hiddenRoutine = 0;
+  document.addEventListener("click", function (e) {
+    if (e.target.id !== "cv-show-routine") return;
+    state.routine = true; $("cv-routine").checked = true; update();
+  });
+  function update() {
+    writeUrl();
+    $("cv-how").disabled = !state.who;
+    [].forEach.call($("cv-topics").children, function (b) { b.setAttribute("aria-pressed", String(state.topics.indexOf(b.dataset.t) >= 0)); });
+    var mi = memberIndex(), words = state.q.toLowerCase().replace(/"/g, " ").split(/\s+/).filter(Boolean);
+    if (words.length) loadIndex();
+    wordSets = words.map(function (w) { return /^[a-z][a-z'-]+$/.test(w) ? postings(w) : null; });
+    results = D.votes.filter(function (v) { return matches(v, mi, words); });
+    var ps = phrases(), need = [];
+    function byPhrase(list) {
+      if (!ps.length || !FT) return list;
+      var keyOf = ps.join("|") + "@";
+      return list.filter(function (v) {
+        var p = D.props[v[1]] || [], title = (p[0] || "").toLowerCase().replace(/\s+/g, " ");
+        if (ps.every(function (x) { return title.indexOf(x) >= 0; })) return true;
+        if (!p[8]) return false;
+        var ok = phraseOk[keyOf + v[1]];
+        if (ok === undefined) { if (need.indexOf(v[1]) < 0) need.push(v[1]); return false; }
+        if (ok) v.ft = true;
+        return ok;
+      });
+    }
+    results = byPhrase(results);
+    hiddenRoutine = 0;
+    if (!state.routine && words.length) {
+      state.routine = true;
+      hiddenRoutine = byPhrase(D.votes.filter(function (v) { return (v[5] & 3) && matches(v, mi, words); })).length;
+      state.routine = false;
+      results.forEach(function (v) { matches(v, mi, words); });  // restore the full-text labels for what's shown
+      results = byPhrase(results);
+    }
+    if (need.length) checkPhrases(need.slice(0, 300));
+    shown = PAGE;
+    summary(mi);
+    if (hiddenRoutine) $("cv-summary").insertAdjacentHTML("beforeend", '<span>+ ' + hiddenRoutine + ' among routine group votes <button type="button" class="chip" id="cv-show-routine">Include them</button></span>');
+    render();
+  }
+
+  function summary(mi) {
+    var box = $("cv-who-box");
+    if (mi < 0) {
+      box.hidden = true;
+      $("cv-summary").innerHTML = "<span><b>" + results.length.toLocaleString() + "</b> votes match</span>";
+      return;
+    }
+    var m = D.members[mi], n = { Y: 0, N: 0, A: 0, V: 0, S: 0 }, withMaj = 0, counted = 0;
+    results.forEach(function (v) {
+      var c = v[4][mi]; n[c] = (n[c] || 0) + 1;
+      if ((c === "Y" || c === "N") && v[3] !== "U") { counted++; if ((c === "Y") === (v[3] === "P")) withMaj++; }
+    });
+    var first = null, last = null;
+    D.votes.forEach(function (v) { if (v[4][mi] && v[4][mi] !== ".") { if (!first || v[0] < first) first = v[0]; if (!last || v[0] > last) last = v[0]; } });
+    box.hidden = false;
+    box.innerHTML = "<h2>" + esc(m.name) + "</h2><p>" + (m.former ? "Former councilor" : "District " + m.district) +
+      (first ? " · recorded votes from " + fmtDate(first) + " to " + fmtDate(last) : "") + "</p>" + (m.note ? "<p>" + esc(m.note) + "</p>" : "");
+    $("cv-summary").innerHTML = "<span><b>" + results.length.toLocaleString() + "</b> votes match</span>" +
+      "<span>Yes <b>" + n.Y + "</b></span><span>No <b>" + n.N + "</b></span><span>Absent <b>" + n.A + "</b></span>" +
+      "<span>Didn't vote or abstained <b>" + (n.V + n.S) + "</b></span>" +
+      (counted ? "<span>On the winning side <b>" + Math.round(100 * withMaj / counted) + "%</b> of the time</span>" : "");
+  }
+
+  function rollCall(v) {
+    var groups = { Y: [], N: [], A: [], V: [], S: [], "?": [] };
+    for (var i = 0; i < v[4].length; i++) { var c = v[4][i]; if (groups[c]) groups[c].push(D.members[i].name); }
+    return ["Y", "N", "A", "V", "S", "?"].filter(function (k) { return groups[k].length; })
+      .map(function (k) { return "<div><b>" + VOTE[k] + " (" + groups[k].length + ")</b> " + esc(groups[k].join(", ")) + "</div>"; }).join("");
+  }
+
+  function source(v) {
+    var mt = D.meetings[v[0]] || {}, out = [], p = D.props[v[1]] || [];
+    var src = v[6] === 1 ? "roll-call sheet" : "minutes", url = v[6] === 1 ? mt.r : mt.m;
+    if (url) out.push('<a href="' + esc(url) + "#page=" + v[7] + '" target="_blank" rel="noopener">' + (v[6] === 1 ? "Roll-call sheet" : "Minutes") + ", page " + v[7] + "</a>");
+    if (v[6] === 1 && mt.m) out.push('<a href="' + esc(mt.m) + '" target="_blank" rel="noopener">Minutes for this meeting</a>');
+    var extra = [];
+    if (v[6] === 1) extra.push("Names read by OCR from a scanned sheet.");
+    if (v[6] === 2) extra.push("The roll-call sheet for this vote couldn't be read, so this comes from the minutes.");
+    if (v[5] & 8) extra.push("The minutes and the roll-call sheet list this vote differently; this shows the sheet.");
+    if ((v[5] & 4) && !v[9]) extra.push("Needs review: the names listed don't add up to the totals printed in the record.");
+    if (v[8]) extra.push(v[8]);
+    if (p[7]) extra.push("Title is the shortened summary from the city's proposal database.");
+    if (p[6]) out.push('<a href="' + esc(p[6]) + '" target="_blank" rel="noopener">Full text of the proposal (PDF)</a>');
+    return '<div class="cv-src">Source: ' + (out.join(" · ") || "record link unavailable") + (extra.length ? "<br>" + esc(extra.join(" ")) : "") + "</div>";
+  }
+
+  function card(v, mi) {
+    var p = D.props[v[1]] || [], no = v[1].split("-");
+    var title = p[0] || "Proposal No. " + no[0] + ", " + no[1] + " (no title in the records yet)";
+    var counts = { Y: 0, N: 0 }; for (var i = 0; i < v[4].length; i++) if (counts[v[4][i]] !== undefined) counts[v[4][i]]++;
+    if (v[9]) { var ct = v[9].split("-"); counts = { Y: +ct[0], N: +ct[1] }; }
+    var passed = v[3] === "P", action = ACTION[v[2]];
+    var mine = mi >= 0 ? '<span class="cv-badge v-' + v[4][mi] + '">' + (v[4][mi] === "Y" || v[4][mi] === "N" ? "Voted " : "") + VOTE[v[4][mi]] + "</span>" : "";
+    var labels = (v[5] & 1 ? '<span class="cv-label">Unanimous consent</span>' : "") + (v[5] & 2 ? '<span class="cv-label">Voted as a group</span>' : "") + (v[5] & 4 ? '<span class="cv-label">Needs review</span>' : "");
+    var topics = (p[2] || []).map(function (k) { return '<span class="cv-topic">' + esc(D.topics[k]) + "</span>"; }).join("");
+    return '<article class="card"><div class="title-row"><h3>' + esc(title) + "</h3></div>" +
+      '<div class="cv-meta">Proposal No. ' + no[0] + ", " + no[1] + (p[1] ? " · " + esc(p[1]) : "") + " · " + fmtDate(v[0]) +
+      (action !== "Final passage" ? " · Vote on: " + esc(action.toLowerCase()) : "") + (p[3] ? " · Sponsor: " + esc(p[3]) : "") +
+      (p[5] ? " · Initiated by: " + esc(p[5]) : "") + (p[4] ? " · " + esc(p[4]) : "") + "</div>" +
+      '<div class="cv-tags">' + mine + '<span class="cv-result' + (passed ? "" : " fail") + '">' + (v[3] === "P" ? "Passed" : v[3] === "F" ? "Failed" : "Result unclear") + " " + counts.Y + "–" + counts.N + (v[9] ? " (city record)" : "") + "</span>" + labels + (v.ft ? '<span class="cv-fulltext">Found in the full text</span>' : "") + topics + "</div>" +
+      "<details><summary>Full roll call and source</summary><div class=\"cv-roll\">" + rollCall(v) + "</div>" + source(v) +
+      (p[8] ? '<details class="cv-full" data-k="' + esc(v[1]) + '"><summary>Full text of the proposal</summary><pre class="cv-text">Loading…</pre>' +
+        '<div class="cv-text-note">Read from the city\'s copy of the proposal. Most are scans, so this text comes from OCR and may contain errors; the PDF linked above is the official version.</div></details>' : "") +
+      "</details></article>";
+  }
+
+  function render() {
+    var mi = memberIndex(), list = $("cv-list");
+    if (!results.length) {
+      list.innerHTML = '<div class="cv-empty">No votes match these filters.' + (!state.routine ? " Try including routine group votes." : "") + "</div>";
+      $("cv-more").hidden = true; return;
+    }
+    list.innerHTML = results.slice(0, shown).map(function (v) { return card(v, mi); }).join("");
+    $("cv-more").hidden = shown >= results.length;
+    $("cv-more").textContent = "Show more votes (" + (results.length - shown).toLocaleString() + " more)";
+  }
+
+  // Full text loads only when its section is opened ("toggle" doesn't bubble, so listen in the capture phase)
+  document.addEventListener("toggle", function (e) {
+    var d = e.target;
+    if (!d.classList || !d.classList.contains("cv-full") || !d.open || d.dataset.loaded) return;
+    d.dataset.loaded = "1";
+    var pre = d.querySelector(".cv-text"), k = d.dataset.k;
+    (textCache[k] || (textCache[k] = fetch("/council-votes/text/" + encodeURIComponent(k) + ".txt").then(function (r) { if (!r.ok) throw 0; return r.text(); })))
+      .then(function (t) {
+        var html = esc(t), words = phrases().concat(state.q.toLowerCase().replace(/"[^"]*"/g, " ").split(/\s+/)).filter(function (w) { return w.length >= 3; });
+        words.forEach(function (w) {
+          var re = new RegExp("(" + (w.indexOf(" ") >= 0 ? w : normWord(w)).replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/ /g, "\\s+") + "[a-z]*)", "gi");
+          html = html.replace(re, "<mark>$1</mark>");
+        });
+        pre.innerHTML = html;
+        var m = pre.querySelector("mark"); if (m) pre.scrollTop = m.offsetTop - 60;
+      })
+      .catch(function () { pre.textContent = "The full text couldn't be loaded. Use the PDF link above."; delete d.dataset.loaded; delete textCache[k]; });
+  }, true);
+
+  readUrl();
+  fetch("/council-votes/data.json").then(function (r) { return r.json(); }).then(function (d) {
+    D = d; D.votes.reverse(); setup();
+  }).catch(function () { $("cv-summary").textContent = "The vote record couldn't be loaded. Try reloading the page."; });
+})();
+</script>
+<footer class="site-foot">Indy AI Research Docs is a work in progress. Figures come from the linked public documents; summaries and analysis were generated with AI and spot-checked, not independently verified. Nothing here is legal or financial advice. Last updated September 28, 2026.</footer>
+</body>
+</html>

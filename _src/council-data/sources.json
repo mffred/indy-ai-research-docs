@@ -1,0 +1,989 @@
+{
+ "generated": "2026-09-30",
+ "index": "https://www.indy.gov/activity/full-council-roll-call-votes",
+ "minutesIndex": "https://www.indy.gov/activity/council-meeting-minutes",
+ "meetings": [
+  {
+   "date": "2021-01-11",
+   "minutes": {
+    "url": "https://citybase-cms-prod.s3.amazonaws.com/f5bb7f260801430b862d798e721be968.pdf",
+    "file": "minutes/2021-01-11.txt",
+    "pages": 29,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://citybase-cms-prod.s3.amazonaws.com/4735a26b70a948c3bef7c48614ff5517.pdf",
+    "file": "roll-calls/2021-01-11.txt",
+    "method": "PDF text layer, OCR where scanned"
+   }
+  },
+  {
+   "date": "2021-02-01",
+   "minutes": {
+    "url": "https://citybase-cms-prod.s3.amazonaws.com/012da804e09545c0995a4082b8025cea.pdf",
+    "file": "minutes/2021-02-01.txt",
+    "pages": 39,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://citybase-cms-prod.s3.amazonaws.com/e10d6d9ea0344ab4b1e348759a6c50d8.pdf",
+    "file": "roll-calls/2021-02-01.txt",
+    "method": "PDF text layer, OCR where scanned"
+   }
+  },
+  {
+   "date": "2021-02-22",
+   "minutes": {
+    "url": "https://citybase-cms-prod.s3.amazonaws.com/2f8ead2a26cc453fb49c87f6fc554377.pdf",
+    "file": "minutes/2021-02-22.txt",
+    "pages": 36,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://citybase-cms-prod.s3.amazonaws.com/df7c302d1c9c4e769d0a144e0bc2163b.pdf",
+    "file": "roll-calls/2021-02-22.txt",
+    "method": "PDF text layer, OCR where scanned"
+   }
+  },
+  {
+   "date": "2021-03-15",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/aiIznjyTwa96ZV7XZ4ak",
+    "file": "minutes/2021-03-15.txt",
+    "pages": 29,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://citybase-cms-prod.s3.amazonaws.com/9d53dce776e4465faec06dd8ae675f57.pdf",
+    "file": "roll-calls/2021-03-15.txt",
+    "method": "PDF text layer, OCR where scanned"
+   }
+  },
+  {
+   "date": "2021-04-12",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cvRHnKgCRXi1OT2Z4yRL",
+    "file": "minutes/2021-04-12.txt",
+    "pages": 17,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/0GBGi5GQKKT06I66vMqg",
+    "file": "roll-calls/2021-04-12.txt",
+    "method": "PDF text layer, OCR where scanned"
+   }
+  },
+  {
+   "date": "2021-05-10",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/y1sglUg9Q0C1ZYjN9Im2",
+    "file": "minutes/2021-05-10.txt",
+    "pages": 22,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2021-06-07",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/vKjQB0TETji8QgoJ7cBQ",
+    "file": "minutes/2021-06-07.txt",
+    "pages": 30,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2021-07-12",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/xR0jfJTlRTy3S5bwMR4f",
+    "file": "minutes/2021-07-12.txt",
+    "pages": 53,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/dK52lf75Q4y38WM2skjN",
+    "file": "roll-calls/2021-07-12.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2021-08-09",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/wxfkrCs4SRaZm3432POC",
+    "file": "minutes/2021-08-09.txt",
+    "pages": 27,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2021-09-13",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/RUnG0jovQFuUYqp24mGx",
+    "file": "minutes/2021-09-13.txt",
+    "pages": 102,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2021-09-27",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/QjmSyDbjQxa6YBMR0oU5",
+    "file": "minutes/2021-09-27.txt",
+    "pages": 21,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/mc2uoerPQo2efGYrfZvp",
+    "file": "roll-calls/2021-09-27.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2021-10-18",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/oiptbRvQDup0sXlsRjVx",
+    "file": "minutes/2021-10-18.txt",
+    "pages": 55,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/P2vQ9xeRwqD8vmL9vlWw",
+    "file": "roll-calls/2021-10-18.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2021-11-08",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/EgX88nOSLu09ZbjSKtbD",
+    "file": "minutes/2021-11-08.txt",
+    "pages": 21,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/Vlgn2t3QSAOrsBtnCdJL",
+    "file": "roll-calls/2021-11-08.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2021-12-06",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/VbLD3DR22tAhNcivEvg7",
+    "file": "minutes/2021-12-06.txt",
+    "pages": 44,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/76sfSGWVQ8CrncVdfMQd",
+    "file": "roll-calls/2021-12-06.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2022-01-10",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/wX4yhxnyRvGEN7AQPLAg",
+    "file": "minutes/2022-01-10.txt",
+    "pages": 24,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/iMTm25kASAKM2efzfRwl",
+    "file": "roll-calls/2022-01-10.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2022-02-07",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/5cNuqdLLTiOrW0keDh9O",
+    "file": "minutes/2022-02-07.txt",
+    "pages": 25,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/FnLyexJR9qn4I6xGNLqA",
+    "file": "roll-calls/2022-02-07.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2022-03-07",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/CFxZL9LqRzu7MvauSwP9",
+    "file": "minutes/2022-03-07.txt",
+    "pages": 36,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2022-04-04",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/yvp579YjTXOenpeUcvzi",
+    "file": "minutes/2022-04-04.txt",
+    "pages": 57,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/qIAsqILfS2ysOqYSLc2o",
+    "file": "roll-calls/2022-04-04.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2022-05-02",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/6ThBpBtXQsOt7Mxop52g",
+    "file": "minutes/2022-05-02.txt",
+    "pages": 36,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2022-06-06",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/HuEb1VzKQv6kyZHFh6Iu",
+    "file": "minutes/2022-06-06.txt",
+    "pages": 35,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2022-07-11",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/0zjYaEw5ROm8lx9htiu1",
+    "file": "minutes/2022-07-11.txt",
+    "pages": 19,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2022-08-08",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/gjF1UFnZRXqsFMB8XkO0",
+    "file": "minutes/2022-08-08.txt",
+    "pages": 35,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2022-09-12",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/PwIacDy7QxuyttZzFMgO",
+    "file": "minutes/2022-09-12.txt",
+    "pages": 35,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2022-10-03",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/aoCXEV4UTVSiaCochBIV",
+    "file": "minutes/2022-10-03.txt",
+    "pages": 20,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/Dz9w3MiCQr6lLhcDJx2D",
+    "file": "roll-calls/2022-10-03.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2022-10-17",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/EZ6FwkVbRrqWlaRIjhNr",
+    "file": "minutes/2022-10-17.txt",
+    "pages": 47,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2022-11-07",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/MNwXh1gSPSJWJ9IDN5CA",
+    "file": "minutes/2022-11-07.txt",
+    "pages": 29,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2022-12-05",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/csRjrzujRm6nluAdePj4",
+    "file": "minutes/2022-12-05.txt",
+    "pages": 40,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/qL7UBaVSTSO4Mpw24haE",
+    "file": "roll-calls/2022-12-05.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2023-01-09",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/OOoEWo7ETDScBaql1hUq",
+    "file": "minutes/2023-01-09.txt",
+    "pages": 42,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/gjjVZ1fMSh66ZTfDxMuo",
+    "file": "roll-calls/2023-01-09.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2023-02-06",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/8byAb6W7TZmoxWFSDH5D",
+    "file": "minutes/2023-02-06.txt",
+    "pages": 33,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/yCsoVVWVSe2eeox4i1pC",
+    "file": "roll-calls/2023-02-06.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2023-03-06",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/oM6clOwoSB2BCUaqK2cm",
+    "file": "minutes/2023-03-06.txt",
+    "pages": 25,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/wehpKkFETUiC7hwuMKVu",
+    "file": "roll-calls/2023-03-06.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2023-04-03",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/qqtVvhZQeCkyoQE2cPoA",
+    "file": "minutes/2023-04-03.txt",
+    "pages": 19,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/qX9TeE0jQrK5UBReWlTP",
+    "file": "roll-calls/2023-04-03.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2023-05-08",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/gpLNJurKTPK7R7i4qlHA",
+    "file": "minutes/2023-05-08.txt",
+    "pages": 29,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/gvRiHd91SqmWHNVB2dcf",
+    "file": "roll-calls/2023-05-08.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2023-06-05",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/yG0FGVtqSoikzNAzPBLA",
+    "file": "minutes/2023-06-05.txt",
+    "pages": 41,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2023-07-10",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/sZU6sHIGSdyWslBdoEAB",
+    "file": "minutes/2023-07-10.txt",
+    "pages": 36,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/awLONmwwSMafWzu8QjD0",
+    "file": "roll-calls/2023-07-10.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2023-08-14",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/P04MnK2aTgSFXUx4hoPP",
+    "file": "minutes/2023-08-14.txt",
+    "pages": 32,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/Ef3WIl14Tqm7iLlwWBx8",
+    "file": "roll-calls/2023-08-14.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2023-09-11",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/p7KXKUkWQnmDBuQBvkgH",
+    "file": "minutes/2023-09-11.txt",
+    "pages": 27,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/WqdACyFdRBSoiToR4fbu",
+    "file": "roll-calls/2023-09-11.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2023-10-02",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/pvVvGnYHSGCDpVOU2yXZ",
+    "file": "minutes/2023-10-02.txt",
+    "pages": 11,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2023-10-16",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/8aCaR7w0RM2EMXmTkzT6",
+    "file": "minutes/2023-10-16.txt",
+    "pages": 50,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2023-11-13",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/zYQFJVANRf2IbEbBGyia",
+    "file": "minutes/2023-11-13.txt",
+    "pages": 17,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/jFpEeYSuShSff35QLJnZ",
+    "file": "roll-calls/2023-11-13.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2023-12-04",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/RsojeCUGRrOJbyxheyGx",
+    "file": "minutes/2023-12-04.txt",
+    "pages": 94,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/s2tQWQqURsaS51KAUwgx",
+    "file": "roll-calls/2023-12-04.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2024-01-08",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/01RBjzEoTVagL9sYtbMF",
+    "file": "minutes/2024-01-08.txt",
+    "pages": 12,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/L1nMMjGjRH6F7024HZJT",
+    "file": "roll-calls/2024-01-08.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2024-02-05",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/CapjQ9DbTPi6ZtTU5ghA",
+    "file": "minutes/2024-02-05.txt",
+    "pages": 25,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/V6So4z8aToWzUATTDedG",
+    "file": "roll-calls/2024-02-05.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2024-03-04",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/GAcUf7BKT4agYZwpWDO9",
+    "file": "minutes/2024-03-04.txt",
+    "pages": 17,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/7ngAP3zGSXewFZmHg7yO",
+    "file": "roll-calls/2024-03-04.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2024-04-01",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/FIaytuNySL6IH5vPeT0q",
+    "file": "minutes/2024-04-01.txt",
+    "pages": 20,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/MuTH81kRa6pjKvo8upew",
+    "file": "roll-calls/2024-04-01.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2024-05-13",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/SIPnv4LLTd6WD8xMV3wV",
+    "file": "minutes/2024-05-13.txt",
+    "pages": 36,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/KgYM8MkDTpMfl7UxBZUQ",
+    "file": "roll-calls/2024-05-13.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2024-06-03",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/0IQ5LG5QtGjsZLFtGNqo",
+    "file": "minutes/2024-06-03.txt",
+    "pages": 31,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/ln6sXJ05TUGkfcWXYCZy",
+    "file": "roll-calls/2024-06-03.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2024-07-08",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/BK3DmOcpTPSK7KQ1B5uh",
+    "file": "minutes/2024-07-08.txt",
+    "pages": 68,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/9wZnYvJ8QquDQH36mSAa",
+    "file": "roll-calls/2024-07-08.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2024-08-12",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/Jm8MWO4hSYCvrWBxcb6m",
+    "file": "minutes/2024-08-12.txt",
+    "pages": 55,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/zVxpq6pRjiP8XNDo7AY0",
+    "file": "roll-calls/2024-08-12.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2024-09-09",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/4XrJ3SIR3iL7gYx8aeqe",
+    "file": "minutes/2024-09-09.txt",
+    "pages": 34,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/gfdh4pQKXMzubNRaGcQk",
+    "file": "roll-calls/2024-09-09.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2024-09-23",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/296IdhQR4SbHDO9QZ0hl",
+    "file": "minutes/2024-09-23.txt",
+    "pages": 18,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/9r4gx3lkRDucv0Juv3aY",
+    "file": "roll-calls/2024-09-23.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2024-10-07",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/9B51t3eQcyhiclM2JYyg",
+    "file": "minutes/2024-10-07.txt",
+    "pages": 66,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/G63AcatZTOK8AoibwyOX",
+    "file": "roll-calls/2024-10-07.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2024-11-04",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/NLraDtdqQleepYy7xxze",
+    "file": "minutes/2024-11-04.txt",
+    "pages": 33,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/PVAsrnnTJuhczRrFUUg8",
+    "file": "roll-calls/2024-11-04.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2024-12-02",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/0taToY9uTl6lU2WyW3fW",
+    "file": "minutes/2024-12-02.txt",
+    "pages": 45,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/tRGuAhesQy20ZIEMbX5H",
+    "file": "roll-calls/2024-12-02.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2025-01-08",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cm9a2wy46006407lfn4yzv3he",
+    "file": "minutes/2025-01-08.txt",
+    "pages": 32,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2025-02-03",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cm9a39dq701qd06lhgxdlu68j",
+    "file": "minutes/2025-02-03.txt",
+    "pages": 35,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/TTd85FprSkOLw0ZmdwIs",
+    "file": "roll-calls/2025-02-03.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2025-03-03",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cm9a3bf0r025m06lhqg1527kp",
+    "file": "minutes/2025-03-03.txt",
+    "pages": 17,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/qsZrZyyToGMdlOo4PsQP",
+    "file": "roll-calls/2025-03-03.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2025-04-07",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmacxm5880pth08k9ixipefo6",
+    "file": "minutes/2025-04-07.txt",
+    "pages": 30,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cm98hwm3n01xa07livjc876a9",
+    "file": "roll-calls/2025-04-07.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2025-05-05",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmddd8waa0j4v07lq2dfw0wd6",
+    "file": "minutes/2025-05-05.txt",
+    "pages": 15,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmach2vig01nd07li41g2du7o",
+    "file": "roll-calls/2025-05-05.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2025-06-09",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmdeoshh305cj08k5f89hh3cr",
+    "file": "minutes/2025-06-09.txt",
+    "pages": 35,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmbqhhsrm01eq07liaucdmgoy",
+    "file": "roll-calls/2025-06-09.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2025-07-07",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmdg1pgwe0yho08liuryrhcly",
+    "file": "minutes/2025-07-07.txt",
+    "pages": 41,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmcuhk6kx00kz07kbsaizsw8a",
+    "file": "roll-calls/2025-07-07.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2025-08-11",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmg6quas93w1b07k5wr82ni3p",
+    "file": "minutes/2025-08-11.txt",
+    "pages": 33,
+    "method": "PDF text layer"
+   },
+   "rollCall": null
+  },
+  {
+   "date": "2025-09-08",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmg6quask3vw007ljto1dauzj",
+    "file": "minutes/2025-09-08.txt",
+    "pages": 44,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmfci07uz00rk07kad5ss0dzn",
+    "file": "roll-calls/2025-09-08.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2025-09-22",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmg6uxc70440e07lj34p5ppof",
+    "file": "minutes/2025-09-22.txt",
+    "pages": 12,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmfwiwx3p1ccf07lhbg5arx28",
+    "file": "roll-calls/2025-09-22.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2025-10-06",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmiezqz530mg907k8thdi8uon",
+    "file": "minutes/2025-10-06.txt",
+    "pages": 70,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmggkozxm02dw07k2n3tn0vet",
+    "file": "roll-calls/2025-10-06.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2025-11-03",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmiezqz5b0myf07lk0u9i5sjg",
+    "file": "minutes/2025-11-03.txt",
+    "pages": 17,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmhkkirkv3ynb07lk24uzx1bi",
+    "file": "roll-calls/2025-11-03.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2025-12-01",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmlfqbh2i2cp907k97ds1skce",
+    "file": "minutes/2025-12-01.txt",
+    "pages": 72,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmiom1nxq00i706jxhs02fpqz",
+    "file": "roll-calls/2025-12-01.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2026-01-05",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmlfqbh342c5507iqvjwfyypg",
+    "file": "minutes/2026-01-05.txt",
+    "pages": 32,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmk2mfet3005h07kd0esom9b8",
+    "file": "roll-calls/2026-01-05.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2026-02-02",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmlqyh0lo0esg07kbrhllmp1c",
+    "file": "minutes/2026-02-02.txt",
+    "pages": 22,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cml6nsx9g1a4f07lkatdcfph1",
+    "file": "roll-calls/2026-02-02.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2026-03-02",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmpr4tp5408hi07kcsf3z2zdp",
+    "file": "minutes/2026-03-02.txt",
+    "pages": 46,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmmalus1r171a08jwbpl1fjb0",
+    "file": "roll-calls/2026-03-02.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2026-04-06",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmpr4tp74088907lj9minx9hi",
+    "file": "minutes/2026-04-06.txt",
+    "pages": 15,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmnojusrj007208k9p0axdo6s",
+    "file": "roll-calls/2026-04-06.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2026-05-04",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmpvq0ns43q2t07ljf8fl9oxw",
+    "file": "minutes/2026-05-04.txt",
+    "pages": 24,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": null,
+    "note": "City's link points to its internal CMS editor, not the PDF"
+   }
+  },
+  {
+   "date": "2026-06-01",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmr137n5e0x2v07kae4yyx05o",
+    "file": "minutes/2026-06-01.txt",
+    "pages": 39,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmpwsousq4lul07ljlxm2yq5x",
+    "file": "roll-calls/2026-06-01.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2026-07-06",
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmtk2cc6k2y7n07lmfkja2md0",
+    "file": "minutes/2026-07-06.txt",
+    "pages": 76,
+    "method": "PDF text layer"
+   },
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmraob0sl0aem07lkjewyip9w",
+    "file": "roll-calls/2026-07-06.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "minutes": null,
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76",
+    "file": "roll-calls/2026-08-10.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2026-09-14",
+   "minutes": null,
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmu2o8m82157t07lkh1t42bbs",
+    "file": "roll-calls/2026-09-14.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  }
+ ],
+ "agendas": {
+  "2026-08-10": {
+   "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsj5y3ae2bvv07lip8gzwrgh",
+   "file": "agendas/2026-08-10.txt"
+  },
+  "2026-09-14": {
+   "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmtx92nv40rac07lcdvj31aqh",
+   "file": "agendas/2026-09-14.txt"
+  }
+ },
+ "agendasIndex": "https://www.indy.gov/activity/council-meeting-agendas"
+}

@@ -1,0 +1,1451 @@
+[Page 1 of 44]
+GENERAL ORDINANCE RECORD 2021 
+CITY-COUNTY GENERAL ORDINANCE NO. 26, 2021 
+Proposal No. 178, 2021 
+ 
+A GENERAL ORDINANCE to amend Chapter(s) 740, 742, and 744 of the “Revised Code of the Consolidated City and 
+County” by repealing, replacing, and revising the language, to take effect on        November 1, 2021. 
+ 
+WHEREAS, the City of Indianapolis and Marion County enacted a new Consolidated Zoning/Subdivision Ordinance in  2016. 
+ 
+WHEREAS, the implementation and enforcement of the new Consolidated Zoning/ Subdivision Ordinance has revealed  the need for revisions to the ordinance. 
+ 
+WHEREAS, IC 36-7-4 establishes the Metropolitan Development Commission of Marion County, Indiana, as the single  planning and zoning authority for Marion County, Indiana, and empowers the MDC to approve and recommend to the City-
+County Council of the City of Indianapolis and of Marion County, Indiana ordinances for the zoning or districting of all lands  within the county for the purposes of securing adequate light, air, convenience of access, and safety from fire, flood, and other  danger; lessening or avoiding congestion in public ways; promoting the public health, safety, comfort, morals, convenience,  and general public welfare; securing the conservation of property values; and securing responsible development and growth;  now, therefore: 
+ 
+BE IT ORDAINED BY THE CITY-COUNTY COUNCIL OF THE 
+CITY OF INDIANAPOLIS AND OF MARION COUNTY, INDIANA: 
+ 
+SECTION 1. The Zoning Ordinance of Marion County, Indiana, Section 740-202 of the “Revised Code of  the Consolidated City  and County”, pertaining to the definitions, hereby is amended pursuant to IC 36- 7-4 by the addition of the language that is  underscored, and to be alphabetized as needed, and the deletion of the language that is stricken, to read as follows: 
+ 
+Amenity Zone: The area of the streetscape that provides a buffer between people walking on sidewalks and the street. It typically  includes elements such as lights, trees, bicycle racks, landscaping, benches, signs,  public art, transit facilities and green  infrastructure. Policies and designs for this area are more specifically defined by policies and standards for public rights-of-way. 
+ 
+Convenience Market: A retail establishment selling a limited number of food items, such as sandwiches, snacks, staple groceries,  snacks, household items, lottery tickets and food items prepared on the premises, including reheating, which can be immediately  consumed and sundries. The establishment may also provide a an accessory facility where gasoline and other motor fuels are stored  and subsequently dispensed by use of fixed, approved dispensing equipment by customers of the establishment on a self-service  basis. This use is classified under “Retail, Light General.”
+
+[Page 2 of 44]
+G.O. No. 26, 2021 
+Page 2 
+ 
+GENERAL ORDINANCE RECORD 2021 
+ 
+Front Building Line: When established as a requirement for location of the principal building, the distance or a range from  the front lot line, at or within which distance the front building line of the principal structure shall be established. When  expressed as a requirement to measure something else (i.e. parking or accessory buildings located behind the front  building line), the front building line shall mean the actual linear which the front of the building is established, extending  across the entire lot. (See Established Front Setback Line) 
+ 
+Front Building Line, required: The percentage of the lot frontage which must be occupied by at least a portion of the front  building. 
+ 
+Frontage (Private): The area at the front of lots that is generally between the established front setback line and the front  lot line, which establishes the relationship between the private lot and building and the public streetscape. Private  frontage types in this code are applied to private property; however, the specific frontage  types may be used to  coordinate policies and standards for public rights of way based on the context. 
+ 
+Frontages 
+ 
+Commuter Frontage: A frontage in which the right-of-way has been designated as a Commuter 
+Street by a neighborhood, corridor, master or similar plan and delineated in the plan adopted at  the time of rezoning. A Commuter Street is designed to allow automobiles to access a parking  garage from collector or arterial streets without crossing any designated Pedestrian Frontage. The  building frontage meets or is subject to the requirements for a T.5 MM Commuter frontage as  defined in the Indianapolis Regional Center and Metropolitan Planning Area Multi-modal Corridor  and Public Space Design Guidelines (August 2008). 
+ 
+Connector Frontage: A frontage in which the right-of-way has been designated as a 
+Connector Street by a neighborhood, corridor, master or similar plan and delineated in the plan  adopted at the time of rezoning. A Connector Street is designed to provide pedestrian- friendly, multi-modal connections throughout a mixed-use district. The  building frontage meets or is subject to the requirements for a T.6 MM Connector frontage as defined in the 
+Indianapolis Regional Center and Metropolitan Planning Area Multi-modal Corridor and Public Space Design Guidelines  (August 2008). 
+ 
+Park Frontage: The common line of contact of a property with the lot line of a greenway, public park, waterway, or  similar outdoor space accessible by the public. 
+ 
+Pedestrian Frontage: A frontage in which the right-of-way has been designated as a Pedestrian Street by a  neighborhood, corridor, master or similar plan and delineated in the plan adopted at the time of rezoning. A Pedestrian 
+Street is designed to provide continuous, convenient pedestrian access and mobility along the street with no or very  limited interruptions, curb cuts or parking areas. The building frontage meets or is subject to the requirements for a T.2 
+MM Pedestrian frontage as defined in the Indianapolis Regional Center and Metropolitan Planning Area Multi-modal 
+Corridor and Public Space Design Guidelines (August 2008). 
+ 
+Grocery Store (Transit-Oriented Development Secondary District): For the Transit-Oriented  Development 
+Secondary District, the following refined categories apply: 
+ 
+Convenience grocery store (3,000sf. or less)—a convenience type grocery and/or sundry store  with 3,000 or less square feet of gross leasable area. 
+ 
+Small grocery store (3,001-10K sf.) – a grocery store with between 3,001 and 10,000 square feet of  gross  leasable area. 
+ 
+Medium grocery store (10,001 – 30,000 sf.) – a grocery store with between 10,001 and 30,000  square feet  of gross leasable area. 
+ 
+Large grocery store (30,001 – 50,000 sf.) – a grocery store with between 30,001 and 50,000 square feet of  gross leasable area.
+
+[Page 3 of 44]
+G.O. No. 26, 2021 
+Page 3 
+ 
+GENERAL ORDINANCE RECORD 2021 
+Supermarket grocery store (50,000 or more sf.) – a grocery store with more than 50,000 square  feet of  gross leasable area. 
+ 
+Lodging: A commercial use providing accommodations for temporary, short-term overnight occupancy, and  accessory  uses associated with typical guest services such as food service, recreation or similar accommodations to support  overnight-guests. For the purposes of the Transit Oriented Secondary District, lodging is refined to the following scales  based on building type, format and intensity of use. 
+ 
+ 
+Lodging, Bed and Breakfast. A small residential building used for short-term lodging with one or more meals for  compensation and shared living space between the primary occupants and patrons and includes at least 2 but  no more than 5 guest rooms. 
+ 
+Lodging, Inn. A large residential building or small commercial building providing accommodations for         short-term overnight occupancy for at least 6 but less than 20 guest rooms. 
+ 
+Lodging, Small Hotel. A commercial building providing accommodations for short-term overnight  occupancy for at least 21 but less than 100 guest rooms. 
+ 
+Lodging, Large Hotel. A commercial building providing accommodations for short-term overnight  occupancy for 101 or more guest rooms. 
+ 
+Lot width: The horizontal distance between side lines measured along a line that is parallel to the front lot line. The lot width  shall be measured at the front building setback line. 
+ 
+Office (Transit-Oriented Secondary District): For the Transit Oriented Secondary District, the following refined       categories apply: 
+ 
+Office – small (under 10,000 sf.) – an office use with under 10,000 square feet of gross  leasable  area. 
+ 
+Office - medium (10,001 – 50,000 sf.) – an office use with between 10,001 and 50,000 square       feet of gross leasable area. 
+ 
+Office - large (50,000 + sf.) – an office use with more than 50,000 square feet of gross     leasable area. 
+ 
+Retail Sales and Service (Transit-Oriented Development Secondary District): For the Transit- Oriented 
+Development Secondary District, the following refined categories apply: 
+ 
+Micro retail sales and service (< 1,000 sf.) - a general retail or service use with under 1,000 square feet of gross  leasable area. 
+ 
+Small retail sales and service (1,001 – 3,000 sf. - a general retail or service use with   between 1,000 and 3,000 square feet of gross leasable area. 
+ 
+Medium retail sales and service (3,001 – 8,000 sf.) - a general retail or service use with   between 3,001 and 8,000 square feet of gross leasable area. 
+ 
+Large retail sales and service (8,001 – 20,000 sf.) - a general retail or service use with   between 8,001 and 20,000 square feet of gross leasable area. 
+ 
+Extra-large retail sales and service (20,001 + sf.) - a general retail or service use with more than  20,000  square feet of gross leasable area.
+
+[Page 4 of 44]
+G.O. No. 26, 2021 
+Page 4 
+ 
+GENERAL ORDINANCE RECORD 2021 
+Story, Half: The space under a sloping roof that has a line of intersection of  the roof and exterior wall face not more than 2 feet above the floor level, and  where the possible floor area with head room of 7 feet or more is no greater  than 60% of the total floor area of the story directly beneath.
+
+[Page 5 of 44]
+G.O. No. 26, 2021 
+Page 5 
+ 
+GENERAL ORDINANCE RECORD 2021 
+SECTION 2. The Zoning Ordinance of Marion County, Indiana, Sec. 742-103 of the “Revised     Code of  the Consolidated City and County”, pertaining to Dwelling Districts, hereby is amended pursuant to IC  36-7-4, by the deletion of Sections 742-103 (H), (I), (M), (N) and (O) in its entirety and those deleted  sections shall be replaced by the addition of a new Section 742-103(H), to read as follows: 
+  
+ Sec. 742-103. Dwelling Districts. 
+ 
+H. Walkable Neighborhood Dwelling Districts (D-5, D5II, D8, D9 and D10) 
+ 
+1. Purpose. 
+ 
+To advance the Livability Principles of this Code, the D-5, D-5II, D8, D9 and D-10 districts implement  walkable, compact neighborhoods within a well-connected street network and block structure, using slow  neighborhood streets, walkable connectors, and multi-mode thoroughfares. Access to parks and recreation,  transit and neighborhood services within walking distance is important. Street trees, landscape and trees  along private frontages, and an active amenity zone create comfortable walking environment and add  appeal to neighborhoods. These districts require urban public and community facilities and services to be  available. These districts may be used in combination to supply critical mass of residents to support nearby  commercial and transit investments. Each district has the following specific purposes and applicability: 
+ 
+ 
+TABLE 742-103-7 – Walkable Neighborhood District Purposes 
+Dwelling District Five (D-5) 
+ 
+ 
+The D-5 district is intended for medium and large-
+lot housing formats, primarily for detached 
+houses, but may incorporate small- scale multi-
+unit building types in strategic locations. This 
+district can be used for new, walkable suburban 
+neighborhoods or for infill situation in established 
+urban areas, including both low density and 
+medium density residential recommendations of 
+the Comprehensive Plan, and the Suburban 
+Neighborhood and Traditional Neighborhood 
+Typologies of the Land Use Pattern Book
+
+[Page 6 of 44]
+G.O. No. 26, 2021 
+Page 6 
+ 
+GENERAL ORDINANCE RECORD 2021 
+Dwelling District Five-two (D-5II) 
+ 
+ 
+The D-5II district is intended for small-lot 
+housing formats, primarily for small, detached 
+houses, but also including a mix of small-
+scale multi-unit building types. This district 
+can be used for new, walkable suburban 
+neighborhoods or for infill situations in 
+established urban areas, including both low 
+density and medium density residential 
+recommendations of the Comprehensive 
+Plan, and the Suburban Neighborhood or 
+Traditional Neighborhood Typologies of the 
+Land Use Pattern Book. 
+Dwelling District Eight (D-8) 
+ 
+ 
+ 
+The D-8 district is intended for a variety of 
+housing formats, with a mix of small-scale 
+multi-unit building types. This district can be 
+used as a part of new mixed-use areas, or 
+for infill situations in established urban areas, 
+including medium and high-density 
+residential recommendations of the 
+Comprehensive Plan, and the Traditional 
+Neighborhood, City Neighborhood, and 
+Village or Urban Mixed-Use Typologies of 
+the Land Use Pattern Book. 
+Dwelling District Nine (D-9) 
+ 
+ 
+ 
+The D-9 district is intended for higher 
+density housing formats, with a mix of 
+small- and moderate-scale multi-unit 
+building types. This district can be used at 
+transitions to walkable, commercial areas, 
+transit stations and urban and suburban 
+corridors, including the high-density 
+residential recommendations of the 
+Comprehensive Plan, and the Traditional 
+Neighborhood, City Neighborhood, or 
+Village or Urban Mixed-Use Typologies of 
+the Land Use Pattern Book. 
+Dwelling District Ten (D-10)
+
+[Page 7 of 44]
+G.O. No. 26, 2021 
+Page 7 
+ 
+GENERAL ORDINANCE RECORD 2021 
+ 
+ 
+ 
+The D-10 district is intended for high 
+density housing formats, in moderate- or 
+large-scale multi-unit building types. This 
+district can be used at transitions and 
+urban centers and corridors, including the 
+high-density residential recommendations 
+of the Comprehensive Plan, and the City 
+Neighborhood and Urban Mixed-Use 
+Typologies of the Land Use Pattern Book. 
+ 
+ 
+ 
+2. Examples. The D-5, D-5II, D8, D9 and D-10 districts regulate development by building type, with a range of  building types permitted in each district and where each type has specific lot and building form standards.  The  following are examples of each type. 
+ 
+TABLE 742-103-8 – Building Type Examples 
+Building Types Photos 
+ 
+ 
+Detached House – 
+Medium Lot 
+ 
+ 
+ 
+ 
+Detached House – 
+Small Lot 
+ 
+ 
+ 
+ 
+Detached House – 
+Compact Lot
+
+[Page 8 of 44]
+G.O. No. 26, 2021 
+Page 8 
+ 
+GENERAL ORDINANCE RECORD 2021 
+ 
+ 
+ 
+Duplex 
+ 
+ 
+ 
+ 
+Multi-Unit House – 
+Small Lot 
+ 
+ 
+TABLE 742-103-8 – Building Type Examples 
+Building Types Photos 
+ 
+ 
+Multi-Unit House – 
+Compact Lot 
+ 
+ 
+ 
+ 
+Row House – Large Lot
+
+[Page 9 of 44]
+G.O. No. 26, 2021 
+Page 9 
+ 
+GENERAL ORDINANCE RECORD 2021 
+ 
+ 
+Row House – Small Lot 
+ 
+ 
+ 
+ 
+Small Apartment 
+ 
+ 
+ 
+ 
+Medium Apartment
+
+[Page 10 of 44]
+G.O. No
+. 26, 2021 
+Page 10 
+GENERAL ORDINANCE RECORD 2021 
+TABLE 742-103-8 – Building Type Examples 
+Building Types Photos 
+Large Apartm
+ent 
+3. Building Type Standards. Table 742-103-11 provides development standards for each building         type and the zoning district where each type is permitted.
+TABLE 742-103-11 – RESIDENTIAL BUILDING TYPE STANDARDS 
+NAME/TYPE
+LOT (MIN.) [1] SETBACKS (MIN.) BUILDING Zoning Districts 
+AREA (SF.) WIDTH FRONT SIDE 
+CORNER 
+SIDE REAR 
+HEIGHT 
+(MAX.) 
+[2] 
+OPEN 
+SPACE [3] D5 D5II D8 D9 D10 
+Detached 
+House – 
+Medium Lot 
+ ≥7.2K 60’ 
+See Section 744. Article VII. Section 01.C. Private Frontage Types  7’ 10
+’ 
+20’ 35’ / 2.5 
+story 
+60%   
+Detached House – 
+Small Lot 
+  ≥5K 40’ 5’ 8’ 20’ 35’ / 2.5 
+story 
+40%    
+Detached 
+House – 
+Compact Lot 
+ 
+≥2.5K 
+25’ 3’ 8’ 15’ 35’ / 2.5 
+story 
+20%    
+Duplex (2 units)  ≥7.2K 60’ 5’ 8’ 20’ 35’ / 2.5 
+story 
+60%    
+Multi-Unit House 
+(2-4 units) – Small 
+Lot 
+ ≥5K 40’ 5’ 8’ 20’ 35’ / 
+2.5 story 
+40%    
+Multi-Unit House - 
+Compact Lot (2-4 
+units) 
+ ≥3.5K 35’ 3’ 8’ 10’ 35’ / 
+2.5 story 
+20%     
+Row House – Large 
+Lot 
+(2 – 8 units / building) 
+ ≥2K 20’ 5’ / 0’ if 
+party wall 
+8’ 15’ 40’ / 
+3 story 
+15%     
+Row House – 
+Small Lot (2-12 
+units / building) 
+ ≥1.2K 16’ 5’ / 0’ if 
+party wall 
+8’ 15’ 40’ / 
+3 story 
+10%    
+Small 
+Apartment (3 
+–12 units)
+4K – 12K 40’ – 
+100’ 
+5’ 10
+’ 
+10’ 50’ / 
+2-4 story
+100 
+sf./ 
+unit 
+   
+Medium 
+Apartment (13-
+50 units) 
+12K – 
+1ac. 
+100’ – 
+200’ 
+5’ 10
+’ 
+10’ 75’ / 
+3-6 story
+75 sf. 
+/ unit 
+  
+Large 
+Apartment 
+(51+ units) 
+ ≥1ac. 150’ min. 5’ 10
+’ 
+10’ 150’ / 
+3-12
+story
+60 sf. 
+/ unit 
+ 
+[1] Lot width s
+hall exclusively control the application of the residential building type standards (except for Apartment Types).
+[2] The lesser of the two values shall be the maximum height.
+[3] See Walkable Neighborhood Design Standards, Section 744. Article VII. Section 01.E. Block & Lot Open
+
+[Page 11 of 44]
+G
+.O. No. 26, 2021 
+Page 11 
+GENERAL ORDINANCE RECORD 2021 
+   Space f or eligible open space designs. 
+ Pe
+rmitted lot and building type in zoning district. 
+4. Other.
+A
+ll lots and buildings in the D-5, D-5II, D8, D9 and D-10 districts shall conform to the Walkable
+Neighborhood Design Standards in Section 744.701.
+Illustration: Lot, Setback & Frontages, Standards. See Table 742-103-11 for application of lot and setback standards  for a building type. Front building placement and frontage design ties multiple building types together along a block face. 
+Refer to Section 744.701.C. for Private Frontage design standards.
+
+[Page 12 of 44]
+G
+.O. No. 26, 2021 
+Page 12 
+GENERAL ORDINANCE RECORD 2021 
+SEC
+TION 3. The Zoning Ordinance of Marion County, Indiana, Sec. 742-103 of the “Revised     Code of the 
+Consolidated City and County”, pertaining to Dwelling Districts, hereby is amended pursuant to IC 36-7-4, by  the deletion of the language that is stricken-through, by the addition of the language that is underscored and  to be alphabetized as needed, to read as follows: 
+J. I. Dwelling District Six (D‐6)
+K. J. Dwelling District Six‐Two (D‐6II) 
+L. K. Dwelling District Seven (D‐7)
+P. L. Dwelling District Eleven (D‐11)
+Q. M. Planned Unit Development District (D‐P)
+
+[Page 13 of 44]
+G
+.O. No. 26, 2021 
+Page 13 
+GENERAL ORDINANCE RECORD 2021 
+SEC
+TION 4. The Zoning Ordinance of Marion County, Indiana, Chapter 742 Article I of the “Revised Code of the 
+Consolidated City and County”, pertaining to Mixed-Use Districts, is amended pursuant to IC 36-7-4, by deletion of 
+Sections 742-105 (C), (D), and (E) in its entirety and replaced with a new Sec. 742-105(C), to read as follows: 
+C. Mixed Use Two (MU-2), Mixed Use Three (MU-3), and Mixed Use Four (MU-4) Districts 1. Purpose. The MU-2, MU-3, and MU-4 districts are intended to create compact, walkable places at a variety of scales and intensity, appropriate to their contexts. These districts advance their
+Livability Principles of this code, further the mixed-use intent of the Comp Plan and rely on a c
+onnected network of slow or multi-modal streets, and a fine grain of human- scale buildings that line and activate the streetscapes. Each district has the following specific purposes and applicability:
+TABLE 742-105-2 – Walkable Neighborhood District Purposes 
+Mixed Use Two (MU-2) 
+The MU-2 District is intended to meet the daily 
+needs for surrounding neighborhoods, and 
+include, small social spaces that serve as 
+neighborhood gathering places. The district 
+includes primarily neighborhood-serving 
+businesses and institutions, including a wide 
+range of small-scale retail and service uses that 
+typically do not draw customers from beyond the 
+adjacent neighborhoods, and employment, 
+institutional and residential uses that complement 
+the compact, walkable development pattern. The 
+MU-2 District is implemented as a small node or 
+on busy corridors in the Traditional 
+Neighborhood or City Neighborhood Typologies 
+of the Land Use Pattern Book, or as a Village 
+Mixed Use Typology. The typical size of a district 
+is from 2 to 20 acres (1 to 4 blocks) but depends 
+on the context and what integrates best into 
+surrounding neighborhoods and complimentary 
+zoning districts. 
+Mixed Use Three (MU-3) 
+The MU-3 District is intended to serve broader 
+communities and are accessible by transit, and 
+include social spaces that serve as civic 
+gathering places. The district includes a wide 
+range of community-serving businesses and 
+institutions, including retail and services, 
+employment, institutional and residential uses 
+that complement the compact, walkable 
+development pattern. District- wide parking 
+strategies allow this district to serve as a 
+community destination yet maintain the 
+pedestrian focus and transit accessibility. The 
+MU-3 District is implemented along major 
+corridors in the Traditional Neighborhood or City
+
+[Page 14 of 44]
+G.O. No. 26, 2021 
+Page 14 
+ 
+GENERAL ORDINANCE RECORD 2021 
+Neighborhood Typologies of the Land Use 
+Pattern Book, or as a Village Mixed Use or 
+Urban Mixed-Use Typology. This district should 
+be located ½ mile or more from other similar 
+destinations. The typical size of a district is from 
+6 to 30 acres (2 to 8 blocks), but depends on the 
+context and what integrates best into 
+surrounding neighborhoods and complimentary 
+zoning districts. 
+TABLE 742-105-2 – Walkable Neighborhood District Purposes 
+Mixed Use Four (MU-4) 
+ 
+The MU-4 District is intended to create urban centers 
+that serve as regional destinations and are accessible 
+by transit, and include social spaces that serve as civic  gathering places. The district includes a concentration of  retails and services, employment, institutions and 
+residential uses in a compact, walkable development 
+pattern. District-wide parking strategies allow this district  to serve as a regional destination yet maintain the 
+pedestrian focus and transit accessibility. The MU-4 
+District implements the Urban Mixed-Use Typology of the 
+Land Use Pattern Book. This district should be located 
+½ mile or more from other similar community or regional  destinations. The typical size of a district is from 8 to 40  acres (4 to 12 blocks) but depends on the context and 
+what integrates best into surrounding neighborhoods 
+and complimentary zoning districts. 
+ 
+ 
+2. Examples. The MU-2, MU-3 and MU-4 districts regulate development by building type, with a range of   building types permitted in each district and where each type has specific lot and building form standards.  
+The following are examples of each type.
+
+[Page 15 of 44]
+G.O. No. 26, 2021 
+Page 15 
+ 
+GENERAL ORDINANCE RECORD 2021 
+3.  
+ 
+Building Types Photos 
+ 
+ 
+Large Mixed-Use 
+ 
+ 
+ 
+ 
+Medium Mixed-Use 
+ 
+ 
+ 
+ 
+Small Mixed-Use
+
+[Page 16 of 44]
+G.O. No. 26, 2021 
+Page 16 
+ 
+GENERAL ORDINANCE RECORD 2021 
+Building Types Photos 
+ 
+ 
+Compact Mixed-Use 
+ 
+ 
+ 
+ 
+ 
+Live/Work 
+ 
+ 
+ 
+ 
+ 
+ 
+Large Apartment 
+ 
+ 
+Medium Apartment
+
+[Page 17 of 44]
+G.O. No. 26, 2021 
+Page 17 
+ 
+GENERAL ORDINANCE RECORD 2021 
+ 
+ 
+Small Apartment 
+ 
+ 
+Building Types Photos 
+ 
+ 
+Row House – Small 
+ 
+ 
+ 
+ 
+Row House – Large 
+ 
+ 
+ 
+4. Building Type Standards. Table 742-105-3 provides development standards for each building  type and  the zoning district where each type is permitted.
+
+[Page 18 of 44]
+G.O. No. 26, 2021 
+Page 18 
+ 
+GENERAL ORDINANCE RECORD 2021 
+ 
+TABLE 742-105-3 COMMERCIAL AND MIXED-USE BUILDING TYPE STANDARDS 
+ 
+ 
+NAME / TYPE 
+LOT SETBACKS BUILDING ZONING DISTRICTS 
+ 
+AREA 
+ 
+WIDTH 
+ 
+FRONT 
+ 
+SIDE CORNER 
+SIDE 
+ 
+REAR 
+ 
+Height  
+  (Max.)  
+ 
+OPEN SPACE* 
+ 
+MU-2 
+ 
+MU-3 
+ 
+MU-4 
+Live/Work 1.5K -6K sf 18’ – 50’ 
+See Section 744. Article VII. Section 
+01C. Private Frontage Types 5’ 10’ 20’ 40’ / 
+3 stories n/a    
+Compact Mixed-Use < 3K sf 20’ – 30’ 5’ / 0’ if 
+party wall 0’ - 10’ 0’ min. / 
+10’ if alley 
+44’ / 
+3 stories 100 sf / unit    
+Small Mixed-Use 3K - 10K sf 30’ – 100’ 5’ / 0’ if 
+party wall 0’ - 10’ 0’ min. / 
+10’ if alley 
+44’ / 
+3 stories 
+5%; and 50 sf 
+/ unit    
+Medium Mixed-Use 10K – 1 ac. (or ¼ 
+block max) 100’ – 200’ 5’ / 0’ if 
+party wall 0’ - 10’ 0’ min. / 
+10’ if alley 
+80’ / 6 
+stories 
+10%; and 50 
+sf / unit    
+Large Mixed Use 1 ac. – 2.5 ac. 
+(or ½ block max) 200’ – 400’ 5’ / 0’ if 
+party wall 0’ - 10’ 0’ min. / 
+10’ if alley 
+160’ / 12 
+stories 10%    
+      Row House - Large  
+ 
+See Residential Building Type Standards in Table 742-103-11 
+           
+  Row House - Small            
+  Small Apartment            
+  Medium Apartment           
+Large Apartment    
+ 
+ = Permitted by right 
+ = Limited to blocks not designated as a Pedestrian Frontage type according to Section 744.702.C. 
+* Open Space expressed as a % shall be measured as a % of the total building footprint. Mixed-use buildings with residential uses shall  also provide the additional per-unit open space. See Mixed Use and Commercial Design Standards, Section 744. Article VII. Section  02.F. Block and Lot Open Space.
+
+[Page 19 of 44]
+G.O. No. 26, 2021 
+Page 19 
+ 
+GENERAL ORDINANCE RECORD 2021 
+ 
+ 
+5. Other standards. All lots and buildings in the MU-2, MU-3 and MU-4 Districts shall conform to the Mixed-use 
+ and Commercial Design Standards in Section 744-702.
+
+[Page 20 of 44]
+G.O. No. 26, 2021 
+Page 20 
+ 
+GENERAL ORDINANCE RECORD 2021 
+SECTION 5. The Zoning Ordinance of Marion County, Indiana, Chapter 742 Article II of the “Revised   Code of  the Consolidated City and County”, hereby is amended with the establishment of a seventh overlay       district by  the Sec. 742-207, “Transit Oriented Development Secondary Zoning District,” to read as    follows: 
+ 
+Sec. 742-207. - Transit Oriented Development Secondary Zoning District (TOD) 
+ 
+A. Applicability  
+ 
+With the exception of legally established nonconforming uses, no land, building, structure, premises or part thereof  shall be used or occupied except in conformity with these regulations and for uses permitted by this Section. In the  case of any difference of regulations between this Section 742-207 and the regulations of the Primary Zoning 
+District, the provisions of this section shall control. Except as modified by this Section 742-207, all development  standards as required by the Primary Zoning District shall apply. 
+ 
+The Transit Oriented Development Secondary District is established on all lots, wholly or partially, within 1,000’  from centerline of a BRT Line established on the effective date of this section as depicted on the map contained  in the 2015 IndyGo Comprehensive Operational Analysis (COA) except the following property in this area are  not subject to the standards in Section 742-207: 
+1. Any property with D- district zoning; 
+2. Any property with CBD- district zoning;  
+3. Any property with I- district zoning;  
+4. All lots located within any locally designated historic preservation areas as established by, and       under  the jurisdiction of, the Indianapolis Historic Preservation Commission (IHPC). 
+ 
+ 
+ 
+B. Intent & Design Objectives   
+ 
+The intent of the Transit Oriented Development (TOD) Secondary District is to coordinate more compact, walkable  and urban development patterns with public investment in the transit system. These development patterns ensure  that walking and biking are viable options for short trips and transit is a priority for longer trips. Development  patterns and site designs that prioritize automobile travel undermine these public and private investments. This  district follows the policies and principles of the comprehensive plan, the transit-oriented development strategic  plans, and the Livability Principles in this code, and has the following specific design objectives: 
+ 
+1. Place a wide range of housing types within walking distance of commercial centers and transit      stops or stations, and at a critical mass that supports these places.  2. Create connections through many different modes of transportation between neighborhoods and  places  for commercial services and employment. 
+3. Provide a concentration of many different and small-scale uses with a fine-grained pattern that  integrates and transitions well with the neighborhoods they support.  4. Ensure human-scale design that prioritizes relationships of sites and buildings to the streetscapes. 
+ 
+C. Approvals 
+ 
+Development in the TOD Secondary District may be approved in the following manner:  1. Projects that meet all development and design standards may apply for permits unless 
+Administrative Approval is required by this code. 
+2. Projects requesting relief from the use or development standards require approval by the Board of    
+Zoning Appeals, in addition to all other approvals that may otherwise apply, including but not limited to  approval by the Indianapolis Historic Preservation Commission or Regional Center Hearing Examiner.
+
+[Page 21 of 44]
+G.O. No. 26, 2021 
+Page 21 
+ 
+GENERAL ORDINANCE RECORD 2021 
+ 
+D. Use Limitation 
+ 
+In addition to any use allowances, limitations or prohibitions in the base zoning districts, uses in the TOD  Secondary  district shall be further limited as specified in this section. 
+ 
+1. Commercial and Industrial Uses, Generally. Commercial and Industrial Uses permitted in any  primary 
+District shall be limited by scale of the use in the TOD Secondary District as follows. Retail Sales / 
+Services shall apply to any commercial and/or industrial use enabled in the primary district, unless it is  more specifically described in the table below: 
+ 
+TABLE 742-207-1 Commercial & Industrial Use Limitations 
+ 
+C-1 
+C-3 
+C-4 
+C-5 
+MU-2 
+MU-3 
+MU-4 
+Micro-Retail Sales / Service (under 1,000 sf) P P P P P P P 
+Small Retail Sales / Service (1,001 to 3,000 sf) P P P P P P P 
+Medium Retail Sales / Service (3,001 to 8,000 sf) P P P P S P P 
+Large Retail Sales / Service (8,000 to 20,000 sf)  S P P  S P 
+Extra Large Retail Sales / Service (20,001+ sf)   S S   S 
+Small Grocery Store (3,001 to 10,000 sf.) P P P P P P P 
+Medium Grocery Store (10,001 – 30,000 sf) S P P P S P P 
+Large Grocery Store (30,001 – 50,000 sf)   S S  S S 
+Super Market Grocery Store (50,001 + sf)   S S  S S 
+Office – Small (under 10,000 sf) P P P P P P P 
+Office – Medium (10,0001 to 50,000 sf)  P P P S P P 
+Office – Large (50,001+ sf)   S P  S P 
+Lodging – Bed and Breakfast (under 5 guest rooms) P P P P P P P 
+Lodging – Inn (6 to 20 guest rooms)  P P P  P P 
+Lodging – Small Hotel (21 to 100 guest rooms)   P P  S P 
+Lodging – Large Hotel (101 + guest rooms)    S   P 
+P = Permitted 
+S = Special Exception 
+ 
+2. Location and Limitation of Specific Uses. The following uses in their typical form or format, and     when concentrated in areas have a detrimental effect on the intent and design objectives of the Transit 
+Oriented Development Secondary District. Where these uses are enabled by the primary zoning district,  they shall be further limited in the TOD Secondary District as stated in Table 742- 707-2. Each use  remains subject to all other form, format and design standards found in Section 744.702 Commercial and 
+Mixed-Use Design Standards. 
+ 
+TABLE 742-207-2 Location and Limitation of Specific Uses 
+Use Type Specific Restrictions 
+Automobile Fueling Station 
+(primary or accessory use) 
+• Within 600’ of a Transit Station* - Prohibited 
+• Greater than 601’ from a Transit Station- Limited to no more  than 8    pump islands / service areas. 
+Automobile and Light 
+Vehicle  Wash 
+• Prohibited as primary use. 
+• Limited to an accessory use to automobile fueling station, but  each car wash station counts as a pump / service area. 
+Automobile, Motorcycle, 
+and Light Vehicle Service 
+or Repair 
+• Pedestrian Frontages - Prohibited 
+• Where otherwise permitted - Limited to lots no larger than 0.5  acres.
+
+[Page 22 of 44]
+G.O. No. 26, 2021 
+Page 22 
+ 
+GENERAL ORDINANCE RECORD 2021 
+TABLE 742-207-2 Location and Limitation of Specific Uses 
+Use Type Specific Restrictions 
+Automobile, Motorcycle, 
+and   Light Vehicle Sales or 
+Rental 
+• Within 600’ of a Transit Station and on Pedestrian 
+Frontages - Prohibited 
+• Where otherwise permitted - Limited to lots no larger than 0.5  acres. 
+Drive Thru Accessory 
+Uses, included but not 
+limited to food service, 
+banking service, and 
+ATMs. 
+• Within 600’ of a Transit Station – Prohibited, except where  located   behind the building and all access provided by  alleys. 
+• Greater than 601’ from a Transit Station – Prohibited, except  where located behind or to the side of the building and all access is  provided by alleys, or along a Buffer Frontage. 
+Mini-Warehouse 
+(Self-Storage Facilities) 
+• Within 600’ of a Transit Station, or on Pedestrian Frontages - 
+Prohibited 
+• Where otherwise permitted - Limited to lots of 0.5 acres or less,  and all  facilities, operations and access to individual storage  units shall be inside a building meeting all applicable form,  format and design standards. 
+Commercial Parking 
+(Primary Use) 
+• Within the TOD Secondary District - Limited to parking garages,  provided that access to any such garage shall not be permitted  from a  Pedestrian Frontage. 
+*The 600’ shall be taken from the lot line of the parcel containing the use to the leading edge of the Transit Station. 
+ 
+Any use otherwise permitted by these standards shall be required to meet all applicable form and  design  standards of the zoning ordinance. 
+ 
+E. Additional Development Standards. 
+ 
+1. Mixed-Use Districts. All MU-districts in the TOD Secondary District shall meet the Mixed-use and 
+Commercial Design Standards in Section 744.702. 
+ 
+2. Commercial Districts. All C-districts in the TOD Secondary District shall meet the Mixed-use and 
+Commercial Design Standards in Section 744.702. 
+ 
+3. Regional Center. All lots in the RC Secondary District governed by Section 742.202 are subject to  the 
+Regional Center Design Guidelines.
+
+[Page 23 of 44]
+G.O. No. 26, 2021 
+Page 23 
+ 
+GENERAL ORDINANCE RECORD 2021 
+SECTION 6. The Zoning Ordinance of Marion County, Indiana, Table 744-201-1 in Sec. 744-201 is deleted in its  entirety: 
+ 
+ 
+ 
+SECTION 7. The Zoning Ordinance of Marion County, Indiana, Sec. 744-504 hereby is amended by deleting the  language that is stricken-through and adding the language that is underlined, to read as follows: 
+ 
+Sec. 744-504. Street frontage and front yard landscaping. 
+In all zoning districts except residential lots in D-A, D-S, D-1, D-2, D-3 and D-4 for lots improved with  single-family detached dwellings, single-family attached dwellings, two-family dwellings, triplexes, and  fourplexes, the front yard shall meet the following standards:  
+A. The front yard shall be landscaped with at least one shade tree per 35 feet of street frontage. If  overhead electric distribution lines are present, ornamental trees with a maximum mature height  of 15 feet shall be planted and the number of trees planted shall be at least one ornamental tree  per 20 feet of street frontage.  
+B. Trees required by the subsection above shall be planted in the amenity zone within 25 feet of the  right-of-way, or where       right-of-way design constraints prevent this, within 10 feet of the front lot  line. 
+C. For lots that have a front yard less than five feet in depth or where the sidewalk extends from the  back of curb to the lot line, tree wells may be installed in the right-of-way to accommodate the  required frontage trees, provided the sidewalk surface remains at least 4 feet wide at all locations. 
+For tree wells adjacent to sidewalks measuring five feet wide or less, the tree well opening must  be covered with a tree grate or surrounded by a fence or wall at least 18 inches in height. The  opening in a tree grate for the trunk well must be expandable or otherwise accommodate the  mature diameter of the tree, and include           sub-surface techniques to account for root growth and  protection.  
+D. All planting in the public right-of-way shall meet the requirements of Chapter 701 and may be  counted toward fulfilling the requirements of this article.  
+E. On lots adjacent to a landscaped median in the right-of-way, 50% of the vegetation in the median  that meets a street frontage and front yard landscaping requirement may be credited towards the  landscaping requirements of this Section 744-504.  
+F. Planting beds with shrubs, flowers, wildflowers, low grasses or sedges, excluding turf grass, shall  comprise at least 20% of the area of a front yard.  
+G. In Dwelling Districts, the front yard is subject to limitations on front yard parking area width shown  in Section 744-404.A.2., and the remaining front yard shall be landscaped in grass, shrubbery,  trees or flowers, or in combination with other similar and suitable vegetative ground cover  plantings.
+
+[Page 24 of 44]
+G.O. No. 26, 2021 
+Page 24 
+ 
+GENERAL ORDINANCE RECORD 2021 
+SECTION 8. The Zoning Ordinance of Marion County, Indiana, Chapter 744 Article 7 of the “Revised Code of the 
+Consolidated City and County”, pertaining to Design Standards, hereby is amended pursuant to IC 36-7-4, by   the addition of Section 744-701, “Walkable Neighborhood Design Standards,” and Section 744-702, “Mixed-use and 
+Commercial Design Standards,”  to read as follows: 
+ 
+ARTICLE VII. – DESIGN STANDARDS 
+ 
+Sec. 744-701. - Walkable Neighborhood Design Standards 
+ 
+A. Applicability. The Walkable Neighborhood Design Standards shall apply to the D-5, D-5II, D-8, D-9 and 
+D-10 zoning districts. The standards shall specifically apply to the following circumstances: 
+ 
+ 
+ 
+TABLE 744-701-1: Applicability  
+ACTIVITY APPLICABILITY OF STANDARDS 
+ 
+Site or Landscape work on less than 50% of the lot 
+Standards only apply to the work being done, 
+and only to the extent that any non-conforming 
+situations do not become less compliant. 
+Site or Landscape work on 50% or more of the lot. All site and landscape for the entire lot shall be  brought  into compliance with the standards. 
+Rehabilitation, remodeling or additions to buildings 
+that add more than 200 square feet to the building 
+footprint or mass, but less than 50% of the total 
+building 
+Standards only apply to the work being done, 
+and only to the extent that any non-
+conforming situations do not become less 
+compliant. 
+New primary structure; or 
+Rehabilitation, remodeling or additions to buildings 
+that add 50% or more of the square footage to the 
+building footprint or mass. 
+ 
+All standards for the entire building and lot shall 
+be met.
+
+[Page 25 of 44]
+G.O. No. 26, 2021 
+Page 25 
+ 
+GENERAL ORDINANCE RECORD 2021 
+B. Design Objectives. To advance the Livability Principles of this code, and to promote walkable  neighborhoods, the design standards in this section have the following objectives. Any exceptions to  the  standards in this section, or discretionary review processes related to a specific application, shall        be judged against these design objectives, in addition to any other criteria in this code for the application.  1. Design walkable streetscapes, with slow traffic speeds, well-connected sidewalks, and shade and  enclosure offered from street trees. 
+2. Orient all buildings to the street to activate the streetscape, while still promoting effective  transitions from public spaces to private spaces on the lot.  3. Promote human-scale buildings and create active, social spaces along the streetscape and private  frontages  with building massing and architectural details that break up larger masses into smaller components and  define outdoor spaces. 
+4. Use similar forms and massing, common building elements, and consistent relationships to the  streetscape to create compatibility among different building types, and to create effective transitions  between different scales of buildings. 
+5. Minimize the impact of car access on neighborhood streetscapes by limiting driveways and the  extent of  front loaded garages along block frontages, and use alternative access patterns integrated towards the  interior of the block. 
+6. Reinforce the neighborhood character with quality materials, windows, and architectural details that  provide interest, depth, texture, and variety visible to those experiencing a neighborhood on foot.  7. Improve the appearance and livability of neighborhoods with good civic design.  8. Promote lasting and sustained investment in neighborhoods with quality design. 
+ 
+ 
+C. Private Frontage Types. The design of private frontages on lots establishes the relationship of buildings and  lots to the streetscape. The proportion of this area designed for social spaces and access for pedestrians, as  opposed to dedicated to vehicle access, affects the character and quality of  the streetscape. A consistent  frontage design among all lots and buildings along a block face reinforces neighborhood character, even where  different types or scale of buildings are permitted. The private frontage design standards in Table 744-701-2  coordinate the setback and building placement of  specific building types on a block-by-block basis. 
+ 
+Where multiple frontage types are permitted, the frontages should be similar for all lots on the same block face  or gradually transition to different building placement and frontage types on adjacent lots. In           general, the front building line of adjacent buildings shall not differ by more than 5 feet. 
+ 
+ 
+TABLE 744-701-2: PRIVATE FRONTAGE DESIGN STANDARDS 
+ TERRACE FRONTAGE NEIGHBORHOOD YARD FRONTAGE 
+FRONTAGE 
+ELEMENT 
+  
+ • Generally - Applicable D-8, D-9, 
+and D-10. 
+• Exception – Applicable in D-
+5 and D-5II where: 
+o Corridors have a high degree 
+of pedestrian amenity in the 
+streetscape; or 
+o The context of the block 
+establishes smaller 
+frontages as the 
+predominant pattern 
+(typically 50% or more on 
+the block face or at 
+transitions to adjacent 
+blocks and frontages) 
+• Generally – Applicable in D-5 and D-5II 
+• Exception – Applicable in D-8. D-9, 
+and D-10 where: 
+o High speed or higher-volume streets that 
+Application lack pedestrian amenities needed for 
+a quality frontage; or 
+o The context of the block establishes 
+larger frontages as the predominant 
+pattern, (typically 50% or more on the 
+block face or at transitions to adjacent 
+blocks or frontages). 
+Front Building Line 
+(“Build to Range”) 
+10’ – 
+19.9’ 
+20’ – 50’
+
+[Page 26 of 44]
+G.O. No. 26, 2021 
+Page 26 
+ 
+GENERAL ORDINANCE RECORD 2021 
+Front Entry & 
+Entry 
+Features 
+All buildings shall have a primary entrance on the front facade. A single-story  entry feature may project up to 10’ in front of the front building line, but never  more than 5’ from the front lot line, provided it meets the scale and design  standards in Section 744-701.D 
+ 
+ 
+ 
+Front Loaded 
+Garage Placement 
+and Limitations 
+ 
+ 
+ 
+Prohibited; requires side-
+loaded, rear- loaded or 
+detached garages. 
+• 0’ – 12’ behind front building line, up to 
+30% of facade at the front building line; 
+• 12’+ behind front building line, up to 
+45% of facade at the front building 
+line. 
+• Prohibited if over 45% of facade; 
+• All other cases require side-loaded, 
+rear- loaded or detached garages. 
+ 
+ 
+Landscape [See 
+Section 744, Article V 
+for standards and 
+specifications.] 
+• 50% minimum landscape 
+area (living material) 
+• 1 street tree for every 
+35’ of lot frontage. 
+• Planting beds with shrubs 
+or perennial plants shall 
+cover at least 10% of the 
+frontage area. 
+• 65% minimum landscape area (living 
+material) 
+• 1 street tree for every 35’ of lot 
+frontage, and one additional tree per 
+35’ of frontage where the front building 
+line is more than 35’ from the front lot 
+line. 
+• Planting beds with shrubs or perennial 
+plants shall cover at least 10% of the 
+frontage area. 
+Surface Parking Lot 
+Setback 
+and Limits 
+• At least 20’ or behind 
+the front building line, 
+whichever is greater. 
+• Behind the front building line.
+
+[Page 27 of 44]
+G.O. No. 26, 2021 
+Page 27 
+ 
+GENERAL ORDINANCE RECORD 2021 
+Figure 744.701.02 Neighborhood Yard Frontage Elements
+
+[Page 28 of 44]
+G.O. No. 26, 2021 
+Page 28 
+ 
+GENERAL ORDINANCE RECORD 2021 
+D. Block and Lot Open Space. Block and lot open space provides for active gathering places,  recreation and leisure, and aesthetic enhancements to the buildings and lots serving as an  extension of civic spaces connected to streetscapes. The open space required for each  building type specified in Table743.301.7, shall be designed to create       usable outdoor space meeting one or more of the following open space types:  1. Public or Common open space designed and platted according the standards in Table  741-310-2, provided it is on the same or abutting block, and is accessible to     the project as public property, through ownership, or by other agreement;  2. Private frontage areas designed according to Section 744.701.C;  3. Courtyards, meeting the standards of Section 744.701.E;  4. Rear yards or uncovered decks or patios, provided they are part of an open area at  least  140 feet; 
+5. Rooftop decks provided they are at least 160 square feet; or  6. Private balconies or patios, provided they are at least 6 feet by 10 feet. 
+ 
+E. Courtyard Pattern. Residential buildings and lots may be designed to front on a courtyard  based  on the following design standards. A courtyard consists of an open area that is completely or  mostly enclosed by the walls of a building or buildings.  1. Applicability. The courtyard pattern is appropriate where:  a. Courtyards are designed as an extension of the public streetscape and  open  space system for the project, block or neighborhood. 
+b. Blocks and surrounding lots are deep, allowing a different configuration of  buildable lots; or 
+c. Other developed areas where existing lot patterns in the vicinity warrant use  of this  pattern to facilitate infill development and compatible building types.  2. Eligible Building Types. The following building types are eligible for this pattern, subject  to the limitations stated: 
+a. Small Apartments, up to 5 buildings or 36 units, whichever is less.  b.  Row Houses, up to 4 buildings or 24 units, whichever is less.  c. Multi-unit House, Duplex, or Detached House, up to 8 buildings.  3. Design Standards and Exceptions. 
+a. The minimum lot size per building may be reduced up to 30%, provided the  courtyard is owned in common by all lots or otherwise established as a shared- space amenity. 
+b. Lots and buildings may front on the courtyard, rather than along a street, provided  they otherwise meet the design standards applicable to the front of  buildings.  c. The front setback may be reduced to 5 feet from the courtyard.  d. Vehicle access and parking for each lot shall be designed in a way that  minimizes the impact on the public street and the courtyard, and meets all  frontage standards applied to the project as a whole. 
+e. Any buildings fronting on the street, or the sides of any buildings adjacent to  the  street shall still meet requirements for public frontages and orientation standards in  this section. Corner buildings must meet the front building design standards on  both the street front and the courtyard.
+
+[Page 29 of 44]
+G.O. No. 26, 2021 
+Page 29 
+ 
+GENERAL ORDINANCE RECORD 2021 
+f. The courtyard shall meet the following design standards:   (1) Size. 750 to 5,000 square feet. 
+(2) Proportions. The courtyard shall be at least 25 feet in all directions  and  be no wider than 3:1 (length to width). 
+(3) Frontage & Access. The courtyard shall have frontage on a public  
+ street, or be visible from and directly connected to the streetscape.  (4) Landscape: At least 40% of the area shall be allocated to planter beds,  seasonal plantings, foundation plants or other landscape amenities, and  otherwise meet the landscape standards applicable to Terrace frontages. 
+ 
+ 
+Figure 744.701.03 Courtyard Pattern 
+Courtyard patterns allow multiple buildings to 
+front on common open spaces with reduced 
+lot sizes and setbacks, provided all open 
+space design standards are met, provided the 
+courtyard and building maintain frontage 
+design and streetscape standards on a public 
+street.
+
+[Page 30 of 44]
+
+[Page 31 of 44]
+25 
+ 
+ 
+G.O. No. 26, 2021 
+Page 25 
+ 
+ 
+Sec. 744-702. - Mixed-use and Commercial Design Standards. 
+ 
+ 
+A. Applicability. The Mixed Use and Commercial Design Standards apply to the following property: 
+ 
+1. Mixed-use Districts. All applications of the Mixed-Use Districts (MU-1, MU-2, MU-3 and MU-4);  and 
+2. Transit-Oriented Development. Any commercially zoned lot (C- districts) in the Transit- 
+Oriented Secondary District established in section 743.207. 
+ 
+The standards shall specifically apply to the following circumstances: 
+ 
+ 
+TABLE 744-702-1: Applicability  
+ACTIVITY APPLICABILITY OF STANDARDS 
+Site or Landscape work on less than 50% of the lot Standards only apply to the work being done, and only to the extent that any non-conforming  situations do not become less compliant. 
+Site or Landscape work on 50% or more of the lot. All site and landscape for the entire lot shall be brought into compliance with the standards. 
+Rehabilitation, remodeling or additions to buildings 
+that add more than 200 square feet to the building 
+footprint or mass, but less than 50% of the total 
+building 
+ 
+Standards only apply to the work being done, and only to the extent that any non-conforming  situations do not become less compliant. 
+New primary structure; or 
+Rehabilitation, remodeling or additions to buildings 
+that add 50% or more of the square footage to the 
+building footprint or mass. 
+ 
+All standards for the entire building and lot shall be met.
+
+[Page 32 of 44]
+26 
+ 
+ 
+G.O. No. 26, 2021 
+Page 26 
+ 
+ 
+B. Design Objectives. To advance the Livability Principles of this code, and to promote walkable, mixed- use and transit-oriented development patterns, the design standards in this section have the following  objectives. Any exceptions to the standards in this section, or discretionary review  processes related to a  specific application, shall be judged against these design objectives, in addition to any other criteria in  this code for the particular application. 
+1. Create a dynamic, mixed-use environment, where walking is the predominant mode of  transportation within the center, and the center is accessed by many modes including transit,  bicycles, walking and cars. 
+2. Design human scale streetscapes, with slow traffic speeds, well-connected sidewalks, on- street  parking, social spaces along streets, and shade and enclosure offered from street trees and  building facades. 
+3. Produce quality public spaces that are usable for a variety of public and semi-public  activities. 
+4. Coordinate urban design, site planning and building layouts on a block scale, relating to the  level of  design and pedestrian amenity on the associated streetscape.  5. Promote vibrant streetscapes with active uses and attractions located in storefronts and first story  of buildings, and frequent windows and doors that activate the street and create  visual interest on  facades along a block. 
+6. Avoid long, monotonous, uninterrupted walls or roof planes visible from the street or other       public rights-of-way. Large buildings must include details that add architectural interest and    variety such as multiple entrances, projections, recesses, offsets, windows trimmed with frames,  sills or lintels, or other ornamentation. 
+7. Minimize the impact of car access on streetscapes and the character of the district by limiting  driveways and the extent of parking, garage entrances or service bays along streetscapes, and  use alternative patterns of vehicle access integrated towards the interior  of the block.  8. Reinforce the character of unique destinations with quality materials and architectural details that  provide interest, depth, texture, and variety visible to people on foot, and which     differentiate the place from other districts, activity centers, and station areas.  9. Improve the appearance and vibrancy of districts, activity centers, and station areas with    good civic design. 
+10. Promote lasting and sustained investment in districts, activity centers and station areas    with quality design and construction, and durable, adaptable and re-usable buildings. 
+ 
+C. Private Frontage Types. The design of private frontages on lots establishes the relationship of buildings  and lots to the streetscape. Coordinating the quality and character of the streetscape, the placement of the  building, and the details of building design creates better relationships. The private frontage design  standards in Table 744-702-2 coordinate the access, building location and  building design on a block-by- block basis to create a consistent frontage along the block. Frontage types may be established through a  specific plan for each station area or mixed-use district. In the absence of a plan, and when applying these  standards on a project-specific basis, the applicability guidance in Table 744-702-2 for each frontage type  shall be used, and staff shall  select the appropriate frontage type based on the context, and considering  the following:
+
+[Page 33 of 44]
+27 
+ 
+ 
+G.O. No. 26, 2021 
+Page 27 
+ 
+ 
+1. The distance of the site from transit stations; 
+2. The extent that building forms and development patterns on the existing block and adjacent  blocks  reflect compact, walkable patterns; 
+3. The relative quality of the public realm and pedestrian connections existing in the rights-of     way, and considering the pedestrian amenity zones in the thoroughfare plan; and  4 Whether any public or private plans to improve any of the above according to the guidance  in the  thoroughfare plan exist. 
+ 
+ 
+ 
+TABLE 744-702-2: APPLICATION OF FRONTAGE DESIGN STANDARDS 
+APPLICATION OF FRONTAGES  
+Unless designated by an official plan for the area approved by the City, frontage types shall be applied for each project  according to the following 
+ 
+Within 600’ of a 
+Transit Station 
+(Core Area) 
+Required by staff designation 
+based on the following 
+performance criteria: 
+• MU-2 / C-districts – At least 
+2 blocks 
+• MU-3 – At least 4 blocks 
+• MU-4 – At least 6 blocks 
+ 
+ 
+Otherwise required if not 
+designated  Pedestrian 
+Frontage 
+ 
+ 
+Prohibited 
+Between 601 and ¼ 
+Mile of a Transit 
+Station 
+Required by staff designation 
+on any other street with a 
+high degree of pedestrian 
+amenity. 
+ 
+Permitted 
+Permitted only by 
+Administrative Approval. 
+Any other location  
+Permitted 
+ 
+Permitted 
+Limited to local streets 
+and arterial streets where 
+no on-street parking 
+exists.
+
+[Page 34 of 44]
+G.O. No. 26, 2021 
+Page 28 
+ 
+ 
+ 
+ 
+ 
+TABLE 744-702-3: PRIVATE FRONTAGE DESIGN STANDARDS 
+FRONTAGE TYPE  
+PEDESTRIAN / URBAN 
+ ’FRONTAGE ELEMENT 
+ 
+CONNECTOR 
+ 
+BUFFER / SUBURBAN 
+FRONTAGE DESIGN 
+Driveway Spacing & 
+Widths (in front of FBL 
+OR within 30’ from front 
+lot line) 
+up to 16’ maximum up to 24’ maximum up to 36’ maximum 
+Any lot abutting an alley shall get access off the alley and shall not create new driveways from the  street, except for lots with over 200’ of street frontage. 
+Surface Parking Limits Prohibited – behind building 
+only and setback 
+minimum 50’ 
+25’ setback; AND 40% 
+maximum of lot width 
+behind FBL 
+10’ setback 
+ 
+Structured Parking Limits 
+10% maximum of street wall; or 
+3rd story or above; all other 
+behind buildings 
+30% maximum of street wall; 
+or 2nd story or above; all 
+other behind liner building 
+ 
+10’ setback 
+Landscape [See 
+Section 744, Article V. 
+for standards and 
+specifications.] 
+ 
+1 street tree per 35’ of 
+frontage 
+ 
+1 street tree per 35’ of 
+frontage 
+ 
+1 street tree per 35’ of frontage; 
+Plus 1 frontage landscape tree 
+per every 35’ 
+BUILDING PLACEMENT & FORM 
+ 
+Front Building Line (FBL) 
+ 
+0’ – 10’ 
+ 
+0’ – 25’ 
+0’ -26’ – shall meet Connector 
+Facade design standards 
+Greater than 26’ may meet 
+Buffer / Suburban Facade 
+design standards 
+Required FBL (minimum) 80% 60% 40% 
+BUILDING SCALE & DESIGN 
+Primary Entry Feature 1 per 50’ 1 per 100’ 1 per building 
+First Story Transparency 60% - 90% 40% - 90% 25% - 90% OR 60% - 90%  within 30’ 
+of Primary Entry 
+Upper Story 
+Transparency 
+20% - 50% 15% - 40% 15% - 40% 
+Wall Plane Limits 50’ linear feet; and 600 sf 100’ linear feet; and  1,000 sf 
+150’ linear feet; and 2,000 sf 
+Blank Wall Limits 30 linear feet; and 300 sf 50 linear feet; and 500 sf 100 linear feet; and 1,000 sf
+
+[Page 35 of 44]
+G.O. No. 26, 2021 
+Page 29 
+ 
+ 
+Figure 744.701.04 Pedestrian: Frontage Design & Building Placement & Form
+
+[Page 36 of 44]
+G.O. No. 26, 2021 
+Page 30 
+ 
+ 
+Figure 744.701.05 Connector: Frontage Design & Building Placement & Form
+
+[Page 37 of 44]
+G.O. No. 26, 2021 
+Page 31 
+ 
+ 
+Figure 744.701.06 Buffer: Frontage Design & Building Placement & Form 
+ 
+ 
+D. Frontage Design 
+ 
+1. Access Limits. Any lot abutting an alley shall get access off the alley and shall not create new driveways  from the street, except for lots with over 200’ of street frontage. In all other cases, access to individual lots  shall be limited by the width and separation distances specified in Table 744-702-2, measured on center. 
+In cases where access to individual lots is prohibited by these standards, one of the following strategies  shall be utilized: 
+a. New rear or mid-block alleys, built as shared easements; b.
+ Access from side streets; or 
+c. Cross-access easements or common lanes among 2 or more lots along the block. 
+ 
+2. Parking Location and Extent. Surface and structured parking shall be limited to the setback distances  specified in Table 744-702-2 and any portion of the parking not behind a building or
+
+[Page 38 of 44]
+G.O. No. 26, 2021 
+Page 32 
+ 
+ 
+active open space shall be limited to the percent of the frontage specified in the table. 
+ 
+3. Landscape. In addition to any open space standards or landscape standards that otherwise apply, all  frontages shall be planted according to the following: 
+a. Street trees are required at the rate specified in Table 744-702-2 and shall be planted  every  20 feet to 50 feet on center. 
+b. Street trees shall be planted in the following locations, in order of preference:  (1) In the amenity zone where there is a landscape strip at least 6 feet wide, or a tree    
+ well at least 24 square feet and minimum 4 feet wide in all directions.  (2) Within 4 feet of the sidewalk, where sidewalks are attached and tree wells are not  feasible. 
+(3) Within 6 feet of the front property line where right-of-way constraints prohibit the first    two locations. 
+c. For any non-building portion of the lot frontage, or where buildings are setback more than  25 feet,  additional trees shall be planted in the frontage at the same interval to fill the void with vertical  landscape elements. 
+d. Any parking area permitted within 30 feet of the street shall be screened from the street edge with  a 2.5-foot to 4-foot wall or ornamental fence complimenting the materials of the    building, a dense landscape hedge, or a combination of both.  e. Where conditions place constraints on large trees being planted according to this section, small  shade trees or ornamental trees may be substituted at a rate of 1 tree for every 20 feet of lot  frontage, or large trees can be concentrated at end-caps and mid-block bulb outs  that create  gateways or focal points on the block. 
+ 
+ 
+Figure 744.701.07 
+Frontage Landscape 
+Design 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+E. Building Placement & Form.  
+ 
+1. Required Front Building Line. All buildings shall establish a front building line within the range of  the front  lot line specified in Table 744- 702-2. The required front building line shall extend for the minimum  percentage along the frontage specified in the table. 
+2. Courtyards, Plazas and Patios. Courtyards, plazas and patios along the frontage may count to the    required front building line provided: 
+a. It is limited to no more than 50 feet or 50% of the lot frontage, whichever is greater;  b. There are defining features at the extension of the required front building line, such as  decorative walls or fences, landscape features and other human scale details; and
+
+[Page 39 of 44]
+G.O. No. 26, 2021 
+Page 33 
+ 
+ 
+c. All building facades fronting the open space meet the standards otherwise applicable along  the  streetscape. 
+ 
+Figure 744.701.08 Alternatives to Required Front Building Line. Active outdoor space such as  courtyards, plaza, and patios may contribute to the required front building line, provided they are limited in  extent and provide some defining features along the required front building line. 
+ 
+3. Corner Buildings. Corner lots with property lines on two different frontage types shall apply the  standards in the design standards in the following manner:  a. The lot shall be determined to front on and meet the higher frontage classification.  b. The building shall meet the higher classification on the secondary street for at least the first    25 feet from the corner on the secondary frontage. 
+c. An entry feature on the corner and oriented to both streets may satisfy the entire  requirement of sub-section 3.b above. 
+ 
+4. Residential Buildings. Where buildings with first-floor residential are permitted on the frontage (Residential 
+Building Types), the first story should be elevated at least 2 feet above street level, and with the front  building line established at least 10 feet from the sidewalk. The building may be placed within 5 feet of the  sidewalk if the first story is raised an additional 6 inches for every foot that it is closer to the street than 10  feet. 
+ 
+F. Building Scale & Design.  
+ 
+1. Primary Entry Features. Primary public entrances shall be located at intervals at least as frequent as specified  in Table 744-702-2 and be clearly defined on all front façades with at least two of the following elements:  a. A single-story architectural emphasis such as canopies, awning, porticos, pediments, arches,  or arcades. 
+b. Architectural details such as transom or display windows, ornamental tile accents,  columns, moldings or other similar accents and material changes.  c. Railings, wing walls or plantings integral to the entry structure that incorporate landscaping    and/or places for sitting. 
+d. Recesses of the building mass of at least 3 feet deep.
+
+[Page 40 of 44]
+G.O. No. 26, 2021 
+Page 34 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 744.701.09 Primary Entry Features. The frequency and the design details of entry features  activate the  streetscape and contribute to the pedestrian quality of the street. 
+ 
+ 
+2. Transparency. Buildings shall have the percentage of openings on street-facing façades specified    in Table 744-702.2 (First Story and Upper Story Transparency), based on the following:  a. Where expressed as a first story requirement the percentage shall be measured between 3  feet and  8 feet above the street level, or above the first-floor elevation if the building is set back more than  10 feet from the street. 
+b. Where expressed as an upper story requirement, the percentage shall be measured    between the floor level and ceiling of each story. 
+c. All street level windows required shall have transparent glazing and provide direct views to  the  building’s interior or to a lit display area extending a minimum of 3 feet behind the window.
+
+[Page 41 of 44]
+G.O. No. 26, 2021 
+Page 35 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 744.701.10 Transparency. The transparency of the front facade creates actual and perceived  connections between the uses in the building, particularly at street level, and the activity along the street  scale. The degree of transparence and the composition of windows and doors on the facade contribute to the  quality and character of the street. 
+ 
+ 
+3. Wall Plane & Blank Wall Limits. Larger façades shall be broken into smaller components by one or a  combination of the following techniques to meet the wall plane limits and blank wall limits in Table 744-702- 2 (Massing and Modulation): 
+a. Use structural bays that emphasize vertical breaks in interior components or massing elements of  the building, with visible features such as columns, pillars, or pilasters, and material, color changes  or other details and accents that project between 4” and 12” off the façade.  b. Differentiate massing with projections, balconies, cantilevers or step backs from the main mass  associated with different stories. Massing shall create deviations in the wall plane of at least 2 feet if  projecting from the façade and at least 4 feet if recessed from the façade.  c. Emphasize horizontal differentiation of a base, body and top of all buildings with  ornamental details or material changes according to the following.  (1) For buildings less than 3 stories, this can be a distinct foundation, a main façade, and an  embellished roof structure, such as eaves and fascia for pitched roofs, or  cornices and  parapets for flat roofs. 
+(2) For buildings 3 to 8 stories or more, the first floor should be clearly differentiated  from  upper stories to establish the base and an embellished roof structure.  (3) For buildings 9 stories or above, the first two stories should be clearly differentiated    from the upper stories, and the top story may be differentiated as the top including an  embellished roof structure. 
+d. Any other blank wall areas in excess of the requirements of Table744.702-2 shall be broken up by  ornamental architectural details complimentary to the materials and architectural style of the  building. Significant molding, trim or ornamentation used to break
+
+[Page 42 of 44]
+G.O. No. 26, 2021 
+Page 36 
+ 
+ 
+up blank walls or wall planes should project between 4 inches and 2 feet from the wall. 
+ 
+ 
+ 
+ 
+ 
+Figure 744.701.11 Wall Plane & Blank Wall Limits. A series of massing and modulation  techniques can be used to meet the Building Scale & Design Standards, that will break down  the buildable envelope and better relate building to the site, the streetscape and to adjacent  buildings. 
+ 
+G. Block and Lot Open Space. Block and lot open space provides for active gathering places, recreation and  leisure, and aesthetic enhancements to the buildings and lots serving as an extension of civic spaces   connected to streetscapes. The open space required for each building type specified in Table 742-105-3,  shall be designed to create usable outdoor space meeting one or more of the following open space types:  1. Public or Common open space designed and platted according the standards in Table 741- 310-2,   provided it is on the same or abutting block, and is accessible to the project through ownership or   other agreement; 
+2. Courtyards, plazas and patios or similar outdoor seating areas that are either designed as an  extension of the public streetscape on the frontage, or at least 800 square feet and 20 feet in all    directions if internal to the site. 
+3. Rooftop decks provided they are at least 160 square feet; or  4. Private balconies or patios for residential units, provided they are at least 60 square feet. 
+ 
+SECTION 9. The Zoning Ordinance of Marion County, Indiana, Sec. 744-302 is amended by deleting the  language that is stricken-through and adding the language that is underlined to read as follows: 
+ 
+ Sec. 744-302. - Construction of sidewalks in the right-of-way. 
+  
+A. Sidewalks and any alternative pedestrian walkway shall comply with the Americans with 
+Disabilities Act. 
+B. Sidewalks shall consist of the walkway and any curb ramps or blended transitions. 
+C. Width of sidewalks, exclusive of the width of any curb, landscape area or amenity zone, must be at   least the width indicated in Table 744-302-1: Minimum Sidewalk Widths. The sidewalk shall be  unobstructed by utility poles, traffic signs, mailboxes, fire hydrants or other similar items, except as  detailed in the Sidewalk Zone provisions of the Thoroughfare Plan.
+
+[Page 43 of 44]
+G.O. No. 26, 2021 
+Page 37 
+ 
+ 
+ 
+ 
+ 
+Table 744-302-1 Minimum Sidewalk Widths 
+District Street Classifications Minimum 
+Sidewalk Width 
+D-S, D-A, D-1, D-2, D-3, and D-
+4, D-6 and D-7 
+Collector, Local, and Cul-de-sac 6’ 
+All other streets 6’ 
+D-5, D-5II, D-8, D-9, and D-10 Local Streets 6’ 
+Collector and Arterial Streets 8’ 
+ 
+CBD, MU Districts, and C 
+Districts in the TOD 
+Secondary District 
+Buffer Frontages and/or Local Streets 6’ -8’ 
+Commuter Frontages and/or Collector 
+Streets 
+8’ – 12’ 
+Pedestrian Frontages and/or Arterial 
+Streets 
+12’ – 20’ 
+All other streets All streets 6’ 
+* See Sidewalk Zone provisions and standards in the Thoroughfare Plan for specific streetscape designs    strategies for various street types, and contexts. 
+ 
+D. Sidewalks shall meet the Standards for Street and Bridge Design and Construction (G.O. 49,  1972/Standards for Acceptance of Streets and Bridges of the City-County Council of Indianapolis   and Marion County, Indiana), except as indicated otherwise herein. 
+E. Sidewalks shall be a minimum of four inches in thickness of Portland cement concrete, except  where sidewalks cross concrete drives or driveways the thickness shall be a minimum of six  inches, conforming to subsection 604 of the current Indiana Department of Transportation Design 
+Standards and Specifications. Sidewalks along frontages that are identified in the Indy Greenways 
+Full Circle 2014-2024 Master Plan, Marion County Comprehensive Plan, or Indy Parks Connectivity 
+Plan as a greenway or linear path may be constructed with alternate materials and  depth  standards as approved by the Administrator. 
+F. Sidewalks shall be provided along the entire frontage of all abutting eligible public streets,  excepting freeways and expressways as indicated in the current Official Thoroughfare Plan for  
+Marion County, Indiana, and other full control of access frontages as determined by the 
+Administrator. 
+ 
+G. Unless a different location is approved by the Administrator, the sidewalks shall generally be  provided within the public right-of-way, one foot from the right-of-way line. The Sidewalk Zone      provisions of the Thoroughfare Plan provide more specific design details for design of specific
+
+[Page 44 of 44]
+G
+.O. No. 26, 2021 
+Page 38 
+street types and rights-of-way conditions. 
+H. Where sidewalks exist in the public right-of-way in front of an adjacent lot and extend to a point equal to the common lot line extended, the sidewalks shall fully connect with such existing sidewalks on the adjacent property to provide a continuous, unobstructed walkway along the public street.
+SECTION 10. Should any provision (section, paragraph, sentence, clause or any other portion) of this  ordinance be declared by a court of competent jurisdiction to be invalid for any reason, the remaining  provision or provisions shall not be affected, if and only if such remaining provisions can, without the  invalid provision or provisions, be given the effect intended by the Council in adopting this ordinance. To  this end the provisions of this ordinance are severable.  
+SECTION 11.  This ordinance shall be in effect November 1, 2021, after its adoption by  the Council  and compliance with Indiana Code §36-3-4-14. 
+T
+he foregoing was passed by the City-County Council this 9th day of August, 2021, at 9:15 p.m. 
+AT
+TEST:  
+____
+_________________________________  
+Vop Osili 
+President, City-County Council 
+____________________________________ 
+SaRita Hughes 
+Clerk, City-County Council 
+ST
+ATE OF INDIANA, MARION COUNTY ) 
+)  SS: 
+CITY OF INDIANAPOLIS   ) 
+I
+, SaRita Hughes, Clerk of the City-County Council, Indianapolis, Marion County, Indiana, do hereby certify the above and  foregoing is a full, true, and complete copy of Proposal No. 178 2021, a Proposal for a GENERAL ORDINANCE passed by  the City-County Council on the 9th day of August, 2021, by a vote of 20 YEAS and 5 NAYS  and was retitled General 
+Ordinance No. 26, 2021, and now remains on file and on record in my office. 
+W
+ITNESS my hand and the official seal of the City of Indianapolis, Indiana, this 10th day of August, 2021. 
+____________________________________
+ 
+SaRita Hughes 
+Clerk, City-County Council 
+(SEAL)

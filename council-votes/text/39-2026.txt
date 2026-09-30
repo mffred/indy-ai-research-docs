@@ -1,0 +1,803 @@
+[Page 1 of 26]
+CITY-COUNTY GENERAL ORDINANCE NO. 23, 2026
+Proposal No. 39, 2026
+
+PROPOSAL FOR A GENERAL ORDINANCE to amend portions of Chapters 740, 741 and 742 the Flood
+Control Secondary Zoning District of the Consolidated Zoning and Subdivision Control Ordinance of
+Indianapolis-Marion County, Indiana, concerning flood control management, stormwater management and wellfield regulations.
+
+WHEREAS the City of Indianapolis-Marion County Consolidated Zoning and Subdivision Ordinance establishes flood control regulations, a Flood Control Secondary District, stormwater management development standards and the role and duties of the Technically Qualified Person (TQP) as it relates to the review of projects in the delineated wellfield areas in Indianapolis-Marion County; and
+
+WHEREAS the Federal Emergency Management Agency (FEMA) and the Indiana Department of
+Environmental Management (IDEM), have delegated the authority to the Department of Business and
+Neighborhood Services and Department of Public Works to administer the City’s flood control and stormwater management programs; and
+
+WHEREAS, FEMA and IDEM have updated the Federal and State requirements related to floodplain and stormwater management, respectively; and
+
+WHEREAS, therefore, certain revisions to the Consolidated Zoning and Subdivision Control Ordinance are required to update the City’s regulatory compliance;
+
+BE IT ORDAINED BY THE CITY-COUNTY COUNCIL OF THE
+CITY OF INDIANAPOLIS AND OF MARION COUNTY, INDIANA:
+
+SECTION 1. Section 740-202 of the Consolidated Zoning and Subdivision Control Ordinance of
+Indianapolis/Marion County, Indiana is hereby amended by adding the language that is underlined and deleting the language that is stricken-through, to read as follows:
+
+Sec. 740-202. Definitions
+
+Accessory structure (pertaining to Floodplain requiations): A subordinate structure, building or use that is customary associated with, and is appropriately and clearly subordinate in use, size, bulk, area and height to the primary structure, building, and use with a floor area of four hundred (400) square feet or less and that is on the same parcel of property as a principal structure and the use of which is incidental to the use of the principal structure: an accessory structure specifically excludes structures used for human habitation structure and the use of which is incidental to the use of the principal structure.
+
+For purposes of Floodplain regulations:
+
+1. Accessory structures are considered walled _and roofed where the structure includes at least two outside rigid wails and a fully secured roof.
+
+2. Examples of accessory structures include, but are not necessarily limited, to two-car detached garages (or smailler), carports, storage and tool sheds, and_small boathouses.
+
+3. The following may have uses that are incidental or accessory to the principal structure ona parcel but are generally not considered to be accessory structures by the NFIP:
+
+a. Structures in which any portion is used for human habitation, whether as_a permanent residence or as temporary or seasonal living quarters. such as a detached garage or carriage house that includes an apartment or quest quarters or a detached quest house on the same parcel as a principal residence.
+
+b. Structures used by the public, such as a place of employment or entertainment,
+
+c. Development that does not meet the NFIP_ definition of a structure for floodplain management purposes. Examples include, but are not necessarily limited to, a
+
+GENERAL ORDINANCE RECORD 2026
+
+[Page 2 of 26]
+G.O. No. 23, 2026
+
+gazebo, pavilion, picnic shelter, or carport that is open on all sides (roofed but not
+
+wailed).
+
+Area of special flood hazard: The land within a community subject to a one percent (1%) or greater chance of being flooded in any given year.
+
+Attached uninhabitable accessory enclosure: For purposes of flgod control regulations, an enclosed area of a structure below the elevated first floor used_solely for parking vehicles, building access or storage that satisfies all requirements for such a structure as set forth in
+Article il of Chapter 565.
+
+Base flood: The flood having a one percent chance of being equaled or exceeded in any given
+
+year. The base flood may also be referred to as the one percent (1%) annual chance flood or one hundred (100) year flood also known as the regulatory flood.
+
+Base Flood Elevation (BFE): The water surface elevation of the base flood in relation to a specified datum, usually the North American Vertical Datum of 1988. The elevation of the one
+
+ercent chance flood,
+
+Basement (Floodplain): The portion of a structure having its floor sub-grade (below ground
+
+level) on all sides.
+
+Best Available Flood Layer (BAFL): For purposes of flood control regulations, information
+
+including but not limited to available topographic mapping, survey data, historic flood records engineering studies, channel ratings, and engineering judgment, used by the Floodplain
+Administrator and/or designee. They also include floodplain studies and corresponding floodplain maps prepared and/or approved by the Indiana Department of Natural Resources which provides base flood elevation information, floodplain limits, and/or floodway delineations for flood hazards identified by approximate studies on the currently effective FIRM (Zone A) and/or for waterways where the flood hazard is not identified on available floodplain mapping.
+
+Best Management Practice (BMP): A single practice or combination of practices that are used to meet the stormwater quantity or quality standard. BMP can be structural or non-structural, structural BMPs can be natural or manufactured.
+
+Critical Facilities: Those facilities for which even a slight chance of flooding might be too great.
+
+For purposes of flood control regulations, those facilities that: are critical to the community's
+
+public health and safety; are essential to the orderly functioning of a community: store or
+
+produce highly volatile, toxic or water reactive materials that must be protected to prevent
+
+further harm or house occupants that may be insufficiently mobile to avoid loss of life or injury.
+GENERAL ORDINANCE RECORD 2026
+
+Page 2
+
+[Page 3 of 26]
+G.O. No. 23, 2026
+
+Critical facilities include, but are not limited to schools, nursing homes, hospitals, police, fire, and emergency response installations, and installations that produce, use, or store hazardous materials or hazardous waste.
+
+Development: For purposes of flood contro! regulations, any man-made change to improved or unimproved real estate including, but not limited to:
+
+—
+
+Construction, reconstruction, or placement of a structure or any addition to a structure;
+2. Installing a manufactured home on a site, preparing a site for a manufactured home or placing a recreational vehicle on a site for more than 180 days;
+
+Installing utilities, erection of walls and fences, construction of roads, or similar
+
+appurtenances projects;
+4. Construction of flood contro! structures such as levees, dikes, dams, channel improvements;
+
+Mining, dredging, filling, grading, paving, excavation, or drilling operations;
+Construction and/or reconstruction of boat lifts, docks, piers, and seawalls:
+Construction or reconstruction of bridges or culverts;
+
+Storage of equipment or materials; or
+
+. Any other activity that changes the direction, height, or velocity of flood or surface waters.
+
+1 HINO
+
+Elevation certificate: For purposes of flood control regulations, a FEMA form that is routinely
+
+reviewed and approved by the White House Office of Management and Budget under the
+Paperwork Reduction Act, that is encouraged to be used to collect certified elevation information and other information about the building. This information is necessary to verify compliance with the flood control ordinance and regulations as well as obtain flood insurance. The most recent version of the FEMA published form is required. Elevation Certificates require compietion by a
+Professional Land Surveyor or Register Professional Engineer.
+
+Enclosed area (Enclosure);-The area of a structure enclosed by walls on all sides.
+
+Fill: For purposes of flood control regulations, means any material deposited or placed which has the effect of raising the level of the ground surface above the natural grade elevation. Fill material includes but is not limited to consolidated material such as concrete and_ brick and unconsolidated material such as soil, sand, gravel, and stone.
+
+Flood or Flooding: A general and temporary condition of partial or complete inundation of normally dry land areas from the overflow of inland or tidal waters, the unusual and rapid accumulation or the runoff of surface waters from any source, mudslides (i.e., mudflows) that are proximately
+
+caused by flooding and are akin to a river of liquid and flowing mud on the surfaces of normally dry land areas, as when earth is carried by a current of water and deposited along the path of the current. Also includes the collapse or subsidence of land along the shore of a lake or similar body of water as a result of erosion or undermining caused by waves or current of water exceeding anticipated cyclical levels that result in a flodd as defined above.
+
+GENERAL ORDINANCE RECORD 2026
+
+Page 3
+
+[Page 4 of 26]
+G.O. No. 23, 2026
+
+«
+
+Flood hazard area: Areas subject fo the one percent (1%) annual chance flood. (See special
+
+flood hazard area’.
+
+Flood Insurance Rate Map (FIRM): An official map of a community, on which FEMA has delineated both the area of special flood hazard and the risk premium zones applicable to the community. A FIRM that has been made available digitally is called a digital flood insurance
+
+rate map (DFIRM).
+
+Flood Insurance Study (FIS): The official hydraulic and hydrologic report provided by FEMA. The report contains flood profiles, as well as the FIRM and the water surface elevation of the base flood.
+
+Floodplain or Flood prone area: Any land area susceptible to being inundated by water from any source.
+
+The channel proper and the areas adjoining any wetland lake, or_ watercourse that has been or may be covered by the regulatory flood. The floodplain includes both the floodway and the floodway fringe, (See “Flood”)
+
+Floodplain Administrator: Employee of the division of construction and business services at the
+
+department of business and neighborhood services authorized and directed to enforce the provisions of the Flood Damage Prevention Ordinance found at Chapter 565 of this Revised
+Code.
+
+Floodproofing (dry_floodproofing): A method of protecting a nonresidential structure that ensures that the structure, together with attendant utilities and sanitary fa s, is watertight to the floodproofed design elevation with walls that are substantially impermeable to the passage of water. All structural components of these walls are capable of resisting hydrostatic and hydrodynamic flood forces, including the effects of buoyancy, and anticipated debris impact forces.
+
+Floodproofing Certificate: A form developed by FEMA to certify compliance for nonresidential
+
+structures as an alternative to elevating structures to or above the Flood Protection Grade.
+
+Flood protection grade: The elevation above the base flood plus two feet at any given location in the SFHA (see “Freeboard’).
+
+Floodway: The channel of a river or stream and those portions of the floodplains adjoining the channel which are reasonably required to efficiently carry and discharge the peak flood flow of the regulatory flood of any river or stream or other watercourse and the adjacent land. These
+
+GENERAL ORDINANCE RECORD 2026
+
+Page 4
+
+[Page 5 of 26]
+G.O. No. 23, 2026
+Page 5
+
+areas must be reserved in order to discharge the base flood without cumulative increasing the
+
+water surface elevation more than a designated height.
+
+Freeboard: Is a factor of safety, usually expressed in feet above the BFE, that is applied for the purpose of floodplain management. It is used to compensate for the many unknown factors that could contribute to flood heights greater than those calculated for the base flood,
+
+Fringe or Flood Fringe: The portion of the regulatory floodplain lying outside of the floodway.
+
+Green infrastructure:_ An approach to water management that protects, restores, or mimics the natural water cycle.
+
+Letter of Map Change (LOMC): is a general term used to_refer to the several types of revisions
+
+and amendments to FEMA maps that can be accomplished by letter. They are broken down into the following categories:
+
+1. Conditional Letter of Map Revision (CLOMR): means FEMA's comment on 2 proposed project that would, upon construction, result in modification of the SFHA through the placement of fill outside the existing regulatory floodway.
+
+2. Conditional Letter of Map Revision based on Fill (CLOMR-F): means_a letter from
+FEMA stating that a proposed structure that will be elevated by fill would not be inundated by the base flood.
+
+3. Letter of Map Amendment (LOMA): means an amendment by letter to the currently effective FEMA map that establishes that a building or area of land is not located in a
+SFHA through the submittal of property specific elevation data. A LOMA is only issued
+
+by FEMA.
+
+4. Letter_of Map Amendment _Qut As_ Shown (LQMA-OAS): means an official determination by FEMA that states the property, or building is correctly shown outside the SFHA as shown on an effective NFIP_ map. Therefore, the mandatory flood insurance requirement does not apply, An out-as-shown determination does _not require elevations.
+
+5. Letter of Map Revision (LOMR): means _an official revision to the currently effective
+FEMA map. It is issued by FEMA and changes flood zones delineations, and elevations.
+
+6. Letter of Map Revision based on Fill (LOMR-F): is FEMA’s modification of the SHFA shown on the FIRM based on the placement of fill outside of the existing regulatory floodway.
+
+Low-impact development (LID): Systems and | practices that use or mimic natural processes that result in the infiltration, evapotranspiration or use of stormwater in order to protect water
+GENERAL ORDINANCE RECORD 2026
+
+[Page 6 of 26]
+G.O. No. 23, 2026
+Page 6
+
+smai-seale ic—contrals—as—well: Some _low-impact_development —H1D techniques are -alse-pre-approved BMPs in Chapter 700 of the City of Indianapolis Stormwater Design and
+Construction Specifications Manual.
+
+Lowest floor: for floodplain management purposes the lowest elevation described among the
+
+followin
+
+4. The top of the lowest level or floor of a structure or building.
+
+2. The top of the basement floor.
+
+ad
+
+The top of the garage floor, if the garage is connected to the building and is the lowest level of the structure.
+
+Bia
+
+The top of the first floor of a structure elevated on pilings or pillars.
+
+an
+
+The top of the floor level of any enclosure, other than a basement, below an elevated structure where the walls of the enclosure provide any resistance to the flow of flood waters. Designs for meeting the flood opening requirement must either be certified by a registered professional engineer or architect or meet or exceed the following criteria:
+
+a. The wails are designed to automatically equalize the hydrostatic flood forces on the wails by allowing for the entry and exit of flood waters
+
+b._At least two openings are designed and maintained for the entry and_exit_of floodwater. and these openings provide the total net area of at least one square inch for every one square foot of enclosed area. The bottom of all such openings
+
+GENERAL ORDINANCE RECORD 2026
+
+[Page 7 of 26]
+G.O. No. 23, 2026
+
+shall be no higher than one foot above the exterior grade or the interior grade immediately beneath each opening, whichever is higher. Doorways and windows do not qualify
+
+as openings.
+
+c. Such enclosed space shall be usable solely for the parking of vehicles and building access.
+
+6. The first floor of a building elevated on pilings or columns in a coastal high hazard area (as that term is defined in 44 CFR 59.1), as long as it meets the requirements of 44
+CFR 60.3.
+
+Market value: For purposes of flood control regulations, the market value of the structure itself, not including the associated land, landscaping or detached accessory structures. The market value must be determined by a method approved by FEMA and the Floodplain Administrator
+
+and/or designee.
+
+Physical Map Revision (PMR): An official republication of a community’s FEMA map to effect changes to base (1% annual chance) flood elevations, floodplain boundary delineations.
+requiatory floodways, and planimetric features. These changes typically occur as a result of structural works or improvements, annexations resulting in additional flood hazard areas, or correction to base fiood elevations or SFHAS.
+
+Reg laton flood:-See—“base-f 1
+
+Requilatory flood: The flood having a 1% chance of being equaled or exceeded in any given year, as calculated by a method and procedure that is acceptable to and approved by the
+Indiana Department of Natural Resources and the Federal Emergency Management Agency.
+The requlatory flood elevation at any location is as defined in section 565-302 of this chapter.
+The “Requlatory Flood” is also known by the term “Base Flood”, “One-Percent Annual Chance
+Flood”, and “100-Year Flood”.
+
+Special Flood Hazard Area (SFHA): is synonymous with “areas of special flood hazard” and floodplain, means. those lands within the jurisdiction of Consolidated City of Indianapolis and
+Marion County subject to a one percent (1%) or greater chance of flooding in any given year.
+Special Flood Hazard Areas are designated by the Federal Emergency Management Agency on Flood Insurance Rate Maps, Flood Insurance Studies, Flood Boundary and Floodway Maps and Flood Hazard Boundary Maps as Zones A, AE, AH, AO A1-30, AQ9, or VE. The SFHA includes areas that are flood prone and designated from other federal, state or local sources of data including but not limited to best available flood layer maps provided by or approved by the Indiana Department of Natural Resources. historical flood information reflecting high water marks, previous flood inundation areas, and flood prone soils associated with a watercourse.
+
+Start of construction: For purposes of flood contro! regulations, includes substantial
+
+improvement, and means the date the building permit was issued, provided the actual start of construction, repair, reconstruction, or improvement was within 180 days of the permit date.
+The actual start means either the first placement of permanent construction of a structure on a site, such as the pouring of a slab or footings, the installation of piles, the construction of columns, or any work beyond the stage of excavation: or the placement of a manufactured home on a foundation. Permanent construction does not include land preparation, such as clearing, grading, and filling: nor does it include the installation of streets and/or walkways, nor does it include excavation for_a basement, footings, piers foundations, or the erection of
+GENERAL ORDINANCE RECORD 2026
+
+Page 7
+
+[Page 8 of 26]
+G.O. No. 23, 2026
+
+temporary forms; nor does it include the installation on the property of accessory buildings.
+such as garages or sheds not occupied as dwelling units or not part of the main structure. For a substantial improvement, the actual start of construction means the first alteration of any wall, ceiling, floor, or other structural part of the building, whether or not that alteration affects the
+
+external dimensions of the building.
+
+Structure: For purposes of flood control regulations, anything that can be constructed altered, repaired or erected on the ground_or attached to the ground, including, but not limited to buildings, factories, sheds, detached garages, gas_or liquid storage tanks, cabins, manufactured homes. A combination or manipulation of materials to form_a construction, erection, alteration or affixation for use, occupancy. or ornamentation, whether located or installed on, above, or below the surface of land or water, and whether permanently affixed to the ground, temporary, or mobile, including but not limited to signs, fences, and underground storage tanks.
+Any_structure designed or intended for the support, enclosure, shelter, or protection of persons, animals, or property of any kind, having an enclosed space and a permanent roof supported by columns or walls, It is walled and roofed building, gas or liquid storage tank, that is principally above ground. The term includes a manufactured home, as well as a prefabricated building. It also includes recreational vehicles installed, on a site for more than
+
+180 consecutive days.
+
+Substantial Improvement: For purposes of flood control regulations, any structural
+
+improvement of a structure that does not consist of a structural enlargement_or repair of damage, the cost of which equals or exceeds 50% of the market value of the structure before the "start of construction" of the improvement. The term includes structures that incurred “repetitive loss” or “substantial damage” regardless of the actual repair work performed. It also includes any improvements to repair, replace or reconstruct damage or demolition intentionally caused or inflicted by the owner or occupant. The term does not include:
+
+1. Improvements of a structure to correct existing violations of state or local health, sanitary, or safety code specifications that have been identified by the local code enforcement official and that are the minimum necessary to assure safe_living
+
+conditions.
+
+GENERAL ORDINANCE RECORD 2026
+
+Page 8
+
+[Page 9 of 26]
+G.O. No. 23, 2026
+Page 9
+
+2. Ordinary maintenance and repair as defined in this chapter.
+
+Walled and Roofed: A building that has two or more exterior rigid wails and fully secured toof and is affixed to a permanent site.
+
+SECTION 2. Section 740-901 of the Consolidated Zoning and Subdivision Control Ordinance of indianapolis/Marion County, Indiana is hereby amended by adding the language that is underlined and deleting the language that is stricken-through, to read as follows:
+
+Sec. 740-901. Designation of Floodplain Administrator and Permit application and review procedures
+A. Designation of Floodplain Administrator. An employee of the division of construction and business services with the Department of Business and Neighborhood Services shall administer and implement the provisions of this chapter and is herein referred to_as the
+Floodplain Administrator.
+
+B. Permit application and review procedures
+
+4. The Department of Business and Neighborhood Services (DBNS) shall review all applications for a Floodplain Development Permit for_ali parcels that are wholly within, partially, within, or_in contact with an identified special flood hazard area. The floodplain development permit shall not be issued for proposed activity in zone A or the BAFL until the floodway and floodway fringe boundaries and base flood elevation are established in accordance with this article or the best available data information.
+
+2, If the permit application is for a site located in an identified Floodway (FW) district as established in section 565-302, then the Floodplain Administrator and/or designee shall require the applicant to apply to IDNR for a state permit for construction in a floodway, provided the activity does not qualify for a general license or exemption (iC 14-28-1 of 312 IAC 10). A Floodplain Development Permit shall not be issued by the
+Floodplain Administrator and/or designee for the proposed activity until the IDNR has issued a certificate of approval of construction in a floodway or a letter stating that IDNR approval is not required, and the Floodplain Administrator and/or designee determines that the application complies with all other applicable requirements of this article.
+
+3. _ Ifthe permit application is for a site located in a Floodway Fringe (FF) (either identified
+
+on the FIRM or identified by the Indiana Department of Natural Resources through
+
+detailed or approximate studies and not identified on a FIRM), the Floodplain
+
+‘Administrator and/or designee may issue the local floodplain development _permit
+GENERAL ORDINANCE RECORD 2026
+
+[Page 10 of 26]
+G.O. No. 23, 2026
+Page 10
+
+provided the provisions contained in this article have been met, The following regulations shall apply to all land within the floodway fringe. These regulations shall be in addition to all other primary and secondary zoning district regulations applicable to such land, and in case of conflict, the more restrictive regulations shall apply.
+
+4. The Floodplain Administrator regardless of any limitation on the period required for
+
+retention of public records, records of actions associated with the administration of this chapter shall be kept on file and maintained in perpetuity. These records include permit applications, plans, certifications, flood insurance rate_maps; letter of map_change.
+records of issuance of permits and denial of permits: determinations of whether proposed work constitutes substantial improvement or tepair of substantial damage:
+required design certification and documentation of elevations required by this chapter, notifications to adiacent communities, FEMA, and the state related to alterations of watercourse. assurances that the flood carrying capacity of altered watercourses will be maintained: documentation related to appeals, including justification for issuance or denial’ and records of enforcement actions taken pursuant_to this chapter. The
+Floodplain Administrator and/or designee will maintain_a_file of all Floodplain
+Development Permits issued and will make these Floodplain Development Permits available to representatives of FEMA, IDNR and other interested parties.
+
+5. National Flood Insurance Program (NFIP) elevation certificates When applicable, the
+Floodplain Administrator and/or designee shall supply each applicant for a floodplain development permit with a blank NFIP elevation certificate, or flood-proofing certificate during the floodplain permit review process. The permit applicant will be required to submit the applicable certificate as outlined within the provisions of this chapter. The
+Floodplain Administrator and/or designee will make available to insurance agents and lenders, upon request, copies of the NFIP elevation certificate and the floodproofing certificate to assist in the actuarial rating of the structure for flood insurance purposes.
+
+ofall
+
+GENERAL ORDINANCE RECORD 2026
+
+[Page 11 of 26]
+G.O. No. 23, 2026
+Page 11
+
+SECTION 3. Section 740-1007 of the Consolidated Zoning and Subdivision Control Ordinance of
+Indianapolis/Marion County, Indiana is hereby amended by adding the language that is underlined and deleting the language that is stricken-through, to read as follows:
+
+Section 740-1007. Violations of Flood Plain Regulations
+
+A. Failure to obtain a Floodplain Development Permit in the SFHA or failure to comply with the requirements of a Floodplain Development Permit or conditions of an appeal shall be deemed to be a violation of this Ordinance. All violations shall be considered a common nuisance and be treated as such in accordance with the provisions of the Consolidated
+City of Indianapolis and Marion County, Indiana.
+
+B. Aseparate offense shall be deemed to occur for each day the violation continues to exist.
+
+C. The Floodplain Administrator and/or designee shall inform the owner that any such violation is considered a willful act to increase flood damages and therefore may cause coverage by the standard flood insurance policy to be suspended.
+
+D. Nothing herein shall prevent the Consolidated City of Indianapolis and Marion County
+Indiana from taking such other Jawful action to prevent or remedy any violations. All costs connected therewith shall accrue to the person or persons responsible.
+
+SECTION 4. Section 741-310 of the Consolidated Zoning and Subdivision Control Ordinance of
+Indianapolis/Marion County, Indiana is hereby amended by adding the language that is underlined and deleting the language that is stricken-through, to read as follows:
+
+Sec. 741-310. Common areas, open space and public sites.
+
+B. Open space common area.
+
+SECTION 5. Section 741-311 of the Consolidated Zoning and Subdivision Control Ordinance of
+Indianapolis/Marion County, indiana is hereby amended by adding the language that is underlined and deleting the language that is stricken-through, to read as follows:
+
+Sec, 741-311. Stormwater.
+GENERAL ORDINANCE RECORD 2026
+
+[Page 12 of 26]
+G.O. No. 23, 2026
+Page 12
+
+A; Stormwater drainage Drainage facilities are to be designed and constructed fo meet the stormwater quality and quantity standards established in the City of Indianapolis
+Stormwater Design and Construction Specifications Manual. i ities +
+
+B. Major subdivisions in the Metro Context Area shall meet the stormwater quality and quantity standards using low-impact development and/or_green_ infrastructure techniques. -Fesi i ivish
+
+C. For projects where low-impact development LID and/or green infrastructure techniques are technically infeasible to meet stormwater quantity standards, the applicant shall provide a justification demonstrating why the use of these LID techniques is not possible. Documentation of technical infeasibility shall include engineering calculations, geologic reports, hydrologic analyses, and site maps. in-such-case_LID
+
+D. Drainage facilities constructed using low-impact development techniques may be adjacent or abutting or in conjunction with a required open space common area component_as indicated in Table _741-310-2, however such facilities shall only be counted with one open space common area component.
+
+D-E. All BMPs must be located within an easement. The easement must include access from the public right-of-way to the BMP for inspection and maintenance. The purpose of each easement shall be specified in the maintenance agreement. A copy of the easement should be included in the BMP-—Operations and Maintenance Manual required by the Stormwater Design and Construction Specifications Manual.
+
+&.F. Maintenance improvements. Facilities providing for the proper on-going maintenance of any stormwater drainage facility shall be provided. Signs indicating no-mow areas, fence demarcating boundaries of natural areas, species and informational markers, and grate markings are examples of such improvements.
+
+E.G. The responsibility of maintenance of stermwater, drainage facilities shall be as set forth by Section 561-211. "Inspection and Maintenance of drainage facilities" of the Revised
+Code of the Consolidated City and County. Maintenance access shall be provided to stormwater drainage facility as set forth to assure continuous operational capacity of the stormwater drainage facility. Inspections and maintenance is the responsibility of the owner. Specific guidelines for maintenance can be found in the Stormwater Design and Construction Specifications Manual Chapter 100 Policy and Procedures and
+Chapter 700 Stormwater Quality.
+
+G.H. Erosion control provisions shall be provided in accordance with Chapter 561 of the
+Revised Code of the Consolidated City and County and Chapter 600 Erosion and
+Sediment Control of Stormwater Design and Construction Specifications Manual.
+
+|. Class V injection wells, as defined in 40 CFR 146 Underground Injection Well Program shall be registered with the USEPA.
+
+SECTION 6. Section 741-313 of the Consolidated Zoning and Subdivision Control Ordinance of
+Indianapolis/Marion County, Indiana is hereby amended by adding the language that is underlined and deleting the language that is stricken-through, to read as follows:
+
+Sec. 741-313. Flood Control
+
+GENERAL ORDINANCE RECORD 2026
+
+[Page 13 of 26]
+G.O. No. 23, 2026
+Page 13
+
+A. All development shall comply with all provisions of Section 742-203 (Flood Control zoning
+
+district) and Flood Damage Prevention provisions of the Revised Code of the City of
+Indianapolis-Marion County.
+
+B. The governing base flood elevation for the site (including the source of the base flood elevation value) and delineations of the Floodway and Floodway Fringe zones shall be indicated on the plans, primary plat and the plat fo be recorded.
+
+C. For Zone AE areas, the plans and the plat must show the BFE topographic line the plan and plat must show the delineation study with the floodway and floodway fringe lines shown on the FIRM maps. Plans showing elevation of the top of the planned lowest floor (including basement) of all proposed structures in zones A, AH and AE.
+
+D. For Zone AO, plans must show the height of the top of the lowest floor above the highest adjacent grade.
+
+E. Elevations should be in NAVD 88,
+
+F. Flood protection grade denoted for each building pad and floor: volumetric calculations demonstrating compensatory storage: and, for each lot located in a Special Flood Hazard area, a plan note identifying the flood control zone in which it_is located _and_ the requirements and limitations.
+
+SECTION 7. Section 741-705 of the Consolidated Zoning and Subdivision Control Ordinance of indianapolis/Marion County, Indiana is hereby amended by adding the language that is underlined and deleting the language that is stricken-through, to read as follows:
+
+Sec. 741-705. Stormwater best management practices covenant.
+
+This subdivision has been designed to include stormwater quality and/or quantity stormwater drainage facilities that must be inspected and maintained by the owner. An
+Operations and Maintenance Manual is available for the sterrawater drainage facilities. Upon the activation of the a homeowner's assoc! shall be the responsibility in perpetuity of
+
+ual owners of any lot or parcel of land within the
+
+the homeowner's association and the indi
+area of this plat, jointly and separately, to comply with the Operations and Maintenance Manual, fees and inspection and maintenance requirements.
+
+SECTION 8. Section 742-203 of the Consolidated Zoning and Subdivision Control Ordinance of indianapolis/Marion County, Indiana is hereby amended by adding the language that is underlined and deleting the language that is stricken-through, to read as follows:
+
+Sec. 742-2-3. Flood Control Secondary Zoning Districts
+
+A. Purpose and objectives. It is the purpose of this ordinance to promote the public health, safety, and general welfare and to minimize public and private losses due to flood conditions in specific areas by provisions designed to:
+
+14. Restrict or prohibit uses which are dangerous to health, safety, and property due to water or erosion hazards, which result in damaging increases in erosion or in flood heights or velocities.
+
+GENERAL ORDINANCE RECORD 2026
+
+[Page 14 of 26]
+G.O. No. 23, 2026
+Page 14
+
+2. Require that uses vulnerable to floods, including facilities which serve such uses, be protected against flood damage at the time of initial construction.
+
+3. Control the alteration of natural floodplains, stream channels, and natural protective barriers which are involved in the accommodation of flood waters.
+
+4. Control filling, grading, dredging, and other development which may increase erosion or flood damage.
+
+5. Prevent or regulate the construction of flood barriers which will unnaturally divert floodwaters or which may increase flood hazards to other lands.
+
+6. Make federal flood insurance available for structures and their contents in the city by ng the requirements of the National Flood Insurance Program.
+
+B. District and zone boundaries The district boundaries have been established from hydrological data delineated on flood insurance rate maps provided by the Federal
+Emergency Management Agency (FEMA) in a scientific and engineering report entitled “The Flood Insurance Study for Marion County, Indiana (All Jurisdictions).* i
+
+datato :
+I alation
+
+GENERAL ORDINANCE RECORD 2026
+
+[Page 15 of 26]
+G.O. No. 23, 2026
+Page 15
+
+7 In cases where there is a discrepancy between the mapped floodplain (SFHA) on the
+FIRM and the actual ground elevations, the elevation shown on the Flood insurance
+Study (FIS) base flood profiles shall govern. if the elevation of the site in question is below the base flood elevation, that site shall be considered inside the SFHA and regulated accordingly. If the elevation of the site’s natural grade is above the base flood elevation and not located within the floodway, that site shall be considered outside the
+SFHA and the floodplain regulations shall not be applied.
+
+Changes to district boundaries
+
+4. Procedures to change the floodway and floodway fringe district boundaries, with or without an accompanying base flood elevation change, may be initiated in certain circumstances, including but not limited to: Determination of original mapping error, physical change to the landscape such as filling, excavating or grading; modification of a channel or bridge that changes the hydraulic or hydrologic characteristics of the watercourse; availability of better topographic base mapping that more accurately depicts the floodplain limits; and development of detailed hydrological data for previously unstudied zone A areas. In addition, an owner or lessee of property who believes his or her property has been wrongly designated in a particular flood control zoning district may apply for a district boundary change in accordance with this Section 742-203.
+
+2. Changes to the Floodway (FW) District Boundary, Floodway Fringe (FF) District
+Boundary, and the accompanying base flood elevations must be approved by FEMA
+
+GENERAL ORDINANCE RECORD 2026
+
+[Page 16 of 26]
+G.O. No. 23, 2026
+Page 16
+
+through a letter of map revision (LOMR) or letter of map amendment (LOMA) in accordance with procedures established by FEMA, before the revised maps and data shall be used under this article. Detailed study data, developed for sites located in zone
+A areas pursuant to Section 742-203.A. as best available data, will generally not be acknowledged by FEMA for flood insurance determinations or result in district boundary revisions unless an official LOMR or LOMA is issued by FEMA that specifies such changes.
+
+3.4. All changes in the Floodway district boundary must be reported to FEMA by the
+
+applicant within 6 months of construction. with-a-copy—forwarded-te_the-Bureau-of i i ices—The Bureau-of-License-and Permit Services Department
+
+of Business and Neighborhood Services shall be responsible for maintaining up-to- plain maps. including—any- LOMRs—and and--shail
+
+4.5. All letters of map amendment (LOMA) and letters of map revisions (LOMR) approved and issued by the Federal Emergency Management Agency (FEMA) shall be incorporated as map amendments to the applicable Flood Control zoning district boundaries and are incorporated by reference and made a part of the Zoning
+Ordinance.
+
+General regulations applicable to all Flood Control zoning districts. The following regulations, and the regulations found in Chapter 565 of the Revised Code of Indianapolis-
+Marion County, shall apply to all land within any Flood Contro! zoning district:
+
+1. From and after October 4, 1971:
+
+a. No land, watercourse, building, structure, premises or part thereof shall be used or occupied except in conformity with these regulations and for uses permitted by this article.
+
+b. No land, watercourse, building, structure, premises, use or part thereof shail be constructed, erected, converted, enlarged, extended, reconstructed, relocated, altered, improved, or repaired except in conformity with these regulations and for uses permitted by this Section 742-203.
+
+2. No land alteration, watercourse alteration, open land use, legaily established nonconforming use, or structure as defined in this article shall be constructed, erected, placed, converted, enlarged, extended, reconstructed, improved, repaired, restored, or relocated until a floodplain development permit is issued for the proposed activity as required by this Section 742-203.
+
+3. AFloodplain Development Permit shall be required in conformance with the provisions of this ordinance prior to the commencement of any development activities in areas of special flood hazard. Ordinary maintenance and repair conducted under Department of Public Works maintenance programs is excluded, such _as mowing and activities required as part of necessary maintenance of drainage or flood control facilities so that
+
+GENERAL ORDINANCE RECORD 2026
+
+[Page 17 of 26]
+G.O. No. 23, 2026
+Page 17
+
+the facilities will perform the function for which it was designed and constructed, provided that the maintenance of drainage or flood control facilities does not include any activities identified in subparagraphs 4 through 8 of the definition of “development” in Sec. 740-202.
+
+4. Site plans for all platted subdivisions shall also include a de neation of the existing and proposed floodway and floodway fringe boundaries: a flood protection grade denoted for each building pad and floor, volumetric calculations demonstrating compensatory storage; and, for each lot located in a Flood Control zoning district, a_plan_ note identifying the Flood Control zoning district in which itis located and the requirements and limitations imposed under this Section 742-203 for construction_on the floodplain lot.
+
+GENERAL ORDINANCE RECORD 2026
+
+[Page 18 of 26]
+G.O. No. 23, 2026
+Page 18
+
+GENERAL ORDINANCE RECOR
+
+[Page 19 of 26]
+G.O. No. 23, 2026
+
+Page 19
+
+GENERAL ORDINANCE RECORD 2026
+
+[Page 20 of 26]
+G.O. No. 23, 2026
+Page 20
+
+E..-Floodway (FW) District regulations
+
+2. Applicability. The following regulations, i Ht i j :
+through-H, shall apply to all land within the floodway district. These regulations shall be in addition to all other primary and secondary zoning district regulations applicable to such land, and Chapter 565 of the Revised Code of the City of Indianapolis-Marion
+County. in case of conflict, the more restrictive regulations shall apply.
+
+Ed: Floodway Fringe (FF) District regulations
+
+2. Applicability. The following regulations; i it} ‘ i :
+thraugh-H, shall apply to all land within the floodway district. These regulations shall be in addition to all other primary and secondary zoning district regulations applicable to such land, and Chapter 565 of the Revised Code of the City of Indianapolis-Marion
+County, lin case of conflict, the more restrictive regulations shall apply.
+
+GENERAL ORDINANCE RECORD 2026
+
+[Page 21 of 26]
+G_K Variances
+
+G.O. No. 23, 2026
+
+Page 21
+
+4. The Board of Zoning Appeals may only issue a variance to the permitted uses or development standards of the Floodway (FW) or Floodway Fringe (FF) districts, provided no other zoning district prohibits the land use, and if the applicant submits evidence that: the grant of the variance(s) meet the statutory criteria for approval of
+
+indiana Code 36-7-4-918.
+
+2. The Board of Zoning Appeals may only issue a variance to the permitted uses or development standards of the Floodway (FW) or Floodway Fringe (FF) districts, standards,
+
+provided no other secondary zoning district imposes stricter development and if the following conditions are met:
+
+a. No variance for the construction of a new residential structure in a Floodway (FW)
+
+District may be granted;
+
+b. All variances granted for an associated use in a Floodway (FW) District shall first require a permit from IDNR, if such permit is required by IDNR rules and
+
+procedures;
+
+c. Variances may be granted for the reconstruction or restoration of any structure individually listed on the National Register of Historic Places or the indiana State
+
+Register of Historic Sites and Structures;
+
+d. All variances shall give the minimum relief necessary and be such that the maximum practical flood protection will be given to the proposed construction; and
+
+H. &. National Flood Insurance Program regulation
+
+SECTION 9. Section 742-204 of the Consolidated Zoning and Subdivision Col
+
+ntrol Or
+
+dinance of
+
+indianapolis/Marion County, Indiana is hereby amended by adding the language that is underlined and
+
+deleting the language that is stricken-through, to read as follows:
+Sec. 742-204. - Wellfield Protection Secondary Zoning Districts.
+
+D. Technically Qualified Person review requirement.
+
+1. Type of use. Development activities associated with the following nonresidential uses, whether permanent or temporary, shall submit a site and development plan to be reviewed for conformity with the standards of this Section 742-204 by the Technically
+
+Qualified Person.
+
+2. Type of facility. Development activities associated with facilities that include the following, whether permanent or temporary, must submit a Site and Development Plan
+
+GENERAL ORDINANCE RECORD 2026
+
+[Page 22 of 26]
+G.O. No. 23, 2026
+Page 22
+
+to be reviewed for conformity with the standards of-this-Section 742-204 by the
+Technically Qualified Person.
+
+a. Elevators using hydraulics;
+b. Generators; and
+c. Storage tank, above ground or below ground.
+
+3. Chemical quantities on-site. Development activities that, in their ordinary course of business, store or maintain on-site any liquids or water-soluble solids must submit a site and development plan to be reviewed for conformity with the standards of this Section 742-204 by the Technically Qualified Person, with the exception of the following:
+
+a. Reasonable quantities of substances use for the routine maintenance of the building or premises upon which the substances are located;
+
+b. Substances contained within a vehicle that are required for normal operation of any motor vehicle in use on-site;
+
+c. Substances contained within vehicles making bulk deliveries to the subject site;
+
+d. Beverages at restaurants, supermarkets, convenience stores, and other retail food establishments, for use on-site or off-site; or
+
+e. Uses that have on-site liquids of water soluble solids less than the threshold amounts established in the following table:
+
+E. Activities in the Welifield Protection Zoning District.
+
+2. Prohibited uses.
+a. Above ground, outdoor liquid storage tanks greater than 1,000 gallons are prohibited from locating in the W-1 Wellfield Protection Zoning District.
+
+b. The above ground, outdoor storage of water soluble solids greater than 6,000 pounds per container in any one containment area are prohibited from locating in the W-1 Wellifield Protection Zoning District.
+
+c. Underground storage tank. No new underground storage tank shall be permitted in the W-1 or W-5 Wellfield Protection Zoning District. An existing underground storage tank located in the W-1 or W-5 Wellifield Protection Zoning District may be replaced or upgraded in accordance with Section 742-204.F.1.a., Replacement or upgrading of an existing underground storage tank.
+
+d. Dewatering. Dewatering of sites is prohibited, with the exception of dewatering for the following purposes:
+
+1. To prevent water damage to structures,
+2. To protect groundwater quality;
+
+3. To temporarily remove water from solid material or soil for the construction of sewers and other underground facilities, including foundation structures; or
+
+4. To temporarily remove water from aggregate mining operations to prevent or relieve flooding.
+
+e. Class V injection wells, as defined in 40 CFR 146, shall be registered with Region
+V of the USEPA and are prohibited, with the exception of the following:
+GENERAL ORDINANCE RECORD 2026
+
+[Page 23 of 26]
+G.O. No. 23, 2026
+Page 23
+
+1. Air conditioning return flow wells used to return to the supply the aquifer the water used for heating or cooling in a heat pump, if noncontact;
+
+2. Cooling water return flow wells used to inject water previously used for cooling, if noncontact;
+
+3. Barrier recharge wells used to replenish the water in an aquifer or to improve groundwater quality provided the injected fluid does not contain hazardous materials or objectionable substances; or
+
+4. Pumping limestone fines into an underground mine, or
+
+5. Manufactured stormwater infiltration devices, such as detention vaults, chambers, or other devices designed to capture and infiltrate stormwater runoff_below the ground, provided the device is lined with either an impermeable geomembrane or underlain by a compacted clay layer installed to TOP specifications: or
+
+6._Perforated underdrain_ piping for the dispersal of roof drains_or surface stormwater provided the injected fluid does not contain hazardous materials or objectionable substances.
+
+f. Hydraulic fracking. Hydraulic fracking is prohibited in the W-1 or W-5 Wellfieid
+Protection Zoning District.
+
+g. Septic systems. No new nonresidential septic system shall be located in the W-1 or W-5 Wellfield Protection Zoning District pursuant to Section 742-204-F.,
+Development Standards. Existing septic systems located in the W-1 or W-5
+Wellfieid Protection Zoning District are prohibited from expanding.
+
+h. Mobile vehicle wash, service or repair uses are not permitted in any Wellfield or
+Flood Protection District.
+
+i. Salvage yards and bulk chemical storage facilities. New salvage yards or bulk chemical storage facilities are prohibited from locating in the W-1 or W-5 Wellfield
+Protection Zoning District. Existing salvage yards or bulk chemical storage facilities are prohibited from expanding in the W-1 Wellfield Protection Zoning District.
+Existing salvage yards or bulk chemical storage facilities may be permitted to expand in the W-5 Wellfield Protection Zoning District, provided the proposed use or activity complies with all applicable provisions of this Section 742-204.
+
+j. Geothermal energy systems. New geothermal energy systems or components are prohibited from locating in the W-1 or W-5 Wellfield Protection Zoning Districts.
+Existing geothermal energy systems or components are prohibited from expanding in the W-1 Wellfield Protection Zoning District. Existing geothermal energy systems or components may be permitted to expand in the W-5 Wellfield Protection Zoning
+District, provided the proposed use or activity complies with all applicable provisions ofthis Section 742-204.
+
+F. Development standards.
+
+2. Containment area provisions. All containment areas required by—this-Section 742- 204 shall comply with the following requirements:
+
+a. Capable of containing 110% of the volume of the largest volume held, stored, loaded or unloaded;
+
+b. Constructed in a manner to prevent a release from reaching the groundwater;
+
+GENERAL ORDINANCE RECORD 2026
+
+[Page 24 of 26]
+G.O. No. 23, 2026
+Page 24
+
+c. Constructed of hard-surface, impervious material, free of vegetation, cracks, open seams, open drains, siphons, or other openings that jeopardize the integrity of the area.
+
+SECTION 10. The expressed or implied repeal or amendment by this ordinance of any other ordinance or part of any other ordinance does not affect any rights or liabilities accrued, penalties incurred, or proceedings begun prior to the effective date of this ordinance. Those rights, liabilities, and proceedings are continued, and penalties shall be imposed and enforced under the repealed or amended ordinance as if this ordinance had not been adopted.
+
+SECTION 11. Should any provision (section, paragraph, sentence, clause, or any other portion) of this ordinance be declared by a court of competent jurisdiction to be invalid for any reason, the remaining provision or provisions shall not be affected, if and only if such remaining provisions can, without the invalid provision or provisions, be given the effect intended by the Council in adopting this ordinance. To this end the provisions of this ordinance are severable.
+
+SECTION 12. This ordinance shall be in effect from and after its passage by the Council and compliance with
+Ind. Code § 36-3-4-14.
+
+The foregoing was passed by the City-County Council this 2nd day of March, 2026, at 7:37 p.m.
+
+ATTEST:
+
+MaggieA’
+President, City-County Council
+
+Lulorete. BHgfislol
+
+Yulonda Winfield
+Clerk, City-County Council
+
+Presented by me to the Mayor this 3rd day of March, 2026
+
+A ulorar. Biepalol-
+
+Yulonda Winfield
+Clerk, City-County Council
+
+aslo
+
+H. Hogsett, Mayor
+
+Approved and signed by me this L/Yh day of March, 2026.
+
+GENERAL ORDINANCE RECORD 2026
+
+[Page 25 of 26]
+G.O. No. 23, 2026
+Page 25
+
+STATE OF INDIANA, MARION COUNTY)
+) SS:
+CITY OF INDIANAPOLIS )
+
+|, Yulonda Winfield, Clerk of the City-County Council, indianapolis, Marion County, Indiana, do hereby certify the above and foregoing is a full, true, and complete copy of Proposal No. 39, 2026, a Proposal for a
+GENERAL ORDINANCE passed by the City-County Council on the 2nd day of March, 2026, by a vote of 22
+YEAS and 9 NAYS, and was retitled General Ordinance No. 23, 2026, which was signed by the Mayor on the 4 day of March, 2026, and now remains on file and on record in my office.
+
+WITNESS my hand and the official seal of the City of Indianapolis, Indiana, this , {fh day of March, 2026.
+
+Yulonda Winfield
+Clerk, City-County Council
+
+(SEAL)
+
+GENERAL ORDINANCE RECORD 2026
+
+[Page 26 of 26]
+Indianapolis City - County Council RCS# 1085
+
+2020-2023
+2024-2027
+3/2/2026 7:37 PM
+Proposal: PROP-26 39 Ordinance: G.O. 23 (PASSED)
+Sponsor: JONES, OSILI
+Action: Adopt
+Committee: Metro. and Econ. Dev.
+Yea: 22 Nay: 0 Abstain: 0 Not Voting: 0 Excused: 3
+Yea - 22
+Allen Cahill Hart Mowery
+Bain Delaney Jones Perkins
+Barth Dilk Lewis Roberts
+Boots Evans Mascari Robinson
+Brown-A Gibson McCormick Wells
+Brown-J Graves
+Nay - 0
+Abstain - 0
+Excused - 3
+Annee Nielsen Osili
+
+Excused - 0
