@@ -4,7 +4,7 @@
    Loaded on every page by _src/build.py; pages render some sections in the browser, so it rescans
    whenever the content changes. */
 (function () {
-  var SITE = "https://indy-ai-research-docs.vercel.app";
+  var SITE = "https://airesearch.myfriendfred.org";
   var FORM = "https://github.com/mffred/indy-ai-research-docs/issues/new";
   var ICON = '<svg viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges">' +
     '<rect class="pole" x="3" y="1" width="2" height="14"/><path class="cloth" d="M5 2h8l-2 3 2 3H5z"/></svg>';
