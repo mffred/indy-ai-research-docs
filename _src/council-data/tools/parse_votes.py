@@ -277,12 +277,12 @@ def main():
     # Agendas fill in titles for proposals the posted minutes don't reach yet (their "DIGEST" line)
     for f in sorted(glob.glob(os.path.join(HERE, "agendas", "*.txt"))):
         t = re.sub(r"\s+", " ", re.sub(r"^=== .* ===$", " ", open(f).read(), flags=re.M))
-        for m in re.finditer(r"PROPOSAL NO\.\s*(\d+),\s*(20\d\d)\s*\(([^)]+)\)\s*INTRODUCED:.{0,40}?BY:\s*(Councill?ors?\s*.+?)\s*REFERRED TO:.*?DIGEST:\s*(.+?)\s*(?=COMMITTEE ACTION:|PROPOSAL NOS?\.|$)", t):
+        for m in re.finditer(r"PROPOSAL NO\.\s*(\d+),\s*(20\d\d)\s*\(([^)]+)\)\s*INTRODUCED:.{0,40}?BY:\s*(Councill?ors?\s*.+?)\s*REFERRED TO:.*?DIGEST:\s*(.+?)\s*(?=COMMITTEE ACTION:|PROPOSAL NOS?\.|\d+\s+[IVX]+\.\s|$)", t):
             key, digest = (int(m.group(1)), int(m.group(2))), m.group(5).strip()
             titles.setdefault(key, digest[0].upper() + digest[1:])
             types.setdefault(key, m.group(3).strip().title())
             sponsors.setdefault(key, re.sub(r"^Councill?ors?\s*", "", m.group(4)).strip())
-        for m in re.finditer(r"PROPOSAL NOS\.\s*(\d+)\s*-\s*(\d+)\s*,\s*(20\d\d)\s*\(Rezoning Ordinances\).*?DIGEST:\s*(.+?)\s*(?=COMMITTEE ACTION:|PROPOSAL NOS?\.|$)", t):
+        for m in re.finditer(r"PROPOSAL NOS\.\s*(\d+)\s*-\s*(\d+)\s*,\s*(20\d\d)\s*\(Rezoning Ordinances\).*?DIGEST:\s*(.+?)\s*(?=COMMITTEE ACTION:|PROPOSAL NOS?\.|\d+\s+[IVX]+\.\s|$)", t):
             for n in range(int(m.group(1)), int(m.group(2)) + 1):
                 key = (n, int(m.group(3)))
                 digest = re.sub(r"^rezoning ordinances", "Rezoning ordinance", m.group(4).rstrip(".")).replace("APPROVAL", "approval")

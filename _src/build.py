@@ -139,6 +139,15 @@ for v in cv["votes"]:
     rows.append([v["date"], v["proposals"][0], ACTIONS.index(v["action"]), {"Passed": "P", "Failed": "F"}.get(v["outcome"], "U"),
                  "".join(codes), flags, SRC_IDX[v["source"]], v["page"], v.get("note"), v.get("cityTally")])
     used.add(v["proposals"][0])
+# News links (news/news-links.json, checked by hand) and Indianapolis Documenters meeting notes (news/documenters.json)
+news = json.loads((CD / "news" / "news-links.json").read_text())
+PAYWALLED = tuple(news.get("paywalled", []))
+def news_row(a):
+    return [a["outlet"], a["title"], a["url"], a.get("date", ""), 1 if any(d in a["url"] for d in PAYWALLED) else 0]
+documenters = {}
+for n in json.loads((CD / "news" / "documenters.json").read_text()):
+    label = "Documenters live reporting" if "live" in (n.get("role") or "").lower() else "Documenters meeting notes"
+    documenters.setdefault(n["date"], []).append([label, n["url"]])
 props = {}
 for k in sorted(used):  # sorted so rebuilds give byte-identical files
     pr = cv["proposals"][k]
@@ -146,8 +155,9 @@ for k in sorted(used):  # sorted so rebuilds give byte-identical files
     if title.count('"') % 2: title += '"'  # a description cut at 'Day."' loses its closing quote
     props[k] = [title, pr["type"], [TOPIC_NAMES.index(t) for t in topics_for(k, pr["title"], pr["type"])], pr["sponsors"],
                 pr.get("committee"), pr.get("initiator"), pr.get("documentUrl"), 1 if pr.get("titleSource") else 0,
-                1 if (CD / "proposals" / f"{k}.txt").exists() else 0]
-meetings = {m["date"]: {"m": (m["minutes"] or {}).get("url"), "r": (m["rollCall"] or {}).get("url")}
+                1 if (CD / "proposals" / f"{k}.txt").exists() else 0,
+                [news_row(a) for a in news["proposals"].get(k, [])], 1 if k in news["searched"] else 0]
+meetings = {m["date"]: {"m": (m["minutes"] or {}).get("url"), "r": (m["rollCall"] or {}).get("url"), "d": documenters.get(m["date"], [])}
             for m in json.loads((CD / "sources.json").read_text())["meetings"]}
 (ROOT / "council-votes").mkdir(exist_ok=True)
 # Each proposal's full text (_src/council-data/proposals/, from tools/fetch_proposal_texts.py) is published as

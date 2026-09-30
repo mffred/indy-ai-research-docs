@@ -56,6 +56,12 @@
 .cv-roll{font-size:13.5px;margin:8px 0 0;display:flex;flex-direction:column;gap:4px}
 .cv-roll b{display:inline-block;min-width:92px}
 .cv-src{font-size:13px;margin-top:6px;color:var(--ink-2)}
+.cv-news{margin-top:10px;font-size:13.5px}
+.cv-news h4{margin:0 0 4px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.cv-news ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:3px}
+.cv-news .out{font-weight:600}
+.cv-news .meta{color:var(--muted);font-size:12.5px}
+.cv-inthenews{padding:1px 7px;border:1px solid var(--line);white-space:nowrap}
 .cv-full{margin-top:10px}
 .cv-full>summary{font-size:13px}
 .cv-text{margin:8px 0 0;max-height:440px;overflow:auto;padding:12px 14px;background:var(--surface);border:1px solid var(--line);box-shadow:inset 1px 1px 0 var(--line);font:13px/1.5 ui-monospace,Menlo,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
@@ -87,6 +93,7 @@
     <div class="cv-toggles">
       <label><input type="checkbox" id="cv-split"> Split votes only (at least one No)</label>
       <label><input type="checkbox" id="cv-routine"> Include routine group votes <span id="cv-routine-n"></span></label>
+      <label><input type="checkbox" id="cv-news"> With news coverage only</label>
     </div>
   </section>
 
@@ -125,7 +132,7 @@
   function readUrl() {
     var q = new URLSearchParams(location.search);
     state = { who: q.get("councilor") || "", year: q.get("year") || "", how: q.get("vote") || "", q: q.get("q") || "",
-              topics: (q.get("topics") || "").split(",").filter(Boolean), split: q.get("split") === "1", routine: q.get("routine") === "1" };
+              topics: (q.get("topics") || "").split(",").filter(Boolean), split: q.get("split") === "1", routine: q.get("routine") === "1", news: q.get("news") === "1" };
   }
   function writeUrl() {
     var q = new URLSearchParams();
@@ -136,6 +143,7 @@
     if (state.topics.length) q.set("topics", state.topics.join(","));
     if (state.split) q.set("split", "1");
     if (state.routine) q.set("routine", "1");
+    if (state.news) q.set("news", "1");
     var s = q.toString();
     history.replaceState(null, "", location.pathname + (s ? "?" + s : ""));
   }
@@ -161,7 +169,8 @@
     $("cv-routine-n").textContent = "(" + routine.toLocaleString() + ")";
 
     who.value = state.who; $("cv-year").value = state.year; $("cv-how").value = state.how; $("cv-q").value = state.q;
-    $("cv-split").checked = state.split; $("cv-routine").checked = state.routine;
+    $("cv-split").checked = state.split; $("cv-routine").checked = state.routine; $("cv-news").checked = state.news;
+    $("cv-news").addEventListener("change", function (e) { state.news = e.target.checked; update(); });
     who.addEventListener("change", function () { state.who = who.value; if (!state.who) state.how = ""; update(); });
     $("cv-year").addEventListener("change", function (e) { state.year = e.target.value; update(); });
     $("cv-how").addEventListener("change", function (e) { state.how = e.target.value; update(); });
@@ -223,6 +232,7 @@
     if (!state.routine && (v[5] & 3)) return false;
     if (state.year && v[0].slice(0, 4) !== state.year) return false;
     if (state.split && codes.indexOf("N") < 0) return false;
+    if (state.news && !(p[9] && p[9].length)) return false;  // articles about this proposal (meeting notes don't count)
     if (mi >= 0) {
       var c = codes[mi];
       if (c === "." || c === undefined) return false;
@@ -335,6 +345,21 @@
     return '<div class="cv-src">Source: ' + (out.join(" · ") || "record link unavailable") + (extra.length ? "<br>" + esc(extra.join(" ")) : "") + "</div>";
   }
 
+  var NEWS_FORM = "https://github.com/mffred/indy-ai-research-docs/issues/new";
+  function newsBlock(v, p) {
+    var no = v[1].split("-"), label = "Proposal No. " + no[0] + ", " + no[1], items = [];
+    (p[9] || []).forEach(function (a) {
+      items.push('<li><span class="out">' + esc(a[0]) + ':</span> <a href="' + esc(a[2]) + '" target="_blank" rel="noopener">' + esc(a[1]) + "</a>" +
+        (a[3] || a[4] ? ' <span class="meta">' + (a[3] ? fmtDate(a[3]) : "") + (a[3] && a[4] ? " · " : "") + (a[4] ? "may require a subscription" : "") + "</span>" : "") + "</li>");
+    });
+    var docs = ((D.meetings[v[0]] || {}).d || []).map(function (d) { return '<a href="' + esc(d[1]) + '" target="_blank" rel="noopener">' + esc(d[0]) + "</a>"; });
+    var q = new URLSearchParams({ template: "news-link.yml", title: "News: " + label, proposal: label + " (https://airesearch.myfriendfred.org/council-votes?q=" + encodeURIComponent(no[0] + " " + no[1]) + ")" });
+    return '<div class="cv-news"><h4>News coverage</h4>' +
+      (items.length ? "<ul>" + items.join("") + "</ul>" : "<div>" + (p[10] ? "No news coverage of this proposal found yet." : "Not researched yet.") + "</div>") +
+      (docs.length ? '<div class="meta">This meeting: ' + docs.join(" · ") + " (Indianapolis Documenters)</div>" : "") +
+      '<div class="meta"><a href="' + NEWS_FORM + "?" + q.toString().replace(/\+/g, "%20") + '" target="_blank" rel="noopener">Suggest a news article</a></div></div>';
+  }
+
   function card(v, mi) {
     var p = D.props[v[1]] || [], no = v[1].split("-");
     var title = p[0] || "Proposal No. " + no[0] + ", " + no[1] + " (no title in the records yet)";
@@ -348,8 +373,8 @@
       '<div class="cv-meta">Proposal No. ' + no[0] + ", " + no[1] + (p[1] ? " · " + esc(p[1]) : "") + " · " + fmtDate(v[0]) +
       (action !== "Final passage" ? " · Vote on: " + esc(action.toLowerCase()) : "") + (p[3] ? " · Sponsor: " + esc(p[3]) : "") +
       (p[5] ? " · Initiated by: " + esc(p[5]) : "") + (p[4] ? " · " + esc(p[4]) : "") + "</div>" +
-      '<div class="cv-tags">' + mine + '<span class="cv-result' + (passed ? "" : " fail") + '">' + (v[3] === "P" ? "Passed" : v[3] === "F" ? "Failed" : "Result unclear") + " " + counts.Y + "–" + counts.N + (v[9] ? " (city record)" : "") + "</span>" + labels + (v.ft ? '<span class="cv-fulltext">Found in the full text</span>' : "") + topics + "</div>" +
-      "<details><summary>Full roll call and source</summary><div class=\"cv-roll\">" + rollCall(v) + "</div>" + source(v) +
+      '<div class="cv-tags">' + mine + '<span class="cv-result' + (passed ? "" : " fail") + '">' + (v[3] === "P" ? "Passed" : v[3] === "F" ? "Failed" : "Result unclear") + " " + counts.Y + "–" + counts.N + (v[9] ? " (city record)" : "") + "</span>" + labels + (p[9] && p[9].length ? '<span class="cv-inthenews">In the news (' + p[9].length + ')</span>' : "") + (v.ft ? '<span class="cv-fulltext">Found in the full text</span>' : "") + topics + "</div>" +
+      "<details><summary>Full roll call and source</summary><div class=\"cv-roll\">" + rollCall(v) + "</div>" + source(v) + newsBlock(v, p) +
       (p[8] ? '<details class="cv-full" data-k="' + esc(v[1]) + '"><summary>Full text of the proposal</summary><pre class="cv-text">Loading…</pre>' +
         '<div class="cv-text-note">Read from the city\'s copy of the proposal. Most are scans, so this text comes from OCR and may contain errors; the PDF linked above is the official version.</div></details>' : "") +
       "</details></article>";

@@ -1,0 +1,34 @@
+name: News article
+description: Suggest a news article about a City-County Council proposal for the "How Your Councilor Voted" page.
+title: "News: "
+labels: ["news-link"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping connect votes to reporting. We link to articles (headline, outlet, date); we don't copy their text.
+        Suggestions are public, so don't include anything private.
+  - type: input
+    id: proposal
+    attributes:
+      label: Proposal
+      description: The proposal number and year, like "Proposal No. 192, 2026", or a link to the vote on our page.
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Article link
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: outlet
+    attributes:
+      label: Outlet
+      placeholder: e.g. IBJ, Mirror Indy, WFYI, IndyStar
+  - type: textarea
+    id: why
+    attributes:
+      label: How it relates
+      description: Optional. Which part of the article covers this proposal, especially if it covers several.
