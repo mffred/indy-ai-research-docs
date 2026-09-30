@@ -1,102 +1,1094 @@
 {
-  "_note": "News coverage linked from the council votes page: headline, outlet, date and link only (no article text). Each link was checked against the proposal (proposal number, or unmistakable subject and date) before being added; when that couldn't be confirmed it was left out. 'searched' lists proposals that were researched, so the page can say 'no coverage found' for those. Readers suggest more through the news-link issue form (.github/ISSUE_TEMPLATE/news-link.yml); add accepted ones here.",
-  "batch": "2025-2026 split votes (first pass, September 30, 2026). IndyStar could not be searched with the tools used; its articles can be added from reader suggestions.",
-  "paywalled": ["ibj.com", "indystar.com"],
-  "searched": ["3-2025", "5-2025", "76-2025", "146-2025", "164-2025", "170-2025", "231-2025", "232-2025", "236-2025", "244-2025", "245-2025", "259-2025", "274-2025", "275-2025", "3-2026", "30-2026", "99-2026", "122-2026", "145-2026", "189-2026", "190-2026", "192-2026", "193-2026", "206-2026", "238-2026", "275-2026", "304-2026"],
-  "proposals": {
-    "5-2025": [
-      {"outlet": "WFYI", "date": "2025-02-21", "title": "Leadership questioned at Indy's struggling animal care agency", "url": "https://www.wfyi.org/wfyi-news/2025-02-21/leadership-targeted-and-changes-questions-at-indianapoliss-animal-care-agency"},
-      {"outlet": "WTHR", "title": "Animal advocates ask council members to continue search for new IACS leadership", "url": "https://www.wthr.com/article/news/local/animal-advocates-ask-council-to-continue-search-for-new-iacs-leadership-kelly-diamond-dan-boots/531-366c98ab-a9ab-436a-bbcf-b37271bacf6c"},
-      {"outlet": "WTHR", "title": "Indianapolis City-County Council to reconsider proposal to approve IACS director", "url": "https://www.wthr.com/article/news/local/city-county-council-to-reconsider-proposal-to-approve-iacs-director-volunteer-hours-rolled-back-animal-shelter/531-f7733e15-fe1d-46fd-a0db-05aa43844d8b"},
-      {"outlet": "WTHR", "title": "Indianapolis City-County Council pulls proposal for new Animal Care Services director", "url": "https://www.wthr.com/article/news/local/city-county-council-pulls-proposal-for-new-animal-care-services-director-kelly-diamond-hogsett/531-f8a3ce2f-6f43-48bc-b500-27073466edda"},
-      {"outlet": "Mirror Indy", "title": "Indianapolis mayor to find another person to lead Animal Care Services", "url": "https://mirrorindy.org/indianapolis-mayor-to-find-another-person-to-lead-animal-care-services/"},
-      {"outlet": "WISH-TV", "title": "Panel hears comments on Animal Control Services director appointment", "url": "https://wishtv.com/news/politics/indianapolis-animal-control-services-appointment/"}
-    ],
-    "76-2025": [
-      {"outlet": "IBJ", "title": "Council committee recommends $66M in bonds for Old City Hall redevelopment", "url": "https://www.ibj.com/articles/council-committee-approves-66m-in-bonds-for-old-city-hall-redevelopment"},
-      {"outlet": "WFYI", "date": "2025-04-07", "title": "City-County Councilors approve loan to private developer to renovate Old City Hall", "url": "https://www.wfyi.org/wfyi-news/2025-04-07/city-county-councilors-approve-loan-to-private-developer-to-renovate-old-city-hall"},
-      {"outlet": "Mirror Indy", "title": "City-County Council approves loan to private developer to renovate Old City Hall", "url": "https://mirrorindy.org/city-county-council-approves-loan-to-private-developer-to-renovate-old-city-hall/"},
-      {"outlet": "WTHR", "title": "Indianapolis City-County Council passes multi-million dollar project to revitalize Old City Hall", "url": "https://www.wthr.com/article/news/community/indianapolis-city-county-council-passes-66-million-project-to-revitalize-historic-old-city-hall-indiana-202-alabama-street/531-9e08edc2-7edb-49e5-9929-1a0357abb866"},
-      {"outlet": "Fox59", "title": "City-County Council approves $66 million project to revitalize Old City Hall", "url": "https://fox59.com/news/city-county-council-approves-66-million-project-to-revitalize-old-city-hall/"},
-      {"outlet": "WISH-TV", "title": "City-County Council approves $66M for Old City Hall redevelopment project", "url": "https://www.wishtv.com/news/politics/city-county-council-approves-66m-for-old-city-hall-redevelopment-project/"}
-    ],
-    "164-2025": [
-      {"outlet": "WISH-TV", "title": "Mayor Hogsett's $27.2 million package introduced for Indianapolis", "url": "https://www.wishtv.com/news/indy-fiscal-package/"},
-      {"outlet": "IBJ", "title": "Indy City-County Council considers $27.2M spring spending package", "url": "https://www.ibj.com/articles/indy-city-county-council-considers-27-2m-spring-spending-package"},
-      {"outlet": "WTHR", "title": "Indy council committee debates $27M spending plan for roads, safety and snow removal", "url": "https://www.wthr.com/article/news/local/27m-proposal-aimed-at-fixing-indy-roads-improving-snow-removal-moves-closer-to-finish-line-andy-nielsen-michael-paul-hart/531-5bf48b09-c727-496e-bb63-e5f485b4b862"},
-      {"outlet": "WISH-TV", "title": "How Indy councilors are using $27 million in new spending", "url": "https://www.wishtv.com/news/politics/how-indy-councilors-are-using-27-million-in-new-spending/"}
-    ],
-    "170-2025": [
-      {"outlet": "Mirror Indy", "title": "Indianapolis housing project in Perry Township raises environmental concerns", "url": "https://mirrorindy.org/indianapolis-housing-project-environmental-concerns-perry-township-urban-forest/"},
-      {"outlet": "WFYI", "date": "2025-06-16", "title": "Council paves the way for redevelopment of southside urban forest", "url": "https://www.wfyi.org/wfyi-news/2025-06-16/council-paves-the-way-for-redevelopment-of-southside-urban-forest"}
-    ],
-    "231-2025": [
-      {"outlet": "Fox59", "title": "Indianapolis City-County Councilor Jesse Brown introduces motion to remove council president, vice president", "url": "https://fox59.com/news/indianapolis-city-county-councilor-jesse-brown-introduces-motion-to-remove-council-president-vice-president/"}
-    ],
-    "232-2025": [
-      {"outlet": "WISH-TV", "date": "2025-08-12", "title": "Indianapolis City-County Council passes stricter youth curfew", "url": "https://www.wishtv.com/news/politics/public-safety-curfew-amendments/"}
-    ],
-    "236-2025": [
-      {"outlet": "Axios Indianapolis", "date": "2025-08-06", "title": "Council GOP pushes to remove residency requirement for city, county employees", "url": "https://www.axios.com/local/indianapolis/2025/08/06/council-gop-proposal-remove-residency-requirement-city-marion-county-employees"},
-      {"outlet": "IBJ", "title": "Council GOP leaders seek to eliminate employee residency requirement", "url": "https://www.ibj.com/articles/council-gop-leaders-seek-to-eliminate-employee-residency-requirement"},
-      {"outlet": "IBJ", "title": "Change in Marion County's residency requirement still sought despite committee's vote", "url": "https://www.ibj.com/articles/residency-requirement-tweak-still-sought-after-council-votes-down-axing-50-year-old-city-measure"}
-    ],
-    "244-2025": [
-      {"outlet": "Mirror Indy", "title": "Republicans want to weaken powers of Indy police oversight board", "url": "https://mirrorindy.org/indianapolis-general-orders-board-police-oversight/"}
-    ],
-    "245-2025": [
-      {"outlet": "WISH-TV", "date": "2025-08-27", "title": "City-County Council votes no on parental penalties for youth curfew violators", "url": "https://www.wishtv.com/news/politics/youth-curfew-parental-fines-rejected/"}
-    ],
-    "259-2025": [
-      {"outlet": "WFYI", "date": "2025-10-07", "title": "Indianapolis councilors approve $1.7B budget for 2026, say it was best they could do in bad situation", "url": "https://www.wfyi.org/wfyi-news/2025-10-07/indianapolis-approves-2026-budget-councilors-said-it-was-the-best-they-could-do-in-a-bad-situation"},
-      {"outlet": "Axios Indianapolis", "date": "2025-10-07", "title": "City-County Council divided on issues, but passes $1.7 billion 2026 budget", "url": "https://www.axios.com/local/indianapolis/2025/10/07/city-county-council-passes-budget-hogsett"},
-      {"outlet": "Mirror Indy", "title": "Indy council passes Hogsett's $1.7B budget: How the city plans to spend money", "url": "https://mirrorindy.org/indianapolis-marion-county-2026-adopted-budget-joe-hogsett/"},
-      {"outlet": "Fox59", "title": "Indianapolis City-County Council approves 2026 budget", "url": "https://fox59.com/news/indianapolis-city-county-council-approves-2026-budget/"},
-      {"outlet": "WTHR", "title": "Tight budget, tough choices: Indy council signs off on 2026 budget", "url": "https://www.wthr.com/article/news/local/indy-city-county-council-approves-17-billion-2026-budget-tense-debate-indianapolis-money-taxes/531-e95bea3c-283b-40b6-b0b0-e7ab96a7cd92"},
-      {"outlet": "WISH-TV", "title": "Indianapolis City-County Council passes $1.7B 2026 budget", "url": "https://www.wishtv.com/news/local-news/indy-city-council-approves-2026-budget/"}
-    ],
-    "30-2026": [
-      {"outlet": "Mirror Indy", "date": "2026-01-13", "title": "Data centers among residents' top concerns at councilor-led forum", "url": "https://mirrorindy.org/indianapolis-data-centers-city-county-council-forum/"}
-    ],
-    "99-2026": [
-      {"outlet": "WFYI", "date": "2026-04-17", "title": "Youth curfew could span summer months under proposal", "url": "https://www.wfyi.org/wfyi-news/2026-04-17/youth-curfew-could-span-summer-months-under-proposal"},
-      {"outlet": "Axios Indianapolis", "date": "2026-04-20", "title": "City considering earlier summer curfew hours for Indianapolis youth", "url": "https://www.axios.com/local/indianapolis/2026/04/20/summer-curfew-hours-crime"},
-      {"outlet": "WISH-TV", "title": "Committee recommends earlier teen curfew for summer in Indianapolis", "url": "https://www.wishtv.com/news/politics/committee-recommends-earlier-teen-curfew-for-summer-2026-in-indianapolis/"},
-      {"outlet": "WISH-TV", "title": "Indianapolis council advances plan to temporarily tighten youth curfew hours", "url": "https://www.wishtv.com/news/politics/indianapolis-council-advances-plan-to-temporarily-tighten-youth-curfew-hours-2026/"},
-      {"outlet": "WTHR", "title": "Council approves temporary summer curfew for Indianapolis", "url": "https://www.wthr.com/article/news/local/council-approves-temporary-summer-curfew-for-indianapolis-children-teenagers/531-e39ea1fd-1709-4a9b-b32d-d60eb10bec6e"},
-      {"outlet": "Mirror Indy", "title": "Youth curfew extended ahead of summer", "url": "https://mirrorindy.org/documenters-city-county-council-may-youth-curfew-summer-2026/"}
-    ],
-    "145-2026": [
-      {"outlet": "Fox59", "title": "Indianapolis City-County Council introduces proposal to remove home addresses of councilors from ethics disclosure statements", "url": "https://fox59.com/news/indianapolis-city-county-council-introduces-proposal-to-remove-home-addresses-of-councilors-from-ethics-disclosure-statements/"},
-      {"outlet": "WFYI", "date": "2026-05-28", "title": "Proposal would remove councilors' home addresses from ethics forms after shooting", "url": "https://www.wfyi.org/wfyi-news/2026-05-28/proposal-would-remove-councilors-home-addresses-from-ethics-forms-after-shooting"},
-      {"outlet": "WTHR", "title": "Committee advances proposal to keep councilors' addresses private", "url": "https://www.wthr.com/article/news/local/committee-advances-proposal-to-keep-indianapolis-city-county-councilors-addresses-private/531-a8827710-cb7e-48ec-803a-48ba0dd6d85f"},
-      {"outlet": "IBJ", "title": "Proposal to nix City-County Council home addresses from disclosure forms advances", "url": "https://www.ibj.com/articles/councilors-move-to-remove-home-addresses-from-financial-disclosure-forms-after-targeted-incident"},
-      {"outlet": "WISH-TV", "title": "Indianapolis councilors to vote on hiding their home addresses", "url": "https://www.wishtv.com/news/politics/indianapolis-councilors-to-vote-on-hiding-their-home-addresses/"},
-      {"outlet": "Fox59", "title": "Indianapolis City-County Council adopts proposal to remove councilors' home addresses from public disclosure statements", "url": "https://fox59.com/news/indianapolis-city-county-council-adopts-proposal-to-remove-councilors-home-addresses-from-public-disclosure-statements/"}
-    ],
-    "190-2026": [
-      {"outlet": "Fox59", "title": "Indianapolis City-County Council rejects measure to increase OPHS oversight", "url": "https://fox59.com/news/indianapolis-city-county-council-rejects-measure-to-increase-ophs-oversight/"}
-    ],
-    "192-2026": [
-      {"outlet": "Axios Indianapolis", "date": "2026-06-11", "title": "Indianapolis residents weigh in on proposed wheel tax increase", "url": "https://www.axios.com/local/indianapolis/2026/06/11/residents-and-councilors-weigh-in-on-proposed-wheel-tax-increase"},
-      {"outlet": "Mirror Indy", "title": "Indianapolis vehicle tax increase set for final vote", "url": "https://mirrorindy.org/indianapolis-marion-county-wheel-tax-increase-city-county-council/"},
-      {"outlet": "WFYI", "date": "2026-07-06", "title": "Councilors approve vehicle tax hike for Marion County, but Hogsett could still veto", "url": "https://www.wfyi.org/wfyi-news/2026-07-06/councilors-approve-vehicle-tax-hike-for-marion-county-but-hogsett-could-still-veto"},
-      {"outlet": "Fox59", "title": "Indianapolis City-County Council approves vehicle tax increase", "url": "https://fox59.com/indiana-news/committee-advances-measure-on-vehicle-tax-increase/"},
-      {"outlet": "WISH-TV", "title": "Indianapolis council approves wheel tax for road repairs", "url": "https://www.wishtv.com/news/politics/indianapolis-council-approves-wheel-tax-for-road-repairs/"},
-      {"outlet": "WISH-TV", "title": "Mayor Hogsett vetoes Marion County wheel tax, sends it back to City-County Council", "url": "https://www.wishtv.com/news/politics/mayor-hogsett-vetoes-marion-county-wheel-tax-sends-it-back-to-city-county-council/"},
-      {"outlet": "WFYI", "date": "2026-08-11", "title": "Indianapolis drivers will pay more after council overrides mayor's veto on vehicle taxes", "url": "https://www.wfyi.org/wfyi-news/2026-08-11/indianapolis-drivers-will-pay-more-after-council-overrides-mayors-veto-on-vehicle-taxes"},
-      {"outlet": "Mirror Indy", "title": "Indy councilors override Hogsett's veto, pass vehicle tax increase", "url": "https://mirrorindy.org/indianapolis-city-county-council-vehicle-tax-vote/"},
-      {"outlet": "Indianapolis Recorder", "title": "Indy councilors override Hogsett's veto, pass vehicle tax increase", "url": "https://indianapolisrecorder.com/indy-councilors-override-hogsetts-veto-pass-vehicle-tax-increase/"},
-      {"outlet": "WISH-TV", "title": "Council overrides mayor's veto on new annual vehicle tax for Marion County", "url": "https://www.wishtv.com/news/politics/council-overrides-mayors-veto-on-new-annual-vehicle-tax-for-marion-county-august-2026/"}
-    ],
-    "238-2026": [
-      {"outlet": "WFYI", "date": "2026-07-01", "title": "Data center rules proposal clears initial vote in Indianapolis", "url": "https://www.wfyi.org/wfyi-news/2026-07-01/data-center-rules-proposal-clears-initial-vote-in-indianapolis"},
-      {"outlet": "Axios Indianapolis", "date": "2026-07-01", "title": "Indianapolis data center rules move forward amid protest", "url": "https://www.axios.com/local/indianapolis/2026/07/01/data-center-rules-vote-protest"},
-      {"outlet": "WFYI", "date": "2026-08-10", "title": "Indy council advances pause on data centers, sends to commission for final approval", "url": "https://www.wfyi.org/wfyi-news/2026-08-10/indy-council-advances-pause-on-data-centers-sends-to-commission-for-final-approval"},
-      {"outlet": "Indianapolis Recorder", "title": "Indy council advances pause on data centers, sends to commission for final approval", "url": "https://indianapolisrecorder.com/indianapolis-data-center-moratorium-2027/"},
-      {"outlet": "Mirror Indy", "title": "Indianapolis councilors approve data center moratorium", "url": "https://mirrorindy.org/indianapolis-city-county-council-data-center-moratorium-approval/"},
-      {"outlet": "Fox59", "title": "Metropolitan Development Commission unanimously approves data center moratorium", "url": "https://fox59.com/news/metropolitan-development-commission-unanimously-approves-data-center-moratorium/"},
-      {"outlet": "WTHR", "title": "Indianapolis data center moratorium takes effect after passage by Metropolitan Development Commission", "url": "https://www.wthr.com/article/news/local/indianapolis-data-center-moratorium-takes-effect-passage-metropolitan-development-commission/531-1517b382-2202-40bb-8fa5-6b1947a6bf4d"}
-    ]
-  }
+ "_note": "News coverage linked from the council votes page: headline, outlet, date and link only (no article text). Each link was checked against the proposal (proposal number, or unmistakable subject and date) before being added; when that couldn't be confirmed it was left out. 'searched' lists proposals that were researched, so the page can say 'no coverage found' for those. Readers suggest more through the news-link issue form (.github/ISSUE_TEMPLATE/news-link.yml); add accepted ones here.",
+ "batch": "2025-2026 and 2021-2024 split votes (September 30, 2026). IndyStar could not be searched with the tools used; its articles can be added from reader suggestions. Documenters' full-council notes start in 2025.",
+ "paywalled": [
+  "ibj.com",
+  "indystar.com"
+ ],
+ "searched": [
+  "263-2020",
+  "76-2021",
+  "88-2021",
+  "106-2021",
+  "135-2021",
+  "170-2021",
+  "185-2021",
+  "189-2021",
+  "190-2021",
+  "195-2021",
+  "267-2021",
+  "315-2021",
+  "332-2021",
+  "339-2021",
+  "55-2022",
+  "56-2022",
+  "157-2022",
+  "181-2022",
+  "289-2022",
+  "307-2022",
+  "369-2022",
+  "370-2022",
+  "394-2022",
+  "397-2022",
+  "111-2023",
+  "147-2023",
+  "156-2023",
+  "228-2023",
+  "332-2023",
+  "40-2024",
+  "175-2024",
+  "201-2024",
+  "205-2024",
+  "224-2024",
+  "264-2024",
+  "280-2024",
+  "287-2024",
+  "349-2024",
+  "358-2024",
+  "370-2024",
+  "3-2025",
+  "5-2025",
+  "76-2025",
+  "146-2025",
+  "164-2025",
+  "170-2025",
+  "231-2025",
+  "232-2025",
+  "236-2025",
+  "244-2025",
+  "245-2025",
+  "259-2025",
+  "274-2025",
+  "275-2025",
+  "3-2026",
+  "30-2026",
+  "99-2026",
+  "122-2026",
+  "145-2026",
+  "189-2026",
+  "190-2026",
+  "192-2026",
+  "193-2026",
+  "206-2026",
+  "238-2026",
+  "275-2026",
+  "304-2026"
+ ],
+ "proposals": {
+  "5-2025": [
+   {
+    "outlet": "WFYI",
+    "date": "2025-02-21",
+    "title": "Leadership questioned at Indy's struggling animal care agency",
+    "url": "https://www.wfyi.org/wfyi-news/2025-02-21/leadership-targeted-and-changes-questions-at-indianapoliss-animal-care-agency"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Animal advocates ask council members to continue search for new IACS leadership",
+    "url": "https://www.wthr.com/article/news/local/animal-advocates-ask-council-to-continue-search-for-new-iacs-leadership-kelly-diamond-dan-boots/531-366c98ab-a9ab-436a-bbcf-b37271bacf6c"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Indianapolis City-County Council to reconsider proposal to approve IACS director",
+    "url": "https://www.wthr.com/article/news/local/city-county-council-to-reconsider-proposal-to-approve-iacs-director-volunteer-hours-rolled-back-animal-shelter/531-f7733e15-fe1d-46fd-a0db-05aa43844d8b"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Indianapolis City-County Council pulls proposal for new Animal Care Services director",
+    "url": "https://www.wthr.com/article/news/local/city-county-council-pulls-proposal-for-new-animal-care-services-director-kelly-diamond-hogsett/531-f8a3ce2f-6f43-48bc-b500-27073466edda"
+   },
+   {
+    "outlet": "Mirror Indy",
+    "title": "Indianapolis mayor to find another person to lead Animal Care Services",
+    "url": "https://mirrorindy.org/indianapolis-mayor-to-find-another-person-to-lead-animal-care-services/"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Panel hears comments on Animal Control Services director appointment",
+    "url": "https://wishtv.com/news/politics/indianapolis-animal-control-services-appointment/"
+   }
+  ],
+  "76-2025": [
+   {
+    "outlet": "IBJ",
+    "title": "Council committee recommends $66M in bonds for Old City Hall redevelopment",
+    "url": "https://www.ibj.com/articles/council-committee-approves-66m-in-bonds-for-old-city-hall-redevelopment"
+   },
+   {
+    "outlet": "WFYI",
+    "date": "2025-04-07",
+    "title": "City-County Councilors approve loan to private developer to renovate Old City Hall",
+    "url": "https://www.wfyi.org/wfyi-news/2025-04-07/city-county-councilors-approve-loan-to-private-developer-to-renovate-old-city-hall"
+   },
+   {
+    "outlet": "Mirror Indy",
+    "title": "City-County Council approves loan to private developer to renovate Old City Hall",
+    "url": "https://mirrorindy.org/city-county-council-approves-loan-to-private-developer-to-renovate-old-city-hall/"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Indianapolis City-County Council passes multi-million dollar project to revitalize Old City Hall",
+    "url": "https://www.wthr.com/article/news/community/indianapolis-city-county-council-passes-66-million-project-to-revitalize-historic-old-city-hall-indiana-202-alabama-street/531-9e08edc2-7edb-49e5-9929-1a0357abb866"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "City-County Council approves $66 million project to revitalize Old City Hall",
+    "url": "https://fox59.com/news/city-county-council-approves-66-million-project-to-revitalize-old-city-hall/"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "City-County Council approves $66M for Old City Hall redevelopment project",
+    "url": "https://www.wishtv.com/news/politics/city-county-council-approves-66m-for-old-city-hall-redevelopment-project/"
+   }
+  ],
+  "164-2025": [
+   {
+    "outlet": "WISH-TV",
+    "title": "Mayor Hogsett's $27.2 million package introduced for Indianapolis",
+    "url": "https://www.wishtv.com/news/indy-fiscal-package/"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "Indy City-County Council considers $27.2M spring spending package",
+    "url": "https://www.ibj.com/articles/indy-city-county-council-considers-27-2m-spring-spending-package"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Indy council committee debates $27M spending plan for roads, safety and snow removal",
+    "url": "https://www.wthr.com/article/news/local/27m-proposal-aimed-at-fixing-indy-roads-improving-snow-removal-moves-closer-to-finish-line-andy-nielsen-michael-paul-hart/531-5bf48b09-c727-496e-bb63-e5f485b4b862"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "How Indy councilors are using $27 million in new spending",
+    "url": "https://www.wishtv.com/news/politics/how-indy-councilors-are-using-27-million-in-new-spending/"
+   }
+  ],
+  "170-2025": [
+   {
+    "outlet": "Mirror Indy",
+    "title": "Indianapolis housing project in Perry Township raises environmental concerns",
+    "url": "https://mirrorindy.org/indianapolis-housing-project-environmental-concerns-perry-township-urban-forest/"
+   },
+   {
+    "outlet": "WFYI",
+    "date": "2025-06-16",
+    "title": "Council paves the way for redevelopment of southside urban forest",
+    "url": "https://www.wfyi.org/wfyi-news/2025-06-16/council-paves-the-way-for-redevelopment-of-southside-urban-forest"
+   }
+  ],
+  "231-2025": [
+   {
+    "outlet": "Fox59",
+    "title": "Indianapolis City-County Councilor Jesse Brown introduces motion to remove council president, vice president",
+    "url": "https://fox59.com/news/indianapolis-city-county-councilor-jesse-brown-introduces-motion-to-remove-council-president-vice-president/"
+   }
+  ],
+  "232-2025": [
+   {
+    "outlet": "WISH-TV",
+    "date": "2025-08-12",
+    "title": "Indianapolis City-County Council passes stricter youth curfew",
+    "url": "https://www.wishtv.com/news/politics/public-safety-curfew-amendments/"
+   }
+  ],
+  "236-2025": [
+   {
+    "outlet": "Axios Indianapolis",
+    "date": "2025-08-06",
+    "title": "Council GOP pushes to remove residency requirement for city, county employees",
+    "url": "https://www.axios.com/local/indianapolis/2025/08/06/council-gop-proposal-remove-residency-requirement-city-marion-county-employees"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "Council GOP leaders seek to eliminate employee residency requirement",
+    "url": "https://www.ibj.com/articles/council-gop-leaders-seek-to-eliminate-employee-residency-requirement"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "Change in Marion County's residency requirement still sought despite committee's vote",
+    "url": "https://www.ibj.com/articles/residency-requirement-tweak-still-sought-after-council-votes-down-axing-50-year-old-city-measure"
+   }
+  ],
+  "244-2025": [
+   {
+    "outlet": "Mirror Indy",
+    "title": "Republicans want to weaken powers of Indy police oversight board",
+    "url": "https://mirrorindy.org/indianapolis-general-orders-board-police-oversight/"
+   }
+  ],
+  "245-2025": [
+   {
+    "outlet": "WISH-TV",
+    "date": "2025-08-27",
+    "title": "City-County Council votes no on parental penalties for youth curfew violators",
+    "url": "https://www.wishtv.com/news/politics/youth-curfew-parental-fines-rejected/"
+   }
+  ],
+  "259-2025": [
+   {
+    "outlet": "WFYI",
+    "date": "2025-10-07",
+    "title": "Indianapolis councilors approve $1.7B budget for 2026, say it was best they could do in bad situation",
+    "url": "https://www.wfyi.org/wfyi-news/2025-10-07/indianapolis-approves-2026-budget-councilors-said-it-was-the-best-they-could-do-in-a-bad-situation"
+   },
+   {
+    "outlet": "Axios Indianapolis",
+    "date": "2025-10-07",
+    "title": "City-County Council divided on issues, but passes $1.7 billion 2026 budget",
+    "url": "https://www.axios.com/local/indianapolis/2025/10/07/city-county-council-passes-budget-hogsett"
+   },
+   {
+    "outlet": "Mirror Indy",
+    "title": "Indy council passes Hogsett's $1.7B budget: How the city plans to spend money",
+    "url": "https://mirrorindy.org/indianapolis-marion-county-2026-adopted-budget-joe-hogsett/"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "Indianapolis City-County Council approves 2026 budget",
+    "url": "https://fox59.com/news/indianapolis-city-county-council-approves-2026-budget/"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Tight budget, tough choices: Indy council signs off on 2026 budget",
+    "url": "https://www.wthr.com/article/news/local/indy-city-county-council-approves-17-billion-2026-budget-tense-debate-indianapolis-money-taxes/531-e95bea3c-283b-40b6-b0b0-e7ab96a7cd92"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Indianapolis City-County Council passes $1.7B 2026 budget",
+    "url": "https://www.wishtv.com/news/local-news/indy-city-council-approves-2026-budget/"
+   }
+  ],
+  "30-2026": [
+   {
+    "outlet": "Mirror Indy",
+    "date": "2026-01-13",
+    "title": "Data centers among residents' top concerns at councilor-led forum",
+    "url": "https://mirrorindy.org/indianapolis-data-centers-city-county-council-forum/"
+   }
+  ],
+  "99-2026": [
+   {
+    "outlet": "WFYI",
+    "date": "2026-04-17",
+    "title": "Youth curfew could span summer months under proposal",
+    "url": "https://www.wfyi.org/wfyi-news/2026-04-17/youth-curfew-could-span-summer-months-under-proposal"
+   },
+   {
+    "outlet": "Axios Indianapolis",
+    "date": "2026-04-20",
+    "title": "City considering earlier summer curfew hours for Indianapolis youth",
+    "url": "https://www.axios.com/local/indianapolis/2026/04/20/summer-curfew-hours-crime"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Committee recommends earlier teen curfew for summer in Indianapolis",
+    "url": "https://www.wishtv.com/news/politics/committee-recommends-earlier-teen-curfew-for-summer-2026-in-indianapolis/"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Indianapolis council advances plan to temporarily tighten youth curfew hours",
+    "url": "https://www.wishtv.com/news/politics/indianapolis-council-advances-plan-to-temporarily-tighten-youth-curfew-hours-2026/"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Council approves temporary summer curfew for Indianapolis",
+    "url": "https://www.wthr.com/article/news/local/council-approves-temporary-summer-curfew-for-indianapolis-children-teenagers/531-e39ea1fd-1709-4a9b-b32d-d60eb10bec6e"
+   },
+   {
+    "outlet": "Mirror Indy",
+    "title": "Youth curfew extended ahead of summer",
+    "url": "https://mirrorindy.org/documenters-city-county-council-may-youth-curfew-summer-2026/"
+   }
+  ],
+  "145-2026": [
+   {
+    "outlet": "Fox59",
+    "title": "Indianapolis City-County Council introduces proposal to remove home addresses of councilors from ethics disclosure statements",
+    "url": "https://fox59.com/news/indianapolis-city-county-council-introduces-proposal-to-remove-home-addresses-of-councilors-from-ethics-disclosure-statements/"
+   },
+   {
+    "outlet": "WFYI",
+    "date": "2026-05-28",
+    "title": "Proposal would remove councilors' home addresses from ethics forms after shooting",
+    "url": "https://www.wfyi.org/wfyi-news/2026-05-28/proposal-would-remove-councilors-home-addresses-from-ethics-forms-after-shooting"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Committee advances proposal to keep councilors' addresses private",
+    "url": "https://www.wthr.com/article/news/local/committee-advances-proposal-to-keep-indianapolis-city-county-councilors-addresses-private/531-a8827710-cb7e-48ec-803a-48ba0dd6d85f"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "Proposal to nix City-County Council home addresses from disclosure forms advances",
+    "url": "https://www.ibj.com/articles/councilors-move-to-remove-home-addresses-from-financial-disclosure-forms-after-targeted-incident"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Indianapolis councilors to vote on hiding their home addresses",
+    "url": "https://www.wishtv.com/news/politics/indianapolis-councilors-to-vote-on-hiding-their-home-addresses/"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "Indianapolis City-County Council adopts proposal to remove councilors' home addresses from public disclosure statements",
+    "url": "https://fox59.com/news/indianapolis-city-county-council-adopts-proposal-to-remove-councilors-home-addresses-from-public-disclosure-statements/"
+   }
+  ],
+  "190-2026": [
+   {
+    "outlet": "Fox59",
+    "title": "Indianapolis City-County Council rejects measure to increase OPHS oversight",
+    "url": "https://fox59.com/news/indianapolis-city-county-council-rejects-measure-to-increase-ophs-oversight/"
+   }
+  ],
+  "192-2026": [
+   {
+    "outlet": "Axios Indianapolis",
+    "date": "2026-06-11",
+    "title": "Indianapolis residents weigh in on proposed wheel tax increase",
+    "url": "https://www.axios.com/local/indianapolis/2026/06/11/residents-and-councilors-weigh-in-on-proposed-wheel-tax-increase"
+   },
+   {
+    "outlet": "Mirror Indy",
+    "title": "Indianapolis vehicle tax increase set for final vote",
+    "url": "https://mirrorindy.org/indianapolis-marion-county-wheel-tax-increase-city-county-council/"
+   },
+   {
+    "outlet": "WFYI",
+    "date": "2026-07-06",
+    "title": "Councilors approve vehicle tax hike for Marion County, but Hogsett could still veto",
+    "url": "https://www.wfyi.org/wfyi-news/2026-07-06/councilors-approve-vehicle-tax-hike-for-marion-county-but-hogsett-could-still-veto"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "Indianapolis City-County Council approves vehicle tax increase",
+    "url": "https://fox59.com/indiana-news/committee-advances-measure-on-vehicle-tax-increase/"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Indianapolis council approves wheel tax for road repairs",
+    "url": "https://www.wishtv.com/news/politics/indianapolis-council-approves-wheel-tax-for-road-repairs/"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Mayor Hogsett vetoes Marion County wheel tax, sends it back to City-County Council",
+    "url": "https://www.wishtv.com/news/politics/mayor-hogsett-vetoes-marion-county-wheel-tax-sends-it-back-to-city-county-council/"
+   },
+   {
+    "outlet": "WFYI",
+    "date": "2026-08-11",
+    "title": "Indianapolis drivers will pay more after council overrides mayor's veto on vehicle taxes",
+    "url": "https://www.wfyi.org/wfyi-news/2026-08-11/indianapolis-drivers-will-pay-more-after-council-overrides-mayors-veto-on-vehicle-taxes"
+   },
+   {
+    "outlet": "Mirror Indy",
+    "title": "Indy councilors override Hogsett's veto, pass vehicle tax increase",
+    "url": "https://mirrorindy.org/indianapolis-city-county-council-vehicle-tax-vote/"
+   },
+   {
+    "outlet": "Indianapolis Recorder",
+    "title": "Indy councilors override Hogsett's veto, pass vehicle tax increase",
+    "url": "https://indianapolisrecorder.com/indy-councilors-override-hogsetts-veto-pass-vehicle-tax-increase/"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Council overrides mayor's veto on new annual vehicle tax for Marion County",
+    "url": "https://www.wishtv.com/news/politics/council-overrides-mayors-veto-on-new-annual-vehicle-tax-for-marion-county-august-2026/"
+   }
+  ],
+  "238-2026": [
+   {
+    "outlet": "WFYI",
+    "date": "2026-07-01",
+    "title": "Data center rules proposal clears initial vote in Indianapolis",
+    "url": "https://www.wfyi.org/wfyi-news/2026-07-01/data-center-rules-proposal-clears-initial-vote-in-indianapolis"
+   },
+   {
+    "outlet": "Axios Indianapolis",
+    "date": "2026-07-01",
+    "title": "Indianapolis data center rules move forward amid protest",
+    "url": "https://www.axios.com/local/indianapolis/2026/07/01/data-center-rules-vote-protest"
+   },
+   {
+    "outlet": "WFYI",
+    "date": "2026-08-10",
+    "title": "Indy council advances pause on data centers, sends to commission for final approval",
+    "url": "https://www.wfyi.org/wfyi-news/2026-08-10/indy-council-advances-pause-on-data-centers-sends-to-commission-for-final-approval"
+   },
+   {
+    "outlet": "Indianapolis Recorder",
+    "title": "Indy council advances pause on data centers, sends to commission for final approval",
+    "url": "https://indianapolisrecorder.com/indianapolis-data-center-moratorium-2027/"
+   },
+   {
+    "outlet": "Mirror Indy",
+    "title": "Indianapolis councilors approve data center moratorium",
+    "url": "https://mirrorindy.org/indianapolis-city-county-council-data-center-moratorium-approval/"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "Metropolitan Development Commission unanimously approves data center moratorium",
+    "url": "https://fox59.com/news/metropolitan-development-commission-unanimously-approves-data-center-moratorium/"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Indianapolis data center moratorium takes effect after passage by Metropolitan Development Commission",
+    "url": "https://www.wthr.com/article/news/local/indianapolis-data-center-moratorium-takes-effect-passage-metropolitan-development-commission/531-1517b382-2202-40bb-8fa5-6b1947a6bf4d"
+   }
+  ],
+  "76-2021": [
+   {
+    "outlet": "WFYI",
+    "date": "2021-02-09",
+    "title": "Council Committee Considers Homeless Bill Of Rights Amendment",
+    "url": "https://www.wfyi.org/news/articles/committee-considers-homeless-bill-of-rights-ammendment"
+   }
+  ],
+  "88-2021": [
+   {
+    "outlet": "IBJ",
+    "title": "Indianapolis planning to spend $190M to update public facilities",
+    "url": "https://www.ibj.com/articles/city-to-spend-190m-updating-public-owned-facilities"
+   }
+  ],
+  "106-2021": [
+   {
+    "outlet": "WISH-TV",
+    "title": "City-County Council proposes limit on fees for third-party food delivery",
+    "url": "https://www.wishtv.com/news/local-news/city-county-council-proposes-limit-on-fees-for-third-party-food-delivery/"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "City-County Council to consider proposal to limit food-delivery fees",
+    "url": "https://www.ibj.com/articles/city-council-to-consider-proposal-to-limit-food-delivery-fees"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "City-County Council OKs 20% limit on third-party food-delivery fees",
+    "url": "https://www.wishtv.com/news/local-news/city-county-council-oks-20-limit-on-third-party-food-delivery-fees/"
+   }
+  ],
+  "135-2021": [
+   {
+    "outlet": "WTHR",
+    "title": "Council expands smoking ban to include parks",
+    "url": "https://www.wthr.com/article/news/local/council-expands-smoking-ban-to-include-parks/531-baca1c82-0961-48c5-9205-ececa2da93f6"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Council passes measure to ban smoking in Indianapolis parks",
+    "url": "https://www.wishtv.com/news/local-news/council-passes-measure-to-ban-smoking-in-indianapolis-parks/"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "Indianapolis City-County Council votes to keep current health orders in place, ban smoking at parks and more",
+    "url": "https://fox59.com/news/coronavirus/indianapolis-city-county-council-votes-to-keep-current-health-orders-in-place/"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Smoking ban in Indianapolis parks begins Thursday; fines start at $100",
+    "url": "https://www.wishtv.com/news/local-news/smoking-ban-in-indianapolis-parks-begins-thursday-fines-start-at-100/"
+   }
+  ],
+  "170-2021": [
+   {
+    "outlet": "Fox59",
+    "title": "Indianapolis City-County Council votes to keep current health orders in place, ban smoking at parks and more",
+    "url": "https://fox59.com/news/coronavirus/indianapolis-city-county-council-votes-to-keep-current-health-orders-in-place/"
+   }
+  ],
+  "195-2021": [
+   {
+    "outlet": "WFYI",
+    "date": "2021-06-07",
+    "title": "City-County Council Ratifies Orders To End Mask Mandates For Some",
+    "url": "https://www.wfyi.org/wfyi-news/2021-06-07/city-county-council-ratifies-orders-to-end-mask-mandates-for-some"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "City-County Council votes to relax COVID rules in Marion County; masks no longer required for vaccinated Hoosiers",
+    "url": "https://fox59.com/news/coronavirus/marion-county-health-director-to-ask-council-to-relax-covid-rules/"
+   }
+  ],
+  "185-2021": [
+   {
+    "outlet": "IBJ",
+    "title": "City wants building owners to track utility use",
+    "url": "https://www.ibj.com/articles/city-wants-owners-to-track-utility-use"
+   },
+   {
+    "outlet": "WFYI",
+    "date": "2022-03-15",
+    "title": "Thriving Buildings program launches in Indianapolis",
+    "url": "https://www.wfyi.org/wfyi-news/2022-03-15/thriving-buildings-program-launches-in-indianapolis"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "New state law prevents city from fining violators of utility reporting ordinance",
+    "url": "https://www.ibj.com/articles/state-law-axes-fines-for-indys-utility-benchmarking-ordinance"
+   }
+  ],
+  "190-2021": [
+   {
+    "outlet": "WFYI",
+    "title": "New Environmental Committee Adopted For City-County Council",
+    "url": "https://www.wfyi.org/news/articles/new-environmental-committee-adopted-for-council"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "New City-County Council committee to strike a greener path",
+    "url": "https://www.ibj.com/articles/new-city-county-council-committee-to-strike-a-greener-path"
+   }
+  ],
+  "267-2021": [
+   {
+    "outlet": "WFYI",
+    "date": "2021-10-18",
+    "title": "City-County Council passes 2022 budget",
+    "url": "https://www.wfyi.org/wfyi-news/2021-10-18/city-county-council-passes-2022-budget"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Indianapolis City-County Council approves budget plan with near-unanimous vote",
+    "url": "https://www.wthr.com/article/news/local/indianapolis-city-county-council-approves-joe-hogsett-budget/531-4cebb7b3-7c07-4d7e-8a7d-a15184205a7b"
+   },
+   {
+    "outlet": "Indianapolis Recorder",
+    "title": "Council approves $1.3 billion 2022 budget",
+    "url": "https://indianapolisrecorder.com/council-approves-1-3-billion-2022-budget/"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "Indy council passes 2022 budget, focuses on public safety crisis",
+    "url": "https://fox59.com/news/politics/indy-council-passes-2022-budget-focuses-on-public-safety-crisis/"
+   }
+  ],
+  "315-2021": [
+   {
+    "outlet": "IBJ",
+    "title": "Onyx+East plans $10M townhouse project in Kennedy-King neighborhood",
+    "url": "https://www.ibj.com/articles/onyx-east-plans-10m-project-in-kennedy-king-neighborhood"
+   }
+  ],
+  "332-2021": [
+   {
+    "outlet": "WFYI",
+    "date": "2021-12-07",
+    "title": "Council approves transfer of $20M in COVID-19 emergency response funds in final full meeting of 2021",
+    "url": "https://www.wfyi.org/wfyi-news/2021-12-07/council-holds-final-2021-full-meeting"
+   }
+  ],
+  "55-2022": [
+   {
+    "outlet": "WFYI",
+    "date": "2022-03-02",
+    "title": "Two downtown development projects receive TIF funding",
+    "url": "https://www.wfyi.org/wfyi-news/2022-03-02/two-downtown-development-projects-receive-tif-funding"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "City weighing nearly $25M in TIF bonds for Stutz renovation, 16 Tech apartments",
+    "url": "https://www.ibj.com/articles/stutz-renovation-16-tech-apartments-eyeing-tif-dollars"
+   },
+   {
+    "outlet": "WFYI",
+    "date": "2022-03-07",
+    "title": "City-County Council approves new TIF funding for 16 Tech and Stutz projects",
+    "url": "https://www.wfyi.org/wfyi-news/2022-03-07/indianapolis-council-approves-new-tif-funding-16tech-stutz"
+   }
+  ],
+  "157-2022": [
+   {
+    "outlet": "WISH-TV",
+    "title": "Indianapolis City-County Council unveils proposed redistricting maps",
+    "url": "https://www.wishtv.com/news/local-news/indianapolis-city-county-council-unveils-proposed-redistricting-map/"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "City-County Council releases proposed redistricting map",
+    "url": "https://www.ibj.com/articles/indy-council-releases-proposed-map-and-redistricting-ordinance"
+   },
+   {
+    "outlet": "WFYI",
+    "title": "City-County Council passes new district maps",
+    "url": "https://www.wfyi.org/news/articles/city-county-council-passes-new-district-maps"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Indianapolis City-County Council approves new redistricting maps",
+    "url": "https://www.wishtv.com/news/local-news/indianapolis-city-county-council-approves-new-redistricting-maps/"
+   }
+  ],
+  "181-2022": [
+   {
+    "outlet": "WTHR",
+    "title": "New details released in proposal to raise salary for City County Council members",
+    "url": "https://www.wthr.com/article/news/local/new-details-released-proposal-raise-salary-city-county-council-members/531-0c1209a9-9ce3-4f21-acd8-3046bba6bfed"
+   },
+   {
+    "outlet": "WFYI",
+    "title": "Proposal to increase pay for City-County Councilors moves one step closer",
+    "url": "https://www.wfyi.org/news/articles/proposal-to-increase-pay-for-city-county-councilors-one-step-closer"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "City-County Council votes to nearly triple members' pay",
+    "url": "https://www.ibj.com/articles/city-county-council-triples-pay-for-citys-top-legislative-officials"
+   }
+  ],
+  "289-2022": [
+   {
+    "outlet": "WFYI",
+    "title": "Indianapolis City-County Council passes 2023 budget",
+    "url": "https://www.wfyi.org/news/articles/indianapolis-city-county-council-passes-2023-budget"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "City-County Council approves $1.4B budget for 2023",
+    "url": "https://www.ibj.com/articles/city-county-council-approves-1-4b-budget-for-2023"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Indianapolis City-County Council passes 2023 budget",
+    "url": "https://www.wishtv.com/news/local-news/indianapolis-city-county-council-passes-2023-budget/"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "2023 City-County operating budget passed",
+    "url": "https://fox59.com/indiana-news/2023-city-county-operating-budget-passed/"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Public safety, infrastructure focus of $1.46 billion Indianapolis budget passed by council",
+    "url": "https://www.wthr.com/article/news/local/city-county-council-approves-indianapolis-mayor-joe-hogsett-city-budget-for-2023/531-59a1c1b6-81dd-46db-bdf3-a2feead15972"
+   }
+  ],
+  "369-2022": [
+   {
+    "outlet": "IBJ",
+    "title": "TIF district could spur more development near emerging hospital campus",
+    "url": "https://www.ibj.com/articles/tif-district-could-spur-more-development-near-emerging-hospital-campus"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "TWG beefs up plans for apartment project at 18th and Meridian",
+    "url": "https://www.ibj.com/articles/twg-updates-plans-for-18th-and-meridian-apartment-project"
+   }
+  ],
+  "394-2022": [
+   {
+    "outlet": "IBJ",
+    "title": "Proposed Monon 30 projects receive TIF approval, $15M in incentives (the original approval this proposal amends)",
+    "url": "https://www.ibj.com/articles/upcoming-monon-30-projects-receive-tif-approval-15m-in-incentives"
+   }
+  ],
+  "111-2023": [
+   {
+    "outlet": "Axios Indianapolis",
+    "date": "2023-06-02",
+    "title": "Indianapolis revives right-turn-on-red ban",
+    "url": "https://www.axios.com/local/indianapolis/2023/06/02/indianapolis-right-turn-red-ban"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "City-County Council to vote on no-turn-on-red proposal despite state law",
+    "url": "https://www.ibj.com/articles/indy-council-to-vote-on-no-turn-on-red-proposal"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Council approves 'no turn on red' in downtown Indianapolis",
+    "url": "https://www.wthr.com/article/news/local/indianapolis-city-county-council-approves-no-turn-on-red-downtown-convention-center-hotel-funding/531-93e894bb-f822-44b3-aa50-57c52d4e63c1"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "Indianapolis City-County Council defies Statehouse, adopts 'no-turn-on-red' proposal",
+    "url": "https://fox59.com/indianapolitics/indianapolis-city-county-council-defies-statehouse-by-reviving-no-turn-on-red-proposal/"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "City-County Council votes to pass 'No Turn on Red' bans",
+    "url": "https://www.wishtv.com/news/i-team-8/city-county-council-votes-to-pass-on-no-turn-on-red-bans/"
+   },
+   {
+    "outlet": "Indianapolis Recorder",
+    "title": "Using a loophole in state law, Indy passes no turn on red proposal",
+    "url": "https://indianapolisrecorder.com/defy-state-lawmakers/"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "City set to place 'no turn on red' signs at 97 downtown intersections",
+    "url": "https://www.ibj.com/articles/indy-to-place-no-turn-on-red-signs-at-97-intersections"
+   }
+  ],
+  "147-2023": [
+   {
+    "outlet": "IBJ",
+    "title": "Council committee advances plans for city-owned $510M Pan Am Plaza hotel",
+    "url": "https://www.ibj.com/articles/council-advances-plans-for-city-owned-510m-pan-am-plaza-hotel"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "Council committee approves plan for convention center hotel on Pan Am Plaza",
+    "url": "https://fox59.com/indiana-news/council-committee-approves-plan-for-convention-center-hotel-on-pan-am-plaza/"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Councilors advance plan for $625M in bonds to build 800-room downtown hotel",
+    "url": "https://www.wishtv.com/news/politics/councilors-advance-plan-for-625m-in-bonds-to-build-800-room-downtown-hotel/"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "City-County Council approves bonds for $510M convention center hotel",
+    "url": "https://www.ibj.com/articles/city-county-council-approves-bonds-for-510m-convention-center-hotel"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "Indy approves $625M bond to build 40-story downtown hotel",
+    "url": "https://fox59.com/indiana-news/indy-to-vote-on-625m-bond-to-build-40-story-downtown-hotel/"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Councilors OK $625M in bonds to build 800-room downtown hotel",
+    "url": "https://www.wishtv.com/news/politics/councilors-oks-625m-in-bonds-to-build-800-room-downtown-hotel/"
+   }
+  ],
+  "156-2023": [
+   {
+    "outlet": "WTHR",
+    "title": "Council committee approves 'conditional ordinance' on guns",
+    "url": "https://www.wthr.com/article/news/local/mayors-proposal-to-ban-assault-rifles-increase-minimum-age-to-buy-guns-passes-committee-city-county-council/531-4c3eefe6-92d6-4954-926d-3b8214f7a569"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Committee advances 'unenforceable' gun control ordinance",
+    "url": "https://www.wishtv.com/news/local-news/committee-advances-unenforceable-gun-control-ordinance/"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Indianapolis City-County Council to vote on controversial gun ordinance",
+    "url": "https://www.wishtv.com/news/local-news/indianapolis-city-county-council-to-vote-on-controversial-gun-ordinance/"
+   },
+   {
+    "outlet": "WFYI",
+    "title": "'People will be safer': Indy City-County Council passes gun control proposal, but needs changes to state law",
+    "url": "https://www.wfyi.org/news/articles/people-will-be-safer-indy-city-county-council-passes-gun-control-proposal-but-needs-changes-to-state-law"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Council approves proposals aimed at reducing gun violence",
+    "url": "https://www.wthr.com/article/news/local/city-county-council-approves-mayor-joe-hogsett-proposal-aimed-reducing-gun-violence/531-e2b193af-6c6f-46ba-a9ca-06d1a8b93743"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "City-County Council approves proposals targeting gun violence",
+    "url": "https://www.ibj.com/articles/after-emotional-discussion-indy-council-approves-proposals-targeting-gun-violence"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "Mayor Joe Hogsett's proposed Indianapolis gun law faces hurdles after Council passage",
+    "url": "https://fox59.com/indiana-news/mayor-joe-hogsetts-proposed-indianapolis-gun-law-faces-hurdles-beyond-council-vote/"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "Indiana Attorney General finds Indianapolis gun ordinance unconstitutional",
+    "url": "https://fox59.com/indiana-news/indiana-attorney-general-finds-indianapolis-gun-ordinance-unconstitutional/"
+   }
+  ],
+  "228-2023": [
+   {
+    "outlet": "WISH-TV",
+    "title": "Indianapolis seeks to add Office of Equity, Belonging, and Inclusion led by mayor",
+    "url": "https://www.wishtv.com/news/local-news/indianapolis-seeks-to-add-office-of-equity-belonging-and-inclusion-led-by-mayor/"
+   },
+   {
+    "outlet": "WFYI",
+    "date": "2023-08-18",
+    "title": "New city office to focus on equity, belonging and inclusion",
+    "url": "https://www.wfyi.org/wfyi-news/2023-08-18/new-city-office-to-focus-on-equity-belonging-and-inclusion"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Office of Belonging, Equity and Inclusion advances",
+    "url": "https://www.wishtv.com/news/local-news/office-of-belonging-equity-and-inclusion-advances/"
+   },
+   {
+    "outlet": "Indianapolis Recorder",
+    "title": "Indianapolis approves Office of Equity, Belonging and Inclusion",
+    "url": "https://indianapolisrecorder.com/indianapolis-approves-office-of-equity-belonging-and-inclusion/"
+   }
+  ],
+  "332-2023": [
+   {
+    "outlet": "WTHR",
+    "title": "Downtown safety, cleanliness and homelessness to be focus of Indianapolis' Economic Enhancement District",
+    "url": "https://www.wthr.com/article/news/local/city-of-indianapolis-proposes-economic-enhancement-district-downtown-safety-cleanliness-homelessness/531-5379cd4f-bf21-4814-82ef-fbcd758a7451"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Indianapolis proposes $5.5 million Mile Square Economic Enhancement District",
+    "url": "https://www.wishtv.com/news/indianapolis-proposes-5-5-million-mile-square-economic-enhancement-district/"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "Downtown Economic Enhancement District critics crank up opposition",
+    "url": "https://fox59.com/indiana-news/downtown-economic-enhancement-district-critics-crank-up-opposition/"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Indianapolis City-County Council approves economic enhancement district that would bring millions of dollars downtown",
+    "url": "https://www.wthr.com/article/news/local/indianapolis-city-county-council-overwhelmingly-approves-creation-of-district-that-would-bring-millions-of-dollars-downtown-assessed-property-owners/531-1262d8b1-22ff-422f-9d82-248c8f3a4afd"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "Council votes to approve creation of downtown enhancement tax",
+    "url": "https://www.ibj.com/articles/council-votes-to-approve-creation-of-downtown-enhancement-tax"
+   }
+  ],
+  "175-2024": [
+   {
+    "outlet": "IBJ",
+    "title": "Proposed taxing district for downtown MLS soccer stadium to run gauntlet of city votes",
+    "url": "https://www.ibj.com/articles/council-set-to-consider-new-mls-stadium-taxing-district"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "MLS proposal passes another hurdle as council committee votes to recommend mayor's plan",
+    "url": "https://www.wthr.com/article/news/local/mls-proposal-passes-another-hurdle-city-county-council-committee-votes-to-recommend-mayors-plan/531-fdeb6223-e59a-4161-8c58-660597e44a28"
+   },
+   {
+    "outlet": "Mirror Indy",
+    "title": "Indianapolis Major League Soccer stadium tax plan passes council",
+    "url": "https://mirrorindy.org/indianapolis-major-league-soccer-stadium-joe-hogsett-plan-indy-eleven-park/"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "City-County Council approves special tax district for MLS stadium",
+    "url": "https://fox59.com/news/city-county-council-approves-special-tax-district-for-mls-stadium/"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "City government approves Indianapolis mayor's Major League Soccer stadium plan",
+    "url": "https://www.wthr.com/article/news/local/city-government-approves-indianapolis-mayor-joe-hogsett-major-league-soccer-stadium-plan/531-c5602587-4329-4a24-a91c-a3541289301b"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Indianapolis sends MLS soccer stadium tax district to state for final review",
+    "url": "https://www.wishtv.com/sports/indianapolis-sends-mls-soccer-stadium-tax-district-to-state-for-final-review/"
+   }
+  ],
+  "201-2024": [
+   {
+    "outlet": "WISH-TV",
+    "title": "Indianapolis City-Council proposal to re-establish Economic Enhancement District",
+    "url": "https://www.wishtv.com/news/local-news/indianapolis-city-council-proposal-to-re-establish-economic-enhancement-district/"
+   }
+  ],
+  "205-2024": [
+   {
+    "outlet": "WFYI",
+    "title": "New proposal creates registry and fee for short-term rental properties in Indianapolis",
+    "url": "https://www.wfyi.org/news/articles/new-proposal-creates-registry-and-fee-for-short-term-rental-properties"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "Proposed Indy ordinance would create registry of short-term rental homeowners",
+    "url": "https://fox59.com/news/indynews/proposed-indy-ordinance-would-create-registry-of-short-term-rental-homeowners/"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "City-County Council considers permit system for Airbnbs, VRBOs",
+    "url": "https://www.ibj.com/articles/indianapolis-to-consider-permitting-system-for-short-term-rentals"
+   },
+   {
+    "outlet": "Mirror Indy",
+    "title": "Airbnb, other short-term-rental landlords would have to register for permits under new proposal",
+    "url": "https://mirrorindy.org/documenters-metro-and-economic-dev-committee/"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Council to vote on permit system for short-term rentals",
+    "url": "https://www.wishtv.com/news/politics/council-to-vote-on-permit-system-for-short-term-rentals/"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "New ordinance holds owners of Indianapolis short-term rentals accountable",
+    "url": "https://www.wthr.com/article/news/local/new-ordinance-would-hold-owners-of-indianapolis-short-term-rentals-accountable-pawlicki-mcneal-fountain-square/531-c17f4d6b-13b2-4159-bcb2-b47553763fe6"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "Indianapolis registry to crack down on short-term rental parties starts up in 2025",
+    "url": "https://fox59.com/indiana-news/indianapolis-registry-to-crack-down-on-short-term-rental-parties-starts-up-in-2025/"
+   }
+  ],
+  "224-2024": [
+   {
+    "outlet": "Fox59",
+    "title": "Members of Indy City-County Council to introduce Vision Zero proposal",
+    "url": "https://fox59.com/indiana-news/members-of-indy-city-county-council-to-introduce-vision-zero-proposal/amp/"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "Indy council OKs task force to work toward goal of zero road deaths",
+    "url": "https://www.ibj.com/articles/indy-council-oks-task-force-to-work-toward-goal-of-zero-road-deaths"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Vision Zero passed the City-County Council. What now?",
+    "url": "https://www.wthr.com/article/news/local/vision-zero-passed-the-city-county-council-what-now-pedestrian-cyclist-safety-deaths-fatalities-task-force-administrator/531-ccff6a10-bf13-4820-ae7b-f246fae8da50"
+   }
+  ],
+  "264-2024": [
+   {
+    "outlet": "Axios Indianapolis",
+    "date": "2024-10-08",
+    "title": "Indianapolis budget passes without Republican support",
+    "url": "https://www.axios.com/local/indianapolis/2024/10/08/indianapolis-2025-budget-joe-hogsett"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "Hogsett administration's 2025 budget passes, but without bipartisan support",
+    "url": "https://www.ibj.com/articles/hogsett-administrations-2025-budget-passes-but-breaks-trend-of-unanimous-or-near-unanimous-votes"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "City-County Council passes 2025 budget despite rare bipartisan pushback",
+    "url": "https://www.wthr.com/article/news/local/city-county-council-passes-2025-budget-despite-rare-bipartisan-pushback-proposal-funding-community/531-7c730622-4870-4c02-adcb-8ddc16144117"
+   },
+   {
+    "outlet": "Indianapolis Recorder",
+    "title": "Hogsett 2025 budget passes in City-County Council",
+    "url": "https://indianapolisrecorder.com/hogsett-2025-budget-passes-in-city-county-council/"
+   },
+   {
+    "outlet": "Mirror Indy",
+    "title": "Council approves largest ever Indianapolis city budget",
+    "url": "https://mirrorindy.org/council-approves-largest-city-budget-ever-even-with-bipartisan-opposition/"
+   },
+   {
+    "outlet": "Mirror Indy",
+    "title": "Councilors approved the 2025 budget, but not without concerns",
+    "url": "https://mirrorindy.org/indianapolis-city-council-budget-2025-approved-documenters/"
+   }
+  ],
+  "280-2024": [
+   {
+    "outlet": "Mirror Indy",
+    "title": "Mayor Joe Hogsett could get pay raise under new proposal",
+    "url": "https://mirrorindy.org/indianapolis-mayor-joe-hogsett-salary-increase-city-county-council-2024/"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Hogsett, other Indy officials could see pay bump",
+    "url": "https://www.wishtv.com/news/local-news/hogsett-other-indy-officials-could-see-pay-bump/"
+   },
+   {
+    "outlet": "WFYI",
+    "title": "Indianapolis officials could receive pay raises, mayor says don't include him",
+    "url": "https://www.wfyi.org/news/articles/indianapolis-officials-could-receive-pay-raises-mayor-says-dont-include-him"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "Mayor Joe Hogsett says he will veto pay-raise proposal if council passes it",
+    "url": "https://www.ibj.com/articles/hogsett-says-he-would-veto-proposed-pay-raise"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "Council OKs revised elected-official pay, ethics disclosure ordinances",
+    "url": "https://www.ibj.com/articles/council-oks-revised-elected-pay-ethics-disclosure-ordinances"
+   },
+   {
+    "outlet": "WISH-TV",
+    "title": "Council increases salaries for Indianapolis mayor, county leaders",
+    "url": "https://www.wishtv.com/news/politics/council-increases-salaries-for-indianapolis-mayor-county-leaders/"
+   }
+  ],
+  "287-2024": [
+   {
+    "outlet": "WTHR",
+    "title": "Here's how councilors want to investigate sexual harassment in Indianapolis city government",
+    "url": "https://www.wthr.com/article/news/local/sexual-harassment-investigation-scandal-indianapolis-city-county-council-mayor-joe-hogsett-proposal-thomas-cook-lauren-roberts-caroline-ellert/531-ce600b56-6060-42e1-a97f-f48b59f95fd2"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "City-County Council committee to hear proposals, amendment after recent sexual harassment scandal",
+    "url": "https://fox59.com/indianapolitics/city-county-council-committee-to-hear-proposals-amendment-after-recent-sexual-harassment-scandal/"
+   },
+   {
+    "outlet": "Fox59",
+    "title": "City-County Council advances amended proposal after sexual harassment scandal",
+    "url": "https://fox59.com/news/city-county-council-advances-amended-proposal-after-sexual-harassment-scandal/"
+   },
+   {
+    "outlet": "Axios Indianapolis",
+    "date": "2024-09-09",
+    "title": "City-County Council to vote on sexual harassment investigation Monday",
+    "url": "https://www.axios.com/local/indianapolis/2024/09/09/city-county-council-vote-sexual-harassment-investigation-committee"
+   },
+   {
+    "outlet": "WTHR",
+    "title": "Indianapolis City-County Council approves committee to investigate sexual harassment complaints in Hogsett administration",
+    "url": "https://www.wthr.com/article/news/local/indianapolis-city-county-council-approves-committee-to-investigate-sexual-harassment-complaints-in-hogsett-administration-hr-cook-administration/531-588b92c7-e1ca-4f0b-98ee-ce3a66a4d82c"
+   },
+   {
+    "outlet": "Axios Indianapolis",
+    "date": "2024-09-12",
+    "title": "Mayor Joe Hogsett signs off on City-County Council's sexual harassment investigation",
+    "url": "https://www.axios.com/local/indianapolis/2024/09/12/hogsett-sexual-harassment-investigation"
+   }
+  ],
+  "349-2024": [
+   {
+    "outlet": "IBJ",
+    "title": "City-County Council committee approves billboard regulation changes",
+    "url": "https://www.ibj.com/articles/indy-committee-approves-billboard-regulation-changes-as-state-compromise"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "City-County Council sends billboard proposal back to committee",
+    "url": "https://www.ibj.com/articles/city-county-council-sends-billboard-proposal-back-to-committee"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "Billboard compromise receives final approval from City-County Council",
+    "url": "https://www.ibj.com/articles/billboard-compromise-receives-final-approval-from-city-county-council"
+   }
+  ],
+  "358-2024": [
+   {
+    "outlet": "Mirror Indy",
+    "title": "Protestors made their voices heard at a recent council meeting",
+    "url": "https://mirrorindy.org/indianapolis-city-county-council-protestors-gaza-war-documenters/"
+   }
+  ],
+  "56-2022": [
+   {
+    "outlet": "WFYI",
+    "date": "2022-03-02",
+    "title": "Two downtown development projects receive TIF funding",
+    "url": "https://www.wfyi.org/wfyi-news/2022-03-02/two-downtown-development-projects-receive-tif-funding"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "City weighing nearly $25M in TIF bonds for Stutz renovation, 16 Tech apartments",
+    "url": "https://www.ibj.com/articles/stutz-renovation-16-tech-apartments-eyeing-tif-dollars"
+   },
+   {
+    "outlet": "WFYI",
+    "date": "2022-03-07",
+    "title": "City-County Council approves new TIF funding for 16 Tech and Stutz projects",
+    "url": "https://www.wfyi.org/wfyi-news/2022-03-07/indianapolis-council-approves-new-tif-funding-16tech-stutz"
+   }
+  ],
+  "370-2022": [
+   {
+    "outlet": "IBJ",
+    "title": "TIF district could spur more development near emerging hospital campus",
+    "url": "https://www.ibj.com/articles/tif-district-could-spur-more-development-near-emerging-hospital-campus"
+   },
+   {
+    "outlet": "IBJ",
+    "title": "TWG beefs up plans for apartment project at 18th and Meridian",
+    "url": "https://www.ibj.com/articles/twg-updates-plans-for-18th-and-meridian-apartment-project"
+   }
+  ]
+ }
 }
