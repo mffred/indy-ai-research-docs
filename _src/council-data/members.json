@@ -10,8 +10,8 @@
     {"keys": ["Barth"], "name": "John Barth", "district": 7},
     {"keys": ["Gibson"], "name": "Ron Gibson", "district": 8},
     {"keys": ["Graves"], "name": "Keith Graves", "district": 9},
-    {"keys": ["Brown-A"], "name": "Ali Brown", "district": 10},
-    {"keys": ["Wells"], "name": "Crista Lee Wells", "district": 11, "note": "Records use this name from December 2025. District 11 was Crista Carlino's seat; we haven't confirmed whether this is a name change, so the two are listed separately."},
+    {"keys": ["Brown-A", "Brown"], "name": "Ali Brown", "district": 10, "note": "Recorded as \"Brown\" in 2021-2023, when she was the only Brown on the Council, and as \"Brown-A\" from 2024 (Jesse Brown joined in 2024)."},
+    {"keys": ["Wells", "Carlino"], "name": "Crista Lee Wells", "district": 11, "note": "Recorded as Crista Carlino through November 2025 and as Crista Lee Wells from December 2025: the same person."},
     {"keys": ["Osili"], "name": "Vop Osili", "district": 12},
     {"keys": ["Brown-J"], "name": "Jesse Brown", "district": 13},
     {"keys": ["Nielsen"], "name": "Andy Nielsen", "district": 14},
@@ -27,7 +27,6 @@
     {"keys": ["Dilk"], "name": "Michael Dilk", "district": 24},
     {"keys": ["Mowery"], "name": "Brian Mowery", "district": 25},
     {"keys": ["Bain"], "name": "Josh Bain", "former": true, "note": "District 21 until he resigned in 2026 to join the Indiana Utility Regulatory Commission."},
-    {"keys": ["Carlino"], "name": "Crista Carlino", "former": true, "note": "Last recorded under this name in November 2025 (District 11 in 2024-2025)."},
     {"keys": ["Jackson"], "name": "La Keisha Jackson", "former": true},
     {"keys": ["Adamson"], "name": "Zach Adamson", "former": true},
     {"keys": ["Evans-E"], "name": "Ethan Evans", "former": true},
@@ -35,7 +34,6 @@
     {"keys": ["Larrison"], "name": "Jason Larrison", "former": true},
     {"keys": ["Potts"], "name": "Keith Potts", "former": true},
     {"keys": ["Oliver"], "name": "Councilor Oliver", "former": true, "note": "First name not yet confirmed from the records."},
-    {"keys": ["Ray"], "name": "Councilor Ray", "former": true, "note": "First name not yet confirmed from the records."},
-    {"keys": ["Brown"], "name": "Councilor Brown (2021-2023)", "former": true, "note": "The 2021-2023 records say only \"Brown\"; not yet confirmed which councilor this is."}
+    {"keys": ["Ray"], "name": "Councilor Ray", "former": true, "note": "First name not yet confirmed from the records."}
   ]
 }

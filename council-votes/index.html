@@ -14,11 +14,17 @@
 <script src="/assets/corrections.js" defer></script>
 </head>
 <body>
-<header class="site-bar"><a class="brand" href="/">Indy AI Research Docs</a><nav aria-label="Site"><a href="/">All docs</a><a href="/budget">City budget</a><a href="/flock">Flock timeline</a><a href="/flock-cancellations">How cities dropped Flock</a><a href="/council-votes" aria-current="page">Council votes</a></nav></header><aside class="ai-notice" role="note"><span class="tag">AI draft</span><div><b>Preliminary research, generated with AI.</b> This page was drafted with an AI assistant (Claude) from public records and news reports. It may contain mistakes or miss context. Check the linked sources before you rely on, share or cite anything. Found an error? Use the flag next to any section to send a correction with a link to your source. Last updated September 30, 2026.</div></aside><style>
+<header class="site-bar"><a class="brand" href="/">Indy AI Research Docs</a><nav aria-label="Site"><a href="/">All docs</a><a href="/budget">City budget</a><a href="/flock">Flock timeline</a><a href="/flock-cancellations">How cities dropped Flock</a><a href="/council-votes" aria-current="page">Council votes</a><a href="/council-quiz">Councilor quiz</a></nav></header><aside class="ai-notice" role="note"><span class="tag">AI draft</span><div><b>Preliminary research, generated with AI.</b> This page was drafted with an AI assistant (Claude) from public records and news reports. It may contain mistakes or miss context. Check the linked sources before you rely on, share or cite anything. Found an error? Use the flag next to any section to send a correction with a link to your source. Last updated October 2, 2026.</div></aside><style>
 .cv{max-width:980px;margin:0 auto;padding-top:28px;display:flex;flex-direction:column;gap:22px}
 .cv h1{font-size:clamp(32px,5.5vw,46px);line-height:1.05}
 .cv .lede{max-width:70ch;margin:10px 0 0;color:var(--ink-2)}
 .cv .eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.cv-quiz{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;padding:16px 18px;background:var(--accent-soft);border:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.cv-quiz:hover{filter:brightness(.97)}
+.cv-quiz .q-eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.cv-quiz .q-title{display:block;font-family:"Young Serif",Georgia,serif;font-size:22px;line-height:1.2;margin-top:2px}
+.cv-quiz .q-sub{display:block;font-size:14px;color:var(--ink-2);margin-top:4px}
+.cv-quiz .q-go{font-weight:700;color:var(--accent);white-space:nowrap}
 .cv-controls{display:flex;flex-direction:column;gap:12px;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:8px}
 .cv-row{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end}
 .cv-field{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1 1 180px}
@@ -74,6 +80,11 @@
 @media (max-width:600px){.cv-field{flex-basis:100%}.cv .card h3{font-size:16px}}
 </style>
 <main class="cv" data-ps-title="Council Votes">
+  <a class="cv-quiz" href="/council-quiz">
+    <span><span class="q-eyebrow">New · 5-minute quiz</span><span class="q-title">Which councilor do you best align with?</span><span class="q-sub">Answer questions based on real Council votes, then see how every councilor matches up, including your own.</span></span>
+    <span class="q-go">Take the quiz →</span>
+  </a>
+
   <section>
     <div class="eyebrow">Indianapolis City-County Council · 2021 to 2026</div>
     <h1>How Your Councilor Voted</h1>
@@ -417,6 +428,6 @@
   }).catch(function () { $("cv-summary").textContent = "The vote record couldn't be loaded. Try reloading the page."; });
 })();
 </script>
-<footer class="site-foot">Indy AI Research Docs is a work in progress. Figures come from the linked public documents; summaries and analysis were generated with AI and spot-checked, not independently verified. Nothing here is legal or financial advice. Last updated September 30, 2026.</footer>
+<footer class="site-foot">Indy AI Research Docs is a work in progress. Figures come from the linked public documents; summaries and analysis were generated with AI and spot-checked, not independently verified. Nothing here is legal or financial advice. Last updated October 2, 2026.</footer>
 </body>
 </html>

@@ -4,7 +4,7 @@ import pathlib, markdown, re, html, urllib.parse, json, sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "_src"
 UPDATED = "September 28, 2026"  # default "last updated" date; pages updated since carry their own below
-VOTES_UPDATED = "September 30, 2026"
+VOTES_UPDATED = "October 2, 2026"
 SITE = "https://airesearch.myfriendfred.org"
 ISSUES = "https://github.com/mffred/indy-ai-research-docs/issues/new"
 
@@ -26,7 +26,7 @@ def head(title, desc):
 '''
 
 def bar(current):
-    links = [("/", "All docs", "home"), ("/budget", "City budget", "budget"), ("/flock", "Flock timeline", "flock"), ("/flock-cancellations", "How cities dropped Flock", "cancel"), ("/council-votes", "Council votes", "votes")]
+    links = [("/", "All docs", "home"), ("/budget", "City budget", "budget"), ("/flock", "Flock timeline", "flock"), ("/flock-cancellations", "How cities dropped Flock", "cancel"), ("/council-votes", "Council votes", "votes"), ("/council-quiz", "Councilor quiz", "quiz")]
     cur = ' aria-current="page"'
     nav = "".join(f'<a href="{h}"{cur if k == current else ""}>{t}</a>' for h, t, k in links)
     return f'<header class="site-bar"><a class="brand" href="/">Indy AI Research Docs</a><nav aria-label="Site">{nav}</nav></header>'
@@ -204,6 +204,18 @@ vp = vp.replace("{{STATS}}", f"In all: {len(rows):,} recorded votes on {len(prop
 votes_page = (head("How Your Councilor Voted", "Search every recorded Indianapolis City-County Council roll-call vote since 2021 by councilor, topic and year, with a link to the official record for each vote.")
               + "</head>\n<body>\n" + bar("votes") + notice("/council-votes", VOTES_UPDATED) + vp + foot(VOTES_UPDATED) + "\n</body>\n</html>\n")
 (ROOT / "council-votes" / "index.html").write_text(theme(votes_page, '<main class="cv"', "Council Votes"))
+
+# ---------- Councilor quiz ----------
+# Data: _src/council-data/quiz.json, written by scripts/build_council_quiz.py in the mffred-district19 repo
+# (every vote in it is checked against the official minutes' named yes/no lists at build time). Copied
+# as-is to council-quiz/data.json for the page's script to load.
+(ROOT / "council-quiz").mkdir(exist_ok=True)
+(ROOT / "council-quiz" / "data.json").write_text((CD / "quiz.json").read_text())
+qp = (SRC / "council-quiz.html").read_text()
+quiz_page = (head("Which Councilor Votes Like You?", "A short quiz built from real Indianapolis City-County Council votes: see which councilors voted the way you would have, and where your own councilor falls.")
+             + "</head>\n<body>\n" + bar("quiz") + notice("/council-quiz", VOTES_UPDATED) + qp + foot(VOTES_UPDATED) + "\n</body>\n</html>\n")
+(ROOT / "council-quiz" / "index.html").write_text(theme(quiz_page, '<main class="cq"', "Councilor Quiz"))
+
 
 # ---------- Home ----------
 home_css = '''<style>

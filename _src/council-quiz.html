@@ -1,0 +1,206 @@
+<style>
+.cq{max-width:760px;margin:0 auto;padding-top:28px;display:flex;flex-direction:column;gap:22px}
+.cq h1{font-size:clamp(32px,5.5vw,46px);line-height:1.05;margin:0}
+.cq .eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.cq .lede{max-width:66ch;margin:10px 0 0;color:var(--ink-2)}
+.cq-box{background:var(--surface);border:1px solid var(--line);padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+.cq-meta{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.cq-bar{height:6px;background:var(--grid);overflow:hidden}
+.cq-bar>i{display:block;height:100%;background:var(--accent);transition:width .2s}
+.cq-q{font-size:21px;line-height:1.3;font-weight:600;margin:0}
+.cq-context{margin:0;padding:10px 12px;background:var(--sunk,var(--grid));font-size:14px;color:var(--ink-2)}
+.cq-imp{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--ink-2);cursor:pointer}
+.cq-imp input{accent-color:var(--accent);width:16px;height:16px}
+.cq-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cq button{font:inherit;cursor:pointer}
+.cq-btn{font-size:16px;font-weight:700;padding:11px 14px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.cq-btn.primary{background:var(--accent);color:var(--surface);border-color:var(--accent)}
+.cq-btn:hover{filter:brightness(.96)}
+.cq-links{display:flex;justify-content:space-between;font-size:14px}
+.cq-link{background:none;border:0;padding:0;color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.cq-link[disabled]{opacity:.35;cursor:default;text-decoration:none}
+.cq-note{font-size:12.5px;color:var(--muted);margin:0}
+.cq h2{font-size:26px;margin:0}
+.cq-mine{padding:14px 16px;background:var(--accent-soft);border:1px solid var(--line)}
+.cq-mine select{font:inherit;font-size:14px;color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:6px 8px;max-width:100%}
+.cq-mine p{margin:10px 0 0;font-size:16px}
+.cq-rank{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.cq-rank>li{background:var(--surface);border:1px solid var(--line)}
+.cq-rank>li.me{border:2px solid var(--accent)}
+.cq-row{display:flex;gap:12px;align-items:center;width:100%;padding:10px 12px;border:0;background:none;color:var(--ink);text-align:left}
+.cq-n{width:26px;color:var(--muted);font-size:14px}
+.cq-who{flex:1;min-width:0}
+.cq-who b{font-size:16px}
+.cq-who small{display:block;color:var(--muted);font-size:12.5px}
+.cq-meter{display:block;height:8px;background:var(--grid);margin-top:6px}
+.cq-meter i{display:block;height:100%;background:var(--accent)}
+.cq-pct{min-width:84px;text-align:right;font-weight:700;font-size:17px}
+.cq-pct small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
+.cq-detail{border-top:1px solid var(--line);padding:10px 14px;font-size:14px}
+.cq-detail ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.cq-detail .ok{color:var(--up);font-weight:700}
+.cq-detail .no{color:var(--down);font-weight:700}
+.cq-detail .na{color:var(--muted);font-weight:700}
+.cq-detail small{display:block;color:var(--muted);font-size:12.5px}
+.cq-area{background:var(--surface);border:1px solid var(--line)}
+.cq-area>summary{cursor:pointer;padding:11px 14px;font-weight:700;font-size:16px}
+.cq-area>summary span{font-weight:400;font-size:13px;color:var(--muted);margin-left:8px}
+.cq-area ul.items{list-style:none;margin:0;padding:12px 14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:18px;font-size:14.5px}
+.cq-area .you.yes{color:var(--up);font-weight:700}
+.cq-area .you.no{color:var(--down);font-weight:700}
+.cq-did{margin:4px 0 0;color:var(--ink-2)}
+.cq-since{margin:8px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.cq-src{font-size:12.5px;margin-left:4px}
+.cq-actions{display:flex;flex-wrap:wrap;gap:10px}
+.cq-method h2{font-size:24px;margin:0 0 8px}
+.cq-method p,.cq-method li{max-width:70ch;font-size:14.5px}
+.cq-method ul{padding-left:20px}
+@media (max-width:560px){.cq-choices{grid-template-columns:1fr}.cq-q{font-size:19px}.cq-pct{min-width:70px}}
+</style>
+<main class="cq">
+  <section>
+    <div class="eyebrow">Indianapolis City-County Council · 2021 to 2026</div>
+    <h1>Which Councilor Votes Like You?</h1>
+    <p class="lede">Answer a few questions about real issues the Council has decided, and see which councilors voted the way you would have, and where your own councilor falls. Nearly every question is based on an actual contested vote.</p>
+  </section>
+
+  <section id="cq-app" aria-live="polite"><div class="cq-box">Loading the quiz…</div></section>
+
+  <section class="cq-method">
+    <h2>How this works</h2>
+    <ul>
+      <li><b>Where the questions come from.</b> Each statement describes the <em>outcome</em> of one real roll-call vote where at least one councilor voted no, so a councilor who voted for the proposal "agrees" with the statement and one who voted against "disagrees." Unanimous votes are left out because they can't tell councilors apart.</li>
+      <li><b>It's a simplification.</b> A councilor can vote for or against a proposal for reasons that have nothing to do with the statement (the details of the bill, who sponsored it, an amendment that failed). Treat a match as a pointer to their record, not a verdict. The results link to each councilor's full voting record on <a href="/council-votes">How Your Councilor Voted</a>.</li>
+      <li><b>Checked against the official minutes.</b> Every vote in the quiz was checked against the named yes and no lists in the Council's minutes. Resolutions the minutes record as voice votes, with no names, are left out.</li>
+      <li><b>Absences and abstentions</b> aren't counted as disagreement. A councilor needs at least 8 shared answers with you to be ranked. Councilors who joined recently have fewer votes to compare.</li>
+      <li><b>The 2026 budget</b> was voted on in separate sections so members with conflicts could abstain; those sections follow nearly the same party-line pattern, so they're counted as separate questions but say little about individual councilors beyond the budget fight itself.</li>
+      <li><b>The notes after your results</b> summarize city records and published news coverage, with a link to each source. They describe what happened; they don't endorse any policy. Where no results were reported, the note says so.</li>
+      <li><b>Names in older records.</b> The 2021–2023 records list a single "Brown," which is Ali Brown (Jesse Brown joined the Council in 2024). Crista Lee Wells appears in the records as Crista Carlino through 2025; her votes under both names are combined.</li>
+    </ul>
+    <p>The statements and notes were drafted with AI and are meant as a starting point. Use the flag beside this section to tell us about anything that's wrong or unfair.</p>
+  </section>
+</main>
+<script>
+(function () {
+  var MIN_SHARED = 8;
+  var $app = document.getElementById("cq-app");
+  var D, order, step, answers, important, district, expanded;
+
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function slug(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+  function fmtDate(d) { var p = d.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }); }
+  function shuffled(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function scored(q) { return q.scored !== false; }
+  function realCount() { return D.questions.filter(scored).length; }
+
+  function reset() { order = shuffled(D.questions); step = -1; answers = {}; important = {}; expanded = null; }
+
+  // ---------- start ----------
+  function renderStart() {
+    $app.innerHTML = '<div class="cq-box"><p class="cq-q">' + D.questions.length + ' questions, about 5 minutes.</p>' +
+      '<p class="cq-note">For each statement, choose Agree or Disagree, or skip it. Mark an issue as important to count it double. ' + (D.questions.length - realCount()) + ' question' + (D.questions.length - realCount() === 1 ? " isn\'t" : "s aren\'t") + ' based on a Council vote and doesn\'t affect your match. Nothing you answer is saved or sent anywhere.</p>' +
+      '<div><button class="cq-btn primary" id="cq-start" type="button">Start the quiz</button></div></div>';
+    document.getElementById("cq-start").onclick = function () { step = 0; render(); window.scrollTo({ top: $app.offsetTop - 20 }); };
+  }
+
+  // ---------- question ----------
+  function renderQuestion() {
+    var q = order[step], pct = Math.round(step / order.length * 100);
+    $app.innerHTML = '<div class="cq-box">' +
+      '<div class="cq-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><i style="width:' + pct + '%"></i></div>' +
+      '<div class="cq-meta">Question ' + (step + 1) + ' of ' + order.length + ' · ' + esc(q.area) + '</div>' +
+      '<p class="cq-q">' + esc(q.statement) + '</p>' +
+      (q.context ? '<p class="cq-context">' + esc(q.context) + '</p>' : '') +
+      (scored(q) ? '<label class="cq-imp"><input type="checkbox" id="cq-imp"' + (important[q.id] ? " checked" : "") + '> This issue matters a lot to me (counts double)</label>' : '') +
+      '<div class="cq-choices"><button class="cq-btn primary" data-a="for" type="button">Agree</button><button class="cq-btn" data-a="against" type="button">Disagree</button></div>' +
+      '<div class="cq-links"><button class="cq-link" id="cq-back" type="button"' + (step === 0 ? " disabled" : "") + '>← Back</button><button class="cq-link" data-a="skip" type="button">Skip / neutral</button></div>' +
+      '<p class="cq-note">' + (scored(q) ? "Based on the real Council vote on " + esc(q.proposal) + " (" + fmtDate(q.date) + ")." : "No Council vote tests this question, so your answer won't change any councilor's match.") + '</p></div>';
+    var imp = document.getElementById("cq-imp");
+    if (imp) imp.onchange = function () { important[q.id] = imp.checked; };
+    $app.querySelectorAll("[data-a]").forEach(function (b) { b.onclick = function () { answers[q.id] = b.getAttribute("data-a"); step++; render(); }; });
+    document.getElementById("cq-back").onclick = function () { if (step > 0) { step--; render(); } };
+  }
+
+  // ---------- results ----------
+  function score() {
+    return D.councilors.map(function (c) {
+      var agree = 0, total = 0, shared = 0;
+      D.questions.forEach(function (q) {
+        var mine = answers[q.id], theirs = q.votes[c.name];
+        if (!scored(q) || !mine || mine === "skip" || !theirs) return;
+        var w = important[q.id] ? 2 : 1; shared++; total += w; if (mine === theirs) agree += w;
+      });
+      return { c: c, shared: shared, pct: shared >= MIN_SHARED ? Math.round(agree / total * 100) : null };
+    }).sort(function (a, b) { return (b.pct == null ? -1 : b.pct) - (a.pct == null ? -1 : a.pct); });
+  }
+
+  function renderResults() {
+    var res = score(), ranked = res.filter(function (r) { return r.pct != null; });
+    var answered = D.questions.filter(function (q) { return scored(q) && answers[q.id] && answers[q.id] !== "skip"; });
+    var current = D.councilors.filter(function (c) { return !c.former; }).sort(function (a, b) { return parseInt(a.district.slice(9)) - parseInt(b.district.slice(9)); });
+    var mine = res.filter(function (r) { return r.c.district === district && !r.c.former; })[0];
+    var myRank = mine && mine.pct != null ? ranked.indexOf(mine) + 1 : 0;
+
+    var h = '<div class="cq-box"><div class="cq-actions"><h2 style="flex:1">Your results</h2><button class="cq-btn" id="cq-retake" type="button">Retake the quiz</button></div>' +
+      '<p class="cq-note">Based on ' + answered.length + ' of ' + realCount() + ' votes you answered. Councilors with fewer than ' + MIN_SHARED + ' shared votes with you aren\'t ranked.</p></div>';
+
+    h += '<div class="cq-mine"><label for="cq-district">Your councilor\'s district </label><select id="cq-district"><option value="">Choose your district…</option>' +
+      current.map(function (c) { return '<option value="' + esc(c.district) + '"' + (c.district === district ? " selected" : "") + ">" + esc(c.district) + " — " + esc(c.name) + "</option>"; }).join("") + "</select>" +
+      (mine ? '<p><b>' + esc(mine.c.name) + "</b> " + (mine.pct == null ? "doesn't have enough recorded votes in this set to compare." :
+        "agrees with you on <b>" + mine.pct + "%</b> of these votes, <b>#" + myRank + "</b> of " + ranked.length + " councilors.") + "</p>" : "") + "</div>";
+
+    h += '<ol class="cq-rank">' + res.map(function (r, i) {
+      var isMe = mine && r.c.name === mine.c.name, open = expanded === r.c.name;
+      var detail = "";
+      if (open) {
+        detail = '<div class="cq-detail"><ul>' + answered.map(function (q) {
+          var theirs = q.votes[r.c.name], same = theirs && theirs === answers[q.id];
+          return '<li><span class="' + (same ? "ok" : theirs ? "no" : "na") + '">' + (same ? "✓ Agree" : theirs ? "✗ Differ" : "– No vote") + "</span> " + esc(q.statement) +
+            "<small>You: " + (answers[q.id] === "for" ? "agree" : "disagree") + " · " + esc(r.c.name.split(" ").slice(-1)[0]) + ": " + (theirs ? "voted " + theirs + " it" : "absent") +
+            " · Actual vote: “" + esc(q.text) + "” (council " + q["for"] + "–" + q.against + ", " + q.result.toLowerCase() + ")</small></li>";
+        }).join("") + '</ul><p class="cq-note" style="margin-top:10px"><a href="/council-votes?councilor=' + slug(r.c.name) + '&split=1">See every split vote by ' + esc(r.c.name) + " →</a></p></div>";
+      }
+      return '<li class="' + (isMe ? "me" : "") + '"><button class="cq-row" type="button" data-who="' + esc(r.c.name) + '" aria-expanded="' + open + '">' +
+        '<span class="cq-n">' + (r.pct == null ? "–" : i + 1) + '</span><span class="cq-who"><b>' + esc(r.c.name) + "</b><small>" + esc(r.c.district) + " · " + esc(r.c.party) +
+        (r.c.former ? " · former (resigned 2026)" : "") + (isMe ? " · your councilor" : "") + '</small><span class="cq-meter"><i style="width:' + (r.pct || 0) + '%"></i></span></span>' +
+        '<span class="cq-pct">' + (r.pct == null ? '<small>not enough votes</small>' : r.pct + "%<small>" + r.shared + " votes</small>") + "</span></button>" + detail + "</li>";
+    }).join("") + "</ol>";
+
+    // policy breakdown by area
+    var byArea = {}; D.questions.forEach(function (q) { if (answers[q.id] && answers[q.id] !== "skip") (byArea[q.area] = byArea[q.area] || []).push(q); });
+    var areas = Object.keys(byArea).sort(function (a, b) { return byArea[b].length - byArea[a].length; });
+    if (areas.length) {
+      h += '<section style="display:flex;flex-direction:column;gap:10px"><div><h2>What your answers say about your policy priorities</h2>' +
+        '<p class="cq-note" style="font-size:14px">Grouped by topic, with what the Council actually did and what has happened since. Open a topic for details and sources.</p></div>' +
+        areas.map(function (a, i) {
+          var qs = byArea[a], agreed = qs.filter(function (q) { return answers[q.id] === "for"; }).length;
+          return '<details class="cq-area"' + (i === 0 ? " open" : "") + "><summary>" + esc(a) + "<span>you agreed with " + agreed + " of " + qs.length + "</span></summary><ul class=\"items\">" +
+            qs.map(function (q) {
+              var yes = answers[q.id] === "for";
+              return "<li><div><span class=\"you " + (yes ? "yes" : "no") + "\">You " + (yes ? "agreed" : "disagreed") + ":</span> <b>" + esc(q.statement) + "</b></div>" +
+                (scored(q) ? '<p class="cq-did">What the Council did (' + esc(q.proposal) + ", " + fmtDate(q.date) + "): " + esc(q.text) + " It " + (q.result === "Passed" ? "passed" : "failed") + ", " + q["for"] + "–" + q.against + ".</p>" :
+                  '<p class="cq-note">Not scored — no Council vote tests this question.</p>') +
+                (q.since && q.since.length ? '<ul class="cq-since">' + q.since.map(function (f) {
+                  return "<li>" + esc(f.t) + (f.src.length ? '<span class="cq-src">' + f.src.map(function (x) { return '<a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.label) + "</a>"; }).join(", ") + "</span>" : "") + "</li>";
+                }).join("") + "</ul>" : "") + "</li>";
+            }).join("") + "</ul></details>";
+        }).join("") +
+        '<p class="cq-note">These notes summarize city records and published reporting, with links to each source. They describe what happened; they aren\'t an endorsement of any policy.</p></section>';
+    }
+    $app.innerHTML = h;
+    document.getElementById("cq-retake").onclick = function () { reset(); step = 0; render(); window.scrollTo({ top: $app.offsetTop - 20 }); };
+    document.getElementById("cq-district").onchange = function (e) { district = e.target.value; render(); };
+    $app.querySelectorAll(".cq-row").forEach(function (b) { b.onclick = function () { var n = b.getAttribute("data-who"); expanded = expanded === n ? null : n; render(); }; });
+  }
+
+  function render() {
+    if (step < 0) renderStart();
+    else if (step >= order.length) { renderResults(); }
+    else renderQuestion();
+  }
+
+  fetch("/council-quiz/data.json").then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) {
+    D = d; district = ""; reset(); render();
+  }).catch(function () { $app.innerHTML = '<div class="cq-box">The quiz data couldn\'t be loaded. Try reloading the page.</div>'; });
+})();
+</script>
