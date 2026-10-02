@@ -67,6 +67,10 @@
 .cq-did{margin:4px 0 0;color:var(--ink-2)}
 .cq-since{margin:8px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
 .cq-src{font-size:12.5px;margin-left:4px}
+.cq-radar{background:var(--surface);border:1px solid var(--line);padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.cq-radar h2{font-size:24px}
+.cq-radar svg{width:100%;max-width:560px;margin:0 auto;display:block;color:var(--ink)}
+.cq-radar ul{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px 16px;font-size:14px}
 .cq-actions{display:flex;flex-wrap:wrap;gap:10px}
 .cq-method h2{font-size:24px;margin:0 0 8px}
 .cq-method p,.cq-method li{max-width:70ch;font-size:14.5px}
@@ -90,6 +94,7 @@
       <li><b>Checked against the official minutes.</b> Every vote in the quiz was checked against the named yes and no lists in the Council's minutes. Resolutions the minutes record as voice votes, with no names, are left out.</li>
       <li><b>Absences and abstentions</b> aren't counted as disagreement. A councilor needs at least 8 shared answers with you to be ranked. Councilors who joined recently have fewer votes to compare.</li>
       <li><b>The 2026 budget</b> was voted on in separate sections so members with conflicts could abstain; those sections follow nearly the same party-line pattern, so they're counted as separate questions but say little about individual councilors beyond the budget fight itself.</li>
+      <li><b>The policy chart</b> groups the issues into five areas and shows how often your answers match what the Council actually did there: you agreed with something that passed, or disagreed with something that failed. It measures how your views line up with real decisions, not where you sit on a left-right scale. A high score in an area means the Council mostly did what you'd have wanted. With 6 to 9 questions per area, treat each point as a rough read.</li>
       <li><b>The notes after your results</b> summarize city records and published news coverage, with a link to each source. They describe what happened; they don't endorse any policy. Where no results were reported, the note says so.</li>
       <li><b>Names in older records.</b> The 2021–2023 records list a single "Brown," which is Ali Brown (Jesse Brown joined the Council in 2024). Crista Lee Wells appears in the records as Crista Carlino through 2025; her votes under both names are combined.</li>
     </ul>
@@ -150,6 +155,58 @@
     }).sort(function (a, b) { return (b.pct == null ? -1 : b.pct) - (a.pct == null ? -1 : a.pct); });
   }
 
+  // ---------- radar: where the person's answers meet public policy ----------
+  // Per axis: of the person's answered, scored questions, how many match (a) what the Council actually did (agreeing with
+  // something that passed, or disagreeing with something that failed) or (b) one councilor's votes.
+  function axisStats(councilor) {
+    return D.axes.map(function (ax) {
+      var n = 0, aligned = 0;
+      D.questions.forEach(function (q) {
+        var a = answers[q.id];
+        if (q.axis !== ax.id || !scored(q) || !a || a === "skip") return;
+        if (councilor) { var t = q.votes[councilor]; if (!t) return; n++; if (t === a) aligned++; }
+        else { n++; if ((a === "for") === (q.result === "Passed")) aligned++; }
+      });
+      return { n: n, aligned: aligned, pct: n ? Math.round(aligned / n * 100) : null };
+    });
+  }
+
+  function radarSvg(council, other) {
+    var cx = 300, cy = 176, R = 100, n = D.axes.length;
+    function ang(i) { return -Math.PI / 2 + 2 * Math.PI * i / n; }
+    function pt(i, f) { return [cx + R * f * Math.cos(ang(i)), cy + R * f * Math.sin(ang(i))]; }
+    function poly(st) { return st.map(function (a, i) { return pt(i, (a.pct || 0) / 100).join(","); }).join(" "); }
+    var h = '<svg viewBox="0 0 600 352" role="img" aria-label="Radar chart of how your answers match Council actions by policy area">';
+    [0.25, 0.5, 0.75, 1].forEach(function (f) { h += '<polygon points="' + D.axes.map(function (_, i) { return pt(i, f).join(","); }).join(" ") + '" fill="none" stroke="currentColor" stroke-opacity=".15"/>'; });
+    D.axes.forEach(function (_, i) { var p = pt(i, 1); h += '<line x1="' + cx + '" y1="' + cy + '" x2="' + p[0] + '" y2="' + p[1] + '" stroke="currentColor" stroke-opacity=".15"/>'; });
+    h += '<polygon points="' + poly(council) + '" fill="var(--accent)" fill-opacity=".25" stroke="var(--accent)" stroke-width="2"/>';
+    if (other) h += '<polygon points="' + poly(other) + '" fill="none" stroke="currentColor" stroke-opacity=".85" stroke-width="2" stroke-dasharray="5 4"/>';
+    council.forEach(function (a, i) { var p = pt(i, (a.pct || 0) / 100); h += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="3.5" fill="var(--accent)"/>'; });
+    D.axes.forEach(function (ax, i) {
+      var p = pt(i, 1.2), c = Math.cos(ang(i)), anchor = Math.abs(c) < 0.2 ? "middle" : c > 0 ? "start" : "end";
+      h += '<text x="' + p[0] + '" y="' + p[1] + '" text-anchor="' + anchor + '" font-size="12" fill="currentColor"><tspan x="' + p[0] + '" font-weight="600">' + esc(ax.short) + '</tspan>' +
+        '<tspan x="' + p[0] + '" dy="14" font-size="11" fill-opacity=".6">' + (council[i].pct == null ? "no answers" : council[i].aligned + " of " + council[i].n + " matched") + "</tspan></text>";
+    });
+    h += '<g font-size="10" fill="currentColor" fill-opacity=".5">' + [50, 100].map(function (p) { return '<text x="' + (cx + 4) + '" y="' + (cy - R * p / 100 + 11) + '">' + p + "%</text>"; }).join("") + "</g></svg>";
+    return h;
+  }
+
+  function radarSection(mine) {
+    var council = axisStats(null);
+    if (council.every(function (a) { return a.n === 0; })) return "";
+    var other = mine ? axisStats(mine.c.name) : null;
+    var cand = council.map(function (a, i) { return { i: i, pct: a.pct, n: a.n }; }).filter(function (a) { return a.pct != null && a.n >= 3; });
+    var hi = cand.slice().sort(function (a, b) { return b.pct - a.pct; })[0], lo = cand.slice().sort(function (a, b) { return a.pct - b.pct; })[0];
+    return '<section class="cq-radar"><h2>Where your answers meet public policy</h2>' +
+      '<p class="cq-note" style="font-size:14px">For each policy area, the share of your answers that match what the Council actually did: you agreed with something that passed, or disagreed with something that failed.' +
+      (mine && other ? " The dashed line shows how often " + esc(mine.c.name) + " voted the way you answered." : "") + "</p>" + radarSvg(council, other) +
+      (hi && lo && hi.i !== lo.i ? "<p>Your views line up most with Council action on <b>" + esc(D.axes[hi.i].label.toLowerCase()) + "</b> (" + hi.pct + "%) and least on <b>" + esc(D.axes[lo.i].label.toLowerCase()) + "</b> (" + lo.pct + "%).</p>" : "") +
+      "<ul>" + D.axes.map(function (ax, i) {
+        return "<li><b>" + esc(ax.label) + ":</b> " + (council[i].pct == null ? "no answers" : council[i].aligned + " of " + council[i].n + " (" + council[i].pct + "%)") +
+          (other && other[i].pct != null ? " · " + esc(mine.c.name.split(" ").slice(-1)[0]) + " " + other[i].pct + "%" : "") + "</li>";
+      }).join("") + "</ul></section>";
+  }
+
   function renderResults() {
     var res = score(), ranked = res.filter(function (r) { return r.pct != null; });
     var answered = D.questions.filter(function (q) { return scored(q) && answers[q.id] && answers[q.id] !== "skip"; });
@@ -169,6 +226,8 @@
       (vacancy ? "<p>" + esc(vacancy.text) + (holder && holder.pct != null ? " Before resigning, <b>" + esc(holder.c.name) + "</b> agreed with you on <b>" + holder.pct + "%</b> of these votes (ranked below as a former councilor)." : "") + "</p>" : "") +
       (mine ? '<p><b>' + esc(mine.c.name) + "</b> " + (mine.pct == null ? "doesn't have enough recorded votes in this set to compare." :
         "agrees with you on <b>" + mine.pct + "%</b> of these votes, <b>#" + myRank + "</b> of " + ranked.length + " councilors.") + "</p>" : "") + "</div>";
+
+    h += radarSection(mine);
 
     h += '<ol class="cq-rank">' + res.map(function (r, i) {
       var isMe = mine && r.c.name === mine.c.name, open = expanded === r.c.name;
