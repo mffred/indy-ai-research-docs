@@ -10,7 +10,7 @@
     {"keys": ["Barth"], "name": "John Barth", "district": 7},
     {"keys": ["Gibson"], "name": "Ron Gibson", "district": 8},
     {"keys": ["Graves"], "name": "Keith Graves", "district": 9},
-    {"keys": ["Brown-A", "Brown"], "name": "Ali Brown", "district": 10, "note": "Recorded as \"Brown\" in 2021-2023, when she was the only Brown on the Council, and as \"Brown-A\" from 2024 (Jesse Brown joined in 2024)."},
+    {"keys": ["Brown-A", "Brown"], "name": "Ali Brown", "former": true, "note": "District 10 until she resigned September 10, 2026 to lead the Indiana Alliance of Boys and Girls Clubs; the Marion County Democratic Party is to choose a successor by October 10. Recorded as \"Brown\" in 2021-2023, when she was the only Brown on the Council, and as \"Brown-A\" from 2024 (Jesse Brown joined in 2024)."},
     {"keys": ["Wells", "Carlino"], "name": "Crista Lee Wells", "district": 11, "note": "Recorded as Crista Carlino through November 2025 and as Crista Lee Wells from December 2025: the same person."},
     {"keys": ["Osili"], "name": "Vop Osili", "district": 12},
     {"keys": ["Brown-J"], "name": "Jesse Brown", "district": 13},

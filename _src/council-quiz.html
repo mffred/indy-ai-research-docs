@@ -137,15 +137,20 @@
   function renderResults() {
     var res = score(), ranked = res.filter(function (r) { return r.pct != null; });
     var answered = D.questions.filter(function (q) { return scored(q) && answers[q.id] && answers[q.id] !== "skip"; });
-    var current = D.councilors.filter(function (c) { return !c.former; }).sort(function (a, b) { return parseInt(a.district.slice(9)) - parseInt(b.district.slice(9)); });
-    var mine = res.filter(function (r) { return r.c.district === district && !r.c.former; })[0];
+    var opts = D.councilors.filter(function (c) { return !c.former; }).map(function (c) { return { district: c.district, label: c.district + " — " + c.name }; })
+      .concat((D.vacancies || []).map(function (v) { return { district: v.district, label: v.district + " — seat vacant" }; }))
+      .sort(function (a, b) { return parseInt(a.district.slice(9)) - parseInt(b.district.slice(9)); });
+    var vacancy = (D.vacancies || []).filter(function (v) { return v.district === district; })[0];
+    var mine = vacancy ? null : res.filter(function (r) { return r.c.district === district && !r.c.former; })[0];
+    var holder = vacancy ? res.filter(function (r) { return r.c.name === vacancy.formerName; })[0] : null;
     var myRank = mine && mine.pct != null ? ranked.indexOf(mine) + 1 : 0;
 
     var h = '<div class="cq-box"><div class="cq-actions"><h2 style="flex:1">Your results</h2><button class="cq-btn" id="cq-retake" type="button">Retake the quiz</button></div>' +
       '<p class="cq-note">Based on ' + answered.length + ' of ' + realCount() + ' votes you answered. Councilors with fewer than ' + MIN_SHARED + ' shared votes with you aren\'t ranked.</p></div>';
 
     h += '<div class="cq-mine"><label for="cq-district">Your councilor\'s district </label><select id="cq-district"><option value="">Choose your district…</option>' +
-      current.map(function (c) { return '<option value="' + esc(c.district) + '"' + (c.district === district ? " selected" : "") + ">" + esc(c.district) + " — " + esc(c.name) + "</option>"; }).join("") + "</select>" +
+      opts.map(function (o) { return '<option value="' + esc(o.district) + '"' + (o.district === district ? " selected" : "") + ">" + esc(o.label) + "</option>"; }).join("") + "</select>" +
+      (vacancy ? "<p>" + esc(vacancy.text) + (holder && holder.pct != null ? " Before resigning, <b>" + esc(holder.c.name) + "</b> agreed with you on <b>" + holder.pct + "%</b> of these votes (ranked below as a former councilor)." : "") + "</p>" : "") +
       (mine ? '<p><b>' + esc(mine.c.name) + "</b> " + (mine.pct == null ? "doesn't have enough recorded votes in this set to compare." :
         "agrees with you on <b>" + mine.pct + "%</b> of these votes, <b>#" + myRank + "</b> of " + ranked.length + " councilors.") + "</p>" : "") + "</div>";
 
