@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-30",
+ "generated": "2026-10-16",
  "index": "https://www.indy.gov/activity/full-council-roll-call-votes",
  "minutesIndex": "https://www.indy.gov/activity/council-meeting-minutes",
  "meetings": [
@@ -958,7 +958,12 @@
   },
   {
    "date": "2026-08-10",
-   "minutes": null,
+   "minutes": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
+    "file": "minutes/2026-08-10.txt",
+    "pages": 29,
+    "method": "PDF text layer"
+   },
    "rollCall": {
     "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76",
     "file": "roll-calls/2026-08-10.txt",
@@ -971,6 +976,15 @@
    "rollCall": {
     "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmu2o8m82157t07lkh1t42bbs",
     "file": "roll-calls/2026-09-14.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "minutes": null,
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuwmh9pf1q5d06lfirbx22cc",
+    "file": "roll-calls/2026-10-05.txt",
     "method": "OCR (tesseract 5.5.3)"
    }
   }

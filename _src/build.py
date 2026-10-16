@@ -4,7 +4,7 @@ import pathlib, markdown, re, html, urllib.parse, json, sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "_src"
 UPDATED = "September 28, 2026"  # default "last updated" date; pages updated since carry their own below
-VOTES_UPDATED = "October 2, 2026"
+VOTES_UPDATED = "October 16, 2026"
 SITE = "https://airesearch.myfriendfred.org"
 ISSUES = "https://github.com/mffred/indy-ai-research-docs/issues/new"
 

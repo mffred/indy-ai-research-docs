@@ -1,6 +1,6 @@
 {
  "_note": "News coverage linked from the council votes page: headline, outlet, date and link only (no article text). Each link was checked against the proposal (proposal number, or unmistakable subject and date) before being added; when that couldn't be confirmed it was left out. 'searched' lists proposals that were researched, so the page can say 'no coverage found' for those. Readers suggest more through the news-link issue form (.github/ISSUE_TEMPLATE/news-link.yml); add accepted ones here.",
- "batch": "2025-2026 and 2021-2024 split votes (September 30, 2026). IndyStar could not be searched with the tools used; its articles can be added from reader suggestions. Documenters' full-council notes start in 2025.",
+ "batch": "2025-2026 and 2021-2024 split votes (September 30, 2026). IndyStar could not be searched with the tools used; its articles can be added from reader suggestions. Documenters' full-council notes start in 2025. Updated October 16, 2026: the July 2026 split vote (188-2026) and the August 10 to October 5 final-passage votes with a bond, appropriation or appointment subject were searched; none of those drew coverage that could be tied to the proposal except the two noted. Rezonings, traffic orders and PILOT batches were not searched.",
  "paywalled": [
   "ibj.com",
   "indystar.com"
@@ -72,7 +72,19 @@
   "206-2026",
   "238-2026",
   "275-2026",
-  "304-2026"
+  "304-2026",
+  "188-2026",
+  "246-2026",
+  "245-2026",
+  "276-2026",
+  "239-2026",
+  "243-2026",
+  "244-2026",
+  "277-2026",
+  "278-2026",
+  "279-2026",
+  "280-2026",
+  "281-2026"
  ],
  "proposals": {
   "5-2025": [
@@ -1088,6 +1100,28 @@
     "outlet": "IBJ",
     "title": "TWG beefs up plans for apartment project at 18th and Meridian",
     "url": "https://www.ibj.com/articles/twg-updates-plans-for-18th-and-meridian-apartment-project"
+   }
+  ],
+  "188-2026": [
+   {
+    "outlet": "WTHR",
+    "date": "2026-06-11",
+    "title": "Indianapolis City-County Council committee advances proposal to help fund IMPD vehicle replacements",
+    "url": "https://www.wthr.com/article/news/local/indianapolis-city-county-council-committee-advances-proposal-fund-impd-vehicle-replacements/531-ce069e05-240d-452a-aaa0-482d1b8c712a"
+   }
+  ],
+  "246-2026": [
+   {
+    "outlet": "WISH-TV",
+    "date": "2026-09-30",
+    "title": "New $12.5M IMPD North District headquarters to replace aging 30th Street station",
+    "url": "https://www.wishtv.com/news/i-team/new-12-5m-impd-north-district-headquarters-to-replace-aging-30th-street-station/"
+   },
+   {
+    "outlet": "IBJ",
+    "date": "2026-08-25",
+    "title": "Council panel advances bond packages for new IMPD North District HQ and public works garage",
+    "url": "https://www.ibj.com/articles/indy-advances-bond-packages-for-new-impd-north-district-headquarters-dpw-garage"
    }
   ]
  }

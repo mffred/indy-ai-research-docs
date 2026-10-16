@@ -7437,7 +7437,7 @@
   },
   {
    "date": "2021-07-12",
-   "source": "minutes (sheet unreadable)",
+   "source": "roll-call sheet (OCR)",
    "inferred": null,
    "page": 34,
    "proposals": [
@@ -7448,47 +7448,45 @@
    "counts": {
     "Yes": 23,
     "No": 1,
-    "Not voting": 1
+    "Abstain": 1,
+    "Not voting": 0,
+    "Absent": 0
    },
    "votes": {
     "Adamson": "Yes",
-    "Annee": "Yes",
-    "Bain": "Yes",
-    "Barth": "Yes",
-    "Brown": "Yes",
-    "Carlino": "Yes",
     "Dilk": "Yes",
-    "Evans-J": "Yes",
-    "Graves": "Yes",
-    "Gray": "Yes",
-    "Hart": "Yes",
-    "Jackson": "Yes",
     "Jones": "Yes",
-    "Larrison": "Yes",
-    "Lewis": "Yes",
-    "Mascari": "Yes",
-    "McCormick": "Yes",
-    "Mowery": "Yes",
     "Oliver": "Yes",
+    "Annee": "Yes",
+    "Evans-J": "Yes",
+    "Larrison": "Yes",
     "Osili": "Yes",
+    "Bain": "Yes",
+    "Graves": "Yes",
+    "Lewis": "Yes",
     "Potts": "Yes",
+    "Barth": "Yes",
+    "Gray": "Yes",
+    "Mascari": "Yes",
     "Ray": "Yes",
+    "Brown": "Yes",
+    "Hart": "Yes",
+    "McCormick": "Yes",
     "Robinson": "Yes",
+    "Carlino": "Yes",
+    "Jackson": "Yes",
+    "Mowery": "Yes",
     "Evans-E": "No",
-    "Boots": "Not voting"
+    "Boots": "Abstain"
    },
    "context": "Action: Adopt",
    "code": null,
    "ordinanceNo": null,
    "consent": false,
    "group": null,
-   "mismatch": {
-    "No": [
-     7,
-     1
-    ]
-   },
-   "status": "ok",
+   "mismatch": null,
+   "note": "The OCR'd summary line on the roll-call sheet read Yea: 23 Nay: 7 Abstain: 1 Not Voting: 0 Excused: 0 (more than 25 votes); counts here are taken from the names listed under each heading.",
+   "status": "sources differ",
    "urls": {
     "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/xR0jfJTlRTy3S5bwMR4f",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/dK52lf75Q4y38WM2skjN"
@@ -14511,7 +14509,7 @@
   },
   {
    "date": "2021-12-06",
-   "source": "minutes (sheet unreadable)",
+   "source": "roll-call sheet (OCR)",
    "inferred": null,
    "page": 20,
    "proposals": [
@@ -14522,32 +14520,33 @@
    "counts": {
     "Yes": 21,
     "No": 0,
-    "Not voting": 1,
+    "Abstain": 1,
+    "Not voting": 0,
     "Absent": 3
    },
    "votes": {
     "Adamson": "Yes",
-    "Annee": "Yes",
-    "Bain": "Yes",
-    "Barth": "Yes",
-    "Boots": "Yes",
-    "Brown": "Yes",
     "Carlino": "Yes",
-    "Dilk": "Yes",
-    "Evans-E": "Yes",
-    "Gray": "Yes",
-    "Jackson": "Yes",
     "Jones": "Yes",
-    "Larrison": "Yes",
-    "Lewis": "Yes",
-    "Mascari": "Yes",
-    "McCormick": "Yes",
     "Mowery": "Yes",
+    "Annee": "Yes",
+    "Dilk": "Yes",
+    "Larrison": "Yes",
     "Oliver": "Yes",
+    "Bain": "Yes",
+    "Evans-E": "Yes",
+    "Lewis": "Yes",
     "Osili": "Yes",
+    "Barth": "Yes",
+    "Gray": "Yes",
+    "Mascari": "Yes",
     "Potts": "Yes",
+    "Boots": "Yes",
+    "Jackson": "Yes",
+    "McCormick": "Yes",
     "Robinson": "Yes",
-    "Graves": "Not voting",
+    "Brown": "Yes",
+    "Graves": "Abstain",
     "Evans-J": "Absent",
     "Hart": "Absent",
     "Ray": "Absent"
@@ -14557,13 +14556,9 @@
    "ordinanceNo": 108,
    "consent": false,
    "group": null,
-   "mismatch": {
-    "Abstain": [
-     4,
-     1
-    ]
-   },
-   "status": "ok",
+   "mismatch": null,
+   "note": "The OCR'd summary line on the roll-call sheet read Yea: 21 Nay: 0 Abstain: 4 Not Voting: 0 Excused: 3 (more than 25 votes); counts here are taken from the names listed under each heading.",
+   "status": "sources differ",
    "urls": {
     "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/VbLD3DR22tAhNcivEvg7",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/76sfSGWVQ8CrncVdfMQd"
@@ -17522,7 +17517,7 @@
   },
   {
    "date": "2022-01-10",
-   "source": "minutes (sheet unreadable)",
+   "source": "roll-call sheet (OCR)",
    "inferred": null,
    "page": 16,
    "proposals": [
@@ -17533,47 +17528,44 @@
    "counts": {
     "Yes": 19,
     "No": 0,
+    "Abstain": 0,
     "Not voting": 1,
     "Absent": 5
    },
    "votes": {
     "Annee": "Yes",
-    "Bain": "Yes",
-    "Barth": "Yes",
-    "Boots": "Yes",
-    "Carlino": "Yes",
     "Dilk": "Yes",
-    "Evans-J": "Yes",
-    "Graves": "Yes",
-    "Hart": "Yes",
-    "Jackson": "Yes",
     "Jones": "Yes",
-    "Larrison": "Yes",
-    "Lewis": "Yes",
-    "Mowery": "Yes",
-    "Oliver": "Yes",
     "Osili": "Yes",
+    "Bain": "Yes",
+    "Evans-J": "Yes",
+    "Larrison": "Yes",
     "Potts": "Yes",
+    "Barth": "Yes",
+    "Graves": "Yes",
+    "Lewis": "Yes",
     "Ray": "Yes",
+    "Boots": "Yes",
+    "Hart": "Yes",
+    "Mowery": "Yes",
     "Robinson": "Yes",
-    "Gray": "Not voting",
+    "Carlino": "Yes",
+    "Jackson": "Yes",
+    "Oliver": "Yes",
     "Adamson": "Absent",
-    "Brown": "Absent",
     "Evans-E": "Absent",
     "Mascari": "Absent",
-    "McCormick": "Absent"
+    "McCormick": "Absent",
+    "Brown": "Absent",
+    "Gray": "Not voting"
    },
    "context": "Action: Adopt",
    "code": "C.R.",
    "ordinanceNo": 7,
    "consent": false,
    "group": null,
-   "mismatch": {
-    "Not voting": [
-     4,
-     1
-    ]
-   },
+   "mismatch": null,
+   "note": "The OCR'd summary line on the roll-call sheet read Yea: 19 Nay: 0 Abstain: 0 Not Voting: 4 Excused: 5 (more than 25 votes); counts here are taken from the names listed under each heading.",
    "status": "ok",
    "urls": {
     "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/wX4yhxnyRvGEN7AQPLAg",
@@ -23375,7 +23367,7 @@
     "No": 0,
     "Abstain": 0,
     "Not voting": 0,
-    "Absent": 7
+    "Absent": 1
    },
    "votes": {
     "Adamson": "Yes",
@@ -23409,13 +23401,9 @@
    "ordinanceNo": 28,
    "consent": true,
    "group": 528,
-   "mismatch": {
-    "Absent": [
-     7,
-     1
-    ]
-   },
-   "status": "needs review",
+   "mismatch": null,
+   "note": "The OCR'd summary line on the roll-call sheet read Yea: 24 Nay: 0 Abstain: 0 Not Voting: 0 Excused: 7 (more than 25 votes); counts here are taken from the names listed under each heading.",
+   "status": "ok",
    "urls": {
     "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/yvp579YjTXOenpeUcvzi",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/qIAsqILfS2ysOqYSLc2o"
@@ -52784,7 +52772,7 @@
   },
   {
    "date": "2023-12-04",
-   "source": "minutes (sheet unreadable)",
+   "source": "roll-call sheet (OCR)",
    "inferred": null,
    "page": 12,
    "proposals": [
@@ -52795,32 +52783,34 @@
    "counts": {
     "Yes": 24,
     "No": 0,
+    "Abstain": 0,
+    "Not voting": 0,
     "Absent": 1
    },
    "votes": {
     "Adamson": "Yes",
-    "Annee": "Yes",
-    "Bain": "Yes",
-    "Boots": "Yes",
-    "Brown": "Yes",
-    "Carlino": "Yes",
     "Dilk": "Yes",
-    "Evans-E": "Yes",
-    "Evans-J": "Yes",
-    "Graves": "Yes",
-    "Gray": "Yes",
-    "Hart": "Yes",
     "Jackson": "Yes",
-    "Jones": "Yes",
-    "Larrison": "Yes",
-    "Lewis": "Yes",
-    "Mascari": "Yes",
-    "McCormick": "Yes",
     "Mowery": "Yes",
+    "Annee": "Yes",
+    "Evans-E": "Yes",
+    "Jones": "Yes",
     "Oliver": "Yes",
+    "Bain": "Yes",
+    "Evans-J": "Yes",
+    "Larrison": "Yes",
     "Osili": "Yes",
+    "Boots": "Yes",
+    "Graves": "Yes",
+    "Lewis": "Yes",
     "Potts": "Yes",
+    "Brown": "Yes",
+    "Gray": "Yes",
+    "Mascari": "Yes",
     "Ray": "Yes",
+    "Carlino": "Yes",
+    "Hart": "Yes",
+    "McCormick": "Yes",
     "Robinson": "Yes",
     "Barth": "Absent"
    },
@@ -52829,12 +52819,8 @@
    "ordinanceNo": 72,
    "consent": false,
    "group": 1376,
-   "mismatch": {
-    "Absent": [
-     7,
-     1
-    ]
-   },
+   "mismatch": null,
+   "note": "The OCR'd summary line on the roll-call sheet read Yea: 24 Nay: 0 Abstain: 0 Not Voting: 0 Excused: 7 (more than 25 votes); counts here are taken from the names listed under each heading.",
    "status": "ok",
    "urls": {
     "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/RsojeCUGRrOJbyxheyGx",
@@ -53976,7 +53962,7 @@
     "No": 0,
     "Abstain": 0,
     "Not voting": 0,
-    "Absent": 7
+    "Absent": 1
    },
    "votes": {
     "Adamson": "Yes",
@@ -54010,13 +53996,9 @@
    "ordinanceNo": 133,
    "consent": true,
    "group": 1398,
-   "mismatch": {
-    "Absent": [
-     7,
-     1
-    ]
-   },
-   "status": "needs review",
+   "mismatch": null,
+   "note": "The OCR'd summary line on the roll-call sheet read Yea: 24 Nay: 0 Abstain: 0 Not Voting: 0 Excused: 7 (more than 25 votes); counts here are taken from the names listed under each heading.",
+   "status": "ok",
    "urls": {
     "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/RsojeCUGRrOJbyxheyGx",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/s2tQWQqURsaS51KAUwgx"
@@ -60697,9 +60679,7 @@
    "source": "roll-call sheet (OCR)",
    "inferred": null,
    "page": 4,
-   "proposals": [
-    "411-2024"
-   ],
+   "proposals": [],
    "action": "Final passage",
    "outcome": "Passed",
    "counts": {
@@ -60736,17 +60716,18 @@
     "Robinson": "Yes",
     "Hart": "Absent"
    },
-   "context": "Action: Adopt",
+   "context": "Action: Adopt (floor motion, numbered 411-2024 at the time)",
    "code": "S.R.",
    "ordinanceNo": 12,
    "consent": true,
    "group": null,
    "mismatch": null,
-   "status": "ok",
+   "status": "needs review",
    "urls": {
     "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/FIaytuNySL6IH5vPeT0q",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/MuTH81kRa6pjKvo8upew"
-   }
+   },
+   "note": "The minutes and roll-call sheet number this floor motion 411-2024, but the city later used that number for a different proposal (introduced 2024-12-02): \"None\". Shown here without a proposal link."
   },
   {
    "date": "2024-04-01",
@@ -61491,7 +61472,7 @@
     "No": 0,
     "Abstain": 0,
     "Not voting": 0,
-    "Absent": 4
+    "Absent": 1
    },
    "votes": {
     "Annee": "Yes",
@@ -61525,13 +61506,9 @@
    "ordinanceNo": 27,
    "consent": true,
    "group": 108,
-   "mismatch": {
-    "Absent": [
-     4,
-     1
-    ]
-   },
-   "status": "needs review",
+   "mismatch": null,
+   "note": "The OCR'd summary line on the roll-call sheet read Yea: 24 Nay: 0 Abstain: 0 Not Voting: 0 Excused: 4 (more than 25 votes); counts here are taken from the names listed under each heading.",
+   "status": "ok",
    "urls": {
     "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/FIaytuNySL6IH5vPeT0q",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/MuTH81kRa6pjKvo8upew"
@@ -111123,7 +111100,7 @@
    "outcome": "Passed",
    "counts": {
     "Yes": 23,
-    "No": 14,
+    "No": 1,
     "Abstain": 0,
     "Not voting": 0,
     "Absent": 1
@@ -111160,13 +111137,9 @@
    "ordinanceNo": 18,
    "consent": false,
    "group": null,
-   "mismatch": {
-    "No": [
-     14,
-     1
-    ]
-   },
-   "status": "needs review",
+   "mismatch": null,
+   "note": "The OCR'd summary line on the roll-call sheet read Yea: 23 Nay: 14 Abstain: 0 Not Voting: 0 Excused: 1 (more than 25 votes); counts here are taken from the names listed under each heading.",
+   "status": "ok",
    "urls": {
     "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmtk2cc6k2y7n07lmfkja2md0",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmraob0sl0aem07lkjewyip9w"
@@ -112857,9 +112830,7 @@
    "source": "roll-call sheet (OCR)",
    "inferred": null,
    "page": 2,
-   "proposals": [
-    "277-2026"
-   ],
+   "proposals": [],
    "action": "Procedural motion",
    "outcome": "Failed",
    "counts": {
@@ -112895,17 +112866,18 @@
     "Robinson": "No",
     "Delaney": "No"
    },
-   "context": "Action: Agenda Add",
+   "context": "Action: Agenda Add (floor motion, numbered 277-2026 at the time)",
    "code": "C.R.",
    "ordinanceNo": null,
    "consent": false,
    "group": null,
    "mismatch": null,
-   "status": "ok",
+   "status": "needs review",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
-   }
+   },
+   "note": "The minutes and roll-call sheet number this floor motion 277-2026, but the city later used that number for a different proposal (introduced 2026-09-14): \"Invokes Indiana Code Title 36, Article 7, Chapter 4, Section 218(g) , to the agenda to be heard under final adoption\". Shown here without a proposal link."
   },
   {
    "date": "2026-08-10",
@@ -112958,7 +112930,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113013,7 +112985,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113068,7 +113040,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113123,7 +113095,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113178,7 +113150,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113233,7 +113205,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113288,7 +113260,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113343,7 +113315,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113398,7 +113370,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113453,7 +113425,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113508,7 +113480,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113563,7 +113535,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113618,7 +113590,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113673,7 +113645,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113728,7 +113700,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113783,7 +113755,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113838,7 +113810,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113893,7 +113865,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -113948,7 +113920,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -114003,7 +113975,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -114058,7 +114030,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -114113,7 +114085,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -114168,7 +114140,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -114221,9 +114193,9 @@
    "consent": false,
    "group": null,
    "mismatch": null,
-   "status": "ok",
+   "status": "sources differ",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -114278,7 +114250,7 @@
    "mismatch": null,
    "status": "ok",
    "urls": {
-    "minutes": null,
+    "minutes": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuvlk0gk0pyk07lgct80cook",
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmsolp26e0xbd07jzzgezjj76"
    }
   },
@@ -114287,9 +114259,7 @@
    "source": "roll-call sheet (OCR)",
    "inferred": null,
    "page": 2,
-   "proposals": [
-    "304-2026"
-   ],
+   "proposals": [],
    "action": "Procedural motion",
    "outcome": "Failed",
    "counts": {
@@ -114325,17 +114295,18 @@
     "McCormick": "No",
     "Robinson": "No"
    },
-   "context": "Action: Motion",
+   "context": "Action: Motion (floor motion, numbered 304-2026 at the time)",
    "code": "C.R.",
    "ordinanceNo": null,
    "consent": false,
    "group": null,
    "mismatch": null,
-   "status": "ok",
+   "status": "needs review",
    "urls": {
     "minutes": null,
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmu2o8m82157t07lkh1t42bbs"
-   }
+   },
+   "note": "The minutes and roll-call sheet number this floor motion 304-2026, but the city later used that number for a different proposal (introduced 2026-10-05): \"None\". Shown here without a proposal link."
   },
   {
    "date": "2026-09-14",
@@ -116480,6 +116451,622 @@
    "urls": {
     "minutes": null,
     "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmu2o8m82157t07lkh1t42bbs"
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "source": "roll-call sheet (OCR)",
+   "inferred": null,
+   "page": 2,
+   "proposals": [
+    "277-2026"
+   ],
+   "action": "Final passage",
+   "outcome": "Passed",
+   "counts": {
+    "Yes": 25,
+    "No": 0,
+    "Abstain": 0,
+    "Not voting": 0,
+    "Absent": 0
+   },
+   "votes": {
+    "Allen": "Yes",
+    "Dilk": "Yes",
+    "Lewis": "Yes",
+    "Nielsen": "Yes",
+    "Annee": "Yes",
+    "Evans": "Yes",
+    "Mascari": "Yes",
+    "Osili": "Yes",
+    "Barth": "Yes",
+    "Gibson": "Yes",
+    "Masquelier": "Yes",
+    "Perkins": "Yes",
+    "Boots": "Yes",
+    "Graves": "Yes",
+    "McCormick": "Yes",
+    "Roberts": "Yes",
+    "Brown": "Yes",
+    "Hart": "Yes",
+    "Mowery": "Yes",
+    "Robinson": "Yes",
+    "Cahill": "Yes",
+    "Jones": "Yes",
+    "Mulholland": "Yes",
+    "Wells": "Yes",
+    "Delaney": "Yes"
+   },
+   "context": "Action: Adopt",
+   "code": "C.R.",
+   "ordinanceNo": 39,
+   "consent": false,
+   "group": null,
+   "mismatch": null,
+   "status": "ok",
+   "urls": {
+    "minutes": null,
+    "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuwmh9pf1q5d06lfirbx22cc"
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "source": "roll-call sheet (OCR)",
+   "inferred": null,
+   "page": 3,
+   "proposals": [
+    "278-2026"
+   ],
+   "action": "Final passage",
+   "outcome": "Passed",
+   "counts": {
+    "Yes": 25,
+    "No": 0,
+    "Abstain": 0,
+    "Not voting": 0,
+    "Absent": 0
+   },
+   "votes": {
+    "Allen": "Yes",
+    "Dilk": "Yes",
+    "Lewis": "Yes",
+    "Nielsen": "Yes",
+    "Annee": "Yes",
+    "Evans": "Yes",
+    "Mascari": "Yes",
+    "Osili": "Yes",
+    "Barth": "Yes",
+    "Gibson": "Yes",
+    "Masquelier": "Yes",
+    "Perkins": "Yes",
+    "Boots": "Yes",
+    "Graves": "Yes",
+    "McCormick": "Yes",
+    "Roberts": "Yes",
+    "Brown": "Yes",
+    "Hart": "Yes",
+    "Mowery": "Yes",
+    "Robinson": "Yes",
+    "Cahill": "Yes",
+    "Jones": "Yes",
+    "Mulholland": "Yes",
+    "Wells": "Yes",
+    "Delaney": "Yes"
+   },
+   "context": "Action: Adopt",
+   "code": "C.R.",
+   "ordinanceNo": 40,
+   "consent": false,
+   "group": null,
+   "mismatch": null,
+   "status": "ok",
+   "urls": {
+    "minutes": null,
+    "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuwmh9pf1q5d06lfirbx22cc"
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "source": "roll-call sheet (OCR)",
+   "inferred": null,
+   "page": 4,
+   "proposals": [
+    "316-2026"
+   ],
+   "action": "Final passage",
+   "outcome": "Passed",
+   "counts": {
+    "Yes": 25,
+    "No": 0,
+    "Abstain": 0,
+    "Not voting": 0,
+    "Absent": 0
+   },
+   "votes": {
+    "Allen": "Yes",
+    "Dilk": "Yes",
+    "Lewis": "Yes",
+    "Nielsen": "Yes",
+    "Annee": "Yes",
+    "Evans": "Yes",
+    "Mascari": "Yes",
+    "Osili": "Yes",
+    "Barth": "Yes",
+    "Gibson": "Yes",
+    "Masquelier": "Yes",
+    "Perkins": "Yes",
+    "Boots": "Yes",
+    "Graves": "Yes",
+    "McCormick": "Yes",
+    "Roberts": "Yes",
+    "Brown": "Yes",
+    "Hart": "Yes",
+    "Mowery": "Yes",
+    "Robinson": "Yes",
+    "Cahill": "Yes",
+    "Jones": "Yes",
+    "Mulholland": "Yes",
+    "Wells": "Yes",
+    "Delaney": "Yes"
+   },
+   "context": "Action: Adopt",
+   "code": "R.O.",
+   "ordinanceNo": 99,
+   "consent": true,
+   "group": 1325,
+   "mismatch": null,
+   "status": "ok",
+   "urls": {
+    "minutes": null,
+    "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuwmh9pf1q5d06lfirbx22cc"
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "source": "roll-call sheet (OCR)",
+   "inferred": null,
+   "page": 5,
+   "proposals": [
+    "317-2026"
+   ],
+   "action": "Final passage",
+   "outcome": "Passed",
+   "counts": {
+    "Yes": 25,
+    "No": 0,
+    "Abstain": 0,
+    "Not voting": 0,
+    "Absent": 0
+   },
+   "votes": {
+    "Allen": "Yes",
+    "Dilk": "Yes",
+    "Lewis": "Yes",
+    "Nielsen": "Yes",
+    "Annee": "Yes",
+    "Evans": "Yes",
+    "Mascari": "Yes",
+    "Osili": "Yes",
+    "Barth": "Yes",
+    "Gibson": "Yes",
+    "Masquelier": "Yes",
+    "Perkins": "Yes",
+    "Boots": "Yes",
+    "Graves": "Yes",
+    "McCormick": "Yes",
+    "Roberts": "Yes",
+    "Brown": "Yes",
+    "Hart": "Yes",
+    "Mowery": "Yes",
+    "Robinson": "Yes",
+    "Cahill": "Yes",
+    "Jones": "Yes",
+    "Mulholland": "Yes",
+    "Wells": "Yes",
+    "Delaney": "Yes"
+   },
+   "context": "Action: Adopt",
+   "code": "R.O.",
+   "ordinanceNo": 100,
+   "consent": true,
+   "group": 1325,
+   "mismatch": null,
+   "status": "ok",
+   "urls": {
+    "minutes": null,
+    "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuwmh9pf1q5d06lfirbx22cc"
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "source": "roll-call sheet (OCR)",
+   "inferred": null,
+   "page": 6,
+   "proposals": [
+    "318-2026"
+   ],
+   "action": "Final passage",
+   "outcome": "Passed",
+   "counts": {
+    "Yes": 25,
+    "No": 0,
+    "Abstain": 0,
+    "Not voting": 0,
+    "Absent": 0
+   },
+   "votes": {
+    "Allen": "Yes",
+    "Dilk": "Yes",
+    "Lewis": "Yes",
+    "Nielsen": "Yes",
+    "Annee": "Yes",
+    "Evans": "Yes",
+    "Mascari": "Yes",
+    "Osili": "Yes",
+    "Barth": "Yes",
+    "Gibson": "Yes",
+    "Masquelier": "Yes",
+    "Perkins": "Yes",
+    "Boots": "Yes",
+    "Graves": "Yes",
+    "McCormick": "Yes",
+    "Roberts": "Yes",
+    "Brown": "Yes",
+    "Hart": "Yes",
+    "Mowery": "Yes",
+    "Robinson": "Yes",
+    "Cahill": "Yes",
+    "Jones": "Yes",
+    "Mulholland": "Yes",
+    "Wells": "Yes",
+    "Delaney": "Yes"
+   },
+   "context": "Action: Adopt",
+   "code": "R.O.",
+   "ordinanceNo": 101,
+   "consent": true,
+   "group": 1325,
+   "mismatch": null,
+   "status": "ok",
+   "urls": {
+    "minutes": null,
+    "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuwmh9pf1q5d06lfirbx22cc"
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "source": "roll-call sheet (OCR)",
+   "inferred": null,
+   "page": 7,
+   "proposals": [
+    "319-2026"
+   ],
+   "action": "Final passage",
+   "outcome": "Passed",
+   "counts": {
+    "Yes": 25,
+    "No": 0,
+    "Abstain": 0,
+    "Not voting": 0,
+    "Absent": 0
+   },
+   "votes": {
+    "Allen": "Yes",
+    "Dilk": "Yes",
+    "Lewis": "Yes",
+    "Nielsen": "Yes",
+    "Annee": "Yes",
+    "Evans": "Yes",
+    "Mascari": "Yes",
+    "Osili": "Yes",
+    "Barth": "Yes",
+    "Gibson": "Yes",
+    "Masquelier": "Yes",
+    "Perkins": "Yes",
+    "Boots": "Yes",
+    "Graves": "Yes",
+    "McCormick": "Yes",
+    "Roberts": "Yes",
+    "Brown": "Yes",
+    "Hart": "Yes",
+    "Mowery": "Yes",
+    "Robinson": "Yes",
+    "Cahill": "Yes",
+    "Jones": "Yes",
+    "Mulholland": "Yes",
+    "Wells": "Yes",
+    "Delaney": "Yes"
+   },
+   "context": "Action: Adopt",
+   "code": "R.O.",
+   "ordinanceNo": 102,
+   "consent": true,
+   "group": 1325,
+   "mismatch": null,
+   "status": "ok",
+   "urls": {
+    "minutes": null,
+    "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuwmh9pf1q5d06lfirbx22cc"
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "source": "roll-call sheet (OCR)",
+   "inferred": null,
+   "page": 8,
+   "proposals": [
+    "320-2026"
+   ],
+   "action": "Final passage",
+   "outcome": "Passed",
+   "counts": {
+    "Yes": 25,
+    "No": 0,
+    "Abstain": 0,
+    "Not voting": 0,
+    "Absent": 0
+   },
+   "votes": {
+    "Allen": "Yes",
+    "Dilk": "Yes",
+    "Lewis": "Yes",
+    "Nielsen": "Yes",
+    "Annee": "Yes",
+    "Evans": "Yes",
+    "Mascari": "Yes",
+    "Osili": "Yes",
+    "Barth": "Yes",
+    "Gibson": "Yes",
+    "Masquelier": "Yes",
+    "Perkins": "Yes",
+    "Boots": "Yes",
+    "Graves": "Yes",
+    "McCormick": "Yes",
+    "Roberts": "Yes",
+    "Brown": "Yes",
+    "Hart": "Yes",
+    "Mowery": "Yes",
+    "Robinson": "Yes",
+    "Cahill": "Yes",
+    "Jones": "Yes",
+    "Mulholland": "Yes",
+    "Wells": "Yes",
+    "Delaney": "Yes"
+   },
+   "context": "Action: Adopt",
+   "code": "R.O.",
+   "ordinanceNo": 103,
+   "consent": true,
+   "group": 1325,
+   "mismatch": null,
+   "status": "ok",
+   "urls": {
+    "minutes": null,
+    "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuwmh9pf1q5d06lfirbx22cc"
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "source": "roll-call sheet (OCR)",
+   "inferred": null,
+   "page": 9,
+   "proposals": [
+    "321-2026"
+   ],
+   "action": "Final passage",
+   "outcome": "Passed",
+   "counts": {
+    "Yes": 25,
+    "No": 0,
+    "Abstain": 0,
+    "Not voting": 0,
+    "Absent": 0
+   },
+   "votes": {
+    "Allen": "Yes",
+    "Dilk": "Yes",
+    "Lewis": "Yes",
+    "Nielsen": "Yes",
+    "Annee": "Yes",
+    "Evans": "Yes",
+    "Mascari": "Yes",
+    "Osili": "Yes",
+    "Barth": "Yes",
+    "Gibson": "Yes",
+    "Masquelier": "Yes",
+    "Perkins": "Yes",
+    "Boots": "Yes",
+    "Graves": "Yes",
+    "McCormick": "Yes",
+    "Roberts": "Yes",
+    "Brown": "Yes",
+    "Hart": "Yes",
+    "Mowery": "Yes",
+    "Robinson": "Yes",
+    "Cahill": "Yes",
+    "Jones": "Yes",
+    "Mulholland": "Yes",
+    "Wells": "Yes",
+    "Delaney": "Yes"
+   },
+   "context": "Action: Adopt",
+   "code": "R.O.",
+   "ordinanceNo": 104,
+   "consent": true,
+   "group": 1325,
+   "mismatch": null,
+   "status": "ok",
+   "urls": {
+    "minutes": null,
+    "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuwmh9pf1q5d06lfirbx22cc"
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "source": "roll-call sheet (OCR)",
+   "inferred": null,
+   "page": 10,
+   "proposals": [
+    "280-2026"
+   ],
+   "action": "Final passage",
+   "outcome": "Passed",
+   "counts": {
+    "Yes": 25,
+    "No": 0,
+    "Abstain": 0,
+    "Not voting": 0,
+    "Absent": 0
+   },
+   "votes": {
+    "Allen": "Yes",
+    "Dilk": "Yes",
+    "Lewis": "Yes",
+    "Nielsen": "Yes",
+    "Annee": "Yes",
+    "Evans": "Yes",
+    "Mascari": "Yes",
+    "Osili": "Yes",
+    "Barth": "Yes",
+    "Gibson": "Yes",
+    "Masquelier": "Yes",
+    "Perkins": "Yes",
+    "Boots": "Yes",
+    "Graves": "Yes",
+    "McCormick": "Yes",
+    "Roberts": "Yes",
+    "Brown": "Yes",
+    "Hart": "Yes",
+    "Mowery": "Yes",
+    "Robinson": "Yes",
+    "Cahill": "Yes",
+    "Jones": "Yes",
+    "Mulholland": "Yes",
+    "Wells": "Yes",
+    "Delaney": "Yes"
+   },
+   "context": "Action: Adopt",
+   "code": "S.O.",
+   "ordinanceNo": 31,
+   "consent": false,
+   "group": 1332,
+   "mismatch": null,
+   "status": "ok",
+   "urls": {
+    "minutes": null,
+    "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuwmh9pf1q5d06lfirbx22cc"
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "source": "roll-call sheet (OCR)",
+   "inferred": null,
+   "page": 11,
+   "proposals": [
+    "281-2026"
+   ],
+   "action": "Final passage",
+   "outcome": "Passed",
+   "counts": {
+    "Yes": 25,
+    "No": 0,
+    "Abstain": 0,
+    "Not voting": 0,
+    "Absent": 0
+   },
+   "votes": {
+    "Allen": "Yes",
+    "Dilk": "Yes",
+    "Lewis": "Yes",
+    "Nielsen": "Yes",
+    "Annee": "Yes",
+    "Evans": "Yes",
+    "Mascari": "Yes",
+    "Osili": "Yes",
+    "Barth": "Yes",
+    "Gibson": "Yes",
+    "Masquelier": "Yes",
+    "Perkins": "Yes",
+    "Boots": "Yes",
+    "Graves": "Yes",
+    "McCormick": "Yes",
+    "Roberts": "Yes",
+    "Brown": "Yes",
+    "Hart": "Yes",
+    "Mowery": "Yes",
+    "Robinson": "Yes",
+    "Cahill": "Yes",
+    "Jones": "Yes",
+    "Mulholland": "Yes",
+    "Wells": "Yes",
+    "Delaney": "Yes"
+   },
+   "context": "Action: Adopt",
+   "code": "S.O.",
+   "ordinanceNo": 32,
+   "consent": false,
+   "group": 1332,
+   "mismatch": null,
+   "status": "ok",
+   "urls": {
+    "minutes": null,
+    "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuwmh9pf1q5d06lfirbx22cc"
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "source": "roll-call sheet (OCR)",
+   "inferred": null,
+   "page": 12,
+   "proposals": [
+    "279-2026"
+   ],
+   "action": "Final passage",
+   "outcome": "Passed",
+   "counts": {
+    "Yes": 24,
+    "No": 0,
+    "Abstain": 1,
+    "Not voting": 0,
+    "Absent": 0
+   },
+   "votes": {
+    "Allen": "Yes",
+    "Delaney": "Yes",
+    "Jones": "Yes",
+    "Nielsen": "Yes",
+    "Annee": "Yes",
+    "Dilk": "Yes",
+    "Lewis": "Yes",
+    "Osili": "Yes",
+    "Barth": "Yes",
+    "Evans": "Yes",
+    "Mascari": "Yes",
+    "Perkins": "Yes",
+    "Boots": "Yes",
+    "Gibson": "Yes",
+    "McCormick": "Yes",
+    "Roberts": "Yes",
+    "Brown": "Yes",
+    "Graves": "Yes",
+    "Mowery": "Yes",
+    "Robinson": "Yes",
+    "Cahill": "Yes",
+    "Hart": "Yes",
+    "Mulholland": "Yes",
+    "Wells": "Yes",
+    "Masquelier": "Abstain"
+   },
+   "context": "Action: Adopt",
+   "code": "G.R.",
+   "ordinanceNo": 18,
+   "consent": false,
+   "group": null,
+   "mismatch": null,
+   "status": "ok",
+   "urls": {
+    "minutes": null,
+    "rollCall": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmuwmh9pf1q5d06lfirbx22cc"
    }
   }
  ],
@@ -138688,11 +139275,14 @@
    "title": "Appoints Janai Downs to the Equal Opportunity Advisory Board",
    "type": "Council Resolution",
    "sponsors": "Lewis",
+   "titleSource": "city proposal database (shortened summary)",
    "committee": "Administration and Finance Committee",
    "initiator": "Yulonda Ray, Clerk of the Council",
    "introduced": "2026-09-14",
    "documentUrl": "https://www.indy.gov/api/v1/indy_proposal_document?id=19633&name=PROP26-277&type=1&content_type=application%2Fpdf",
-   "cityActions": []
+   "cityActions": [
+    "2026-10-05: Adoppted 25-0"
+   ]
   },
   "96-2026": {
    "no": 96,
@@ -138714,6 +139304,7 @@
    "title": "Rezoning ordinance certified for approval by the Metropolitan Development Commission on July 14, 2026 (one of a batch; the address will be in the minutes once they're posted)",
    "type": "Rezoning Ordinance",
    "sponsors": "Osili",
+   "rezoning": "2026-ZON-035 7323 South Mooresville Road (Approximate Address) Decatur Township, Council District #21 Redwood Apartment Neighborhoods, by Clark Quinn Law Rezoning of 21.66 acres from the D -A (FW) (FF) district to the D -6 (FW) (FF) district to provide for residential uses.",
    "committee": "Committee of the Whole",
    "initiator": "Metropolitan Development Commission",
    "introduced": "2026-08-10",
@@ -138728,6 +139319,7 @@
    "title": "Rezoning ordinance certified for approval by the Metropolitan Development Commission on July 14, 2026 (one of a batch; the address will be in the minutes once they're posted)",
    "type": "Rezoning Ordinance",
    "sponsors": "Osili",
+   "rezoning": "2026-ZON-040 2422 & 2430 Prospect Street (Approximate Addresses) Center Township, Council District #18 Terra Resources, LLC, by Antonio Amaryllis aka Jonathan Padilla Rezoning of 0.23 acres (total across two noncontiguous lots) from the I-3 to the D-5 to provide for residential uses.",
    "committee": "Committee of the Whole",
    "initiator": "Metropolitan Development Commission",
    "introduced": "2026-08-10",
@@ -138742,6 +139334,7 @@
    "title": "Rezoning ordinance certified for approval by the Metropolitan Development Commission on July 14, 2026 (one of a batch; the address will be in the minutes once they're posted)",
    "type": "Rezoning Ordinance",
    "sponsors": "Osili",
+   "rezoning": "2026-CZN-823 4240 Bluff Road (Approximate Address) Perry Township, Council District #22 Otis James & Tonya Haimes, by David Gilman Rezoning of 1.14 acres from the SU-7 district to the D-1 district to provide for residential uses.",
    "committee": "Committee of the Whole",
    "initiator": "Metropolitan Development Commission",
    "introduced": "2026-08-10",
@@ -138756,6 +139349,7 @@
    "title": "Rezoning ordinance certified for approval by the Metropolitan Development Commission on July 27, (one of a batch; the address will be in the minutes once they're posted)",
    "type": "Rezoning Ordinance",
    "sponsors": "Osili",
+   "rezoning": "2026-ZON-016 3030 Southeastern Avenue (Approximate Address) Center Township, Council District #18 JO & CE Real Estate LLC, by Dylan Seesman Rezoning of 0.34-acre from D-5 (FF) to MU-2 (FF), for an existing building to be renovated for commercial retail uses and up to six dwelling units on the second floor.",
    "committee": "Committee of the Whole",
    "initiator": "Metropolitan Development Commission",
    "introduced": "2026-08-10",
@@ -138770,6 +139364,7 @@
    "title": "Rezoning ordinance certified for approval by the Metropolitan Development Commission on July 27, (one of a batch; the address will be in the minutes once they're posted)",
    "type": "Rezoning Ordinance",
    "sponsors": "Osili",
+   "rezoning": "2026-ZON-027 1611 East 18th Street (Approximate Address) Center Township, Council District #8",
    "committee": "Committee of the Whole",
    "initiator": "Metropolitan Development Commission",
    "introduced": "2026-08-10",
@@ -138784,6 +139379,7 @@
    "title": "Rezoning ordinance certified for approval by the Metropolitan Development Commission on July 27, (one of a batch; the address will be in the minutes once they're posted)",
    "type": "Rezoning Ordinance",
    "sponsors": "Osili",
+   "rezoning": "2026-ZON-029 1003 West 30th Street (Approximate Address) Center Township, Council District #12 Skyline General Contracting Corp, by Jorge Gonzales Rezoning of 0.09-acre from the C-3 district to the D-5 district to provide for residential use.",
    "committee": "Committee of the Whole",
    "initiator": "Metropolitan Development Commission",
    "introduced": "2026-08-10",
@@ -138798,6 +139394,7 @@
    "title": "Rezoning ordinance certified for approval by the Metropolitan Development Commission on July 27, (one of a batch; the address will be in the minutes once they're posted)",
    "type": "Rezoning Ordinance",
    "sponsors": "Osili",
+   "rezoning": "2026-ZON-030 (Amended) 3505 South Harding Street (Approximate Address) Perry Township, Council District #22 Jose de Jesus Padilla Zavala, by Jorge Oscar Gonzales Rezoning of 0.24-acre from the D-4 (FF) district to the C-1 (FF) district to provide for a multi-tenant building.",
    "committee": "Committee of the Whole",
    "initiator": "Metropolitan Development Commission",
    "introduced": "2026-08-10",
@@ -138812,6 +139409,7 @@
    "title": "Rezoning ordinance certified for approval by the Metropolitan Development Commission on July 27, (one of a batch; the address will be in the minutes once they're posted)",
    "type": "Rezoning Ordinance",
    "sponsors": "Osili",
+   "rezoning": "2026-ZON-038 1830 Shelby Street (Approximate Address) Center Township, Council District #18 Abiodun Babalola (Trueworth Realty LLC), by Leyla Paz Rezoning of 0.15-acre from the MU-1 (TOD) district to the D-5 district to provide for the construction of a duplex.",
    "committee": "Committee of the Whole",
    "initiator": "Metropolitan Development Commission",
    "introduced": "2026-08-10",
@@ -138826,6 +139424,7 @@
    "title": "Rezoning ordinance certified for approval by the Metropolitan Development Commission on July 27, (one of a batch; the address will be in the minutes once they're posted)",
    "type": "Rezoning Ordinance",
    "sponsors": "Osili",
+   "rezoning": "2026-ZON-046 3216 East 25th Street (Approximate Address) Center Township, Council District #8 Felipe M Mata, by RG Development, LLC (Josh Smith) Rezoning of 0.379-acre from the C-3 to the D-5 district to allow for residential uses.",
    "committee": "Committee of the Whole",
    "initiator": "Metropolitan Development Commission",
    "introduced": "2026-08-10",
@@ -138840,6 +139439,7 @@
    "title": "Rezoning ordinance certified for approval by the Metropolitan Development Commission on July 27, (one of a batch; the address will be in the minutes once they're posted)",
    "type": "Rezoning Ordinance",
    "sponsors": "Osili",
+   "rezoning": "2026-CZN-813 (Amended) 1127 South East Street (Approximate Address) Center Township, Council District #18 Josh Smith Rezoning of 0.12-acre from the C-5 district to the D-8 district to provide for a multi-unit dwelling, consisting of two units. SPECIAL ORDERS - UNFINISHED BUSINESS",
    "committee": "Committee of the Whole",
    "initiator": "Metropolitan Development Commission",
    "introduced": "2026-08-10",
@@ -139021,12 +139621,12 @@
    "year": 2026,
    "title": "Approves the Mayor's appointment of Margarette Webb as the Director of...",
    "type": "Council Resolution",
-   "sponsors": "Lewis",
+   "sponsors": "Boots, Lewis, Allen",
    "titleSource": "city proposal database (shortened summary)",
    "committee": "Administration and Finance Committee",
    "initiator": "Office of the Mayor",
    "introduced": "2026-10-05",
-   "documentUrl": null,
+   "documentUrl": "https://www.indy.gov/api/v1/indy_proposal_document?id=19660&name=PROP26-304&type=1&content_type=application%2Fpdf",
    "cityActions": []
   },
   "209-2026": {
@@ -139074,7 +139674,7 @@
   "247-2026": {
    "no": 247,
    "year": 2026,
-   "title": "Appoints Kimberly Stowers to the Citizens' Police Complaint Board",
+   "title": "A Proposal for a Council Resolution which appoints Kimberly Stowers to the Citizens' Police Complaint Board",
    "type": "Council Resolution",
    "sponsors": "Robinson",
    "committee": "Public Safety and Criminal Justice Committee",
@@ -139088,7 +139688,7 @@
   "240-2026": {
    "no": 240,
    "year": 2026,
-   "title": "Reappoints Craig Von Deylen to the Metropolitan Board of Zoning Appeals, Division II",
+   "title": "A Proposal for a Council Resolution which reappoints Craig Von Deylen to the Metropolitan Board of Zoning Appeals, Division II",
    "type": "Council Resolution",
    "sponsors": "Osili",
    "committee": "Metropolitan and Economic Development Committee",
@@ -139102,7 +139702,7 @@
   "241-2026": {
    "no": 241,
    "year": 2026,
-   "title": "Appoints Allein Patton Hickman to the Greater Virginia Avenue Corridor Economic Improvement Board",
+   "title": "A Proposal for a Council Resolution which appoints Allein Patton Hickman to the Greater Virginia Avenue Corridor Economic Improvement Board",
    "type": "Council Resolution",
    "sponsors": "Osili",
    "committee": "Metropolitan and Economic Development Committee",
@@ -139116,7 +139716,7 @@
   "242-2026": {
    "no": 242,
    "year": 2026,
-   "title": "Reappoints Tanya Ndiaye to the City-County Audit Committee",
+   "title": "A Proposal for a Council Resolution which reappoints Tanya Ndiaye to the City-County Audit Committee",
    "type": "Council Resolution",
    "sponsors": "Mascari",
    "committee": "Administration and Finance Committee",
@@ -139310,7 +139910,7 @@
   "245-2026": {
    "no": 245,
    "year": 2026,
-   "title": "Authorizes the issuance of and appropriates the proceeds of one or more series of revenue bonds or bond anticipation notes in a maximum principal amount not to exceed Thirty - Five Million Dollars ($35,000,000) (the \"Bonds\") for the purpose of providing funds to refund interim financing used to pay for the cost of renovating, repairing or improving the design and construction of an (i) approximately 300 car parking garage and (ii) approximately 1,000 car parking garage, each located at the Indianapolis-Marion County Community Justice Campus; provides for the payment of such Bonds from legally available funds of the City; provides for the safeguarding of the interests of the owners of said Bonds, and approves and authorizes other actions in respect thereto",
+   "title": "A Proposal for a Special Ordinance which authorizes the issuance of and appropriates the proceeds of one or more series of revenue bonds or bond anticipation notes in a maximum principal amount not to exceed Thirty- Five Million Dollars ($35,000,000) (the",
    "type": "Special Ordinance",
    "sponsors": "Lewis, Nielsen, Jones, Barth, Evans and Boots",
    "committee": "Administration and Finance Committee",
@@ -139324,7 +139924,7 @@
   "246-2026": {
    "no": 246,
    "year": 2026,
-   "title": "Makes a preliminary determination to authorize the sale of general obligation bonds of the Consolidated City to procure funds to be applied to the costs of financing all or a portion of a new police station for the north district of the Consolidated City, together with related improvements and equipment and incidental expenses in connection therewith, in an aggregate principal amount not to exceed $12,500,000.00 and a maximum interest rate of 6.5%",
+   "title": "A Proposal for a Special Ordinance which makes a preliminary determination to authorize the sale of general obligation bonds of the Consolidated City to procure funds to be applied to the costs of financing all or a portion of a new police station for the north district of the Consolidated City, together with related improvements and equipment and incidental expenses in connection therewith, in an aggregate principal amount not to exceed 12,500,000.00 and a maximum interest rate of 6.5%",
    "type": "Special Ordinance",
    "sponsors": "Lewis, Nielsen, Jones, Barth, Evans and Boots",
    "committee": "Administration and Finance Committee",
@@ -139338,7 +139938,7 @@
   "275-2026": {
    "no": 275,
    "year": 2026,
-   "title": "Approves an additional appropriation totaling $19,000,000 in the 2026 Budget for the Office of the Mayor; Office of Finance & Management, Parks and Recreation, Department of Metropolitan Development, Department of Public Works, Public Defender, and the Election Board from various city county funds for various purposes",
+   "title": "A Proposal for a Fiscal Ordinance which approves an additional appropriation totaling $19,000,000 in the 2026 Budget for the O ffice of the Mayor; Office of Finance & Management, Parks and Recreation, Department of Metropolitan Development, Department of Public Works, Public Defender, and the Election Board from various city county funds for various purposes",
    "type": "Fiscal Ordinance",
    "sponsors": "Lewis, Nielsen, Jones, Evans and Boots",
    "committee": "Administration and Finance Committee",
@@ -139352,7 +139952,7 @@
   "276-2026": {
    "no": 276,
    "year": 2026,
-   "title": "Proposes a resolution of the Marion County Local Income Tax Council to request approval from the department of local government finance to lower the levy freeze tax rate and to cast the vote of the City-County Council on such resolution",
+   "title": "A Proposal for a General Resolution which proposes a resolution of the Marion County Local Income Tax Council to request approval from the department of local government finance to lower the levy freeze tax rate and to cast the vote of the City-County Council on such resolution",
    "type": "General Resolution",
    "sponsors": "Lewis, Nielsen, Jones, Evans and Boots",
    "committee": "Administration and Finance Committee",
@@ -139366,7 +139966,7 @@
   "239-2026": {
    "no": 239,
    "year": 2026,
-   "title": "Designates a portion of East 19th Street, specifically from Dr. Andrew J. Brown Avenue to Hillside Avenue, as the Pastor David Lee Memorial Way",
+   "title": "A Proposal for a General Resolution which designates a portion of East 19th Street, specifically from Dr. Andrew J. Brown Avenue to Hillside Avenue, as the Pastor David Lee Memorial Way",
    "type": "Special Resolution",
    "sponsors": "Gibson and Graves",
    "committee": "Metropolitan and Economic Development Committee",
@@ -139380,7 +139980,7 @@
   "243-2026": {
    "no": 243,
    "year": 2026,
-   "title": "Renews the existing investment policy authorizing the investment of public funds of the Consolidated City of Indianapolis and authorizes the investing officer of the City of Indianapolis to make investments having a stated final maturity that is: (1) more than two (2) years; but (2) not more than five (5) years; after the date of purchase or entry into a repurchase agreement",
+   "title": "A Proposal for a General Ordinance which renews the existing investment policy authorizing the investment of public funds of the Consolidated City of Indianapolis and authorizes the investing officer of the City of Indianapolis to make investments having a stated final maturity that is: (1) more than two (2) years; but (2) not more than five (5) years; after the date of purchase or entry into a repurchase agreement",
    "type": "General Ordinance",
    "sponsors": "Lewis, Evans, Jones, Nielsen, Boots and Barth",
    "committee": "Administration and Finance Committee",
@@ -139394,7 +139994,7 @@
   "244-2026": {
    "no": 244,
    "year": 2026,
-   "title": "Approves the issuance of special taxing district bonds of the Metropolitan Thoroughfare District of Marion County, Indiana, in an aggregate principal amount not to exceed $15,000,000 and a maximum interest rate of 6.5% for the purpose of procuring funds to be applied to the cost of the design, planning, construction, renovation, installation and/or equipping of all or a portion of the Department of Public Works operations facility and related improvements located 1735 S. West Street, or other proximately located city-owned property, together with necessary appurtenances, improvements and equipment related thereto or other capital projects at facilities owned or operated by the Department of Public Works",
+   "title": "A Proposal for a General Resolution which approves the issuance of special taxing district bonds of the Metropolitan Thoroughfare District of Marion County, Indiana, in an aggregate principal amount not to exceed $15,000,000 and a maximum interest rate of 6.5% for the purpose of procuring funds to be applied to the cost of the design, planning, construction, renovation, in stallation and/or equipping of all or a portion of the Department of Public Works operations facility and related improvements located 1735 S. West Street, or other proximately located city -owned property, together with necessary appurtenances, improvements and equipment related thereto or other capital projects at facilities owned or operated by the Department of Public Works",
    "type": "General Resolution",
    "sponsors": "Lewis, Nielsen, Jones, Barth, Evans and Boots",
    "committee": "Administration and Finance Committee",
@@ -139408,7 +140008,7 @@
   "248-2026": {
    "no": 248,
    "year": 2026,
-   "title": "Directs the City-County Council to accept, for the record, the 2026 Second Quarter Report submitted by the Marion County Sheriff (Sheriff), as required by HEA 1208 (2025), Public Law 54 (2025), and IC 36-8-10-21",
+   "title": "A Proposal for a General Resolution which directs the City- County Council to accept, for the record, the 2026 Second Quarter Report submitted by the Marion County Sheriff (Sheriff), as required by HEA 1208 (2025), Public Law 54 (2025), and IC 36- 8-10-21",
    "type": "General Resolution",
    "sponsors": "Robinson",
    "committee": "Public Safety and Criminal Justice Committee",
@@ -139422,7 +140022,7 @@
   "249-2026": {
    "no": 249,
    "year": 2026,
-   "title": "Authorizes a speed limit reduction to 25 miles per hour in the area bounded by Broad Ripple Avenue, Kessler Boulevard East Drive, College Avenue and Compton Street (District 7)",
+   "title": "A Proposal for a General Ordinance which authorizes a speed limit reduction to 25 miles per hour in the area bounded by Broad Ripple Avenue, Kessler Boulevard East Drive, College Avenue and Compton Street (District 7)",
    "type": "General Ordinance",
    "sponsors": "Barth",
    "committee": "Public Works Committee",
@@ -139436,7 +140036,7 @@
   "250-2026": {
    "no": 250,
    "year": 2026,
-   "title": "Authorizes a speed limit reduction to 25 miles per hour within the Crystal Lake South subdivision (District 24)",
+   "title": "A Proposal for a General Ordinance which authorizes a speed limit reduction to 25 miles per hour within the Crystal Lake South subdivision (District 24)",
    "type": "General Ordinance",
    "sponsors": "Dilk",
    "committee": "Public Works Committee",
@@ -139450,7 +140050,7 @@
   "251-2026": {
    "no": 251,
    "year": 2026,
-   "title": "Authorizes a speed limit reduction to 25 miles per hour within the Dahlia Gardens subdivision (District 22)",
+   "title": "A Proposal for a General Ordinance which authorizes a speed limit reduction to 25 miles per hour within the Dahlia Gardens subdivision (District 22)",
    "type": "General Ordinance",
    "sponsors": "Annee",
    "committee": "Public Works Committee",
@@ -139464,7 +140064,7 @@
   "252-2026": {
    "no": 252,
    "year": 2026,
-   "title": "Authorizes parking restrictions on North Meridian Street, between 18th and 19th Street (District 12)",
+   "title": "A Proposal for a General Ordinance which authorizes parking restrictions on North Meridian Street, between 18th and 19th Street (District 12)",
    "type": "General Ordinance",
    "sponsors": "Osili",
    "committee": "Public Works Committee",
@@ -139478,7 +140078,7 @@
   "253-2026": {
    "no": 253,
    "year": 2026,
-   "title": "Authorizes a speed limit reduction to 25 miles per hour in the area bounded by 52nd Street, Kessler Boulevard East Drive, Central Avenue, Meridian Street, and Westfield Boulevard (District 7)",
+   "title": "A Proposal for a General Ordinance which authorizes a speed limit reduction to 25 miles per hour in the area bounded by 52nd Street, Kessler Boulevard East Driv e, Central Avenue, Meridian Street, and Westfield Boulevard (District 7)",
    "type": "General Ordinance",
    "sponsors": "Barth",
    "committee": "Public Works Committee",
@@ -139492,7 +140092,7 @@
   "254-2026": {
    "no": 254,
    "year": 2026,
-   "title": "Authorizes parking restrictions on Maryland Street, from Schumaker Way to Missouri Street (District 18)",
+   "title": "A Proposal for a General Ordinance which authorizes parking restrictions on Maryland Street, from Schumaker Way to Missouri Street (District 18)",
    "type": "General Ordinance",
    "sponsors": "Jones",
    "committee": "Public Works Committee",
@@ -139506,7 +140106,7 @@
   "255-2026": {
    "no": 255,
    "year": 2026,
-   "title": "Authorizes parking restrictions on Waterway Boulevard, from Gent Avenue to a point 140 feet east of Gent Avenue (District 12)",
+   "title": "A Proposal for a General Ordinance which authorizes parking restrictions on Waterway Boulevard, from Gent Avenue to a point 140 feet east of Gent Avenue (Distri ct 12)",
    "type": "General Ordinance",
    "sponsors": "Osili",
    "committee": "Public Works Committee",
@@ -139520,7 +140120,7 @@
   "256-2026": {
    "no": 256,
    "year": 2026,
-   "title": "Authorizes parking restrictions on Wellingshire Boulevard, between Tibbs Avenue and Southport Road (District 22)",
+   "title": "A Proposal for a General Ordinance which authorizes parking restrictions on Wellingshire Boulevard, between Tibbs Avenue and Southport Road (District 22)",
    "type": "General Ordinance",
    "sponsors": "Annee",
    "committee": "Public Works Committee",
@@ -139534,7 +140134,7 @@
   "257-2026": {
    "no": 257,
    "year": 2026,
-   "title": "Authorizes a speed limit reduction to 25 miles per hour in the Trophy Club subdivision (District 5)",
+   "title": "A Proposal for a General Ordinance which authorizes a speed limit reduction to 25 miles per hour in the Trophy Club subdivision (District 5)",
    "type": "General Ordinance",
    "sponsors": "Lewis",
    "committee": "Public Works Committee",
@@ -139548,7 +140148,7 @@
   "258-2026": {
    "no": 258,
    "year": 2026,
-   "title": "Authorizes special parking privileges along the west side of Pennsylvania Street, from New York Street, to a point 175 feet south of New York Street, for official Federal Courthouse business (District 12)",
+   "title": "A Proposal for a General Ordinance which authorizes special parking privileges along the west side of Pennsylvania Street, from New York Street, to a point 175 feet south of New York Street, for official Federal Courthouse business (District 12)",
    "type": "General Ordinance",
    "sponsors": "Osili",
    "committee": "Public Works Committee",
@@ -139557,6 +140157,152 @@
    "documentUrl": "https://www.indy.gov/api/v1/indy_proposal_document?id=19614&name=PROP26-258&type=1&content_type=application%2Fpdf",
    "cityActions": [
     "2026-09-14: Adopted 23-0"
+   ]
+  },
+  "278-2026": {
+   "no": 278,
+   "year": 2026,
+   "title": "Appoints Cindy Kirchhofer to the Metropolitan Development Commission",
+   "type": "Council Resolution",
+   "sponsors": "Mowery",
+   "committee": "Metropolitan and Economic Development Committee",
+   "initiator": "Yulonda Ray, Clerk of the Council",
+   "introduced": "2026-09-14",
+   "documentUrl": "https://www.indy.gov/api/v1/indy_proposal_document?id=19634&name=PROP26-278&type=1&content_type=application%2Fpdf",
+   "cityActions": [
+    "2026-10-05: Adoppted 25-0"
+   ]
+  },
+  "316-2026": {
+   "no": 316,
+   "year": 2026,
+   "title": "Rezoning ordinance for Washington Township, District 7, 1624 East 46th...",
+   "type": "Rezoning Ordinance",
+   "sponsors": "Osili",
+   "titleSource": "city proposal database (shortened summary)",
+   "committee": "Committee of the Whole",
+   "initiator": "Metropolitan Development Commission",
+   "introduced": "2026-10-05",
+   "documentUrl": "https://www.indy.gov/api/v1/indy_proposal_document?id=19672&name=PROP26-316&type=1&content_type=application%2Fpdf",
+   "cityActions": [
+    "2026-10-05: Adoppted 25-0"
+   ]
+  },
+  "317-2026": {
+   "no": 317,
+   "year": 2026,
+   "title": "Rezoning ordinance for Center Township, District 18, 337 East Morris...",
+   "type": "Rezoning Ordinance",
+   "sponsors": "Osili",
+   "titleSource": "city proposal database (shortened summary)",
+   "committee": "Committee of the Whole",
+   "initiator": "Metropolitan Development Commission",
+   "introduced": "2026-10-05",
+   "documentUrl": "https://www.indy.gov/api/v1/indy_proposal_document?id=19673&name=PROP26-317&type=1&content_type=application%2Fpdf",
+   "cityActions": [
+    "2026-10-05: Adoppted 25-0"
+   ]
+  },
+  "318-2026": {
+   "no": 318,
+   "year": 2026,
+   "title": "Rezoning ordinance for Franklin Township, District 25, 11150...",
+   "type": "Rezoning Ordinance",
+   "sponsors": "Osili",
+   "titleSource": "city proposal database (shortened summary)",
+   "committee": "Committee of the Whole",
+   "initiator": "Metropolitan Development Commission",
+   "introduced": "2026-10-05",
+   "documentUrl": "https://www.indy.gov/api/v1/indy_proposal_document?id=19674&name=PROP26-318&type=1&content_type=application%2Fpdf",
+   "cityActions": [
+    "2026-10-05: Adoppted 25-0"
+   ]
+  },
+  "319-2026": {
+   "no": 319,
+   "year": 2026,
+   "title": "Rezoning ordinance for Center Township, District 8, 2355 North College...",
+   "type": "Rezoning Ordinance",
+   "sponsors": "Osili",
+   "titleSource": "city proposal database (shortened summary)",
+   "committee": "Committee of the Whole",
+   "initiator": "Metropolitan Development Commission",
+   "introduced": "2026-10-05",
+   "documentUrl": "https://www.indy.gov/api/v1/indy_proposal_document?id=19675&name=PROP26-319&type=1&content_type=application%2Fpdf",
+   "cityActions": [
+    "2026-10-05: Adoppted 25-0"
+   ]
+  },
+  "320-2026": {
+   "no": 320,
+   "year": 2026,
+   "title": "Rezoning ordinance for Center Township, District 19, 2015 Wagner Lane...",
+   "type": "Rezoning Ordinance",
+   "sponsors": "Osili",
+   "titleSource": "city proposal database (shortened summary)",
+   "committee": "Committee of the Whole",
+   "initiator": "Metropolitan Development Commission",
+   "introduced": "2026-10-05",
+   "documentUrl": "https://www.indy.gov/api/v1/indy_proposal_document?id=19676&name=PROP26-320&type=1&content_type=application%2Fpdf",
+   "cityActions": [
+    "2026-10-05: Adoppted 25-0"
+   ]
+  },
+  "321-2026": {
+   "no": 321,
+   "year": 2026,
+   "title": "Rezoning ordinance for Washington Township, District 8, 3830 North...",
+   "type": "Rezoning Ordinance",
+   "sponsors": "Osili",
+   "titleSource": "city proposal database (shortened summary)",
+   "committee": "Committee of the Whole",
+   "initiator": "Metropolitan Development Commission",
+   "introduced": "2026-10-05",
+   "documentUrl": "https://www.indy.gov/api/v1/indy_proposal_document?id=19677&name=PROP26-321&type=1&content_type=application%2Fpdf",
+   "cityActions": [
+    "2026-10-05: Adoppted 25-0"
+   ]
+  },
+  "280-2026": {
+   "no": 280,
+   "year": 2026,
+   "title": "Approves the issuance of Indianapolis-Marion County Public Library General Obligation Bonds in an original aggregate amount not to exceed $19,000,0009 for the 2026- 2027 Irvington Branch Renovation and Multi-Facility Long-Term Capital Improvement and Equipping Project",
+   "type": "Special Ordinance",
+   "sponsors": "Gibson",
+   "committee": "Municipal Corporations Committee",
+   "initiator": "Indianapolis-Marion County Public Library",
+   "introduced": "2026-09-14",
+   "documentUrl": "https://www.indy.gov/api/v1/indy_proposal_document?id=19636&name=PROP26-280&type=1&content_type=application%2Fpdf",
+   "cityActions": [
+    "2026-10-05: Adoppted 25-0"
+   ]
+  },
+  "281-2026": {
+   "no": 281,
+   "year": 2026,
+   "title": "Approves the appropriation of proceeds and investment earnings thereon of Indianapolis-Marion County Public Library General Obligation Bonds in an original aggregate principal amount not to exceed $19,000,000 for the purpose of financing all or any portion of the 2026-2027 Irvington Branch Renovation and Multi-Facility Long-Term Capital Improvement and Equipping Project",
+   "type": "Special Ordinance",
+   "sponsors": "Gibson",
+   "committee": "Municipal Corporations Committee",
+   "initiator": "Indianapolis-Marion County Public Library",
+   "introduced": "2026-09-14",
+   "documentUrl": "https://www.indy.gov/api/v1/indy_proposal_document?id=19637&name=PROP26-281&type=1&content_type=application%2Fpdf",
+   "cityActions": [
+    "2026-10-05: Adoppted 25-0"
+   ]
+  },
+  "279-2026": {
+   "no": 279,
+   "year": 2026,
+   "title": "Authorizes the issuance by Health and Hospital Corporation (HHC) of general obligation bonds up to $25,000,000 and approves an appropriation by HHC of the bond proceeds to be applied to the 2026/2027 Capital Improvement Projects, which consist of acquisition of real estate, various capital improvements and equipping projects at facilities owned or operated by the HHC, and paying costs of issuance of the bonds",
+   "type": "General Resolution",
+   "sponsors": "Jones",
+   "committee": "Municipal Corporations Committee",
+   "initiator": "Health and Hospital Corporation of Marion County, Indiana",
+   "introduced": "2026-09-14",
+   "documentUrl": "https://www.indy.gov/api/v1/indy_proposal_document?id=19635&name=PROP26-279&type=1&content_type=application%2Fpdf",
+   "cityActions": [
+    "2026-10-05: Adoppted 24-0-1"
    ]
   },
   "1-2021": {
@@ -143542,11 +144288,11 @@
   }
  },
  "crossCheck": {
-  "compared": 739,
-  "agree": 648
+  "compared": 758,
+  "agree": 663
  },
  "tallyCheck": {
-  "compared": 1223,
-  "agree": 1215
+  "compared": 1234,
+  "agree": 1226
  }
 }

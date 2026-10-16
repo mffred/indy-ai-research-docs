@@ -15,7 +15,7 @@ SOURCES = json.load(open(os.path.join(HERE, "sources.json")))["meetings"]
 # 2024, which the records tell apart with -E/-J and -A/-J (or A./J. Brown).
 SURNAMES = ["Adamson", "Allen", "Annee", "Bain", "Barth", "Boots", "Brown-A", "Brown-J", "Brown", "Cahill",
             "Carlino", "Delaney", "Dilk", "Evans-E", "Evans-J", "Evans", "Gibson", "Graves", "Gray", "Hart",
-            "Jackson", "Jones", "Larrison", "Lewis", "Mascari", "Masquelier", "McCormick", "Mowery", "Nielsen",
+            "Jackson", "Jones", "Larrison", "Lewis", "Mascari", "Masquelier", "McCormick", "Mowery", "Mulholland", "Nielsen",
             "Oliver", "Osili", "Perkins", "Potts", "Ray", "Roberts", "Robinson", "Wells"]
 LABELS = {"YEAS": "Yes", "YEA": "Yes", "NAYS": "No", "NAY": "No", "ABSENT": "Absent", "EXCUSED": "Absent",
           "NOT VOTING": "Not voting", "ABSTAIN": "Abstain", "ABSTAINED": "Abstain", "ABSTAINING": "Abstain"}
@@ -246,12 +246,19 @@ def parse_roll_call_sheets(date, members=None):
         tl = re.search(r"Yea:\s*(\d+)\s+Nay:\s*(\d+)\s+Ab\w*:\s*(\d+)\s+Not Voting:\s*(\d+)\s+Excused:\s*(\d+)", page)
         if tl:
             counts = {k: int(x) for k, x in zip(["Yes", "No", "Abstain", "Not voting", "Absent"], tl.groups())}
+        # OCR sometimes misreads a digit in the summary line ("Nay: 1" read as "Nay: 14"). A header that adds up
+        # to more than the 25 seats can't be right, so the names listed under each heading are used instead.
+        sheet_note = None
+        if tl and sum(counts.values()) > 25 and len(cast) <= 25:
+            sheet_note = f"The OCR'd summary line on the roll-call sheet read {tl.group(0) if tl else counts} (more than 25 votes); counts here are taken from the names listed under each heading."
+            counts = {k: sum(1 for x in cast.values() if x == k) for k in ["Yes", "No", "Abstain", "Not voting", "Absent"]}
         inferred = complete_from_totals(cast, counts, members)
         mismatch = {k: (v, sum(1 for x in cast.values() if x == k)) for k, v in counts.items() if v != sum(1 for x in cast.values() if x == k)}
         out.append({"date": date, "source": "roll-call sheet (OCR)", "inferred": inferred or None, "page": int(page_no), "proposals": [(no, year)],
                     "action": action, "outcome": outcome, "counts": counts, "votes": cast,
                     "context": f"Action: {act}", "code": code, "ordinanceNo": ord_no, "consent": consent,
-                    "group": int(group.group(1)) if group else None, "mismatch": mismatch or None})
+                    "group": int(group.group(1)) if group else None, "mismatch": mismatch or None,
+                    **({"note": sheet_note} if sheet_note else {})})
     return out
 
 
@@ -349,6 +356,19 @@ def main():
         yr = int(os.path.basename(f)[:4])
         for c in json.load(open(f))["data"]:
             city[f"{c['proposal_number']}-{yr}"] = c
+    # A number can be used twice: a motion to add a floor item on Aug 10, 2026 carried "277" before the clerk
+    # gave 277 to a different resolution (introduced Sept 14). A vote dated before the city's introduction
+    # date isn't a vote on that proposal, so it is unlinked (and keeps the floor item's own description).
+    for r in records:
+        for k in r["proposals"]:
+            intro = (city.get(k) or {}).get("introduced")
+            if intro and r["date"] < intro:
+                r["note"] = (f"The minutes and roll-call sheet number this floor motion {k}, but the city later used that number "
+                             f"for a different proposal (introduced {intro}): \"{props[k]['title']}\". Shown here without a proposal link.")
+                r["context"] = (r.get("context") or "") + f" (floor motion, numbered {k} at the time)"
+                r["proposals"] = [x for x in r["proposals"] if x != k]
+                r["status"] = "needs review"
+                props[k]["title"] = None  # refilled from the city database below
     tally_checked = tally_agree = 0
     for k, pr in props.items():
         c = city.get(k)
