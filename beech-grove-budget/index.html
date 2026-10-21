@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Beech Grove Budget Explorer</title>
+<meta name="description" content="Beech Grove, Indiana&#x27;s civil city budget, 2020 to 2027: spending by function, revenue by source, and every department and fund line by line.">
+<meta property="og:title" content="Beech Grove Budget Explorer">
+<meta property="og:description" content="Beech Grove, Indiana&#x27;s civil city budget, 2020 to 2027: spending by function, revenue by source, and every department and fund line by line.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+
+:root{
+  --bg:#f5f7f6; --surface:#fcfcfb; --ink:#101614; --ink-2:#4b5552; --muted:#7f8784;
+  --grid:#e1e4e2; --axis:#c3c8c5; --line:rgba(16,22,20,.12);
+  --accent:#1c5cab; --accent-soft:#e3edf9; --up:#006300; --down:#b3261e;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4;
+  --tip-bg:#101614; --tip-ink:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0e1110; --surface:#171b1a; --ink:#f3f5f4; --ink-2:#c1c7c4; --muted:#8b9390;
+    --grid:#262c2a; --axis:#39403d; --line:rgba(255,255,255,.12);
+    --accent:#6da7ec; --accent-soft:#16263a; --up:#0ca30c; --down:#e66767;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181;
+    --tip-bg:#f3f5f4; --tip-ink:#101614;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0e1110; --surface:#171b1a; --ink:#f3f5f4; --ink-2:#c1c7c4; --muted:#8b9390;
+  --grid:#262c2a; --axis:#39403d; --line:rgba(255,255,255,.12);
+  --accent:#6da7ec; --accent-soft:#16263a; --up:#0ca30c; --down:#e66767;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181;
+  --tip-bg:#f3f5f4; --tip-ink:#101614;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.55;padding-inline:16px;padding-block:0 56px}
+.wrap{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;margin:0;text-wrap:balance;letter-spacing:.005em}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.02;font-weight:700}
+h2{font-size:28px;line-height:1.1;font-weight:700}
+h3{font-size:19px;font-weight:600}
+p{margin:0;max-width:68ch}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:17px;color:var(--ink-2)}
+header{display:flex;flex-direction:column;gap:14px}
+.calendar{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.date{display:flex;gap:10px;align-items:baseline;border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:8px 12px;font-size:13.5px}
+.date b{font-family:"Barlow Semi Condensed",sans-serif;font-size:16px;font-weight:700;white-space:nowrap}
+.date.now{border-color:var(--accent);background:var(--accent-soft)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:4px}
+.tile .v{font-family:"Barlow Semi Condensed",sans-serif;font-size:34px;font-weight:700;line-height:1}
+.tile .l{font-size:13px;color:var(--ink-2)}
+@media (max-width:760px){.tiles{grid-template-columns:repeat(2,1fr)}}
+section{display:flex;flex-direction:column;gap:14px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.bar-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{font:inherit;font-size:13px;padding:5px 11px;border:0;background:transparent;color:var(--ink-2);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.seg button:focus-visible,.link-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chart-scroll{overflow-x:auto}
+.chart-scroll svg{display:block;width:100%;min-width:560px;height:auto}
+svg text{font-family:"Public Sans",system-ui,sans-serif;fill:var(--muted);font-size:12px}
+svg .val{fill:var(--ink);font-weight:600}
+svg .yr{fill:var(--ink-2);font-weight:500}
+.note{font-size:13px;color:var(--muted)}
+.link-btn{font:inherit;font-size:13px;color:var(--accent);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;align-self:flex-start}
+.tbl-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
+th,td{padding:7px 10px;text-align:right;border-bottom:1px solid var(--grid);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{font-weight:600;color:var(--ink-2);font-size:12.5px;border-bottom:1px solid var(--axis)}
+tfoot td{font-weight:700;border-top:1px solid var(--axis);border-bottom:0}
+.up{color:var(--up)} .down{color:var(--down)}
+.tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;padding:1px 6px;border-radius:4px;background:var(--accent-soft);color:var(--accent);margin-left:6px;vertical-align:1px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;max-width:72ch}
+.tip{position:fixed;pointer-events:none;background:var(--tip-bg);color:var(--tip-ink);font-size:12.5px;line-height:1.45;padding:8px 10px;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.18);z-index:10;font-variant-numeric:tabular-nums;max-width:260px}
+.tip b{font-weight:700}
+.tip .r{display:flex;justify-content:space-between;gap:14px}
+.tip i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px}
+.sources{font-size:13px;color:var(--ink-2)}
+.sources a{color:var(--accent)}
+.sources ol{padding-left:18px;margin:6px 0 0;display:flex;flex-direction:column;gap:4px}
+@media (prefers-reduced-motion:no-preference){ .chart-scroll rect{transition:opacity .12s} }
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:13px;display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer}
+.chip i{width:9px;height:9px;border-radius:2px;display:inline-block}
+.chip[aria-pressed="true"]{border-color:var(--ink);color:var(--ink);font-weight:600;box-shadow:inset 0 0 0 1px var(--ink)}
+.chip:focus-visible,.dept-btn:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.toolbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center}
+.toolbar label{font-size:13px;color:var(--ink-2);display:flex;gap:8px;align-items:center}
+select{font:inherit;font-size:13px;padding:5px 8px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.dept-list{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:8px;background:var(--surface);overflow:hidden}
+.dept{border-top:1px solid var(--grid)}
+.dept:first-child{border-top:0}
+.dept-btn{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,2fr) 92px 118px 18px;gap:14px;align-items:center;padding:11px 14px;cursor:pointer;font-variant-numeric:tabular-nums}
+.dept-btn:hover{background:var(--accent-soft)}
+.dept-name{display:flex;flex-direction:column;min-width:0}
+.dept-name b{font-weight:600;font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dept-name small{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.track{height:12px;background:var(--grid);border-radius:3px;position:relative;overflow:hidden}
+.track span{position:absolute;left:0;top:0;bottom:0;border-radius:3px}
+.amt{text-align:right;font-weight:600}
+.chg{text-align:right;font-size:13px}
+.caret{color:var(--muted);transition:transform .15s}
+.dept.open .caret{transform:rotate(90deg)}
+.dept.open>.dept-btn{background:var(--accent-soft)}
+@media (max-width:700px){
+  .dept-btn{grid-template-columns:minmax(0,1fr) auto 18px;grid-template-areas:"n a c" "t g c";row-gap:6px}
+  .dept-name{grid-area:n}.track{grid-area:t}.amt{grid-area:a}.chg{grid-area:g}.caret{grid-area:c}
+}
+.detail{padding:4px 16px 22px;display:flex;flex-direction:column;gap:18px;border-top:1px solid var(--grid);background:var(--bg)}
+.detail h4{margin:0 0 6px;font-family:"Barlow Semi Condensed",sans-serif;font-size:17px;font-weight:700}
+.detail .sum{font-size:14.5px;color:var(--ink-2);max-width:78ch;margin-top:14px}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:760px){.dgrid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.mini svg{width:100%;height:auto;display:block}
+.drivers{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px;font-size:14px}
+.stackbar{display:flex;height:22px;border-radius:4px;overflow:hidden;gap:2px;background:var(--surface)}
+.stackbar span{height:100%}
+.klegend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--ink-2)}
+.klegend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:0}
+.detail table{font-size:13px}
+.detail td:first-child{white-space:normal;min-width:170px}
+.muted-row td{color:var(--muted)}
+.pdf-link{font-size:13px;color:var(--accent)}
+.gloss{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.gloss div{font-size:13.5px;color:var(--ink-2)}
+#departments .panel td:last-child{white-space:normal;min-width:220px;text-align:left}
+.cats{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.cats li{display:flex;gap:10px;font-size:13.5px}
+.cats i{flex:none;width:10px;height:10px;border-radius:2px;margin-top:5px}
+.cats .amtc{font-variant-numeric:tabular-nums;color:var(--ink-2)}
+.cats .def{color:var(--ink-2)}
+.cats .dn{display:block;margin-top:3px;color:var(--ink)}
+.cats .dn::before{content:"Here: ";font-weight:600}
+.gloss .note{display:block;margin-bottom:4px}
+.gloss b{display:block;color:var(--ink);font-weight:600;margin-bottom:2px}
+
+.dept-btn{grid-template-columns:minmax(0,1.4fr) minmax(0,2fr) 118px 118px 18px}
+@media (max-width:700px){.dept-btn{grid-template-columns:minmax(0,1fr) auto 18px}}
+.search{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.search input{font:inherit;font-size:14px;padding:7px 10px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);flex:1 1 240px;min-width:0}
+.search input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#items td:nth-child(3){white-space:normal;text-align:left}
+.bar-row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2.4fr) 96px 96px 70px;gap:14px;align-items:center;padding:9px 14px;border-top:1px solid var(--grid);font-variant-numeric:tabular-nums;font-size:14px}
+.bar-row.head{font-size:12.5px;color:var(--ink-2);font-weight:600;border-top:0;border-bottom:1px solid var(--axis)}
+.bar-row .r{text-align:right}
+.bar-row .name{min-width:0;display:flex;flex-direction:column}
+.dual{display:flex;flex-direction:column;gap:3px}
+.dual .track{height:9px}
+.list{border:1px solid var(--line);border-radius:8px;background:var(--surface);overflow:hidden}
+@media (max-width:700px){
+  .bar-row{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"n a" "t t" "b c"}
+  .bar-row.head{display:none}
+  .bar-row .name{grid-area:n}.bar-row .dual{grid-area:t}.bar-row .r.a27{grid-area:a}.bar-row .r.a25{grid-area:b;text-align:left;font-size:12.5px;color:var(--muted)}.bar-row .r.chg{grid-area:c;font-size:12.5px}
+}
+</style>
+<link rel="stylesheet" href="/assets/pinstripe.css">
+<script src="/assets/corrections.js" defer></script>
+</head>
+<body>
+<header class="site-bar"><a class="brand" href="/">Indy AI Research Docs</a><nav aria-label="Site"><a href="/">All docs</a><a href="/budget">City budget</a><a href="/beech-grove-budget" aria-current="page">Beech Grove budget</a><a href="/flock">Flock timeline</a><a href="/flock-cancellations">How cities dropped Flock</a><a href="/council-votes">Council votes</a><a href="/council-quiz">Councilor quiz</a></nav></header><aside class="ai-notice" role="note"><span class="tag">AI draft</span><div><b>Preliminary research, generated with AI.</b> This page was drafted with an AI assistant (Claude) from public records and news reports. It may contain mistakes or miss context. Check the linked sources before you rely on, share or cite anything. Found an error? Use the flag next to any section to send a correction with a link to your source. Last updated October 21, 2026.</div></aside>
+<div class="wrap" data-ps-title="Beech Grove Budget" style="padding-top:28px">
+<header>
+  <div class="eyebrow">Beech Grove, Indiana · Civil city budget</div>
+  <h1>Where Beech Grove's money goes, 2020 to 2027</h1>
+  <p class="lede">Beech Grove's Common Council passed the 2027 budget on October 19, 2026, 5 to 1, at roughly $19.6 million. The final adopted order isn't posted yet, so 2027 figures here are the advertised budget filed with the state in September: <b>$19.69 million</b>, about 32% more than 2020. The history comes from the city's own budget ordinances, budget forms and September 2024 fiscal plan. It covers the civil city (police, fire contract, EMS, streets, parks, City Hall). The sewer, stormwater and TIF funds are budgeted separately.</p>
+  <div class="calendar" aria-label="2027 budget calendar">
+    <div class="date"><b>Sept 22</b> Budget forms filed with the state</div>
+    <div class="date"><b>Oct 5</b> Public hearing, 7 pm, 802 Main St.</div>
+    <div class="date now"><b>Oct 19</b> Council passed budget and salary ordinance, 5 to 1</div>
+  </div>
+</header>
+
+<div class="tiles" id="tiles"></div>
+
+<section>
+  <h2>Spending by function</h2>
+  <p>Adopted appropriations for every fund the Council budgets, 2021 to 2027, sorted into five functions. These are the amounts the Council authorized, not what was actually spent. The city's own records show actual General Fund spending ran above the adopted figure in recent years, because police and EMS pay is added later from the public safety income tax.</p>
+  <div class="panel">
+    <div class="bar-head">
+      <div class="legend" id="spendLegend"></div>
+      <div class="seg" role="group" aria-label="Chart units">
+        <button type="button" id="modeDollars" aria-pressed="true">Dollars</button>
+        <button type="button" id="modeShare" aria-pressed="false">Share of total</button>
+      </div>
+    </div>
+    <div class="chart-scroll"><svg id="spendChart" role="img" aria-label="Stacked bar chart of Beech Grove appropriations by function, 2021 to 2027"></svg></div>
+    <button type="button" class="link-btn" id="spendTableBtn" aria-expanded="false">Show as table</button>
+    <div class="tbl-wrap" id="spendTable" hidden></div>
+    <ul class="cats" id="funcDefs"></ul>
+    <p class="note">2021 to 2026 are adopted budgets from the city's Form 4 ordinances; 2027 is the advertised Form 1. The 2020 total, the earliest year in the city's archive, was <span id="t2020"></span>; the 2020 department split isn't available, so the chart starts in 2021.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What changes from 2026 to 2027</h2>
+  <div class="panel">
+    <div class="chart-scroll"><svg id="deltaChart" role="img" aria-label="Bars of dollar change by function from 2026 adopted to 2027 advertised"></svg></div>
+    <div class="tbl-wrap" id="deltaTable"></div>
+    <p class="note" id="deltaNote"></p>
+  </div>
+</section>
+
+<section>
+  <h2>Money by fund</h2>
+  <p>Indiana cities budget through funds, each with its own rules. The General Fund is most of the budget; the rest are mostly earmarked. Blue bar = 2027 advertised, dark bar = 2026 adopted.</p>
+  <div class="list" id="funds"></div>
+  <button type="button" class="link-btn" id="fundTableBtn" aria-expanded="false">Show every year as a table</button>
+  <div class="tbl-wrap" id="fundTable" hidden></div>
+</section>
+
+<section>
+  <h2>Where the money comes from</h2>
+  <p>The General Fund's revenue by source, 2021 to 2025, from the city's September 2024 fiscal plan: 2021 to 2023 are actual receipts, 2024 and 2025 are budget estimates. The plan is an internal draft, so treat these as the city's working numbers, not an audit.</p>
+  <div class="panel">
+    <div class="legend" id="revLegend"></div>
+    <div class="chart-scroll"><svg id="revChart" role="img" aria-label="Stacked bar chart of General Fund revenue by source, 2021 to 2025"></svg></div>
+    <button type="button" class="link-btn" id="revTableBtn" aria-expanded="false">Show as table</button>
+    <div class="tbl-wrap" id="revTable" hidden></div>
+    <p class="note">Income taxes include the General Fund's share of the local income tax, the levy freeze payment, supplemental distributions, and transfers from the public safety income tax fund that reimburse police and EMS pay. "Transfers and other" includes the return on investment paid by the sewer utility.</p>
+  </div>
+  <div class="two">
+    <div class="panel"><h3>Property tax, 2027 notice</h3><div id="taxBox"></div></div>
+    <div class="panel"><h3>Other 2027 revenue estimates</h3><div id="revList"></div></div>
+  </div>
+  <p class="note">Don't add the right-hand list to the levy: Form 2 counts $1.58 million moved in from other funds and $420,000 in police pension reimbursements, so it is a list of expected sources, not a balanced statement.</p>
+</section>
+
+<section id="departments">
+  <h2>Every department and fund, line by line</h2>
+  <p>The 13 General Fund departments and the other funds the Council budgets. Click any row for its history, how its money is split, and every 2027 line item as the city filed it. Years before 2027 are adopted budgets; where the fiscal plan reports it, the table also shows what was actually spent in 2021 to 2023.</p>
+  <div class="toolbar">
+    <div class="chips" id="fnChips" role="group" aria-label="Filter by function"></div>
+    <label>Sort by <select id="sortSel">
+      <option value="amt">2027 budget</option><option value="d">Dollar change from 2026</option><option value="p">Percent change from 2026</option><option value="n">Name</option>
+    </select></label>
+  </div>
+  <div class="dept-list" id="deptList"></div>
+  <div class="panel">
+    <div class="eyebrow">How to read it</div>
+    <div class="gloss">
+      <div><b>Personal services</b>Pay and benefits: salaries, overtime, FICA, insurance and pension contributions.</div>
+      <div><b>Other services &amp; charges</b>Contracts and bills: insurance, utilities, attorneys, repairs, and the fire contract with Indianapolis.</div>
+      <div><b>Supplies, capital</b>Fuel and office supplies, then vehicles, equipment and street work.</div>
+      <div><b>Public Safety Local Income Tax</b>A local income tax earmarked for public safety. Before 2025 it was a home-rule fund; it pays police and EMS salaries that the General Fund then books.</div>
+    </div>
+  </div>
+</section>
+
+<section id="items">
+  <h2>Search every line</h2>
+  <p>All <span id="itemCount"></span> line items in the advertised 2027 budget. The labels are the city's own abbreviations.</p>
+  <div class="panel">
+    <div class="search">
+      <input id="q" type="search" placeholder="Search: overtime, Flock, insurance, parks…" aria-label="Search line items">
+      <label class="toolbar"><select id="fundSel" aria-label="Filter by fund"></select></label>
+    </div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Fund</th><th>Department</th><th>Line item</th><th>Type</th><th>2027</th></tr></thead>
+      <tbody id="itemRows"></tbody>
+      <tfoot><tr><td colspan="4" id="itemFoot"></td><td id="itemSum"></td></tr></tfoot>
+    </table></div>
+    <p class="note" id="itemMore"></p>
+  </div>
+</section>
+
+<section>
+  <h2>Reading the numbers</h2>
+  <ul class="plain" id="reading"></ul>
+</section>
+
+<section>
+  <h2>Notes on this data</h2>
+  <ul class="plain">
+    <li><b>Advertised, not final.</b> The 2027 Form 1 "Adopted" column is a copy of "Advertised" because the forms were generated on September 22, before the vote. Mirror Indy reports the final budget as $19.6 million; the advertised total is $19,693,139. We'll update when the city posts the adopted order (Form 4).</li>
+    <li><b>Checked against the city's own totals.</b> Every year's function totals add up to the total printed on that year's ordinance, department budgets add up to each year's General Fund, and the 208 line items for 2027 add up to each fund's total on Form 1. Form 3 shows the lease rental fund at $1,074,000 where Form 1 shows $1,077,000.</li>
+    <li><b>Scanned ordinances.</b> The 2022, 2023, 2024 and 2026 ordinances are scans, read with OCR. Where OCR dropped a number (2023 police pension, road, highway and training funds), it was filled in from the ordinance's own printed total and cross-checked against the fiscal plan. The 2022 ordinance lists no fire pension appropriation.</li>
+    <li><b>Mixed sources by year.</b> Department budgets for 2021 to 2024 come from the fiscal plan, which adds up to each year's adopted General Fund exactly. 2025 and 2026 come from the Council's October 6, 2025 budget summary table (2025 Senior Center set to the adopted total), and 2027 from Form 1. For 2026, the Council cut $606,801 from the $20.05 million presented on September 2, 2025, to reach $19,440,824.</li>
+    <li><b>The city's "2026 Budget Ordinance" link is actually 2025</b> (adopted October 21, 2024). The real 2026 ordinance is in the city's archive folder as "Gen Ord 6 2025".</li>
+    <li><b>Not included:</b> the sewer utility, stormwater and TIF funds, which the reading notes above summarize from the fiscal plan's actuals.</li>
+    <li><b>AI-parsed.</b> Figures were extracted from PDFs by script and cross-checked as described. Descriptions of what a line "buys" are the city's own labels except where a source is named. The per-resident figure uses the 2020 Census count of 14,717.</li>
+  </ul>
+</section>
+
+<footer class="sources">
+  <div class="eyebrow">Sources</div>
+  <ol>
+    <li><a href="https://www.beechgrove.com/clerk-treasurers-office">Beech Grove Clerk-Treasurer's page</a>: 2027 <a href="https://irp.cdn-website.com/e16b7284/files/uploaded/Form1+%283%29.pdf">Form 1</a>, <a href="https://irp.cdn-website.com/e16b7284/files/uploaded/Form+2+Revenues.pdf">Form 2</a>, <a href="https://irp.cdn-website.com/e16b7284/files/uploaded/Form3Archived.pdf">Form 3</a> and <a href="https://irp.cdn-website.com/e16b7284/files/uploaded/2027+Salary+Ordinance+Draft.pdf">salary ordinance draft</a></li>
+    <li><a href="https://www.dropbox.com/scl/fo/jgzg0016j3l3v7b2zbnsq/AAu-SXbZYf4j7KB5hmUjc2g?rlkey=6jcwp2ijw0xzf102jz00k1ejr&amp;st=wtqlmn51&amp;dl=0">City budget archive, 2020–2026</a> (linked from the Clerk-Treasurer's page): Form 4 appropriation ordinances for 2020 to 2026; the September 2024 <i>Strategic Fiscal Plan and Analysis</i> (internal draft); the 2025 budget information sent to Council on 9/17/2024; and the Council packets of 9/2/2025 and 10/6/2025</li>
+    <li><a href="https://irp.cdn-website.com/e16b7284/files/uploaded/3._Form_4.pdf">Budget Form 4 for 2025</a> (adopted 10/21/2024, Ordinance 6)</li>
+    <li><a href="https://mirrorindy.org/beech-grove-indianapolis-budget-approved-2027-south-side-city/">Mirror Indy: Beech Grove passes $19.6M budget for 2027 amid uncertainty</a> (Oct 20, 2026) · <a href="https://www.wthr.com/article/news/politics/city-of-beech-grove-passes-196-million-budget-for-2027-senate-enrolled-act-1-one-politics-governor-mike-braun/531-e785f547-4cf6-4e4d-b466-6c0ec71ed4f6">WTHR: city passes $19.6 million budget for 2027</a></li>
+    <li><a href="https://mirrorindy.org/beech-grove-common-council-budget-2026-community-services-sewer-fund/">Mirror Indy: the 2026 budget and what councilors expected for 2027</a> (Oct 21, 2025) · <a href="https://mirrorindy.org/beech-grove-indiana-2026-budget-senate-bill-one-less-tax-revenue/">Indiana's new tax laws will slash millions from Beech Grove's 2026 budget</a></li>
+    <li><a href="https://www.wrtv.com/news/local-news/ifd-to-provide-fire-services-for-beech-grove">WRTV: IFD to provide fire services for Beech Grove</a> (Sept 18, 2021): the 20-year interlocal agreement, $3,246,610 in year one, effective about December 25, 2021</li>
+    <li><a href="https://census.gov/quickfacts/fact/table/beechgrovecityindiana/LFE041223">U.S. Census Bureau QuickFacts: Beech Grove city</a> (2020 population base about 14,700)</li>
+  </ol>
+</footer>
+<footer class="site-foot">Indy AI Research Docs is a work in progress. Figures come from the linked public documents; summaries and analysis were generated with AI and spot-checked, not independently verified. Nothing here is legal or financial advice. Last updated September 28, 2026.</footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const D = {"funds":{"0061":"Rainy Day","0101":"General","0256":"Public Safety Local Income Tax","0283":"Lease Rental Payment","0341":"Fire Pension","0342":"Police Pension","0706":"Local Road & Street","0708":"Motor Vehicle Highway","1151":"Continuing Education","1310":"Park Nonreverting - Capital","9507":"Home-Rule Fund #8","9509":"Home-Rule Fund #10","9510":"Home-Rule Fund #11","9511":"Building & Construction Fees","9512":"Motor Vehicle License Excise Surtax"},"depts":{"0000":"No department","0041":"Clerk-Treasurer","0044":"Mayor","0069":"City Council","0077":"Board of Public Works & Safety","0164":"City Hall","0165":"Senior Center","0167":"Community Center","0248":"City Court","0301":"Ambulance / EMS","0362":"Fire Department","0370":"Police Department","0801":"Parks Department","9600":"No department"},"items":[{"f":"0061","d":"0000","c":"Other Services and Charges","s":"Other Services and Charges","i":"RAINY DAY /MISC. DISBURSEMENT","a":0},{"f":"0101","d":"0041","c":"Personal Services","s":"Salaries and Wages","i":"CLERK-TREAS. SALARY","a":37539},{"f":"0101","d":"0041","c":"Personal Services","s":"Salaries and Wages","i":"CLERK-TREAS./REG.SAL.","a":60922},{"f":"0101","d":"0041","c":"Personal Services","s":"Salaries and Wages","i":"CLERK TREAS/EMP LONGEVITY","a":2400},{"f":"0101","d":"0041","c":"Personal Services","s":"Other Personal Services","i":"CLERK-TREAS./FICA","a":6300},{"f":"0101","d":"0041","c":"Personal Services","s":"Other Personal Services","i":"CLERK-TREAS./MEDICARE","a":1700},{"f":"0101","d":"0041","c":"Supplies","s":"Office Supplies","i":"CLERK-TREAS./OFFICE.MISC.","a":2575},{"f":"0101","d":"0041","c":"Supplies","s":"Repair and Maintenance Supplies","i":"CLERK-TREAS./REP.& MAINT.","a":2060},{"f":"0101","d":"0041","c":"Supplies","s":"Other Supplies","i":"CLERK TREAS./JANITORIAL","a":2500},{"f":"0101","d":"0041","c":"Other Services and Charges","s":"Professional Services","i":"CLERK-TREAS./ATTY.FEES","a":5000},{"f":"0101","d":"0041","c":"Other Services and Charges","s":"Professional Services","i":"CLERK-TREAS./PROF.SERV.","a":15150},{"f":"0101","d":"0041","c":"Other Services and Charges","s":"Professional Services","i":"CLERK-TREAS./ORG.MEMB.","a":100},{"f":"0101","d":"0041","c":"Other Services and Charges","s":"Communication and Transportation","i":"CLERK-TREAS./TRAVEL EXPENSE","a":500},{"f":"0101","d":"0041","c":"Other Services and Charges","s":"Communication and Transportation","i":"CLERK-TREAS./POSTAGE CITY WIDE","a":3502},{"f":"0101","d":"0041","c":"Other Services and Charges","s":"Printing and Advertising","i":"CLERK-TREAS./LEGAL PUB.","a":2626},{"f":"0101","d":"0041","c":"Capital Outlays","s":"Machinery, Equipment, and Vehicles","i":"COPIER -LEASE","a":2000},{"f":"0101","d":"0044","c":"Personal Services","s":"Salaries and Wages","i":"MAYOR'S SALARY","a":36791},{"f":"0101","d":"0044","c":"Personal Services","s":"Salaries and Wages","i":"MAYOR/REG.SAL.","a":57834},{"f":"0101","d":"0044","c":"Personal Services","s":"Other Personal Services","i":"MAYOR/FICA","a":6100},{"f":"0101","d":"0044","c":"Personal Services","s":"Other Personal Services","i":"MAYOR/MEDICARE","a":1550},{"f":"0101","d":"0044","c":"Personal Services","s":"Employee Benefits","i":"MAYOR/ED. & LONG. BEN.","a":3075},{"f":"0101","d":"0044","c":"Supplies","s":"Office Supplies","i":"OFFICE MISC","a":2500},{"f":"0101","d":"0069","c":"Personal Services","s":"Salaries and Wages","i":"CITY COUNCIL/REG.SAL.","a":33758},{"f":"0101","d":"0069","c":"Personal Services","s":"Other Personal Services","i":"CITY COUNCIL/FICA","a":2200},{"f":"0101","d":"0069","c":"Personal Services","s":"Other Personal Services","i":"CITY COUNCIL/MEDICARE","a":600},{"f":"0101","d":"0069","c":"Other Services and Charges","s":"Professional Services","i":"CITY COUNCIL/ATTORNEY FEES","a":5000},{"f":"0101","d":"0069","c":"Other Services and Charges","s":"Professional Services","i":"CITY COUNCIL/PROF. & CONT. SERVICES","a":7500},{"f":"0101","d":"0077","c":"Personal Services","s":"Salaries and Wages","i":"BOPW/ REGULAR SAL","a":6147},{"f":"0101","d":"0077","c":"Personal Services","s":"Salaries and Wages","i":"BOPW/PAYROLL/UNEMPLOYMENT/WORKERS COMP","a":1010},{"f":"0101","d":"0077","c":"Personal Services","s":"Other Personal Services","i":"BOPW/MEDICARE","a":202},{"f":"0101","d":"0077","c":"Personal Services","s":"Other Personal Services","i":"BOW/RES #5 2014","a":13400},{"f":"0101","d":"0077","c":"Personal Services","s":"Other Personal Services","i":"BOPW/FICA","a":2525},{"f":"0101","d":"0077","c":"Personal Services","s":"Employee Benefits","i":"BOPW- PERF.BEN","a":212180},{"f":"0101","d":"0077","c":"Personal Services","s":"Employee Benefits","i":"BOPW- MED.INS.BEN CITY WIDE","a":606670},{"f":"0101","d":"0077","c":"Personal Services","s":"Employee Benefits","i":"BOPW-DENTAL INS. BEN","a":21218},{"f":"0101","d":"0077","c":"Personal Services","s":"Employee Benefits","i":"BOPW- LIFE.INS.BEN","a":20762},{"f":"0101","d":"0077","c":"Personal Services","s":"Employee Benefits","i":"BOW/ALL CITY 457 MATCH PEHP","a":25000},{"f":"0101","d":"0077","c":"Other Services and Charges","s":"Professional Services","i":"BOW/CITY ATTORNEYS","a":151410},{"f":"0101","d":"0077","c":"Other Services and Charges","s":"Professional Services","i":"BOPW/PROF SERV","a":53045},{"f":"0101","d":"0077","c":"Other Services and Charges","s":"Professional Services","i":"BOPW/CONTRACTUAL SERVICES","a":33419},{"f":"0101","d":"0077","c":"Other Services and Charges","s":"Professional Services","i":"BOPW- PROMOTIONAL","a":1000},{"f":"0101","d":"0077","c":"Other Services and Charges","s":"Insurance","i":"BOPW/RET INS. & HSA","a":98850},{"f":"0101","d":"0077","c":"Other Services and Charges","s":"Insurance","i":"BOPW/CITY WIDE LIABILITY INSURANCE","a":397383},{"f":"0101","d":"0077","c":"Other Services and Charges","s":"Utility Services","i":"BOPW/TELEPHONE & CABLE","a":97850},{"f":"0101","d":"0077","c":"Other Services and Charges","s":"Other Services and Charges","i":"BOPW/COMP SOFTWARE","a":23690},{"f":"0101","d":"0077","c":"Capital Outlays","s":"Other Capital Outlays","i":".00BOW/TECH/COMPS/SERVERS CITY HALL","a":50000},{"f":"0101","d":"0164","c":"Supplies","s":"Office Supplies","i":"CITY HALL/OFFICE.MISC.","a":2805},{"f":"0101","d":"0164","c":"Other Services and Charges","s":"Utility Services","i":"CITY WIDE/ELECTRIC","a":292136},{"f":"0101","d":"0164","c":"Other Services and Charges","s":"Utility Services","i":"CITY WIDE/GAS","a":27300},{"f":"0101","d":"0164","c":"Other Services and Charges","s":"Utility Services","i":"CITY WIDE/WATER","a":19570},{"f":"0101","d":"0164","c":"Other Services and Charges","s":"Utility Services","i":"CITY WIDE/SEWAGE/STORM","a":30900},{"f":"0101","d":"0164","c":"Other Services and Charges","s":"Repairs and Maintenance","i":"CITY WIDE/REP & MAINT.","a":2623},{"f":"0101","d":"0165","c":"Personal Services","s":"Salaries and Wages","i":"SENIOR CENTER DIRECTOR SALARY","a":61228},{"f":"0101","d":"0165","c":"Personal Services","s":"Salaries and Wages","i":"SENIOR CTR./REG-PART TIME","a":50105},{"f":"0101","d":"0165","c":"Personal Services","s":"Other Personal Services","i":"SENIOR CTR./FICA","a":8080},{"f":"0101","d":"0165","c":"Personal Services","s":"Other Personal Services","i":"SENIOR CTR./MEDICARE","a":1950},{"f":"0101","d":"0165","c":"Personal Services","s":"Employee Benefits","i":"SENIOR CTR./ED,&LONG EMP.BEN","a":13715},{"f":"0101","d":"0165","c":"Supplies","s":"Office Supplies","i":"SENIOR CTR./OFFICE.MISC.","a":2750},{"f":"0101","d":"0165","c":"Supplies","s":"Operating Supplies","i":"SENIOR CTR./MED.SUPPLIES","a":250},{"f":"0101","d":"0165","c":"Supplies","s":"Operating Supplies","i":"SENIOR CTR./JANITORIAL SUPPLIES","a":1000},{"f":"0101","d":"0165","c":"Supplies","s":"Repair and Maintenance Supplies","i":"SENIOR CTR./BLDG.MAT.","a":2060},{"f":"0101","d":"0165","c":"Supplies","s":"Other Supplies","i":"SENIOR.CTR./PROG.SUPPLIES","a":4000},{"f":"0101","d":"0165","c":"Other Services and Charges","s":"Professional Services","i":"SENIOR CTR./CONT.SERV.","a":6600},{"f":"0101","d":"0165","c":"Other Services and Charges","s":"Repairs and Maintenance","i":"SENIOR CTR./REP.& MAINT.","a":4120},{"f":"0101","d":"0165","c":"Capital Outlays","s":"Machinery, Equipment, and Vehicles","i":"SNR CTR VEHICLE","a":20600},{"f":"0101","d":"0167","c":"Personal Services","s":"Salaries and Wages","i":"COMM.CTR./ DIRECTOR SALARY","a":61020},{"f":"0101","d":"0167","c":"Personal Services","s":"Salaries and Wages","i":"COMM.CENTER. - REGULAR/PART TIME","a":175690},{"f":"0101","d":"0167","c":"Personal Services","s":"Other Personal Services","i":"COMM.CTR./FICA","a":15050},{"f":"0101","d":"0167","c":"Personal Services","s":"Other Personal Services","i":"COMM.CTR./MEDICARE","a":4000},{"f":"0101","d":"0167","c":"Personal Services","s":"Employee Benefits","i":"COMM CTR LONGEVITY","a":3650},{"f":"0101","d":"0167","c":"Supplies","s":"Office Supplies","i":"COMM.CTR./OFFICE.MISC.","a":2500},{"f":"0101","d":"0167","c":"Supplies","s":"Operating Supplies","i":"COMM.CTR./JANITORIAL SUPPLIES","a":5000},{"f":"0101","d":"0167","c":"Supplies","s":"Operating Supplies","i":"COMM.CTR GASOLINE","a":2000},{"f":"0101","d":"0167","c":"Supplies","s":"Operating Supplies","i":"COMM.CTR./PROG.SUPPLIES","a":7400},{"f":"0101","d":"0167","c":"Supplies","s":"Repair and Maintenance Supplies","i":"COMM.CTR./BLDG.MAT.","a":1500},{"f":"0101","d":"0167","c":"Other Services and Charges","s":"Professional Services","i":"COMM.CTR./PROF.SERV.","a":1000},{"f":"0101","d":"0167","c":"Other Services and Charges","s":"Professional Services","i":"COMM.CTR./CONT.SERV.","a":22660},{"f":"0101","d":"0167","c":"Other Services and Charges","s":"Printing and Advertising","i":"COMM.CTR./ADVERTISING","a":6000},{"f":"0101","d":"0167","c":"Other Services and Charges","s":"Repairs and Maintenance","i":"COMM.CTR./REP.&MAINT.","a":5871},{"f":"0101","d":"0167","c":"Capital Outlays","s":"Other Capital Outlays","i":"COMM CTR POS","a":5700},{"f":"0101","d":"0248","c":"Personal Services","s":"Salaries and Wages","i":"CITY COURT - JUDGE SALARY","a":67850},{"f":"0101","d":"0248","c":"Personal Services","s":"Salaries and Wages","i":"CITY COURT/REG.SAL.","a":58960},{"f":"0101","d":"0248","c":"Personal Services","s":"Salaries and Wages","i":"CITY COURT BALIFF","a":9109},{"f":"0101","d":"0248","c":"Personal Services","s":"Salaries and Wages","i":"CITY COURT - PART-TIME","a":26410},{"f":"0101","d":"0248","c":"Personal Services","s":"Other Personal Services","i":"CITY COURT/FICA","a":10565},{"f":"0101","d":"0248","c":"Personal Services","s":"Other Personal Services","i":"CITY COURT/MEDICARE","a":2200},{"f":"0101","d":"0248","c":"Personal Services","s":"Employee Benefits","i":"CITY COURT/ED.&LONG.BEN.","a":7600},{"f":"0101","d":"0248","c":"Supplies","s":"Office Supplies","i":"CITY COURT/OFFICE.MISC.","a":1000},{"f":"0101","d":"0248","c":"Other Services and Charges","s":"Professional Services","i":"CITY COURT /PROF.SERV.","a":100},{"f":"0101","d":"0248","c":"Other Services and Charges","s":"Professional Services","i":"CITY COURT/INFO.SERV.","a":25},{"f":"0101","d":"0248","c":"Other Services and Charges","s":"Printing and Advertising","i":"CITY COURT/PRINT OTHER THAN OFFICE","a":25},{"f":"0101","d":"0301","c":"Personal Services","s":"Salaries and Wages","i":"EMS- DEPARTMENT HEAD SALARY","a":100985},{"f":"0101","d":"0301","c":"Personal Services","s":"Salaries and Wages","i":"EMS- REGULAR SALARIES","a":434300},{"f":"0101","d":"0301","c":"Personal Services","s":"Salaries and Wages","i":"EMS- OVERTIME","a":202000},{"f":"0101","d":"0301","c":"Personal Services","s":"Salaries and Wages","i":"PST/SALARIES-EMS","a":0},{"f":"0101","d":"0301","c":"Personal Services","s":"Other Personal Services","i":"EMS - FICA","a":96000},{"f":"0101","d":"0301","c":"Personal Services","s":"Other Personal Services","i":"EMS- MEDICARE","a":23400},{"f":"0101","d":"0301","c":"Personal Services","s":"Employee Benefits","i":"EMS ED. & LONGEVITY","a":90282},{"f":"0101","d":"0301","c":"Personal Services","s":"Employee Benefits","i":"EMS - CLOTHING ALLOWANCE","a":21000},{"f":"0101","d":"0301","c":"Supplies","s":"Office Supplies","i":"EMS - OFFICE SUPPLIES","a":2000},{"f":"0101","d":"0301","c":"Supplies","s":"Operating Supplies","i":"EMS - PROTECTIVE CLOTHING","a":5000},{"f":"0101","d":"0301","c":"Supplies","s":"Operating Supplies","i":"EMS- JANITORIAL","a":2500},{"f":"0101","d":"0301","c":"Supplies","s":"Operating Supplies","i":"EMS - MEDICAL SUPPLIES","a":90000},{"f":"0101","d":"0301","c":"Supplies","s":"Repair and Maintenance Supplies","i":"EMS - GARAGE AND MOTOR","a":30000},{"f":"0101","d":"0301","c":"Other Services and Charges","s":"Professional Services","i":"EMS- PROFESSIONAL SERVICES","a":21000},{"f":"0101","d":"0301","c":"Other Services and Charges","s":"Professional Services","i":"EMS - INSTRUCTION","a":10000},{"f":"0101","d":"0301","c":"Other Services and Charges","s":"Professional Services","i":"EMS - PHYSICALS","a":6500},{"f":"0101","d":"0301","c":"Other Services and Charges","s":"Professional Services","i":"EMS - INJURY PREVENTION","a":1500},{"f":"0101","d":"0301","c":"Other Services and Charges","s":"Professional Services","i":"EMS - REPAIRS/MAINTENANCE","a":25000},{"f":"0101","d":"0301","c":"Other Services and Charges","s":"Communication and Transportation","i":"EMS - TELE/AIR CARDS/CRADLE POINT","a":9000},{"f":"0101","d":"0301","c":"Other Services and Charges","s":"Repairs and Maintenance","i":"EMS - MAINT. AGREEMENTS","a":25000},{"f":"0101","d":"0301","c":"Capital Outlays","s":"Buildings","i":"EMS - CAPITAL OUTLAYS","a":15000},{"f":"0101","d":"0301","c":"Capital Outlays","s":"Machinery, Equipment, and Vehicles","i":"EMS - EQUIPMENT","a":16000},{"f":"0101","d":"0301","c":"Capital Outlays","s":"Machinery, Equipment, and Vehicles","i":"EMS - WATER HEATER","a":4000},{"f":"0101","d":"0301","c":"Capital Outlays","s":"Machinery, Equipment, and Vehicles","i":"EMS- COMPUTER/9TH BRAIN","a":11000},{"f":"0101","d":"0362","c":"Other Services and Charges","s":"Professional Services","i":"FIRE/PROF.SERV.","a":3763715},{"f":"0101","d":"0370","c":"Personal Services","s":"Salaries and Wages","i":"POLICE CHIEF SALARY","a":138188},{"f":"0101","d":"0370","c":"Personal Services","s":"Salaries and Wages","i":"POLICE/REG.SAL.","a":2901800},{"f":"0101","d":"0370","c":"Personal Services","s":"Salaries and Wages","i":"POLICE/OVERTIME","a":156045},{"f":"0101","d":"0370","c":"Personal Services","s":"Other Personal Services","i":"POLICE/FICA","a":23129},{"f":"0101","d":"0370","c":"Personal Services","s":"Other Personal Services","i":"POLICE/MEDICARE","a":71000},{"f":"0101","d":"0370","c":"Personal Services","s":"Employee Benefits","i":"POLICE/ED.CERT.&LONG.BEN.","a":260000},{"f":"0101","d":"0370","c":"Personal Services","s":"Employee Benefits","i":"POLICE/CLOTH.-ALLOW.BEN.","a":71001},{"f":"0101","d":"0370","c":"Supplies","s":"Office Supplies","i":"POLICE/OFFICE.MISC.","a":8000},{"f":"0101","d":"0370","c":"Supplies","s":"Operating Supplies","i":"POLICE/UNIFORMS BEN.","a":15000},{"f":"0101","d":"0370","c":"Supplies","s":"Operating Supplies","i":"POLICE/FUEL","a":145000},{"f":"0101","d":"0370","c":"Supplies","s":"Operating Supplies","i":"POLICE/JANITORIAL SUPPLIES","a":5500},{"f":"0101","d":"0370","c":"Supplies","s":"Operating Supplies","i":"POLICE/CANINE","a":3000},{"f":"0101","d":"0370","c":"Supplies","s":"Repair and Maintenance Supplies","i":"POLICE/BLDG.MAT.","a":20000},{"f":"0101","d":"0370","c":"Other Services and Charges","s":"Professional Services","i":"POLICE/PROF.SERV.","a":35000},{"f":"0101","d":"0370","c":"Other Services and Charges","s":"Professional Services","i":"POLICE/INFO.SERV.","a":2500},{"f":"0101","d":"0370","c":"Other Services and Charges","s":"Professional Services","i":"POLICE/PHYSICALS/WELLNESS","a":30000},{"f":"0101","d":"0370","c":"Other Services and Charges","s":"Professional Services","i":"POLICE/SUBSCRIPTIONS","a":2500},{"f":"0101","d":"0370","c":"Other Services and Charges","s":"Communication and Transportation","i":"POLICE/TRAVEL EXPENSE","a":20000},{"f":"0101","d":"0370","c":"Other Services and Charges","s":"Communication and Transportation","i":"POLICE/AIR CARDS","a":17000},{"f":"0101","d":"0370","c":"Other Services and Charges","s":"Printing and Advertising","i":"POLICE/LEGAL-PUB.","a":12000},{"f":"0101","d":"0370","c":"Other Services and Charges","s":"Repairs and Maintenance","i":"POLICE/REP.&MAINT.","a":100000},{"f":"0101","d":"0370","c":"Other Services and Charges","s":"Other Services and Charges","i":"POLICE/PROMOTIONS","a":10000},{"f":"0101","d":"0370","c":"Capital Outlays","s":"Machinery, Equipment, and Vehicles","i":"POLICE CAP IMPROVEMENTS","a":95000},{"f":"0101","d":"0370","c":"Capital Outlays","s":"Other Capital Outlays","i":"POLICE/COPIER-LEASE","a":5000},{"f":"0101","d":"0801","c":"Personal Services","s":"Salaries and Wages","i":"PARK DIR. SALARY","a":85192},{"f":"0101","d":"0801","c":"Personal Services","s":"Salaries and Wages","i":"PARKS TEMP SALARY","a":80566},{"f":"0101","d":"0801","c":"Personal Services","s":"Other Personal Services","i":"PARKS/FICA","a":11330},{"f":"0101","d":"0801","c":"Personal Services","s":"Other Personal Services","i":"PARKS/MEDICARE","a":2700},{"f":"0101","d":"0801","c":"Personal Services","s":"Employee Benefits","i":"PARK/ED & LONG BENEFIT","a":11700},{"f":"0101","d":"0801","c":"Supplies","s":"Office Supplies","i":".00PARKS OFFICE MISC","a":1000},{"f":"0101","d":"0801","c":"Supplies","s":"Operating Supplies","i":"PARKS/ MED. SUPPLIES","a":150},{"f":"0101","d":"0801","c":"Supplies","s":"Operating Supplies","i":"PARKS/ WEED KILLER ETC","a":4000},{"f":"0101","d":"0801","c":"Supplies","s":"Operating Supplies","i":"PARKS/UNIFORMS","a":2500},{"f":"0101","d":"0801","c":"Supplies","s":"Operating Supplies","i":".00PARKS/GARAGE & MOTOR","a":3500},{"f":"0101","d":"0801","c":"Supplies","s":"Operating Supplies","i":"PARKS/GRADING, MULCHING, & FENCING","a":5000},{"f":"0101","d":"0801","c":"Supplies","s":"Repair and Maintenance Supplies","i":"PARK BLDG MAT.","a":5000},{"f":"0101","d":"0801","c":"Supplies","s":"Repair and Maintenance Supplies","i":"PARKS TOOLS & EQUIP","a":4000},{"f":"0101","d":"0801","c":"Supplies","s":"Other Supplies","i":"PARKS/ JANITORIAL SUPPLIES","a":2500},{"f":"0101","d":"0801","c":"Other Services and Charges","s":"Communication and Transportation","i":"PARKS - TRAVEL/TRAINING","a":500},{"f":"0101","d":"0801","c":"Other Services and Charges","s":"Rentals","i":"PARKS/RENTAL EQUIP.","a":700},{"f":"0101","d":"0801","c":"Other Services and Charges","s":"Other Services and Charges","i":"PARKS/ PROGRAM ENT","a":14000},{"f":"0101","d":"0801","c":"Other Services and Charges","s":"Other Services and Charges","i":"PARKS/ CONT SERVI","a":32000},{"f":"0101","d":"0801","c":"Other Services and Charges","s":"Other Services and Charges","i":"PARKS/ REP & MAINT","a":17000},{"f":"0101","d":"0801","c":"Other Services and Charges","s":"Other Services and Charges","i":"PARKS/EQUIPMENT","a":15000},{"f":"0101","d":"0801","c":"Capital Outlays","s":"Machinery, Equipment, and Vehicles","i":"PARKS / BLDG & EQUIP","a":40000},{"f":"0101","d":"9600","c":"Other Services and Charges","s":"Professional Services","i":"CABLE/CONTRACTUAL SERVICES","a":9000},{"f":"0256","d":"0000","c":"Personal Services","s":"Salaries and Wages","i":"PST/SALARIES - POLICE","a":721000},{"f":"0256","d":"0000","c":"Personal Services","s":"Salaries and Wages","i":"PST / SALARIES - EMS","a":721000},{"f":"0256","d":"0000","c":"Personal Services","s":"Salaries and Wages","i":"PST/POLICE OVERTIME","a":144200},{"f":"0256","d":"0000","c":"Personal Services","s":"Employee Benefits","i":"PST/POLICE/1977 PERF","a":620000},{"f":"0256","d":"0000","c":"Other Services and Charges","s":"Other Services and Charges","i":"PST / AMBULANCE CONTRACTUAL PRINCIPAL (2022, 2023, 2...)","a":234500},{"f":"0256","d":"0000","c":"Other Services and Charges","s":"Other Services and Charges","i":"PST AMBULANCE/INTEREST","a":25191},{"f":"0256","d":"0000","c":"Capital Outlays","s":"Machinery, Equipment, and Vehicles","i":"PST BODY CAMS","a":56000},{"f":"0256","d":"0000","c":"Capital Outlays","s":"Machinery, Equipment, and Vehicles","i":"PST. FLOCK SAFETY CAMS","a":55000},{"f":"0256","d":"0000","c":"Capital Outlays","s":"Machinery, Equipment, and Vehicles","i":"PST / POLICE VEHICLES","a":250000},{"f":"0283","d":"0000","c":"Debt Service","s":"Payments on Bonds and Other Debt","i":"Lease rental payments","a":1077000},{"f":"0341","d":"0000","c":"Other Services and Charges","s":"Insurance","i":"FIRE/RET.INS & HSA & DEATH BENEFIT","a":41200},{"f":"0342","d":"0000","c":"Other Services and Charges","s":"Insurance","i":"POLICE / PENSION TO RET","a":535755},{"f":"0342","d":"0000","c":"Other Services and Charges","s":"Insurance","i":"POLICE/ RET. INS & HSA","a":51000},{"f":"0706","d":"0000","c":"Supplies","s":"Operating Supplies","i":"LRS/GRAVEL/SALT","a":70000},{"f":"0706","d":"0000","c":"Other Services and Charges","s":"Professional Services","i":"LRS/CONT.SERV.","a":80000},{"f":"0706","d":"0000","c":"Capital Outlays","s":"Infrastructure","i":"LRS/STREET ALLEY IMPROVEMENT","a":145000},{"f":"0708","d":"0000","c":"Personal Services","s":"Salaries and Wages","i":"MVH/REG.SAL.","a":510050},{"f":"0708","d":"0000","c":"Personal Services","s":"Salaries and Wages","i":"MVH/TEMP.SAL.","a":25000},{"f":"0708","d":"0000","c":"Personal Services","s":"Other Personal Services","i":"MVH/FICA","a":35600},{"f":"0708","d":"0000","c":"Personal Services","s":"Other Personal Services","i":"MVH/MEDICARE","a":10500},{"f":"0708","d":"0000","c":"Personal Services","s":"Employee Benefits","i":"MVH/ED. & LONG.BEN.","a":30900},{"f":"0708","d":"0000","c":"Supplies","s":"Office Supplies","i":"MVH/OFFICE.MISC.","a":500},{"f":"0708","d":"0000","c":"Supplies","s":"Operating Supplies","i":"MVH/UNIFORMS","a":4500},{"f":"0708","d":"0000","c":"Supplies","s":"Operating Supplies","i":"MVH/FUEL","a":53045},{"f":"0708","d":"0000","c":"Supplies","s":"Operating Supplies","i":"MVH/BIT.MAT.","a":10000},{"f":"0708","d":"0000","c":"Supplies","s":"Repair and Maintenance Supplies","i":"MVH/AUTO.SUPPLIES","a":10000},{"f":"0708","d":"0000","c":"Supplies","s":"Repair and Maintenance Supplies","i":"MVH/SMALL TOOLS & EQUIP.","a":6000},{"f":"0708","d":"0000","c":"Supplies","s":"Other Supplies","i":"MVH/BLDG.MAT.","a":4000},{"f":"0708","d":"0000","c":"Other Services and Charges","s":"Professional Services","i":"MVH/MED.SERV.","a":2000},{"f":"0708","d":"0000","c":"Other Services and Charges","s":"Professional Services","i":"MVH/DRIVER'S LIC. (CDL)","a":2500},{"f":"0708","d":"0000","c":"Other Services and Charges","s":"Repairs and Maintenance","i":"MVH/REP.&MAINT.","a":45000},{"f":"0708","d":"0000","c":"Capital Outlays","s":"Infrastructure","i":"MVH CONT PROJECT","a":90000},{"f":"0708","d":"0000","c":"Capital Outlays","s":"Infrastructure","i":"MVH/ HANNA ARLINGTON","a":0},{"f":"0708","d":"0000","c":"Capital Outlays","s":"Infrastructure","i":"MVH - EMERSON CHURCHMAN RNDBT","a":135000},{"f":"0708","d":"0000","c":"Capital Outlays","s":"Infrastructure","i":"MVH/SIDEWALKS & Paving","a":55000},{"f":"0708","d":"0000","c":"Capital Outlays","s":"Infrastructure","i":"MVH RESTRICTED/CONTRACTUAL","a":299000},{"f":"0708","d":"0000","c":"Capital Outlays","s":"Machinery, Equipment, and Vehicles","i":"MVH/VEHICLES","a":75000},{"f":"1151","d":"0000","c":"Other Services and Charges","s":"Other Services and Charges","i":"LLE/MISC","a":20000},{"f":"1310","d":"0000","c":"Other Services and Charges","s":"Other Services and Charges","i":"Parks nonreverting capital","a":10000},{"f":"9507","d":"0000","c":"Personal Services","s":"Salaries and Wages","i":"POLICE/COMM.SCHOOL POLICING","a":500195},{"f":"9509","d":"0000","c":"Other Services and Charges","s":"Other Services and Charges","i":"OPIOID PROFESSIONAL SERVICES SUPPLIES","a":13300},{"f":"9510","d":"0000","c":"Other Services and Charges","s":"Other Services and Charges","i":"OPIOID PROFESSIONAL SERVICES","a":3300},{"f":"9511","d":"0000","c":"Supplies","s":"Operating Supplies","i":"PERMIT - COMP SOFTWARE","a":1500},{"f":"9511","d":"0000","c":"Other Services and Charges","s":"Professional Services","i":"PERMIT - BUILDING COMMISSIONER","a":10000},{"f":"9511","d":"0000","c":"Other Services and Charges","s":"Professional Services","i":"PERMIT - ELECTRICAL INSPECTOR","a":8000},{"f":"9512","d":"0000","c":"Capital Outlays","s":"Improvements Other Than Building","i":"Improvements other than buildings (wheel tax)","a":225000}],"revenue":[{"f":"0101","code":"R105","n":"Local Option Income Tax (LOIT) for Levy Freeze","h2":327494,"y":654987},{"f":"0101","code":"R110","n":"Casino/Riverboat Distribution","h2":84283,"y":84283},{"f":"0101","code":"R111","n":"Cigarette Tax Distribution","h2":2880,"y":5760},{"f":"0101","code":"R112","n":"Financial Institution Tax Distribution","h2":46091,"y":87575},{"f":"0101","code":"R114","n":"Vehicle/Aircraft Excise Tax Distribution","h2":123170,"y":316811},{"f":"0101","code":"R119","n":"State, Federal, and Local Payments in Lieu of Taxes","h2":0,"y":142196},{"f":"0101","code":"R135","n":"Commercial Vehicle Excise Tax Distribution (CVET)","h2":14990,"y":29980},{"f":"0101","code":"R136","n":"ABC Gallonage Tax Distribution","h2":16388,"y":32777},{"f":"0101","code":"R138","n":"Local Income Tax (LIT) Certified Shares","h2":1419428,"y":3000000},{"f":"0101","code":"R203","n":"Planning, Zoning, and Building Permits and Fees","h2":12000,"y":24000},{"f":"0101","code":"R209","n":"Other Licenses and Permits","h2":32000,"y":76000},{"f":"0101","code":"R210","n":"Cable TV Licenses","h2":45000,"y":114000},{"f":"0101","code":"R408","n":"Emergency Medical Services Fees","h2":580000,"y":1500000},{"f":"0101","code":"R411","n":"Park and Recreation Receipts","h2":12000,"y":30000},{"f":"0101","code":"R414","n":"Federal, State, and Local Reimbursement for Services","h2":1000,"y":6000},{"f":"0101","code":"R423","n":"Other Charges for Services, Sales, and Fees","h2":2000,"y":4000},{"f":"0101","code":"R505","n":"Other Court and Clerk Receipts","h2":180000,"y":180000},{"f":"0101","code":"R906","n":"Refunds and Reimbursements","h2":2500,"y":5000},{"f":"0101","code":"R910","n":"Transfers In - Transferred from Another Fund","h2":1540000,"y":1582000},{"f":"0101","code":"R913","n":"Other Receipts","h2":203446,"y":406892},{"f":"0256","code":"R139","n":"Local Income Tax (LIT) for Public Safety","h2":1419129,"y":2920000},{"f":"0283","code":"R112","n":"Financial Institution Tax Distribution","h2":0,"y":0},{"f":"0283","code":"R114","n":"Vehicle/Aircraft Excise Tax Distribution","h2":14532,"y":0},{"f":"0283","code":"R135","n":"Commercial Vehicle Excise Tax Distribution (CVET)","h2":0,"y":0},{"f":"0341","code":"R902","n":"Earnings on Investments and Deposits","h2":0,"y":0},{"f":"0342","code":"R112","n":"Financial Institution Tax Distribution","h2":0,"y":0},{"f":"0342","code":"R114","n":"Vehicle/Aircraft Excise Tax Distribution","h2":22,"y":0},{"f":"0342","code":"R135","n":"Commercial Vehicle Excise Tax Distribution (CVET)","h2":0,"y":0},{"f":"0342","code":"R414","n":"Federal, State, and Local Reimbursement for Services","h2":177375,"y":420000},{"f":"0706","code":"R113","n":"Local Road and Street Distribution","h2":155013,"y":310026},{"f":"0706","code":"R913","n":"Other Receipts","h2":1000,"y":1000},{"f":"0708","code":"R112","n":"Financial Institution Tax Distribution","h2":0,"y":0},{"f":"0708","code":"R114","n":"Vehicle/Aircraft Excise Tax Distribution","h2":14279,"y":0},{"f":"0708","code":"R116","n":"Motor Vehicle Highway Distribution","h2":313344,"y":626688},{"f":"0708","code":"R135","n":"Commercial Vehicle Excise Tax Distribution (CVET)","h2":0,"y":0},{"f":"0708","code":"R137","n":"Wheel Tax/Surtax Distribution","h2":152360,"y":0},{"f":"1151","code":"R913","n":"Other Receipts","h2":3100,"y":8000},{"f":"1310","code":"R913","n":"Other Receipts","h2":7000,"y":14000},{"f":"9507","code":"R423","n":"Other Charges for Services, Sales, and Fees","h2":228072,"y":423483},{"f":"9507","code":"R913","n":"Other Receipts","h2":0,"y":0},{"f":"9511","code":"R203","n":"Planning, Zoning, and Building Permits and Fees","h2":0,"y":19500},{"f":"9512","code":"R137","n":"Wheel Tax/Surtax Distribution","h2":0,"y":225000}],"fundTotals":{"0061":0,"0101":12671403,"0256":2826891,"0283":1077000,"0341":41200,"0342":586755,"0706":295000,"0708":1403595,"1151":20000,"1310":10000,"9507":500195,"9509":13300,"9510":3300,"9511":19500,"9512":225000}};
+const H = {"years":[2020,2021,2022,2023,2024,2025,2026,2027],"funds":{"0101":[9421970,10197020,10562807,11065879,11559554,12070917,12413939,12671403],"0256":[1944229,1993200,2128161,2146158,2332500,2646124,2728691,2826891],"debt":[229913,236051,236498,121380,0,0,0,0],"0283":[0,0,0,395000,899500,1073000,1077000,1077000],"0341":[382000,389000,0,40000,40000,40000,40000,41200],"0342":[648000,533000,533000,533000,543000,554000,570620,586755],"0706":[595000,518500,556000,556000,556000,490000,476585,295000],"0708":[1622870,1316350,1378713,1418500,1758500,1714900,1592345,1403595],"1151":[40000,40000,40000,40000,40000,40000,20000,20000],"1310":[50000,25000,10000,10000,10000,10000,10000,10000],"9507":[0,0,260000,287845,389061,408000,495240,500195],"opioid":[0,0,0,0,11900,15926,16404,16600],"9511":[0,0,0,0,0,0,0,19500],"9512":[0,0,0,0,0,0,0,225000]},"fundNames":{"0101":"General","0256":"Public Safety Local Income Tax","debt":"Debt Service","0283":"Lease Rental Payment","0341":"Fire Pension","0342":"Police Pension","0706":"Local Road & Street","0708":"Motor Vehicle Highway","1151":"Police Continuing Education","1310":"Park Nonreverting","9507":"School Policing (Home-Rule #8)","opioid":"Opioid Settlement (Home-Rule #10, #11)","9511":"Building & Construction Fees","9512":"Wheel Tax / Surtax"},"printed":[14933982,15248121,15705179,16613762,18140015,19062867,19440824,19693139],"dept":{"0370":{"name":"Police Department","budget":[null,3550828,3653286,3730605,3838825,4080245,4081468,4146663],"actual":[null,3504201,3987112,4307460,null,null,null,null],"cats":{"Personal Services":[3091828,3164386,3231105,3325325,3544745],"Supplies":[177500,182500,187500,192500,196500],"Other Services and Charges":[157700,182500,187500,211000,229000],"Capital Outlay":[123800,123900,124500,110000,110000]}},"0362":{"name":"Fire Department (IFD contract)","budget":[null,3629155,3246610,3344009,3444330,3547660,3654090,3763715],"actual":[null,3659089,3246610,3344009,null,null,null,null],"cats":{"Personal Services":[2986655,0,0,0,0],"Supplies":[195500,0,0,0,0],"Other Services and Charges":[395000,3246610,3344009,3444330,3547660],"Capital Outlay":[52000,0,0,0,0]}},"0301":{"name":"Ambulance / EMS","budget":[null,0,837400,975150,1070900,1030363,1226314,1241467],"actual":[null,0,950796,1593540,null,null,null,null],"cats":{"Personal Services":[0,341500,473250,782400,741863],"Supplies":[0,119000,119500,139500,139500],"Other Services and Charges":[0,337500,341000,103000,103000],"Capital Outlay":[0,39400,41400,46000,46000]}},"0077":{"name":"Board of Public Works & Safety","budget":[null,1806074,1511074,1584594,1624594,1728638,1780129,1815761],"actual":[null,1713767,1602410,1562737,null,null,null,null],"cats":{"Personal Services":[1106574,812674,836594,851594,850438],"Supplies":[0,0,0,0,0],"Other Services and Charges":[667400,666400,696000,723000,828200],"Capital Outlay":[32100,32000,52000,50000,50000]}},"0164":{"name":"City Hall","budget":[null,313740,314540,325500,333500,348250,355925,375334],"actual":[null,263045,254531,255381,null,null,null,null],"cats":{"Personal Services":[0,0,0,0,0],"Supplies":[2500,2500,2500,2500,2750],"Other Services and Charges":[311240,312040,323000,331000,345500],"Capital Outlay":[0,0,0,0,0]}},"0801":{"name":"Parks Department","budget":[null,232312,263541,266541,283397,320091,335646,338338],"actual":[null,221356,257313,251605,null,null,null,null],"cats":{"Personal Services":[132597,148691,160635,167691,173091],"Supplies":[19650,20950,23950,23950,27800],"Other Services and Charges":[70065,62900,69956,76756,79200],"Capital Outlay":[10000,31000,12000,15000,40000]}},"0167":{"name":"Community Center","budget":[null,139455,188945,216127,315494,339256,310532,319041],"actual":[null,137233,185893,215041,null,null,null,null],"cats":{"Personal Services":[98005,141045,165227,259994,276793],"Supplies":[12950,15400,16900,16900,18400],"Other Services and Charges":[28500,32500,34000,38600,34700],"Capital Outlay":[0,0,0,0,0]}},"0165":{"name":"Senior Center","budget":[null,93395,108558,172302,176325,188330,176106,176458],"actual":[null,89157,106565,160475,null,null,null,null],"cats":{"Personal Services":[85123,98158,121152,141075,150830],"Supplies":[3622,4750,5150,8250,10000],"Other Services and Charges":[4650,5650,6000,7000,7500],"Capital Outlay":[0,0,40000,20000,20000]}},"0248":{"name":"City Court","budget":[null,139503,142063,144323,169779,174803,182512,183844],"actual":[null,125978,127546,132627,null,null,null,null],"cats":{"Personal Services":[139328,141888,144148,168629,173653],"Supplies":[25,25,25,1000,1000],"Other Services and Charges":[150,150,150,150,150],"Capital Outlay":[0,0,0,0,0]}},"0041":{"name":"Clerk-Treasurer","budget":[null,136272,137995,142151,141496,142585,144649,144874],"actual":[null,100030,113091,121772,null,null,null,null],"cats":{"Personal Services":[103072,102795,106951,107796,104950],"Supplies":[7500,7500,7500,7000,7060],"Other Services and Charges":[23200,25700,25700,24700,28575],"Capital Outlay":[2500,2000,2000,2000,2000]}},"0044":{"name":"Mayor","budget":[null,94966,97475,102257,97594,104271,106494,107850],"actual":[null,94919,97242,97448,null,null,null,null],"cats":{"Personal Services":[94966,97475,102257,97594,101771],"Supplies":[0,0,0,0,2500],"Other Services and Charges":[0,0,0,0,0],"Capital Outlay":[0,0,0,0,0]}},"0069":{"name":"City Council","budget":[null,51320,51320,51320,51320,52425,51074,49058],"actual":[null,43342,44209,48701,null,null,null,null],"cats":{"Personal Services":[36820,36820,36820,36820,37925],"Supplies":[0,0,0,0,0],"Other Services and Charges":[14500,14500,14500,14500,14500],"Capital Outlay":[0,0,0,0,0]}},"cable":{"name":"Cable / contractual","budget":[null,10000,10000,11000,12000,14000,9000,9000],"actual":[null,9807,10000,8759,null,null,null,null],"cats":{"Personal Services":[0,0,0,0,0],"Supplies":[0,0,0,0,0],"Other Services and Charges":[10000,10000,11000,12000,14000],"Capital Outlay":[0,0,0,0,0]}}},"funcs":[{"k":"ps","n":"Public safety","d":"Police, fire contract, EMS, the public safety income tax fund, pensions, police training and school policing"},{"k":"st","n":"Streets & roads","d":"Motor Vehicle Highway, Local Road & Street, wheel tax"},{"k":"pc","n":"Parks & community","d":"Parks, Senior Center, Community Center, park capital fund"},{"k":"gg","n":"General government","d":"Mayor, Clerk-Treasurer, Council, City Court, City Hall, Board of Works (citywide insurance and benefits), permit fees"},{"k":"db","n":"Debt, leases & other","d":"Debt service, the police station and gun range lease payments, opioid settlement funds"}],"func":{"2021":{"ps":10135183,"st":1834850,"pc":490162,"gg":2551875,"db":236051},"2022":{"ps":10698457,"st":1934713,"pc":571044,"gg":2264467,"db":236498},"2023":{"ps":11096767,"st":1974500,"pc":664970,"gg":2361145,"db":516380},"2024":{"ps":11698616,"st":2314500,"pc":785216,"gg":2430283,"db":911400},"2025":{"ps":12346392,"st":2204900,"pc":857677,"gg":2564972,"db":1088926},"2026":{"ps":12816423,"st":2068930,"pc":832284,"gg":2629783,"db":1093404},"2027":{"ps":13126886,"st":1923595,"pc":843837,"gg":2705221,"db":1093600}},"genRev":{"pt":[4673191,4619319,5254385,4468809,4725782],"it":[2097330,2345404,2406557,3596470,3688956],"ps":[532136,694000,830000,1570000,1540000],"ex":[822227,824364,774610,733564,748099],"fe":[1886561,1656872,2189131,2381576,2381576],"ot":[1107599,738774,882757,417479,417479]},"gen":{"revenue":[11119044,10878731,12337440,13167896,13501891],"spending":[9961922,10983318,12099556,12963104,13430112],"ending":[2439245,2231117,2300908,2505700,2577479],"begin":[1405809,2439245,2231117,2300908,2505700]},"outside":{"sewer":{"revenue":[4511784,4655328,4989668,4941797,4941797],"spending":[4303472,4379774,5546215,4854415,4887759],"ending":[1185321,1460874,904327,991709,1045746]},"storm":{"revenue":[593150,616655,603388,603388,603388],"spending":[617382,574545,684058,603388,603388],"ending":[137117,179227,98557,98557,98557]},"tif":{"revenue":[995723,773682,839376,962906,962906],"spending":[706000,893043,620867,1716312,950000],"ending":[915188,795826,1014336,260930,273836]}}};
+const YRS = H.years;
+const $ = n => "$" + Math.round(n).toLocaleString("en-US");
+const Mf = n => "$" + (n/1e6).toFixed(2) + "M";
+const M1 = n => "$" + (n/1e6).toFixed(1) + "M";
+const K = n => Math.abs(n) >= 1e6 ? Mf(n) : "$" + Math.round(n/1e3).toLocaleString("en-US") + "K";
+const pct = (a,b) => b ? (a-b)/b*100 : null;
+const chg = (a,b) => { const p = pct(a,b); return p == null ? "new" : `<span class="${p>=0?'up':'down'}">${p>=0?'+':''}${p.toFixed(1)}%</span>`; };
+const pctUp = (a,b) => ((a/b-1)*100).toFixed(0) + "%";
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const NS = "http://www.w3.org/2000/svg";
+const el = (t,a,p) => { const e = document.createElementNS(NS,t); for (const k in a) e.setAttribute(k,a[k]); p && p.appendChild(e); return e; };
+const tip = document.getElementById("tip");
+function showTip(ev,html){ tip.innerHTML = html; tip.hidden = false; moveTip(ev); }
+function moveTip(ev){ const w = tip.offsetWidth, h = tip.offsetHeight; let x = ev.clientX+14, y = ev.clientY-h-10; if (x+w > innerWidth-8) x = ev.clientX-w-14; if (y < 8) y = ev.clientY+16; tip.style.left = x+"px"; tip.style.top = y+"px"; }
+function hideTip(){ tip.hidden = true; }
+
+const idx = y => YRS.indexOf(y);
+const TOT = H.printed;                       // per year, 2020..2027
+const FUNC = H.funcs.map((f,i) => ({...f, c: "--s"+(i+1)}));
+const SPEND = YRS.filter(y => y >= 2021).map(y => ({y, s: y === 2027 ? "Advertised" : "Adopted", ...Object.fromEntries(FUNC.map(f => [f.k, H.func[y][f.k]/1e6])), tot: TOT[idx(y)]/1e6}));
+const F27 = H.func[2027], F26 = H.func[2026], F21 = H.func[2021];
+const perRes = Math.round(TOT[7]/14717/10)*10;
+
+document.getElementById("tiles").innerHTML = [
+  [Mf(TOT[7]), "2027 advertised budget, all funds (≈$19.6M as passed)"],
+  ["+" + ((TOT[7]/TOT[0]-1)*100).toFixed(0) + "%", "growth since 2020 (" + Mf(TOT[0]) + ")"],
+  [Math.round(F27.ps/TOT[7]*100) + "%", "of 2027 spending is public safety"],
+  ["≈$" + perRes.toLocaleString("en-US"), "per resident (2020 Census: 14,717)"]
+].map(([v,l]) => `<div class="tile"><span class="v">${v}</span><span class="l">${l}</span></div>`).join("");
+document.getElementById("t2020").textContent = Mf(TOT[0]);
+
+// ---- stacked chart (same look as the Indianapolis explorer)
+function stacked(svgId, data, cats, share, step){
+  const svg = document.getElementById(svgId); svg.innerHTML = "";
+  const W = 760, Ht = 360, L = 56, R = 12, T = 26, B = 46;
+  svg.setAttribute("viewBox", `0 0 ${W} ${Ht}`);
+  const max = share ? 100 : Math.ceil(Math.max(...data.map(d => d.tot))/step)*step;
+  const y = v => T + (Ht-T-B)*(1 - v/max);
+  const gs = share ? 25 : step;
+  for (let v = 0; v <= max; v += gs) {
+    el("line", {x1:L, x2:W-R, y1:y(v), y2:y(v), stroke:css(v===0?"--axis":"--grid"), "stroke-width":1}, svg);
+    el("text", {x:L-8, y:y(v)+4, "text-anchor":"end"}, svg).textContent = share ? v+"%" : "$"+v+"M";
+  }
+  const bw = (W-L-R)/data.length, barW = Math.min(54, bw*.62);
+  data.forEach((d,i) => {
+    const cx = L + bw*i + bw/2; let acc = 0;
+    const g = el("g", {}, svg);
+    cats.forEach((c,ci) => {
+      const v = share ? d[c.k]/d.tot*100 : d[c.k];
+      const y0 = y(acc), y1 = y(acc+v); acc += v;
+      el("rect", {x:cx-barW/2, y:y1, width:barW, height:Math.max(0, y0-y1-(ci<cats.length-1?2:0)), fill:css(c.c), rx:ci===cats.length-1?3:0}, g);
+    });
+    el("text", {x:cx, y:y(share?100:d.tot)-8, "text-anchor":"middle", class:"val"}, svg).textContent = share ? "" : "$"+d.tot.toFixed(1)+"M";
+    el("text", {x:cx, y:Ht-B+18, "text-anchor":"middle", class:"yr"}, svg).textContent = d.y;
+    el("text", {x:cx, y:Ht-B+33, "text-anchor":"middle"}, svg).textContent = d.s;
+    const hit = el("rect", {x:L+bw*i, y:T, width:bw, height:Ht-T-B, fill:"transparent"}, svg);
+    const html = `<b>${d.y}</b> · ${d.basis || d.s}` +
+      cats.slice().reverse().map(c => `<div class="r"><span><i style="background:${css(c.c)}"></i>${c.n}</span><span>$${d[c.k].toFixed(2)}M · ${(d[c.k]/d.tot*100).toFixed(0)}%</span></div>`).join("") +
+      `<div class="r" style="margin-top:3px"><b>Total</b><b>$${d.tot.toFixed(2)}M</b></div>`;
+    hit.addEventListener("pointerenter", e => { svg.querySelectorAll("g").forEach(o => { o.style.opacity = o === g ? 1 : .45; }); showTip(e, html); });
+    hit.addEventListener("pointermove", moveTip);
+    hit.addEventListener("pointerleave", () => { svg.querySelectorAll("g").forEach(o => o.style.opacity = 1); hideTip(); });
+  });
+}
+const legend = (id, cats) => document.getElementById(id).innerHTML = cats.map(c => `<span><i style="background:var(${c.c})"></i>${c.n}</span>`).join("");
+const table = (data, cats, unit) => `<table><thead><tr><th>${unit}</th>${data.map(d=>`<th>${d.y} ${d.s}</th>`).join("")}</tr></thead><tbody>${cats.map(c=>`<tr><td>${c.n}</td>${data.map(d=>`<td>${d[c.k].toFixed(2)}</td>`).join("")}</tr>`).join("")}</tbody><tfoot><tr><td>Total</td>${data.map(d=>`<td>${d.tot.toFixed(2)}</td>`).join("")}</tr></tfoot></table>`;
+function toggle(btnId, boxId, a, b){ const bt = document.getElementById(btnId), x = document.getElementById(boxId); bt.onclick = () => { x.hidden = !x.hidden; bt.setAttribute("aria-expanded", !x.hidden); bt.textContent = x.hidden ? a : b; }; }
+
+let share = false;
+const drawSpend = () => stacked("spendChart", SPEND, FUNC, share, 5);
+document.getElementById("modeDollars").onclick = () => { share = false; sync(); };
+document.getElementById("modeShare").onclick = () => { share = true; sync(); };
+function sync(){ document.getElementById("modeDollars").setAttribute("aria-pressed", !share); document.getElementById("modeShare").setAttribute("aria-pressed", share); drawSpend(); }
+legend("spendLegend", FUNC); drawSpend();
+document.getElementById("spendTable").innerHTML = table(SPEND, FUNC, "$ millions");
+toggle("spendTableBtn", "spendTable", "Show as table", "Hide table");
+document.getElementById("funcDefs").innerHTML = FUNC.map(f => `<li><i style="background:var(${f.c})"></i><span><b>${f.n}</b> <span class="amtc">${M1(F27[f.k])} in 2027 (${(F27[f.k]/TOT[7]*100).toFixed(0)}%, up ${pctUp(F27[f.k],F21[f.k])} from 2021)</span><br><span class="def">${f.d}.</span></span></li>`).join("");
+
+// ---- change 2026 -> 2027
+(function(){
+  const rows = FUNC.map(f => ({n:f.n, c:f.c, a:F26[f.k], b:F27[f.k], d:F27[f.k]-F26[f.k]})).sort((x,y) => y.d-x.d);
+  const svg = document.getElementById("deltaChart"); svg.innerHTML = "";
+  const W = 760, rowH = 34, T = 8, L = 150, R = 170, Ht = T + rows.length*rowH + 6;
+  svg.setAttribute("viewBox", `0 0 ${W} ${Ht}`);
+  const posMax = Math.max(1, ...rows.map(r => r.d)), negMax = Math.max(0, ...rows.map(r => -r.d));
+  const span = W-L-R, scale = span/(posMax+negMax), zero = L + negMax*scale;
+  el("line", {x1:zero, x2:zero, y1:T, y2:Ht-6, stroke:css("--axis")}, svg);
+  rows.forEach((r,i) => {
+    const cy = T + i*rowH + rowH/2, w = Math.max(2, Math.abs(r.d)*scale);
+    el("text", {x:L-10, y:cy+4, "text-anchor":"end", class:"yr"}, svg).textContent = r.n;
+    el("rect", {x:r.d >= 0 ? zero : zero-w, y:cy-9, width:w, height:18, fill:css(r.c), rx:3}, svg);
+    el("text", {x:r.d >= 0 ? zero+w+8 : zero+8, y:cy+4, class:"val"}, svg).textContent = `${r.d>=0?"+":"−"}${K(Math.abs(r.d))} (${r.d>=0?"+":"−"}${Math.abs(r.d/r.a*100).toFixed(1)}%)`;
+  });
+  const tb = TOT[7], ta = TOT[6];
+  document.getElementById("deltaTable").innerHTML = `<table><thead><tr><th>Function</th><th>2026 adopted</th><th>2027 advertised</th><th>Change</th><th>2027 share</th></tr></thead><tbody>` +
+    rows.map(r => `<tr><td>${r.n}</td><td>${Mf(r.a)}</td><td>${Mf(r.b)}</td><td class="${r.d>=0?"up":"down"}">${r.d>=0?"+":"−"}${Mf(Math.abs(r.d))}</td><td>${(r.b/tb*100).toFixed(1)}%</td></tr>`).join("") +
+    `</tbody><tfoot><tr><td>Total</td><td>${Mf(ta)}</td><td>${Mf(tb)}</td><td class="up">+${Mf(tb-ta)}</td><td>100%</td></tr></tfoot></table>`;
+  document.getElementById("deltaNote").textContent = "Streets and roads is the one function that shrinks: the Local Road & Street fund falls from $476,585 to $295,000 and Motor Vehicle Highway from $1.59M to $1.40M, partly offset by a new $225,000 wheel tax line.";
+})();
+
+// ---- funds
+const FUNDS = Object.keys(H.fundNames).filter(f => H.funds[f][7] > 0).sort((a,b) => H.funds[b][7]-H.funds[a][7]);
+const maxF = Math.max(...FUNDS.map(f => H.funds[f][7]));
+document.getElementById("funds").innerHTML =
+  `<div class="bar-row head"><span>Fund</span><span></span><span class="r">2027 advertised</span><span class="r">2026 adopted</span><span class="r">Change</span></div>` +
+  FUNDS.map(f => { const a = H.funds[f][7], b = H.funds[f][6];
+    return `<div class="bar-row"><span class="name"><b>${esc(H.fundNames[f])}</b></span>
+      <span class="dual"><span class="track"><span style="width:${a/maxF*100}%;background:var(--s1)"></span></span><span class="track"><span style="width:${b/maxF*100}%;background:var(--axis)"></span></span></span>
+      <span class="r a27"><b>${$(a)}</b></span><span class="r a25">${b ? $(b) : "—"}</span><span class="r chg">${b ? chg(a,b) : "new"}</span></div>`; }).join("");
+document.getElementById("fundTable").innerHTML = `<table><thead><tr><th>Fund</th>${YRS.map(y=>`<th>${y}</th>`).join("")}</tr></thead><tbody>` +
+  Object.keys(H.fundNames).map(f => `<tr><td>${esc(H.fundNames[f])}</td>${H.funds[f].map(v=>`<td>${v ? $(v) : "—"}</td>`).join("")}</tr>`).join("") +
+  `</tbody><tfoot><tr><td>Total</td>${TOT.map(v=>`<td>${$(v)}</td>`).join("")}</tr></tfoot></table>`;
+toggle("fundTableBtn", "fundTable", "Show every year as a table", "Hide table");
+
+// ---- revenue
+const RC = [{k:"pt",n:"Property tax",c:"--s1"},{k:"it",n:"Income taxes",c:"--s2"},{k:"ex",n:"State & excise distributions",c:"--s3"},{k:"fe",n:"Fees & charges",c:"--s4"},{k:"ot",n:"Transfers & other",c:"--s5"}];
+const REV = [0,1,2,3,4].map(i => { const r = {y:2021+i, s:i<3?"Actual":"Budget", basis:i<3?"actual receipts":"budget estimate"};
+  RC.forEach(c => r[c.k] = (c.k === "it" ? H.genRev.it[i] + H.genRev.ps[i] : H.genRev[c.k][i])/1e6);
+  r.tot = H.gen.revenue[i]/1e6; return r; });
+legend("revLegend", RC); stacked("revChart", REV, RC, false, 2);
+document.getElementById("revTable").innerHTML = table(REV, RC, "$ millions");
+toggle("revTableBtn", "revTable", "Show as table", "Hide table");
+document.getElementById("taxBox").innerHTML = `<table><tbody>
+  <tr><td>Levy in the 2027 notice</td><td><b>$10,155,322</b></td></tr>
+  <tr><td>Adopted levy, 2025</td><td>$9,757,353 (${chg(10155322,9757353)})</td></tr>
+  <tr><td>Adopted levy, 2026</td><td>$10,162,000</td></tr>
+  <tr><td>General Fund levy, 2027 notice</td><td>$8,104,729</td></tr>
+  <tr><td>Estimated civil maximum levy</td><td>$9,669,896</td></tr>
+  <tr><td>Property tax cap credit estimate</td><td>$3,489,900</td></tr>
+</tbody></table><p class="note">The cap credit is the form's estimate of tax the city can't collect because of the state's property tax caps.</p>`;
+const rv = {}; D.revenue.forEach(r => { if (r.y) rv[r.n] = (rv[r.n]||0) + r.y; });
+const rl = Object.entries(rv).sort((a,b) => b[1]-a[1]), maxR = rl[0][1];
+document.getElementById("revList").innerHTML = rl.slice(0,10).map(([n,v]) => `<div class="bar-row" style="grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) 92px;padding:6px 0;border-top:0"><span class="name">${esc(n)}</span><span class="track"><span style="width:${v/maxR*100}%;background:var(--s3)"></span></span><span class="r"><b>${K(v)}</b></span></div>`).join("") + `<p class="note">Top 10 of ${rl.length} sources. Total on Form 2: $13,249,958.</p>`;
+
+// ---- departments and funds
+const items = D.items;
+const lines = (f, d) => items.filter(r => r.f === f && (d == null || r.d === d));
+const E = [];
+const dpt = (code, fn, text, rows) => E.push({id:"d"+code, n:H.dept[code].name, fn, series:H.dept[code].budget, actual:H.dept[code].actual, rows: rows || lines("0101", code), text, general:true});
+dpt("0370","ps","The largest General Fund department. The fiscal plan shows police pay partly reimbursed to the General Fund from the Public Safety Local Income Tax fund, which is why actual police spending has run above this adopted figure.");
+dpt("0362","ps","Since December 25, 2021 this is Beech Grove's payment to the Indianapolis Fire Department under a 20-year interlocal agreement: $3,246,610 in 2022, rising about 3% a year. Beech Grove's own firefighters became IFD employees. The 2021 budget still carried the department's own payroll and supplies.");
+dpt("0301","ps","Beech Grove kept its own ambulance service when fire merged into IFD. A separate EMS department first appears in the 2022 budget; EMS fees (an estimated $1.5 million for 2027) are the General Fund's largest fee revenue.");
+dpt("0077","gg","Carries citywide costs besides its own staff: medical insurance, liability insurance, city attorneys and PERF contributions.");
+dpt("0164","gg","Utilities and upkeep for City Hall.");
+dpt("0801","pc","The Parks Department.");
+dpt("0167","pc","The Community Center. Mirror Indy reported the 2026 budget cut about $28,700 here; the 2027 budget adds money to fund raises for the lowest-paid staff.");
+dpt("0165","pc","The Senior Center. Mirror Indy reported about $17,800 forgone in the 2026 budget.");
+dpt("0248","gg","City Court.");
+dpt("0041","gg","The Clerk-Treasurer's office.");
+dpt("0044","gg","The Mayor's office.");
+dpt("0069","gg","The Common Council.");
+dpt("cable","gg","Cable contractual services.", lines("0101","9600"));
+const fundEntry = (id, name, fn, key, filter, text) => E.push({id:"f"+id, n:name, fn, series:H.funds[key], rows: lines(filter), text, general:false});
+fundEntry("0256","Public Safety Local Income Tax fund","ps","0256","0256","Local income tax earmarked for public safety, a home-rule fund until 2025. It pays police and EMS salaries (booked in the General Fund), PERF, ambulance lease and principal, body cameras, police vehicles and a $55,000 \"Flock Safety cams\" line.");
+fundEntry("0283","Lease Rental Payment fund","db","0283","0283","Lease payments on the police station (a 2022 lease, $8.4 million principal) and the police gun range (a 2023 lease, $4.35 million principal), about $1.07 million a year, per the city's 2024 fiscal plan.");
+fundEntry("0708","Motor Vehicle Highway fund","st","0708","0708","State gas tax and wheel tax money for streets, sidewalks and highway staff. Mirror Indy reported the 2026 budget cut over $122,000 here.");
+fundEntry("0706","Local Road & Street fund","st","0706","0706","State road distribution money for street and alley work. The 2027 budget is half its 2020 level.");
+fundEntry("9512","Wheel tax / surtax fund","st","9512","9512","New in the 2027 budget: $225,000 for improvements other than buildings.");
+fundEntry("0342","Police Pension fund","ps","0342","0342","Pension payments to retired officers.");
+fundEntry("0341","Fire Pension fund","ps","0341","0341","Retiree insurance, HSA and death benefits for former Beech Grove firefighters.");
+fundEntry("9507","School policing (Home-Rule Fund #8)","ps","9507","9507","Police officers placed in schools. The Council's 2026 summary labels this fund \"SROs\"; Form 2 shows its revenue as charges for services.");
+fundEntry("1151","Police continuing education fund","ps","1151","1151","Police training. Cut in half for 2026.");
+fundEntry("1310","Park nonreverting capital fund","pc","1310","1310","Small park capital fund.");
+fundEntry("9511","Building & construction fees fund","gg","9511","9511","Permit software and building and electrical inspectors.");
+E.push({id:"fop", n:"Opioid settlement funds (Home-Rule #10, #11)", fn:"db", series:H.funds.opioid, rows:[...lines("9509"), ...lines("9510")], text:"Opioid settlement money.", general:false});
+E.forEach(e => { e.a = e.series[7]; e.b = e.series[6]; e.d = e.a - (e.b||0); e.p = e.b ? e.d/e.b : (e.a ? 9 : 0); });
+let fnFilter = "all", openId = null;
+document.getElementById("fnChips").innerHTML = [{k:"all",n:"All"}, ...FUNC].map(c => `<button type="button" class="chip" aria-pressed="${c.k==="all"}" data-fn="${c.k}">${c.c ? `<i style="background:var(${c.c})"></i>` : ""}${c.n}</button>`).join("");
+document.getElementById("fnChips").addEventListener("click", ev => { const b = ev.target.closest(".chip"); if (!b) return; fnFilter = b.dataset.fn; document.querySelectorAll("#fnChips .chip").forEach(x => x.setAttribute("aria-pressed", x === b)); renderDepts(); });
+document.getElementById("sortSel").onchange = () => renderDepts();
+const FC = Object.fromEntries(FUNC.map(f => [f.k, f.c]));
+function mini(e){
+  const W = 360, Ht = 150, L = 46, R = 6, T = 10, B = 28;
+  const ys = YRS.map((y,i) => [y, e.series[i]]).filter(([y,v]) => v != null && y >= (e.general ? 2021 : 2020));
+  const mx = Math.max(...ys.map(a => a[1]), 1);
+  let s = `<svg viewBox="0 0 ${W} ${Ht}" role="img" aria-label="${esc(e.n)} budget by year">`;
+  const bw = (W-L-R)/ys.length;
+  [0, .5, 1].forEach(t => { const yy = T+(Ht-T-B)*(1-t); s += `<line x1="${L}" x2="${W-R}" y1="${yy}" y2="${yy}" stroke="${css("--grid")}"/><text x="${L-5}" y="${yy+4}" text-anchor="end">${K(mx*t)}</text>`; });
+  ys.forEach(([y,v],i) => { const h = (Ht-T-B)*v/mx, x = L+bw*i+bw*.18; s += `<rect x="${x}" y="${T+(Ht-T-B)-h}" width="${bw*.64}" height="${Math.max(h,0)}" rx="2" fill="${y===2027 ? css("--accent") : css(FC[e.fn])}"><title>${y}: ${$(v)}</title></rect><text x="${x+bw*.32}" y="${Ht-10}" text-anchor="middle">${String(y).slice(2)}</text>`; });
+  return s + "</svg>";
+}
+function detail(e){
+  const cats = {}; e.rows.forEach(r => { const k = r.c === "Other Services and Charges" ? "Other services & charges" : r.c; cats[k] = (cats[k]||0) + r.a; });
+  const tot = e.rows.reduce((a,r) => a+r.a, 0), ck = Object.keys(cats).sort((a,b) => cats[b]-cats[a]), cc = ["--s1","--s2","--s3","--s4","--s5"];
+  const act = e.actual && e.actual.some(v => v != null);
+  const yrsTbl = `<table><thead><tr><th>Year</th><th>Budget</th>${act?"<th>Actually spent</th>":""}</tr></thead><tbody>` +
+    YRS.map((y,i) => e.series[i] != null && (e.series[i] || e.general) && y >= (e.general ? 2021 : 2020) ? `<tr><td>${y}</td><td>${$(e.series[i])}</td>${act ? `<td>${e.actual[i] != null ? $(e.actual[i]) : "—"}</td>` : ""}</tr>` : "").join("") + `</tbody></table>`;
+  const top = e.rows.slice().sort((a,b) => b.a-a.a);
+  return `<div class="detail"><p class="sum">${esc(e.text)}</p>
+    <div class="dgrid">
+      <div class="card mini"><h4>Budget by year</h4>${mini(e)}${yrsTbl}</div>
+      <div class="card"><h4>How the 2027 money is split</h4>
+        <div class="stackbar">${ck.map((k,i) => `<span style="width:${cats[k]/tot*100}%;background:var(${cc[i%5]})" title="${esc(k)}"></span>`).join("")}</div>
+        <div class="klegend">${ck.map((k,i) => `<span><i style="background:var(${cc[i%5]})"></i>${esc(k)} ${(cats[k]/tot*100).toFixed(0)}%</span>`).join("")}</div>
+        <h4 style="margin-top:10px">All ${e.rows.length} line items, 2027</h4>
+        <div class="tbl-wrap"><table><tbody>${top.map(r => `<tr><td>${esc(r.i)}<br><small class="note">${esc(r.s)}</small></td><td>${$(r.a)}</td></tr>`).join("")}</tbody></table></div>
+      </div></div></div>`;
+}
+function renderDepts(){
+  const sort = document.getElementById("sortSel").value;
+  const rows = E.filter(e => (fnFilter === "all" || e.fn === fnFilter) && e.a > 0);
+  rows.sort((x,y) => sort === "n" ? x.n.localeCompare(y.n) : sort === "d" ? y.d-x.d : sort === "p" ? y.p-x.p : y.a-x.a);
+  const mx = Math.max(...rows.map(r => r.a), 1);
+  document.getElementById("deptList").innerHTML = rows.map(e => { const o = openId === e.id;
+    return `<div class="dept${o?" open":""}" id="d-${e.id}"><button type="button" class="dept-btn" aria-expanded="${o}" data-id="${e.id}">
+      <span class="dept-name"><b>${esc(e.n)}</b><small>${esc(FUNC.find(f => f.k === e.fn).n)} · ${e.general ? "General Fund" : "Own fund"}</small></span>
+      <span class="track"><span style="width:${e.a/mx*100}%;background:var(${FC[e.fn]})"></span></span>
+      <span class="amt">${$(e.a)}</span><span class="chg">${e.b ? chg(e.a, e.b) : "new"} <small class="note">vs 2026</small></span><span class="caret">▸</span></button>${o ? detail(e) : ""}</div>`; }).join("");
+}
+document.getElementById("deptList").addEventListener("click", ev => { const b = ev.target.closest(".dept-btn"); if (!b) return; openId = openId === b.dataset.id ? null : b.dataset.id; renderDepts(); });
+renderDepts();
+
+// ---- search
+const sel = document.getElementById("fundSel");
+sel.innerHTML = `<option value="">All funds</option>` + Object.keys(D.funds).map(f => `<option value="${f}">${esc(D.funds[f])}</option>`).join("");
+document.getElementById("itemCount").textContent = items.length;
+function renderItems(){
+  const q = document.getElementById("q").value.trim().toLowerCase(), f = sel.value;
+  const hit = items.filter(r => (!f || r.f === f) && (!q || (r.i+" "+r.s+" "+D.depts[r.d]+" "+D.funds[r.f]).toLowerCase().includes(q))).sort((a,b) => b.a-a.a);
+  document.getElementById("itemRows").innerHTML = hit.slice(0,50).map(r => `<tr><td>${esc(D.funds[r.f])}</td><td>${r.d==="0000"||r.d==="9600"?"—":esc(D.depts[r.d])}</td><td>${esc(r.i)}</td><td>${esc(r.s)}</td><td>${$(r.a)}</td></tr>`).join("") || `<tr><td colspan="5">No matches.</td></tr>`;
+  document.getElementById("itemFoot").textContent = `${hit.length} matching lines`;
+  document.getElementById("itemSum").textContent = $(hit.reduce((a,r) => a+r.a, 0));
+  document.getElementById("itemMore").textContent = hit.length > 50 ? `Showing the largest 50 of ${hit.length}. Narrow the search to see the rest.` : "";
+}
+document.getElementById("q").addEventListener("input", renderItems); sel.addEventListener("change", renderItems);
+renderItems();
+
+// ---- reading the numbers
+const g = H.gen, ow = H.outside, fire = H.dept["0362"].budget;
+document.getElementById("reading").innerHTML = [
+  `<b>Growth.</b> The adopted budget is up ${pctUp(TOT[7],TOT[0])} since 2020 (${Mf(TOT[0])} to ${Mf(TOT[7])}), about two-thirds of that by 2024: the budget jumped ${pctUp(TOT[4],TOT[3])} that year alone, with every large fund growing, led by the General Fund (+$494K), debt and lease payments (+$383K) and Motor Vehicle Highway (+$340K). Growth has slowed since: ${((TOT[5]/TOT[4]-1)*100).toFixed(1)}% in 2025, ${((TOT[6]/TOT[5]-1)*100).toFixed(1)}% in 2026 and ${((TOT[7]/TOT[6]-1)*100).toFixed(1)}% in 2027.`,
+  `<b>Public safety is two-thirds of the budget</b> (${Math.round(F27.ps/TOT[7]*100)}% in 2027, up ${pctUp(F27.ps,F21.ps)} from 2021). Parks and community grew fastest of the service functions (up ${pctUp(F27.pc,F21.pc)}), general government barely moved (up ${pctUp(F27.gg,F21.gg)}), and streets peaked at ${Mf(H.func[2024].st)} in 2024 and is down to ${Mf(F27.st)}.`,
+  `<b>The fire line is a contract.</b> Since the December 2021 merger, ${Mf(fire[6])} (2026) and ${Mf(fire[7])} (2027) go to the Indianapolis Fire Department. The payment started at $3,246,610 in 2022 and rises about 3% a year, ${pctUp(fire[7],fire[2])} higher by 2027. The agreement runs 20 years.`,
+  `<b>Lease payments are a new fixed cost.</b> Police station and gun range leases started in 2023 and now cost about $1.08 million a year, up from $236,000 of old bond payments in 2021.`,
+  `<b>Actual spending runs above the adopted budget.</b> In the city's own plan, General Fund spending in 2023 was ${M1(g.spending[2])} against an adopted ${M1(H.funds["0101"][3])}, because ${M1(1195278)} of additional appropriations (police and EMS pay from the public safety income tax fund) were added during the year. The 2024 and 2025 budgets plan for the same pattern.`,
+  `<b>The General Fund cushion.</b> It ended 2021 with ${M1(g.ending[0])}, ${M1(g.ending[2])} at the end of 2023 (about ${(g.ending[2]/g.spending[2]*100).toFixed(0)}% of that year's spending) and is planned at ${M1(g.ending[4])} for 2025. 2022 was the one year spending (${Mf(g.spending[1])}) topped revenue (${Mf(g.revenue[1])}), by about $${Math.round((g.spending[1]-g.revenue[1])/1e3)}K. These are the city's draft plan numbers, not audited figures.`,
+  `<b>Property tax is the pressure point.</b> Mirror Indy reports Senate Enrolled Act 1 (2025) cuts the property tax revenue the city can count on, with the effect growing each year. The 2027 notice estimates a <b>$3.49 million</b> property tax cap credit. The 2026 budget was presented at $20.05 million and the Council cut $606,801 to pass $19.44 million. For 2027, city staff get 1% raises (3% in 2026), elected and appointed officials gave up their raises for a second year, and the lowest-paid staff got roughly 4% to 6%.`,
+  `<b>Growth is helping, for now.</b> Assessed value is expected to top $848 million in 2027, up 8.6% from 2026, and Mayor Jim Coffman said that "will allow us to stretch our dollars another year." Shortfall estimates range from $600,000 to $1.2 million (a 2025 estimate cited by Mirror Indy) to $3 million a year or more (financial adviser Jeff Peters), and they measure different things. Police and EMS union contracts ran through 2026, so those negotiations drive the next budget.`,
+  `<b>Not in these totals:</b> the sewer utility (${M1(ow.sewer.spending[2])} spent in 2023 against ${M1(ow.sewer.revenue[2])} of revenue, its fund balance down from ${M1(ow.sewer.ending[1])} to ${M1(ow.sewer.ending[2])}), stormwater (${M1(ow.storm.spending[2])} spent in 2023) and the TIF fund (${M1(ow.tif.spending[2])}), all from the fiscal plan's actuals. The sewer pays the General Fund a return on investment and a payment in lieu of taxes, part of "Transfers and other" above. Beech Grove schools, the library and Marion County are separate governments.`
+].map(t => `<li>${t}</li>`).join("");
+</script>
+
+</body>
+</html>

@@ -27,7 +27,7 @@ def head(title, desc):
 '''
 
 def bar(current):
-    links = [("/", "All docs", "home"), ("/budget", "City budget", "budget"), ("/flock", "Flock timeline", "flock"), ("/flock-cancellations", "How cities dropped Flock", "cancel"), ("/council-votes", "Council votes", "votes"), ("/council-quiz", "Councilor quiz", "quiz")]
+    links = [("/", "All docs", "home"), ("/budget", "City budget", "budget"), ("/beech-grove-budget", "Beech Grove budget", "bg"), ("/flock", "Flock timeline", "flock"), ("/flock-cancellations", "How cities dropped Flock", "cancel"), ("/council-votes", "Council votes", "votes"), ("/council-quiz", "Councilor quiz", "quiz")]
     cur = ' aria-current="page"'
     nav = "".join(f'<a href="{h}"{cur if k == current else ""}>{t}</a>' for h, t, k in links)
     return f'<header class="site-bar"><a class="brand" href="/">Indy AI Research Docs</a><nav aria-label="Site">{nav}</nav></header>'
@@ -101,6 +101,25 @@ budget = (head("Indianapolis Budget Explorer", "Nine years of Indianapolis and M
           + b.split("<style>", 1)[0] + "<style>" + b.split("<style>", 1)[1].split("</style>", 1)[0] + "</style>\n</head>\n<body>\n"
           + b.split("</style>", 1)[1] + "\n</body>\n</html>\n")
 (ROOT / "budget" / "index.html").write_text(theme(budget, '<div class="wrap"', "City Budget"))
+
+# ---------- Beech Grove budget page ----------
+# Data: _src/beech-grove-data/data.json (from make_data.py, parsed from the city's own Form 1/Form 2 PDFs),
+# embedded inline. The shared stylesheet is lifted from the Indianapolis budget page so the two stay in step.
+BG_UPDATED = "October 21, 2026"
+bg = (SRC / "beech-grove.html").read_text()
+bg = bg.replace("/*BUDGET_CSS*/", (SRC / "budget.html").read_text().split("<style>", 1)[1].split("</style>", 1)[0])
+bg = bg.replace("__BG_DATA__", (SRC / "beech-grove-data" / "data.json").read_text()).replace("__BG_HIST__", (SRC / "beech-grove-data" / "history.json").read_text())
+bg = re.sub(r"<title>.*?</title>", "", bg, count=1)
+bg = re.sub(r'<link rel="preconnect"[^>]*>\s*<link rel="stylesheet" href="https://fonts.googleapis.com[^>]*>', "", bg, count=1)
+bg = bg.replace("padding-inline:16px;padding-block:28px 56px", "padding-inline:16px;padding-block:0 56px")
+bg = "<style>" + bg.split("<style>", 1)[1]
+bg = bg.replace("<header>", '<div class="wrap" style="padding-top:28px">\n<header>', 1)
+bg = bg.replace('<div class="tip" id="tip" hidden></div>', FOOT + '\n</div>\n<div class="tip" id="tip" hidden></div>', 1)
+bg_page = (head("Beech Grove Budget Explorer", "Beech Grove, Indiana's civil city budget, 2020 to 2027: spending by function, revenue by source, and every department and fund line by line.")
+           + bg.split("<style>", 1)[0] + "<style>" + bg.split("<style>", 1)[1].split("</style>", 1)[0] + "</style>\n</head>\n<body>\n"
+           + bar("bg") + notice("/beech-grove-budget", BG_UPDATED) + bg.split("</style>", 1)[1] + "\n</body>\n</html>\n")
+(ROOT / "beech-grove-budget").mkdir(exist_ok=True)
+(ROOT / "beech-grove-budget" / "index.html").write_text(theme(bg_page, '<div class="wrap"', "Beech Grove Budget"))
 
 # ---------- Flock cancellations page ----------
 # Self-contained page with its own styles, script and footer. Served as-is apart from the
@@ -248,6 +267,12 @@ home_body = f'''<main class="home">
       <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {BUDGET_UPDATED}</span></div>
       <h2>Indianapolis Budget Explorer</h2>
       <p>Nine years of city-county spending, revenue by source, and a clickable breakdown of all 35 departments in the $1.898B 2027 budget the Council passed Oct 19: where each one's money comes from and what it pays for.</p>
+      <span class="go">Open the explorer →</span>
+    </a>
+    <a class="card" href="/beech-grove-budget">
+      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {BG_UPDATED}</span></div>
+      <h2>Beech Grove Budget Explorer</h2>
+      <p>Eight years of Beech Grove's civil budget, spending by function and revenue by source, plus a line-by-line look at every department and fund in the $19.7M 2027 budget.</p>
       <span class="go">Open the explorer →</span>
     </a>
     <a class="card" href="/flock">

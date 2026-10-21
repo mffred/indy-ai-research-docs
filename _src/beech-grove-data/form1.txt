@@ -1,0 +1,2880 @@
+Prescribed by the Department of Local Government Finance           
+Approved by the State Board of Accounts
+       Budget Form No. 1 
+Budget Form 1 - Budget Estimate
+Year
+: 
+2027
+    
+County
+: 
+Marion
+    
+Unit
+: 
+0312-BEECH GROVE CIVIL CITY
+ 
+Fund
+Department
+Category
+Sub-Category
+Line Item 
+Code
+Line Item
+Advertised
+Adopted
+0061-RAINY DAY
+0000 - No 
+Department
+Other Services 
+and Charges
+Other Services and 
+Charges
+4438999600.100 
+RAINY DAY 
+/MISC. 
+DISBURSEME
+NT 
+$0
+$0
+0061-RAINY DAY Total
+$0
+$0
+0101-GENERAL
+0041 - CLERK-
+TREASURER 
+(CITY/TOWN 
+UNITS ONLY)
+Personal 
+Services
+Salaries and 
+Wages
+1101002111.000 
+CLERK-TREAS. 
+SALARY 
+$37,539
+$37,539
+0101-GENERAL
+0041 - CLERK-
+TREASURER 
+(CITY/TOWN 
+UNITS ONLY)
+Personal 
+Services
+Salaries and 
+Wages
+1101002113.000 
+CLERK-
+TREAS./REG.S
+AL. 
+$60,922
+$60,922
+0101-GENERAL
+0041 - CLERK-
+TREASURER 
+(CITY/TOWN 
+UNITS ONLY)
+Personal 
+Services
+Salaries and 
+Wages
+1101002115.000 
+CLERK 
+TREAS/EMP 
+LONGEVITY 
+$2,400
+$2,400
+0101-GENERAL
+0041 - CLERK-
+TREASURER 
+(CITY/TOWN 
+UNITS ONLY)
+Personal 
+Services
+Other Personal 
+Services
+1101002131.000 
+CLERK-
+TREAS./FICA 
+$6,300
+$6,300
+0101-GENERAL
+0041 - CLERK-
+TREASURER 
+(CITY/TOWN 
+UNITS ONLY)
+Personal 
+Services
+Other Personal 
+Services
+1101002133.000 
+CLERK-
+TREAS./MEDIC
+ARE 
+$1,700
+$1,700
+0101-GENERAL
+0041 - CLERK-
+TREASURER 
+(CITY/TOWN 
+UNITS ONLY)
+Supplies
+Office Supplies
+1101002210.000
+CLERK-
+TREAS./OFFICE
+.MISC.
+$2,575
+$2,575
+0101-GENERAL
+0041 - CLERK-
+TREASURER 
+(CITY/TOWN 
+UNITS ONLY)
+Supplies
+Repair and 
+Maintenance 
+Supplies
+1101002361.000
+CLERK-
+TREAS./REP.& 
+MAINT.
+$2,060
+$2,060
+0101-GENERAL
+0041 - CLERK-
+TREASURER 
+(CITY/TOWN 
+UNITS ONLY)
+Supplies
+Other Supplies
+1101002220.310
+CLERK 
+TREAS./JANIT
+ORIAL
+$2,500
+$2,500
+0101-GENERAL
+0041 - CLERK-
+TREASURER 
+(CITY/TOWN 
+UNITS ONLY)
+Other Services 
+and Charges
+Professional 
+Services
+1101002310.000
+CLERK-
+TREAS./ATTY.F
+EES
+$5,000
+$5,000
+0101-GENERAL
+0041 - CLERK-
+TREASURER 
+(CITY/TOWN 
+UNITS ONLY)
+Other Services 
+and Charges
+Professional 
+Services
+1101002310.001
+CLERK-
+TREAS./PROF.
+SERV.
+$15,150
+$15,150
+0101-GENERAL
+0041 - CLERK-
+TREASURER 
+(CITY/TOWN 
+UNITS ONLY)
+Other Services 
+and Charges
+Professional 
+Services
+1101002390.000
+CLERK-
+TREAS./ORG.
+MEMB.
+$100
+$100
+0101-GENERAL
+0041 - CLERK-
+TREASURER 
+(CITY/TOWN 
+UNITS ONLY)
+Other Services 
+and Charges
+Communication 
+and 
+Transportation
+1101002320.001
+CLERK-
+TREAS./TRAVE
+L EXPENSE
+$500
+$500
+0101-GENERAL
+0041 - CLERK-
+TREASURER 
+(CITY/TOWN 
+UNITS ONLY)
+Other Services 
+and Charges
+Communication 
+and 
+Transportation
+1101002322.000
+CLERK-
+TREAS./POSTA
+GE CITY WIDE
+$3,502
+$3,502
+Page 1
+Generated: on 09/22/2026 at 12:40:21 PM
+
+=====PAGE=====
+0101-GENERAL
+0041 - CLERK-
+TREASURER 
+(CITY/TOWN 
+UNITS ONLY)
+Other Services 
+and Charges
+Printing and 
+Advertising
+1101002332.000
+CLERK-
+TREAS./LEGAL 
+PUB.
+$2,626
+$2,626
+0101-GENERAL
+0041 - CLERK-
+TREASURER 
+(CITY/TOWN 
+UNITS ONLY)
+Capital Outlays
+Machinery, 
+Equipment, and 
+Vehicles
+1101002440.006
+COPIER -
+LEASE
+$2,000
+$2,000
+0101-GENERAL
+0044 - MAYOR
+Personal 
+Services
+Salaries and 
+Wages
+1101001111.000 
+MAYOR'S 
+SALARY 
+$36,791
+$36,791
+0101-GENERAL
+0044 - MAYOR
+Personal 
+Services
+Salaries and 
+Wages
+1101001113.000 
+MAYOR/REG.S
+AL. 
+$57,834
+$57,834
+0101-GENERAL
+0044 - MAYOR
+Personal 
+Services
+Other Personal 
+Services
+1101001131.000 
+MAYOR/FICA 
+$6,100
+$6,100
+0101-GENERAL
+0044 - MAYOR
+Personal 
+Services
+Other Personal 
+Services
+1101001133.000
+MAYOR/MEDI
+CARE
+$1,550
+$1,550
+0101-GENERAL
+0044 - MAYOR
+Personal 
+Services
+Employee Benefits
+1101001115.000 
+MAYOR/ED. & 
+LONG. BEN. 
+$3,075
+$3,075
+0101-GENERAL
+0044 - MAYOR
+Supplies
+Office Supplies
+1101001210.000
+OFFICE MISC
+$2,500
+$2,500
+0101-GENERAL
+0069 - CITY 
+COUNCIL/TOWN 
+BOARD (COMMON 
+COUNCIL)
+Personal 
+Services
+Salaries and 
+Wages
+1101003113.000 
+CITY 
+COUNCIL/REG
+.SAL. 
+$33,758
+$33,758
+0101-GENERAL
+0069 - CITY 
+COUNCIL/TOWN 
+BOARD (COMMON 
+COUNCIL)
+Personal 
+Services
+Other Personal 
+Services
+1101003131.000
+CITY 
+COUNCIL/FIC
+A
+$2,200
+$2,200
+0101-GENERAL
+0069 - CITY 
+COUNCIL/TOWN 
+BOARD (COMMON 
+COUNCIL)
+Personal 
+Services
+Other Personal 
+Services
+1101003133.000
+CITY 
+COUNCIL/ME
+DICARE
+$600
+$600
+0101-GENERAL
+0069 - CITY 
+COUNCIL/TOWN 
+BOARD (COMMON 
+COUNCIL)
+Other Services 
+and Charges
+Professional 
+Services
+1101003310.000
+CITY 
+COUNCIL/ATT
+ORNEY FEES
+$5,000
+$5,000
+0101-GENERAL
+0069 - CITY 
+COUNCIL/TOWN 
+BOARD (COMMON 
+COUNCIL)
+Other Services 
+and Charges
+Professional 
+Services
+1101003310.021
+CITY 
+COUNCIL/PRO
+F. & CONT. 
+SERVICES
+$7,500
+$7,500
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Personal 
+Services
+Salaries and 
+Wages
+1101008113.00 
+BOPW/ 
+REGULAR SAL 
+$6,147
+$6,147
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Personal 
+Services
+Salaries and 
+Wages
+1101008134.000 
+BOPW/PAYRO
+LL/UNEMPLOY
+MENT/WORKE
+RS COMP 
+$1,010
+$1,010
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Personal 
+Services
+Other Personal 
+Services
+1101008133.00 
+BOPW/MEDIC
+ARE 
+$202
+$202
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Personal 
+Services
+Other Personal 
+Services
+1101008135.005 
+BOW/RES #5 
+2014 
+$13,400
+$13,400
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Personal 
+Services
+Other Personal 
+Services
+1101800131.00 
+BOPW/FICA 
+$2,525
+$2,525
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Personal 
+Services
+Employee Benefits
+1101008132.000 
+BOPW- 
+PERF.BEN 
+$212,180
+$212,180
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Personal 
+Services
+Employee Benefits
+1101008135.000 
+BOPW- 
+MED.INS.BEN 
+CITY WIDE 
+$606,670
+$606,670
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Personal 
+Services
+Employee Benefits
+1101008135.001 
+BOPW-
+DENTAL INS. 
+BEN 
+$21,218
+$21,218
+Page 2
+Generated: on 09/22/2026 at 12:40:21 PM
+
+=====PAGE=====
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Personal 
+Services
+Employee Benefits
+1101008136.000 
+BOPW- 
+LIFE.INS.BEN 
+$20,762
+$20,762
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Personal 
+Services
+Employee Benefits
+1101008137.000 
+BOW/ALL CITY 
+457 MATCH 
+PEHP 
+$25,000
+$25,000
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Other Services 
+and Charges
+Professional 
+Services
+1101008310.000 
+BOW/CITY 
+ATTORNEYS 
+$151,410
+$151,410
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Other Services 
+and Charges
+Professional 
+Services
+1101008310.001 
+BOPW/PROF 
+SERV 
+$53,045
+$53,045
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Other Services 
+and Charges
+Professional 
+Services
+1101008310.021 
+BOPW/CONTR
+ACTUAL 
+SERVICES 
+$33,419
+$33,419
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Other Services 
+and Charges
+Professional 
+Services
+1101008310.040
+BOPW- 
+PROMOTIONA
+L
+$1,000
+$1,000
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Other Services 
+and Charges
+Insurance
+1101008135.004 
+BOPW/RET 
+INS. & HSA 
+$98,850
+$98,850
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Other Services 
+and Charges
+Insurance
+1101008342.00 
+BOPW/CITY 
+WIDE 
+LIABILITY 
+INSURANCE 
+$397,383
+$397,383
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Other Services 
+and Charges
+Utility Services
+1101008320.002 
+BOPW/TELEPH
+ONE & CABLE 
+$97,850
+$97,850
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Other Services 
+and Charges
+Other Services and 
+Charges
+1101008310.022
+BOPW/COMP 
+SOFTWARE
+$23,690
+$23,690
+0101-GENERAL
+0077 - BOARD OF 
+PUBLIC WORKS & 
+SAFETY
+Capital Outlays
+Other Capital 
+Outlays
+1101008440.00
+BOW/TECH/C
+OMPS/SERVER
+S CITY HALL
+$50,000
+$50,000
+0101-GENERAL
+0164 - CITY/TOWN 
+HALL
+Supplies
+Office Supplies
+1101018210.000 
+CITY 
+HALL/OFFICE.
+MISC. 
+$2,805
+$2,805
+0101-GENERAL
+0164 - CITY/TOWN 
+HALL
+Other Services 
+and Charges
+Utility Services
+1101018351.000 
+CITY 
+WIDE/ELECTRI
+C 
+$292,136
+$292,136
+0101-GENERAL
+0164 - CITY/TOWN 
+HALL
+Other Services 
+and Charges
+Utility Services
+1101018352.000 
+CITY 
+WIDE/GAS 
+$27,300
+$27,300
+0101-GENERAL
+0164 - CITY/TOWN 
+HALL
+Other Services 
+and Charges
+Utility Services
+1101018354.000 
+CITY 
+WIDE/WATER 
+$19,570
+$19,570
+0101-GENERAL
+0164 - CITY/TOWN 
+HALL
+Other Services 
+and Charges
+Utility Services
+1101018355.000 
+CITY 
+WIDE/SEWAG
+E/STORM 
+$30,900
+$30,900
+0101-GENERAL
+0164 - CITY/TOWN 
+HALL
+Other Services 
+and Charges
+Repairs and 
+Maintenance
+1101018361.000 
+CITY 
+WIDE/REP & 
+MAINT. 
+$2,623
+$2,623
+0101-GENERAL
+0165 - SENIOR 
+CITIZENS CENTER
+Personal 
+Services
+Salaries and 
+Wages
+1101011111.000 
+SENIOR 
+CENTER 
+DIRECTOR 
+SALARY 
+$61,228
+$61,228
+0101-GENERAL
+0165 - SENIOR 
+CITIZENS CENTER
+Personal 
+Services
+Salaries and 
+Wages
+1101011113.000 
+SENIOR 
+CTR./REG-
+PART TIME 
+$50,105
+$50,105
+0101-GENERAL
+0165 - SENIOR 
+CITIZENS CENTER
+Personal 
+Services
+Other Personal 
+Services
+1101011131.000 
+SENIOR 
+CTR./FICA 
+$8,080
+$8,080
+0101-GENERAL
+0165 - SENIOR 
+CITIZENS CENTER
+Personal 
+Services
+Other Personal 
+Services
+1101011133.000
+SENIOR 
+CTR./MEDICA
+RE
+$1,950
+$1,950
+Page 3
+Generated: on 09/22/2026 at 12:40:21 PM
+
+=====PAGE=====
+0101-GENERAL
+0165 - SENIOR 
+CITIZENS CENTER
+Personal 
+Services
+Employee Benefits
+1101011115.000 
+SENIOR 
+CTR./ED,&LON
+G EMP.BEN 
+$13,715
+$13,715
+0101-GENERAL
+0165 - SENIOR 
+CITIZENS CENTER
+Supplies
+Office Supplies
+1101011210.000
+SENIOR 
+CTR./OFFICE.
+MISC.
+$2,750
+$2,750
+0101-GENERAL
+0165 - SENIOR 
+CITIZENS CENTER
+Supplies
+Operating 
+Supplies
+1101011220.003
+SENIOR 
+CTR./MED.SUP
+PLIES
+$250
+$250
+0101-GENERAL
+0165 - SENIOR 
+CITIZENS CENTER
+Supplies
+Operating 
+Supplies
+1101011220.310 
+SENIOR 
+CTR./JANITORI
+AL SUPPLIES 
+$1,000
+$1,000
+0101-GENERAL
+0165 - SENIOR 
+CITIZENS CENTER
+Supplies
+Repair and 
+Maintenance 
+Supplies
+1101011232.000
+SENIOR 
+CTR./BLDG.MA
+T.
+$2,060
+$2,060
+0101-GENERAL
+0165 - SENIOR 
+CITIZENS CENTER
+Supplies
+Other Supplies
+1101011291.000
+SENIOR.CTR./P
+ROG.SUPPLIES
+$4,000
+$4,000
+0101-GENERAL
+0165 - SENIOR 
+CITIZENS CENTER
+Other Services 
+and Charges
+Professional 
+Services
+1101011310.021
+SENIOR 
+CTR./CONT.SE
+RV.
+$6,600
+$6,600
+0101-GENERAL
+0165 - SENIOR 
+CITIZENS CENTER
+Other Services 
+and Charges
+Repairs and 
+Maintenance
+1101011361.000
+SENIOR 
+CTR./REP.& 
+MAINT.
+$4,120
+$4,120
+0101-GENERAL
+0165 - SENIOR 
+CITIZENS CENTER
+Capital Outlays
+Machinery, 
+Equipment, and 
+Vehicles
+1101011451.000
+SNR CTR 
+VEHICLE
+$20,600
+$20,600
+0101-GENERAL
+0167 - 
+COMMUNITY 
+CENTER
+Personal 
+Services
+Salaries and 
+Wages
+1101015111.000 
+COMM.CTR./ 
+DIRECTOR 
+SALARY 
+$61,020
+$61,020
+0101-GENERAL
+0167 - 
+COMMUNITY 
+CENTER
+Personal 
+Services
+Salaries and 
+Wages
+1101015113.000 
+COMM.CENTE
+R. - 
+REGULAR/PAR
+T TIME 
+$175,690
+$175,690
+0101-GENERAL
+0167 - 
+COMMUNITY 
+CENTER
+Personal 
+Services
+Other Personal 
+Services
+1101015131.000 
+COMM.CTR./FI
+CA 
+$15,050
+$15,050
+0101-GENERAL
+0167 - 
+COMMUNITY 
+CENTER
+Personal 
+Services
+Other Personal 
+Services
+1101015133.000 
+COMM.CTR./
+MEDICARE 
+$4,000
+$4,000
+0101-GENERAL
+0167 - 
+COMMUNITY 
+CENTER
+Personal 
+Services
+Employee Benefits
+1101015115.00 
+COMM CTR 
+LONGEVITY 
+$3,650
+$3,650
+0101-GENERAL
+0167 - 
+COMMUNITY 
+CENTER
+Supplies
+Office Supplies
+1101015210.000 
+COMM.CTR./O
+FFICE.MISC. 
+$2,500
+$2,500
+0101-GENERAL
+0167 - 
+COMMUNITY 
+CENTER
+Supplies
+Operating 
+Supplies
+1101015220.310
+COMM.CTR./J
+ANITORIAL 
+SUPPLIES
+$5,000
+$5,000
+0101-GENERAL
+0167 - 
+COMMUNITY 
+CENTER
+Supplies
+Operating 
+Supplies
+1101015222.010
+COMM.CTR 
+GASOLINE
+$2,000
+$2,000
+0101-GENERAL
+0167 - 
+COMMUNITY 
+CENTER
+Supplies
+Operating 
+Supplies
+1101015291.000
+COMM.CTR./P
+ROG.SUPPLIES
+$7,400
+$7,400
+0101-GENERAL
+0167 - 
+COMMUNITY 
+CENTER
+Supplies
+Repair and 
+Maintenance 
+Supplies
+1101015232.000
+COMM.CTR./B
+LDG.MAT.
+$1,500
+$1,500
+0101-GENERAL
+0167 - 
+COMMUNITY 
+CENTER
+Other Services 
+and Charges
+Professional 
+Services
+1101015310.001
+COMM.CTR./P
+ROF.SERV.
+$1,000
+$1,000
+0101-GENERAL
+0167 - 
+COMMUNITY 
+CENTER
+Other Services 
+and Charges
+Professional 
+Services
+1101015310.021
+COMM.CTR./C
+ONT.SERV.
+$22,660
+$22,660
+Page 4
+Generated: on 09/22/2026 at 12:40:21 PM
+
+=====PAGE=====
+0101-GENERAL
+0167 - 
+COMMUNITY 
+CENTER
+Other Services 
+and Charges
+Printing and 
+Advertising
+1101015330.004
+COMM.CTR./A
+DVERTISING
+$6,000
+$6,000
+0101-GENERAL
+0167 - 
+COMMUNITY 
+CENTER
+Other Services 
+and Charges
+Repairs and 
+Maintenance
+1101015361.000
+COMM.CTR./R
+EP.&MAINT.
+$5,871
+$5,871
+0101-GENERAL
+0167 - 
+COMMUNITY 
+CENTER
+Capital Outlays
+Other Capital 
+Outlays
+1101015400 
+COMM CTR 
+POS 
+$5,700
+$5,700
+0101-GENERAL
+0248 - CITY/TOWN 
+COURT (CITY 
+JUDGE/JUDGE)
+Personal 
+Services
+Salaries and 
+Wages
+1101004111.000
+CITY COURT - 
+JUDGE 
+SALARY
+$67,850
+$67,850
+0101-GENERAL
+0248 - CITY/TOWN 
+COURT (CITY 
+JUDGE/JUDGE)
+Personal 
+Services
+Salaries and 
+Wages
+1101004113.000 
+CITY 
+COURT/REG.S
+AL. 
+$58,960
+$58,960
+0101-GENERAL
+0248 - CITY/TOWN 
+COURT (CITY 
+JUDGE/JUDGE)
+Personal 
+Services
+Salaries and 
+Wages
+1101004113.100 
+CITY COURT 
+BALIFF 
+$9,109
+$9,109
+0101-GENERAL
+0248 - CITY/TOWN 
+COURT (CITY 
+JUDGE/JUDGE)
+Personal 
+Services
+Salaries and 
+Wages
+1101004114.000 
+CITY COURT - 
+PART-TIME 
+$26,410
+$26,410
+0101-GENERAL
+0248 - CITY/TOWN 
+COURT (CITY 
+JUDGE/JUDGE)
+Personal 
+Services
+Other Personal 
+Services
+1101004131.000 
+CITY 
+COURT/FICA 
+$10,565
+$10,565
+0101-GENERAL
+0248 - CITY/TOWN 
+COURT (CITY 
+JUDGE/JUDGE)
+Personal 
+Services
+Other Personal 
+Services
+1101004133.000 
+CITY 
+COURT/MEDI
+CARE 
+$2,200
+$2,200
+0101-GENERAL
+0248 - CITY/TOWN 
+COURT (CITY 
+JUDGE/JUDGE)
+Personal 
+Services
+Employee Benefits
+1101004115.000 
+CITY 
+COURT/ED.&L
+ONG.BEN. 
+$7,600
+$7,600
+0101-GENERAL
+0248 - CITY/TOWN 
+COURT (CITY 
+JUDGE/JUDGE)
+Supplies
+Office Supplies
+1101004210.000
+CITY 
+COURT/OFFIC
+E.MISC.
+$1,000
+$1,000
+0101-GENERAL
+0248 - CITY/TOWN 
+COURT (CITY 
+JUDGE/JUDGE)
+Other Services 
+and Charges
+Professional 
+Services
+1101004310.001
+CITY COURT 
+/PROF.SERV.
+$100
+$100
+0101-GENERAL
+0248 - CITY/TOWN 
+COURT (CITY 
+JUDGE/JUDGE)
+Other Services 
+and Charges
+Professional 
+Services
+1101004310.101
+CITY 
+COURT/INFO.
+SERV.
+$25
+$25
+0101-GENERAL
+0248 - CITY/TOWN 
+COURT (CITY 
+JUDGE/JUDGE)
+Other Services 
+and Charges
+Printing and 
+Advertising
+1101004331.000
+CITY 
+COURT/PRINT 
+OTHER THAN 
+OFFICE
+$25
+$25
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Personal 
+Services
+Salaries and 
+Wages
+1101220111.000 
+EMS- 
+DEPARTMENT 
+HEAD SALARY 
+$100,985
+$100,985
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Personal 
+Services
+Salaries and 
+Wages
+1101220111.720 
+EMS- 
+REGULAR 
+SALARIES 
+$434,300
+$434,300
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Personal 
+Services
+Salaries and 
+Wages
+1101220111.750 
+EMS- 
+OVERTIME 
+$202,000
+$202,000
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Personal 
+Services
+Salaries and 
+Wages
+2240900115.003
+PST/SALARIES
+-EMS
+$0
+$0
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Personal 
+Services
+Other Personal 
+Services
+1101220131.000 
+EMS - FICA 
+$96,000
+$96,000
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Personal 
+Services
+Other Personal 
+Services
+1101220133.000 
+EMS- 
+MEDICARE 
+$23,400
+$23,400
+Page 5
+Generated: on 09/22/2026 at 12:40:21 PM
+
+=====PAGE=====
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Personal 
+Services
+Employee Benefits
+1101220115.000 
+EMS ED. & 
+LONGEVITY 
+$90,282
+$90,282
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Personal 
+Services
+Employee Benefits
+1101220130.000 
+EMS - 
+CLOTHING 
+ALLOWANCE 
+$21,000
+$21,000
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Supplies
+Office Supplies
+1101220210.000
+EMS - OFFICE 
+SUPPLIES
+$2,000
+$2,000
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Supplies
+Operating 
+Supplies
+1101220221.015
+EMS - 
+PROTECTIVE 
+CLOTHING
+$5,000
+$5,000
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Supplies
+Operating 
+Supplies
+1101220221.310
+EMS- 
+JANITORIAL
+$2,500
+$2,500
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Supplies
+Operating 
+Supplies
+1101220223.000
+EMS - 
+MEDICAL 
+SUPPLIES
+$90,000
+$90,000
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Supplies
+Repair and 
+Maintenance 
+Supplies
+1101220222.000
+EMS - 
+GARAGE AND 
+MOTOR
+$30,000
+$30,000
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Other Services 
+and Charges
+Professional 
+Services
+1101220310.001
+EMS- 
+PROFESSIONA
+L SERVICES
+$21,000
+$21,000
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Other Services 
+and Charges
+Professional 
+Services
+1101220310.008
+EMS - 
+INSTRUCTION
+$10,000
+$10,000
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Other Services 
+and Charges
+Professional 
+Services
+1101220330.032
+EMS - 
+PHYSICALS
+$6,500
+$6,500
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Other Services 
+and Charges
+Professional 
+Services
+1101220340.003
+EMS - INJURY 
+PREVENTION
+$1,500
+$1,500
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Other Services 
+and Charges
+Professional 
+Services
+1101220361.000
+EMS - 
+REPAIRS/MAI
+NTENANCE
+$25,000
+$25,000
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Other Services 
+and Charges
+Communication 
+and 
+Transportation
+1101220324.000
+EMS - 
+TELE/AIR 
+CARDS/CRADL
+E POINT
+$9,000
+$9,000
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Other Services 
+and Charges
+Repairs and 
+Maintenance
+1101220360.007
+EMS - MAINT. 
+AGREEMENTS
+$25,000
+$25,000
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Capital Outlays
+Buildings
+1101220431.000
+EMS - 
+CAPITAL 
+OUTLAYS
+$15,000
+$15,000
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Capital Outlays
+Machinery, 
+Equipment, and 
+Vehicles
+1101220362.000
+EMS - 
+EQUIPMENT
+$16,000
+$16,000
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Capital Outlays
+Machinery, 
+Equipment, and 
+Vehicles
+1101220441.015
+EMS - WATER 
+HEATER
+$4,000
+$4,000
+0101-GENERAL
+0301 - 
+EMERGENCY 
+AMBULANCE/MEDI
+CAL SERVICE
+Capital Outlays
+Machinery, 
+Equipment, and 
+Vehicles
+1101220441.025
+EMS- 
+COMPUTER/9
+TH BRAIN
+$11,000
+$11,000
+Page 6
+Generated: on 09/22/2026 at 12:40:21 PM
+
+=====PAGE=====
+0101-GENERAL
+0362 - FIRE 
+DEPARTMENT
+Other Services 
+and Charges
+Professional 
+Services
+1101210310.001 
+FIRE/PROF.SER
+V. 
+$3,763,715
+$3,763,715
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Personal 
+Services
+Salaries and 
+Wages
+1101200111.000 
+POLICE CHIEF 
+SALARY 
+$138,188
+$138,188
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Personal 
+Services
+Salaries and 
+Wages
+1101200113.000 
+POLICE/REG.S
+AL. 
+$2,901,800
+$2,901,800
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Personal 
+Services
+Salaries and 
+Wages
+1101200116.000 
+POLICE/OVER
+TIME 
+$156,045
+$156,045
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Personal 
+Services
+Other Personal 
+Services
+1101200131.000 
+POLICE/FICA 
+$23,129
+$23,129
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Personal 
+Services
+Other Personal 
+Services
+1101200133.000 
+POLICE/MEDI
+CARE 
+$71,000
+$71,000
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Personal 
+Services
+Employee Benefits
+1101200115.000 
+POLICE/ED.CE
+RT.&LONG.BE
+N. 
+$260,000
+$260,000
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Personal 
+Services
+Employee Benefits
+1101200130.000 
+POLICE/CLOT
+H.-
+ALLOW.BEN. 
+$71,001
+$71,001
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Supplies
+Office Supplies
+1101200210.000
+POLICE/OFFIC
+E.MISC.
+$8,000
+$8,000
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Supplies
+Operating 
+Supplies
+1101200220.017
+POLICE/UNIFO
+RMS BEN.
+$15,000
+$15,000
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Supplies
+Operating 
+Supplies
+1101200220.021
+POLICE/FUEL
+$145,000
+$145,000
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Supplies
+Operating 
+Supplies
+1101200220.310
+POLICE/JANIT
+ORIAL 
+SUPPLIES
+$5,500
+$5,500
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Supplies
+Operating 
+Supplies
+1101200220.330
+POLICE/CANI
+NE
+$3,000
+$3,000
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Supplies
+Repair and 
+Maintenance 
+Supplies
+1101200232.000
+POLICE/BLDG.
+MAT.
+$20,000
+$20,000
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Other Services 
+and Charges
+Professional 
+Services
+1101200310.001
+POLICE/PROF.
+SERV.
+$35,000
+$35,000
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Other Services 
+and Charges
+Professional 
+Services
+1101200310.101
+POLICE/INFO.
+SERV.
+$2,500
+$2,500
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Other Services 
+and Charges
+Professional 
+Services
+1101200330.032
+POLICE/PHYSI
+CALS/WELLNE
+SS
+$30,000
+$30,000
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Other Services 
+and Charges
+Professional 
+Services
+1101200393.000
+POLICE/SUBSC
+RIPTIONS
+$2,500
+$2,500
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Other Services 
+and Charges
+Communication 
+and 
+Transportation
+1101200320.001
+POLICE/TRAVE
+L EXPENSE
+$20,000
+$20,000
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Other Services 
+and Charges
+Communication 
+and 
+Transportation
+1101200320.002
+POLICE/AIR 
+CARDS
+$17,000
+$17,000
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Other Services 
+and Charges
+Printing and 
+Advertising
+1101200332.000
+POLICE/LEGAL
+-PUB.
+$12,000
+$12,000
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Other Services 
+and Charges
+Repairs and 
+Maintenance
+1101200361.000
+POLICE/REP.&
+MAINT.
+$100,000
+$100,000
+Page 7
+Generated: on 09/22/2026 at 12:40:21 PM
+
+=====PAGE=====
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Other Services 
+and Charges
+Other Services and 
+Charges
+1101200230.005
+POLICE/PROM
+OTIONS
+$10,000
+$10,000
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Capital Outlays
+Machinery, 
+Equipment, and 
+Vehicles
+1101200400.00 
+POLICE CAP 
+IMPROVEMEN
+TS 
+$95,000
+$95,000
+0101-GENERAL
+0370 - POLICE 
+DEPARTMENT 
+(TOWN MARSHAL)
+Capital Outlays
+Other Capital 
+Outlays
+1101200440.006
+POLICE/COPIE
+R-LEASE
+$5,000
+$5,000
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Personal 
+Services
+Salaries and 
+Wages
+1101500111.000 
+PARK DIR. 
+SALARY 
+$85,192
+$85,192
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Personal 
+Services
+Salaries and 
+Wages
+1101500114.00 
+PARKS TEMP 
+SALARY 
+$80,566
+$80,566
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Personal 
+Services
+Other Personal 
+Services
+1101500131.000 
+PARKS/FICA 
+$11,330
+$11,330
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Personal 
+Services
+Other Personal 
+Services
+1101500133.000 
+PARKS/MEDIC
+ARE 
+$2,700
+$2,700
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Personal 
+Services
+Employee Benefits
+1101500115.00 
+PARK/ED & 
+LONG BENEFIT 
+$11,700
+$11,700
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Supplies
+Office Supplies
+1101500210.00
+PARKS OFFICE 
+MISC
+$1,000
+$1,000
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Supplies
+Operating 
+Supplies
+1101500220.003
+PARKS/ MED. 
+SUPPLIES
+$150
+$150
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Supplies
+Operating 
+Supplies
+1101500220.016
+PARKS/ WEED 
+KILLER ETC
+$4,000
+$4,000
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Supplies
+Operating 
+Supplies
+1101500220.017
+PARKS/UNIFO
+RMS
+$2,500
+$2,500
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Supplies
+Operating 
+Supplies
+1101500222.00
+PARKS/GARA
+GE & MOTOR
+$3,500
+$3,500
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Supplies
+Operating 
+Supplies
+1101500360.003
+PARKS/GRADI
+NG, 
+MULCHING, & 
+FENCING
+$5,000
+$5,000
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Supplies
+Repair and 
+Maintenance 
+Supplies
+1101500232.000
+PARK BLDG 
+MAT.
+$5,000
+$5,000
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Supplies
+Repair and 
+Maintenance 
+Supplies
+1101500236.000
+PARKS TOOLS 
+& EQUIP
+$4,000
+$4,000
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Supplies
+Other Supplies
+110150022.310
+PARKS/ 
+JANITORIAL 
+SUPPLIES
+$2,500
+$2,500
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Other Services 
+and Charges
+Communication 
+and 
+Transportation
+1101500320.001
+PARKS - 
+TRAVEL/TRAIN
+ING
+$500
+$500
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Other Services 
+and Charges
+Rentals
+1101500337.000
+PARKS/RENTA
+L EQUIP.
+$700
+$700
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Other Services 
+and Charges
+Other Services and 
+Charges
+1101500310.009
+PARKS/ 
+PROGRAM 
+ENT
+$14,000
+$14,000
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Other Services 
+and Charges
+Other Services and 
+Charges
+1101500310.021
+PARKS/ CONT 
+SERVI
+$32,000
+$32,000
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Other Services 
+and Charges
+Other Services and 
+Charges
+1101500361.000
+PARKS/ REP & 
+MAINT
+$17,000
+$17,000
+Page 8
+Generated: on 09/22/2026 at 12:40:21 PM
+
+=====PAGE=====
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Other Services 
+and Charges
+Other Services and 
+Charges
+1101500362.000
+PARKS/EQUIP
+MENT
+$15,000
+$15,000
+0101-GENERAL
+0801 - PARKS 
+DEPARTMENT 
+(PARKS BOARD)
+Capital Outlays
+Machinery, 
+Equipment, and 
+Vehicles
+1101500440.008
+PARKS / BLDG 
+& EQUIP
+$40,000
+$40,000
+0101-GENERAL
+9600 - Home-Rule 
+Department #1         
+                            
+Other Services 
+and Charges
+Professional 
+Services
+1101032310.021
+CABLE/CONTR
+ACTUAL 
+SERVICES
+$9,000
+$9,000
+0101-GENERAL Total
+$12,671,403
+$12,671,403
+0256-PUBLIC 
+SAFETY LOCAL 
+INCOME TAX
+0000 - No 
+Department
+Personal 
+Services
+Salaries and 
+Wages
+2240900115.000 
+PST/SALARIES 
+- POLICE 
+$721,000
+$721,000
+0256-PUBLIC 
+SAFETY LOCAL 
+INCOME TAX
+0000 - No 
+Department
+Personal 
+Services
+Salaries and 
+Wages
+2240900115.003 
+PST / 
+SALARIES - 
+EMS 
+$721,000
+$721,000
+0256-PUBLIC 
+SAFETY LOCAL 
+INCOME TAX
+0000 - No 
+Department
+Personal 
+Services
+Salaries and 
+Wages
+2240900116.100 
+PST/POLICE 
+OVERTIME 
+$144,200
+$144,200
+0256-PUBLIC 
+SAFETY LOCAL 
+INCOME TAX
+0000 - No 
+Department
+Personal 
+Services
+Employee Benefits
+2240900132.000 
+PST/POLICE/1
+977 PERF 
+$620,000
+$620,000
+0256-PUBLIC 
+SAFETY LOCAL 
+INCOME TAX
+0000 - No 
+Department
+Other Services 
+and Charges
+Other Services and 
+Charges
+2240900310.021
+PST/ 
+AMBULANCE 
+CONTRACTUA
+L PRINCIPAL 
+2022, 2023, 2
+$234,500
+$234,500
+0256-PUBLIC 
+SAFETY LOCAL 
+INCOME TAX
+0000 - No 
+Department
+Other Services 
+and Charges
+Other Services and 
+Charges
+2240900385.007
+PST 
+AMBULANCE/I
+NTEREST
+$25,191
+$25,191
+0256-PUBLIC 
+SAFETY LOCAL 
+INCOME TAX
+0000 - No 
+Department
+Capital Outlays
+Machinery, 
+Equipment, and 
+Vehicles
+2240.900.382.000
+PST BODY 
+CAMS
+$56,000
+$56,000
+0256-PUBLIC 
+SAFETY LOCAL 
+INCOME TAX
+0000 - No 
+Department
+Capital Outlays
+Machinery, 
+Equipment, and 
+Vehicles
+2240900362.000
+PST. FLOCK 
+SAFETY CAMS
+$55,000
+$55,000
+0256-PUBLIC 
+SAFETY LOCAL 
+INCOME TAX
+0000 - No 
+Department
+Capital Outlays
+Machinery, 
+Equipment, and 
+Vehicles
+2240900372 
+PST / POLICE 
+VEHICLES 
+$250,000
+$250,000
+0256-PUBLIC SAFETY LOCAL INCOME TAX Total
+$2,826,891
+$2,826,891
+0283-LEASE 
+RENTAL 
+PAYMENT
+0000 - No 
+Department
+Debt Service
+Payments on 
+Bonds and Other 
+Debt Principal
+Lease Rental 
+Payments
+$1,077,000
+$1,077,000
+0283-LEASE RENTAL PAYMENT Total
+$1,077,000
+$1,077,000
+0341-FIRE 
+PENSION
+0000 - No 
+Department
+Other Services 
+and Charges
+Insurance
+8801900439.024 
+FIRE/RET.INS 
+& HSA & 
+DEATH 
+BENEFIT 
+$41,200
+$41,200
+0341-FIRE PENSION Total
+$41,200
+$41,200
+0342-POLICE 
+PENSION
+0000 - No 
+Department
+Other Services 
+and Charges
+Insurance
+8802900390.220 
+POLICE / 
+PENSION TO 
+RET 
+$535,755
+$535,755
+0342-POLICE 
+PENSION
+0000 - No 
+Department
+Other Services 
+and Charges
+Insurance
+8802900439.024 
+POLICE/ RET. 
+INS & HSA 
+$51,000
+$51,000
+Page 9
+Generated: on 09/22/2026 at 12:40:21 PM
+
+=====PAGE=====
+0342-POLICE PENSION Total
+$586,755
+$586,755
+0706-LOCAL 
+ROAD & STREET
+0000 - No 
+Department
+Supplies
+Operating 
+Supplies
+2202900231.310
+LRS/GRAVEL/S
+ALT
+$70,000
+$70,000
+0706-LOCAL 
+ROAD & STREET
+0000 - No 
+Department
+Other Services 
+and Charges
+Professional 
+Services
+2202900310.021
+LRS/CONT.SER
+V.
+$80,000
+$80,000
+0706-LOCAL 
+ROAD & STREET
+0000 - No 
+Department
+Capital Outlays
+Infrastructure
+2202900390.920 
+LRS/STREET 
+ALLEY 
+IMPROVEMEN
+T 
+$145,000
+$145,000
+0706-LOCAL ROAD & STREET Total
+$295,000
+$295,000
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Personal 
+Services
+Salaries and 
+Wages
+2201900113.000 
+MVH/REG.SAL. 
+$510,050
+$510,050
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Personal 
+Services
+Salaries and 
+Wages
+2201900114.000 
+MVH/TEMP.SA
+L. 
+$25,000
+$25,000
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Personal 
+Services
+Other Personal 
+Services
+2201900131.000
+MVH/FICA
+$35,600
+$35,600
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Personal 
+Services
+Other Personal 
+Services
+2201900133.000 
+MVH/MEDICA
+RE 
+$10,500
+$10,500
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Personal 
+Services
+Employee Benefits
+2201900115.000 
+MVH/ED. & 
+LONG.BEN. 
+$30,900
+$30,900
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Supplies
+Office Supplies
+2201900210.000
+MVH/OFFICE.
+MISC.
+$500
+$500
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Supplies
+Operating 
+Supplies
+2201900220.017
+MVH/UNIFOR
+MS
+$4,500
+$4,500
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Supplies
+Operating 
+Supplies
+2201900220.021
+MVH/FUEL
+$53,045
+$53,045
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Supplies
+Operating 
+Supplies
+2201900231.124
+MVH/BIT.MAT.
+$10,000
+$10,000
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Supplies
+Repair and 
+Maintenance 
+Supplies
+2201900220.023
+MVH/AUTO.S
+UPPLIES
+$10,000
+$10,000
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Supplies
+Repair and 
+Maintenance 
+Supplies
+2201900236.000
+MVH/SMALL 
+TOOLS & 
+EQUIP.
+$6,000
+$6,000
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Supplies
+Other Supplies
+2201900232.000
+MVH/BLDG.M
+AT.
+$4,000
+$4,000
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Other Services 
+and Charges
+Professional 
+Services
+2201900310.006 
+MVH/MED.SE
+RV. 
+$2,000
+$2,000
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Other Services 
+and Charges
+Professional 
+Services
+2201900310.012 
+MVH/DRIVER'
+S LIC. (CDL) 
+$2,500
+$2,500
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Other Services 
+and Charges
+Repairs and 
+Maintenance
+2201900361.000
+MVH/REP.&M
+AINT.
+$45,000
+$45,000
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Capital Outlays
+Infrastructure
+2201900400.2 
+MVH CONT 
+PROJECT 
+$90,000
+$90,000
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Capital Outlays
+Infrastructure
+2201900400.300 
+MVH/ HANNA 
+ARLINGTON 
+$0
+$0
+Page 10
+Generated: on 09/22/2026 at 12:40:21 PM
+
+=====PAGE=====
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Capital Outlays
+Infrastructure
+2201900400.4 
+MVH - 
+EMERSON 
+CHURCHMAN 
+RNDBT 
+$135,000
+$135,000
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Capital Outlays
+Infrastructure
+2201900490.010
+MVH/SIDEWA
+LKS & Paving
+$55,000
+$55,000
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Capital Outlays
+Infrastructure
+2203900310.021
+MVH 
+RESTRICTED/C
+ONTRACTUAL
+$299,000
+$299,000
+0708-MOTOR 
+VEHICLE 
+HIGHWAY
+0000 - No 
+Department
+Capital Outlays
+Machinery, 
+Equipment, and 
+Vehicles
+2201900401.000
+MVH/VEHICLE
+S
+$75,000
+$75,000
+0708-MOTOR VEHICLE HIGHWAY Total
+$1,403,595
+$1,403,595
+1151-
+CONTINUING 
+EDUCATION
+0000 - No 
+Department
+Other Services 
+and Charges
+Other Services and 
+Charges
+2228900310.008
+LLE/MISC
+$20,000
+$20,000
+1151-CONTINUING EDUCATION Total
+$20,000
+$20,000
+1310-PARK 
+NONREVERTING 
+- CAPITAL
+0000 - No 
+Department
+Other Services 
+and Charges
+Other Services and 
+Charges
+2211.900.361.000
+0
+PARKS 
+NONREVERTI
+NG CAPITAL
+$10,000
+$10,000
+1310-PARK NONREVERTING - CAPITAL Total
+$10,000
+$10,000
+9507-Home-Rule 
+Fund #8
+0000 - No 
+Department
+Personal 
+Services
+Salaries and 
+Wages
+2508900113.000 
+POLICE/COM
+M.SCHOOL 
+POLICING 
+$500,195
+$500,195
+9507-Home-Rule Fund #8 Total
+$500,195
+$500,195
+9509-Home-Rule 
+Fund #10
+0000 - No 
+Department
+Other Services 
+and Charges
+Other Services and 
+Charges
+2256950325.000 
+OPIOID 
+PROFESSIONA
+L SERVICES 
+SUPPLIES 
+$13,300
+$13,300
+9509-Home-Rule Fund #10 Total
+$13,300
+$13,300
+9510-Home-Rule 
+Fund #11
+0000 - No 
+Department
+Other Services 
+and Charges
+Other Services and 
+Charges
+2257950325.000 
+OPIOID 
+PROFESSIONA
+L SERVICES 
+$3,300
+$3,300
+9510-Home-Rule Fund #11 Total
+$3,300
+$3,300
+9511-2260 
+Building and 
+Construction 
+Related Fees
+0000 - No 
+Department
+Supplies
+Operating 
+Supplies
+ 
+PERMIT - 
+COMP 
+SOFTWARE 
+$1,500
+$1,500
+9511-2260 
+Building and 
+Construction 
+Related Fees
+0000 - No 
+Department
+Other Services 
+and Charges
+Professional 
+Services
+ 
+PERMIT - 
+BUILDING 
+COMMISSION
+ER 
+$10,000
+$10,000
+9511-2260 
+Building and 
+Construction 
+Related Fees
+0000 - No 
+Department
+Other Services 
+and Charges
+Professional 
+Services
+ 
+PERMIT - 
+ELECTRICAL 
+INSPECTOR 
+$8,000
+$8,000
+9511-2260 Building and Construction Related Fees Total
+$19,500
+$19,500
+Page 11
+Generated: on 09/22/2026 at 12:40:21 PM
+
+=====PAGE=====
+9512-Motor 
+Vehicle License 
+Excise Surtax and 
+Fund
+0000 - No 
+Department
+Capital Outlays
+Improvements 
+Other Than 
+Building
+ 
+Motor Vehicle 
+License Excise 
+Surtax and 
+Fund 
+$225,000
+$225,000
+9512-Motor Vehicle License Excise Surtax and Fund Total
+$225,000
+$225,000
+UNIT TOTAL
+$19,693,139
+$19,693,139
+Page 12
+Generated: on 09/22/2026 at 12:40:21 PM
