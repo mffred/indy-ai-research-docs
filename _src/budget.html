@@ -144,18 +144,18 @@ select{font:inherit;font-size:13px;padding:5px 8px;border-radius:6px;border:1px 
 <header>
   <div class="eyebrow">Indianapolis–Marion County · Consolidated city-county budget</div>
   <h1>Where Indy's money goes, 2019 to 2027</h1>
-  <p class="lede">The mayor's proposed 2027 budget is $1.898 billion, about 11% more than 2026. This page lines up nine years of spending and six years of revenue from the city's own budget books, then breaks the 2027 proposal down department by department so you can click into any one of them.</p>
+  <p class="lede">The City-County Council passed the 2027 budget on October 19, 2026, 17 to 7, at $1.898 billion, about 11% more than 2026. The city hasn't posted an adopted budget book yet. Council staff said the budget had not changed since the mayor introduced it, and reports of the vote describe no adopted amendments, so every figure on this page is from the introduced book and should match the final numbers. This page lines up nine years of spending and six years of revenue from the city's own budget books, then breaks the 2027 budget down department by department so you can click into any one of them.</p>
   <div class="calendar" aria-label="2027 budget calendar">
     <div class="date"><b>Aug 10</b> Mayor introduced budget</div>
-    <div class="date now"><b>Oct 1</b> Last committee meetings</div>
-    <div class="date now"><b>Oct 5</b> Public hearing, 7 pm, City-County Building</div>
-    <div class="date"><b>Oct 19</b> Council vote (13 of 25 needed)</div>
+    <div class="date"><b>Oct 1</b> Last committee meetings</div>
+    <div class="date"><b>Oct 5</b> Public hearing, 7 pm, City-County Building</div>
+    <div class="date now"><b>Oct 19</b> Council passed it, 17 to 7</div>
     <div class="date"><b>Nov 1</b> Sent to the state</div>
   </div>
 </header>
 
 <div class="tiles">
-  <div class="tile"><span class="v">$1.898B</span><span class="l">2027 proposed appropriations</span></div>
+  <div class="tile"><span class="v">$1.898B</span><span class="l">2027 adopted appropriations</span></div>
   <div class="tile"><span class="v">+$188M</span><span class="l">over 2026 adopted (+11.0%)</span></div>
   <div class="tile"><span class="v">59%</span><span class="l">public safety plus criminal justice in 2027</span></div>
   <div class="tile"><span class="v">≈$1,940</span><span class="l">per Marion County resident (2020 Census pop.)</span></div>
@@ -173,7 +173,7 @@ select{font:inherit;font-size:13px;padding:5px 8px;border-radius:6px;border:1px 
       </div>
     </div>
     <div class="chart-scroll"><svg id="spendChart" role="img" aria-label="Stacked bar chart of Indianapolis appropriations by function, 2019 to 2027"></svg></div>
-    <p class="note">A = actual spending, AD = adopted, P = proposed. Not adjusted for inflation. 2020–2021 debt includes one-time debt and pension transactions, and 2022–2024 executive/administrative spending is inflated by one-time money run through those accounts, most likely federal pandemic relief (ARPA). Compare those years with care.</p>
+    <p class="note">A = actual spending, AD = adopted. Not adjusted for inflation. 2020–2021 debt includes one-time debt and pension transactions, and 2022–2024 executive/administrative spending is inflated by one-time money run through those accounts, most likely federal pandemic relief (ARPA). Compare those years with care.</p>
     <button type="button" class="link-btn" id="spendTableBtn" aria-expanded="false">Show as table</button>
     <div class="tbl-wrap" id="spendTable" hidden></div>
   </div>
@@ -183,7 +183,7 @@ select{font:inherit;font-size:13px;padding:5px 8px;border-radius:6px;border:1px 
   <h2>What changes from 2026 to 2027</h2>
   <p>Almost every function grows. The biggest jump by far is infrastructure, driven by the new state road program: $50M from the state, contingent on a $50M local match that has to grow every year through 2031. That match is the fight behind the wheel tax veto and override.</p>
   <div class="panel">
-    <div class="chart-scroll"><svg id="deltaChart" role="img" aria-label="Horizontal bars of dollar change by function from 2026 adopted to 2027 proposed"></svg></div>
+    <div class="chart-scroll"><svg id="deltaChart" role="img" aria-label="Horizontal bars of dollar change by function from 2026 adopted to 2027 adopted"></svg></div>
     <div class="tbl-wrap" id="deltaTable"></div>
   </div>
 </section>
@@ -234,17 +234,32 @@ select{font:inherit;font-size:13px;padding:5px 8px;border-radius:6px;border:1px 
   <div class="panel">
     <h3>Other 2027 items reported so far</h3>
     <div class="tbl-wrap"><table>
-      <thead><tr><th>Item</th><th>2027 proposal</th><th>Note</th></tr></thead>
+      <thead><tr><th>Item</th><th>2027 budget</th><th>Note</th></tr></thead>
       <tbody>
         <tr><td>Roads, bridges and greenways</td><td>$267M</td><td>state road match program begins</td></tr>
         <tr><td>Stormwater projects</td><td>$39.2M</td><td></td></tr>
         <tr><td>Housing initiatives</td><td>$72M</td><td>spread across DMD, OPHS and others</td></tr>
-        <tr><td>Low-barrier shelter operations (150 beds)</td><td>$2.7M</td><td>Housing Hub opens summer 2027</td></tr>
+        <tr><td>Low-barrier shelter operations (150 beds)</td><td>$2.7M</td><td>Housing Hub opens summer 2027. Mirror Indy reports $2.8M a year after the vote; we have not found the source of the difference.</td></tr>
+        <tr><td>Indy Parks pools and splash pads</td><td>$2.5M</td><td>part of Parks' roughly $54M, up 7%</td></tr>
         <tr><td>IMPD North District HQ + DPW facility (bonds)</td><td>$27.5M</td><td>bonds, outside the operating totals</td></tr>
         <tr><td>Flock license plate cameras</td><td>≈ $1M a year</td><td>up to $6M over 4 years, ~400 cameras, under the contract approved in late 2024. Likely inside IMPD's "Other Services and Charges"; not broken out in the budget book.</td></tr>
       </tbody>
     </table></div>
     <p class="note">From news coverage of the Aug. 10 presentation and committee hearings, not the budget book.</p>
+  </div>
+  <div class="panel">
+    <h3>Program cuts that survived the vote</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Program</th><th>2027</th><th>What changed</th></tr></thead>
+      <tbody>
+        <tr><td>FEEDINDY (Lyft rides to groceries), OPHS</td><td>$0</td><td>eliminated, a $100,000 cut; a smaller Grocery Access Program keeps $48,000</td></tr>
+        <tr><td>Jail release lobby, OPHS</td><td>−$260,000</td><td>no staffing outside business hours, weekends and holidays, starting in January</td></tr>
+        <tr><td>Eviction Diversion Initiative, OPHS</td><td>$750,000</td><td>half of 2026's $1.5M; court navigator funding eliminated</td></tr>
+        <tr><td>Indy Achieves</td><td>$1.5M</td><td>down from $2.5M, a cut for the third straight year</td></tr>
+        <tr><td>Ankle monitors and drug testing, Community Corrections</td><td>not funded</td><td>a $1.5M request was left out</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">From <a href="https://mirrorindy.org/indianapolis-2027-budget-approved-city-county-council-joe-hogsett-impd/">Mirror Indy's report on the vote</a>. These cuts were already in the introduced budget (about $1.9M across seven programs, roughly 0.1% of the total). The Council did not amend them. Circle City Readers tutoring is not in the city budget; the Council funded it separately ($600,000 in July, $400,000 in September) through the 2026–27 school year.</p>
   </div>
 </section>
 
@@ -252,7 +267,7 @@ select{font:inherit;font-size:13px;padding:5px 8px;border-radius:6px;border:1px 
   <h2>Reading the numbers</h2>
   <ul class="plain">
     <li>Since 2019, public safety spending is up 75% and infrastructure &amp; community development is up 84%, against 54% for the budget overall. Criminal justice is up 41%.</li>
-    <li>2023, 2024 and 2025 all ended with spending above revenue, covered by fund balance. The proposed 2027 budget is balanced on paper with a $43K surplus, and projects $402M in total fund balance at the end of 2027.</li>
+    <li>2023, 2024 and 2025 all ended with spending above revenue, covered by fund balance. The 2027 budget as introduced was balanced on paper with a $43K surplus, and projects $402M in total fund balance at the end of 2027.</li>
     <li>The 2027 increase leans on intergovernmental money (+$96M) and on property and income tax growth (+$88M combined). Some of the road match relies on a spring 2027 income-tax distribution that won't be certain until next year.</li>
     <li>IndyGo, Health &amp; Hospital Corporation (Eskenazi), the library and the airport budget separately and are not in these totals.</li>
   </ul>
@@ -261,11 +276,12 @@ select{font:inherit;font-size:13px;padding:5px 8px;border-radius:6px;border:1px 
 <footer class="sources">
   <div class="eyebrow">Sources</div>
   <ol>
-    <li><a href="https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmt965kw511q707lc532lb3zf">2027 Introduced Budget, City of Indianapolis and Marion County</a> (2024–2025 actuals, 2026 adopted, 2027 proposed)</li>
+    <li><a href="https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmt965kw511q707lc532lb3zf">2027 Introduced Budget, City of Indianapolis and Marion County</a> (2024–2025 actuals, 2026 adopted, 2027 as introduced; department detail on this page is from this book)</li>
     <li><a href="https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmlbepoky0d9d07iqv9rd0eb4">2026 Adopted Budget</a> (2022–2023 actuals, 2026 department totals)</li>
     <li><a href="https://xmaps.indy.gov/ODP/Download/OFM/Budget/Proposed/2023%20Proposed%20Budget.pdf">2023 Proposed Budget</a> (2019–2021 actuals)</li>
     <li><a href="https://mirrorindy.org/indianapolis-city-county-budget-explained-2027/">Mirror Indy: budget basics and 2027 calendar</a> · <a href="https://mirrorindy.org/2027-indianapolis-budget-mayor-joe-hogsett-city-county-council-meeting/">first look at the 2027 budget</a></li>
     <li><a href="https://www.wishtv.com/news/politics/hogsett-proposed-2027-budget/">WISH-TV: $400M for IMPD, DPW and OPHS changes</a> · <a href="https://www.wthr.com/article/news/local/indys-19-billion-budget-promises-more-for-roads-as-drivers-prepare-to-pay-more-indianapolis-mayor-joe-hogsett-indiana/531-388289e7-56dc-4acc-b92e-51f2ba67ff8a">WTHR: roads and the wheel tax</a></li>
+    <li><a href="https://mirrorindy.org/indianapolis-2027-budget-approved-city-county-council-joe-hogsett-impd/">Mirror Indy: council approves the 2027 budget</a> · <a href="https://www.wishtv.com/news/politics/indianapolis-council-passes-2027-budget-with-400m-for-public-safety/">WISH-TV: council passes 2027 budget</a> · <a href="https://www.wfyi.org/wfyi-news/2026-10-19/indianapolis-city-council-council-passes-2027-budget">WFYI: council passes 2027 budget</a></li>
     <li><a href="https://mirrorindy.org/indianapolis-impd-license-plate-readers-gunshot-detection-technology-flock-sensors-contract/">Mirror Indy: IMPD's Flock contract</a></li>
   </ol>
 </footer>
@@ -289,7 +305,7 @@ const SPEND=[
   {y:2024,s:'A', ps:608.3,cj:309.0,ci:398.8,ex:216.9,db:179.1},
   {y:2025,s:'A', ps:672.9,cj:328.7,ci:433.2,ex:131.4,db:110.3},
   {y:2026,s:'AD',ps:698.9,cj:346.3,ci:432.2,ex:119.0,db:113.1},
-  {y:2027,s:'P', ps:761.2,cj:360.9,ci:529.6,ex:127.4,db:118.6}
+  {y:2027,s:'AD',ps:761.2,cj:360.9,ci:529.6,ex:127.4,db:118.6}
 ];
 const RCATS=[
   {k:'pt',n:'Property tax',c:'--s1'},
@@ -303,7 +319,7 @@ const REV=[
   {y:2024,s:'A', pt:469.6,it:495.9,ig:338.1,tot:1659.7},
   {y:2025,s:'A', pt:482.8,it:531.0,ig:333.7,tot:1630.1},
   {y:2026,s:'AD',pt:482.3,it:513.7,ig:443.0,tot:1709.6},
-  {y:2027,s:'P', pt:529.3,it:554.4,ig:538.5,tot:1897.9}
+  {y:2027,s:'AD',pt:529.3,it:554.4,ig:538.5,tot:1897.9}
 ];
 REV.forEach(r=>r.ot=+(r.tot-r.pt-r.it-r.ig).toFixed(1));
 SPEND.forEach(r=>r.tot=CATS.reduce((a,c)=>a+r[c.k],0));
@@ -387,7 +403,7 @@ function delta(){
     el('rect',{x:L,y:cy-9,width:Math.max(2,x(r.d)-L),height:18,fill:css(r.c),rx:3},svg);
     const vt=el('text',{x:x(r.d)+8,y:cy+4,class:'val'},svg);vt.textContent=`+${fm1(r.d)} (+${(r.d/r.a*100).toFixed(1)}%)`;
   });
-  document.getElementById('deltaTable').innerHTML=`<table><thead><tr><th>Function</th><th>2026 adopted</th><th>2027 proposed</th><th>Change</th><th>2027 share</th></tr></thead><tbody>`+
+  document.getElementById('deltaTable').innerHTML=`<table><thead><tr><th>Function</th><th>2026 adopted</th><th>2027 adopted</th><th>Change</th><th>2027 share</th></tr></thead><tbody>`+
     rows.map(r=>`<tr><td>${r.n}</td><td>${fm1(r.a)}</td><td>${fm1(r.b)}</td><td class="up">+${fm1(r.d)}</td><td>${(r.b/b.tot*100).toFixed(1)}%</td></tr>`).join('')+
     `</tbody><tfoot><tr><td>Total</td><td>${fm1(a.tot)}</td><td>${fm1(b.tot)}</td><td class="up">+${fm1(b.tot-a.tot)}</td><td>100%</td></tr></tfoot></table>`;
 }
@@ -578,7 +594,7 @@ const DEBT=[
 
 // ---------- Department explorer ----------
 const FN={ps:{n:'Public safety',c:'--s1'},cj:{n:'Criminal justice',c:'--s2'},ci:{n:'Community dev. & infrastructure',c:'--s3'},ex:{n:'Executive, legislative & admin',c:'--s4'}};
-const YRS=['2024 A','2025 A','2026 AD','2026 Rev.','2027 P'];
+const YRS=['2024 A','2025 A','2026 AD','2026 Rev.','2027 AD'];
 const SHOW=[0,1,2,4]; // columns shown in tables/charts (skip revised)
 const EXPC={"Personal Services":'--s1',"Other Services and Charges":'--s2',"Capital":'--s3',"Materials and Supplies":'--s5',"Internal Charges":'--s4'};
 const LBL={"Personal Services":"Staff pay & benefits","Materials and Supplies":"Supplies","Other Services and Charges":"Contracts, services & other charges","Capital":"Property & equipment","Internal Charges":"Charges between departments"};

@@ -5,6 +5,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "_src"
 UPDATED = "September 28, 2026"  # default "last updated" date; pages updated since carry their own below
 VOTES_UPDATED = "October 16, 2026"
+BUDGET_UPDATED = "October 21, 2026"
 SITE = "https://airesearch.myfriendfred.org"
 ISSUES = "https://github.com/mffred/indy-ai-research-docs/issues/new"
 
@@ -94,9 +95,9 @@ title_m = re.search(r"<title>.*?</title>", b)
 b = b.replace(title_m.group(0), "")
 b = re.sub(r'<link rel="preconnect"[^>]*>\s*<link rel="stylesheet" href="https://fonts.googleapis.com[^>]*>', "", b, count=1)
 b = b.replace("padding-inline:16px;padding-block:28px 56px", "padding-inline:16px;padding-block:0 56px")
-b = b.replace('<div class="wrap">', bar("budget") + notice("/budget") + '<div class="wrap" style="padding-top:28px">', 1)
+b = b.replace('<div class="wrap">', bar("budget") + notice("/budget", BUDGET_UPDATED) + '<div class="wrap" style="padding-top:28px">', 1)
 b = re.sub(r"(<script>)", FOOT + r"\n\1", b, count=1)
-budget = (head("Indianapolis Budget Explorer", "Nine years of Indianapolis and Marion County spending and a clickable breakdown of all 35 departments in the 2027 proposed budget.")
+budget = (head("Indianapolis Budget Explorer", "Nine years of Indianapolis and Marion County spending and a clickable breakdown of all 35 departments in the 2027 adopted budget.")
           + b.split("<style>", 1)[0] + "<style>" + b.split("<style>", 1)[1].split("</style>", 1)[0] + "</style>\n</head>\n<body>\n"
           + b.split("</style>", 1)[1] + "\n</body>\n</html>\n")
 (ROOT / "budget" / "index.html").write_text(theme(budget, '<div class="wrap"', "City Budget"))
@@ -244,9 +245,9 @@ home_body = f'''<main class="home">
   </section>
   <section class="docs" aria-label="Documents">
     <a class="card" href="/budget">
-      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {UPDATED}</span></div>
+      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {BUDGET_UPDATED}</span></div>
       <h2>Indianapolis Budget Explorer</h2>
-      <p>Nine years of city-county spending, revenue by source, and a clickable breakdown of all 35 departments in the $1.898B 2027 proposed budget: where each one's money comes from and what it pays for.</p>
+      <p>Nine years of city-county spending, revenue by source, and a clickable breakdown of all 35 departments in the $1.898B 2027 budget the Council passed Oct 19: where each one's money comes from and what it pays for.</p>
       <span class="go">Open the explorer →</span>
     </a>
     <a class="card" href="/flock">
