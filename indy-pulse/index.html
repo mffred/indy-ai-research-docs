@@ -1,0 +1,1034 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indy Public Safety Pulse</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Bitter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/pinstripe.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+  /* Palette, fonts and window chrome come from the site's pinstripe.css, loaded above. */
+  :root {
+    --bevel-raised: var(--ps-bevel-raised);
+    --drop-window: var(--ps-drop-window);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--ps-peri); color: var(--ps-navy);
+    font: 14px/1.5 var(--ps-sans); }
+  header {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+    margin: 0; padding: 4px 12px; min-height: 30px;
+    background: var(--ps-sky); border-bottom: 1px solid var(--ps-navy); box-shadow: var(--bevel-raised);
+  }
+  header h1 { margin: 0; font: 400 15px/28px var(--ps-title); color: var(--ps-navy); letter-spacing: 0; }
+  #status { color: var(--ps-ink-muted); font-size: 12px; }
+  #status.err { color: var(--ps-stop); font-weight: 600; }
+  main {
+    display: grid; gap: 16px; padding: 16px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  /* Each panel is a site window (data-ps-title, styled by pinstripe.css). Its <h2> text is copied into the title bar by syncTitles(). */
+  .panel { position: relative; min-width: 0; padding: 44px 24px 24px; }
+  .panel > h2 { display: none; }
+  .kpi { grid-column: span 3; }
+  .kpi .val { font: 400 30px/1.1 var(--ps-title); color: var(--ps-green-ink); font-variant-numeric: tabular-nums; }
+  .kpi .sub { color: var(--ps-ink-muted); font-size: 12px; }
+  .kpi.warn .val { color: var(--ps-caution-ink); }
+  .top3-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .top3-card { padding: 12px; background: var(--ps-cream); border: 1px solid var(--ps-navy); box-shadow: var(--drop-window); cursor: pointer; }
+  .top3-card:hover { background: var(--ps-green-soft); }
+  .top3-card.active { box-shadow: inset 4px 0 0 var(--ps-green-ink), var(--drop-window); }
+  .top3-card:focus-visible { outline: 2px solid #0b7a4e; outline-offset: 2px; }
+  .top3-rank { font: 400 26px/1 var(--ps-title); color: var(--ps-green-ink); }
+  .top3-name { font-weight: 600; font-size: 15px; margin: 6px 0 2px; color: var(--ps-navy); }
+  .top3-count { font-size: 13px; color: var(--ps-navy); font-variant-numeric: tabular-nums; }
+  .top3-def { font-size: 13px; line-height: 1.45; color: var(--ps-navy); margin-top: 8px; }
+  @media (max-width: 900px) { .top3-grid { grid-template-columns: 1fr; } }
+  .wide { grid-column: span 8; }
+  .side { grid-column: span 4; }
+  .half { grid-column: span 6; }
+  .full { grid-column: span 12; }
+  .third { grid-column: span 4; }
+  /* Map and chart heights scale with the window, so large screens don't leave empty space. */
+  #map, #dMap { border: 1px solid var(--ps-navy); background: var(--ps-sky); }
+  #map { flex: 1; min-height: clamp(380px, 48vh, 680px); }
+  #dMap { height: clamp(300px, 42vh, 560px); }
+  .panel-fill { display: flex; flex-direction: column; }
+  .panel-fill .cols { flex: 1; height: auto; min-height: 150px; }
+  .daily-stats { font-size: 13px; color: var(--ps-navy); margin-bottom: 10px; line-height: 1.5; }
+  #dSummary p { margin: 0 0 10px; font-size: 13px; line-height: 1.5; color: var(--ps-navy); }
+  .bar-row { display: grid; grid-template-columns: minmax(150px, 2fr) 3fr 120px; gap: 8px; align-items: center; margin: 5px 0; font-size: 12px; padding: 2px 4px; }
+  .bar-row .label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bar-row .track { height: 10px; background: var(--ps-sky); border: 1px solid var(--ps-navy); box-shadow: inset 1px 1px 0 #768dc6; overflow: hidden; }
+  .bar-row .fill { height: 100%; background: var(--ps-green-ink); }
+  .bar-row .n { text-align: right; font-variant-numeric: tabular-nums; color: var(--ps-navy); }
+  .pickable { cursor: pointer; }
+  .pickable:hover { background: var(--ps-green-soft); }
+  .pickable.active { background: var(--ps-green-soft); box-shadow: inset 3px 0 0 var(--ps-green-ink); }
+  .pickable.active .label { font-weight: 600; }
+  .cols { display: flex; align-items: flex-end; gap: 3px; height: clamp(150px, 22vh, 280px); }
+  .col { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+  .col .bar { width: 100%; background: var(--ps-green-ink); min-height: 2px; }
+  .col.partial .bar { background: repeating-linear-gradient(45deg, var(--ps-green-ink) 0 3px, var(--ps-cream) 3px 6px); border: 1px solid var(--ps-green-ink); }
+  .col:hover .bar { background: var(--ps-navy); }
+  #tip {
+    position: fixed; display: none; pointer-events: none; z-index: 1000; white-space: pre-line;
+    background: var(--ps-navy); border: 1px solid var(--ps-navy); box-shadow: var(--drop-window);
+    padding: 6px 9px; font: 12px/1.5 var(--ps-mono); color: var(--ps-cream);
+  }
+  .col .lbl { font-size: 10px; color: var(--ps-ink-muted); margin-top: 4px; white-space: nowrap; height: 14px; }
+  .tall .cols { height: clamp(170px, 26vh, 340px); }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th, td { text-align: left; padding: 5px 6px; border-bottom: 1px solid rgba(23, 36, 79, 0.2); vertical-align: top; }
+  th { color: var(--ps-ink-muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+  td.addr { color: var(--ps-ink-muted); }
+  .scroll { max-height: 420px; overflow: auto; }
+  .empty { color: var(--ps-ink-muted); font-style: italic; }
+  .drill-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
+  .drill-head { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+  .drill-title { font: 400 20px/1.2 var(--ps-title); color: var(--ps-navy); }
+  .drill-title .dim { color: var(--ps-green-ink); }
+  .drill-stat { font: 400 30px/1.1 var(--ps-title); color: var(--ps-green-ink); font-variant-numeric: tabular-nums; }
+  .change { font-size: 12px; color: var(--ps-ink-muted); }
+  .up { color: var(--ps-stop); }    /* increase in incidents */
+  .down { color: var(--ps-green-ink); } /* decrease in incidents */
+  .controls { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  button {
+    font: 500 12px/1 var(--ps-sans); color: var(--ps-navy); background: var(--ps-cream);
+    border: 1px solid var(--ps-navy); border-radius: 4px; padding: 6px 10px; cursor: pointer;
+    box-shadow: var(--bevel-raised);
+  }
+  button:hover { background: #fffdf3; }
+  button:active { background: var(--ps-peri); box-shadow: inset 1px 1px 0 #45578f; }
+  button:focus-visible { outline: 2px solid #0b7a4e; outline-offset: 1px; }
+  button.on { background: var(--ps-green-ink); color: var(--ps-cream); box-shadow: inset 1px 1px 0 #075a39; }
+  .hint { color: var(--ps-ink-muted); font-size: 11px; margin-top: 8px; }
+  .chg { font-size: 11px; margin-right: 6px; white-space: nowrap; font-weight: 600; }
+  .yoy-head { font-size: 13px; line-height: 1.8; margin-bottom: 6px; }
+  .yoy-head strong { color: var(--ps-green-ink); font-weight: 600; }
+  .def { color: var(--ps-ink-muted); font-size: 11px; line-height: 1.35; margin: -2px 0 8px 4px; }
+  .def-lg { color: var(--ps-navy); font-size: 13px; line-height: 1.45; margin-top: 8px; max-width: 75ch; min-height: 1.4em; }
+  footer {
+    margin: 0 16px 16px; padding: 10px 14px; color: var(--ps-ink-muted); font-size: 12px;
+    background: var(--ps-cream); border: 1px solid var(--ps-navy); box-shadow: var(--drop-window);
+  }
+  footer a { color: var(--ps-green-ink); }
+  .leaflet-container { font-family: var(--ps-sans); }
+  @media (max-width: 900px) {
+    .kpi { grid-column: span 6; }
+    .wide, .side, .half, .third { grid-column: span 12; }
+  }
+  @media (max-width: 480px) {
+    main { padding: 10px; gap: 12px; }
+    .kpi { grid-column: span 12; }
+    .kpi .val { font-size: 26px; }
+    .col .lbl { font-size: 9px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Indy Public Safety Pulse</h1>
+  <div id="status">connecting…</div>
+</header>
+
+<main>
+  <section class="panel full">
+    <h2>Top 3 incident types · 7 days</h2>
+    <div class="top3-grid" id="top3"></div>
+    <div class="hint">Click a card to drill in. Percentages are year-to-date change vs the same months last year.</div>
+  </section>
+
+  <section class="panel kpi">
+    <h2>Incidents · last 24h</h2>
+    <div class="val" id="kpi24">–</div>
+    <div class="sub">IMPD reports, ending at newest report</div>
+  </section>
+  <section class="panel kpi">
+    <h2>Incidents · last 7 days</h2>
+    <div class="val" id="kpi7">–</div>
+    <div class="sub">IMPD reports</div>
+  </section>
+  <section class="panel kpi warn">
+    <h2>Calls for service · 24h</h2>
+    <div class="val" id="cfs24">–</div>
+    <div class="sub">dispatched calls, including non-criminal</div>
+  </section>
+  <section class="panel kpi">
+    <h2>Year to date · citywide</h2>
+    <div class="val" id="kpiYtd">–</div>
+    <div class="sub" id="kpiYtdSub"></div>
+  </section>
+
+  <section class="panel wide panel-fill">
+    <h2 id="mapTitle">Incidents · last 24 hours on map</h2>
+    <div id="map"></div>
+    <div class="hint">Points are reported locations, not confirmed events. Solid outlines are IMPD districts and dashed lines are patrol beats. Click a district to filter.</div>
+  </section>
+
+  <section class="panel side panel-fill">
+    <h2>Daily incidents · 14 days</h2>
+    <div class="daily-stats" id="dailyStats"></div>
+    <div class="cols" id="daily"></div>
+  </section>
+
+  <section class="panel half">
+    <h2>Top incident types · 7 days</h2>
+    <div id="types"></div>
+    <div class="hint">Click a type to drill in. Percentages show year-to-date change vs the same months last year.</div>
+  </section>
+  <section class="panel half">
+    <h2>By IMPD district · 7 days</h2>
+    <div id="districts"></div>
+    <div class="hint">Click a district to drill in.</div>
+  </section>
+
+  <section class="panel full" id="drill">
+    <div class="drill-head">
+      <div>
+        <div class="drill-title" id="dTitle">All incidents · citywide</div>
+        <div class="drill-stat" id="dTotal">–</div>
+        <div class="change" id="dChange"></div>
+        <div class="def-lg" id="dDef"></div>
+      </div>
+      <div class="controls">
+        <span class="hint" style="margin:0 4px 0 0">Range</span>
+        <button data-range="30">30 days</button>
+        <button data-range="90">90 days</button>
+        <button data-range="365">1 year</button>
+        <button data-range="all">Since 2020</button>
+        <button id="clear">Clear filter</button>
+      </div>
+    </div>
+
+    <div class="drill-grid">
+      <section class="panel wide">
+        <h2>Map overview</h2>
+        <div id="dMap"></div>
+        <div class="hint">Beats are shaded darker where this view has more incidents. Outlines are districts.</div>
+      </section>
+      <section class="panel side">
+        <h2>About this area</h2>
+        <div id="dSummary"></div>
+      </section>
+
+      <section class="panel tall full" style="margin-bottom:12px">
+        <h2 id="trendTitle">Trend</h2>
+        <div class="cols" id="trend"></div>
+        <div class="hint" id="trendHint"></div>
+      </section>
+
+      <section class="panel wide">
+        <h2>Year over year · by month</h2>
+        <div class="yoy-head" id="yoyHead"></div>
+        <div id="yoyChart"></div>
+        <div class="hint">One line per year. The current year stops at the last complete month, since the newest month is partial.</div>
+      </section>
+      <section class="panel side">
+        <h2>Totals by year</h2>
+        <div id="yoyTable"></div>
+        <div class="hint">2020 is the earliest year in the feed, so it has no prior-year comparison. 2020 was also a pandemic year, which shaped its numbers.</div>
+      </section>
+
+      <section class="panel half">
+        <h2>By hour of day</h2>
+        <div class="cols" id="hours"></div>
+        <div class="hint">00:00 runs high in this feed. It may include reports where the time was not recorded.</div>
+      </section>
+      <section class="panel half">
+        <h2>By day of week</h2>
+        <div class="cols" id="dow"></div>
+      </section>
+
+      <section class="panel half">
+        <h2>Where: premise type</h2>
+        <div id="premise"></div>
+      </section>
+      <section class="panel half">
+        <h2>Outcome</h2>
+        <div id="disposition"></div>
+      </section>
+
+      <section class="panel half">
+        <h2>Top beats</h2>
+        <div id="beats"></div>
+        <div class="hint">Beats are IMPD patrol zones, grouped under districts.</div>
+      </section>
+      <section class="panel half">
+        <h2 id="breakTitle">Breakdown</h2>
+        <div id="breakdown"></div>
+      </section>
+
+      <section class="panel full" style="margin-top:12px">
+        <h2>Recent reports in this view</h2>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>When</th><th>Type</th><th>Location</th><th>District</th></tr></thead>
+            <tbody id="drillRecent"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="panel full">
+    <h2>Latest incident reports · citywide</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>When</th><th>Type</th><th>Location</th><th>District</th></tr></thead>
+        <tbody id="recent"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Source: <a href="https://impd-transparency-hub-indygis.hub.arcgis.com/">IMPD Transparency Hub</a> via the City of Indianapolis GIS server (IMPD_Public_Data).
+  Windows end at the newest report because the city feed lags. The latest month is partial and shown hatched. Refreshes every 5 minutes. Offense and outcome descriptions are plain-language summaries, not legal definitions. Unofficial; not for emergency use.
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(() => {
+  const BASE = "https://gis.indy.gov/server/rest/services/IMPD/IMPD_Public_Data/FeatureServer";
+  const INCIDENTS = `${BASE}/1/query`;
+  const CALLS = `${BASE}/0/query`;
+  const REFRESH_MS = 5 * 60 * 1000;
+  const DAY = 24 * 3600 * 1000;
+  const ALL_START = Date.UTC(2020, 0, 1);
+  const DOW = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const HOURS = Array.from({ length: 24 }, (_, h) => String(h).padStart(2, "0"));
+  const COUNT = { statisticType: "count", onStatisticField: "OBJECTID", outStatisticFieldName: "n" };
+
+  // Pinstripe colors for map and charts (keep in sync with the CSS variables above).
+  const C = {
+    navy: "#17244f", green: "#096a44", amber: "#8a5a0c", muted: "#3d4a75", cream: "#fdf7e2", stop: "#c21a1a",
+  };
+
+  // state.type / state.district are filters; state.range is days or "all".
+  const state = { type: null, district: null, range: 90 };
+  let anchor = null;   // newest report time, used as "now"
+  let seq = 0;         // guards against out-of-order responses
+
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const fmt = (n) => Number(n || 0).toLocaleString();
+  const sql = (s) => String(s).replace(/'/g, "''");
+  const and = (...parts) => parts.filter(Boolean).join(" AND ");
+  // ArcGIS SQL rejects epoch numbers on date fields; a timestamp literal works.
+  const stamp = (ms) => `timestamp '${new Date(ms).toISOString().replace("T", " ").slice(0, 19)}'`;
+  const since = (ms) => `OccurredFrom >= ${stamp(ms)}`;
+  const monthKey = (ms) => new Date(ms).toISOString().slice(0, 7).replace("-", "");
+
+  async function query(url, params) {
+    const body = new URLSearchParams({ where: "1=1", outFields: "*", returnGeometry: "false", f: "json", ...params });
+    const res = await fetch(`${url}?${body}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+    if (json.error) throw new Error(json.error.message || "query error");
+    return json;
+  }
+
+  const count = async (where) => (await query(INCIDENTS, { where, returnCountOnly: "true" })).count;
+
+  // Group incidents by one field and return [{ key, n }].
+  async function tally(where, field, { limit, order = "n DESC" } = {}) {
+    const p = { where, groupByFieldsForStatistics: field, outStatistics: JSON.stringify([COUNT]), orderByFields: order };
+    if (limit) p.resultRecordCount = String(limit);
+    const json = await query(INCIDENTS, p);
+    // The server does not always honor resultRecordCount on grouped queries, so cap here too.
+    const rows = json.features.map((f) => ({ key: f.attributes[field], n: f.attributes.n }));
+    return limit ? rows.slice(0, limit) : rows;
+  }
+
+  function filters() {
+    const parts = [];
+    if (state.type) parts.push(`NIBRSClassDesc = '${sql(state.type)}'`);
+    if (state.district) parts.push(`Geo_Districts = '${sql(state.district)}'`);
+    return parts;
+  }
+
+  // Plain-language summaries of offense types, keyed by NIBRSClassDesc. Not legal definitions.
+  const GLOSSARY = {
+    "Simple Assault": "A physical attack or fight with no weapon shown and no serious injury, such as a shove, slap or punch that causes minor or no visible harm.",
+    "Aggravated Assault": "An attack with a weapon, or one that causes or risks serious injury, such as broken bones or loss of consciousness.",
+    "Intimidation": "Threats or conduct that make someone reasonably afraid of being hurt, with no weapon shown and no physical contact.",
+    "Harassment": "A repeated, deliberate course of unwanted behavior aimed at one person that alarms, annoys or distresses them, without a direct physical attack.",
+    "Hit And Run Crash": "Leaving the scene of a crash without giving required information or helping, such as a driver who hits a parked car and drives off.",
+    "Warrant-Fta/Bench/Civil/Pre-P1": "An arrest or contact on an existing court warrant, such as for failing to appear, a bench warrant or a civil warrant. Not a new offense.",
+    "Warrant-Other Jurisdiction": "A person located on a warrant issued by another agency.",
+    "Vandalism Under $2500 No Hate Crime": "Willful damage to property, such as graffiti, a broken window or slashed tires, valued under $2,500 with no bias motive.",
+    "Vandalism Over $2500 OR Hate Crime": "Willful damage to property valued at $2,500 or more, or damage motivated by bias against a group.",
+    "Larceny From Motor Vehicle": "Theft of items from inside a car, such as a bag or electronics left in view. Often happens when a car was unlocked or broken into.",
+    "Larceny Of Motor Vehicle Parts/Accessories": "Theft of parts or add-ons from a vehicle, such as wheels, catalytic converters or stereos.",
+    "Motor Vehicle Theft": "Taking a motor vehicle without permission, including cars, trucks and motorcycles.",
+    "Motor Vehicle Theft-Previous Permission Granted or Assumed": "A vehicle taken by someone who had been allowed to use it before, such as a family member or friend who kept it past the agreed time.",
+    "Larceny-Other": "Taking property without force or a break-in when it does not fit a more specific theft type, such as a bike or items taken from a public place.",
+    "Larceny-Shoplifting": "Taking merchandise from a store without paying.",
+    "Larceny From Building": "Theft of items from inside a building, such as an office, school or home, without a forced entry.",
+    "Larceny-Pocket-Picking": "Taking something from a person's clothing or body without them noticing, such as a wallet from a pocket.",
+    "Larceny-Purse-Snatching": "Grabbing a purse or bag directly from a person.",
+    "Larceny From Coin Operated Machine": "Theft of money or contents from a vending, laundry or parking machine.",
+    "Larceny-Embezzlement": "Taking or misusing money or property that was entrusted to someone, such as by an employee or treasurer.",
+    "Burglary": "Breaking into or entering a building or other structure without permission, usually to steal or commit another crime.",
+    "Robbery": "Taking or attempting to take property from a person by force, threat or fear of harm.",
+    "Trespass/Residential Entry": "Entering a home or property without permission, often after being told to stay away.",
+    "Fraud-Other": "Deception to obtain money or property that does not fit a more specific fraud category.",
+    "Fraud-Credit Card/ATM": "Using someone else's credit card, debit card or ATM access without permission.",
+    "Fraud-Identity Theft": "Using another person's personal information, such as a Social Security number, to open accounts or get goods or services.",
+    "Fraud-Electronic": "Fraud carried out online or through electronic means, such as phishing or scam payments.",
+    "Fraud-Impersonation": "Pretending to be another person or an official to obtain money, property or services.",
+    "Fraud-Welfare": "Getting public assistance benefits through false claims.",
+    "Forgery/Counterfeiting": "Making, altering or using fake documents, checks or currency.",
+    "Bad Check-Insufficient Funds": "Writing a check when the account does not have the money to cover it.",
+    "Computer Hacking/Trespass/Invasion": "Unauthorized access to computers, accounts or networks.",
+    "Money Laundering": "Hiding the source of money gained from crime by moving it through transactions that look legitimate.",
+    "Drug/Narcotics Violation": "Possessing, selling or making illegal drugs.",
+    "Drug Equipment/Paraphernalia Violation": "Possessing items used to use or sell drugs, such as pipes or scales.",
+    "Prescription Drug Violation": "Possessing or selling prescription medicine illegally, or getting it through fraud.",
+    "Weapon/Explosive/Firearm Violation": "Unlawful possession, carrying or use of a weapon, explosive or firearm, such as carrying a gun where it is prohibited.",
+    "Accidental Discharge of Firearm": "A gun fired by accident.",
+    "DWI/DUI/OWI": "Driving while impaired by alcohol or drugs.",
+    "Alcohol Intoxication": "Being drunk in public in a way that causes concern.",
+    "Liquor Law Violation": "Breaking rules on selling or possessing alcohol, such as selling to minors.",
+    "Disorderly Conduct/Indecent Exposure/Disturbing Peace": "Behavior that disturbs others in public, such as loud disturbances or indecent exposure.",
+    "Panhandling/Curfew/Loitering/Unlawful Assembly": "Public order offenses such as begging where prohibited, curfew violations or unlawful gatherings.",
+    "Interfere/Inhibit Public Safety/Investigation": "Obstructing police, emergency responders or an investigation.",
+    "Restraining/Protective/No Contact Order Violation": "Breaking a court order that bars contact with a person, such as a protective order.",
+    "Probation/Parole/Court Order Violation": "Breaking the conditions of probation, parole or another court order.",
+    "Sex Offender Violation": "Breaking registration or residency rules that apply to registered sex offenders.",
+    "Criminal Recklessness": "Reckless conduct that puts others at serious risk, such as firing a gun into a building.",
+    "Murder/Intentional Manslaughter": "Intentionally killing another person.",
+    "Negligent Manslaughter": "A death caused by criminal carelessness.",
+    "Justifiable Homicide": "A killing that the law considers justified, such as in self-defense.",
+    "Kidnapping/Abduction/Hijacking": "Unlawfully taking or holding someone against their will, or taking a vehicle or aircraft by force.",
+    "Extortion/Blackmail": "Getting money or property through threats, such as threatening to release private information.",
+    "Human Trafficking-Commercial Sex Act": "Forcing or coercing someone into commercial sex.",
+    "Prostitution": "Offering or agreeing to sell sex for money.",
+    "Purchasing Sex Act": "Paying or offering to pay for sex.",
+    "Assisting/Promoting Prostitution": "Helping others sell sex, such as arranging clients or running a location.",
+    "Voyeurism": "Secretly watching or recording someone in a private setting without consent.",
+    "Pornography/Obscene Material": "Distributing or possessing obscene material as defined by law.",
+    "Gambling-Betting/Wagering": "Making or accepting illegal bets.",
+    "Gambling-Operating/Promoting/Assisting": "Running or helping to run illegal gambling.",
+    "Gambling Equipment Violation": "Possessing equipment for illegal gambling.",
+    "Fire-Arson": "Intentionally setting fire to property.",
+    "Fire-Accidental": "A fire with no criminal cause.",
+    "Fire-Undetermined": "A fire whose cause has not been determined.",
+    "Perjury": "Lying under oath in a legal proceeding.",
+    "Bribery": "Offering or accepting something of value to influence an official act.",
+    "Official Misconduct": "A public official misusing their position.",
+    "Profession/Occupation Violation": "Breaking licensing or professional rules.",
+    "Forfeiture": "Seizing property connected to a crime or enforcement action.",
+    "Search Warrant": "Police carrying out a court-approved search. Police activity, not a complaint.",
+    "Traffic Arrest": "An arrest or citation for a traffic violation.",
+    "Crash Investigation": "Police responding to and documenting a vehicle crash.",
+    "Traffic Fatality": "A death in a traffic crash.",
+    "Death Investigation-Natural Causes": "Police responding to a death that appears to be from natural causes.",
+    "Death Investigation-Accidental": "Police responding to an accidental death.",
+    "Missing Person": "A report that someone is missing.",
+    "Lost Property": "A report of property that was lost.",
+    "Found Property": "A report of property that was found.",
+    "Lost City/County Property": "A report of city or county property that was lost.",
+    "Found City/County Property": "A report of city or county property that was found.",
+    "Animal Non-Criminal": "A non-criminal animal call, such as a stray or lost pet.",
+    "Animal Offense-Non-Cruelty": "A violation of animal control rules, such as leash laws.",
+    "Animal Offense-Cruelty": "Mistreatment or neglect of an animal.",
+    "Animal Destruction": "Killing or disposing of an animal, usually by animal control.",
+    "Abandoned Vehicle": "A vehicle left on public property and reported for removal.",
+    "Stolen Property": "Possessing, buying or selling property known or suspected to be stolen.",
+    "Other Non-Criminal Incident": "Police activity that is not a crime, such as a welfare check or a civil dispute.",
+    "Other Criminal Classification": "A criminal incident that does not fit a specific category.",
+    "Prior Interact Case": "A record linked to an earlier police contact.",
+    "Human Remains/Tissue/Organ/Corpse Violation": "Unlawful handling of human remains.",
+  };
+
+  const OUTCOMES = {
+    "Active- Open": "The case is still open. No arrest or closure yet.",
+    "Cleared by Arrest/Summons/UTT/Immediate Detention": "Police identified a suspect and arrested, summoned or immediately detained them. A UTT is a uniform traffic ticket.",
+    "Cleared by Arrest/Summons/UTT/Emergency Detention": "Police identified a suspect and held them on an emergency detention, such as a mental-health hold, or summoned them.",
+    "Exceptionally Cleared": "The case is closed without an arrest for a reason outside police control, such as the suspect died, cannot be prosecuted, or the victim will not cooperate.",
+    "Warrant Filed": "A warrant has been requested or filed against a suspect.",
+    "Unfounded": "The investigation found the reported offense did not happen or was not a crime.",
+  };
+
+  // Lowercase keys so small differences in capitalization still match the data.
+  const lower = (m) => Object.fromEntries(Object.entries(m).map(([k, v]) => [k.toLowerCase(), v]));
+  const GLOSSARY_L = lower(GLOSSARY);
+  const OUTCOMES_L = lower(OUTCOMES);
+
+  // ---------- renderers ----------
+
+  // defs: lowercased glossary map. showDefs: print each definition under its bar.
+  // yoy: optional map of key to year-to-date percent change, shown beside each count.
+  function bars(el, rows, { pick, active, label, defs, showDefs, yoy } = {}) {
+    if (!rows.length) { el.innerHTML = '<div class="empty">no data</div>'; return; }
+    const top = Math.max(...rows.map((r) => r.n)) || 1;
+    el.innerHTML = rows.map((r) => {
+      const name = (label ? label(r) : r.key) || "Unknown";
+      const def = defs && r.key ? defs[String(r.key).toLowerCase()] : undefined;
+      const canPick = pick && r.key;
+      const cls = "bar-row" + (canPick ? " pickable" : "") + (canPick && active === r.key ? " active" : "");
+      const attrs = canPick ? ` data-pick="${pick}" data-value="${esc(r.key)}"` : "";
+      const row = `<div class="${cls}"${attrs} title="${esc(def ? `${name}: ${def}` : name)}">` +
+        `<div class="label">${esc(name)}</div>` +
+        `<div class="track"><div class="fill" style="width:${Math.max(2, (r.n / top) * 100)}%"></div></div>` +
+        `<div class="n">${yoy && yoy[r.key] != null ? chgHtml(yoy[r.key]) : ""}${fmt(r.n)}</div></div>`;
+      return row + (showDefs && def ? `<div class="def">${esc(def)}</div>` : "");
+    }).join("");
+  }
+
+  // items: [{ label, n, title, partial }]
+  function columns(el, items) {
+    if (!items.length) { el.innerHTML = '<div class="empty">no data</div>'; return; }
+    const max = Math.max(...items.map((i) => i.n)) || 1;
+    const step = Math.ceil(items.length / 12);
+    el.innerHTML = items.map((it, i) =>
+      `<div class="col${it.partial ? " partial" : ""}" data-tip="${esc(it.title)}">` +
+      `<div class="bar" style="height:${Math.max(2, (it.n / max) * 100)}%"></div>` +
+      `<div class="lbl">${i % step === 0 ? esc(it.label) : ""}</div></div>`
+    ).join("");
+  }
+
+  function renderRecent(el, features, emptyText) {
+    if (!features.length) { el.innerHTML = `<tr><td colspan="4" class="empty">${emptyText}</td></tr>`; return; }
+    el.innerHTML = features.map(({ attributes: a }) => `
+      <tr>
+        <td>${esc(a.sOccDate)} ${esc(a.sOccTime)}</td>
+        <td>${esc(a.CR_Desc || a.NIBRSClassDesc)}</td>
+        <td class="addr">${esc(a.sAddress)}</td>
+        <td>${esc(a.Geo_Districts)}</td>
+      </tr>`).join("");
+  }
+
+  // ---------- boundaries ----------
+
+  // District and beat outlines from the same city server. Simplified a little to keep the payload small.
+  const DIST_URL = "https://gis.indy.gov/server/rest/services/IMPD/IMPDDistricts/MapServer/0/query";
+  const BEAT_URL = "https://gis.indy.gov/server/rest/services/IMPD/IMPDBeatMap/MapServer/2/query";
+
+  async function loadGeo() {
+    const get = (url) => fetch(`${url}?${new URLSearchParams({
+      where: "1=1", outFields: "*", outSR: "4326", maxAllowableOffset: "0.00005", f: "geojson",
+    })}`).then((r) => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.json();
+    });
+    try {
+      const [districts, beats] = await Promise.all([get(DIST_URL), get(BEAT_URL)]);
+      return { districts, beats };
+    } catch (err) {
+      console.warn("boundaries unavailable:", err.message);
+      return null;
+    }
+  }
+
+  // Beats are dashed. With a district selected, only that district's beats show and they are emphasized.
+  function drawBoundaries() {
+    const sel = state.district;
+    window.__bounds.clearLayers();
+    L.geoJSON(window.__geo.beats, {
+      filter: (f) => !sel || f.properties.DISTRICT === sel,
+      style: () => ({
+        color: C.navy, weight: sel ? 1.6 : 0.9, opacity: sel ? 0.9 : 0.5,
+        dashArray: "3 3", fill: false,
+      }),
+      onEachFeature: (f, layer) => layer.bindTooltip(`Beat ${esc(f.properties.BEAT)} · ${esc(f.properties.DISTRICT)}`, { sticky: true }),
+    }).addTo(window.__bounds);
+    L.geoJSON(window.__geo.districts, {
+      style: (f) => {
+        const on = f.properties.DISTRICT === sel;
+        return {
+          color: C.navy, weight: on ? 2.8 : 1.4, opacity: sel && !on ? 0.35 : 0.95,
+          fillColor: C.green, fillOpacity: on ? 0.12 : 0.03,
+        };
+      },
+      onEachFeature: (f, layer) => {
+        layer.bindTooltip(`${esc(f.properties.DISTRICT)} district · click to filter`, { sticky: true });
+        layer.on("click", () => {
+          const name = f.properties.DISTRICT;
+          state.district = state.district === name ? null : name;
+          refresh();
+        });
+      },
+    }).addTo(window.__bounds);
+  }
+
+  // Zoom to the whole city, or to the selected district. Only when the selection changes.
+  let fitKey = null;
+  function fitBoundaries() {
+    const key = state.district || "all";
+    if (key === fitKey) return;
+    fitKey = key;
+    const features = window.__geo.districts.features.filter((f) => !state.district || f.properties.DISTRICT === state.district);
+    if (!features.length) return;
+    window.__map.fitBounds(L.geoJSON({ type: "FeatureCollection", features }).getBounds(), { padding: [20, 20] });
+  }
+
+  function renderMap(features) {
+    if (!window.__map) {
+      window.__map = L.map("map").setView([39.7684, -86.1581], 11);
+      // Standard OpenStreetMap tiles, shown in their normal colors to match the Pinstripe palette.
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors", maxZoom: 19,
+      }).addTo(window.__map);
+      window.__bounds = L.layerGroup().addTo(window.__map);
+      window.__layer = L.layerGroup().addTo(window.__map);
+    }
+    window.__layer.clearLayers();
+    if (window.__geo) {
+      drawBoundaries();
+      fitBoundaries();
+    }
+    for (const f of features) {
+      const a = f.attributes;
+      if (!a.Latitude || !a.Longitude) continue;
+      L.circleMarker([a.Latitude, a.Longitude], {
+        radius: 4, color: C.navy, weight: 1, fillColor: C.green, fillOpacity: 0.85,
+      }).bindTooltip(`${esc(a.NIBRSClassDesc)}<br>${esc(a.sAddress)}<br>${esc(a.sOccDate)} ${esc(a.sOccTime)}`)
+        .addTo(window.__layer);
+    }
+  }
+
+  // ---------- year over year ----------
+
+  const FIRST_YEAR = 2020; // earliest year in the feed
+
+  // The newest report's month is partial, so the last complete month is the one before it.
+  function lastComplete(anchorMs) {
+    const d = new Date(anchorMs);
+    const m = d.getUTCMonth(); // 0-based, so it equals the 1-based month before the current one
+    return m === 0 ? { year: d.getUTCFullYear() - 1, month: 12 } : { year: d.getUTCFullYear(), month: m };
+  }
+  const ytdClause = (lc) => `iOccYr IN (${lc.year - 1}, ${lc.year}) AND iOccMth <= ${lc.month}`;
+  const idxOf = (y, m) => y * 12 + (m - 1);
+  const pctChange = (cur, prev) => (prev ? ((cur - prev) / prev) * 100 : null);
+
+  function chgHtml(pct) {
+    if (pct === null || pct === undefined || Number.isNaN(pct)) return "";
+    return `<span class="chg ${pct > 0 ? "up" : "down"}">${pct >= 0 ? "▲" : "▼"} ${Math.abs(pct).toFixed(1)}%</span>`;
+  }
+
+  // grid: { [year]: { [month]: count } } built from year/month groups
+  function toGrid(features) {
+    const grid = {};
+    for (const { attributes: a } of features) {
+      (grid[a.iOccYr] ||= {})[a.iOccMth] = a.n;
+    }
+    return grid;
+  }
+
+  // Sum month indexes from..to inclusive (index = year * 12 + month - 1).
+  function sumIdx(grid, from, to) {
+    let total = 0;
+    for (let i = from; i <= to; i++) {
+      total += ((grid[Math.floor(i / 12)] || {})[(i % 12) + 1]) || 0;
+    }
+    return total;
+  }
+
+  // Citywide year-to-date totals and percent change, summed across all types.
+  function ytdCitywide(features, cy) {
+    let cur = 0, prev = 0;
+    for (const { attributes: a } of features) {
+      if (a.iOccYr === cy) cur += a.n;
+      else if (a.iOccYr === cy - 1) prev += a.n;
+    }
+    return { cur, prev, pct: pctChange(cur, prev) };
+  }
+
+  // Year-to-date percent change per key, this year vs last year over the same months.
+  function yoyMap(features, field, cy) {
+    const acc = {};
+    for (const { attributes: a } of features) {
+      if (!a[field]) continue;
+      const e = (acc[a[field]] ||= { cur: 0, prev: 0 });
+      if (a.iOccYr === cy) e.cur += a.n;
+      else if (a.iOccYr === cy - 1) e.prev += a.n;
+    }
+    return Object.fromEntries(Object.entries(acc).map(([k, e]) => [k, pctChange(e.cur, e.prev)]));
+  }
+
+  function yoyHeadline(grid, lc) {
+    const idx = idxOf(lc.year, lc.month);
+    const ttm = sumIdx(grid, idx - 11, idx);
+    const ttmPrev = sumIdx(grid, idx - 23, idx - 12);
+    const ytd = sumIdx(grid, idxOf(lc.year, 1), idx);
+    const ytdPrev = sumIdx(grid, idxOf(lc.year - 1, 1), idxOf(lc.year - 1, lc.month));
+    return `<div><strong>Last 12 full months</strong> ${fmt(ttm)} ${chgHtml(pctChange(ttm, ttmPrev))} <span class="hint">vs prior 12</span></div>` +
+      `<div><strong>Year to date</strong> Jan–${MONTHS[lc.month - 1]} ${lc.year}: ${fmt(ytd)} ${chgHtml(pctChange(ytd, ytdPrev))} <span class="hint">vs same months last year</span></div>`;
+  }
+
+  // Monthly lines, one per year. Older years are dimmer navy, last year is amber, this year is green.
+  function renderYoyChart(el, grid, lc) {
+    const W = 640, H = 240, L = 40, R = 48, T = 12, B = 24;
+    const series = [];
+    for (let y = FIRST_YEAR; y <= lc.year; y++) {
+      const last = y === lc.year ? lc.month : 12;
+      const pts = [];
+      for (let m = 1; m <= last; m++) pts.push(((grid[y] || {})[m]) || 0);
+      series.push({ y, pts });
+    }
+    const max = Math.max(1, ...series.flatMap((s) => s.pts));
+    const x = (i) => L + (i / 11) * (W - L - R);
+    const yPos = (v) => T + (1 - v / max) * (H - T - B);
+    const color = (y) => {
+      if (y === lc.year) return C.green;
+      if (y === lc.year - 1) return C.amber;
+      const t = (y - FIRST_YEAR) / Math.max(1, lc.year - 2 - FIRST_YEAR);
+      return `rgba(23,36,79,${(0.3 + 0.5 * t).toFixed(2)})`;
+    };
+    const lines = series.map(({ y, pts }) => {
+      if (!pts.length) return "";
+      const d = pts.map((v, i) => `${x(i).toFixed(1)},${yPos(v).toFixed(1)}`).join(" ");
+      const endX = x(pts.length - 1), endY = yPos(pts[pts.length - 1]);
+      const width = y === lc.year ? 2.8 : y === lc.year - 1 ? 2 : 1.4;
+      return `<polyline fill="none" stroke="${color(y)}" stroke-width="${width}" points="${d}"/>` +
+        `<text x="${(endX + 5).toFixed(1)}" y="${(endY + 3).toFixed(1)}" fill="${color(y) === C.green ? C.green : color(y).startsWith("rgba") ? C.navy : color(y)}" font-size="10" font-weight="600">${y}</text>`;
+    }).join("");
+    const gridLines = [0, 0.5, 1].map((f) => {
+      const v = Math.round(max * f), yy = yPos(v).toFixed(1);
+      return `<line x1="${L}" x2="${W - R}" y1="${yy}" y2="${yy}" stroke="rgba(23,36,79,0.18)"/>` +
+        `<text x="${L - 6}" y="${yy}" text-anchor="end" dominant-baseline="middle" font-size="9" fill="${C.muted}">${fmt(v)}</text>`;
+    }).join("");
+    const months = MONTHS.map((mn, i) =>
+      `<text x="${x(i).toFixed(1)}" y="${H - 6}" text-anchor="middle" font-size="9" fill="${C.muted}">${mn}</text>`).join("");
+    // Invisible hover columns, one per month, listing every year's count for that month (newest first).
+    const colW = (W - L - R) / 11;
+    const hover = MONTHS.map((mn, i) => {
+      const values = series.filter((s) => i < s.pts.length).map((s) => `${s.y}: ${fmt(s.pts[i])}`).reverse().join("\n");
+      return `<rect x="${(x(i) - colW / 2).toFixed(1)}" y="${T}" width="${colW.toFixed(1)}" height="${H - T - B}" fill="transparent" data-tip="${esc(`${mn}\n${values}`)}"/>`;
+    }).join("");
+    el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Monthly incidents by year">${gridLines}${lines}${months}${hover}</svg>`;
+  }
+
+  function renderYoyTable(el, grid, lc) {
+    const rows = [];
+    for (let y = lc.year; y >= FIRST_YEAR; y--) {
+      const months = y === lc.year ? lc.month : 12;
+      const total = sumIdx(grid, idxOf(y, 1), idxOf(y, months));
+      const prev = y > FIRST_YEAR ? sumIdx(grid, idxOf(y - 1, 1), idxOf(y - 1, months)) : null;
+      const label = y === lc.year ? `${y} <span class="hint">Jan–${MONTHS[lc.month - 1]}</span>` : `${y}`;
+      rows.push(`<tr><td>${label}</td><td>${fmt(total)}</td><td>${chgHtml(pctChange(total, prev)) || "–"}</td></tr>`);
+    }
+    el.innerHTML = `<table><thead><tr><th>Year</th><th>Incidents</th><th>vs prior year</th></tr></thead>` +
+      `<tbody>${rows.join("")}</tbody></table>`;
+  }
+
+  // ---------- drill-down map and summary ----------
+
+  // Beats shaded by incident count in the current view; districts outlined. Zooms to the selected district.
+  function renderDrillMap(beatRows) {
+    if (!window.__dmap) {
+      window.__dmap = L.map("dMap").setView([39.7684, -86.1581], 11);
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors", maxZoom: 19,
+      }).addTo(window.__dmap);
+      window.__dLayer = L.layerGroup().addTo(window.__dmap);
+    }
+    const map = window.__dmap;
+    window.__dLayer.clearLayers();
+    if (!window.__geo) return;
+    const sel = state.district;
+    const counts = Object.fromEntries(beatRows.map((r) => [String(r.key), r.n]));
+    const max = Math.max(1, ...beatRows.map((r) => r.n));
+    const beatFeatures = window.__geo.beats.features.filter((f) => !sel || f.properties.DISTRICT === sel);
+    L.geoJSON({ type: "FeatureCollection", features: beatFeatures }, {
+      style: (f) => {
+        const n = counts[f.properties.BEAT] || 0;
+        return { color: C.navy, weight: 0.8, fillColor: C.green, fillOpacity: n ? 0.1 + 0.75 * (n / max) : 0.03 };
+      },
+      onEachFeature: (f, layer) => layer.bindTooltip(
+        `Beat ${esc(f.properties.BEAT)} · ${esc(f.properties.DISTRICT)}: ${fmt(counts[f.properties.BEAT] || 0)} incidents`,
+        { sticky: true }),
+    }).addTo(window.__dLayer);
+    L.geoJSON(window.__geo.districts, {
+      style: (f) => ({ color: C.navy, weight: f.properties.DISTRICT === sel ? 2.8 : 1.2, fill: false }),
+      onEachFeature: (f, layer) => layer.bindTooltip(`${esc(f.properties.DISTRICT)} district`, { sticky: true }),
+    }).addTo(window.__dLayer);
+    // Re-measure the container before fitting, so the view uses its real size.
+    map.invalidateSize();
+    if (beatFeatures.length) {
+      map.fitBounds(L.geoJSON({ type: "FeatureCollection", features: beatFeatures }).getBounds(), { padding: [12, 12] });
+    }
+  }
+
+  // A short description built only from the incident data: totals, mix, timing and hot spots.
+  function renderSummary({ total, prev, days, premise, hour, dow, beats }) {
+    const el = $("dSummary");
+    const scope = state.district ? `${state.district} district` : "Indianapolis";
+    const period = days ? `the last ${days} days` : "since January 2020";
+    if (!total) { el.innerHTML = `<p>No incidents for ${esc(scope)} in ${period}.</p>`; return; }
+    // 00:00 runs high in this feed and may include reports with no time recorded, so it is left out of the peak.
+    const topHour = [...hour].filter((h) => h.key !== "00").sort((a, b) => b.n - a.n)[0];
+    const topDow = [...dow].sort((a, b) => b.n - a.n)[0];
+    const topPremise = premise[0];
+    const topBeat = beats[0];
+    const change = prev ? pctChange(total, prev) : null;
+    const lines = [
+      `<strong>${esc(scope)}</strong>: ${fmt(total)} incidents in ${period}${change === null ? "" : `, ${chgHtml(change)} vs the prior ${days} days`}.`,
+      topPremise ? `Most reports come from ${esc((topPremise.key || "").replace(/^\d+[A-Z]?\s-\s/, "").toLowerCase())} (${fmt(topPremise.n)}).` : "",
+      topBeat ? `Busiest beat: ${esc(topBeat.key)} with ${fmt(topBeat.n)} incidents.` : "",
+      topHour && topDow ? `Peak hour: ${String(topHour.key).padStart(2, "0")}:00 (excluding 00:00). Busiest day: ${esc(topDow.key)}.` : "",
+    ];
+    el.innerHTML = lines.filter(Boolean).map((l) => `<p>${l}</p>`).join("") +
+      `<p class="hint">Built only from the incident feed. It has no neighborhood names, population or local context.</p>`;
+  }
+
+  // ---------- drill-down ----------
+
+  async function refreshDrill(id) {
+    const days = state.range === "all" ? null : state.range;
+    const start = days ? anchor - days * DAY : ALL_START;
+    const parts = filters();
+    const w = and(since(start), ...parts);
+    const monthly = !days || days > 120;
+    const trendField = monthly ? "sOccYrMth" : "sOccDate";
+    const bothSet = state.type && state.district;
+    const breakField = bothSet ? null : state.district ? "NIBRSClassDesc" : "Geo_Districts";
+
+    const [total, prev, trend, hour, dow, premise, disp, beats, brk, recent, yoyRaw] = await Promise.all([
+      count(w),
+      days ? count(and(since(start - days * DAY), `OccurredFrom < ${stamp(start)}`, ...parts)) : null,
+      tally(w, trendField, { order: `${trendField} ASC` }),
+      tally(w, "sOccHr", { order: "sOccHr ASC" }),
+      tally(w, "sOccDOW"),
+      tally(w, "PremiseType", { limit: 8 }),
+      tally(w, "Disposition", { limit: 8 }),
+      tally(w, "Geo_Beats"),
+      breakField ? tally(w, breakField, { limit: 10 }) : Promise.resolve([]),
+      query(INCIDENTS, { where: w, orderByFields: "OccurredFrom DESC", resultRecordCount: "20",
+        outFields: "CR_Desc,NIBRSClassDesc,sAddress,sOccDate,sOccTime,Geo_Districts" }),
+      // Month-by-month counts for the filter, for year-over-year math.
+      query(INCIDENTS, { where: and(...parts) || "1=1", groupByFieldsForStatistics: "iOccYr,iOccMth",
+        outStatistics: JSON.stringify([COUNT]), orderByFields: "iOccYr ASC,iOccMth ASC" }),
+    ]);
+    if (id !== seq) return;
+
+    // Title and totals
+    const scope = state.district ? `${state.district} district` : "citywide";
+    const kind = state.type || "All incidents";
+    $("dTitle").innerHTML = `${esc(kind)} <span class="dim">· ${esc(scope)}</span>`;
+    $("dTotal").textContent = fmt(total);
+    $("dDef").textContent = state.type
+      ? GLOSSARY_L[state.type.toLowerCase()] || "No plain-language summary for this type yet."
+      : "Select an offense type to see what it covers.";
+    if (prev === null) {
+      $("dChange").textContent = "all reports since January 2020";
+    } else {
+      const change = prev ? ((total - prev) / prev) * 100 : null;
+      const arrow = change > 0 ? "▲" : "▼";
+      const cls = change > 0 ? "up" : "down";
+      $("dChange").innerHTML = change === null
+        ? `no reports in the prior ${days} days`
+        : `<span class="${cls}">${arrow} ${Math.abs(change).toFixed(1)}%</span> vs prior ${days} days (${fmt(prev)})`;
+    }
+
+    // Range buttons
+    document.querySelectorAll("[data-range]").forEach((b) => {
+      b.classList.toggle("on", String(state.range) === b.dataset.range);
+    });
+
+    // Trend
+    const anchorMonth = monthKey(anchor);
+    const trendItems = trend.map((r) => {
+      if (monthly) {
+        const m = Number(r.key.slice(4, 6)) - 1;
+        const label = `${MONTHS[m]} ${r.key.slice(2, 4)}`;
+        const partial = r.key === anchorMonth;
+        return { label, n: r.n, partial, title: `${label}: ${fmt(r.n)}${partial ? " (partial month)" : ""}` };
+      }
+      return { label: r.key.slice(5), n: r.n, title: `${r.key}: ${fmt(r.n)}` };
+    });
+    $("trendTitle").textContent = monthly ? "Monthly trend" : "Daily trend";
+    columns($("trend"), trendItems);
+    $("trendHint").textContent = monthly
+      ? "Monthly counts. The newest month is partial and hatched."
+      : "Daily counts. Bars are scaled to the busiest day in this window.";
+
+    // Hour and weekday
+    const hourMap = Object.fromEntries(hour.map((r) => [r.key, r.n]));
+    columns($("hours"), HOURS.map((h) => ({ label: h, n: hourMap[h] || 0, title: `${h}:00 — ${fmt(hourMap[h] || 0)}` })));
+    const dowMap = Object.fromEntries(dow.map((r) => [r.key, r.n]));
+    columns($("dow"), DOW.map((d) => ({ label: d.slice(0, 3), n: dowMap[d] || 0, title: `${d}: ${fmt(dowMap[d] || 0)}` })));
+
+    // Where, outcome, beats
+    bars($("premise"), premise, { label: (r) => (r.key || "").replace(/^\d+[A-Z]?\s-\s/, "") });
+    bars($("disposition"), disp, { defs: OUTCOMES_L, showDefs: true });
+    bars($("beats"), beats.slice(0, 10));
+    renderDrillMap(beats);
+    renderSummary({ total, prev, days, premise, hour, dow, beats });
+
+    // Breakdown by the other dimension
+    if (breakField) {
+      $("breakTitle").textContent = state.district ? "Offense types here" : "Districts for this offense";
+      const pick = breakField === "NIBRSClassDesc" ? "type" : "district";
+      const active = breakField === "NIBRSClassDesc" ? state.type : state.district;
+      bars($("breakdown"), brk, { pick, active, defs: GLOSSARY_L });
+    } else {
+      $("breakTitle").textContent = "Breakdown";
+      $("breakdown").innerHTML = '<div class="empty">Pick a type or district to see the other dimension.</div>';
+    }
+
+    const lc = lastComplete(anchor);
+    const grid = toGrid(yoyRaw.features);
+    $("yoyHead").innerHTML = yoyHeadline(grid, lc);
+    renderYoyChart($("yoyChart"), grid, lc);
+    renderYoyTable($("yoyTable"), grid, lc);
+
+    renderRecent($("drillRecent"), recent.features, "no reports in this view");
+  }
+
+  // ---------- overview ----------
+
+  // Top three types as cards: rank, count, year-to-date change, and the plain-language description.
+  function renderTop3(types, yoy) {
+    const el = $("top3");
+    if (!types.length) { el.innerHTML = '<div class="empty">no data</div>'; return; }
+    el.innerHTML = types.slice(0, 3).map((r, i) => {
+      const def = GLOSSARY_L[String(r.key).toLowerCase()] || "No plain-language summary for this type yet.";
+      const active = state.type === r.key ? " active" : "";
+      return `<div class="top3-card${active}" role="button" tabindex="0" data-pick="type" data-value="${esc(r.key)}">` +
+        `<div class="top3-rank">#${i + 1}</div>` +
+        `<div class="top3-name">${esc(r.key)}</div>` +
+        `<div class="top3-count">${fmt(r.n)} reports · ${chgHtml(yoy[r.key]) || "no prior-year data"}</div>` +
+        `<div class="top3-def">${esc(def)}</div></div>`;
+    }).join("");
+  }
+
+  async function refresh() {
+    const id = ++seq;
+    try {
+      const latest = await query(INCIDENTS, {
+        outStatistics: JSON.stringify([{ statisticType: "max", onStatisticField: "OccurredFrom", outStatisticFieldName: "mx" }]),
+      });
+      anchor = latest.features[0].attributes.mx;
+      if (!window.__geo) window.__geo = await loadGeo();
+      const t24 = anchor - DAY;
+      const t7 = anchor - 7 * DAY;
+
+      const lc = lastComplete(anchor);
+      const [c24, c7, cfs, types, dists, daily, map, recent, ytdTypes, ytdDists] = await Promise.all([
+        count(since(t24)),
+        count(since(t7)),
+        query(CALLS, { where: `RecDateTime >= ${stamp(t24)}`, returnCountOnly: "true" }).then((r) => r.count),
+        tally(since(t7), "NIBRSClassDesc", { limit: 10 }),
+        tally(since(t7), "Geo_Districts"),
+        tally(since(anchor - 14 * DAY), "sOccDate", { order: "sOccDate ASC" }),
+        query(INCIDENTS, { where: and(since(t24), ...filters()),
+          outFields: "NIBRSClassDesc,sAddress,sOccDate,sOccTime,Latitude,Longitude", resultRecordCount: "2000" }),
+        query(INCIDENTS, { orderByFields: "OccurredFrom DESC", resultRecordCount: "25",
+          outFields: "CR_Desc,NIBRSClassDesc,sAddress,sOccDate,sOccTime,Geo_Districts" }),
+        // Year-to-date counts by type and by district, for the change badges.
+        query(INCIDENTS, { where: ytdClause(lc), groupByFieldsForStatistics: "NIBRSClassDesc,iOccYr",
+          outStatistics: JSON.stringify([COUNT]) }),
+        query(INCIDENTS, { where: ytdClause(lc), groupByFieldsForStatistics: "Geo_Districts,iOccYr",
+          outStatistics: JSON.stringify([COUNT]) }),
+      ]);
+      if (id !== seq) return;
+
+      $("kpi24").textContent = fmt(c24);
+      $("kpi7").textContent = fmt(c7);
+      $("cfs24").textContent = fmt(cfs);
+      const typeYoy = yoyMap(ytdTypes.features, "NIBRSClassDesc", lc.year);
+      const ytdAll = ytdCitywide(ytdTypes.features, lc.year);
+      $("kpiYtd").innerHTML = ytdAll.pct === null ? "–" : `${ytdAll.pct > 0 ? "▲" : "▼"} ${Math.abs(ytdAll.pct).toFixed(1)}%`;
+      $("kpiYtd").style.color = ytdAll.pct > 0 ? C.stop : C.green;
+      $("kpiYtdSub").textContent = `Jan–${MONTHS[lc.month - 1]} ${lc.year}: ${fmt(ytdAll.cur)} vs ${fmt(ytdAll.prev)} in the same months of ${lc.year - 1}`;
+      renderTop3(types, typeYoy);
+
+      columns($("daily"), daily.map((r) => ({ label: r.key.slice(8), n: r.n, title: `${r.key}: ${fmt(r.n)}` })));
+      const dailyTotal = daily.reduce((s, r) => s + r.n, 0);
+      const peakDay = daily.reduce((a, b) => (b.n > a.n ? b : a), daily[0] || { n: 0, key: "" });
+      $("dailyStats").innerHTML = daily.length
+        ? `<strong>${fmt(dailyTotal)}</strong> total · ${fmt(Math.round(dailyTotal / daily.length))} per day on average · peak ${fmt(peakDay.n)} on ${esc(peakDay.key.slice(5))}`
+        : "";
+      bars($("types"), types, { pick: "type", active: state.type, defs: GLOSSARY_L, showDefs: true,
+        yoy: typeYoy });
+      bars($("districts"), dists, { pick: "district", active: state.district,
+        yoy: yoyMap(ytdDists.features, "Geo_Districts", lc.year) });
+
+      const filterLabel = [state.type, state.district ? `${state.district} district` : null].filter(Boolean).join(" · ");
+      $("mapTitle").textContent = `Incidents · last 24 hours on map${filterLabel ? " — " + filterLabel : ""}`;
+      renderMap(map.features);
+      renderRecent($("recent"), recent.features, "no recent reports");
+
+      await refreshDrill(id);
+      syncTitles();
+
+      $("status").classList.remove("err");
+      $("status").textContent = `updated ${new Date().toLocaleTimeString()} · newest report ${anchor ? new Date(anchor).toISOString().slice(0, 10) : "n/a"}`;
+    } catch (err) {
+      $("status").classList.add("err");
+      $("status").textContent = `refresh failed: ${err.message}. Retrying in 5 min.`;
+    }
+  }
+
+  // ---------- interaction ----------
+
+  // Cards act as buttons: Enter or Space picks them, like a click.
+  document.addEventListener("keydown", (e) => {
+    if ((e.key === "Enter" || e.key === " ") && e.target.matches("[data-pick]")) {
+      e.preventDefault();
+      e.target.click();
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    const pickEl = e.target.closest("[data-pick]");
+    if (pickEl) {
+      const v = pickEl.dataset.value;
+      if (pickEl.dataset.pick === "type") state.type = state.type === v ? null : v;
+      else state.district = state.district === v ? null : v;
+      refresh();
+      $("drill").scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+    const rangeEl = e.target.closest("[data-range]");
+    if (rangeEl) {
+      state.range = rangeEl.dataset.range === "all" ? "all" : Number(rangeEl.dataset.range);
+      refresh();
+      return;
+    }
+    if (e.target.closest("#clear")) {
+      state.type = null;
+      state.district = null;
+      refresh();
+    }
+  });
+
+  // Hover tooltip for anything with data-tip (column bars, year-over-year months).
+  const tip = document.createElement("div");
+  tip.id = "tip";
+  document.body.appendChild(tip);
+  document.addEventListener("mouseover", (e) => {
+    const el = e.target.closest("[data-tip]");
+    if (!el) { tip.style.display = "none"; return; }
+    tip.textContent = el.dataset.tip;
+    tip.style.display = "block";
+  });
+  document.addEventListener("mousemove", (e) => {
+    tip.style.left = `${e.clientX + 14}px`;
+    tip.style.top = `${e.clientY + 14}px`;
+  });
+
+  // Copy each panel's <h2> text into its site-style window title bar (data-ps-title).
+  function syncTitles() {
+    document.querySelectorAll("section.panel").forEach((p) => {
+      const h = p.querySelector(":scope > h2");
+      if (h) p.dataset.psTitle = h.textContent.trim();
+    });
+  }
+  syncTitles();
+
+  refresh();
+  setInterval(refresh, REFRESH_MS);
+})();
+</script>
+</body>
+</html>
