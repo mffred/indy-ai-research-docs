@@ -312,4 +312,91 @@ home_body = f'''<main class="home">
 home = (head("Indy AI Research Docs", "Preliminary, AI-assisted research on Indianapolis and Marion County government: budget breakdowns, surveillance contracts and public records.")
         + home_css + "</head>\n<body>\n" + bar("home") + notice("/") + home_body + FOOT + "\n</body>\n</html>\n")
 (ROOT / "index.html").write_text(theme(home, '<main class="home"', "Indy AI Research Docs"))
+# ---------- Crew interest form ----------
+# Questions, options and labels come from lib/crew-options.json, the same file api/crew.js validates
+# against, so the form and the server can't drift. The page has no AI notice on purpose: it isn't research.
+CREW = json.loads((ROOT / "lib" / "crew-options.json").read_text())
+CREW_REQ = '<span class="cf-req">Required</span>'
+
+def crew_field(q):
+    qid = q["id"]
+    label = html.escape(q["label"])
+    req_mark = (" " + CREW_REQ) if q.get("required") else ""
+    err = '<p class="cf-err" id="err-' + qid + '" hidden></p>'
+    if q["type"] in ("text", "email"):
+        is_email = q["type"] == "email"
+        attrs = ' type="' + ("email" if is_email else "text") + '" name="' + qid + '" id="f-' + qid + '"'
+        attrs += ' autocomplete="' + q.get("autocomplete", "off") + '" maxlength="' + str(CREW["maxEmailLength"] if is_email else CREW["maxTextLength"]) + '"'
+        attrs += ' aria-describedby="err-' + qid + '"' + (' aria-required="true"' if q.get("required") else "")
+        return ('<div class="cf-field" id="field-' + qid + '"><label for="f-' + qid + '">' + label + req_mark + '</label>'
+                + '<input' + attrs + '>' + err + '</div>')
+    kind = "checkbox" if q["type"] in ("checkbox", "consent") else "radio"
+    opts = "".join(
+        '<label class="cf-opt"><input type="' + kind + '" name="' + qid + '" id="f-' + qid + '-' + str(i) + '" value="' + html.escape(o) + '">'
+        '<span>' + html.escape(o) + '</span></label>'
+        for i, o in enumerate(q["options"]))
+    return ('<fieldset class="cf-field cf-group" id="field-' + qid + '" aria-describedby="err-' + qid + '">'
+            + '<legend>' + label + req_mark + '</legend><div class="cf-opts">' + opts + '</div>' + err + '</fieldset>')
+
+crew_fields = "\n".join(crew_field(q) for q in CREW["questions"])
+crew_css = '''<style>
+.crew{max-width:720px;margin:0 auto;padding-top:28px;display:flex;flex-direction:column;gap:20px}
+.crew h1{font-family:var(--ps-title,Georgia,serif);font-weight:400;font-size:clamp(32px,5.5vw,46px);line-height:1.05;margin:0}
+.crew .eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ps-green-ink,#0b6b44)}
+.crew .lede{max-width:64ch;margin:0;color:var(--ink-2,#333);font-size:17px}
+.crew .time{margin:0;font-size:14px;color:var(--ps-ink-muted,#555)}
+.crew-form{display:flex;flex-direction:column;gap:18px;background:var(--ps-cream,#fffdf3);border:1px solid var(--ps-navy,#1d2a4a);box-shadow:var(--ps-drop-window,none);padding:22px 20px}
+.cf-field{display:flex;flex-direction:column;gap:8px;min-width:0;border:0;margin:0;padding:0}
+.cf-field>label,.cf-field>legend{font-weight:600;font-size:16px;padding:0;margin:0 0 4px;color:var(--ps-navy,#1d2a4a)}
+.cf-req{font-size:12px;font-weight:600;color:var(--ps-green-ink,#0b6b44);margin-left:6px;letter-spacing:.02em}
+.cf-field input[type=text],.cf-field input[type=email]{font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--ps-navy,#1d2a4a);background:#fff;color:var(--ps-navy,#1d2a4a);width:100%;max-width:100%;border-radius:0;box-sizing:border-box}
+.cf-opts{display:flex;flex-direction:column;gap:6px}
+.cf-opt{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.4;cursor:pointer;padding:6px 8px;border:1px solid transparent}
+.cf-opt input{margin:3px 0 0;width:18px;height:18px;flex:none;accent-color:var(--ps-green-ink,#0b6b44)}
+.cf-opt:hover{background:rgba(29,42,74,.05)}
+.crew input:focus-visible,.crew button:focus-visible{outline:3px solid #ffb000;outline-offset:2px}
+.cf-field.is-invalid .cf-opts,.cf-field.is-invalid input[type=text],.cf-field.is-invalid input[type=email]{border-color:#b3261e;box-shadow:0 0 0 1px #b3261e}
+.cf-err{margin:0;font-size:14px;font-weight:600;color:#b3261e}
+.cf-err[hidden]{display:none}
+.cf-hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+.cf-status{margin:0;padding:12px 14px;border:2px solid #b3261e;background:#fff;color:#b3261e;font-weight:600}
+.cf-status[hidden]{display:none}
+.cf-submit{font:inherit;font-size:17px;font-weight:700;padding:12px 18px;align-self:flex-start;background:var(--ps-green-ink,#0b6b44);color:#fff;border:1px solid var(--ps-navy,#1d2a4a);cursor:pointer;min-height:44px}
+.cf-submit:hover{filter:brightness(1.08)}
+.cf-submit:disabled{opacity:.6;cursor:progress}
+.crew-thanks{background:var(--ps-cream,#fffdf3);border:1px solid var(--ps-navy,#1d2a4a);border-top:4px solid var(--ps-green,#0b6b44);padding:22px 20px}
+.crew-thanks[hidden],.crew-form[hidden]{display:none}
+.crew-thanks h2{margin:0 0 8px;font-family:var(--ps-title,Georgia,serif);font-weight:400;font-size:28px}
+.crew-thanks p{margin:0;font-size:16px}
+</style>'''
+
+crew_body = '''<main class="crew" id="top">
+  <p class="eyebrow">Crew call</p>
+  <h1>Join the Production</h1>
+  <p class="lede">We shoot a tiny desk style video series paired with a podcast. We bring three cameras and a Zoom LiveTrak L8 mixer, and we are looking for crew to run them: camera operators, sound, editors and more. You can use your own camera if you want to.</p>
+  <p class="time">Takes about 3 minutes.</p>
+
+  <form class="crew-form" id="crew-form" action="/api/crew" method="post" novalidate>
+    <div class="cf-hp" aria-hidden="true">
+      <label>Company website (leave this blank)
+        <input type="text" name="company_website" tabindex="-1" autocomplete="off">
+      </label>
+    </div>
+    <div id="crew-status" class="cf-status" role="alert" tabindex="-1" hidden></div>
+''' + crew_fields + '''
+    <button type="submit" class="cf-submit">Send my interest</button>
+  </form>
+
+  <section class="crew-thanks" id="crew-thanks" tabindex="-1" hidden>
+    <h2>Thanks, we will be in touch.</h2>
+    <p>Your answers are in. We will reach out by email when there is a shoot that fits what you told us.</p>
+  </section>
+</main>
+<script src="/assets/crew.js" defer></script>'''
+
+(ROOT / "crew").mkdir(exist_ok=True)
+crew_page = (head("Join the Production", "Crew call for a tiny desk style video series and podcast: camera, sound and editing roles. Takes about 3 minutes.")
+             + '<link rel="stylesheet" href="/assets/pinstripe.css">\n' + crew_css + "</head>\n<body>\n" + bar("") + crew_body + "\n</body>\n</html>\n")
+(ROOT / "crew" / "index.html").write_text(crew_page)
+
 print("built", [p.relative_to(ROOT).as_posix() for p in ROOT.rglob("index.html")])
