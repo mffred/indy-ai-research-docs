@@ -2,6 +2,10 @@
 .vercel
 __pycache__/
 .env*
+!.env.example
 
 # Source PDFs for _src/council-data (re-downloadable from sources.json)
 _src/council-data/pdf/
+
+# Dependencies for the /api/crew function
+node_modules/

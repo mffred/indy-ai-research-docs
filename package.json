@@ -1,0 +1,11 @@
+{
+  "name": "indy-ai-docs",
+  "private": true,
+  "description": "Static research pages plus the /api/crew function (Google Sheets crew interest form).",
+  "scripts": {
+    "test": "node --test _src/tests/crew.test.js"
+  },
+  "dependencies": {
+    "googleapis": "189.0.0"
+  }
+}

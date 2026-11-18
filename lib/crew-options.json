@@ -1,0 +1,78 @@
+{
+  "_comment": "Single source of truth for the /crew form. Read by the page generator (_src/build.py) and by the API (api/crew.js), so the form and the server-side validation cannot drift. Option text is kept exactly as written; the option text is also the stored cell value.",
+  "honeypot": "company_website",
+  "maxTextLength": 200,
+  "maxEmailLength": 254,
+  "questions": [
+    { "id": "name", "column": "Name", "label": "Name", "type": "text", "required": true, "autocomplete": "name" },
+    { "id": "email", "column": "Email", "label": "Email", "type": "email", "required": true, "autocomplete": "email" },
+    {
+      "id": "based", "column": "Where are you based?", "label": "Where are you based?", "type": "radio", "required": false,
+      "options": ["Garfield Park", "Southside of Indianapolis", "Other part of Indianapolis", "Elsewhere in Indiana", "Outside Indiana"]
+    },
+    {
+      "id": "roles", "column": "Which roles are you interested in?", "label": "Which roles are you interested in?", "type": "checkbox", "required": true,
+      "options": ["Camera operator", "Multicam director / live switching", "Live sound / mixing", "Audio post (mixing, mastering)", "Video editor", "Colorist", "Lighting", "Social clips and short form editing", "Producing an episode"]
+    },
+    {
+      "id": "motivation", "column": "What best describes why you want to be part of this?", "label": "What best describes why you want to be part of this?", "type": "radio", "required": false,
+      "options": ["Build my reel or portfolio", "Meet and work with other creatives", "Build skills and experience", "Make content", "Support the local scene", "Just want to be around it"]
+    },
+    {
+      "id": "experience", "column": "Experience level in your strongest area", "label": "Experience level in your strongest area", "type": "radio", "required": true,
+      "options": ["Just starting", "Some experience", "Comfortable", "Very experienced"]
+    },
+    {
+      "id": "cameras", "column": "What cameras are you comfortable with?", "label": "What cameras are you comfortable with?", "type": "checkbox", "required": false,
+      "options": ["Mirrorless", "Cinema camera", "Camcorder", "PTZ camera", "Phone", "None yet"]
+    },
+    {
+      "id": "multicam", "column": "Have you worked on a multicam shoot before?", "label": "Have you worked on a multicam shoot before?", "type": "radio", "required": false,
+      "options": ["Many times", "A few times", "Never, but I am down to learn"]
+    },
+    {
+      "id": "mixer", "column": "Have you used a multitrack mixer or recorder, like a Zoom LiveTrak?", "label": "Have you used a multitrack mixer or recorder, like a Zoom LiveTrak?", "type": "radio", "required": false,
+      "options": ["Yes, regularly", "A few times", "Never, but I am down to learn"]
+    },
+    {
+      "id": "sync", "column": "Have you synced multicam footage to a separate audio recording?", "label": "Have you synced multicam footage to a separate audio recording?", "type": "radio", "required": false,
+      "options": ["Yes, often", "Somewhat", "No"]
+    },
+    {
+      "id": "software", "column": "What software do you use?", "label": "What software do you use?", "type": "checkbox", "required": false,
+      "options": ["DaVinci Resolve", "Premiere", "Final Cut", "Audition", "Logic", "Ableton", "Pro Tools", "Reaper", "Other"]
+    },
+    {
+      "id": "own_camera", "column": "Would you like to use your own camera?", "label": "Cameras and the mixer are provided. Would you like to use your own camera?", "type": "radio", "required": false,
+      "options": ["Yes, I would like to use my own", "No, I will use the provided camera", "Not sure yet"]
+    },
+    {
+      "id": "produce", "column": "Would you want to produce an episode of your own?", "label": "Would you want to produce an episode of your own?", "type": "radio", "required": false,
+      "options": ["Yes, I would like to take the lead on one", "Maybe, tell me more", "No, I would rather support others"]
+    },
+    {
+      "id": "availability", "column": "When are you usually available for shoots?", "label": "When are you usually available for shoots?", "type": "checkbox", "required": true,
+      "options": ["Weekday mornings", "Weekday afternoons", "Weekday evenings", "Weekend mornings", "Weekend afternoons", "Weekend evenings"]
+    },
+    {
+      "id": "commitment", "column": "How much time can you commit?", "label": "How much time can you commit?", "type": "radio", "required": false,
+      "options": ["One session", "A few sessions", "Ongoing, regularly", "Not sure yet"]
+    },
+    {
+      "id": "needs", "column": "Do you need anything to participate comfortably?", "label": "Do you need anything to participate comfortably?", "type": "checkbox", "required": false,
+      "options": ["No, I am good", "Accessibility accommodations", "Help with load-in", "Parking nearby", "Something else, I will email"]
+    },
+    {
+      "id": "consent", "column": "Consent", "label": "Consent", "type": "consent", "required": true,
+      "options": ["I understand that sessions will be filmed and recorded, and that video and audio may be published on YouTube, podcast platforms, and social media."]
+    },
+    {
+      "id": "worth", "column": "What would make this worth your time?", "label": "What would make this worth your time?", "type": "checkbox", "required": false,
+      "options": ["A credit", "Portfolio footage", "Community and connections", "Experience", "Exposure", "Just for fun"]
+    },
+    {
+      "id": "heard", "column": "How did you hear about this?", "label": "How did you hear about this?", "type": "radio", "required": false,
+      "options": ["Instagram", "A friend or collaborator", "In person at an event", "Podcast or YouTube", "Other"]
+    }
+  ]
+}
