@@ -343,6 +343,7 @@ def crew_field(q):
 
 crew_fields = "\n".join(crew_field(q) for q in CREW["questions"])
 crew_css = '''<style>
+body.crew-page{background:#f7f2e4 !important;background-image:none !important;color:#0f1830}
 .crew{max-width:720px;margin:0 auto;padding-top:28px;display:flex;flex-direction:column;gap:20px}
 .crew h1{font-family:var(--ps-title,Georgia,serif);font-weight:400;font-size:clamp(32px,5.5vw,46px);line-height:1.05;margin:0}
 .crew .eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ps-green-ink,#0b6b44)}
@@ -350,7 +351,7 @@ crew_css = '''<style>
 .crew .intro{display:flex;flex-direction:column;gap:14px}
 .crew .intro p{margin:0;font-size:17px;line-height:1.65;max-width:62ch;color:#0f1830}
 .crew .intro .lede{font-size:19px;line-height:1.5;color:var(--ps-navy,#1d2a4a)}
-.crew-form{display:flex;flex-direction:column;gap:18px;background:var(--ps-cream,#fffdf3);border:1px solid var(--ps-navy,#1d2a4a);box-shadow:var(--ps-drop-window,none);padding:22px 20px}
+.crew-form{display:flex;flex-direction:column;gap:18px;background:#ffffff;border:1px solid var(--ps-navy,#1d2a4a);box-shadow:var(--ps-drop-window,none);padding:22px 20px}
 .cf-field{display:flex;flex-direction:column;gap:8px;min-width:0;border:0;margin:0;padding:0}
 .cf-field>label,.cf-field>legend{font-weight:600;font-size:16px;padding:0;margin:0 0 4px;color:var(--ps-navy,#1d2a4a)}
 .cf-req{font-size:12px;font-weight:600;color:var(--ps-green-ink,#0b6b44);margin-left:6px;letter-spacing:.02em}
@@ -369,7 +370,7 @@ crew_css = '''<style>
 .cf-submit{font:inherit;font-size:17px;font-weight:700;padding:12px 18px;align-self:flex-start;background:var(--ps-green-ink,#0b6b44);color:#fff;border:1px solid var(--ps-navy,#1d2a4a);cursor:pointer;min-height:44px}
 .cf-submit:hover{filter:brightness(1.08)}
 .cf-submit:disabled{opacity:.6;cursor:progress}
-.crew-thanks{background:var(--ps-cream,#fffdf3);border:1px solid var(--ps-navy,#1d2a4a);border-top:4px solid var(--ps-green,#0b6b44);padding:22px 20px}
+.crew-thanks{background:#ffffff;border:1px solid var(--ps-navy,#1d2a4a);border-top:4px solid var(--ps-green,#0b6b44);padding:22px 20px}
 .crew-thanks[hidden],.crew-form[hidden]{display:none}
 .crew-thanks h2{margin:0 0 8px;font-family:var(--ps-title,Georgia,serif);font-weight:400;font-size:28px}
 .crew-thanks p{margin:0;font-size:16px}
@@ -405,7 +406,7 @@ crew_body = '''<main class="crew" id="top">
 
 (ROOT / "crew").mkdir(exist_ok=True)
 crew_page = (head("Join the Production", "Crew call for a tiny desk style video series and podcast: camera, sound and editing roles. Takes about 3 minutes.")
-             + '<link rel="stylesheet" href="/assets/pinstripe.css">\n' + crew_css + "</head>\n<body>\n" + bar("") + crew_body + "\n</body>\n</html>\n")
+             + '<link rel="stylesheet" href="/assets/pinstripe.css">\n' + crew_css + "</head>\n<body class=\"crew-page\">\n" + bar("") + crew_body + "\n</body>\n</html>\n")
 (ROOT / "crew" / "index.html").write_text(crew_page)
 
 print("built", [p.relative_to(ROOT).as_posix() for p in ROOT.rglob("index.html")])
