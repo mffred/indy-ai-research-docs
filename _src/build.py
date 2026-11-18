@@ -347,7 +347,9 @@ crew_css = '''<style>
 .crew h1{font-family:var(--ps-title,Georgia,serif);font-weight:400;font-size:clamp(32px,5.5vw,46px);line-height:1.05;margin:0}
 .crew .eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ps-green-ink,#0b6b44)}
 .crew .lede{max-width:64ch;margin:0;color:var(--ink-2,#333);font-size:17px}
-.crew .time{margin:0;font-size:14px;color:var(--ps-ink-muted,#555)}
+.crew .intro{display:flex;flex-direction:column;gap:14px}
+.crew .intro p{margin:0;font-size:17px;line-height:1.65;max-width:62ch;color:#0f1830}
+.crew .intro .lede{font-size:19px;line-height:1.5;color:var(--ps-navy,#1d2a4a)}
 .crew-form{display:flex;flex-direction:column;gap:18px;background:var(--ps-cream,#fffdf3);border:1px solid var(--ps-navy,#1d2a4a);box-shadow:var(--ps-drop-window,none);padding:22px 20px}
 .cf-field{display:flex;flex-direction:column;gap:8px;min-width:0;border:0;margin:0;padding:0}
 .cf-field>label,.cf-field>legend{font-weight:600;font-size:16px;padding:0;margin:0 0 4px;color:var(--ps-navy,#1d2a4a)}
@@ -376,8 +378,12 @@ crew_css = '''<style>
 crew_body = '''<main class="crew" id="top">
   <p class="eyebrow">Crew call</p>
   <h1>Join the Production</h1>
-  <p class="lede">We shoot a tiny desk style video series paired with a podcast. We bring three cameras and a Zoom LiveTrak L8 mixer, and we are looking for crew to run them: camera operators, sound, editors and more. You can use your own camera if you want to.</p>
-  <p class="time">Takes about 3 minutes.</p>
+  <div class="intro">
+    <p class="lede">Sound Bites is a tiny desk style video series with a podcast, made with World Famous Hotboys, the Indianapolis hot chicken spot that also hosts live music. Local artists perform, and we film and record every session.</p>
+    <p>Each session is shot with 3 cameras and recorded live through a Zoom LiveTrak L8 mixer, so the room stays small and the sound stays real. We’re looking for camera operators, sound engineers, editors, and anyone else who wants to help make it. A few of you will have the chance to take turns producing your own episodes with real creative freedom.</p>
+    <p>Cameras and the mixer are provided. If you’d rather use your own camera, you’re welcome to. You don’t need to be a pro, and if you’re newer and want to learn on a real shoot, tell us that too.</p>
+    <p>This form takes about 3 minutes and it’s all multiple choice, except your name, email and zip code. Sessions are filmed and recorded, and the video and audio may be published online.</p>
+  </div>
 
   <form class="crew-form" id="crew-form" action="/api/crew" method="post" novalidate>
     <div class="cf-hp" aria-hidden="true">
