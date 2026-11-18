@@ -10,7 +10,7 @@ function validPayload() {
   return {
     name: "Jordan Lee",
     email: "jordan@example.com",
-    based: "Garfield Park",
+    zip: "46219",
     roles: ["Camera operator", "Video editor"],
     motivation: "Build my reel or portfolio",
     experience: "Comfortable",
@@ -21,7 +21,7 @@ function validPayload() {
     software: ["Premiere", "Other"],
     own_camera: "Not sure yet",
     produce: "Maybe, tell me more",
-    availability: ["Weekend mornings"],
+    availability: ["Mon Dec 7, 2026", "Mon Jan 11, 2027"],
     commitment: "A few sessions",
     needs: ["No, I am good"],
     consent: SPEC.questions.find((q) => q.id === "consent").options[0],
@@ -87,9 +87,34 @@ test("required fields are enforced", () => {
 
 test("optional single-choice fields may be left out", () => {
   const p = validPayload();
-  delete p.based;
+  delete p.motivation;
   delete p.heard;
   assert.equal(validateSubmission(p).ok, true);
+});
+
+test("zip code is required and must be exactly 5 digits", () => {
+  const missing = validPayload();
+  delete missing.zip;
+  assert.equal(validateSubmission(missing).ok, false);
+  assert.ok(validateSubmission(missing).fields.zip);
+
+  for (const bad of ["4621", "462190", "4621a", "46219-1234", " 4621 9"]) {
+    const p = validPayload();
+    p.zip = bad;
+    const r = validateSubmission(p);
+    assert.equal(r.ok, false, `zip ${JSON.stringify(bad)} should be rejected`);
+    assert.ok(r.fields.zip);
+  }
+
+  const good = validPayload();
+  good.zip = " 46219 ";
+  assert.equal(validateSubmission(good).ok, true);
+  assert.equal(validateSubmission(good).values.zip, "46219");
+});
+
+test("the 'Where are you based' question is gone", () => {
+  assert.equal(SPEC.questions.some((q) => q.id === "based"), false);
+  assert.equal(SPEC.questions.some((q) => q.id === "zip"), true);
 });
 
 test("rejects a bad email format", () => {

@@ -6,10 +6,7 @@
   "questions": [
     { "id": "name", "column": "Name", "label": "Name", "type": "text", "required": true, "autocomplete": "name" },
     { "id": "email", "column": "Email", "label": "Email", "type": "email", "required": true, "autocomplete": "email" },
-    {
-      "id": "based", "column": "Where are you based?", "label": "Where are you based?", "type": "radio", "required": false,
-      "options": ["Garfield Park", "Southside of Indianapolis", "Other part of Indianapolis", "Elsewhere in Indiana", "Outside Indiana"]
-    },
+    { "id": "zip", "column": "Zip code", "label": "Zip code", "type": "zip", "required": true, "autocomplete": "postal-code" },
     {
       "id": "roles", "column": "Which roles are you interested in?", "label": "Which roles are you interested in?", "type": "checkbox", "required": true,
       "options": ["Camera operator", "Multicam director / live switching", "Live sound / mixing", "Audio post (mixing, mastering)", "Video editor", "Colorist", "Lighting", "Social clips and short form editing", "Producing an episode"]
@@ -51,8 +48,8 @@
       "options": ["Yes, I would like to take the lead on one", "Maybe, tell me more", "No, I would rather support others"]
     },
     {
-      "id": "availability", "column": "When are you usually available for shoots?", "label": "When are you usually available for shoots?", "type": "checkbox", "required": true,
-      "options": ["Weekday mornings", "Weekday afternoons", "Weekday evenings", "Weekend mornings", "Weekend afternoons", "Weekend evenings"]
+      "id": "availability", "column": "Which Monday evenings are you available?", "label": "Which Monday evenings are you available?", "type": "checkbox", "required": true,
+      "options": ["Mon Dec 7, 2026", "Mon Dec 14, 2026", "Mon Dec 21, 2026", "Mon Dec 28, 2026", "Mon Jan 4, 2027", "Mon Jan 11, 2027", "Mon Jan 18, 2027", "Mon Jan 25, 2027", "Mon Feb 1, 2027", "Mon Feb 8, 2027", "Mon Feb 15, 2027", "Mon Feb 22, 2027", "Mon Mar 1, 2027", "Mon Mar 8, 2027", "Mon Mar 15, 2027", "Mon Mar 22, 2027", "Mon Mar 29, 2027", "Mon Apr 5, 2027", "Mon Apr 12, 2027", "Mon Apr 19, 2027", "Mon Apr 26, 2027"]
     },
     {
       "id": "commitment", "column": "How much time can you commit?", "label": "How much time can you commit?", "type": "radio", "required": false,
