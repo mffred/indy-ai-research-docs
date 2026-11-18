@@ -112,6 +112,25 @@ test("zip code is required and must be exactly 5 digits", () => {
   assert.equal(validateSubmission(good).values.zip, "46219");
 });
 
+test("phone number is optional, but must look like a phone number when given", () => {
+  const none = validPayload();
+  delete none.phone;
+  assert.equal(validateSubmission(none).ok, true);
+
+  for (const good of ["(317) 555-0123", "317-555-0123", "+1 317 555 0123", "3175550123"]) {
+    const p = validPayload();
+    p.phone = good;
+    assert.equal(validateSubmission(p).ok, true, `${good} should be accepted`);
+  }
+  for (const bad of ["12", "call me", "317-555-0123 ext 9x", "317<script>"]) {
+    const p = validPayload();
+    p.phone = bad;
+    const r = validateSubmission(p);
+    assert.equal(r.ok, false, `${bad} should be rejected`);
+    assert.ok(r.fields.phone);
+  }
+});
+
 test("the 'Where are you based' question is gone", () => {
   assert.equal(SPEC.questions.some((q) => q.id === "based"), false);
   assert.equal(SPEC.questions.some((q) => q.id === "zip"), true);

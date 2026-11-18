@@ -6,6 +6,7 @@
   "questions": [
     { "id": "name", "column": "Name", "label": "Name", "type": "text", "required": true, "autocomplete": "name" },
     { "id": "email", "column": "Email", "label": "Email", "type": "email", "required": true, "autocomplete": "email" },
+    { "id": "phone", "column": "Phone number", "label": "Phone number", "type": "phone", "required": false, "autocomplete": "tel" },
     { "id": "zip", "column": "Zip code", "label": "Zip code", "type": "zip", "required": true, "autocomplete": "postal-code" },
     {
       "id": "roles", "column": "Which roles are you interested in?", "label": "Which roles are you interested in?", "type": "checkbox", "required": true,

@@ -323,13 +323,16 @@ def crew_field(q):
     label = html.escape(q["label"])
     req_mark = (" " + CREW_REQ) if q.get("required") else ""
     err = '<p class="cf-err" id="err-' + qid + '" hidden></p>'
-    if q["type"] in ("text", "email", "zip"):
+    if q["type"] in ("text", "email", "zip", "phone"):
         is_email = q["type"] == "email"
         is_zip = q["type"] == "zip"
-        attrs = ' type="' + ("email" if is_email else "text") + '" name="' + qid + '" id="f-' + qid + '"'
+        is_phone = q["type"] == "phone"
+        input_type = "email" if is_email else ("tel" if is_phone else "text")
+        attrs = ' type="' + input_type + '" name="' + qid + '" id="f-' + qid + '"'
         if is_zip:
             attrs += ' inputmode="numeric"'
-        attrs += ' autocomplete="' + q.get("autocomplete", "off") + '" maxlength="' + str(CREW["maxEmailLength"] if is_email else (5 if is_zip else CREW["maxTextLength"])) + '"'
+        max_len = CREW["maxEmailLength"] if is_email else (5 if is_zip else (20 if is_phone else CREW["maxTextLength"]))
+        attrs += ' autocomplete="' + q.get("autocomplete", "off") + '" maxlength="' + str(max_len) + '"'
         attrs += ' aria-describedby="err-' + qid + '"' + (' aria-required="true"' if q.get("required") else "")
         return ('<div class="cf-field" id="field-' + qid + '"><label for="f-' + qid + '">' + label + req_mark + '</label>'
                 + '<input' + attrs + '>' + err + '</div>')
