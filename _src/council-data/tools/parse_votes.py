@@ -228,7 +228,7 @@ def parse_roll_call_sheets(date, members=None):
         ord_no = int(om.group(2)) if om and om.group(2) and om.group(2) != "0" else None
         consent = "BY CONSENT" in page.upper() or "UNANIMOUS CONSENT" in page.upper()
         group = re.search(r"PART OF\s+GROUP RCS\s*#\s*(\d+)", page.upper().replace("\n", " "))
-        act = (re.search(r"Action:\s*([^\n]+)", page) or [None, ""])[1].strip()
+        act = (re.search(r"Action:[ \t]*([^\n]*)", page) or [None, ""])[1].strip()  # [ \t], not \s: a blank Action line must not swallow "Committee:"
         res = re.search(r"\((PASSED|FAILED|ADOPTED|CARRIED|DEFEATED)\)", page)
         cast, counts, label = {}, {}, None
         for line in page.splitlines():
@@ -241,6 +241,8 @@ def parse_roll_call_sheets(date, members=None):
                     n = ocr_name(tok)
                     if n: cast[n] = label
         action = sheet_action(act)
+        ques = re.search(r"Ordinance:\s*Ques\w*\s*(\d+)", page, flags=re.I)
+        if ques: action, act = "Divided question", f"Question {ques.group(1)} of a divided vote"  # e.g. the budget split so councilors can abstain on parts
         outcome = "Failed" if res and res.group(1) in ("FAILED", "DEFEATED") else "Passed" if res else "Unknown"
         # The summary line is the authoritative total; group headings can repeat ("Excused - 1 ... Excused - 0")
         tl = re.search(r"Yea:\s*(\d+)\s+Nay:\s*(\d+)\s+Ab\w*:\s*(\d+)\s+Not Voting:\s*(\d+)\s+Excused:\s*(\d+)", page)

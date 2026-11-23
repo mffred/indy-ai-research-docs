@@ -987,6 +987,24 @@
     "file": "roll-calls/2026-10-05.txt",
     "method": "OCR (tesseract 5.5.3)"
    }
+  },
+  {
+   "date": "2026-10-19",
+   "minutes": null,
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmvgs5kks07y507lmsui1yq91",
+    "file": "roll-calls/2026-10-19.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
+  },
+  {
+   "date": "2026-11-02",
+   "minutes": null,
+   "rollCall": {
+    "url": "https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmw254au9001e07le7sx191ct",
+    "file": "roll-calls/2026-11-02.txt",
+    "method": "OCR (tesseract 5.5.3)"
+   }
   }
  ],
  "agendas": {

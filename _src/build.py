@@ -4,8 +4,9 @@ import pathlib, markdown, re, html, urllib.parse, json, sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "_src"
 UPDATED = "September 28, 2026"  # default "last updated" date; pages updated since carry their own below
-VOTES_UPDATED = "October 16, 2026"
-BUDGET_UPDATED = "October 21, 2026"
+VOTES_UPDATED = "November 23, 2026"
+FLOCK_UPDATED = "November 23, 2026"
+BUDGET_UPDATED = "November 23, 2026"
 SITE = "https://airesearch.myfriendfred.org"
 ISSUES = "https://github.com/mffred/indy-ai-research-docs/issues/new"
 
@@ -86,7 +87,7 @@ document.querySelectorAll('.doc pre').forEach(function(pre){
 });
 </script>'''
 flock = (head("Indianapolis Flock and License Plate Reader Timeline", "Dated record of IMPD's license plate reader contracts from 2021 to 2026, with sources, open questions and template public records requests.")
-         + flock_css + "</head>\n<body>\n" + bar("flock") + notice("/flock") + '<main class="doc">' + body + "</main>" + FOOT + copy_js + "\n</body>\n</html>\n")
+         + flock_css + "</head>\n<body>\n" + bar("flock") + notice("/flock", FLOCK_UPDATED) + '<main class="doc">' + body + "</main>" + foot(FLOCK_UPDATED) + copy_js + "\n</body>\n</html>\n")
 (ROOT / "flock" / "index.html").write_text(theme(flock, '<main class="doc"', "Flock Timeline"))
 
 # ---------- Budget page ----------
@@ -130,7 +131,7 @@ c = c.replace("padding-block:28px 64px", "padding-block:0 64px", 1)
 # Match the page's 1040px column.
 c = c.replace("</style>\n</head>", '.site-bar{max-width:1040px}\n.ai-notice{max-width:1040px}\n</style>\n</head>', 1)
 c = re.sub(r'\s*<div class="ai-warn" role="note">.*?</div>', "", c, count=1)
-c = c.replace('<div class="wrap">', bar("cancel") + notice("/flock-cancellations") + '\n<div class="wrap" style="padding-top:28px">', 1)
+c = c.replace('<div class="wrap">', bar("cancel") + notice("/flock-cancellations", FLOCK_UPDATED) + '\n<div class="wrap" style="padding-top:28px">', 1)
 (ROOT / "flock-cancellations").mkdir(exist_ok=True)
 (ROOT / "flock-cancellations" / "index.html").write_text(theme(c, '<div class="wrap"', "How Cities Dropped Flock"))
 
@@ -145,7 +146,7 @@ cv = json.loads((CD / "votes.json").read_text())
 members = json.loads((CD / "members.json").read_text())["members"]
 key_idx = {k: i for i, m in enumerate(members) for k in m["keys"]}
 CODE = {"Yes": "Y", "No": "N", "Absent": "A", "Not voting": "V", "Abstain": "S"}
-ACTIONS = ["Final passage", "Amendment", "Procedural motion", "Postpone or table", "Return to committee", "Withdraw", "Election", "Strike"]
+ACTIONS = ["Final passage", "Amendment", "Procedural motion", "Postpone or table", "Return to committee", "Withdraw", "Election", "Strike", "Divided question"]
 SRC_IDX = {"minutes": 0, "roll-call sheet (OCR)": 1, "minutes (sheet unreadable)": 2}
 rows, used = [], set()
 for v in cv["votes"]:
@@ -287,13 +288,13 @@ home_body = f'''<main class="home">
       <span class="go">Open the explorer →</span>
     </a>
     <a class="card" href="/flock">
-      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {UPDATED}</span></div>
+      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {FLOCK_UPDATED}</span></div>
       <h2>Flock and License Plate Reader Timeline</h2>
       <p>Every IMPD license plate reader approval in the public record since 2021, the money involved, the open questions, and template public records requests anyone can send.</p>
       <span class="go">Read the timeline →</span>
     </a>
     <a class="card" href="/flock-cancellations">
-      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {UPDATED}</span></div>
+      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {FLOCK_UPDATED}</span></div>
       <h2>How Cities Dropped Flock</h2>
       <p>Campaigns that ended Flock contracts, how they won, and what they didn't win.</p>
       <span class="go">See the campaigns →</span>
