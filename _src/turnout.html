@@ -27,10 +27,10 @@
 .dt-found{font-size:14px;margin:0;color:var(--ink)}
 .dt-found[hidden]{display:none}
 .dt-found.err{color:var(--down)}
-.dt-map{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:16px;align-items:start}
+.dt-map{display:flex;flex-direction:column;gap:16px}
 .dt-mapbox{position:relative;border:1px solid var(--line);min-width:0}
 #dtMap{height:600px;width:100%;background:var(--surface)}
-.dt-side{display:flex;flex-direction:column;gap:14px;min-width:0}
+.dt-side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start;min-width:0}
 .dt-panel{background:var(--surface);border:1px solid var(--line);padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-width:0}
 .dt-panel h3{font-size:18px;margin:0}
 .dt-chips{display:flex;flex-wrap:wrap;gap:6px}
@@ -88,7 +88,8 @@
 .dt ul{padding-left:20px;margin:0;display:flex;flex-direction:column;gap:6px}
 .dt li{max-width:78ch}
 .dt-sources ol{padding-left:20px;margin:6px 0 0;display:flex;flex-direction:column;gap:6px;font-size:14px}
-@media (max-width:860px){.dt-map{grid-template-columns:minmax(0,1fr)}#dtMap{height:480px}}
+@media (max-width:860px){#dtMap{height:480px}}
+@media (max-width:640px){.dt-side{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:600px){.dt-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.dt-tile .v{font-size:24px}#dtMap{height:420px}}
 @media (prefers-reduced-motion:reduce){.dt .leaflet-tile-pane{transition:none}}
 </style>
