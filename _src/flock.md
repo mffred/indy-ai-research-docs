@@ -2,7 +2,9 @@
 
 IMPD has run license plate readers since at least 2021, and the public record shows three approvals in a row, each bigger than the last: Vigilant Solutions (up to $500,000, 2021), Flock (up to $1.5M, 2022), and Flock again (up to $6M over four years, 2024). The 2024 contract was approved unanimously by the Information Technology Board with no discussion recorded in the minutes, and it covers more than plate readers: "footage on devices provided by IMPD, participating businesses and Flock Group."
 
-The 2027 budget mentions plate readers once and gives no dollar figure. What IMPD has actually paid Flock, how many cameras it runs, and what the Board of Public Health and Safety was told in November 2024 are not in any public document found so far. The records requests below ask for those.
+The 2027 budget mentions plate readers once and gives no dollar figure. IMPD now says it leases 301 Flock cameras, and IndyStar reports the contract runs through 2028. What IMPD has actually paid Flock, where the cameras are, and what the Board of Public Health and Safety was told in November 2024 are still not in any public document found so far. The records requests below ask for those.
+
+**Since September.** The prosecutor charged five IMPD officers on September 23 with fraud and official misconduct for alleged misuse of Flock searches. IMPD's General Orders Board took up a written Flock policy (General Order 9.9) on October 20 and tabled it; the draft keeps data for 30 days, while Flock itself now recommends 7. Councilor Jesse Brown and Council Vice President John Barth plan to bring a Flock transparency ordinance to the full council in early December, and state lawmakers are drafting plate reader rules for the session that starts in January.
 
 ## Timeline
 
@@ -10,7 +12,12 @@ Newest first. Each row links to the document it comes from.
 
 | Date | Event | Source |
 | --- | --- | --- |
+| Early Dec 2026 (planned) | Councilor Jesse Brown and Council Vice President John Barth plan to introduce a draft ordinance on IMPD's Flock use. It would then go to the council's Public Safety and Criminal Justice Committee. | [IndyStar via Yahoo](https://www.yahoo.com/news/politics/articles/indy-councilors-seek-public-input-104640469.html) |
+| Nov 10, 2026 | Brown and Barth hold a community meeting on the draft at the Martindale-Brightwood library, with Chief Tanya Terry. The draft would require IMPD to spell out who can access the system, data-sharing and retention rules, and how misuse is handled; publish a yearly Flock report; and review any new or changed Flock contract in public. Terry says images are kept 30 days, IMPD owns its data, and audits happen but not in real time. | [IndyStar via Yahoo](https://www.yahoo.com/news/politics/articles/indy-councilors-seek-public-input-104640469.html) |
+| Oct 20, 2026 | IMPD's General Orders Board considers General Order 9.9, its first written Flock policy, and tables it. The draft bans personal use and searches solely for immigration enforcement, bans tracking people at protests, religious services or medical care (including reproductive care), requires a case number and reason for every search, and keeps plate data 30 days. Flock lowered its own recommended retention to 7 days on Aug 13. Board members asked who decides where cameras go; no one present could say, and locations aren't public. IMPD confirms 301 cameras, and says officers can also search 120,000+ cameras in 49 states through Flock's network. | [IndyStar via Yahoo](https://www.yahoo.com/news/us/articles/board-adjusts-impd-flock-policy-085936356.html) |
+| Sep 23, 2026 | Prosecutor Ryan Mears charges five IMPD officers with fraud and official misconduct over alleged "thousands of impermissible searches," mostly of ex-partners and acquaintances. One officer also faces stalking counts. Mears says more charges are possible. One officer resigned; Chief Terry suspended the other four and recommended firing. IMPD says it leases 301 Flock cameras and has no plans to reduce that. Searches now require a case number or dispatch incident plus a crime-type code. | [WFYI via WVXU](https://www.wvxu.org/2026-09-24/five-indianapolis-police-officers-charged-for-misusing-flock-cameras) |
 | Sep 22, 2026 | Fort Wayne, Chesterton and four counties ended Flock contracts in the prior 30 days, after Bloomington and Monroe County earlier. | [IPM / Free Press Indiana](https://www.ipm.org/news/2026-09-22/indiana-sees-surge-of-cities-counties-ending-flock-camera-contracts) |
+| Sep 18, 2026 | A second IMPD officer is suspended and recommended for termination over Flock misuse. IndyStar reports the $6M Flock contract runs through 2028, and cites DeFlock's count of 550+ Flock cameras in Indianapolis (IMPD's own figure is 301). | [IndyStar via Yahoo](https://www.yahoo.com/news/us/articles/second-impd-officer-faces-termination-232858443.html) |
 | Sep 18, 2026 | Axios reports 649 license plate readers documented in Marion County as of Sep 4, the most of any Indiana county. IMPD adopts daily audits and requires a case number for every search; its General Orders Board will consider cutting data retention from 30 days to 7. | [Axios](https://www.axios.com/local/indianapolis/2026/09/18/impd-changing-flock-camera-alpr-policies-misuse) |
 | Sep 11, 2026 | IMPD amends its Iris Intel contract for the Real-Time Crime Center (request tracking and statistics), $241,552. | [IT Board packet, Sep 22, 2026](https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmucpi4e1032v07kbk52czl43) |
 | Sep 9, 2026 | IMPD's council budget hearing is dominated by public comment on Flock, ICE and accountability; a protester is handcuffed. | [Mirror Indy](https://mirrorindy.org/impd-budget-hearing-dalys-jett-indianapolis-chief-tanya-terry-city-county-council/) |
@@ -30,12 +37,14 @@ Every figure in the record is a ceiling, not spending. Up to $8.3M in plate read
 
 | Contract | Approved | Ceiling | Term |
 | --- | --- | --- | --- |
-| Flock Group, Resolution 24-63 | Nov 2024 | $6,000,000 | 4 years |
+| Flock Group, Resolution 24-63 | Nov 2024 | $6,000,000 | 4 years (through 2028, per IndyStar) |
 | Flock Systems, Resolution 22-08 | Apr 2022 | $1,500,000 | not stated |
 | Vigilant Solutions, Resolution 21-17 (amendment) | Jun 2021 | $500,000 | not stated |
 | Motorola/Genetec video software, Resolution 21-18 (amendment) | Jun 2021 | $300,000 | not stated |
 
 In the 2027 budget, a subscription like Flock most likely sits in IMPD's "Other Services and Charges": $51.2M, up $11.2M from 2026. Hardware bought outright would be "Capital": $16.7M, up $4.8M. The book doesn't itemize either. IMPD's federal grant funding also rises from $9.8M to $24.4M with no explanation. See the [budget explorer](/budget#impd).
+
+The IT Board's October 27 and November 17, 2026 packets list no new Flock or plate reader contracts.
 
 The Marion County Auditor pays every city and county bill, so the Auditor holds the actual payment history to Flock.
 
@@ -43,13 +52,15 @@ The Marion County Auditor pays every city and county bill, so the Auditor holds 
 
 - How much has the city actually paid Flock, Vigilant and related vendors each year since 2021?
 - What did the Board of Public Health and Safety hear and vote on November 6, 2024? Its minutes aren't posted online.
-- How many cameras does IMPD operate or access? The plan said about 400; Axios counts 649 in Marion County, which may include private, business and neighboring-agency cameras.
+- Where are IMPD's cameras, and who decides? IMPD says it leases 301 Flock cameras. The 2025 plan said about 400; Axios counts 649 plate readers in Marion County and DeFlock 550+ Flock cameras in Indianapolis, which may include private, business and neighboring-agency cameras. At the October 20 General Orders Board meeting, no one present could say who picks the locations.
 - Which "participating businesses" share camera feeds with IMPD through Flock, and under what agreements?
 - Does the contract include gunshot detection, drones or other add-ons, and have any been turned on?
 - Does Business and Neighborhood Services still use plate readers for code enforcement, and under what policy?
-- Who can search the data, how long is it kept, and which outside agencies (including federal) can query it? IMPD says a retention change from 30 to 7 days is coming.
+- Who can search the data, how long is it kept, and which outside agencies (including federal) can query it? In September IMPD said it would consider cutting retention from 30 days to 7; the October draft of General Order 9.9 keeps 30, even though Flock now recommends 7. Chief Terry says she is writing data-sharing agreements with other Indiana agencies.
+- Will the council pass the Brown-Barth ordinance, and will it cover the Sheriff's Office too? Barth says it is deliberately narrow, and separate rules for the sheriff may follow.
+- How many officers' searches have been audited, and what did the audits find beyond the five charged?
 - Is any of IMPD's new $24.4M in federal grants tied to surveillance technology?
-- When does the current contract end or renew? A four-year term signed around late 2024 or early 2025 would run to about 2028-29.
+- When exactly does the current contract end or renew? IndyStar reports it runs through 2028, which would make the 2028 budget (debated in fall 2027) the next funding vote. Fort Wayne and Kosciusko County both used a funding vote to end theirs; see [How cities dropped Flock](/flock-cancellations).
 
 ## Records requests
 
@@ -70,7 +81,7 @@ I request electronic copies of the following records:
 1. The agreement between the City of Indianapolis or IMPD and Flock Group, Inc. approved by Information Technology Board Resolution 24-63 on November 19, 2024, including all exhibits, order forms, statements of work, pricing schedules and amendments.
 2. The agreement with Flock Systems approved by IT Board Resolution 22-08 on April 26, 2022, with all exhibits and amendments.
 3. The agreement with Vigilant Solutions LLC amended by IT Board Resolution 21-17 on June 29, 2021, with all exhibits and amendments.
-4. Any IMPD general order, policy or procedure governing automated license plate readers in effect at any time from January 1, 2022 to the present, including drafts submitted to the General Orders Board in 2026.
+4. Any IMPD general order, policy or procedure governing automated license plate readers in effect at any time from January 1, 2022 to the present, including the August 2026 ALPR policy and user agreement, and every draft of General Order 9.9 submitted to the General Orders Board in 2026.
 5. Records sufficient to show the number and locations of license plate reader cameras IMPD owns, leases or can access through Flock, including cameras owned by businesses or other agencies, as of the date of this request.
 6. Records sufficient to show which outside agencies have been granted access to IMPD's Flock data, from January 1, 2022 to the present.
 7. Any presentation or written materials IMPD provided to the Board of Public Health and Safety or the Information Technology Board about Flock in October and November 2024.
@@ -147,5 +158,8 @@ I prefer electronic copies. If fees will exceed $25, please tell me before copyi
 - [2027 Introduced Budget](https://us-east-1-indy.graphassets.com/ActDBC5rvRWeCZlNNnLrDz/cmt965kw511q707lc532lb3zf)
 - [Mirror Indy: IMPD contract for license plate readers also allows for gunshot detection tech](https://mirrorindy.org/indianapolis-impd-license-plate-readers-gunshot-detection-technology-flock-sensors-contract/)
 - [Axios: IMPD is in the middle of the nationwide Flock camera debate](https://www.axios.com/local/indianapolis/2026/09/18/impd-changing-flock-camera-alpr-policies-misuse)
+- [WFYI via WVXU: Five Indianapolis police officers charged for misusing Flock cameras](https://www.wvxu.org/2026-09-24/five-indianapolis-police-officers-charged-for-misusing-flock-cameras)
+- [IndyStar: Second IMPD officer faces termination](https://www.yahoo.com/news/us/articles/second-impd-officer-faces-termination-232858443.html), [Board adjusts IMPD Flock policy](https://www.yahoo.com/news/us/articles/board-adjusts-impd-flock-policy-085936356.html) and [Indy councilors seek public input](https://www.yahoo.com/news/politics/articles/indy-councilors-seek-public-input-104640469.html)
+- [Indiana Capital Chronicle: lawmakers looking at license plate cameras](https://indianacapitalchronicle.com/2026/08/24/indiana-lawmakers-looking-at-license-plate-cameras-amid-growing-privacy-worries/)
 - [IPM: Indiana sees surge of cities, counties ending Flock camera contracts](https://www.ipm.org/news/2026-09-22/indiana-sees-surge-of-cities-counties-ending-flock-camera-contracts)
 - [indy.gov: Request a Public Record](https://www.indy.gov/activity/request-a-public-record) and [Access to Public Records Act](https://www.indy.gov/activity/access-to-public-records-act)
