@@ -23,3 +23,29 @@
 
 - District totals: 21,133 registered and 2,366 ballots in the primary, 21,321 registered and 4,682 ballots in the general. These match the sum of the precinct rows in the source files.
 - Old District 21 (2015, 2019) = the precincts with votes in that council race. Beech Grove (2015, 2019, 2023) = the precincts with votes in the Beech Grove mayor race.
+
+# Countywide turnout map data (`city/`)
+
+`city/data.json` and `city/d/<n>.json` feed `/turnout`. Built by `build_city.py` (run `python3 _src/turnout-data/build_city.py`; raw downloads are cached in `raw/`, which is git-ignored), then copied by `build.py`.
+
+## What's in it
+
+- `elections`: the six elections, with the race used for the Democratic share in each (2023 primary: mayor primaries; 2023 general: mayor; 2024 primary: party ballots; 2024 general: president; 2026 primary: the two unopposed prosecutor nominees; 2026 general: Secretary of State).
+- `precincts`: all 621 precincts. `d` council district, `t` township, `c` city or town (a precinct with votes in Beech Grove's, Lawrence's, Southport's or Speedway's own 2023 race). Per election `[registered, ballots, Democratic votes, Republican votes, other votes]`; null where the source has no figure.
+- `districts`: the 25 council districts, outline (simplified to about 40 m), councilor (from `council-data/members.json`), totals per election, and the 2023 council race.
+- `county`: Marion County totals per election. `freeways`: freeway lines for the citywide view.
+- `d/<n>.json`: one district's precinct shapes (simplified to about 3 m) and major roads (freeways to primary collectors, from the city's street centerline thoroughfare class).
+
+## Sources (pulled November 23, 2026)
+
+- 2023 primary, 2023 general, 2024 primary, 2024 general, 2026 primary: Indianapolis Open Data "Election Results" items (URLs in `build_city.py`).
+- 2026 general: the Election Board's certified results by precinct from indy.gov/workflow/election-results (run date 11/23/2026). Not yet on the open data portal.
+- The 2026 primary file has candidate votes only: no registered voters or ballots by precinct, so that election has no turnout.
+- Precinct-to-district: the 2023 council race sheets, which list every precinct under its district. Shapes: city GIS `OpenData_Political/MapServer/2` and `/1`.
+
+## Checks
+
+- All six files cover the same 621 precincts as the current precinct map (2026 general has no rows for PE007, WY043 and WY056, which have no voters).
+- 2026 general county totals, 640,323 registered and 262,042 ballots, match the Election Board's certified summary.
+- District 19's 2023 totals (21,133 / 2,366 primary; 21,321 / 4,682 general) match the District 19 page above.
+- Each precinct is in exactly one district; district sizes run from 17 to 34 precincts.

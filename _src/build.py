@@ -28,7 +28,7 @@ def head(title, desc):
 '''
 
 def bar(current):
-    links = [("/", "All docs", "home"), ("/budget", "City budget", "budget"), ("/beech-grove-budget", "Beech Grove budget", "bg"), ("/flock", "Flock timeline", "flock"), ("/flock-cancellations", "How cities dropped Flock", "cancel"), ("/council-votes", "Council votes", "votes"), ("/council-quiz", "Councilor quiz", "quiz"), ("/district-19-turnout", "District 19 turnout", "turnout")]
+    links = [("/", "All docs", "home"), ("/budget", "City budget", "budget"), ("/beech-grove-budget", "Beech Grove budget", "bg"), ("/flock", "Flock timeline", "flock"), ("/flock-cancellations", "How cities dropped Flock", "cancel"), ("/council-votes", "Council votes", "votes"), ("/council-quiz", "Councilor quiz", "quiz"), ("/turnout", "Turnout map", "citymap")]
     cur = ' aria-current="page"'
     nav = "".join(f'<a href="{h}"{cur if k == current else ""}>{t}</a>' for h, t, k in links)
     return f'<header class="site-bar"><a class="brand" href="/">Indy AI Research Docs</a><nav aria-label="Site">{nav}</nav></header>'
@@ -248,6 +248,20 @@ turnout_page = (head("Where District 19 Voted in 2023", "Voter turnout in each o
                 + "</head>\n<body>\n" + bar("turnout") + notice("/district-19-turnout", TURNOUT_UPDATED) + tp + foot(TURNOUT_UPDATED) + "\n</body>\n</html>\n")
 (ROOT / "district-19-turnout" / "index.html").write_text(theme(turnout_page, '<main class="dt"', "District 19 Turnout"))
 
+# ---------- Countywide turnout map (/turnout) ----------
+# Data: _src/turnout-data/city/ (built by _src/turnout-data/build_city.py): data.json has district outlines and every
+# precinct's numbers; d/<n>.json has one district's precinct shapes and roads, loaded when someone clicks into it.
+CITYMAP_UPDATED = "November 23, 2026"
+import shutil
+(ROOT / "turnout" / "d").mkdir(parents=True, exist_ok=True)
+shutil.copyfile(SRC / "turnout-data" / "city" / "data.json", ROOT / "turnout" / "data.json")
+for f in (SRC / "turnout-data" / "city" / "d").glob("*.json"):
+    shutil.copyfile(f, ROOT / "turnout" / "d" / f.name)
+cp = (SRC / "turnout-city.html").read_text()
+city_page = (head("Where Indianapolis Votes", "Turnout and results for all 621 Marion County voting precincts across six elections, 2023 to 2026, by City-County Council district.")
+             + "</head>\n<body>\n" + bar("citymap") + notice("/turnout", CITYMAP_UPDATED) + cp + foot(CITYMAP_UPDATED) + "\n</body>\n</html>\n")
+(ROOT / "turnout" / "index.html").write_text(theme(city_page, '<main class="dt"', "Turnout Map"))
+
 
 # ---------- Home ----------
 home_css = '''<style>
@@ -310,6 +324,12 @@ home_body = f'''<main class="home">
       <h2>Which Councilor Votes Like You?</h2>
       <p>A five-minute quiz built from real contested Council votes. See which councilors voted the way you would have, where your own councilor falls, and what the policies you picked have done since.</p>
       <span class="go">Take the quiz →</span>
+    </a>
+    <a class="card" href="/turnout">
+      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {CITYMAP_UPDATED}</span></div>
+      <h2>Where Indianapolis Votes</h2>
+      <p>A map of all 25 City-County Council districts and 621 precincts across six elections, 2023 to 2026. Click a district to see its precincts, and a precinct for its turnout and results in every election.</p>
+      <span class="go">Explore the map →</span>
     </a>
     <a class="card" href="/district-19-turnout">
       <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {TURNOUT_UPDATED}</span></div>
