@@ -27,7 +27,7 @@ def head(title, desc):
 '''
 
 def bar(current):
-    links = [("/", "All docs", "home"), ("/budget", "City budget", "budget"), ("/beech-grove-budget", "Beech Grove budget", "bg"), ("/flock", "Flock timeline", "flock"), ("/flock-cancellations", "How cities dropped Flock", "cancel"), ("/council-votes", "Council votes", "votes"), ("/council-quiz", "Councilor quiz", "quiz")]
+    links = [("/", "All docs", "home"), ("/budget", "City budget", "budget"), ("/beech-grove-budget", "Beech Grove budget", "bg"), ("/flock", "Flock timeline", "flock"), ("/flock-cancellations", "How cities dropped Flock", "cancel"), ("/council-votes", "Council votes", "votes"), ("/council-quiz", "Councilor quiz", "quiz"), ("/district-19-turnout", "District 19 turnout", "turnout")]
     cur = ' aria-current="page"'
     nav = "".join(f'<a href="{h}"{cur if k == current else ""}>{t}</a>' for h, t, k in links)
     return f'<header class="site-bar"><a class="brand" href="/">Indy AI Research Docs</a><nav aria-label="Site">{nav}</nav></header>'
@@ -236,6 +236,17 @@ quiz_page = (head("Which Councilor Votes Like You?", "A short quiz built from re
              + "</head>\n<body>\n" + bar("quiz") + notice("/council-quiz", VOTES_UPDATED) + qp + foot(VOTES_UPDATED) + "\n</body>\n</html>\n")
 (ROOT / "council-quiz" / "index.html").write_text(theme(quiz_page, '<main class="cq"', "Councilor Quiz"))
 
+# ---------- District 19 turnout ----------
+# Data: _src/turnout-data/data.json (precinct shapes, 2023 precinct turnout, 2015-2023 history; see that folder's
+# README), copied as-is to district-19-turnout/data.json for the page's script to load.
+TURNOUT_UPDATED = "November 23, 2026"
+(ROOT / "district-19-turnout").mkdir(exist_ok=True)
+(ROOT / "district-19-turnout" / "data.json").write_text((SRC / "turnout-data" / "data.json").read_text())
+tp = (SRC / "turnout.html").read_text()
+turnout_page = (head("Where District 19 Voted in 2023", "Voter turnout in each of Indianapolis City-County Council District 19's 24 precincts in the 2023 primary and general elections, with turnout back to 2015.")
+                + "</head>\n<body>\n" + bar("turnout") + notice("/district-19-turnout", TURNOUT_UPDATED) + tp + foot(TURNOUT_UPDATED) + "\n</body>\n</html>\n")
+(ROOT / "district-19-turnout" / "index.html").write_text(theme(turnout_page, '<main class="dt"', "District 19 Turnout"))
+
 
 # ---------- Home ----------
 home_css = '''<style>
@@ -298,6 +309,12 @@ home_body = f'''<main class="home">
       <h2>Which Councilor Votes Like You?</h2>
       <p>A five-minute quiz built from real contested Council votes. See which councilors voted the way you would have, where your own councilor falls, and what the policies you picked have done since.</p>
       <span class="go">Take the quiz →</span>
+    </a>
+    <a class="card" href="/district-19-turnout">
+      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {TURNOUT_UPDATED}</span></div>
+      <h2>Where District 19 Voted in 2023</h2>
+      <p>A precinct map of voter turnout in City-County Council District 19 for the 2023 primary and general elections, from the Election Board's official results, with turnout back to 2015.</p>
+      <span class="go">See the map →</span>
     </a>
   </section>
   <section>
