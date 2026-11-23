@@ -455,7 +455,7 @@
     }).join("");
   }
 
-  fetch("data.json").then((r) => r.json()).then((d) => {
+  fetch("/district-19-turnout/data.json").then((r) => r.json()).then((d) => {
     D = d; tiles(); table(); history(); detail(null);
     if (!window.L) { $("#dtMap").innerHTML = '<p class="note" style="padding:16px">The map library didn’t load. Reload the page to try again. The tables below have every number.</p>'; return; }
     drawMap(); chips(); shade(); initSearch();
