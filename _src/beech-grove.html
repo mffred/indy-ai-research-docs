@@ -21,6 +21,10 @@
   .bar-row.head{display:none}
   .bar-row .name{grid-area:n}.bar-row .dual{grid-area:t}.bar-row .r.a27{grid-area:a}.bar-row .r.a25{grid-area:b;text-align:left;font-size:12.5px;color:var(--muted)}.bar-row .r.chg{grid-area:c;font-size:12.5px}
 }
+.warn{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--s4);border-left-width:4px;background:var(--surface);border-radius:8px;padding:12px 14px;font-size:14px;color:var(--ink-2);max-width:78ch}
+.warn b{color:var(--ink)}
+.warn-tag{flex:none;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:var(--s4);color:#101614;white-space:nowrap}
+@media (max-width:600px){.warn{flex-direction:column;gap:8px}}
 </style>
 <header>
   <div class="eyebrow">Beech Grove, Indiana · Civil city budget</div>
@@ -85,7 +89,10 @@
     <div class="panel"><h3>Property tax, 2027 notice</h3><div id="taxBox"></div></div>
     <div class="panel"><h3>Other 2027 revenue estimates</h3><div id="revList"></div></div>
   </div>
-  <p class="note">Don't add the right-hand list to the levy: Form 2 counts $1.58 million moved in from other funds and $420,000 in police pension reimbursements, so it is a list of expected sources, not a balanced statement.</p>
+  <aside class="warn" role="note">
+    <span class="warn-tag">Don't add these up</span>
+    <div><b>These two boxes don't sum to a revenue total.</b> Form 2 plus the levy comes to about $23.4M, against a $19.69M budget. Part of the gap is double counting: Form 2 includes $1.58M moved in from other funds (mainly the public safety income tax fund reimbursing the General Fund, which is already counted in that fund's own $2.92M). The levy is also what the city levies, not what it collects after the state's property tax caps. Treat Form 2 as a list of expected sources, not a balanced statement.</div>
+  </aside>
 </section>
 
 <section id="departments">
