@@ -52,6 +52,23 @@
           "value": "private, no-store"
         }
       ]
+    },
+    {
+      "source": "/wn-04ba4ae7(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, no-cache"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        }
+      ]
     }
   ]
 }
