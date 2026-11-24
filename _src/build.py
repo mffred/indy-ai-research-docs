@@ -28,7 +28,7 @@ def head(title, desc):
 '''
 
 def bar(current):
-    links = [("/", "All docs", "home"), ("/budget", "City budget", "budget"), ("/beech-grove-budget", "Beech Grove budget", "bg"), ("/flock", "Flock timeline", "flock"), ("/flock-cancellations", "How cities dropped Flock", "cancel"), ("/council-votes", "Council votes", "votes"), ("/council-quiz", "Councilor quiz", "quiz"), ("/turnout", "Turnout map", "citymap")]
+    links = [("/", "All docs", "home"), ("/budget", "City budget", "budget"), ("/beech-grove-budget", "Beech Grove budget", "bg"), ("/flock", "Flock timeline", "flock"), ("/flock-cancellations", "How cities dropped Flock", "cancel"), ("/council-votes", "Council votes", "votes"), ("/council-quiz", "Councilor quiz", "quiz"), ("/turnout", "Election map", "citymap")]
     cur = ' aria-current="page"'
     nav = "".join(f'<a href="{h}"{cur if k == current else ""}>{t}</a>' for h, t, k in links)
     return f'<header class="site-bar"><a class="brand" href="/">Indy AI Research Docs</a><nav aria-label="Site">{nav}</nav></header>'
@@ -237,16 +237,6 @@ quiz_page = (head("Which Councilor Votes Like You?", "A short quiz built from re
              + "</head>\n<body>\n" + bar("quiz") + notice("/council-quiz", VOTES_UPDATED) + qp + foot(VOTES_UPDATED) + "\n</body>\n</html>\n")
 (ROOT / "council-quiz" / "index.html").write_text(theme(quiz_page, '<main class="cq"', "Councilor Quiz"))
 
-# ---------- District 19 turnout ----------
-# Data: _src/turnout-data/data.json (precinct shapes, 2023 precinct turnout, 2015-2023 history; see that folder's
-# README), copied as-is to district-19-turnout/data.json for the page's script to load.
-TURNOUT_UPDATED = "November 23, 2026"
-(ROOT / "district-19-turnout").mkdir(exist_ok=True)
-(ROOT / "district-19-turnout" / "data.json").write_text((SRC / "turnout-data" / "data.json").read_text())
-tp = (SRC / "turnout.html").read_text()
-turnout_page = (head("Where District 19 Voted in 2023", "Voter turnout in each of Indianapolis City-County Council District 19's 24 precincts in the 2023 primary and general elections, with turnout back to 2015.")
-                + "</head>\n<body>\n" + bar("turnout") + notice("/district-19-turnout", TURNOUT_UPDATED) + tp + foot(TURNOUT_UPDATED) + "\n</body>\n</html>\n")
-(ROOT / "district-19-turnout" / "index.html").write_text(theme(turnout_page, '<main class="dt"', "District 19 Turnout"))
 
 # ---------- Countywide turnout map (/turnout) ----------
 # Data: _src/turnout-data/city/ (built by _src/turnout-data/build_city.py): data.json has district outlines and every
@@ -258,9 +248,9 @@ shutil.copyfile(SRC / "turnout-data" / "city" / "data.json", ROOT / "turnout" / 
 for f in (SRC / "turnout-data" / "city" / "d").glob("*.json"):
     shutil.copyfile(f, ROOT / "turnout" / "d" / f.name)
 cp = (SRC / "turnout-city.html").read_text()
-city_page = (head("Where Indianapolis Votes", "Turnout and results for all 621 Marion County voting precincts across six elections, 2023 to 2026, by City-County Council district.")
+city_page = (head("How Indianapolis Votes", "Turnout, party margins and the 2023 mayor's race for all 621 Marion County precincts across six elections, 2023 to 2026, by City-County Council district.")
              + "</head>\n<body>\n" + bar("citymap") + notice("/turnout", CITYMAP_UPDATED) + cp + foot(CITYMAP_UPDATED) + "\n</body>\n</html>\n")
-(ROOT / "turnout" / "index.html").write_text(theme(city_page, '<main class="dt"', "Turnout Map"))
+(ROOT / "turnout" / "index.html").write_text(theme(city_page, '<main class="dt"', "Election Map"))
 
 
 # ---------- Home ----------
@@ -327,15 +317,9 @@ home_body = f'''<main class="home">
     </a>
     <a class="card" href="/turnout">
       <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {CITYMAP_UPDATED}</span></div>
-      <h2>Where Indianapolis Votes</h2>
-      <p>A map of all 25 City-County Council districts and 621 precincts across six elections, 2023 to 2026. Click a district to see its precincts, and a precinct for its turnout and results in every election.</p>
+      <h2>How Indianapolis Votes</h2>
+      <p>A map of all 25 City-County Council districts and 621 precincts across six elections, 2023 to 2026: turnout, the margin between the parties, and every candidate in the 2023 mayor's race. Click a district to see its precincts, and a precinct for its numbers in every election.</p>
       <span class="go">Explore the map →</span>
-    </a>
-    <a class="card" href="/district-19-turnout">
-      <div class="meta"><span class="pill">AI draft</span><span class="pill q">Updated {TURNOUT_UPDATED}</span></div>
-      <h2>Where District 19 Voted in 2023</h2>
-      <p>A precinct map of voter turnout in City-County Council District 19 for the 2023 primary and general elections, from the Election Board's official results, with turnout back to 2015.</p>
-      <span class="go">See the map →</span>
     </a>
   </section>
   <section>

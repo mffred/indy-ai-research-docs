@@ -231,6 +231,52 @@ def bbox(polys, pad=0.004):
 
 
 # ---------------------------------------------------------------- build
+# ---------------------------------------------------------------- 2023 mayor, every candidate
+# Three races: the general (Hogsett v. Shreve) and each party's primary. Votes per precinct are
+# in the order of each race's candidate list. Beech Grove, Lawrence, Southport and Speedway
+# don't vote for Indianapolis mayor, so their precincts have no votes here.
+MAYOR = [
+    {"k": "G", "e": "2023G", "t": "General", "full": "November 2023 general", "cands": [
+        {"n": "Joe Hogsett", "s": "Hogsett", "p": "D", "col": "#2f5fa8", "src": "hogsett"},
+        {"n": "Jefferson Shreve", "s": "Shreve", "p": "R", "col": "#b8322f", "src": "shreve"}]},
+    {"k": "D", "e": "2023P", "t": "Democratic primary", "full": "May 2023 Democratic primary", "cands": [
+        {"n": "Joe Hogsett", "s": "Hogsett", "col": "#2f5fa8", "src": "JOE HOGSETT"},
+        {"n": "Robin Shackleford", "s": "Shackleford", "col": "#7d3c98", "src": "ROBIN SHACKLEFORD"},
+        {"n": "Bob Kern", "s": "Kern", "col": "#2a8c8c", "src": "BOB KERN"},
+        {"n": "Gregory Meriweather", "s": "Meriweather", "col": "#b7791f", "src": "GREGORY MERIWEATHER"},
+        {"n": "Clif Marsiglio", "s": "Marsiglio", "col": "#5a7d2a", "src": "CLIF MARSIGLIO"},
+        {"n": "Larry Vaughn", "s": "Vaughn", "col": "#8a5a3c", "src": "LARRY L VAUGHN"}]},
+    {"k": "R", "e": "2023P", "t": "Republican primary", "full": "May 2023 Republican primary", "cands": [
+        {"n": "Jefferson Shreve", "s": "Shreve", "col": "#b8322f", "src": "JEFFERSON SCOTT SHREVE"},
+        {"n": "Abdul-Hakim Shabazz", "s": "Shabazz", "col": "#d9822b", "src": "ABDUL-HAKIM SHABAZZ"},
+        {"n": "James W. Jackson", "s": "Jackson", "col": "#6b4fa0", "src": "JAMES W. JACKSON"},
+        {"n": "John L. Couch", "s": "Couch", "col": "#2f8a63", "src": "JOHN L COUCH"}]},
+]
+
+
+def load_mayor(ids):
+    """{race key: {precinct: [votes per candidate]}}"""
+    out = {r["k"]: {p: [0] * len(r["cands"]) for p in ids} for r in MAYOR}
+    G, D, R = MAYOR
+    wb = openpyxl.load_workbook(os.path.join(RAW, "2023G.xlsx"), read_only=True, data_only=True)
+    mh, m = sheet_rows(wb, "City of Indianapolis Mayor")
+    cols = [cand_cols(mh, c["src"]) for c in G["cands"]]
+    extra = [i for i in range(3, len(mh)) if mh[i] and mh[i] != "None" and i not in cols]
+    if extra: raise SystemExit("unexpected mayor columns " + str([mh[i] for i in extra]))
+    for p, r in m.items():
+        if p in out["G"]: out["G"][p] = [num(r[i]) for i in cols]
+    wb = openpyxl.load_workbook(os.path.join(RAW, "2023P.xlsx"), read_only=True, data_only=True)
+    idx = {"DEM": (D, {c["src"]: i for i, c in enumerate(D["cands"])}), "REP": (R, {c["src"]: i for i, c in enumerate(R["cands"])})}
+    for r in list(wb.worksheets[0].iter_rows(values_only=True))[1:]:
+        p = str(r[0] or "").strip()
+        if p not in out["G"] or str(r[1]).strip().upper() != "MAYOR OF INDIANAPOLIS": continue
+        race, ci = idx[str(r[2]).upper()[:3]]
+        name = str(r[3]).strip().upper()
+        if name not in ci: raise SystemExit("unexpected mayor candidate " + name)
+        out[race["k"]][p][ci[name]] += num(r[4])
+    return out
+
+
 def main():
     E, p2d, council, cities = load_results()
     members = {m["district"]: m["name"] for m in json.load(open(os.path.join(HERE, "..", "council-data", "members.json")))["members"] if m.get("district")}
@@ -272,7 +318,13 @@ def main():
             if v: out = [a + (b or 0) for a, b in zip(out, v)]
         return out
 
+    MY = load_mayor(ids)
+    for p in ids: P[p]["my"] = {k: MY[k][p] for k in MY}
+    def mtot(sel): return {k: [sum(MY[k][p][i] for p in sel) for i in range(len(r["cands"]))] for r in MAYOR for k in [r["k"]]}
     county = {el["k"]: total(ids, el["k"]) for el in ELECTIONS}
+    # The 2026 primary file has no registration or ballots by precinct. The Election Board's
+    # county-wide figures (indy.gov/activity/marion-county-voter-turnout) fill in the county row only.
+    county["2026P"][0], county["2026P"][1] = 632168, 99923
     print("county totals:", {k: v[:2] for k, v in county.items()})
 
     os.makedirs(os.path.join(OUT, "d"), exist_ok=True)
@@ -282,7 +334,7 @@ def main():
         mine = [p for p in ids if p2d[p] == n]
         polys = to_polys(rings)
         districts.append({"n": n, "member": members.get(n), "polys": polys, "precincts": len(mine),
-                          "tot": {el["k"]: total(mine, el["k"]) for el in ELECTIONS}, "race2023": council[n],
+                          "tot": {el["k"]: total(mine, el["k"]) for el in ELECTIONS}, "my": mtot(mine), "race2023": council[n],
                           "twps": sorted({TWP[p[:2]] for p in mine}), "cities": sorted({cities[p] for p in mine if p in cities})})
         shapes = [{"id": pa["PRECINCT"], "polys": to_polys(pr)} for pa, pr in prec if pa["PRECINCT"] in mine]
         bb = bbox(polys)
@@ -294,7 +346,7 @@ def main():
     allpolys = [p for x in districts for p in x["polys"]]
     freeways = [r for r in roads_in(bbox(allpolys, 0.01)) if r["c"] == 0]
     for r in freeways: r["l"] = [[rnd(c, 4) for c in simplify(l, 0.0003)] for l in r["l"]]
-    data = {"built": time.strftime("%Y-%m-%d"), "elections": ELECTIONS, "keys": KEYS, "county": county, "districts": districts, "precincts": P, "freeways": freeways}
+    data = {"built": time.strftime("%Y-%m-%d"), "elections": ELECTIONS, "keys": KEYS, "county": county, "mayor": {"races": [{k: v for k, v in r.items()} | {"cands": [{k: v for k, v in c.items() if k != "src"} for c in r["cands"]]} for r in MAYOR], "county": mtot(ids)}, "districts": districts, "precincts": P, "freeways": freeways}
     json.dump(data, open(os.path.join(OUT, "data.json"), "w"), separators=(",", ":"))
     print("data.json", os.path.getsize(os.path.join(OUT, "data.json")) // 1024, "KB")
 

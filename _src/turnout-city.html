@@ -43,6 +43,12 @@
 .dt .chip{font:inherit;font-size:13px;padding:4px 10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
 .dt .chip[aria-pressed=true]{background:var(--ps-green-ink,#096a44);color:var(--ps-cream,#fdf7e2);border-color:var(--ps-green-ink,#096a44)}
 .dt .chip:disabled{opacity:.45;cursor:not-allowed}
+#dtRaceBox{display:flex;flex-direction:column;gap:6px}
+#dtRaceBox[hidden]{display:none}
+.dt-ramp{display:flex;align-items:center;gap:3px;font-size:12.5px;color:var(--ink-2)}
+.dt-ramp .sw{width:14px}
+.dt-ramp span.t{margin:0 4px}
+.my td b{font-weight:600}
 .dt-legend{display:flex;flex-direction:column;gap:4px;font-size:13px;font-variant-numeric:tabular-nums}
 .dt-legend div{display:flex;align-items:center;gap:8px}
 .dt-legend .cap{font-size:12.5px;color:var(--ink-2);display:block}
@@ -64,6 +70,7 @@
 .dt-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(253,247,226,.55);font-size:14px;z-index:900;pointer-events:none}
 .dt-loading[hidden]{display:none}
 .dt .leaflet-interactive:focus{outline:none}
+#dtDetail th,#dtDetail td{padding:8px 6px}
 .pl{font-family:var(--ps-mono,monospace);font-size:10px;color:var(--ink);text-shadow:0 0 2px var(--surface),0 0 2px var(--surface),0 0 3px var(--surface);white-space:nowrap;transform:translate(-50%,-50%);pointer-events:none}
 .dl{font-family:var(--ps-title,Georgia,serif);font-size:17px;color:var(--ps-navy,#17244f);text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 4px #fff;white-space:nowrap;transform:translate(-50%,-50%);pointer-events:none}
 .rdl{font-size:9.5px;color:var(--ink-2);text-shadow:0 0 2px var(--surface),0 0 2px var(--surface),0 0 3px var(--surface);white-space:nowrap;pointer-events:none}
@@ -105,9 +112,9 @@
 </style>
 <main class="dt">
 <header>
-  <div class="eyebrow">Indianapolis–Marion County · Election turnout, 2023 to 2026</div>
-  <h1>Where Indianapolis votes</h1>
-  <p class="lede">Turnout and results for all 621 voting precincts in Marion County across six elections, from the May 2023 primary to this month's general election. Start with the 25 City-County Council districts, click one to see its precincts, then click a precinct for its numbers in every election. All figures are the Marion County Election Board's official precinct results.</p>
+  <div class="eyebrow">Indianapolis–Marion County Precinct Voting Map</div>
+  <h1>How Indianapolis votes</h1>
+  <p class="lede">Who turned out and how they voted in all 621 of Marion County's precincts, from the May 2023 primary to this month's general election: turnout, the margin between the parties, and every candidate in the 2023 mayor's race, primaries included. Start with the 25 City-County Council districts, click one to see its precincts, then click a precinct for its numbers in every election. All figures are the Marion County Election Board's official precinct results.</p>
 </header>
 
 <div class="dt-tiles" id="dtTiles"></div>
@@ -140,6 +147,7 @@
         <div class="dt-chips" id="dtElections" role="group" aria-label="Election"></div>
         <h4>Measure</h4>
         <div class="dt-chips" id="dtMeasures" role="group" aria-label="Measure"></div>
+        <div id="dtRaceBox" hidden><h4>Mayor's race</h4><div class="dt-chips" id="dtRace" role="group" aria-label="Mayor's race"></div></div>
         <div class="dt-legend" id="dtLegend"></div>
       </div>
       <div class="dt-panel dt-det" id="dtDetail" aria-live="polite"></div>
@@ -159,9 +167,10 @@
   <ul>
     <li><b>Official results, as published.</b> Every count comes from the Marion County Election Board's precinct-level result files. Nothing here is a projection or estimate. District and county totals are sums of the precincts.</li>
     <li><b>Turnout</b> is ballots cast divided by registered voters in that precinct for that election. Registration changes between elections, so each election uses its own count.</li>
-    <li><b>Democratic share</b> is the Democratic candidate's share of the two major-party votes in the race named under each election (other candidates are left out of the share but shown in the precinct details). In primaries it's the share of voters who chose the Democratic side: votes in each party's mayor primary in 2023, party ballots in 2024, and votes for each party's unopposed prosecutor nominee in 2026. Indiana primaries are open, so a voter picks a party's ballot on Election Day.</li>
+    <li><b>Party margin</b> compares the Democratic and Republican candidates in the race named under each election, counting only their two vote totals (other candidates are left out but shown in the precinct details). "D+20" means the Democrat got 20 points more of those votes than the Republican (60% to 40%); "R+20" is the reverse. In primaries it compares how many voters chose each party's side: votes in each party's mayor primary in 2023, party ballots in 2024, and votes for each party's unopposed prosecutor nominee in 2026. Indiana primaries are open, so a voter picks a party's ballot on Election Day.</li>
+    <li><b>2023 mayor</b> shows every candidate for Mayor of Indianapolis in the November 2023 general and in each party's May 2023 primary, colored by who got the most votes in each district or precinct. A primary map counts only that party's voters; a shade's strength is the winner's share of the votes in that race.</li>
     <li><b>2024 primary ballots</b> count Democratic and Republican ballots. A few voters took a nonpartisan ballot where there was a local question; those aren't in the 2024 primary turnout here.</li>
-    <li><b>The May 2026 primary has no turnout figure.</b> The city published candidate votes for that primary but not registered voters or ballots cast by precinct, so only the party split is shown. A records request to the Election Board could fill this in.</li>
+    <li><b>The May 2026 primary has turnout for the county only.</b> The city published candidate votes for that primary but not registered voters or ballots cast by precinct, so districts and precincts show only the party split. The county figure (99,923 voters of 632,168 registered, 15.81%) is from the Election Board's <a href="https://www.indy.gov/activity/marion-county-voter-turnout">turnout page</a>. A records request to the Election Board could fill this in.</li>
     <li><b>Precincts and districts.</b> The same 621 precincts were used in all six elections. Each precinct's council district comes from the 2023 council races, which list every precinct by district. Council districts were last redrawn in 2022. Three precincts with no registered voters (PE007, WY043, WY056) are blank.</li>
     <li><b>Cities and towns.</b> A precinct is labeled Beech Grove, Lawrence, Southport or Speedway if it had votes in that city's or town's own 2023 race, so a precinct partly inside a city carries its name.</li>
     <li><b>The map</b> draws the city's precinct and district boundaries, lightly simplified to keep the page fast, with major roads from the city's street centerlines. Zoomed in, the street map is OpenStreetMap and the aerial photo is the city's spring 2024 flight.</li>
@@ -185,16 +194,19 @@
   const $ = (s) => document.querySelector(s);
   const n0 = (n) => n == null ? "–" : Math.round(n).toLocaleString("en-US");
   const p1 = (n) => (n == null || isNaN(n)) ? "–" : (n * 100).toFixed(1) + "%";
+  // two-party margin from the Democratic share v: "D+12.4", "R+3.0" or "Even"
+  const mg = (v) => { if (v == null || isNaN(v)) return "–"; const d = (2 * v - 1) * 100; return Math.abs(d) < 0.05 ? "Even" : (d > 0 ? "D+" : "R+") + Math.abs(d).toFixed(1); };
+  const split = (v) => v == null || isNaN(v) ? "–" : "D " + p1(v) + " · R " + p1(1 - v);
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const GREEN = ["#e9e4cf", "#d9ecd9", "#a9d6b8", "#6fb78f", "#2f9465", "#0b6a44"];
-  // Democratic share: red (Republican side) to blue (Democratic side), fixed breaks so colors mean the same thing everywhere
+  // Party margin: red (Republican lead) to blue (Democratic lead), fixed breaks on the two-party share so colors mean the same thing everywhere
   const PARTY = { breaks: [0.3, 0.45, 0.5, 0.55, 0.7, 0.85], colors: ["#b2182b", "#e0857a", "#f4cfc6", "#d3e1f1", "#92b6dd", "#3f73b5", "#173f7a"] };
   const NAVY = "#17244f", CREAM = "#fdf7e2";
   const LOCATOR = "https://gis.indy.gov/server/rest/services/Locators/IndyAddresses/GeocodeServer";
   const BASE = "/turnout/";
   const ROMAN = (n) => n + (n % 10 === 1 && n % 100 !== 11 ? "st" : n % 10 === 2 && n % 100 !== 12 ? "nd" : n % 10 === 3 && n % 100 !== 13 ? "rd" : "th");
   let D, DN = {}, E = {}, map, layers = {}, pin = null;
-  let state = { d: null, p: null, e: "2026G", m: "turn" };
+  let state = { d: null, p: null, e: "2026G", m: "turn", r: "D" };
   const cache = {};      // district n -> detail json
   let level = "city", baseZoom = 10, homeBounds = null, sortKey = "turn", sortDir = -1;
 
@@ -202,10 +214,49 @@
   // a row is [reg, bal, d, r, o]
   const M = {
     turn: { label: "Turnout", get: (x) => x && x[0] ? x[1] / x[0] : null, f: p1, ok: (el) => el.turnout },
-    dem:  { label: "Democratic share", get: (x) => x && (x[2] + x[3]) ? x[2] / (x[2] + x[3]) : null, f: p1, ok: () => true },
-    bal:  { label: "Ballots cast", get: (x) => x && x[0] ? x[1] : null, f: n0, ok: (el) => el.turnout }
+    dem:  { label: "Party margin", get: (x) => x && (x[2] + x[3]) ? x[2] / (x[2] + x[3]) : null, f: mg, ok: () => true },
+    bal:  { label: "Ballots cast", get: (x) => x && x[0] ? x[1] : null, f: n0, ok: (el) => el.turnout },
+    mayor: { label: "2023 mayor", get: () => null, f: (w) => fmtW(w), ok: () => true }
   };
   const el = () => E[state.e];
+
+  // ---------- 2023 mayor, every candidate ----------
+  const is23 = (k) => k === "2023P" || k === "2023G";
+  const MR = () => D.mayor.races.find((r) => r.k === (state.e === "2023G" ? "G" : state.r));
+  const may = () => state.m === "mayor";
+  const rt = (r) => r.k === "G" ? "general" : r.t;
+  function win(v, race) {
+    if (!v) return null;
+    const t = v.reduce((a, b) => a + b, 0); if (!t) return null;
+    let i = 0; v.forEach((x, j) => { if (x > v[i]) i = j; });
+    return { i, c: race.cands[i], share: v[i] / t, tot: t, tie: v.filter((x) => x === v[i]).length > 1 };
+  }
+  const fmtW = (w) => !w ? "–" : w.tie ? "Tie" : w.c.s + " " + p1(w.share);
+  const STR = [0.5, 0.65, 0.8], MIXT = [0.42, 0.62, 0.81, 1];
+  const strength = (sh) => STR.filter((b) => sh >= b).length;
+  function mix(hex, t) {
+    const a = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)), b = [1, 3, 5].map((i) => parseInt(CREAM.slice(i, i + 2), 16));
+    return "#" + a.map((x, i) => Math.round(b[i] + (x - b[i]) * t).toString(16).padStart(2, "0")).join("");
+  }
+  const TIE = "#a8a395";
+  const mayorColor = (w) => !w ? GREEN[0] : w.tie ? TIE : mix(w.c.col, MIXT[strength(w.share)]);
+  const myP = (id) => D.precincts[id].my[MR().k];
+  const myD = (n) => DN[n].my[MR().k];
+  const myScope = () => state.p ? myP(state.p) : state.d ? myD(state.d) : D.mayor.county[MR().k];
+  function winsIn(ids) {
+    const R = MR(), c = {}; let ties = 0;
+    ids.forEach((id) => { const w = win(myP(id), R); if (!w) return; if (w.tie) ties++; else c[w.i] = (c[w.i] || 0) + 1; });
+    return { c, ties };
+  }
+  const scopeIds = () => Object.keys(D.precincts).filter((id) => !state.d || D.precincts[id].d === state.d);
+  function mayorBlock(v) {
+    const R = MR(), t = v ? v.reduce((a, b) => a + b, 0) : 0;
+    if (!t) return '<h4>2023 mayor, ' + rt(R) + '</h4><p class="empty">No votes for mayor recorded here.</p>';
+    const w = win(v, R), order = R.cands.map((c, i) => i).sort((a, b) => v[b] - v[a]);
+    return '<h4>2023 mayor, ' + rt(R) + '</h4><div class="tbl-wrap my"><table><tbody>' + order.map((i) => { const top = !w.tie && i === w.i;
+      return '<tr><td class="l"><span class="sw" style="display:inline-block;vertical-align:-1px;margin-right:6px;background:' + R.cands[i].col + '"></span>' + (top ? "<b>" + esc(R.cands[i].n) + "</b>" : esc(R.cands[i].n)) + "</td><td>" + n0(v[i]) + "</td><td>" + p1(v[i] / t) + "</td></tr>"; }).join("") + "</tbody></table></div>";
+  }
+
   const pRow = (id, k) => D.precincts[id][k || state.e];
   const dRow = (n, k) => DN[n].tot[k || state.e];
   const area = (id) => { const p = D.precincts[id]; return (p.c ? p.c + ", " : "") + p.t + " Township"; };
@@ -239,9 +290,9 @@
     c.querySelector("[data-a=reset]").hidden = !(real || pin);
   }
   function styleDistrict(x) {
-    if (level === "city") return { color: CREAM, weight: 1.6, fillColor: x.fill, fillOpacity: 0.92 };
+    if (level === "city") return { color: CREAM, weight: 1.6, fill: true, fillColor: x.fill, fillOpacity: 0.92 };
     const mine = x.n === state.d;
-    return mine ? { color: NAVY, weight: 2.6, fill: false } : { color: "#8d9bc6", weight: 1.2, fillColor: "#efeadb", fillOpacity: 0.55 };
+    return mine ? { color: NAVY, weight: 2.6, fill: false } : { color: "#8d9bc6", weight: 1.2, fill: true, fillColor: "#efeadb", fillOpacity: 0.55 };
   }
   function stylePrecinct(p) {
     const real = isZoomedIn(), sel = p.id === state.p;
@@ -292,8 +343,8 @@
     if (level === "city") { map.fitBounds(homeBounds, { padding: [10, 10] }); return; }
     map.fitBounds(DN[state.d].layer.getBounds(), { padding: [14, 14] });
   }
-  function districtTip(x) { const m = M[state.m]; const v = m.ok(el()) ? m.get(dRow(x.n)) : null; return "<b>" + dName(x.n) + "</b>" + (x.member ? " · " + esc(x.member) : "") + "<br>" + m.label + ": " + (v == null ? "–" : m.f(v)); }
-  function precinctTip(p) { const m = M[state.m]; const v = m.ok(el()) ? m.get(pRow(p.id)) : null; return "<b>" + p.id + "</b> · " + m.label + ": " + (v == null ? "no voters" : m.f(v)); }
+  function districtTip(x) { if (may()) return "<b>" + dName(x.n) + "</b>" + (x.member ? " · " + esc(x.member) : "") + "<br>Mayor, " + rt(MR()) + ": " + fmtW(win(myD(x.n), MR())); const m = M[state.m]; const v = m.ok(el()) ? m.get(dRow(x.n)) : null; return "<b>" + dName(x.n) + "</b>" + (x.member ? " · " + esc(x.member) : "") + "<br>" + m.label + ": " + (v == null ? "–" : m.f(v)); }
+  function precinctTip(p) { if (may()) { const w = win(myP(p.id), MR()); return "<b>" + p.id + "</b> · Mayor, " + rt(MR()) + ": " + (w ? fmtW(w) : "no votes"); } const m = M[state.m]; const v = m.ok(el()) ? m.get(pRow(p.id)) : null; return "<b>" + p.id + "</b> · " + m.label + ": " + (v == null ? "no voters" : m.f(v)); }
 
   async function loadDistrict(n) {
     if (cache[n]) return cache[n];
@@ -354,17 +405,27 @@
   }
   function shade() {
     const m = M[state.m], ok = m.ok(el());
-    const units = level === "city" ? D.districts.map((x) => ({ o: x, v: ok ? m.get(dRow(x.n)) : null })) : (layers.precList || []).map((p) => ({ o: p, v: ok ? m.get(pRow(p.id)) : null }));
-    const br = state.m === "dem" ? null : bins(units.map((u) => u.v));
-    units.forEach((u) => { u.o.fill = colorFor(u.v, br); });
+    const R = may() ? MR() : null;
+    const units = level === "city" ? D.districts.map((x) => ({ o: x, v: R ? win(myD(x.n), R) : ok ? m.get(dRow(x.n)) : null })) : (layers.precList || []).map((p) => ({ o: p, v: R ? win(myP(p.id), R) : ok ? m.get(pRow(p.id)) : null }));
+    const br = state.m === "dem" || R ? null : bins(units.map((u) => u.v));
+    units.forEach((u) => { u.o.fill = R ? mayorColor(u.v) : colorFor(u.v, br); });
     if (level !== "city") D.districts.forEach((x) => { x.fill = null; });
     restyle();
     let h = "";
-    if (!ok) h = '<p class="note" style="margin:0">The city didn’t publish registered voters or ballots by precinct for the May 2026 primary. Choose <b>Democratic share</b>, or another election.</p>';
-    else if (state.m === "dem") {
-      const lab = ["Under 30%", "30% – 45%", "45% – 50%", "50% – 55%", "55% – 70%", "70% – 85%", "85% and up"];
+    if (!ok) h = '<p class="note" style="margin:0">The city didn’t publish registered voters or ballots by precinct for the May 2026 primary. Choose <b>Party margin</b>, or another election.</p>';
+    else if (R) {
+      const won = {}; let ties = 0; units.forEach((u) => { if (!u.v) return; if (u.v.tie) ties++; else won[u.v.i] = (won[u.v.i] || 0) + 1; });
+      const unit = (n) => n + " " + (level === "city" ? (n === 1 ? "district" : "districts") : (n === 1 ? "precinct" : "precincts"));
+      R.cands.forEach((c, i) => { if (won[i]) h += '<div><span class="sw" style="background:' + c.col + '"></span>' + esc(c.n) + ": won " + unit(won[i]) + "</div>"; });
+      if (ties) h += '<div><span class="sw" style="background:' + TIE + '"></span>Tied: ' + unit(ties) + "</div>";
+      const lead = R.cands[+Object.keys(won).sort((a, b) => won[b] - won[a])[0] || 0];
+      h += '<div class="dt-ramp">' + MIXT.map((t) => '<span class="sw" style="background:' + mix(lead.col, t) + '"></span>').join("") + '<span class="t">lighter = closer race</span></div>';
+      const none = R.cands.filter((c, i) => !won[i]).map((c) => c.s);
+      h += '<span class="cap">' + R.full + " for mayor: colored by who got the most votes. Shades: winner under 50%, 50–65%, 65–80%, 80% and up." + (none.length ? " Won nowhere on this map: " + none.join(", ") + "." : "") + "</span>";
+    } else if (state.m === "dem") {
+      const lab = ["R+40 or more", "R+10 to R+40", "Even to R+10", "Even to D+10", "D+10 to D+40", "D+40 to D+70", "D+70 or more"];
       for (let k = PARTY.colors.length - 1; k >= 0; k--) h += '<div><span class="sw" style="background:' + PARTY.colors[k] + '"></span>' + lab[k] + "</div>";
-      h += '<span class="cap">' + esc(el().race) + ": Democratic share of the two major-party votes.</span>";
+      h += '<span class="cap">' + esc(el().race) + ": lead of the winning party among the two major-party votes, in points.</span>";
     } else if (br) {
       for (let k = 1; k <= 5; k++) h += '<div><span class="sw" style="background:' + GREEN[k] + '"></span>' + m.f(br[k - 1]) + " – " + m.f(br[k]) + "</div>";
       h += '<span class="cap">' + (level === "city" ? "Ranges across the 25 districts." : "Ranges across this district's precincts.") + "</span>";
@@ -378,6 +439,12 @@
     $("#dtElections").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => go({ e: b.dataset.k }, false)));
     $("#dtMeasures").innerHTML = Object.keys(M).map((k) => '<button type="button" class="chip" data-k="' + k + '" aria-pressed="' + (k === state.m) + '"' + (M[k].ok(el()) ? "" : " disabled") + ">" + M[k].label + "</button>").join("");
     $("#dtMeasures").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => go({ m: b.dataset.k }, false)));
+    $("#dtRaceBox").hidden = !may();
+    if (may()) {
+      const cur = MR().k;
+      $("#dtRace").innerHTML = D.mayor.races.map((r) => '<button type="button" class="chip" data-r="' + r.k + '" aria-pressed="' + (r.k === cur) + '">' + r.t + "</button>").join("");
+      $("#dtRace").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => go(b.dataset.r === "G" ? { e: "2023G" } : { e: "2023P", r: b.dataset.r }, false)));
+    }
   }
 
   // ---------- tiles, detail, table ----------
@@ -385,15 +452,22 @@
   function scopeName() { return state.p ? "Precinct " + state.p : state.d ? dName(state.d) : "Marion County"; }
   function tiles() {
     const x = scopeRow(state.e), e = el(), t = [];
-    if (e.turnout) {
-      t.push([p1(M.turn.get(x)), "turnout in the " + e.t + (state.d || state.p ? " (county: " + p1(M.turn.get(D.county[state.e])) + ")" : "")]);
+    const cx = D.county[state.e];
+    if (e.turnout || x[0]) {
+      t.push([p1(M.turn.get(x)), "turnout in the " + e.t + (e.turnout ? "" : " (county total only; not published by precinct)") + (state.d || state.p ? " (county: " + p1(M.turn.get(cx)) + ")" : "")]);
       t.push([n0(x[1]), "ballots cast, of " + n0(x[0]) + " registered"]);
     } else {
-      t.push(["–", "turnout in the " + e.t + ": not published by precinct"]);
+      t.push(["–", "turnout in the " + e.t + ": not published by precinct" + (cx[0] ? " (county: " + p1(M.turn.get(cx)) + ")" : "")]);
       t.push([n0(x[2] + x[3]), "votes for the two prosecutor nominees"]);
     }
-    t.push([p1(M.dem.get(x)), "Democratic share, " + e.race.toLowerCase() + (state.d || state.p ? " (county: " + p1(M.dem.get(D.county[state.e])) + ")" : "")]);
-    if (state.d && !state.p) { const r = rank(state.d); t.push([r ? ROMAN(r) + " of 25" : "–", "in turnout among council districts"]); }
+    if (may()) { const R = MR(), w = win(myScope(), R), cw = win(D.mayor.county[R.k], R);
+      t.push([w ? (w.tie ? "Tie" : esc(w.c.s)) : "–", w ? "most votes for mayor, " + R.full.replace("November ", "").replace("May ", "") + (w.tie ? "" : ", with " + p1(w.share)) + (state.d || state.p ? " (county: " + fmtW(cw) + ")" : "") : "no votes for mayor recorded"]);
+    } else t.push([mg(M.dem.get(x)), "party margin, " + e.race.toLowerCase() + ": " + split(M.dem.get(x)) + (state.d || state.p ? " (county: " + mg(M.dem.get(D.county[state.e])) + ")" : "")]);
+    if (may() && !state.p) { const R = MR(), wi = winsIn(scopeIds()); 
+      const top = R.cands.map((c, i) => i).filter((i) => wi.c[i]).sort((a, b) => wi.c[b] - wi.c[a]), rest = top.slice(1).map((i) => esc(R.cands[i].s) + " " + wi.c[i]);
+      if (wi.ties) rest.push("tied " + wi.ties);
+      t.push([top.length ? String(wi.c[top[0]]) : "–", top.length ? "precincts won by " + esc(R.cands[top[0]].s) + (rest.length ? " (" + rest.join(", ") + ")" : "") : "no precincts with votes for mayor"]); }
+    else if (state.d && !state.p) { const r = rank(state.d); t.push([r ? ROMAN(r) + " of 25" : "–", "in turnout among council districts"]); }
     else if (state.p) { const d = D.precincts[state.p].d; t.push([dName(d), esc(DN[d].member || "") + " · " + area(state.p)]); }
     else t.push(["621", "precincts in 25 council districts"]);
     $("#dtTiles").innerHTML = t.map(([v, l]) => '<div class="dt-tile"><span class="v">' + v + '</span><span class="l">' + scopeName() + ": " + l + "</span></div>").join("");
@@ -404,9 +478,9 @@
     return v.findIndex((x) => x.n === n) + 1;
   }
   function elecTable(rowFor) {
-    let h = '<div class="tbl-wrap"><table><thead><tr><th class="l">Election</th><th>Turnout</th><th>Ballots</th><th>Dem share</th></tr></thead><tbody>';
+    let h = '<div class="tbl-wrap"><table><thead><tr><th class="l">Election</th><th>Turnout</th><th>Ballots</th><th>Margin</th></tr></thead><tbody>';
     D.elections.forEach((e) => { const x = rowFor(e.k);
-      h += '<tr class="' + (e.k === state.e ? "cur" : "") + '"><td class="l">' + e.short + "</td><td>" + (e.turnout ? p1(M.turn.get(x)) : "n/a") + "</td><td>" + (e.turnout && x ? n0(x[1]) : "n/a") + "</td><td>" + p1(M.dem.get(x)) + "</td></tr>"; });
+      h += '<tr class="' + (e.k === state.e ? "cur" : "") + '"><td class="l">' + e.short + "</td><td>" + (e.turnout || (x && x[0]) ? p1(M.turn.get(x)) : "n/a") + "</td><td>" + ((e.turnout || (x && x[0])) && x ? n0(x[1]) : "n/a") + "</td><td>" + mg(M.dem.get(x)) + "</td></tr>"; });
     return h + "</tbody></table></div>";
   }
   function detail() {
@@ -418,8 +492,9 @@
       if (!x) h += '<p class="empty">No results for this precinct in this election (no registered voters).</p>';
       else {
         h += '<div class="tbl-wrap"><table><tbody>' + (e.turnout ? r("Registered voters", n0(x[0])) + r("Ballots cast", n0(x[1])) + r("Turnout", p1(M.turn.get(x))) : "")
-          + r(esc(e.dl), n0(x[2])) + r(esc(e.rl), n0(x[3])) + (e.ol ? r(esc(e.ol), n0(x[4])) : "") + r("Democratic share", p1(M.dem.get(x))) + "</tbody></table></div>";
+          + r(esc(e.dl), n0(x[2])) + r(esc(e.rl), n0(x[3])) + (e.ol ? r(esc(e.ol), n0(x[4])) : "") + r("Two-party split", split(M.dem.get(x))) + r("Margin", mg(M.dem.get(x))) + "</tbody></table></div>";
       }
+      if (may()) h += mayorBlock(myP(id));
       h += "<h4>Every election</h4>" + elecTable((k) => pRow(id, k));
       h += '<a href="#dtMap" data-zoom>Zoom the map to ' + id + "</a>";
       d.innerHTML = h;
@@ -430,13 +505,13 @@
       const x = DN[state.d];
       let h = '<div><span class="code">' + dName(x.n) + '</span> <span class="area">' + (x.member ? "Councilor " + esc(x.member) : "") + "</span></div>";
       h += '<p class="area" style="margin:0">' + x.precincts + " precincts in " + x.twps.join(", ") + " township" + (x.twps.length > 1 ? "s" : "") + (x.cities.length ? ", including " + x.cities.join(" and ") : "") + ". Click a precinct on the map or in the table.</p>";
+      if (may()) h += mayorBlock(myD(x.n));
       h += "<h4>Every election</h4>" + elecTable((k) => x.tot[k]);
       const tot = x.race2023.reduce((a, c) => a + c.votes, 0);
       h += "<h4>2023 council race</h4><div class=\"tbl-wrap\"><table><tbody>" + x.race2023.slice().sort((a, b) => b.votes - a.votes).map((c) => '<tr><td class="l">' + esc(c.name) + "</td><td>" + n0(c.votes) + "</td><td>" + p1(c.votes / tot) + "</td></tr>").join("") + "</tbody></table></div>";
-      if (x.n === 19) h += '<a href="/district-19-turnout">District 19 in more depth, with turnout back to 2015</a>';
       d.innerHTML = h; return;
     }
-    d.innerHTML = '<h3>Marion County</h3><p class="empty">All 621 precincts. Click a district on the map or in the table to see its precincts.</p><h4>Every election</h4>' + elecTable((k) => D.county[k]);
+    d.innerHTML = '<h3>Marion County</h3><p class="empty">All 621 precincts. Click a district on the map or in the table to see its precincts.</p>' + (may() ? mayorBlock(D.mayor.county[MR().k]) : "") + '<h4>Every election</h4>' + elecTable((k) => D.county[k]);
   }
 
   function cols() {
@@ -446,16 +521,21 @@
       city ? { k: "who", t: "Councilor", v: (u) => u.member || "", f: esc, cls: "l" } : { k: "who", t: "Area", v: (u) => area(u.id), f: esc, cls: "l" }
     ];
     if (e.turnout) C.push({ k: "reg", t: "Registered", v: (u) => u.x ? u.x[0] : null, f: n0 }, { k: "bal", t: "Ballots", v: (u) => u.x ? u.x[1] : null, f: n0 }, { k: "turn", t: "Turnout", v: (u) => M.turn.get(u.x), f: p1, bar: true });
-    C.push({ k: "dv", t: shortLab(e.dl), v: (u) => u.x ? u.x[2] : null, f: n0 }, { k: "rv", t: shortLab(e.rl), v: (u) => u.x ? u.x[3] : null, f: n0 }, { k: "dem", t: "Dem share", v: (u) => M.dem.get(u.x), f: p1 });
+    if (may()) { const R = MR(), T = D.mayor.county[R.k], tot = T.reduce((a, b) => a + b, 0), cnt = city ? D.mayor.county[R.k] : myD(state.d);
+      C.push({ k: "win", t: "Most votes", v: (u) => { const w = win(u.my, R); return w ? (w.tie ? "Tie" : w.c.s) : null; }, f: esc, foot: () => { const w = win(cnt, R); return w ? (w.tie ? "Tie" : esc(w.c.s)) : ""; } },
+        { k: "wsh", t: "Winner's share", v: (u) => { const w = win(u.my, R); return w ? w.share : null; }, f: p1, foot: () => { const w = win(cnt, R); return w ? p1(w.share) : ""; } });
+      R.cands.forEach((c, i) => { if (T[i] / tot >= 0.02) C.push({ k: "c" + i, t: c.s, v: (u) => u.my ? u.my[i] : null, f: n0, foot: () => n0(cnt[i]) }); });
+      return C; }
+    C.push({ k: "dv", t: shortLab(e.dl), v: (u) => u.x ? u.x[2] : null, f: n0 }, { k: "rv", t: shortLab(e.rl), v: (u) => u.x ? u.x[3] : null, f: n0 }, { k: "dem", t: "Margin", v: (u) => M.dem.get(u.x), f: mg });
     return C;
   }
   function shortLab(s) { return s.replace(/ votes$/, "").replace(/mayor primary/, "mayor"); }
   function table() {
     const city = level === "city", e = el(), C = cols();
     if (!C.find((c) => c.k === sortKey)) { sortKey = e.turnout ? "turn" : "dem"; sortDir = -1; }
-    $("#dtTableTitle").textContent = city ? "Every district, " + e.t : "Every precinct in " + dName(state.d) + ", " + e.t;
-    const units = city ? D.districts.map((x) => ({ n: x.n, member: x.member, x: x.tot[state.e] }))
-      : Object.keys(D.precincts).filter((id) => D.precincts[id].d === state.d).map((id) => ({ id, x: pRow(id) }));
+    $("#dtTableTitle").textContent = (city ? "Every district, " : "Every precinct in " + dName(state.d) + ", ") + (may() ? MR().full + " for mayor" : e.t);
+    const units = city ? D.districts.map((x) => ({ n: x.n, member: x.member, x: x.tot[state.e], my: may() ? myD(x.n) : null }))
+      : Object.keys(D.precincts).filter((id) => D.precincts[id].d === state.d).map((id) => ({ id, x: pRow(id), my: may() ? myP(id) : null }));
     $("#dtTable thead tr").innerHTML = C.map((c) => '<th scope="col"' + (c.cls && c.cls.includes("l") ? ' class="l"' : "") + '><button type="button" data-k="' + c.k + '"' + (c.k === sortKey ? ' aria-sort="' + (sortDir > 0 ? "ascending" : "descending") + '"' : "") + ">" + esc(c.t) + "</button></th>").join("");
     $("#dtTable thead").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { const k = b.dataset.k; if (k === sortKey) sortDir = -sortDir; else { sortKey = k; sortDir = (k === "id" || k === "who") ? 1 : -1; } table(); }));
     const col = C.find((c) => c.k === sortKey);
@@ -467,9 +547,9 @@
       tr.addEventListener("click", act); tr.addEventListener("keydown", (ev) => { if (ev.key === "Enter") act(); }); });
     const T = city ? D.county[state.e] : dRow(state.d);
     $("#dtTable tfoot").innerHTML = "<tr>" + C.map((c, i) => { let s = ""; if (i === 0) s = city ? "Marion County" : "All " + units.length;
-      else if (c.k === "reg") s = n0(T[0]); else if (c.k === "bal") s = n0(T[1]); else if (c.k === "turn") s = p1(M.turn.get(T)); else if (c.k === "dv") s = n0(T[2]); else if (c.k === "rv") s = n0(T[3]); else if (c.k === "dem") s = p1(M.dem.get(T));
+      else if (c.k === "reg") s = n0(T[0]); else if (c.k === "bal") s = n0(T[1]); else if (c.k === "turn") s = p1(M.turn.get(T)); else if (c.k === "dv") s = n0(T[2]); else if (c.k === "rv") s = n0(T[3]); else if (c.k === "dem") s = mg(M.dem.get(T)); else if (c.foot) s = c.foot();
       return "<td" + (c.cls ? ' class="' + c.cls.replace("mono", "") + '"' : "") + ">" + s + "</td>"; }).join("") + "</tr>";
-    $("#dtTableNote").textContent = (city ? "Select a district to see its precincts. " : "Select a precinct to see it on the map. ") + "Select a column heading to sort. " + e.race + ": " + e.dl + " and " + e.rl + "." + (e.turnout ? "" : " Turnout wasn't published by precinct for this primary.");
+    $("#dtTableNote").textContent = (city ? "Select a district to see its precincts. " : "Select a precinct to see it on the map. ") + "Select a column heading to sort. " + (may() ? MR().full + " for mayor. Candidates with under 2% of the county vote are in the precinct details." : e.race + ": " + e.dl + " and " + e.rl + "." + (e.turnout ? "" : " Turnout wasn't published by precinct for this primary."));
   }
   function crumbs() {
     const c = [];
@@ -478,7 +558,7 @@
     if (state.p) c.push("<b>Precinct " + state.p + "</b>");
     $("#dtCrumbs").innerHTML = c.join('<span class="sep" aria-hidden="true">›</span>');
     $("#dtCrumbs").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => b.dataset.go === "city" ? go({ d: null, p: null }, true) : go({ p: null }, true)));
-    $("#dtMapTitle").textContent = (state.m === "dem" ? "Democratic share" : M[state.m].label) + (level === "city" ? " by council district" : " by precinct, " + dName(state.d));
+    $("#dtMapTitle").textContent = (may() ? "2023 mayor, " + rt(MR()) + "," : M[state.m].label) + (level === "city" ? " by council district" : " by precinct, " + dName(state.d));
   }
 
   // ---------- state ----------
@@ -488,13 +568,15 @@
     if (state.p) q.set("precinct", state.p);
     if (state.e !== "2026G") q.set("election", state.e);
     if (state.m !== "turn") q.set("measure", state.m);
+    if (may() && state.e === "2023P" && state.r === "R") q.set("race", "R");
     const u = location.pathname + (q.toString() ? "?" + q : "");
     if (u !== location.pathname + location.search) history[push ? "pushState" : "replaceState"](null, "", u);
   }
   function readUrl() {
     const q = new URLSearchParams(location.search);
     const d = +q.get("district"), p = (q.get("precinct") || "").toUpperCase(), e = q.get("election"), m = q.get("measure");
-    state.e = E[e] ? e : "2026G"; state.m = M[m] ? m : "turn";
+    state.e = E[e] ? e : "2026G"; state.m = M[m] ? m : "turn"; state.r = q.get("race") === "R" ? "R" : "D";
+    if (state.m === "mayor" && !is23(state.e)) state.e = "2023G";
     state.p = D.precincts[p] ? p : null;
     state.d = state.p ? D.precincts[state.p].d : (d >= 1 && d <= 25 ? d : null);
   }
@@ -504,6 +586,7 @@
     Object.assign(state, patch);
     if ("d" in patch && patch.d !== prevD && !("p" in patch)) state.p = null;
     if (state.p) state.d = D.precincts[state.p].d;
+    if (may() && !is23(state.e)) { if ("m" in patch) state.e = "2023G"; else state.m = "dem"; }
     if (!M[state.m].ok(el())) state.m = "dem";
     writeUrl(push);
     if (state.d) {
