@@ -9,3 +9,6 @@ _src/council-data/pdf/
 
 # Dependencies for the /api/crew function
 node_modules/
+
+# Raw election result downloads for _src/turnout-data/build_city.py (re-downloadable)
+_src/turnout-data/raw/

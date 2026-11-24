@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/district-19-turnout",
+      "destination": "/turnout?district=19",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [
         {

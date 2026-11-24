@@ -1,0 +1,687 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<style>
+.dt{max-width:980px;margin:0 auto;padding-top:28px;display:flex;flex-direction:column;gap:26px}
+.dt h1{font-size:clamp(32px,5.5vw,46px);line-height:1.05}
+.dt h2{font-size:26px;line-height:1.15;margin-bottom:10px}
+.dt .eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.dt .lede{max-width:70ch;margin:10px 0 0;color:var(--ink-2);font-size:16px;line-height:1.55}
+.dt p{max-width:72ch}
+.dt .note{font-size:13px;color:var(--ink-2);margin:8px 0 0}
+.dt-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.dt-tile{background:var(--surface);border:1px solid var(--line);padding:14px 16px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.dt-tile .v{font-family:var(--ps-title,Georgia,serif);font-size:30px;line-height:1.15;font-variant-numeric:tabular-nums}
+.dt-tile .l{font-size:13px;color:var(--ink-2)}
+.dt-search{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;position:relative}
+.dt-search label{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.dt-search form{display:flex;gap:8px;flex-wrap:wrap}
+.dt-field{position:relative;flex:1 1 260px;min-width:0}
+.dt-search input{font:inherit;font-size:15px;color:var(--ink);background:#fff;border:1px solid var(--line);padding:8px 10px;width:100%;box-sizing:border-box}
+.dt-search input:focus-visible{outline:2px solid var(--ps-focus,#0b7a4e);outline-offset:1px}
+.dt-search .dt-go{font:inherit;font-size:14px;font-weight:600;padding:8px 14px;background:var(--ps-green-ink,#096a44);color:var(--ps-cream,#fdf7e2);border:1px solid var(--line);cursor:pointer}
+.dt-search .clear{font:inherit;font-size:14px;padding:8px 12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.dt-sugg{position:absolute;top:100%;left:0;right:0;z-index:1200;margin:2px 0 0;padding:0;list-style:none;background:var(--surface);border:1px solid var(--line);box-shadow:var(--ps-drop-menu,0 2px 6px rgba(0,0,0,.2));max-width:640px}
+.dt-sugg[hidden]{display:none}
+.dt-sugg li{padding:8px 10px;font-size:14px;cursor:pointer;border-bottom:1px solid var(--grid)}
+.dt-sugg li:last-child{border-bottom:0}
+.dt-sugg li[aria-selected=true],.dt-sugg li:hover{background:var(--accent-soft)}
+.dt-found{font-size:14px;margin:0;color:var(--ink)}
+.dt-found[hidden]{display:none}
+.dt-found.err{color:var(--down)}
+.dt-crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:14px;margin:0 0 8px}
+.dt-crumbs button{all:unset;cursor:pointer;color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.dt-crumbs button:focus-visible{outline:2px solid var(--ps-focus,#0b7a4e)}
+.dt-crumbs .sep{color:var(--muted)}
+.dt-crumbs b{font-weight:600}
+.dt-map{display:flex;flex-direction:column;gap:16px}
+.dt-mapbox{position:relative;border:1px solid var(--line);min-width:0}
+#dtMap{height:640px;width:100%;background:var(--surface)}
+.dt-side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start;min-width:0}
+.dt-panel{background:var(--surface);border:1px solid var(--line);padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.dt-panel h3{font-size:18px;margin:0}
+.dt-panel h4{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:2px 0 0}
+.dt-chips{display:flex;flex-wrap:wrap;gap:6px}
+.dt .chip{font:inherit;font-size:13px;padding:4px 10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.dt .chip[aria-pressed=true]{background:var(--ps-green-ink,#096a44);color:var(--ps-cream,#fdf7e2);border-color:var(--ps-green-ink,#096a44)}
+.dt .chip:disabled{opacity:.45;cursor:not-allowed}
+#dtRaceBox{display:flex;flex-direction:column;gap:6px}
+#dtRaceBox[hidden]{display:none}
+.dt-ramp{display:flex;align-items:center;gap:3px;font-size:12.5px;color:var(--ink-2)}
+.dt-ramp .sw{width:14px}
+.dt-ramp span.t{margin:0 4px}
+.my td b{font-weight:600}
+.dt-legend{display:flex;flex-direction:column;gap:4px;font-size:13px;font-variant-numeric:tabular-nums}
+.dt-legend div{display:flex;align-items:center;gap:8px}
+.dt-legend .cap{font-size:12.5px;color:var(--ink-2);display:block}
+.sw{width:18px;height:12px;flex:none;border:1px solid var(--line)}
+.sw.pin{border:0;width:18px;height:18px;background:none}
+.dt .leaflet-container{font-family:var(--ps-sans,Georgia,serif);background:var(--surface)}
+.dt .leaflet-tile-pane{transition:opacity .35s}
+.dt-drawn .leaflet-tile-pane{opacity:0}
+.dt .leaflet-bar a{background:var(--ps-cream,#fdf7e2);color:var(--ps-navy,#17244f);border-color:var(--ps-navy,#17244f)}
+.dt .leaflet-bar{border:1px solid var(--ps-navy,#17244f);box-shadow:var(--ps-bevel-raised,none)}
+.dt .leaflet-control-attribution{font-size:11px;background:rgba(253,247,226,.9)}
+.dt-ctl{font:inherit;font-size:13px;padding:4px 10px;background:var(--ps-cream,#fdf7e2);color:var(--ps-navy,#17244f);border:1px solid var(--ps-navy,#17244f);box-shadow:var(--ps-bevel-raised,none);cursor:pointer}
+.dt-ctl[hidden]{display:none}
+.dt-ctls{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.dt-base{display:flex;gap:4px}
+.dt-base[hidden]{display:none}
+.dt .dt-osm{filter:saturate(.55) contrast(.95)}
+.dt-mode{font-size:12px;background:rgba(253,247,226,.92);border:1px solid var(--ps-navy,#17244f);padding:3px 8px;color:var(--ps-navy,#17244f);max-width:260px}
+.dt-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(253,247,226,.55);font-size:14px;z-index:900;pointer-events:none}
+.dt-loading[hidden]{display:none}
+.dt .leaflet-interactive:focus{outline:none}
+#dtDetail th,#dtDetail td{padding:8px 6px}
+.pl{font-family:var(--ps-mono,monospace);font-size:10px;color:var(--ink);text-shadow:0 0 2px var(--surface),0 0 2px var(--surface),0 0 3px var(--surface);white-space:nowrap;transform:translate(-50%,-50%);pointer-events:none}
+.dl{font-family:var(--ps-title,Georgia,serif);font-size:17px;color:var(--ps-navy,#17244f);text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 4px #fff;white-space:nowrap;transform:translate(-50%,-50%);pointer-events:none}
+.rdl{font-size:9.5px;color:var(--ink-2);text-shadow:0 0 2px var(--surface),0 0 2px var(--surface),0 0 3px var(--surface);white-space:nowrap;pointer-events:none}
+.dt .leaflet-div-icon{background:none;border:0}
+.dt .leaflet-tooltip.dt-tt{background:var(--tip-bg,#17244f);color:var(--tip-ink,#fdf7e2);border:0;box-shadow:none;font-size:13px;padding:5px 8px}
+.dt .leaflet-tooltip.dt-tt::before{display:none}
+.dt-det .code{font-family:var(--ps-title,Georgia,serif);font-size:22px}
+.dt-det .code.mono{font-family:var(--ps-mono,monospace);font-size:20px}
+.dt-det .area{font-size:13px;color:var(--ink-2)}
+.dt-det .empty{color:var(--ink-2);font-size:14px;margin:0}
+.dt-det table{font-size:13px}
+.dt-det th,.dt-det td{padding:4px 6px}
+.dt-det .cur td{background:var(--accent-soft)}
+.dt-det a{font-size:14px}
+.tbl-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line)}
+.dt table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+.dt th,.dt td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--grid);white-space:nowrap}
+.dt th:first-child,.dt td:first-child,.dt th.l,.dt td.l{text-align:left}
+.dt thead th{font-size:12.5px;color:var(--ink-2);font-weight:600;border-bottom:1px solid var(--axis);vertical-align:bottom}
+.dt tbody tr:last-child td{border-bottom:0}
+.dt tfoot td{border-top:1px solid var(--axis);border-bottom:0;font-weight:600}
+.dt th button{all:unset;cursor:pointer}
+.dt th button:focus-visible{outline:2px solid var(--ps-focus,#0b7a4e)}
+.dt th button[aria-sort=descending]::after{content:" \25BC";font-size:9px}
+.dt th button[aria-sort=ascending]::after{content:" \25B2";font-size:9px}
+#dtTable tbody tr{cursor:pointer}
+#dtTable tbody tr:hover{background:var(--accent-soft)}
+#dtTable tbody tr.sel{background:var(--accent-soft);box-shadow:inset 3px 0 0 var(--accent)}
+#dtTable tbody tr:focus-visible{outline:2px solid var(--ps-focus,#0b7a4e);outline-offset:-2px}
+.mono{font-family:var(--ps-mono,monospace)}
+.bar{display:inline-block;height:8px;background:var(--accent);vertical-align:middle;margin-left:8px}
+.dt ul{padding-left:20px;margin:0;display:flex;flex-direction:column;gap:6px}
+.dt li{max-width:78ch}
+.dt-sources ol{padding-left:20px;margin:6px 0 0;display:flex;flex-direction:column;gap:6px;font-size:14px}
+@media (max-width:860px){#dtMap{height:500px}}
+@media (max-width:640px){.dt-side{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:600px){.dt-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.dt-tile .v{font-size:24px}#dtMap{height:440px}}
+@media (prefers-reduced-motion:reduce){.dt .leaflet-tile-pane{transition:none}}
+</style>
+<main class="dt">
+<header>
+  <div class="eyebrow">Indianapolis–Marion County Precinct Voting Map</div>
+  <h1>How Indianapolis votes</h1>
+  <p class="lede">Who turned out and how they voted in all 621 of Marion County's precincts, from the May 2023 primary to this month's general election: turnout, the margin between the parties, and every candidate in the 2023 mayor's race, primaries included. Start with the 25 City-County Council districts, click one to see its precincts, then click a precinct for its numbers in every election. All figures are the Marion County Election Board's official precinct results.</p>
+</header>
+
+<div class="dt-tiles" id="dtTiles"></div>
+
+<section>
+  <h2 id="dtMapTitle">Turnout by council district</h2>
+  <div class="dt-search">
+    <label for="dtAddr">Find an address</label>
+    <form id="dtSearch" autocomplete="off" role="search">
+      <div class="dt-field">
+        <input id="dtAddr" type="text" inputmode="search" placeholder="Street address, e.g. 200 E Washington St" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="dtSugg" aria-describedby="dtPriv">
+        <ul class="dt-sugg" id="dtSugg" role="listbox" hidden></ul>
+      </div>
+      <button type="submit" class="dt-go">Show on map</button>
+      <button type="button" class="clear" id="dtClear" hidden>Clear</button>
+    </form>
+    <p class="dt-found" id="dtFound" role="status" hidden></p>
+    <p class="note" id="dtPriv" style="margin:0">Addresses are looked up with the City of Indianapolis address service. This site doesn't save what you type.</p>
+  </div>
+  <nav class="dt-crumbs" id="dtCrumbs" aria-label="Map level"></nav>
+  <div class="dt-map">
+    <div class="dt-mapbox">
+      <div id="dtMap" role="region" aria-label="Map of Marion County's City-County Council districts and voting precincts, shaded by the selected measure"></div>
+      <div class="dt-loading" id="dtLoading" hidden>Loading precincts…</div>
+    </div>
+    <div class="dt-side">
+      <div class="dt-panel">
+        <h3>Shade the map by</h3>
+        <h4>Election</h4>
+        <div class="dt-chips" id="dtElections" role="group" aria-label="Election"></div>
+        <h4>Measure</h4>
+        <div class="dt-chips" id="dtMeasures" role="group" aria-label="Measure"></div>
+        <div id="dtRaceBox" hidden><h4>Mayor's race</h4><div class="dt-chips" id="dtRace" role="group" aria-label="Mayor's race"></div></div>
+        <div class="dt-legend" id="dtLegend"></div>
+      </div>
+      <div class="dt-panel dt-det" id="dtDetail" aria-live="polite"></div>
+    </div>
+  </div>
+  <p class="note">Click a district to see its precincts, and a precinct for its numbers. Zoom in with the + button, a scroll while holding Ctrl or ⌘, or a pinch to see a street map underneath. Shading compares the areas on screen with each other, so the same color can mean different numbers at the county and district levels; the legend shows the ranges.</p>
+</section>
+
+<section>
+  <h2 id="dtTableTitle">Every district</h2>
+  <div class="tbl-wrap"><table id="dtTable"><thead><tr></tr></thead><tbody></tbody><tfoot></tfoot></table></div>
+  <p class="note" id="dtTableNote"></p>
+</section>
+
+<section>
+  <h2>Notes on this data</h2>
+  <ul>
+    <li><b>Official results, as published.</b> Every count comes from the Marion County Election Board's precinct-level result files. Nothing here is a projection or estimate. District and county totals are sums of the precincts.</li>
+    <li><b>Turnout</b> is ballots cast divided by registered voters in that precinct for that election. Registration changes between elections, so each election uses its own count.</li>
+    <li><b>Party margin</b> compares the Democratic and Republican candidates in the race named under each election, counting only their two vote totals (other candidates are left out but shown in the precinct details). "D+20" means the Democrat got 20 points more of those votes than the Republican (60% to 40%); "R+20" is the reverse. In primaries it compares how many voters chose each party's side: votes in each party's mayor primary in 2023, party ballots in 2024, and votes for each party's unopposed prosecutor nominee in 2026. Indiana primaries are open, so a voter picks a party's ballot on Election Day.</li>
+    <li><b>2023 mayor</b> shows every candidate for Mayor of Indianapolis in the November 2023 general and in each party's May 2023 primary, colored by who got the most votes in each district or precinct. A primary map counts only that party's voters; a shade's strength is the winner's share of the votes in that race.</li>
+    <li><b>2024 primary ballots</b> count Democratic and Republican ballots. A few voters took a nonpartisan ballot where there was a local question; those aren't in the 2024 primary turnout here.</li>
+    <li><b>The May 2026 primary has turnout for the county only.</b> The city published candidate votes for that primary but not registered voters or ballots cast by precinct, so districts and precincts show only the party split. The county figure (99,923 voters of 632,168 registered, 15.81%) is from the Election Board's <a href="https://www.indy.gov/activity/marion-county-voter-turnout">turnout page</a>. A records request to the Election Board could fill this in.</li>
+    <li><b>Precincts and districts.</b> The same 621 precincts were used in all six elections. Each precinct's council district comes from the 2023 council races, which list every precinct by district. Council districts were last redrawn in 2022. Three precincts with no registered voters (PE007, WY043, WY056) are blank.</li>
+    <li><b>Cities and towns.</b> A precinct is labeled Beech Grove, Lawrence, Southport or Speedway if it had votes in that city's or town's own 2023 race, so a precinct partly inside a city carries its name.</li>
+    <li><b>The map</b> draws the city's precinct and district boundaries, lightly simplified to keep the page fast, with major roads from the city's street centerlines. Zoomed in, the street map is OpenStreetMap and the aerial photo is the city's spring 2024 flight.</li>
+  </ul>
+</section>
+
+<footer class="dt-sources">
+  <div class="eyebrow">Sources</div>
+  <ol>
+    <li>Precinct results from Indianapolis Open Data: <a href="https://data.indy.gov/documents/d313789a6a844f368f30f092f5dafe52/explore" target="_blank" rel="noopener">2023 Primary</a>, 2023 General, 2024 Primary, 2024 General and 2026 Primary Election Results (search "Election Results" at <a href="https://data.indy.gov/search?q=election%20results" target="_blank" rel="noopener">data.indy.gov</a>)</li>
+    <li>2026 General: the Election Board's <a href="https://www.indy.gov/workflow/election-results" target="_blank" rel="noopener">certified results by precinct</a> (run November 23, 2026)</li>
+    <li><a href="https://data.indy.gov/datasets/fa71cb017b4d490585b8f2fb62ec9463" target="_blank" rel="noopener">Voting precincts</a> and <a href="https://data.indy.gov/datasets/71e9ab896aae4adc99f92b7c3a693de5" target="_blank" rel="noopener">City-County Council districts</a> (City of Indianapolis GIS); street centerlines (OpenData_Transportation service); the City of Indianapolis address locator (IndyAddresses)</li>
+    <li>Street map: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors</a>. Aerial photo: City of Indianapolis, 2024 spring aerial photography (Imagery service)</li>
+  </ol>
+</footer>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+(function () {
+  const $ = (s) => document.querySelector(s);
+  const n0 = (n) => n == null ? "–" : Math.round(n).toLocaleString("en-US");
+  const p1 = (n) => (n == null || isNaN(n)) ? "–" : (n * 100).toFixed(1) + "%";
+  // two-party margin from the Democratic share v: "D+12.4", "R+3.0" or "Even"
+  const mg = (v) => { if (v == null || isNaN(v)) return "–"; const d = (2 * v - 1) * 100; return Math.abs(d) < 0.05 ? "Even" : (d > 0 ? "D+" : "R+") + Math.abs(d).toFixed(1); };
+  const split = (v) => v == null || isNaN(v) ? "–" : "D " + p1(v) + " · R " + p1(1 - v);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const GREEN = ["#e9e4cf", "#d9ecd9", "#a9d6b8", "#6fb78f", "#2f9465", "#0b6a44"];
+  // Party margin: red (Republican lead) to blue (Democratic lead), fixed breaks on the two-party share so colors mean the same thing everywhere
+  const PARTY = { breaks: [0.3, 0.45, 0.5, 0.55, 0.7, 0.85], colors: ["#b2182b", "#e0857a", "#f4cfc6", "#d3e1f1", "#92b6dd", "#3f73b5", "#173f7a"] };
+  const NAVY = "#17244f", CREAM = "#fdf7e2";
+  const LOCATOR = "https://gis.indy.gov/server/rest/services/Locators/IndyAddresses/GeocodeServer";
+  const BASE = "/turnout/";
+  const ROMAN = (n) => n + (n % 10 === 1 && n % 100 !== 11 ? "st" : n % 10 === 2 && n % 100 !== 12 ? "nd" : n % 10 === 3 && n % 100 !== 13 ? "rd" : "th");
+  let D, DN = {}, E = {}, map, layers = {}, pin = null;
+  let state = { d: null, p: null, e: "2026G", m: "turn", r: "D" };
+  const cache = {};      // district n -> detail json
+  let level = "city", baseZoom = 10, homeBounds = null, sortKey = "turn", sortDir = -1;
+
+  // ---------- numbers ----------
+  // a row is [reg, bal, d, r, o]
+  const M = {
+    turn: { label: "Turnout", get: (x) => x && x[0] ? x[1] / x[0] : null, f: p1, ok: (el) => el.turnout },
+    dem:  { label: "Party margin", get: (x) => x && (x[2] + x[3]) ? x[2] / (x[2] + x[3]) : null, f: mg, ok: () => true },
+    bal:  { label: "Ballots cast", get: (x) => x && x[0] ? x[1] : null, f: n0, ok: (el) => el.turnout },
+    mayor: { label: "2023 mayor", get: () => null, f: (w) => fmtW(w), ok: () => true }
+  };
+  const el = () => E[state.e];
+
+  // ---------- 2023 mayor, every candidate ----------
+  const is23 = (k) => k === "2023P" || k === "2023G";
+  const MR = () => D.mayor.races.find((r) => r.k === (state.e === "2023G" ? "G" : state.r));
+  const may = () => state.m === "mayor";
+  const rt = (r) => r.k === "G" ? "general" : r.t;
+  function win(v, race) {
+    if (!v) return null;
+    const t = v.reduce((a, b) => a + b, 0); if (!t) return null;
+    let i = 0; v.forEach((x, j) => { if (x > v[i]) i = j; });
+    return { i, c: race.cands[i], share: v[i] / t, tot: t, tie: v.filter((x) => x === v[i]).length > 1 };
+  }
+  const fmtW = (w) => !w ? "–" : w.tie ? "Tie" : w.c.s + " " + p1(w.share);
+  const STR = [0.5, 0.65, 0.8], MIXT = [0.42, 0.62, 0.81, 1];
+  const strength = (sh) => STR.filter((b) => sh >= b).length;
+  function mix(hex, t) {
+    const a = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)), b = [1, 3, 5].map((i) => parseInt(CREAM.slice(i, i + 2), 16));
+    return "#" + a.map((x, i) => Math.round(b[i] + (x - b[i]) * t).toString(16).padStart(2, "0")).join("");
+  }
+  const TIE = "#a8a395";
+  const mayorColor = (w) => !w ? GREEN[0] : w.tie ? TIE : mix(w.c.col, MIXT[strength(w.share)]);
+  const myP = (id) => D.precincts[id].my[MR().k];
+  const myD = (n) => DN[n].my[MR().k];
+  const myScope = () => state.p ? myP(state.p) : state.d ? myD(state.d) : D.mayor.county[MR().k];
+  function winsIn(ids) {
+    const R = MR(), c = {}; let ties = 0;
+    ids.forEach((id) => { const w = win(myP(id), R); if (!w) return; if (w.tie) ties++; else c[w.i] = (c[w.i] || 0) + 1; });
+    return { c, ties };
+  }
+  const scopeIds = () => Object.keys(D.precincts).filter((id) => !state.d || D.precincts[id].d === state.d);
+  function mayorBlock(v) {
+    const R = MR(), t = v ? v.reduce((a, b) => a + b, 0) : 0;
+    if (!t) return '<h4>2023 mayor, ' + rt(R) + '</h4><p class="empty">No votes for mayor recorded here.</p>';
+    const w = win(v, R), order = R.cands.map((c, i) => i).sort((a, b) => v[b] - v[a]);
+    return '<h4>2023 mayor, ' + rt(R) + '</h4><div class="tbl-wrap my"><table><tbody>' + order.map((i) => { const top = !w.tie && i === w.i;
+      return '<tr><td class="l"><span class="sw" style="display:inline-block;vertical-align:-1px;margin-right:6px;background:' + R.cands[i].col + '"></span>' + (top ? "<b>" + esc(R.cands[i].n) + "</b>" : esc(R.cands[i].n)) + "</td><td>" + n0(v[i]) + "</td><td>" + p1(v[i] / t) + "</td></tr>"; }).join("") + "</tbody></table></div>";
+  }
+
+  const pRow = (id, k) => D.precincts[id][k || state.e];
+  const dRow = (n, k) => DN[n].tot[k || state.e];
+  const area = (id) => { const p = D.precincts[id]; return (p.c ? p.c + ", " : "") + p.t + " Township"; };
+  const dName = (n) => "District " + n;
+  const ll = (c) => [c[1], c[0]];
+
+  // ---------- geometry ----------
+  const polysLL = (polys) => polys.map((poly) => poly.map((r) => r.map(ll)));
+  function centroid(polys) {
+    let best = null, bestA = 0;
+    polys.forEach((poly) => { const r = poly[0]; let a = 0, cx = 0, cy = 0;
+      for (let i = 0; i < r.length - 1; i++) { const f = r[i][0] * r[i + 1][1] - r[i + 1][0] * r[i][1]; a += f; cx += (r[i][0] + r[i + 1][0]) * f; cy += (r[i][1] + r[i + 1][1]) * f; }
+      if (Math.abs(a) > bestA) { bestA = Math.abs(a); best = [cy / (3 * a), cx / (3 * a)]; } });
+    return best;
+  }
+  function inRing(pt, r) { let c = false; for (let i = 0, j = r.length - 1; i < r.length; j = i++) { const [xi, yi] = r[i], [xj, yj] = r[j]; if ((yi > pt[1]) !== (yj > pt[1]) && pt[0] < (xj - xi) * (pt[1] - yi) / (yj - yi) + xi) c = !c; } return c; }
+  function inPolys(pt, polys) { return polys.some((poly) => inRing(pt, poly[0]) && !poly.slice(1).some((h) => inRing(pt, h))); }
+  function nearDist(pt, polys) { let m = Infinity; polys.forEach((poly) => poly.forEach((r) => r.forEach((c) => { m = Math.min(m, Math.hypot(c[0] - pt[0], c[1] - pt[1])); }))); return m; }
+
+  // ---------- map ----------
+  function isZoomedIn() { return level !== "city" && map.getZoom() >= baseZoom + 0.75; }
+  function setMode() {
+    const real = isZoomedIn();
+    $("#dtMap").classList.toggle("dt-drawn", !real);
+    if (layers.roads) { if (real) { map.removeLayer(layers.roads); map.removeLayer(layers.roadLabels); } else if (!map.hasLayer(layers.roads)) { layers.roads.addTo(map); layers.roadLabels.addTo(map); } }
+    restyle();
+    layers.base.getContainer().hidden = !real;
+    layers.mode.getContainer().textContent = level === "city" ? "Click a district to see its precincts." : real ? "Shading is lighter while zoomed in so streets show through." : "Click a precinct. Zoom in for a street map.";
+    const c = layers.ctl.getContainer();
+    c.querySelector("[data-a=up]").hidden = level === "city";
+    c.querySelector("[data-a=reset]").hidden = !(real || pin);
+  }
+  function styleDistrict(x) {
+    if (level === "city") return { color: CREAM, weight: 1.6, fill: true, fillColor: x.fill, fillOpacity: 0.92 };
+    const mine = x.n === state.d;
+    return mine ? { color: NAVY, weight: 2.6, fill: false } : { color: "#8d9bc6", weight: 1.2, fill: true, fillColor: "#efeadb", fillOpacity: 0.55 };
+  }
+  function stylePrecinct(p) {
+    const real = isZoomedIn(), sel = p.id === state.p;
+    return { color: sel ? NAVY : (real ? "#4a5a8a" : CREAM), weight: sel ? 3.5 : (real ? 1.4 : 1.1), fillColor: p.fill, fillOpacity: real ? 0.42 : 0.92 };
+  }
+  function restyle() {
+    D.districts.forEach((x) => x.layer.setStyle(styleDistrict(x)));
+    if (layers.prec) layers.precList.forEach((p) => p.layer.setStyle(stylePrecinct(p)));
+  }
+
+  function drawMap() {
+    map = L.map("dtMap", { zoomSnap: 0.25, zoomDelta: 1, scrollWheelZoom: false, attributionControl: true, maxZoom: 19 });
+    layers.street = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, className: "dt-osm",
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
+    layers.aerial = L.tileLayer("https://gis.indy.gov/server/rest/services/Imagery/2024_Spring_WebMercator/MapServer/tile/{z}/{y}/{x}", { maxZoom: 19, attribution: "Aerial photo: City of Indianapolis, spring 2024" });
+    map.attributionControl.setPrefix(false);
+    map.getContainer().addEventListener("wheel", (e) => { if (e.ctrlKey || e.metaKey) { e.preventDefault(); map.setZoom(map.getZoom() + (e.deltaY < 0 ? 0.5 : -0.5)); } }, { passive: false });
+
+    layers.freeways = L.layerGroup(D.freeways.map((r) => L.polyline(r.l.map((l) => l.map(ll)), { color: "#7f8fbf", weight: 2.2, interactive: false }))).addTo(map);
+    layers.districts = L.layerGroup().addTo(map);
+    layers.dLabels = L.layerGroup().addTo(map);
+    D.districts.forEach((x) => {
+      x.layer = L.polygon(polysLL(x.polys), { bubblingMouseEvents: false }).addTo(layers.districts);
+      x.layer.on("click", () => go({ d: x.n, p: null }, true));
+      x.layer.bindTooltip(() => districtTip(x), { sticky: true, className: "dt-tt", direction: "top", offset: [0, -8] });
+      x.c = centroid(x.polys);
+      L.marker(x.c, { interactive: false, keyboard: false, icon: L.divIcon({ className: "", html: '<span class="dl">' + x.n + "</span>", iconSize: [0, 0] }) }).addTo(layers.dLabels);
+    });
+    homeBounds = L.featureGroup(D.districts.map((x) => x.layer)).getBounds();
+
+    const Ctl = L.Control.extend({ onAdd: () => { const d = L.DomUtil.create("div", "dt-ctls"); L.DomEvent.disableClickPropagation(d);
+      d.innerHTML = '<button type="button" class="dt-ctl" data-a="up">All districts</button><button type="button" class="dt-ctl" data-a="reset">Reset view</button>';
+      d.querySelector("[data-a=up]").onclick = () => go({ d: null, p: null }, true);
+      d.querySelector("[data-a=reset]").onclick = () => fitLevel();
+      return d; } });
+    layers.ctl = new Ctl({ position: "topright" }).addTo(map);
+    const Base = L.Control.extend({ onAdd: () => { const d = L.DomUtil.create("div", "dt-base"); L.DomEvent.disableClickPropagation(d);
+      d.innerHTML = '<button type="button" class="chip" data-b="street" aria-pressed="true">Street map</button><button type="button" class="chip" data-b="aerial" aria-pressed="false">Aerial photo</button>';
+      d.querySelectorAll("button").forEach((b) => b.onclick = () => { const a = b.dataset.b === "aerial"; if (a) { map.removeLayer(layers.street); layers.aerial.addTo(map); } else { map.removeLayer(layers.aerial); layers.street.addTo(map); }
+        d.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", x === b ? "true" : "false")); });
+      return d; } });
+    layers.base = new Base({ position: "topright" }).addTo(map);
+    const Mode = L.Control.extend({ onAdd: () => L.DomUtil.create("div", "dt-mode") });
+    layers.mode = new Mode({ position: "bottomleft" }).addTo(map);
+    map.on("zoomend", setMode);
+  }
+  function fitLevel() {
+    if (level === "city") { map.fitBounds(homeBounds, { padding: [10, 10] }); return; }
+    map.fitBounds(DN[state.d].layer.getBounds(), { padding: [14, 14] });
+  }
+  function districtTip(x) { if (may()) return "<b>" + dName(x.n) + "</b>" + (x.member ? " · " + esc(x.member) : "") + "<br>Mayor, " + rt(MR()) + ": " + fmtW(win(myD(x.n), MR())); const m = M[state.m]; const v = m.ok(el()) ? m.get(dRow(x.n)) : null; return "<b>" + dName(x.n) + "</b>" + (x.member ? " · " + esc(x.member) : "") + "<br>" + m.label + ": " + (v == null ? "–" : m.f(v)); }
+  function precinctTip(p) { if (may()) { const w = win(myP(p.id), MR()); return "<b>" + p.id + "</b> · Mayor, " + rt(MR()) + ": " + (w ? fmtW(w) : "no votes"); } const m = M[state.m]; const v = m.ok(el()) ? m.get(pRow(p.id)) : null; return "<b>" + p.id + "</b> · " + m.label + ": " + (v == null ? "no voters" : m.f(v)); }
+
+  async function loadDistrict(n) {
+    if (cache[n]) return cache[n];
+    $("#dtLoading").hidden = false;
+    try { cache[n] = await (await fetch(BASE + "d/" + n + ".json")).json(); }
+    finally { $("#dtLoading").hidden = true; }
+    return cache[n];
+  }
+  function clearDistrictLayers() {
+    ["prec", "pLabels", "roads", "roadLabels"].forEach((k) => { if (layers[k]) { map.removeLayer(layers[k]); layers[k] = null; } });
+    layers.precList = null;
+  }
+  function drawDistrict(det) {
+    clearDistrictLayers();
+    layers.prec = L.layerGroup().addTo(map); layers.pLabels = L.layerGroup();
+    layers.precList = det.precincts.map((p) => {
+      const q = { id: p.id, polys: p.polys };
+      q.layer = L.polygon(polysLL(p.polys), { bubblingMouseEvents: false }).addTo(layers.prec);
+      q.layer.on("click", () => go({ p: q.id }, true));
+      q.layer.bindTooltip(() => precinctTip(q), { sticky: true, className: "dt-tt", direction: "top", offset: [0, -8] });
+      const c = centroid(p.polys);
+      if (c) L.marker(c, { interactive: false, keyboard: false, icon: L.divIcon({ className: "", html: '<span class="pl">' + p.id + "</span>", iconSize: [0, 0] }) }).addTo(layers.pLabels);
+      return q;
+    });
+    layers.roads = L.layerGroup(det.roads.slice().sort((a, b) => b.c - a.c).map((r) => L.polyline(r.l.map((l) => l.map(ll)),
+      { color: r.c === 0 ? "#7f8fbf" : r.c === 1 ? "#8d9bc6" : "#a7b3d6", weight: r.c === 0 ? 2.4 : r.c === 1 ? 1.4 : 0.8, interactive: false }))).addTo(map);
+    layers.roadLabels = L.layerGroup().addTo(map);
+    layers.pLabels.addTo(map);
+  }
+  function roadLabels(det) {
+    layers.roadLabels.clearLayers();
+    const placed = [], b = DN[state.d].layer.getBounds().pad(0.05);
+    det.roads.filter((r) => r.c <= 1).forEach((r) => {
+      let best = null, len0 = 0;
+      r.l.forEach((l) => { for (let i = 0; i < l.length - 1; i++) {
+        if (!b.contains(ll(l[i]))) continue;
+        const a = map.latLngToContainerPoint(ll(l[i])), c = map.latLngToContainerPoint(ll(l[i + 1])), sz = map.getSize();
+        const len = a.distanceTo(c), m = a.add(c).divideBy(2);
+        if (len > len0 && m.x > 40 && m.x < sz.x - 40 && m.y > 20 && m.y < sz.y - 30) { len0 = len; best = { m, ang: Math.atan2(c.y - a.y, c.x - a.x) * 180 / Math.PI }; } } });
+      if (!best || len0 < 18 || placed.some((q) => q.distanceTo(best.m) < 70)) return;
+      placed.push(best.m); let ang = best.ang; if (ang > 90) ang -= 180; if (ang < -90) ang += 180;
+      L.marker(map.containerPointToLatLng(best.m), { interactive: false, keyboard: false, icon: L.divIcon({ className: "", iconSize: [0, 0],
+        html: '<span class="rdl" style="display:inline-block;transform:translate(-50%,-110%) rotate(' + ang.toFixed(1) + 'deg)">' + esc(r.n) + "</span>" }) }).addTo(layers.roadLabels);
+    });
+  }
+
+  // ---------- shading + legend ----------
+  function bins(vals) {
+    const v = vals.filter((x) => x != null);
+    if (!v.length) return null;
+    const lo = Math.min(...v), hi = Math.max(...v);
+    return [0, 1, 2, 3, 4, 5].map((i) => lo + (hi - lo) * i / 5);
+  }
+  function colorFor(x, br) {
+    if (x == null) return GREEN[0];
+    if (state.m === "dem") { let k = 0; while (k < PARTY.breaks.length && x >= PARTY.breaks[k]) k++; return PARTY.colors[k]; }
+    let k = 1; while (k < 5 && x > br[k]) k++; return GREEN[k];
+  }
+  function shade() {
+    const m = M[state.m], ok = m.ok(el());
+    const R = may() ? MR() : null;
+    const units = level === "city" ? D.districts.map((x) => ({ o: x, v: R ? win(myD(x.n), R) : ok ? m.get(dRow(x.n)) : null })) : (layers.precList || []).map((p) => ({ o: p, v: R ? win(myP(p.id), R) : ok ? m.get(pRow(p.id)) : null }));
+    const br = state.m === "dem" || R ? null : bins(units.map((u) => u.v));
+    units.forEach((u) => { u.o.fill = R ? mayorColor(u.v) : colorFor(u.v, br); });
+    if (level !== "city") D.districts.forEach((x) => { x.fill = null; });
+    restyle();
+    let h = "";
+    if (!ok) h = '<p class="note" style="margin:0">The city didn’t publish registered voters or ballots by precinct for the May 2026 primary. Choose <b>Party margin</b>, or another election.</p>';
+    else if (R) {
+      const won = {}; let ties = 0; units.forEach((u) => { if (!u.v) return; if (u.v.tie) ties++; else won[u.v.i] = (won[u.v.i] || 0) + 1; });
+      const unit = (n) => n + " " + (level === "city" ? (n === 1 ? "district" : "districts") : (n === 1 ? "precinct" : "precincts"));
+      R.cands.forEach((c, i) => { if (won[i]) h += '<div><span class="sw" style="background:' + c.col + '"></span>' + esc(c.n) + ": won " + unit(won[i]) + "</div>"; });
+      if (ties) h += '<div><span class="sw" style="background:' + TIE + '"></span>Tied: ' + unit(ties) + "</div>";
+      const lead = R.cands[+Object.keys(won).sort((a, b) => won[b] - won[a])[0] || 0];
+      h += '<div class="dt-ramp">' + MIXT.map((t) => '<span class="sw" style="background:' + mix(lead.col, t) + '"></span>').join("") + '<span class="t">lighter = closer race</span></div>';
+      const none = R.cands.filter((c, i) => !won[i]).map((c) => c.s);
+      h += '<span class="cap">' + R.full + " for mayor: colored by who got the most votes. Shades: winner under 50%, 50–65%, 65–80%, 80% and up." + (none.length ? " Won nowhere on this map: " + none.join(", ") + "." : "") + "</span>";
+    } else if (state.m === "dem") {
+      const lab = ["R+40 or more", "R+10 to R+40", "Even to R+10", "Even to D+10", "D+10 to D+40", "D+40 to D+70", "D+70 or more"];
+      for (let k = PARTY.colors.length - 1; k >= 0; k--) h += '<div><span class="sw" style="background:' + PARTY.colors[k] + '"></span>' + lab[k] + "</div>";
+      h += '<span class="cap">' + esc(el().race) + ": lead of the winning party among the two major-party votes, in points.</span>";
+    } else if (br) {
+      for (let k = 1; k <= 5; k++) h += '<div><span class="sw" style="background:' + GREEN[k] + '"></span>' + m.f(br[k - 1]) + " – " + m.f(br[k]) + "</div>";
+      h += '<span class="cap">' + (level === "city" ? "Ranges across the 25 districts." : "Ranges across this district's precincts.") + "</span>";
+    }
+    if (level !== "city") h += '<div><span class="sw" style="background:' + GREEN[0] + '"></span>No registered voters</div>';
+    if (pin) h += '<div><span class="sw pin">' + PIN_SVG + "</span>Your search</div>";
+    $("#dtLegend").innerHTML = h;
+  }
+  function chips() {
+    $("#dtElections").innerHTML = D.elections.map((x) => '<button type="button" class="chip" data-k="' + x.k + '" aria-pressed="' + (x.k === state.e) + '">' + x.short + "</button>").join("");
+    $("#dtElections").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => go({ e: b.dataset.k }, false)));
+    $("#dtMeasures").innerHTML = Object.keys(M).map((k) => '<button type="button" class="chip" data-k="' + k + '" aria-pressed="' + (k === state.m) + '"' + (M[k].ok(el()) ? "" : " disabled") + ">" + M[k].label + "</button>").join("");
+    $("#dtMeasures").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => go({ m: b.dataset.k }, false)));
+    $("#dtRaceBox").hidden = !may();
+    if (may()) {
+      const cur = MR().k;
+      $("#dtRace").innerHTML = D.mayor.races.map((r) => '<button type="button" class="chip" data-r="' + r.k + '" aria-pressed="' + (r.k === cur) + '">' + r.t + "</button>").join("");
+      $("#dtRace").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => go(b.dataset.r === "G" ? { e: "2023G" } : { e: "2023P", r: b.dataset.r }, false)));
+    }
+  }
+
+  // ---------- tiles, detail, table ----------
+  function scopeRow(k) { return state.p ? pRow(state.p, k) : state.d ? dRow(state.d, k) : D.county[k]; }
+  function scopeName() { return state.p ? "Precinct " + state.p : state.d ? dName(state.d) : "Marion County"; }
+  function tiles() {
+    const x = scopeRow(state.e), e = el(), t = [];
+    const cx = D.county[state.e];
+    if (e.turnout || x[0]) {
+      t.push([p1(M.turn.get(x)), "turnout in the " + e.t + (e.turnout ? "" : " (county total only; not published by precinct)") + (state.d || state.p ? " (county: " + p1(M.turn.get(cx)) + ")" : "")]);
+      t.push([n0(x[1]), "ballots cast, of " + n0(x[0]) + " registered"]);
+    } else {
+      t.push(["–", "turnout in the " + e.t + ": not published by precinct" + (cx[0] ? " (county: " + p1(M.turn.get(cx)) + ")" : "")]);
+      t.push([n0(x[2] + x[3]), "votes for the two prosecutor nominees"]);
+    }
+    if (may()) { const R = MR(), w = win(myScope(), R), cw = win(D.mayor.county[R.k], R);
+      t.push([w ? (w.tie ? "Tie" : esc(w.c.s)) : "–", w ? "most votes for mayor, " + R.full.replace("November ", "").replace("May ", "") + (w.tie ? "" : ", with " + p1(w.share)) + (state.d || state.p ? " (county: " + fmtW(cw) + ")" : "") : "no votes for mayor recorded"]);
+    } else t.push([mg(M.dem.get(x)), "party margin, " + e.race.toLowerCase() + ": " + split(M.dem.get(x)) + (state.d || state.p ? " (county: " + mg(M.dem.get(D.county[state.e])) + ")" : "")]);
+    if (may() && !state.p) { const R = MR(), wi = winsIn(scopeIds()); 
+      const top = R.cands.map((c, i) => i).filter((i) => wi.c[i]).sort((a, b) => wi.c[b] - wi.c[a]), rest = top.slice(1).map((i) => esc(R.cands[i].s) + " " + wi.c[i]);
+      if (wi.ties) rest.push("tied " + wi.ties);
+      t.push([top.length ? String(wi.c[top[0]]) : "–", top.length ? "precincts won by " + esc(R.cands[top[0]].s) + (rest.length ? " (" + rest.join(", ") + ")" : "") : "no precincts with votes for mayor"]); }
+    else if (state.d && !state.p) { const r = rank(state.d); t.push([r ? ROMAN(r) + " of 25" : "–", "in turnout among council districts"]); }
+    else if (state.p) { const d = D.precincts[state.p].d; t.push([dName(d), esc(DN[d].member || "") + " · " + area(state.p)]); }
+    else t.push(["621", "precincts in 25 council districts"]);
+    $("#dtTiles").innerHTML = t.map(([v, l]) => '<div class="dt-tile"><span class="v">' + v + '</span><span class="l">' + scopeName() + ": " + l + "</span></div>").join("");
+  }
+  function rank(n) {
+    if (!el().turnout) return null;
+    const v = D.districts.map((x) => ({ n: x.n, v: M.turn.get(x.tot[state.e]) })).sort((a, b) => b.v - a.v);
+    return v.findIndex((x) => x.n === n) + 1;
+  }
+  function elecTable(rowFor) {
+    let h = '<div class="tbl-wrap"><table><thead><tr><th class="l">Election</th><th>Turnout</th><th>Ballots</th><th>Margin</th></tr></thead><tbody>';
+    D.elections.forEach((e) => { const x = rowFor(e.k);
+      h += '<tr class="' + (e.k === state.e ? "cur" : "") + '"><td class="l">' + e.short + "</td><td>" + (e.turnout || (x && x[0]) ? p1(M.turn.get(x)) : "n/a") + "</td><td>" + ((e.turnout || (x && x[0])) && x ? n0(x[1]) : "n/a") + "</td><td>" + mg(M.dem.get(x)) + "</td></tr>"; });
+    return h + "</tbody></table></div>";
+  }
+  function detail() {
+    const d = $("#dtDetail"), e = el();
+    if (state.p) {
+      const id = state.p, P = D.precincts[id], x = pRow(id), r = (k, v) => "<tr><td class=\"l\">" + k + "</td><td>" + v + "</td></tr>";
+      let h = '<div><span class="code mono">' + id + '</span> <span class="area">' + area(id) + " · " + dName(P.d) + "</span></div>";
+      h += "<h4>" + e.t + "</h4>";
+      if (!x) h += '<p class="empty">No results for this precinct in this election (no registered voters).</p>';
+      else {
+        h += '<div class="tbl-wrap"><table><tbody>' + (e.turnout ? r("Registered voters", n0(x[0])) + r("Ballots cast", n0(x[1])) + r("Turnout", p1(M.turn.get(x))) : "")
+          + r(esc(e.dl), n0(x[2])) + r(esc(e.rl), n0(x[3])) + (e.ol ? r(esc(e.ol), n0(x[4])) : "") + r("Two-party split", split(M.dem.get(x))) + r("Margin", mg(M.dem.get(x))) + "</tbody></table></div>";
+      }
+      if (may()) h += mayorBlock(myP(id));
+      h += "<h4>Every election</h4>" + elecTable((k) => pRow(id, k));
+      h += '<a href="#dtMap" data-zoom>Zoom the map to ' + id + "</a>";
+      d.innerHTML = h;
+      d.querySelector("[data-zoom]").addEventListener("click", (ev) => { ev.preventDefault(); const q = layers.precList && layers.precList.find((z) => z.id === id); if (q) map.fitBounds(q.layer.getBounds(), { padding: [30, 30] }); $("#dtMap").scrollIntoView({ behavior: "smooth", block: "center" }); });
+      return;
+    }
+    if (state.d) {
+      const x = DN[state.d];
+      let h = '<div><span class="code">' + dName(x.n) + '</span> <span class="area">' + (x.member ? "Councilor " + esc(x.member) : "") + "</span></div>";
+      h += '<p class="area" style="margin:0">' + x.precincts + " precincts in " + x.twps.join(", ") + " township" + (x.twps.length > 1 ? "s" : "") + (x.cities.length ? ", including " + x.cities.join(" and ") : "") + ". Click a precinct on the map or in the table.</p>";
+      if (may()) h += mayorBlock(myD(x.n));
+      h += "<h4>Every election</h4>" + elecTable((k) => x.tot[k]);
+      const tot = x.race2023.reduce((a, c) => a + c.votes, 0);
+      h += "<h4>2023 council race</h4><div class=\"tbl-wrap\"><table><tbody>" + x.race2023.slice().sort((a, b) => b.votes - a.votes).map((c) => '<tr><td class="l">' + esc(c.name) + "</td><td>" + n0(c.votes) + "</td><td>" + p1(c.votes / tot) + "</td></tr>").join("") + "</tbody></table></div>";
+      d.innerHTML = h; return;
+    }
+    d.innerHTML = '<h3>Marion County</h3><p class="empty">All 621 precincts. Click a district on the map or in the table to see its precincts.</p>' + (may() ? mayorBlock(D.mayor.county[MR().k]) : "") + '<h4>Every election</h4>' + elecTable((k) => D.county[k]);
+  }
+
+  function cols() {
+    const e = el(), city = level === "city";
+    const C = [
+      city ? { k: "id", t: "District", v: (u) => u.n, f: (x) => "District " + x, cls: "l" } : { k: "id", t: "Precinct", v: (u) => u.id, f: (x) => x, cls: "l mono" },
+      city ? { k: "who", t: "Councilor", v: (u) => u.member || "", f: esc, cls: "l" } : { k: "who", t: "Area", v: (u) => area(u.id), f: esc, cls: "l" }
+    ];
+    if (e.turnout) C.push({ k: "reg", t: "Registered", v: (u) => u.x ? u.x[0] : null, f: n0 }, { k: "bal", t: "Ballots", v: (u) => u.x ? u.x[1] : null, f: n0 }, { k: "turn", t: "Turnout", v: (u) => M.turn.get(u.x), f: p1, bar: true });
+    if (may()) { const R = MR(), T = D.mayor.county[R.k], tot = T.reduce((a, b) => a + b, 0), cnt = city ? D.mayor.county[R.k] : myD(state.d);
+      C.push({ k: "win", t: "Most votes", v: (u) => { const w = win(u.my, R); return w ? (w.tie ? "Tie" : w.c.s) : null; }, f: esc, foot: () => { const w = win(cnt, R); return w ? (w.tie ? "Tie" : esc(w.c.s)) : ""; } },
+        { k: "wsh", t: "Winner's share", v: (u) => { const w = win(u.my, R); return w ? w.share : null; }, f: p1, foot: () => { const w = win(cnt, R); return w ? p1(w.share) : ""; } });
+      R.cands.forEach((c, i) => { if (T[i] / tot >= 0.02) C.push({ k: "c" + i, t: c.s, v: (u) => u.my ? u.my[i] : null, f: n0, foot: () => n0(cnt[i]) }); });
+      return C; }
+    C.push({ k: "dv", t: shortLab(e.dl), v: (u) => u.x ? u.x[2] : null, f: n0 }, { k: "rv", t: shortLab(e.rl), v: (u) => u.x ? u.x[3] : null, f: n0 }, { k: "dem", t: "Margin", v: (u) => M.dem.get(u.x), f: mg });
+    return C;
+  }
+  function shortLab(s) { return s.replace(/ votes$/, "").replace(/mayor primary/, "mayor"); }
+  function table() {
+    const city = level === "city", e = el(), C = cols();
+    if (!C.find((c) => c.k === sortKey)) { sortKey = e.turnout ? "turn" : "dem"; sortDir = -1; }
+    $("#dtTableTitle").textContent = (city ? "Every district, " : "Every precinct in " + dName(state.d) + ", ") + (may() ? MR().full + " for mayor" : e.t);
+    const units = city ? D.districts.map((x) => ({ n: x.n, member: x.member, x: x.tot[state.e], my: may() ? myD(x.n) : null }))
+      : Object.keys(D.precincts).filter((id) => D.precincts[id].d === state.d).map((id) => ({ id, x: pRow(id), my: may() ? myP(id) : null }));
+    $("#dtTable thead tr").innerHTML = C.map((c) => '<th scope="col"' + (c.cls && c.cls.includes("l") ? ' class="l"' : "") + '><button type="button" data-k="' + c.k + '"' + (c.k === sortKey ? ' aria-sort="' + (sortDir > 0 ? "ascending" : "descending") + '"' : "") + ">" + esc(c.t) + "</button></th>").join("");
+    $("#dtTable thead").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { const k = b.dataset.k; if (k === sortKey) sortDir = -sortDir; else { sortKey = k; sortDir = (k === "id" || k === "who") ? 1 : -1; } table(); }));
+    const col = C.find((c) => c.k === sortKey);
+    const rows = units.slice().sort((a, b) => { const x = col.v(a), y = col.v(b); if (x == null) return 1; if (y == null) return -1; return (x > y ? 1 : x < y ? -1 : 0) * sortDir; });
+    const maxT = Math.max(...units.map((u) => M.turn.get(u.x) || 0));
+    $("#dtTable tbody").innerHTML = rows.map((u) => { const key = city ? u.n : u.id, sel = city ? false : u.id === state.p;
+      return '<tr tabindex="0" data-k="' + key + '"' + (sel ? ' class="sel"' : "") + ">" + C.map((c) => { const x = c.v(u); let s = x == null || x === "" ? "–" : c.f(x); if (c.bar && x != null) s += '<span class="bar" style="width:' + (36 * x / maxT).toFixed(1) + 'px"></span>'; return "<td" + (c.cls ? ' class="' + c.cls + '"' : "") + ">" + s + "</td>"; }).join("") + "</tr>"; }).join("");
+    $("#dtTable tbody").querySelectorAll("tr").forEach((tr) => { const act = () => city ? go({ d: +tr.dataset.k, p: null }, true) : go({ p: tr.dataset.k }, true);
+      tr.addEventListener("click", act); tr.addEventListener("keydown", (ev) => { if (ev.key === "Enter") act(); }); });
+    const T = city ? D.county[state.e] : dRow(state.d);
+    $("#dtTable tfoot").innerHTML = "<tr>" + C.map((c, i) => { let s = ""; if (i === 0) s = city ? "Marion County" : "All " + units.length;
+      else if (c.k === "reg") s = n0(T[0]); else if (c.k === "bal") s = n0(T[1]); else if (c.k === "turn") s = p1(M.turn.get(T)); else if (c.k === "dv") s = n0(T[2]); else if (c.k === "rv") s = n0(T[3]); else if (c.k === "dem") s = mg(M.dem.get(T)); else if (c.foot) s = c.foot();
+      return "<td" + (c.cls ? ' class="' + c.cls.replace("mono", "") + '"' : "") + ">" + s + "</td>"; }).join("") + "</tr>";
+    $("#dtTableNote").textContent = (city ? "Select a district to see its precincts. " : "Select a precinct to see it on the map. ") + "Select a column heading to sort. " + (may() ? MR().full + " for mayor. Candidates with under 2% of the county vote are in the precinct details." : e.race + ": " + e.dl + " and " + e.rl + "." + (e.turnout ? "" : " Turnout wasn't published by precinct for this primary."));
+  }
+  function crumbs() {
+    const c = [];
+    c.push(level === "city" && !state.d ? "<b>Marion County</b>" : '<button type="button" data-go="city">Marion County</button>');
+    if (state.d) c.push(state.p ? '<button type="button" data-go="d">' + dName(state.d) + "</button>" : "<b>" + dName(state.d) + "</b>");
+    if (state.p) c.push("<b>Precinct " + state.p + "</b>");
+    $("#dtCrumbs").innerHTML = c.join('<span class="sep" aria-hidden="true">›</span>');
+    $("#dtCrumbs").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => b.dataset.go === "city" ? go({ d: null, p: null }, true) : go({ p: null }, true)));
+    $("#dtMapTitle").textContent = (may() ? "2023 mayor, " + rt(MR()) + "," : M[state.m].label) + (level === "city" ? " by council district" : " by precinct, " + dName(state.d));
+  }
+
+  // ---------- state ----------
+  function writeUrl(push) {
+    const q = new URLSearchParams();
+    if (state.d) q.set("district", state.d);
+    if (state.p) q.set("precinct", state.p);
+    if (state.e !== "2026G") q.set("election", state.e);
+    if (state.m !== "turn") q.set("measure", state.m);
+    if (may() && state.e === "2023P" && state.r === "R") q.set("race", "R");
+    const u = location.pathname + (q.toString() ? "?" + q : "");
+    if (u !== location.pathname + location.search) history[push ? "pushState" : "replaceState"](null, "", u);
+  }
+  function readUrl() {
+    const q = new URLSearchParams(location.search);
+    const d = +q.get("district"), p = (q.get("precinct") || "").toUpperCase(), e = q.get("election"), m = q.get("measure");
+    state.e = E[e] ? e : "2026G"; state.m = M[m] ? m : "turn"; state.r = q.get("race") === "R" ? "R" : "D";
+    if (state.m === "mayor" && !is23(state.e)) state.e = "2023G";
+    state.p = D.precincts[p] ? p : null;
+    state.d = state.p ? D.precincts[state.p].d : (d >= 1 && d <= 25 ? d : null);
+  }
+  async function go(patch, push, opts) {
+    opts = opts || {};
+    const prevD = state.d;
+    Object.assign(state, patch);
+    if ("d" in patch && patch.d !== prevD && !("p" in patch)) state.p = null;
+    if (state.p) state.d = D.precincts[state.p].d;
+    if (may() && !is23(state.e)) { if ("m" in patch) state.e = "2023G"; else state.m = "dem"; }
+    if (!M[state.m].ok(el())) state.m = "dem";
+    writeUrl(push);
+    if (state.d) {
+      const det = await loadDistrict(state.d);
+      if (state.d !== det.n) return; // a newer click won
+      if (level !== "d" || prevD !== state.d || !layers.prec) {
+        level = "d"; layers.freeways.remove(); layers.dLabels.remove(); drawDistrict(det);
+        const b = DN[state.d].layer.getBounds();
+        baseZoom = map.getBoundsZoom(b, false, L.point(28, 28)); // the district's own fit, even if we don't move there
+        if (!opts.keepView) map.fitBounds(b, { padding: [14, 14], animate: false });
+        roadLabels(det);
+        DN[state.d].layer.bringToFront(); // its outline above the precincts
+      }
+    } else if (level !== "city") {
+      level = "city"; clearDistrictLayers(); layers.freeways.addTo(map); layers.dLabels.addTo(map);
+      map.fitBounds(homeBounds, { padding: [10, 10], animate: false }); baseZoom = map.getZoom();
+    }
+    if (state.p && layers.precList) { const q = layers.precList.find((z) => z.id === state.p); if (q) q.layer.bringToFront(); }
+    chips(); shade(); tiles(); detail(); table(); crumbs(); setMode();
+  }
+
+  // ---------- address search ----------
+  const PIN_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5c-4.1 0-7.5 3.2-7.5 7.3 0 5.4 7.5 13.7 7.5 13.7s7.5-8.3 7.5-13.7c0-4.1-3.4-7.3-7.5-7.3z" fill="#f2c200" stroke="#17244f" stroke-width="1.6"/><circle cx="12" cy="9" r="2.8" fill="#17244f"/></svg>';
+  const PIN = () => L.divIcon({ className: "", html: '<span style="display:block;width:34px;height:34px;transform:translate(-50%,-100%)">' + PIN_SVG.replace('width="18" height="18"', 'width="34" height="34"') + "</span>", iconSize: [0, 0] });
+  let sugg = [], active = -1, timer = null, seq = 0;
+  const found = (msg, err) => { const f = $("#dtFound"); f.hidden = !msg; f.textContent = msg || ""; f.classList.toggle("err", !!err); };
+  function showSugg() {
+    const ul = $("#dtSugg");
+    ul.innerHTML = sugg.map((s, i) => '<li role="option" id="dtS' + i + '" aria-selected="' + (i === active) + '">' + esc(s.text) + "</li>").join("");
+    ul.hidden = !sugg.length; $("#dtAddr").setAttribute("aria-expanded", sugg.length ? "true" : "false");
+    ul.querySelectorAll("li").forEach((li, i) => li.addEventListener("mousedown", (e) => { e.preventDefault(); pick(sugg[i]); }));
+  }
+  function closeSugg() { sugg = []; active = -1; showSugg(); }
+  async function suggest(text) {
+    const my = ++seq;
+    try {
+      const r = await (await fetch(LOCATOR + "/suggest?f=json&maxSuggestions=6&location=-86.15,39.77&text=" + encodeURIComponent(text))).json();
+      if (my !== seq) return;
+      sugg = (r.suggestions || []).filter((s) => !s.isCollection); active = -1; showSugg();
+    } catch (e) { /* suggestions are optional */ }
+  }
+  async function geocode(text, magicKey) {
+    found("Looking up the address…");
+    try {
+      let u = LOCATOR + "/findAddressCandidates?f=json&outSR=4326&maxLocations=6&location=-86.15,39.77&SingleLine=" + encodeURIComponent(text);
+      if (magicKey) u += "&magicKey=" + encodeURIComponent(magicKey);
+      const r = await (await fetch(u)).json();
+      const good = (r.candidates || []).filter((x) => x.score >= 80);
+      if (!good.length) { found("No match for that address in Marion County. Check the spelling, or add the city.", true); return; }
+      const typed = text.toUpperCase(), top = Math.max(...good.map((x) => x.score)), tied = good.filter((x) => x.score >= top - 2);
+      const named = tied.filter((x) => x.address.toUpperCase().split(",").slice(1).map((s) => s.trim()).some((s) => s && s !== "IN" && typed.includes(s)));
+      const c = (named.length ? named : tied)[0];
+      await place(c.location.y, c.location.x, c.address);
+    } catch (e) { found("The city's address service didn't respond. Try again in a moment.", true); }
+  }
+  async function place(lat, lon, label) {
+    const pt = [lon, lat];
+    // District outlines are simplified, so near a boundary check the nearest few districts' full precinct shapes
+    const ranked = D.districts.map((x) => ({ n: x.n, inside: inPolys(pt, x.polys), dist: nearDist(pt, x.polys) })).sort((a, b) => (b.inside - a.inside) || (a.dist - b.dist)).slice(0, 3);
+    let hit = null;
+    for (const c of ranked) { const det = await loadDistrict(c.n); const p = det.precincts.find((q) => inPolys(pt, q.polys)); if (p) { hit = p.id; break; } }
+    if (pin) map.removeLayer(pin);
+    pin = L.marker([lat, lon], { icon: PIN(), keyboard: false, title: label, zIndexOffset: 1000 }).addTo(map);
+    $("#dtClear").hidden = false;
+    if (!hit) { found(label + " isn't inside a Marion County voting precinct on this map.", true); map.setView([lat, lon], 13); return; }
+    const P = D.precincts[hit];
+    await go({ p: hit }, true, { keepView: true });
+    map.setView([lat, lon], Math.max(baseZoom + 2.5, 14));
+    const x = pRow(hit), e = el();
+    found(label + " is in precinct " + hit + " (" + area(hit) + "), " + dName(P.d) + (DN[P.d].member ? ", represented by " + DN[P.d].member : "") + ". " + (e.turnout && x ? p1(M.turn.get(x)) + " of its registered voters cast a ballot in the " + e.t + "." : ""));
+  }
+  function pick(s) { $("#dtAddr").value = s.text; closeSugg(); geocode(s.text, s.magicKey); }
+  function initSearch() {
+    const inp = $("#dtAddr");
+    inp.addEventListener("input", () => { clearTimeout(timer); const t = inp.value.trim(); if (t.length < 4) { closeSugg(); return; } timer = setTimeout(() => suggest(t), 250); });
+    inp.addEventListener("keydown", (e) => {
+      if (!sugg.length) return;
+      if (e.key === "ArrowDown") { e.preventDefault(); active = (active + 1) % sugg.length; showSugg(); inp.setAttribute("aria-activedescendant", "dtS" + active); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); active = (active - 1 + sugg.length) % sugg.length; showSugg(); inp.setAttribute("aria-activedescendant", "dtS" + active); }
+      else if (e.key === "Escape") closeSugg();
+      else if (e.key === "Enter" && active >= 0) { e.preventDefault(); pick(sugg[active]); }
+    });
+    inp.addEventListener("blur", () => setTimeout(closeSugg, 150));
+    $("#dtSearch").addEventListener("submit", (e) => { e.preventDefault(); const t = inp.value.trim(); if (!t) return; closeSugg(); geocode(t); });
+    $("#dtClear").addEventListener("click", () => { if (pin) map.removeLayer(pin); pin = null; inp.value = ""; found(""); $("#dtClear").hidden = true; shade(); setMode(); fitLevel(); });
+  }
+
+  fetch(BASE + "data.json").then((r) => r.json()).then((d) => {
+    D = d; D.elections.forEach((x) => { E[x.k] = x; }); D.districts.forEach((x) => { DN[x.n] = x; });
+    readUrl();
+    if (!window.L) { $("#dtMap").innerHTML = '<p class="note" style="padding:16px">The map library didn’t load. Reload the page to try again. The table below has every number.</p>'; level = state.d ? "d" : "city"; chips(); tiles(); detail(); crumbs(); if (level === "city") table(); return; }
+    drawMap(); map.fitBounds(homeBounds, { padding: [10, 10] }); baseZoom = map.getZoom();
+    initSearch();
+    window.addEventListener("popstate", () => { readUrl(); go({}, false); });
+    go({}, false);
+  }).catch(() => { $("#dtTiles").innerHTML = '<p class="note">The data didn’t load. Reload the page to try again.</p>'; });
+})();
+</script>
